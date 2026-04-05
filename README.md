@@ -1,11 +1,22 @@
 # Phenotype Registry System - Master Index
 
 **Unified entry point for all Phenotype registries.**
+## Registry Files
 
-This repository serves as the **master index** connecting:
-- [PhenoSpecs](https://github.com/KooshaPari/PhenoSpecs) - Specifications & requirements
-- [PhenoHandbook](https://github.com/KooshaPari/PhenoHandbook) - Patterns & guidelines
-- [HexaKit](https://github.com/KooshaPari/HexaKit) - Templates & scaffolding
+### Core Registries
+- [PhenoSpecs Registry](https://github.com/KooshaPari/PhenoSpecs/blob/main/registry.yaml) - Specifications
+- [HexaKit Registry](https://github.com/KooshaPari/HexaKit/blob/main/registry.yaml) - Templates
+- [PhenoHandbook Config](https://github.com/KooshaPari/PhenoHandbook/blob/main/docs/.vitepress/config.mts) - Patterns
+
+### 📚 Library & Research Registry
+**[LIBRARY_RESEARCH_REGISTRY.md](./LIBRARY_RESEARCH_REGISTRY.md)** - Comprehensive catalog of:
+- **150+ libraries** used across all repos
+- **40+ research papers** and technical foundations
+- **Wrap vs Handroll decisions** with rationale
+- **Research bibliographies** by domain
+
+This registry enables informed decisions about when to wrap existing libraries versus build custom solutions.
+- **LIBRARY_RESEARCH_REGISTRY.md** - Libraries, dependencies & research papers
 
 ---
 
