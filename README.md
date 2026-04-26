@@ -121,3 +121,7 @@ This triggers the inventory agent to rescan GitHub + local repos and update:
 - **Worklog aggregation**: `/Users/kooshapari/CodeProjects/Phenotype/repos/worklogs/`
 - **Aggregator tooling**: `/Users/kooshapari/CodeProjects/Phenotype/repos/phenotype-tooling/`
 - **Organization docs**: `/Users/kooshapari/CodeProjects/Phenotype/repos/docs/governance/`
+
+## License
+
+MIT — see [LICENSE](./LICENSE).
