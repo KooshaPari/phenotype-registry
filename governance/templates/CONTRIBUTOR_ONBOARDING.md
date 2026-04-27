@@ -1,3 +1,7 @@
+---
+stage: budding
+---
+
 # Contributor Onboarding One-Pager (Kimi-generated 2026-04-27)
 
 Target: phenotype.space/contributing

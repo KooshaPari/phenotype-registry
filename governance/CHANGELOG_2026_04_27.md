@@ -1,3 +1,7 @@
+---
+stage: seedling
+---
+
 ## Phenotype-Org Governance CHANGELOG — 2026-04-27 sprint
 
 (Kimi-generated 2026-04-27)

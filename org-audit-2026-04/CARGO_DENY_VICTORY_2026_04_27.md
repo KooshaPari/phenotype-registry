@@ -1,3 +1,7 @@
+---
+stage: evergreen
+---
+
 # 🎉 Cargo-Deny Rollout VICTORY — 2026-04-27 (95% Coverage)
 
 ## Final state (DEFINITIVE via gh contents API)

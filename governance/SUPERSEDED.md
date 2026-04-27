@@ -1,3 +1,7 @@
+---
+stage: evergreen
+---
+
 # Superseded Catalog
 
 Authoritative list of governance docs marked SUPERSEDED. Each entry links to the current replacement.
