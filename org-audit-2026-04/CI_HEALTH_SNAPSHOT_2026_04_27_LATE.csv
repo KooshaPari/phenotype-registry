@@ -1,0 +1,97 @@
+Repo,Workflow,Status,Conclusion,Age (hours)
+BytePort,Secrets scan,completed,success,0.4
+BytePort,cargo-deny,completed,failure,0.4
+BytePort,Legacy Tooling Gate (WARN Mode),completed,failure,0.4
+FocalPoint,Supply Chain Security,completed,success,2.6
+FocalPoint,Fuzz Testing,completed,failure,2.9
+FocalPoint,E2E Smoke Test,completed,success,4.2
+AgilePlus,pr-governance-gate,completed,failure,0.1
+AgilePlus,Code Scanning Results,completed,success,0.3
+AgilePlus,pr-governance-gate,completed,failure,0.3
+PhenoObservability,Doc Links,completed,success,3.3
+PhenoObservability,Test,completed,success,3.3
+PhenoObservability,Quality Gate,completed,success,3.3
+helios-app,GH_ERROR,error,failed to get runs: HTTP 404: Not Found (https://api.github.com/repos/KooshaPari/helios-app/actions/runs?per_page=3&exclude_pull_requests=true),
+helios-cli,Codespell,completed,success,0.2
+helios-cli,sdk,completed,failure,0.2
+helios-cli,OpenSSF Scorecard,completed,failure,0.2
+helios-router,Policy Gate,completed,failure,0.0
+helios-router,Docs Site,completed,failure,0.0
+helios-router,OpenSSF Scorecard,completed,failure,0.0
+HeliosLab,Security Guard (Hooks),completed,success,0.3
+HeliosLab,Deploy docs,completed,failure,0.3
+HeliosLab,Security (SAST),completed,failure,0.3
+HexaKit,SAST Full Analysis,completed,failure,2.6
+HexaKit,Snyk Security Scan,completed,failure,3.2
+HexaKit,Dependabot Updates,completed,failure,3.5
+phenoAI,CodeQL,completed,success,0.9
+phenoAI,Secrets Scan,completed,success,1.4
+phenoAI,Dependabot Updates,completed,failure,7.7
+phenoData,Secrets Scan,completed,success,0.9
+phenoData,Quality Gate,completed,success,4.9
+phenoData,Secrets Scan,completed,success,4.9
+PhenoKits,CodeQL,completed,success,5.1
+PhenoKits,CodeQL,completed,success,8.4
+PhenoKits,Secrets scan,completed,success,8.4
+PhenoMCP,OpenSSF Scorecard,completed,success,3.7
+PhenoMCP,Polyglot CI,completed,success,3.7
+PhenoMCP,CodeQL,completed,success,3.7
+PhenoPlugins,Quality Gate,completed,success,0.5
+PhenoPlugins,Legacy Tooling Gate (WARN Mode),completed,failure,0.5
+PhenoPlugins,Doc Links,completed,success,0.5
+PhenoProc,Secrets Scan,completed,success,0.9
+PhenoProc,.github/workflows/ci.yml,completed,failure,4.7
+PhenoProc,Secrets Scan,completed,success,4.7
+PhenoRuntime,Dependabot Updates,completed,success,5.2
+PhenoRuntime,Polyglot CI,completed,success,5.2
+PhenoRuntime,Doc Links,completed,success,5.2
+phenoShared,Secrets Scan,completed,success,1.4
+phenoShared,CodeQL,completed,success,4.6
+phenoShared,Secrets Scan,completed,success,4.6
+phenotype-bus,OpenSSF Scorecard,completed,failure,0.0
+phenotype-bus,quality-gate,completed,failure,0.0
+phenotype-bus,quality-gate,completed,failure,3.6
+phenoUtils,Doc Links,completed,success,3.6
+phenoUtils,Doc Links,completed,success,5.0
+phenoUtils,Doc Links,completed,success,5.1
+KDV,GH_ERROR,error,failed to get runs: HTTP 404: Not Found (https://api.github.com/repos/KooshaPari/KDV/actions/runs?per_page=3&exclude_pull_requests=true),
+KDesktopVirt,Dependabot Updates,queued,,1.3
+KDesktopVirt,Dependabot Updates,queued,,1.3
+KDesktopVirt,Doc Links,completed,failure,3.5
+Tokn,.github/workflows/ci.yml,completed,failure,0.1
+Tokn,Deploy VitePress Docs,completed,failure,0.1
+Tokn,.github/workflows/pricing-governance-check.yml,completed,failure,0.1
+PolicyStack,.github/workflows/ci.yml,completed,failure,0.2
+PolicyStack,.github/workflows/legacy-tooling-gate.yml,completed,failure,0.2
+PolicyStack,.github/workflows/policy-contract-governance.yml,completed,failure,0.2
+Tasken,Auto Merge,completed,skipped,0.0
+Tasken,Auto Merge,completed,skipped,0.0
+Tasken,Auto Merge,completed,skipped,0.0
+Sidekick,OpenSSF Scorecard,completed,failure,3.5
+Sidekick,Doc Links,completed,failure,3.5
+Sidekick,Quality Gate,completed,success,3.5
+Civis,Doc Links,completed,failure,0.5
+Civis,OpenSSF Scorecard,completed,failure,0.5
+Civis,pages-deploy,completed,failure,0.5
+Eidolon,Doc Links,completed,failure,3.6
+Eidolon,Quality Gate,completed,success,3.6
+Eidolon,OpenSSF Scorecard,completed,failure,3.6
+eyetracker,(no runs returned),missing,,
+Configra,security-guard,completed,failure,-0.0
+Configra,OpenSSF Scorecard,completed,failure,-0.0
+Configra,.github/workflows/release-drafter.yml,completed,failure,0.0
+Metron,Secrets Scan,completed,success,1.4
+Metron,CI,completed,failure,3.5
+Metron,Doc Links,completed,success,3.5
+hwLedger,CI (self-hosted),queued,,0.1
+hwLedger,rust,completed,failure,0.1
+hwLedger,OpenSSF Scorecard,completed,success,0.1
+GDK,Doc Links,completed,success,3.8
+GDK,OpenSSF Scorecard,completed,success,3.8
+GDK,Legacy Tooling Gate (WARN Mode),completed,failure,3.8
+agentkit,GH_ERROR,error,failed to get runs: HTTP 404: Not Found (https://api.github.com/repos/KooshaPari/agentkit/actions/runs?per_page=3&exclude_pull_requests=true),
+agentapi-plusplus,coderabbit-rate-limit-retry,completed,success,0.6
+agentapi-plusplus,Secrets Scan,completed,success,0.9
+agentapi-plusplus,coderabbit-rate-limit-retry,completed,success,3.4
+Pyron,GH_ERROR,error,failed to get runs: HTTP 404: Not Found (https://api.github.com/repos/KooshaPari/Pyron/actions/runs?per_page=3&exclude_pull_requests=true),
+FocalPoint-vitepress,GH_ERROR,error,failed to get runs: HTTP 404: Not Found (https://api.github.com/repos/KooshaPari/FocalPoint-vitepress/actions/runs?per_page=3&exclude_pull_requests=true),
