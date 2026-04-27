@@ -101,3 +101,9 @@ Top 5 repos by open alert count:
 3. Escalate or unblock KDV Pages billing, then run the deploy verification.
 4. Start the CodeQL Rust gap wave for the 20/34 repos without explicit workflows.
 5. Open a dedicated Actions SHA-pinning audit and produce a real percentage baseline.
+
+## SUPERSEDED
+
+Cargo-deny completion/enrollment claims in this document are superseded by
+[`CARGO_DENY_TRUE_COVERAGE_2026_04_27.md`](CARGO_DENY_TRUE_COVERAGE_2026_04_27.md)
+and truth-correction commit `4a2a608`.

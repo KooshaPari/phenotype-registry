@@ -35,3 +35,9 @@
 ## Sources
 - Probe script: `/tmp/classify_repos.sh` (this session)
 - Probe SHAs: latest origin/main of each repo as of 2026-04-27 ~00:42 local
+
+## SUPERSEDED
+
+Cargo-deny completion/enrollment claims in this document are superseded by
+[`CARGO_DENY_TRUE_COVERAGE_2026_04_27.md`](CARGO_DENY_TRUE_COVERAGE_2026_04_27.md)
+and truth-correction commit `4a2a608`.

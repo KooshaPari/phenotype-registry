@@ -74,3 +74,9 @@ Phenotype-org late3 continuation converted the remaining post-v64 Pages and gove
 ## Honest Framing
 
 Numbers reflect actual commits, PRs, and `gh` workflow surfaces where verified. PolicyStack remains explicitly marked awaiting verification because run `24983965583` is queued, not green.
+
+## SUPERSEDED
+
+Cargo-deny completion/enrollment claims in this document are superseded by
+[`CARGO_DENY_TRUE_COVERAGE_2026_04_27.md`](CARGO_DENY_TRUE_COVERAGE_2026_04_27.md)
+and truth-correction commit `4a2a608`.

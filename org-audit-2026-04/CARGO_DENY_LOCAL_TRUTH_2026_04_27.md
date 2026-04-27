@@ -91,3 +91,9 @@ Top overlapping repo-level mismatches:
 | `phenoUtils` | yes | 1 | yes |
 | `Sidekick` | yes | 1 | yes |
 | `Tasken` | yes | 1 | yes |
+
+## SUPERSEDED
+
+Cargo-deny completion/enrollment claims in this document are superseded by
+[`CARGO_DENY_TRUE_COVERAGE_2026_04_27.md`](CARGO_DENY_TRUE_COVERAGE_2026_04_27.md)
+and truth-correction commit `4a2a608`.
