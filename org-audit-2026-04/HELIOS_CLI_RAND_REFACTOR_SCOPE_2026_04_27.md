@@ -20,9 +20,9 @@ additional rand 0.9 production call site hidden behind `use rand::rng` in
 
 | Category | Count | Notes |
 | --- | ---: | --- |
-| Crypto / security-sensitive | 8 production call sites plus 1 already-safe `OsRng` use | Refactor first. Must use `OsRng` or a narrowly wrapped CSPRNG source. |
-| Random sample / non-crypto | 13 production call sites | Prefer a small helper if `OsRng` is acceptable ergonomically; otherwise isolate advisory-suppressed usage behind one module. |
-| Test-only deterministic RNG | 8 requested matches | No advisory implications for runtime behavior. Keep deterministic `StdRng` unless tests no longer need reproducibility. |
+| Crypto / security-sensitive | 7 production call sites plus 1 already-safe `OsRng` use | Refactor first. Must use `OsRng` or a narrowly wrapped CSPRNG source. |
+| Random sample / non-crypto | 14 requested production matches plus 1 broader `rand::rng` call site | Prefer a small helper if `OsRng` is acceptable ergonomically; otherwise isolate advisory-suppressed usage behind one module. |
+| Test-only deterministic RNG | 6 requested matches | No advisory implications for runtime behavior. Keep deterministic `StdRng` unless tests no longer need reproducibility. |
 
 ## Crypto-first refactor scope
 
@@ -75,4 +75,3 @@ additional rand 0.9 production call site hidden behind `use rand::rng` in
    `rand` advisory exposure behind one reviewed non-crypto helper.
 5. Leave deterministic `StdRng` test-only usages as-is unless test reproducibility
    requirements change.
-
