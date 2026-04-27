@@ -1,89 +1,45 @@
-# ORG_DASHBOARD v66 - 2026-04-27 Corrected Rust Repo Count
+# ORG_DASHBOARD v66 - 2026-04-27 SUPERSEDED Correction
 
-## Cargo-deny coverage CORRECTED 2026-04-27: 61 Rust repos (was 36), 100% file presence, 16% workflow_dispatch
+## Honest framing
 
-Source: fresh live audit via `gh repo list KooshaPari --limit 1000 --json name,isArchived,languages` with Rust language filter, followed by `Cargo.toml` content checks and `.github/workflows/cargo-deny.yml` workflow content checks.
+This dashboard originally attempted to correct the v62-v65 cargo-deny denominator, but it
+introduced another false state: `61/61 = 100% cargo-deny file presence` and `16%
+workflow_dispatch` coverage. That was audit decay, not truth.
 
-Correction: prior dashboards/memos that used 36 active Rust repos are stale and wrong. The corrected active Rust repo denominator is 61. All 61 have `.github/workflows/cargo-deny.yml` present; only 10 include `workflow_dispatch`, leaving 51 repos without on-demand cargo-deny verification.
+Use `CARGO_DENY_TRUE_COVERAGE_2026_04_27.md` from commit `4a2a608` as the corrected
+local truth surface.
 
-## Summary
+## Superseded claims in this file
 
-| Metric | Count | Share |
-| --- | ---: | ---: |
-| Active Rust repos | 61 | 100% |
-| cargo-deny.yml present | 61 | 100% |
-| HAS workflow_dispatch | 10 | 16% |
-| NO workflow_dispatch | 51 | 84% |
+Do not re-cite these as current state:
 
-## Per-Repo Cargo-Deny Dispatch Table
+- `61` active Rust repos as the cargo-deny denominator.
+- `61/61 = 100%` cargo-deny workflow file presence.
+- `10/61 = 16%` workflow_dispatch coverage.
+- `51` repos lacking workflow_dispatch as the next cargo-deny queue.
 
-| Repo | cargo-deny.yml | workflow_dispatch | State |
-| --- | --- | --- | --- |
-| `Agentora` | HAS | NO | HAS_FILE_NO_DISPATCH |
-| `AgilePlus` | HAS | NO | HAS_FILE_NO_DISPATCH |
-| `Apisync` | HAS | NO | HAS_FILE_NO_DISPATCH |
-| `AuthKit` | HAS | NO | HAS_FILE_NO_DISPATCH |
-| `Benchora` | HAS | NO | HAS_FILE_NO_DISPATCH |
-| `BytePort` | HAS | HAS | HAS_FILE_AND_DISPATCH |
-| `Civis` | HAS | NO | HAS_FILE_NO_DISPATCH |
-| `Configra` | HAS | NO | HAS_FILE_NO_DISPATCH |
-| `DataKit` | HAS | NO | HAS_FILE_NO_DISPATCH |
-| `Dino` | HAS | NO | HAS_FILE_NO_DISPATCH |
-| `Eidolon` | HAS | NO | HAS_FILE_NO_DISPATCH |
-| `eyetracker` | HAS | NO | HAS_FILE_NO_DISPATCH |
-| `FocalPoint` | HAS | HAS | HAS_FILE_AND_DISPATCH |
-| `GDK` | HAS | NO | HAS_FILE_NO_DISPATCH |
-| `helios-cli` | HAS | HAS | HAS_FILE_AND_DISPATCH |
-| `helios-router` | HAS | NO | HAS_FILE_NO_DISPATCH |
-| `heliosCLI` | HAS | NO | HAS_FILE_NO_DISPATCH |
-| `HeliosLab` | HAS | NO | HAS_FILE_NO_DISPATCH |
-| `HexaKit` | HAS | NO | HAS_FILE_NO_DISPATCH |
-| `hwLedger` | HAS | NO | HAS_FILE_NO_DISPATCH |
-| `KDesktopVirt` | HAS | NO | HAS_FILE_NO_DISPATCH |
-| `MCPForge` | HAS | NO | HAS_FILE_NO_DISPATCH |
-| `McpKit` | HAS | NO | HAS_FILE_NO_DISPATCH |
-| `Metron` | HAS | NO | HAS_FILE_NO_DISPATCH |
-| `ObservabilityKit` | HAS | NO | HAS_FILE_NO_DISPATCH |
-| `Paginary` | HAS | NO | HAS_FILE_NO_DISPATCH |
-| `pheno` | HAS | NO | HAS_FILE_NO_DISPATCH |
-| `PhenoAgent` | HAS | NO | HAS_FILE_NO_DISPATCH |
-| `phenoAI` | HAS | NO | HAS_FILE_NO_DISPATCH |
-| `PhenoCompose` | HAS | NO | HAS_FILE_NO_DISPATCH |
-| `phenoData` | HAS | NO | HAS_FILE_NO_DISPATCH |
-| `PhenoKits` | HAS | NO | HAS_FILE_NO_DISPATCH |
-| `PhenoLang` | HAS | NO | HAS_FILE_NO_DISPATCH |
-| `PhenoMCP` | HAS | HAS | HAS_FILE_AND_DISPATCH |
-| `PhenoObservability` | HAS | HAS | HAS_FILE_AND_DISPATCH |
-| `PhenoPlugins` | HAS | HAS | HAS_FILE_AND_DISPATCH |
-| `PhenoProc` | HAS | NO | HAS_FILE_NO_DISPATCH |
-| `PhenoRuntime` | HAS | NO | HAS_FILE_NO_DISPATCH |
-| `phenoShared` | HAS | NO | HAS_FILE_NO_DISPATCH |
-| `phenotype-bus` | HAS | HAS | HAS_FILE_AND_DISPATCH |
-| `phenotype-infra` | HAS | NO | HAS_FILE_NO_DISPATCH |
-| `phenotype-journeys` | HAS | NO | HAS_FILE_NO_DISPATCH |
-| `phenotype-org-audits` | HAS | NO | HAS_FILE_NO_DISPATCH |
-| `phenotype-tooling` | HAS | NO | HAS_FILE_NO_DISPATCH |
-| `phenoUtils` | HAS | HAS | HAS_FILE_AND_DISPATCH |
-| `PhenoVCS` | HAS | NO | HAS_FILE_NO_DISPATCH |
-| `PlayCua` | HAS | NO | HAS_FILE_NO_DISPATCH |
-| `PolicyStack` | HAS | NO | HAS_FILE_NO_DISPATCH |
-| `ResilienceKit` | HAS | NO | HAS_FILE_NO_DISPATCH |
-| `rich-cli-kit` | HAS | NO | HAS_FILE_NO_DISPATCH |
-| `Sidekick` | HAS | HAS | HAS_FILE_AND_DISPATCH |
-| `Stashly` | HAS | NO | HAS_FILE_NO_DISPATCH |
-| `Tasken` | HAS | HAS | HAS_FILE_AND_DISPATCH |
-| `TestingKit` | HAS | NO | HAS_FILE_NO_DISPATCH |
-| `thegent` | HAS | NO | HAS_FILE_NO_DISPATCH |
-| `thegent-dispatch` | HAS | NO | HAS_FILE_NO_DISPATCH |
-| `thegent-workspace` | HAS | NO | HAS_FILE_NO_DISPATCH |
-| `Tokn` | HAS | NO | HAS_FILE_NO_DISPATCH |
-| `Tracely` | HAS | NO | HAS_FILE_NO_DISPATCH |
-| `Tracera` | HAS | NO | HAS_FILE_NO_DISPATCH |
-| `vibeproxy` | HAS | NO | HAS_FILE_NO_DISPATCH |
+## True state at session end
 
-## Action Items
+| Metric | True value | Source |
+| --- | ---: | --- |
+| Local Rust repos | 42 | parent-direct local probe |
+| Repos with `cargo-deny.yml` on `main` | 18/42 (43%) | `4a2a608` |
+| Repos with `workflow_dispatch` in `cargo-deny.yml` | 5/42 (12%) | `4a2a608` |
+| Rollout branches pushed for missing coverage | 17 | `e0f2fc8` |
+| Projected coverage after queued PRs merge | 35/42 (83%) | `e0f2fc8` |
 
-- Open PRs to add `workflow_dispatch` to the 51 repos marked `HAS_FILE_NO_DISPATCH`.
-- Cap rollout per session; do not attempt all 51 in one uncontrolled wave.
-- Use the 61-repo denominator for all future Rust cargo-deny dashboard percentages.
-- Treat earlier `36 active Rust repos` references as superseded by this correction.
+## What remains useful from v66
+
+The durable lesson is not the old table. The durable lesson is that GitHub Contents API
+checks and decoded empty content can produce false positives when file absence is not
+handled strictly. Future cargo-deny dashboards must verify local canonical clones or
+explicit 404/file-exists semantics before publishing coverage percentages.
+
+## User decisions queue
+
+| Priority | Item | State |
+| --- | --- | --- |
+| P0 | Create 17 queued cargo-deny rollout PRs after GitHub API rate limit reset. | Pending |
+| P1 | Seven stub/archived/bare repos legitimately do not need cargo-deny; examples include KlipDot and kmobile archived, bare-cua bare, AgilePlus bare. | Pending |
+| P2 | PolicyStack legacy-tooling-gate finding. | Pending |
+| P2 | Evaluate helios-cli direct `rand 0.9` usage before refactor. | Pending |
