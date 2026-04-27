@@ -5,29 +5,41 @@ LOG_FILE="/tmp/pr_creation.log"
 TITLE_WORKFLOW="ci(cargo-deny): add scheduled scan + workflow_dispatch (zero-advisory floor)"
 TITLE_DENY="ci(cargo-deny): add starter deny.toml baseline"
 TITLE_FULL="ci(cargo-deny): enroll repository in scheduled scan baseline"
+BODY_FULL="Closes the cargo-deny workflow gap from CARGO_DENY_TRUE_COVERAGE_2026_04_27.md (4a2a608). Adds starter deny.toml plus the BytePort-template cargo-deny.yml workflow with Monday cron and workflow_dispatch."
+BODY_ROLLOUT="Closes the cargo-deny workflow gap from CARGO_DENY_TRUE_COVERAGE_2026_04_27.md (4a2a608). Adds the cargo-deny.yml workflow with Monday cron and workflow_dispatch, plus deny.toml where this rollout branch includes it."
+BODY_DISPATCH="Adds workflow_dispatch to the existing cargo-deny workflow so the repository supports on-demand verification alongside scheduled scans. Tracked by CARGO_DENY_ROLLOUT_FINAL_2026_04_27.md."
 
 # Explicit repo / branch / body tuples from:
-# - org-audit-2026-04/CARGO_DENY_ROLLOUT_BRANCHES_2026_04_27.md (e8275b3)
-# - org-audit-2026-04/CARGO_DENY_ROLLOUT_FINAL_2026_04_27.md (e0f2fc8)
+# - org-audit-2026-04/CARGO_DENY_ROLLOUT_FINAL_2026_04_27.md
+# - script baseline commit 37754de, expanded to 27 current branches
 PR_ITEMS=(
-  $'bare-cua\tci/cargo-deny-full-rollout-2026-04-27\tCloses the cargo-deny workflow gap from CARGO_DENY_TRUE_COVERAGE_2026_04_27.md (4a2a608). Adds starter deny.toml where needed plus the BytePort-template cargo-deny.yml workflow with Monday cron and workflow_dispatch.'
-  $'GDK\tci/add-starter-deny-toml-20260427\tAdds the starter deny.toml baseline required before cargo-deny workflow enrollment. Tracked by CARGO_DENY_ROLLOUT_FINAL_2026_04_27.md (e0f2fc8).'
-  $'GDK\tci/cargo-deny-rollout-2026-04-27\tCloses the cargo-deny workflow gap from CARGO_DENY_TRUE_COVERAGE_2026_04_27.md (4a2a608). Adds the BytePort-template cargo-deny.yml workflow with Monday cron and workflow_dispatch.'
-  $'helios-router\tci/add-starter-deny-toml-20260427\tAdds the starter deny.toml baseline required before cargo-deny workflow enrollment. Tracked by CARGO_DENY_ROLLOUT_FINAL_2026_04_27.md (e0f2fc8).'
-  $'HeliosLab\tci/cargo-deny-rollout-2026-04-27\tCloses the cargo-deny workflow gap from CARGO_DENY_TRUE_COVERAGE_2026_04_27.md (4a2a608). Adds the BytePort-template cargo-deny.yml workflow with Monday cron and workflow_dispatch.'
-  $'HexaKit\tci/cargo-deny-rollout-20260427\tCloses the cargo-deny workflow gap from CARGO_DENY_TRUE_COVERAGE_2026_04_27.md (4a2a608). Adds the cargo-deny workflow rollout branch tracked in the e0f2fc8 final summary.'
-  $'pheno\tci/cargo-deny-rollout-2026-04-27\tCloses the cargo-deny workflow gap from CARGO_DENY_TRUE_COVERAGE_2026_04_27.md (4a2a608). Adds the BytePort-template cargo-deny.yml workflow with Monday cron and workflow_dispatch.'
-  $'phenoAI\tci/cargo-deny-full-rollout-2026-04-27\tCloses the cargo-deny workflow gap from CARGO_DENY_TRUE_COVERAGE_2026_04_27.md (4a2a608). Adds starter deny.toml where needed plus the BytePort-template cargo-deny.yml workflow with Monday cron and workflow_dispatch.'
-  $'phenoData\tci/cargo-deny-full-rollout-2026-04-27\tCloses the cargo-deny workflow gap from CARGO_DENY_TRUE_COVERAGE_2026_04_27.md (4a2a608). Adds starter deny.toml where needed plus the BytePort-template cargo-deny.yml workflow with Monday cron and workflow_dispatch.'
-  $'PhenoKits\tci/cargo-deny-full-rollout-2026-04-27\tCloses the cargo-deny workflow gap from CARGO_DENY_TRUE_COVERAGE_2026_04_27.md (4a2a608). Adds starter deny.toml where needed plus the BytePort-template cargo-deny.yml workflow with Monday cron and workflow_dispatch.'
-  $'PhenoProc\tci/cargo-deny-full-rollout-2026-04-27\tCloses the cargo-deny workflow gap from CARGO_DENY_TRUE_COVERAGE_2026_04_27.md (4a2a608). Adds starter deny.toml where needed plus the BytePort-template cargo-deny.yml workflow with Monday cron and workflow_dispatch.'
-  $'PhenoRuntime\tci/cargo-deny-full-rollout-2026-04-27\tCloses the cargo-deny workflow gap from CARGO_DENY_TRUE_COVERAGE_2026_04_27.md (4a2a608). Adds starter deny.toml where needed plus the BytePort-template cargo-deny.yml workflow with Monday cron and workflow_dispatch.'
-  $'phenoShared\tci/cargo-deny-rollout-2026-04-27\tCloses the cargo-deny workflow gap from CARGO_DENY_TRUE_COVERAGE_2026_04_27.md (4a2a608). Adds the BytePort-template cargo-deny.yml workflow with Monday cron and workflow_dispatch.'
-  $'phenotype-journeys\tci/cargo-deny-full-rollout-2026-04-27\tCloses the cargo-deny workflow gap from CARGO_DENY_TRUE_COVERAGE_2026_04_27.md (4a2a608). Adds starter deny.toml where needed plus the BytePort-template cargo-deny.yml workflow with Monday cron and workflow_dispatch.'
-  $'phenotype-tooling\tci/cargo-deny-full-rollout-2026-04-27\tCloses the cargo-deny workflow gap from CARGO_DENY_TRUE_COVERAGE_2026_04_27.md (4a2a608). Adds starter deny.toml where needed plus the BytePort-template cargo-deny.yml workflow with Monday cron and workflow_dispatch.'
-  $'PhenoVCS\tci/cargo-deny-full-rollout-2026-04-27\tCloses the cargo-deny workflow gap from CARGO_DENY_TRUE_COVERAGE_2026_04_27.md (4a2a608). Adds starter deny.toml where needed plus the BytePort-template cargo-deny.yml workflow with Monday cron and workflow_dispatch.'
-  $'PlayCua\tci/cargo-deny-full-rollout-2026-04-27\tCloses the cargo-deny workflow gap from CARGO_DENY_TRUE_COVERAGE_2026_04_27.md (4a2a608). Adds starter deny.toml where needed plus the BytePort-template cargo-deny.yml workflow with Monday cron and workflow_dispatch.'
-  $'rich-cli-kit\tci/cargo-deny-full-rollout-2026-04-27\tCloses the cargo-deny workflow gap from CARGO_DENY_TRUE_COVERAGE_2026_04_27.md (4a2a608). Adds starter deny.toml where needed plus the BytePort-template cargo-deny.yml workflow with Monday cron and workflow_dispatch.'
+  $'AgilePlus\tci/cargo-deny-full-rollout-2026-04-27\t'"$BODY_FULL"
+  $'GDK\tci/cargo-deny-rollout-2026-04-27\t'"$BODY_ROLLOUT"
+  $'HeliosLab\tci/cargo-deny-rollout-2026-04-27\t'"$BODY_ROLLOUT"
+  $'HexaKit\tci/cargo-deny-rollout-20260427\t'"$BODY_ROLLOUT"
+  $'KDesktopVirt\tci/cargo-deny-full-rollout-2026-04-27\t'"$BODY_FULL"
+  $'pheno\tci/cargo-deny-rollout-2026-04-27\t'"$BODY_ROLLOUT"
+  $'phenoAI\tci/cargo-deny-full-rollout-2026-04-27\t'"$BODY_FULL"
+  $'phenoData\tci/cargo-deny-full-rollout-2026-04-27\t'"$BODY_FULL"
+  $'PhenoKits\tci/cargo-deny-full-rollout-2026-04-27\t'"$BODY_FULL"
+  $'PhenoProc\tci/cargo-deny-full-rollout-2026-04-27\t'"$BODY_FULL"
+  $'PhenoRuntime\tci/cargo-deny-full-rollout-2026-04-27\t'"$BODY_FULL"
+  $'phenoShared\tci/cargo-deny-rollout-2026-04-27\t'"$BODY_ROLLOUT"
+  $'phenotype-journeys\tci/cargo-deny-full-rollout-2026-04-27\t'"$BODY_FULL"
+  $'phenotype-tooling\tci/cargo-deny-full-rollout-2026-04-27\t'"$BODY_FULL"
+  $'PhenoVCS\tci/cargo-deny-full-rollout-2026-04-27\t'"$BODY_FULL"
+  $'PlayCua\tci/cargo-deny-full-rollout-2026-04-27\t'"$BODY_FULL"
+  $'rich-cli-kit\tci/cargo-deny-full-rollout-2026-04-27\t'"$BODY_FULL"
+  $'thegent-dispatch\tci/cargo-deny-full-rollout-2026-04-27\t'"$BODY_FULL"
+  $'thegent-workspace\tci/cargo-deny-full-rollout-2026-04-27\t'"$BODY_FULL"
+  $'Tokn\tci/cargo-deny-full-rollout-2026-04-27\t'"$BODY_FULL"
+  $'Tracely\tci/cargo-deny-full-rollout-2026-04-27\t'"$BODY_FULL"
+  $'Civis\tci/cargo-deny-add-workflow-dispatch-2026-04-27\t'"$BODY_DISPATCH"
+  $'Configra\tci/cargo-deny-add-workflow-dispatch-2026-04-27\t'"$BODY_DISPATCH"
+  $'Eidolon\tci/cargo-deny-add-workflow-dispatch-2026-04-27\t'"$BODY_DISPATCH"
+  $'eyetracker\tci/cargo-deny-add-workflow-dispatch-2026-04-27\t'"$BODY_DISPATCH"
+  $'heliosCLI\tci/cargo-deny-add-workflow-dispatch-2026-04-27\t'"$BODY_DISPATCH"
+  $'Metron\tci/cargo-deny-add-workflow-dispatch-2026-04-27\t'"$BODY_DISPATCH"
 )
 
 timestamp() {
