@@ -1,49 +1,27 @@
-# Cargo-Deny Rollout Branches Pushed — 2026-04-27 Late Session
+# Cargo-Deny Rollout Branches — 2026-04-27
 
-## Status
-3 branches pushed; PR creation deferred until gh API rate limit resets at 09:11 UTC (~25 min from this commit).
+Source truth: `CARGO_DENY_TRUE_COVERAGE_2026_04_27.md` at commit `4a2a608`.
+Template: `repos/BytePort/.github/workflows/cargo-deny.yml`.
 
-## Branches awaiting PR
-| Repo | Branch | Pushed via |
+## Pushed branches
+
+| Repo | Branch | Result |
 |---|---|---|
-| phenoShared | ci/cargo-deny-rollout-20260427 | parent-direct fresh clone |
-| HexaKit | ci/cargo-deny-rollout-20260427 | parent-direct fresh clone |
-| pheno | ci/cargo-deny-rollout-20260427 | parent-direct fresh clone |
+| GDK | `ci/cargo-deny-rollout-2026-04-27` | pushed `586c3c4`; copied workflow only |
+| HeliosLab | `ci/cargo-deny-rollout-2026-04-27` | pushed `aa22904`; stashed pre-existing `README.md` edit first |
+| pheno | `ci/cargo-deny-rollout-2026-04-27` | pushed `83d48a2`; copied workflow only |
+| phenoShared | `ci/cargo-deny-rollout-2026-04-27` | pushed `74e634a`; copied workflow only |
+| phenotype-tooling | `ci/cargo-deny-rollout-2026-04-27` | pushed `9092e28`; stashed pre-existing `docs/worklogs/` first |
 
-Each branch adds a single file (`.github/workflows/cargo-deny.yml`) using the BytePort template (which includes workflow_dispatch + push/PR/Monday-cron triggers). 31 insertions per branch.
+Each pushed commit stages exactly `.github/workflows/cargo-deny.yml` and includes
+`Co-authored-by: Codex <noreply@openai.com>`.
 
-## Skipped
-| Repo | Reason |
+## Blockers / skips
+
+| Repo | Status |
 |---|---|
-| helios-router | missing deny.toml — needs starter deny.toml before workflow can pass |
-| GDK | missing deny.toml — same |
-| AgilePlus | bare canonical (no work tree); needs different approach (worktree-based) |
-| (~18 more from missing-list) | not yet attempted |
+| AgilePlus | Local branch commit `9a4ef3e` exists, but push is blocked by pre-push hooks without bypass: TruffleHog has bare/worktree scan errors, and `agileplus-cli` integration tests fail in temp gitless dirs. Temporary worktree removed. |
+| helios-router | skipped: no local `deny.toml`; starter `deny.toml` needed before workflow rollout |
+| HexaKit | skipped: canonical path is not an active worktree (`git status` resolves to parent shelf and fails on submodule state); no local `deny.toml` |
 
-## Action when rate limit resets
-```bash
-gh pr create --repo KooshaPari/phenoShared --base main --head ci/cargo-deny-rollout-20260427 --title "ci(cargo-deny): add scheduled scan + workflow_dispatch (zero-advisory floor)" --body "Closes gap from CARGO_DENY_TRUE_COVERAGE_2026_04_27.md (4a2a608). 31-line addition copying BytePort template."
-# repeat for HexaKit, pheno
-```
-
-## Follow-up needed
-- For `helios-router` + `GDK`: add starter deny.toml before workflow rollout. Minimal template:
-  ```toml
-  [licenses]
-  allow = ["MIT", "Apache-2.0", "Apache-2.0 WITH LLVM-exception", "BSD-2-Clause", "BSD-3-Clause", "ISC", "Unicode-DFS-2016"]
-  
-  [advisories]
-  ignore = []
-  
-  [bans]
-  multiple-versions = "warn"
-  
-  [sources]
-  unknown-registry = "warn"
-  unknown-git = "warn"
-  ```
-- 17 remaining repos from CARGO_DENY_TRUE_COVERAGE list need future loop iterations.
-
-## Cross-references
-- Truth: phenotype-org-governance/org-audit-2026-04/CARGO_DENY_TRUE_COVERAGE_2026_04_27.md (4a2a608)
-- Memory: feedback_cargo_deny_real_coverage_2026_04_27.md
+PR creation deferred.
