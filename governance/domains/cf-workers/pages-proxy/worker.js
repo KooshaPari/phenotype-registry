@@ -8,6 +8,8 @@ const REPO_MAP = {
   'helioslab': 'HeliosLab',
   'focalpoint': 'FocalPoint',
   'agileplus': 'AgilePlus',
+  'hwledger': 'hwLedger',
+  'heliosapp': 'heliosApp',
 };
 
 addEventListener('fetch', event => {
