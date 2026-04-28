@@ -143,15 +143,33 @@ function html() {
       <p class="tagline">Software phenotyping &amp; agentic systems.</p>
 
       <div class="grid">
-        <p class="section-label">Subdomain Pages</p>
-        <nav class="links" aria-label="Phenotype subdomains">
+        <p class="section-label">Products</p>
+        <nav class="links" aria-label="Phenotype products">
           <a class="tech-link" href="https://tokn.phenotype.space">tokn</a>
           <a class="tech-link" href="https://thegent.phenotype.space">thegent</a>
-          <a class="tech-link" href="https://policystack.phenotype.space">policystack</a>
+          <a class="tech-link" href="https://agileplus.phenotype.space">agileplus</a>
           <a class="tech-link" href="https://hexakit.phenotype.space">hexakit</a>
           <a class="tech-link" href="https://helioslab.phenotype.space">helioslab</a>
+          <a class="tech-link" href="https://heliosapp.phenotype.space">heliosapp</a>
+          <a class="tech-link" href="https://policystack.phenotype.space">policystack</a>
           <a class="tech-link" href="https://focalpoint.phenotype.space">focalpoint</a>
-          <a class="tech-link" href="https://agileplus.phenotype.space">agileplus</a>
+          <a class="tech-link" href="https://hwledger.phenotype.space">hwledger</a>
+          <a class="tech-link" href="https://civis.phenotype.space">civis</a>
+          <a class="tech-link" href="https://pheno.phenotype.space">pheno</a>
+          <a class="tech-link" href="https://cliproxyapi.phenotype.space">cliproxyapi</a>
+        </nav>
+
+        <p class="section-label" style="margin-top:16px">Demos</p>
+        <nav class="links" aria-label="Phenotype demos">
+          <a class="tech-link" href="https://dino.phenotype.space">dino</a>
+          <a class="tech-link" href="https://parpoura.phenotype.space">parpoura</a>
+        </nav>
+
+        <p class="section-label" style="margin-top:16px">Landings</p>
+        <nav class="links" aria-label="Phenotype landings">
+          <a class="tech-link" href="https://hwledger-landing.phenotype.space">hwledger-landing</a>
+          <a class="tech-link" href="https://phenokits-landing.phenotype.space">phenokits-landing</a>
+          <a class="tech-link" href="https://projects-landing.phenotype.space">projects-landing</a>
         </nav>
       </div>
 
