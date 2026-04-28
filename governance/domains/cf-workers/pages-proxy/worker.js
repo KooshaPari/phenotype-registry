@@ -10,6 +10,16 @@ const REPO_MAP = {
   'agileplus': 'AgilePlus',
   'hwledger': 'hwLedger',
   'heliosapp': 'heliosApp',
+  'civis': 'Civis',
+  'dino': 'Dino',
+  'parpoura': 'Parpoura',
+  'agentapi': 'agentapi-plusplus',
+  'cliproxyapi': 'cliproxyapi-plusplus',
+  'kdesktopvirt': 'KDesktopVirt',
+  'pheno': 'pheno',
+  'hwledger-landing': 'hwledger-landing',
+  'phenokits-landing': 'phenokits-landing',
+  'projects-landing': 'projects-landing',
 };
 
 addEventListener('fetch', event => {
