@@ -2,6 +2,7 @@
 target/
 *.rlib
 *.so
+docs/.vitepress/dist/
 
 # Temp & runtime
 .DS_Store
