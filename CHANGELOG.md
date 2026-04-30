@@ -2,6 +2,20 @@
 
 All notable changes to phenotype-org-audits are documented here.
 
+## [Unreleased]
+
+### Added
+
+### Changed
+
+### Deprecated
+
+### Removed
+
+### Fixed
+
+### Security
+
 ## [0.0.1] - 2026-04-24
 
 ### Added
