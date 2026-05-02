@@ -15,10 +15,10 @@ jobs:
 
     steps:
       - name: Checkout phenotype-org-audits
-        uses: actions/checkout@v4
+        uses: actions/checkout@v4@11bd71901bbe5b1630ceea73d27597364c9af683
 
       - name: Checkout phenotype-tooling (aggregator)
-        uses: actions/checkout@v4
+        uses: actions/checkout@v4@11bd71901bbe5b1630ceea73d27597364c9af683
         with:
           repository: KooshaPari/phenotype-tooling
           path: ./phenotype-tooling
