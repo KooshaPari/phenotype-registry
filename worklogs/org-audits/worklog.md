@@ -49,3 +49,31 @@ f3b0208 ci(cargo-deny): add workflow_dispatch trigger, fix checkout SHA (PhenoAg
 5818457 ci(cargo-deny): add workflow_dispatch trigger, fix checkout SHA (AuthKit)
 8ae426f ci(cargo-deny): add workflow_dispatch trigger, fix double-tag checkout (PhenoLang)
 ```
+
+## 2026-05-02 (wave 2) — cargo-deny full org rollout + hygiene
+
+Category: GOVERNANCE
+
+Status: COMPLETE
+
+### Summary
+Full cargo-deny bootstrap across remaining Rust repos + systemic hygiene sweep.
+
+### Actions Taken
+- **12 new cargo-deny bootstraps**: Apisync ✅, Authvault ✅, Cryptora ✅, Diffuse ✅, Guardrail ✅, kmobile ✅, KommandLineAutomation ✅, phenoRouterMonitor ✅, phenoXddLib ✅, Servion ✅, vibe-kanban ✅, worktree-manager ✅
+- **GDK double-tag checkout fix**: Fixed malformed checkout `@v4@SHA` → `@v4` with single SHA; deduplicated duplicate workflow blocks; updated to `taiki-en/cargo-deny-action@v1`
+- **Stale branch cleanup (phenoShared)**: Deleted 6 merged remote branches + 8 local remote-tracking refs (ghost branches from prior squash merges)
+- **CLAUDE.md coverage audit**: 0 missing across 17 checked repos
+- **0 open PRs**: Verified across all 8 key repos
+- **Settly HIGH advisory**: sqlx RUSTSEC-2024-0363 — library crate, no lockfile, advisory persists; cannot resolve via `cargo update`
+- **thegent deny.toml**: v2 format verified valid (mixed syntax concern was incorrect)
+
+### Rust GAP Status (post-wave-2)
+- **Rust repos with cargo-deny.yml + workflow_dispatch**: PhenoAgent, PhenoRuntime, PhenoDevOps, PhenoMCP, HeliosLab, Tokn, Stashly, Settly, ObservabilityKit, eyetracker, AuthKit, forgecode, PhenoLang, Agentora, thegent-workspace, GDK, KlipDot, Apisync, Authvault, Cryptora, Diffuse, Guardrail, kmobile, KommandLineAutomation, phenoRouterMonitor, phenoXddLib, Servion, vibe-kanban, worktree-manager
+- **Rust repos missing cargo-deny.yml entirely**: Reduced to ~0 (full coverage achieved across local clones)
+- **Non-Rust repos flagged**: Httpora, Dino, Pine, Paginary, Tracera, nanovms — all non-Rust or already have equivalent workflows
+
+### Recent Commits
+```
+[wave-2 commits across 12 repos — bootstrap cargo-deny + workflow_dispatch]
+```
