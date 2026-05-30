@@ -30,7 +30,7 @@
 
 Notation: `A -> B` means A depends on B. Only cross-repo edges to other KooshaPari repos are shown. Internal workspace path-deps are listed as `(workspace crate)`.
 
-```
+```text
 phenotype-infra           -> (standalone IaC/spec, no code deps)
 phenotype-registry        -> PhenoSpecs, HexaKit, PhenoHandbook  [doc links]
 PhenoObservability        -> pheno (phenotype-errors), [phenotype-bus: local path]
@@ -98,7 +98,7 @@ graph TD
     PhenoProc --> pheno
     PhenoObservability --> pheno
     phenoRouterMonitor --> pheno
-    HexaKit -.-> pheno
+    pheno -.-> HexaKit
     phenodocs --> phenoShared
     phenoDesign --> phenoShared
     phenotype_registry --> PhenoSpecs
@@ -114,6 +114,7 @@ graph TD
 ## 3. Duplication Clusters
 
 ### Cluster A — LLM Routing (6 repos)
+
 | Repo | Status | Verdict |
 |------|--------|---------|
 | **phenoAI** (llm-router crate) | Active, Rust workspace | **CANONICAL** — keep, mature workspace |
@@ -124,6 +125,7 @@ graph TD
 | helioscope / helios-cli | Forks of codex-monorepo | Keep as tooling entry-point; deduplicate into single helios repo |
 
 ### Cluster B — Agent Runtimes (5 repos)
+
 | Repo | Status | Verdict |
 |------|--------|---------|
 | **Agentora** | Active, Rust, hexagonal-arch | **CANONICAL** — full skill/tool/memory/event system |
@@ -133,6 +135,7 @@ graph TD
 | thegent-sharecli | Archived | Already retired |
 
 ### Cluster C — Resilience / Circuit-Breakers (4 repos)
+
 | Repo | Status | Verdict |
 |------|--------|---------|
 | **pheno** (phenotype-retry crate) | Active workspace crate | **CANONICAL** — already inside HexaKit/pheno |
@@ -141,6 +144,7 @@ graph TD
 | phenotype-dep-guard | Active, Python | Different domain (supply chain), not resilience — reclassify as tooling |
 
 ### Cluster D — Observability / Metrics (5 repos)
+
 | Repo | Status | Verdict |
 |------|--------|---------|
 | **PhenoObservability** | Active, Rust workspace | **CANONICAL** |
@@ -150,6 +154,7 @@ graph TD
 | Profila | Archived | Already retired |
 
 ### Cluster E — Auth (3 repos)
+
 | Repo | Status | Verdict |
 |------|--------|---------|
 | **Authvault** | Active, Rust (OAuth2/JWT/RBAC) | **CANONICAL** |
@@ -157,6 +162,7 @@ graph TD
 | phenotype-auth-ts | Active, TS (OAuth2/OIDC) | Keep as TS facade; merge into phenoShared's TS layer |
 
 ### Cluster F — Shared Crate Monorepos (CRITICAL: 5 competing homes)
+
 | Repo | Crates contained | Verdict |
 |------|-----------------|---------|
 | **HexaKit** | 30+ phenotype-* crates (canonical infra toolkit per description) | **CANONICAL HOME** |
@@ -166,6 +172,7 @@ graph TD
 | phenoRouterMonitor | 15 path-deps to phenotype-* crates (local copies!) | **DUPLICATE** — remove local copies, depend on HexaKit |
 
 ### Cluster G — Spec / Docs Registries (4 repos)
+
 | Repo | Verdict |
 |------|---------|
 | **phenotype-registry** | CANONICAL master index (links PhenoSpecs + HexaKit + PhenoHandbook) |
@@ -174,6 +181,7 @@ graph TD
 | phenoStandards | **DEPRECATED** (self-marked); already pointing to HexaKit/governance — retire |
 
 ### Cluster H — Config / Settings (3 repos)
+
 | Repo | Verdict |
 |------|---------|
 | **Settly** | CANONICAL (Rust, layered configs, validation) |
@@ -181,13 +189,46 @@ graph TD
 | pheno/phenotype-config-core crate | Merge into Settly as Rust workspace crate |
 
 ### Cluster I — *Kit SDKs (8 repos: too many thin wrappers)
-AuthKit, DataKit, McpKit, ObservabilityKit, ResilienceKit, TestingKit, PlatformKit, PhenoKits — all thin Python/Go wrappers around Rust canonical cores. Target: consolidate all Python SDKs into a single `phenotype-python-sdk` package with sub-modules; consolidate Go SDKs into `phenotype-go-sdk`.
+
+All thin Python/Go wrappers around Rust canonical cores. Target: consolidate Python SDKs into `phenotype-python-sdk`; Go SDKs into `phenotype-go-sdk`.
+
+| Repo | Status | Verdict |
+|------|--------|---------|
+| AuthKit | Active, Python SDK | Merge into phenotype-python-sdk/auth |
+| DataKit | Active, Python SDK | Merge into phenotype-python-sdk/data |
+| McpKit | Active, Python SDK | Merge into phenotype-python-sdk/mcp |
+| ObservabilityKit | Active, Python SDK | Merge into phenotype-python-sdk/observability |
+| ResilienceKit | Active, Python SDK | Merge into phenotype-python-sdk/resilience |
+| TestingKit | Active, Python SDK | Merge into phenotype-python-sdk/testing |
+| PlatformKit | Active, Go tooling | Merge into phenotype-go-sdk/platform |
+| PhenoKits | Active, Python collection | Merge into phenotype-python-sdk as package index |
 
 ### Cluster J — Helios* (5 repos)
-helioscope, helios-cli, heliosApp, heliosBench, HeliosLab — all either forks of codex-monorepo or helios-specific tooling. Target: keep helios-cli as the single codex-fork entry point; retire helioscope (overlapping CLI), merge heliosBench into phenotype-tooling, merge heliosApp into phenotype-tooling dashboard.
+
+All either forks of codex-monorepo or helios-specific tooling.
+
+| Repo | Status | Verdict |
+|------|--------|---------|
+| **helios-cli** | Active, Rust fork of codex-monorepo | **CANONICAL** — keep as single codex-fork entry point |
+| helioscope | Active, Rust fork of codex-monorepo | Retire — overlaps helios-cli; same upstream |
+| heliosApp | Active, TypeScript | Merge into phenotype-tooling dashboard subdir |
+| heliosBench | Active, Python benchmarks | Merge into phenotype-tooling benchmarks |
+| HeliosLab | Active, Rust/TS research fork | Keep as research lab (distinct from helios-cli) |
 
 ### Cluster K — Landing Pages (8 repos)
-agileplus-landing, byteport-landing, hwledger-landing, odin-landing, phenokits-landing, projects-landing, thegent-landing, AppGen. All Astro static sites. Target: consolidate into single `phenotype-landing` monorepo with per-product pages as routes/packages.
+
+All Astro static sites with near-identical structure. Target: consolidate into single `phenotype-landing` Astro monorepo.
+
+| Repo | Status | Verdict |
+|------|--------|---------|
+| agileplus-landing | Active, Astro | Merge into phenotype-landing/packages/agileplus |
+| byteport-landing | Active, Astro | Merge into phenotype-landing/packages/byteport |
+| hwledger-landing | Active, Astro | Merge into phenotype-landing/packages/hwledger |
+| odin-landing | Archived | Skip (archived) |
+| phenokits-landing | Active, Astro | Merge into phenotype-landing/packages/phenokits |
+| projects-landing | Active, Astro | Merge into phenotype-landing/packages/projects (auto-gen portfolio) |
+| thegent-landing | Active, Astro | Merge into phenotype-landing/packages/thegent |
+| AppGen | Active, template | Extract as phenotype-landing scaffold template |
 
 ---
 
@@ -233,7 +274,7 @@ These sub-projects live INSIDE repos but are reusable enough to extract or merge
 
 #### Canonical Target Repo Set (~45)
 
-```
+```text
 GOVERNANCE / SPEC / DOCS (5)
   phenotype-infra          — IaC, ADRs, runbooks, governance
   phenotype-registry       — master index
