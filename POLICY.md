@@ -1,6 +1,6 @@
 # Phenotype Org Policy (Enforcement Surface)
 
-This repo is the **ENFORCEMENT** member of the spec/governance spine. It is the home of the **shared/reusable policy workflows** and the **`deny.toml` / license baseline** that sibling repos consume. It is forward-looking; past audits live under [`docs/history/`](docs/history/).
+This repo is the **ENFORCEMENT** member of the spec/governance spine. It owns **POLICY** — the canonical [`deny.toml`](deny.toml) / license baseline. The reusable workflow **MECHANISM** lives in [phenotype-tooling](https://github.com/KooshaPari/phenotype-tooling) and *consumes* this policy. Split: **governance owns WHAT (policy), tooling owns HOW (the workflow).** Forward-looking; past audits live under [`docs/history/`](docs/history/).
 
 ## The 4-role spine
 
@@ -9,27 +9,30 @@ This repo is the **ENFORCEMENT** member of the spec/governance spine. It is the 
 | [phenotype-registry](https://github.com/KooshaPari/phenotype-registry) | **INDEX** — canonical ecosystem map ([ECOSYSTEM_MAP.md](https://github.com/KooshaPari/phenotype-registry/blob/main/ECOSYSTEM_MAP.md)) |
 | [PhenoSpecs](https://github.com/KooshaPari/PhenoSpecs) | **ADRs / API contracts / specs** |
 | [PhenoHandbook](https://github.com/KooshaPari/PhenoHandbook) | **CONVENTIONS / patterns** |
-| **phenotype-org-governance** (this repo) | **ENFORCEMENT** — reusable policy workflows + deny baseline |
+| **phenotype-org-governance** (this repo) | **ENFORCEMENT** — `deny.toml`/license + advisory policy baseline (workflow mechanism lives in phenotype-tooling) |
 
 ## Enforced policies
 
-| Policy | Surface | How siblings consume it |
-|--------|---------|--------------------------|
-| Supply-chain (cargo-deny: advisories/bans/licenses/sources) | [`.github/workflows/reusable-cargo-deny.yml`](.github/workflows/reusable-cargo-deny.yml) + [`deny.toml`](deny.toml) | `uses: KooshaPari/phenotype-org-governance/.github/workflows/reusable-cargo-deny.yml@main` |
+| Policy | Owner (this repo) | Mechanism (where siblings call) |
+|--------|-------------------|----------------------------------|
+| Supply-chain (cargo-deny: advisories/bans/licenses/sources) | [`deny.toml`](deny.toml) — canonical license/advisory baseline | `uses: KooshaPari/phenotype-tooling/.github/workflows/reusable/cargo-deny.yml@main` (fetches this `deny.toml` by default) |
+| Secret scanning | (config/policy) | `uses: KooshaPari/phenotype-tooling/.github/workflows/reusable/trufflehog.yml@main` — governance's own [`trufflehog.yml`](.github/workflows/trufflehog.yml) consumes it |
 | OpenSSF Scorecard | [`.github/workflows/scorecard.yml`](.github/workflows/scorecard.yml) | runs here; pattern copied per repo |
-| Secret scanning | [`.github/workflows/trufflehog.yml`](.github/workflows/trufflehog.yml) | runs here; pattern copied per repo |
 | Org-wide local sweep (billing-free) | [`scripts/cargo-deny-org-weekly.sh`](scripts/cargo-deny-org-weekly.sh) | run locally across all repos |
 
 ### Consuming the cargo-deny baseline
+
+The reusable workflow lives in **phenotype-tooling** and pulls this repo's `deny.toml` as the default policy (a caller that ships its own `deny.toml` overrides it):
 
 ```yaml
 # .github/workflows/policy.yml in a sibling Rust repo
 jobs:
   cargo-deny:
-    uses: KooshaPari/phenotype-org-governance/.github/workflows/reusable-cargo-deny.yml@main
+    uses: KooshaPari/phenotype-tooling/.github/workflows/reusable/cargo-deny.yml@main
+    # use-org-policy defaults true → fetches phenotype-org-governance /deny.toml @ main
 ```
 
-The license allowlist (`deny.toml`) is permissive-only (MIT/Apache-2.0/BSD/ISC/Unicode/Zlib/CC0). Adding a license is a deliberate, reviewed change here — not per repo.
+This repo's [`deny.toml`](deny.toml) is the **single policy source** (kept at repo root so the raw-URL fetch is stable). The license allowlist is permissive-only (MIT/Apache-2.0/BSD/ISC/Unicode/Zlib/CC0); adding a license is a deliberate, reviewed change **here** — not per repo. There is intentionally **no** reusable-cargo-deny workflow in this repo: the mechanism is owned by phenotype-tooling to avoid competing copies.
 
 ## CI hygiene baseline
 
