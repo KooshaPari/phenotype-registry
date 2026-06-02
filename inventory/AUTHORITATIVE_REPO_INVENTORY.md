@@ -57,7 +57,7 @@ Actual: 165 | Target: 132 | Delta: +33
 | Guardrail | https://github.com/KooshaPari/Guardrail | PUBLIC | ✓ | GITHUB-ONLY |
 | HeliosLab | https://github.com/KooshaPari/HeliosLab.git | PUBLIC |  | LOCAL+GITHUB |
 | HexaKit | https://github.com/KooshaPari/HexaKit | PUBLIC |  | GITHUB-ONLY |
-| Httpora | https://github.com/KooshaPari/Httpora | PUBLIC |  | GITHUB-ONLY |
+| Httpora | https://github.com/KooshaPari/Httpora | PUBLIC | ✓ (archived 2026-06-02 — uninitialized stub, superseded) | GITHUB-ONLY |
 | KDesktopVirt | https://github.com/KooshaPari/KDesktopVirt.git | PUBLIC |  | LOCAL+GITHUB |
 | KVirtualStage | https://github.com/KooshaPari/KVirtualStage | PUBLIC | ✓ | GITHUB-ONLY |
 | KWatch | https://github.com/KooshaPari/KWatch | PUBLIC | ✓ | GITHUB-ONLY |
@@ -158,7 +158,7 @@ Actual: 165 | Target: 132 | Delta: +33
 | org-github | git@github.com:KooshaPari/.github.git | UNKNOWN |  | LOCAL-HAS-UNKNOWN-REMOTE |
 | phench | <no-remote> | UNKNOWN |  | LOCAL-ONLY-NO-REMOTE |
 | pheno | https://github.com/KooshaPari/pheno | PUBLIC |  | GITHUB-ONLY |
-| pheno-sdk | https://github.com/KooshaPari/pheno-sdk | PUBLIC | ✓ | GITHUB-ONLY |
+| pheno-sdk | https://github.com/KooshaPari/pheno-sdk | PUBLIC | ✓ (archived 2026-06-02 — empty placeholder, 0 dependents, superseded) | GITHUB-ONLY |
 | phenoAI | https://github.com/KooshaPari/phenoAI | PUBLIC |  | GITHUB-ONLY |
 | phenoData | https://github.com/KooshaPari/phenoData | PUBLIC |  | GITHUB-ONLY |
 | phenoDesign | https://github.com/KooshaPari/phenoDesign.git | PUBLIC |  | LOCAL+GITHUB |
