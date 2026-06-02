@@ -5,6 +5,10 @@ on:
     # Run at 9am ET (14:00 UTC) on 1st of Jan, Apr, Jul, Oct
     - cron: '0 14 1 1,4,7,10 *'
   workflow_dispatch:
+  # Federation entrypoint: the org-wide reusable-workflow federation can invoke
+  # the quarterly audit on demand (e.g. an ad-hoc audit wave) via:
+  #   uses: KooshaPari/phenotype-org-audits/.github/workflows/quarterly-audit.yml@main
+  workflow_call:
 
 jobs:
   audit:
@@ -15,10 +19,10 @@ jobs:
 
     steps:
       - name: Checkout phenotype-org-audits
-        uses: actions/checkout@v4@11bd71901bbe5b1630ceea73d27597364c9af683
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
 
       - name: Checkout phenotype-tooling (aggregator)
-        uses: actions/checkout@v4@11bd71901bbe5b1630ceea73d27597364c9af683
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         with:
           repository: KooshaPari/phenotype-tooling
           path: ./phenotype-tooling

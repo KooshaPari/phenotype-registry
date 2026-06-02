@@ -11,7 +11,11 @@ jobs:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         with:
           fetch-depth: 0
-      - uses: trufflehog/actions/setup@main
-      - run: trufflehog github --only-verified --no-update
-        env:
-          GH_TOKEN: \${{ secrets.GITHUB_TOKEN }}
+      # Canonical TruffleHog action (filesystem scan of the checkout). The prior
+      # `trufflehog/actions/setup@main` step referenced a non-existent action
+      # ("Unable to resolve action trufflehog/actions, repository not found"),
+      # which failed the job on every run including main.
+      - uses: trufflesecurity/trufflehog@main
+        with:
+          path: ./
+          extra_args: --only-verified
