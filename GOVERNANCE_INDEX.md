@@ -1,6 +1,10 @@
 # Phenotype Governance Index
 
-This is the top-level navigation map for `phenotype-org-governance`.
+**Forward (active policy):** start at [`POLICY.md`](POLICY.md) — enforced policies + reusable workflows.
+**Backward (history):** past audits, session logs, and dashboards now live under [`docs/history/`](docs/history/).
+**Ecosystem index:** the canonical map of all repos is [phenotype-registry/ECOSYSTEM_MAP.md](https://github.com/KooshaPari/phenotype-registry/blob/main/ECOSYSTEM_MAP.md) — this repo enforces, the registry indexes.
+
+This is the top-level navigation map for `phenotype-org-governance`. The retrospective sections below now resolve under `docs/history/` (the former `governance/` and `org-audit-2026-04/` trees were moved there).
 
 Current local document count:
 

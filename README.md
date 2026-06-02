@@ -1,15 +1,24 @@
 # Phenotype-Org Governance
 
-Source of truth for organizational policies, audit trails, and operational runbooks.  
-Navigate by status first, then by domain.
+The **ENFORCEMENT** member of the spec/governance spine: home of the shared/reusable policy workflows and the `deny.toml`/license baseline that sibling repos consume. Start at **[POLICY.md](POLICY.md)**.
+
+## The 4-role spine
+
+This repo enforces; it does not index, decide, or document conventions — each of those has its own home.
+
+| Repo | Role |
+|------|------|
+| [phenotype-registry](https://github.com/KooshaPari/phenotype-registry) | **INDEX** — canonical ecosystem map ([ECOSYSTEM_MAP.md](https://github.com/KooshaPari/phenotype-registry/blob/main/ECOSYSTEM_MAP.md)) |
+| [PhenoSpecs](https://github.com/KooshaPari/PhenoSpecs) | **ADRs / API contracts / specs** |
+| [PhenoHandbook](https://github.com/KooshaPari/PhenoHandbook) | **CONVENTIONS / patterns** |
+| **phenotype-org-governance** (this repo) | **ENFORCEMENT** — reusable policy workflows + deny baseline |
 
 ## Current State
 
-- **`/governance/`** — Live policies, active rollouts, and domain standards.
-  - `domains/` — Functional-area policies (e.g., data, security, network).
-  - `rollouts/` — Phase plans, change-management trackers, sprint records.
-  - `templates/` — Document schemas; copy these when adding docs.
-- **`/org-audit-2026-04/`** — Audit snapshot for the April 2026 hardening sprint. Reference only; do not edit. See `SUPERSEDED.md` for replaced versions.
+- **[`POLICY.md`](POLICY.md)** — forward-looking: the enforced policies and how siblings consume them.
+- **[`.github/workflows/reusable-cargo-deny.yml`](.github/workflows/reusable-cargo-deny.yml)** + **[`deny.toml`](deny.toml)** — the consumable supply-chain policy surface.
+- **[`scripts/`](scripts/)** — billing-free org-wide local sweep (`cargo-deny-org-weekly.sh`).
+- **[`docs/history/`](docs/history/)** — archived audit waves, session logs, and dashboards (the former `governance/`, `org-audit-2026-04/`, and `changes/` trees). Reference only; not active policy.
 
 ## Authority & Supersession
 
