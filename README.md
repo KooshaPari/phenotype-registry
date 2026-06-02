@@ -1,3 +1,6 @@
+> **Work state:** MAINTENANCE · **Progress:** `██████░░░░ 60%`
+> Quarterly org-audit tooling; CI repaired + federatable via workflow_call. · updated 2026-06-02
+
 # phenotype-org-audits
 
 Central inventory and metrics hub for the Phenotype organization. Comprehensive audit-history tracking across **165 unique repositories** (48 local + 94 GitHub-only + 23 local-only), with quarterly refresh baseline and systemic-issue governance.
