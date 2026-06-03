@@ -47,5 +47,7 @@ jobs:
           chmod +x /tmp/conventions-lint.sh
       - name: Run conventions-lint
         env:
-          STRICT: ${{ inputs.strict && '1' || '0' }}
-        run: /tmp/conventions-lint.sh .
+          STRICT_IN: ${{ inputs.strict }}
+        run: |
+          if [ "$STRICT_IN" = "true" ]; then export STRICT=1; else export STRICT=0; fi
+          /tmp/conventions-lint.sh .
