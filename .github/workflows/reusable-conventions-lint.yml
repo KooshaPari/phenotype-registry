@@ -1,0 +1,51 @@
+# Reusable conventions-lint policy workflow.
+# Turns the PhenoHandbook documented conventions into a checkable CI gate.
+# Sibling repos enforce by calling:
+#
+#   jobs:
+#     conventions:
+#       uses: KooshaPari/phenotype-org-governance/.github/workflows/reusable-conventions-lint.yml@main
+#       with:
+#         strict: false   # set true to fail on warnings too
+#
+# This repo owns the POLICY (the checks in scripts/conventions-lint.sh); the
+# caller runs it against their own checkout.
+name: conventions-lint (reusable)
+
+on:
+  workflow_call:
+    inputs:
+      strict:
+        description: Treat warnings as failures.
+        type: boolean
+        required: false
+        default: false
+      governance-ref:
+        description: Ref of phenotype-org-governance to pull the lint script from.
+        type: string
+        required: false
+        default: main
+
+permissions:
+  contents: read
+
+concurrency:
+  group: conventions-lint-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  conventions-lint:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout caller repo
+        uses: actions/checkout@v4
+      - name: Fetch conventions-lint policy script
+        run: |
+          curl -fsSL \
+            "https://raw.githubusercontent.com/KooshaPari/phenotype-org-governance/${{ inputs.governance-ref }}/scripts/conventions-lint.sh" \
+            -o /tmp/conventions-lint.sh
+          chmod +x /tmp/conventions-lint.sh
+      - name: Run conventions-lint
+        env:
+          STRICT: ${{ inputs.strict && '1' || '0' }}
+        run: /tmp/conventions-lint.sh .

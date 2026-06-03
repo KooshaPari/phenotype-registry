@@ -18,7 +18,21 @@ This repo is the **ENFORCEMENT** member of the spec/governance spine. It owns **
 | Supply-chain (cargo-deny: advisories/bans/licenses/sources) | [`deny.toml`](deny.toml) — canonical license/advisory baseline | `uses: KooshaPari/phenotype-tooling/.github/workflows/reusable/cargo-deny.yml@main` (fetches this `deny.toml` by default) |
 | Secret scanning | (config/policy) | `uses: KooshaPari/phenotype-tooling/.github/workflows/reusable/trufflehog.yml@main` — governance's own [`trufflehog.yml`](.github/workflows/trufflehog.yml) consumes it |
 | OpenSSF Scorecard | [`.github/workflows/scorecard.yml`](.github/workflows/scorecard.yml) | runs here; pattern copied per repo |
+| **Org conventions** (PhenoHandbook patterns made checkable: work-state header, .env-gitignored/.env.example, single ADR home, task runner, CI hygiene, phantom-action rot) | [`scripts/conventions-lint.sh`](scripts/conventions-lint.sh) — the checks | `uses: KooshaPari/phenotype-org-governance/.github/workflows/reusable-conventions-lint.yml@main` |
 | Org-wide local sweep (billing-free) | [`scripts/cargo-deny-org-weekly.sh`](scripts/cargo-deny-org-weekly.sh) | run locally across all repos |
+
+### Consuming the conventions-lint gate
+
+Turns the [PhenoHandbook](https://github.com/KooshaPari/PhenoHandbook) documented conventions into a checkable CI gate. Warnings are informational; `FAIL` checks (committed `.env`, dual ADR dirs, phantom-action refs) break the build. Set `strict: true` to fail on warnings too.
+
+```yaml
+# .github/workflows/conventions.yml in any sibling repo
+jobs:
+  conventions:
+    uses: KooshaPari/phenotype-org-governance/.github/workflows/reusable-conventions-lint.yml@main
+```
+
+This repo dogfoods it via [`.github/workflows/conventions-lint.yml`](.github/workflows/conventions-lint.yml).
 
 ### Consuming the cargo-deny baseline
 
