@@ -1,3 +1,6 @@
+> **Work state:** ACTIVE · **Progress:** `████████░░ 80%`
+> ENFORCEMENT surface — deny.toml policy baseline (consumed by tooling's reusable); history archived to docs/history/ · updated 2026-06-02
+
 # Phenotype-Org Governance
 
 The **ENFORCEMENT** member of the spec/governance spine: home of the canonical **`deny.toml`/license + advisory baseline** that sibling repos consume. The reusable workflow *mechanism* lives in [phenotype-tooling](https://github.com/KooshaPari/phenotype-tooling) and consumes this policy (governance owns WHAT, tooling owns HOW). Start at **[POLICY.md](POLICY.md)**.
