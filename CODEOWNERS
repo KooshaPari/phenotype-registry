@@ -1,0 +1,4 @@
+# CODEOWNERS — phenome-wide default
+# Per-repo CODEOWNERS may override or extend these rules.
+
+* @KooshaPari
