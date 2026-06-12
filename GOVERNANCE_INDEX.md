@@ -10,10 +10,14 @@ Current local document count:
 
 ```bash
 find . -name "*.md" -not -path "./node_modules/*" -not -path "./.git/*" 2>/dev/null | wc -l
-# 283
+# 284
 ```
 
 Use this file first, then follow the directory-level indexes for detail.
+
+## Org Product Doctrine
+
+- [`governance/org-strategy/org-product-doctrine.md`](governance/org-strategy/org-product-doctrine.md) — authoritative org-level product posture for naming, consolidation, registry/index behavior, and OSS-market framing. Read this before proposing new repos or rename/split plans.
 
 ## Org Audits
 

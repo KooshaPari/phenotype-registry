@@ -59,6 +59,14 @@ replaced_by: <path-to-new-doc>
 
 When conflicting guidance appears, the document with the **latest `effective_date:`** in `governance/` wins.
 
+## Mandatory Reading (Coding Agents)
+
+Before proposing a new repo, crate, package, doc, workflow, or registry entry — and before consuming any of the ECOSYSTEM_MAP verdicts as a basis for action — read:
+
+- [`governance/org-strategy/org-product-doctrine.md`](governance/org-strategy/org-product-doctrine.md) — **AUTHORITATIVE** org product posture (effective 2026-06-11). Covers super-bundle SDKs, repo naming, registry pattern, the "treat every repo as a product competing for OSS share" rule, and the anti-pattern list. If you find yourself in conflict with this file, surface the conflict in the PR; do not silently pick a side.
+
+The doctrine is enforced alongside `POLICY.md`. `POLICY.md` owns **HOW** (cargo-deny, conventions-lint, reusable workflows); the doctrine owns **WHAT** (the product shape of the org).
+
 ## Adding New Documents
 
 1. Copy the appropriate template from `governance/templates/`
