@@ -11,7 +11,7 @@ PRs link back here; this file links forward to them.
 
 | # | Merge | Members | Verdict | Plan |
 |---|-------|---------|---------|------|
-| 1 | **GFX SDK** | phenotype-voxel + phenotype-terrain + phenotype-water | Merge into one branded graphics SDK collection | per-repo PR |
+| 1 | **GFX SDK** | phenotype-voxel + phenotype-terrain + phenotype-water | ✅ Consolidated → **KooshaPari/phenotype-gfx** (polyglot monorepo + umbrella, history-preserving subtree; voxel=Rust, terrain/water=C#; unify at data layer via spec/interop.md) | done 2026-06-16 |
 | 2 | **Auth dedup** | authvault + duplicate auth repos | Collapse into canonical `authvault` | per-repo PR |
 | 3 | **Generic-lib rescope** | phenoShared + py/rs/go util shards | Reverse of merge — split or bulk-up over-generic libs into named, purpose-scoped packages | per-repo PR |
 
