@@ -63,7 +63,7 @@ Legend: ✅ = safe to archive once its merge PR is green · 🔶 = blocked, must
 |--------|--------------------|---------|
 | Metron | (none) | ✅ safe → **ARCHIVED** 2026-06-17 |
 | FocalPoint | (none) | ✅ safe |
-| phenoXddLib | (none) | ✅ safe |
+| phenoXddLib | (none) | ✅ safe → **ARCHIVED** 2026-06-17 |
 | Traceon | **PhenoObservability** | 🔶 repoint PhenoObservability → HexaKit `tracingkit` crate |
 | Stashly | **Pyron** | 🔶 repoint Pyron → HexaKit `stashly` crate |
 | Settly | **Pyron** | 🔶 repoint Pyron → HexaKit `settly` crate |
@@ -90,7 +90,7 @@ Legend: ✅ = safe to archive once its merge PR is green · 🔶 = blocked, must
 | Source | External dependents | Verdict |
 |--------|--------------------|---------|
 | heliosApp | (none) | ✅ safe |
-| nanovms | (none external — only phenoShared, itself absorbed into phenodocs) | ✅ safe |
+| nanovms | (none external — only phenoShared, itself absorbed into phenodocs) | ✅ safe → **ARCHIVED** 2026-06-17 (tooling/crates/nanovms) |
 | PolicyStack | (none — `policy-federation`) | ✅ safe |
 | worktree-manager | **PhenoVCS** | ✅ absorbed into PhenoVCS (2026-06-16); source repo deleted |
 | heliosBench | **helios-router, helios-cli** | 🔶 repoint helios-router + helios-cli → phenotype-tooling bench |
@@ -113,7 +113,7 @@ Legend: ✅ = safe to archive once its merge PR is green · 🔶 = blocked, must
 
 | Source | External dependents | Verdict |
 |--------|--------------------|---------|
-| phenoDesign | (none — `@kooshapari/design`) | ✅ safe |
+| phenoDesign | (none — `@kooshapari/design`) | ✅ safe → **ARCHIVED** 2026-06-17 |
 | phenoShared | none via real npm name `@phenotype/shared-utils`; legacy textual refs in DataKit/ObservabilityKit/TestingKit/PhenoObservability (all either absorbed this wave or repointed under ObsKit row) — **verify no live import before archiving** | ✅ safe (verify) |
 
 ### Must stay standalone (per plan, NOT archived)
@@ -122,7 +122,7 @@ phenotype-auth-ts, HeliosLab, Conft, PhenoMCP, PhenoSpecs — not part of this w
 
 ---
 
-## Archive wave execution (2026-06-17, Lane G)
+## Archive wave execution (2026-06-17, Lane G + Batch 3)
 
 | Repo | Action | Evidence |
 |------|--------|----------|
@@ -130,14 +130,19 @@ phenotype-auth-ts, HeliosLab, Conft, PhenoMCP, PhenoSpecs — not part of this w
 | `KooshaPari/PhenoKits` | archived | pre-existing; phenokits-commons #3 merged |
 | `KooshaPari/Metron` | archived | post PhenoObservability #157 (metrickit) |
 | ObservabilityKit | N/A (package only) | canonical: `phenotype-python-sdk` + PO cleanup |
+| `KooshaPari/nanovms` | pre-archived | Batch 3; subtree in `phenotype-tooling/crates/nanovms` |
+| `KooshaPari/phenoDesign` | pre-archived | Batch 3; absorbed into phenodocs (`@kooshapari/design`) |
+| `KooshaPari/phenoXddLib` | pre-archived | Batch 3; safe per HexaKit shortlist |
+| `KooshaPari/portage` | pre-archived | Batch 3; upstream Gentoo fork, no DOMAIN_ROLES entry |
 
 ---
 
 ## Archive Shortlist Summary
 
 **SAFE after merge (12)** — no external dependents:
-`Metron`, `FocalPoint`, `phenoXddLib`, `DataKit`, `ResilienceKit`, `TestingKit`, `PhenoKits`,
-`heliosApp`, `nanovms`, `PolicyStack`, `PhenoProc`, `phenoDesign`, plus `phenoShared` (verify).
+`Metron` ✅, `FocalPoint`, `phenoXddLib` ✅, `DataKit`, `ResilienceKit`, `TestingKit`, `PhenoKits` ✅,
+`heliosApp`, `nanovms` ✅, `PolicyStack`, `PhenoProc` ✅, `phenoDesign` ✅, plus `phenoShared` (verify).
+**Batch 3 extras (no absorption target):** `portage` ✅ pre-archived.
 
 **BLOCKED-BY-DEPS (13)** — repoint listed dependents first, then archive:
 
