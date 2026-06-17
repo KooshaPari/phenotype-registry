@@ -36,6 +36,11 @@ project structure.
 3. HexaKit templates scaffold projects that follow those patterns.
 4. Implementation repos link back to the source spec and pattern decisions.
 
+## Language stack
+
+See [`LANGUAGE_STACK.md`](../LANGUAGE_STACK.md) for core (Rust/Zig/Mojo), justified Go edges,
+Python 3.14+uv / Bun+TS facades, and deferred repos (GDK, hwLedger, FocalPoint, KaskMan).
+
 ---
 
 ## Rich Media Stubs

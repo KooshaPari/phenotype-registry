@@ -24,6 +24,8 @@ Role split for the spec/governance spine (so indexes stop competing):
 
 **Boundary ownership (capability SSOT):** `BOUNDARY_OWNERS.md` — which repo owns each cross-cutting boundary (scaffold vs SDK vs domain workspace), delete/archive gates, and supersessions to absorption-wave docs. Use it when retiring archived repos; file parity alone is insufficient.
 
+**Language stack (core vs edges):** `LANGUAGE_STACK.md` — Rust/Zig/Mojo core, justified Go edges, Python 3.14+uv / Bun+TS7 / C#·Java facades; deferred “schizo tier” repos (GDK, hwLedger, FocalPoint, KaskMan).
+
 ---
 
 ## 1. Role Classification (111 repos)
@@ -45,6 +47,17 @@ Role split for the spec/governance spine (so indexes stop competing):
 | **research / lab** | 2 | HeliosLab, portage |
 
 \* archived · worktree-manager absorbed into PhenoVCS (repo deleted 2026-06-16)
+
+### 1.1 Deferred repos (schizo tier — no rationalization until fleet complete)
+
+Per `LANGUAGE_STACK.md`. **No** absorption audits, gap ports, delete/unarchive, or HexaKit merges for these until explicitly un-deferred:
+
+| Repo | Archive? | Policy |
+|------|----------|--------|
+| **GDK** | Yes | **Skip entirely** — no boundary work |
+| **KaskMan** | Yes | Pet R&D platform — last priority |
+| **hwLedger** | No | Product deferred |
+| **FocalPoint** | No | Deferred; supersedes “merge → HexaKit policy module” until un-deferred |
 
 ---
 

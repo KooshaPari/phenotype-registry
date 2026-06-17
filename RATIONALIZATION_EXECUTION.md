@@ -41,11 +41,13 @@ Legend: ✅ = safe to archive once its merge PR is green · 🔶 = blocked, must
 > **PhenoObservability**, not HexaKit workspace members. HexaKit keeps **template/scaffold mirrors only**
 > (`templates/hexagon/rust/{metrickit,tracingkit}`). See `BOUNDARY_OWNERS.md`. Rows below remain for merge-wave
 > dependency tracking until consumers are repointed.
+>
+> **Deferral (2026-06-16):** **FocalPoint** → `LANGUAGE_STACK.md` schizo tier — **no merge** until fleet complete.
 
 | Source | External dependents | Verdict |
 |--------|--------------------|---------|
 | Metron | (none) | ✅ safe |
-| FocalPoint | (none) | ✅ safe |
+| FocalPoint | (none) | ⏸ deferred — see `LANGUAGE_STACK.md` (was ✅ safe → HexaKit) |
 | phenoXddLib | (none) | ✅ safe |
 | Traceon | **PhenoObservability** | 🔶 repoint PhenoObservability → HexaKit `tracingkit` crate |
 | Stashly | **Pyron** | 🔶 repoint Pyron → HexaKit `stashly` crate |

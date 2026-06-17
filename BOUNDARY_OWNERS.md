@@ -135,6 +135,7 @@ DELETE archived repo  IFF:
 ## References
 
 - `ECOSYSTEM_MAP.md` — live repo index (wins on role disagreements)
+- `LANGUAGE_STACK.md` — core (Rust/Zig/Mojo) vs edge languages vs deferred repos
 - `docs/registries.md` — HexaKit scaffold role
 - `RATIONALIZATION_EXECUTION.md` — absorption wave (§1 partially superseded here for obs libs)
 - Open gap ports: [phenokits-commons#3](https://github.com/KooshaPari/phenokits-commons/pull/3), [Agentora#79](https://github.com/KooshaPari/Agentora/pull/79)
