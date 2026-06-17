@@ -38,8 +38,10 @@ and library research into one reference surface.
 | [ZERO_LOOP_ECOSYSTEM_PLAN](./rationalization/ZERO_LOOP_ECOSYSTEM_PLAN.md) | Master plan: metrics, phases, PR fleet, spec catalog |
 | [ECOSYSTEM_DAG](./rationalization/ECOSYSTEM_DAG.md) | 20-lane parallel recipe with deps |
 | [SESSION_ARTIFACT_PROTOCOL](./rationalization/SESSION_ARTIFACT_PROTOCOL.md) | Resumable session folder contract |
-| [BOUNDARY_OWNERS](../BOUNDARY_OWNERS.md) | Capability SSOT (repo root) |
-| [ADR-004..006](./adr/) | Staging vs canonical, AgilePlus, zero-loop sessions |
+| [ADR-004 Staging](./adr/ADR-004-absorption-staging-vs-canonical.md) | Absorption staging vs canonical |
+| [ADR-005 AgilePlus](./adr/ADR-005-agileplus-governance-boundary.md) | AgilePlus governance boundary |
+| [ADR-006 Zero-Loop](./adr/ADR-006-zero-loop-agent-session.md) | Zero-loop agent sessions |
+| [BOUNDARY_OWNERS](https://github.com/KooshaPari/phenotype-registry/blob/main/BOUNDARY_OWNERS.md) | Capability SSOT (repo root) |
 
 ## Operating Contract
 
