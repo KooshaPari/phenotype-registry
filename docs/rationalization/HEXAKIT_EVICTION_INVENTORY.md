@@ -64,10 +64,10 @@ until consumer repoint PRs land (Agentora, PhenoObservability vendor/, AgilePlus
 
 | Crate | Action | PR |
 |-------|--------|-----|
-| `phenotype-logging` | workspace exclude + git dep | HexaKit TBD |
-| `phenotype-time` | workspace exclude + git dep | HexaKit TBD |
-| `phenotype-state-machine` | workspace exclude + git dep | HexaKit TBD |
-| `phenotype-policy-engine` | workspace exclude + git dep | HexaKit TBD |
+| `phenotype-logging` | workspace exclude + git dep | HexaKit #258 |
+| `phenotype-time` | workspace exclude + git dep | HexaKit #258 |
+| `phenotype-state-machine` | workspace exclude + git dep | HexaKit #258 |
+| `phenotype-policy-engine` | workspace exclude + git dep | HexaKit #258 |
 
 **Keep in HexaKit short-term (scaffold-adjacent):**
 

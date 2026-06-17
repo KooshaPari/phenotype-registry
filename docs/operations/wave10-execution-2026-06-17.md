@@ -6,10 +6,10 @@
 
 | Crate | Target | PR |
 |-------|--------|-----|
-| `phenotype-logging` | phenoShared | TBD |
-| `phenotype-time` | phenoShared | TBD |
-| `phenotype-state-machine` | phenoShared | TBD |
-| `phenotype-policy-engine` | phenoShared | TBD |
+| `phenotype-logging` | phenoShared | #258 |
+| `phenotype-time` | phenoShared | #258 |
+| `phenotype-state-machine` | phenoShared | #258 |
+| `phenotype-policy-engine` | phenoShared | #258 |
 
 ## P3 cumulative (waves 1–3)
 
