@@ -1,0 +1,15 @@
+{
+  "name": "ResilienceKit",
+  "languages": [
+    "python",
+    "rust"
+  ],
+  "primary_language": "python",
+  "status": "retired",
+  "has_readme": true,
+  "has_spec": true,
+  "type": "sdk",
+  "path": "repos/ResilienceKit",
+  "absorbed_into": "phenotype-python-sdk",
+  "absorption_note": "Absorbed into packages/resilience-kit (2026-06-17); pheno-deploy originals reconciled on fix/resilience-kit-reconcile — archive eligible for deletion"
+}

@@ -1,0 +1,15 @@
+{
+  "name": "TestingKit",
+  "languages": [
+    "python",
+    "rust"
+  ],
+  "primary_language": "python",
+  "status": "retired",
+  "has_readme": true,
+  "has_spec": true,
+  "type": "sdk",
+  "path": "repos/TestingKit",
+  "absorbed_into": "phenotype-python-sdk",
+  "absorption_note": "Absorbed into packages/testing-kit (2026-06-17); mcp-qa reconciled on fix/testing-kit-mcp-qa-reconcile — archive eligible for deletion"
+}
