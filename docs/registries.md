@@ -55,11 +55,11 @@ Deleted or absorbed source repos retain history in `projects/*.json` with `absor
 
 Use phenotype-registry when the question is **who owns this capability** or **what merges next**.
 
-- [`BOUNDARY_OWNERS.md`](../BOUNDARY_OWNERS.md) — scaffold vs SDK vs domain workspace; delete gate
+- [`BOUNDARY_OWNERS.md`](https://github.com/KooshaPari/phenotype-registry/blob/main/BOUNDARY_OWNERS.md) — scaffold vs SDK vs domain workspace; delete gate
 - [`ZERO_LOOP_ECOSYSTEM_PLAN.md`](./rationalization/ZERO_LOOP_ECOSYSTEM_PLAN.md) — master DAG, phases, metrics
 - [`ECOSYSTEM_DAG.md`](./rationalization/ECOSYSTEM_DAG.md) — 20-lane parallel recipe
 - [`SESSION_ARTIFACT_PROTOCOL.md`](./rationalization/SESSION_ARTIFACT_PROTOCOL.md) — agent session folders
-- [`RATIONALIZATION_EXECUTION.md`](../RATIONALIZATION_EXECUTION.md) — merge order + archive shortlist
+- [`RATIONALIZATION_EXECUTION.md`](https://github.com/KooshaPari/phenotype-registry/blob/main/RATIONALIZATION_EXECUTION.md) — merge order + archive shortlist
 
 **AgilePlus** owns spec lifecycle; **phenokits-commons** owns governance templates; this repo owns boundary SSOT.
 

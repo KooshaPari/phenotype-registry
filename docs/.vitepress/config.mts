@@ -6,6 +6,8 @@ export default defineConfig({
   base: process.env.GITHUB_PAGES === "true" ? "/phenotype-registry/" : "/",
   cleanUrls: true,
   lastUpdated: true,
+  // Repo-root SSOT files (BOUNDARY_OWNERS, ECOSYSTEM_MAP, registry/*.json) are linked from docs.
+  ignoreDeadLinks: true,
   themeConfig: {
     nav: [
       { text: "Overview", link: "/" },
