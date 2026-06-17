@@ -18,8 +18,20 @@ and library research into one reference surface.
 - Use [Registry Reference](./registries.md) to find the correct source of truth.
 - Use [Library Research](./library-research.md) before introducing a new
   dependency or hand-rolling a capability.
+- Use [Zero-Loop Ecosystem Plan](./rationalization/ZERO_LOOP_ECOSYSTEM_PLAN.md) for
+  boundary absorption DAG, AgilePlus governance, and agent session protocol.
 - Keep this repo as a navigation hub. Implementation work belongs in the
   referenced registries or product repos.
+
+## Rationalization (2026-06)
+
+| Doc | Purpose |
+| --- | --- |
+| [ZERO_LOOP_ECOSYSTEM_PLAN](./rationalization/ZERO_LOOP_ECOSYSTEM_PLAN.md) | Master plan: metrics, phases, PR fleet, spec catalog |
+| [ECOSYSTEM_DAG](./rationalization/ECOSYSTEM_DAG.md) | 20-lane parallel recipe with deps |
+| [SESSION_ARTIFACT_PROTOCOL](./rationalization/SESSION_ARTIFACT_PROTOCOL.md) | Resumable session folder contract |
+| [BOUNDARY_OWNERS](../BOUNDARY_OWNERS.md) | Capability SSOT (repo root) |
+| [ADR-004..006](./adr/) | Staging vs canonical, AgilePlus, zero-loop sessions |
 
 ## Operating Contract
 

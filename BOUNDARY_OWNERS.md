@@ -17,7 +17,7 @@
 |-------|------|-----------------|------------------|
 | **Scaffold** | Bootstrap repos, folder layouts, CI/governance templates, architectural patterns | `HexaKit`, `phenokits-commons`, `phenotype-org-governance`, `phenotype-infra` | A library warehouse or runtime dependency hub |
 | **Domain SDK** | Loose-coupled, optionally installed domain modules (auth, observability, MCP, testing, data, resilience) | `phenotype-python-sdk`, `phenotype-go-sdk`, `phenotype-rust-sdk` (target) | Full product workspaces; duplicate per-repo kit copies |
-| **Domain workspace** | Boundaries large enough to justify dedicated repos and release trains | `PhenoObservability`, `Agentora`, `Settly`, `Conft`, `phenoXddLib`, `phenotype-journeys` | Generic templates; polyglot facades (those belong in SDK layer) |
+| **Domain workspace** | Boundaries large enough to justify dedicated repos and release trains | `PhenoObservability`, `Agentora`, `AgilePlus`, `Settly`, `Conft`, `phenoXddLib`, `phenotype-journeys`, `phenotype-tooling` | Generic templates; polyglot facades (those belong in SDK layer) |
 
 ### HexaKit (scaffold only)
 
@@ -93,6 +93,30 @@ HexaKit receives **template mirrors only**.
 **TestingKit** file parity in python-sdk does **not** close the testing boundary. **HOLD delete**
 until slices above are explicit consumer defaults.
 
+### Governance / spec-driven development
+
+| Slice | Canonical owner | Absorb from | Coverage | Recommendation |
+|-------|-----------------|-------------|----------|----------------|
+| Spec lifecycle (specify → ship) | **AgilePlus** | — | CLI + `.agileplus/` | **AFFIRM owner** — repatriate crates from Agentora staging |
+| CI/governance templates | **phenokits-commons** `governance/` | PhenoProc `phenotype-governance/templates` | Ported PR #3 | **AFFIRM** — fleet bootstrap source |
+| Per-language lint/format configs | **phenokits-commons** `governance/phenoproc-configs/` | PhenoProc configs | Ported PR #3 | Copy-on-bootstrap, not from archives |
+| Org reusable CI workflows | **phenotype-org-governance** | scattered | partial | Consolidate consumers |
+| Boundary + DAG SSOT | **phenotype-registry** | — | `BOUNDARY_OWNERS`, rationalization docs | **AFFIRM** — merge PR #76 |
+| Router monitor product | **phenotype-tooling** `absorption/` | PhenoProc | PR #155 | **AFFIRM** — not Agentora long-term |
+
+**Conflict:** `agileplus-*` staged in **Agentora** `crates/` during PhenoProc wave 5 is **staging only**.
+Canonical home is **AgilePlus** per ADR-005. Agentora owns agent/proc runtime — not governance substrate.
+
+### Agent / process plane (PhenoProc absorption)
+
+| Slice | Canonical owner | Status (2026-06-17) | Recommendation |
+|-------|-----------------|----------------------|----------------|
+| Python `pheno-*` (16 packages) | **Agentora** `agents/phenoagent/python/` | ✅ waves 1–4 | AFFIRM |
+| Rust proc runtime (`pheno-proc-*`) | **Agentora** `crates/pheno-proc-runtime/` | ✅ workspace members | AFFIRM |
+| Bulk PhenoProc crates (staging) | **Agentora** `crates/` + manifest | ✅ ~98% PR #79 | Staging; `phenotype-*` → HexaKit repoint |
+| Go `pheno-cli` | **Agentora** `agents/phenoagent/pheno-cli-go` | ✅ wave 5 | AFFIRM |
+| PhenoProc repo | — | absorption complete | **HOLD DELETE** until PR #79 + manifest scan |
+
 ---
 
 ## Delete / archive gate (replaces file-parity-only rule)
@@ -114,6 +138,7 @@ DELETE archived repo  IFF:
 | ResilienceKit | 2 file copy only; 4 Python facade missing | KEEP_ARCHIVED |
 | Settly | 2 in HexaKit (wrong layer); 3 Pyron open | KEEP_ARCHIVED |
 | TestingKit | SDK slice only; testing plane split open | KEEP_ARCHIVED (revised) |
+| PhenoProc | 2–3 partial (#79 open, scan pending) | HOLD DELETE after gate |
 
 ---
 
@@ -121,6 +146,9 @@ DELETE archived repo  IFF:
 
 | Pri | Action |
 |-----|--------|
+| **P0** | Merge `docs/rationalization/*` + ADR-004..006 (registry PR #76) |
+| **P0** | Repatriate `agileplus-*` from Agentora → AgilePlus (ADR-005) |
+| **P0** | Fleet-adopt zero-loop session protocol (ADR-006) |
 | **P0** | Strip domain workspace members from HexaKit; keep `templates/hexagon/**` only |
 | **P0** | Amend `RATIONALIZATION_EXECUTION.md` §1: Metron/Traceon runtime → PhenoObservability |
 | **P1** | Subtree Metron → `PhenoObservability/crates/metrickit`; archive standalone Metron |
@@ -129,6 +157,7 @@ DELETE archived repo  IFF:
 | **P2** | Migrate `HexaKit/crates/settly` → standalone Settly or `phenotype-rust-sdk` optional crate |
 | **P2** | Define `phenotype-rust-sdk` package layout for domains too small for own repo |
 | **P3** | Refresh `ECOSYSTEM_MAP.md` Cluster D/I/H from this matrix |
+| **P3** | Consumer manifest scan; execute archive shortlist (`RATIONALIZATION_EXECUTION.md`) |
 
 ---
 
@@ -137,5 +166,11 @@ DELETE archived repo  IFF:
 - `ECOSYSTEM_MAP.md` — live repo index (wins on role disagreements)
 - `LANGUAGE_STACK.md` — core (Rust/Zig/Mojo) vs edge languages vs deferred repos
 - `docs/registries.md` — HexaKit scaffold role
+- `docs/rationalization/ZERO_LOOP_ECOSYSTEM_PLAN.md` — master DAG + phases + metrics
+- `docs/rationalization/ECOSYSTEM_DAG.md` — 20-lane parallel recipe
+- `docs/rationalization/SESSION_ARTIFACT_PROTOCOL.md` — session folder contract
+- `docs/adr/ADR-004-absorption-staging-vs-canonical.md`
+- `docs/adr/ADR-005-agileplus-governance-boundary.md`
+- `docs/adr/ADR-006-zero-loop-agent-session.md`
 - `RATIONALIZATION_EXECUTION.md` — absorption wave (§1 partially superseded here for obs libs)
-- Open gap ports: [phenokits-commons#3](https://github.com/KooshaPari/phenokits-commons/pull/3), [Agentora#79](https://github.com/KooshaPari/Agentora/pull/79)
+- Open gap ports: [registry#76](https://github.com/KooshaPari/phenotype-registry/pull/76), [phenokits-commons#3](https://github.com/KooshaPari/phenokits-commons/pull/3), [Agentora#79](https://github.com/KooshaPari/Agentora/pull/79), [phenotype-tooling#155](https://github.com/KooshaPari/phenotype-tooling/pull/155), [PhenoObservability#157](https://github.com/KooshaPari/PhenoObservability/pull/157)
