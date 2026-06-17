@@ -41,6 +41,18 @@ project structure.
 See [`LANGUAGE_STACK.md`](../LANGUAGE_STACK.md) for core (Rust/Zig/Mojo), justified Go edges,
 Python 3.14+uv / Bun+TS facades, and deferred repos (GDK, hwLedger, FocalPoint, KaskMan).
 
+## Boundary owners and rationalization
+
+Use phenotype-registry when the question is **who owns this capability** or **what merges next**.
+
+- [`BOUNDARY_OWNERS.md`](../BOUNDARY_OWNERS.md) — scaffold vs SDK vs domain workspace; delete gate
+- [`ZERO_LOOP_ECOSYSTEM_PLAN.md`](./rationalization/ZERO_LOOP_ECOSYSTEM_PLAN.md) — master DAG, phases, metrics
+- [`ECOSYSTEM_DAG.md`](./rationalization/ECOSYSTEM_DAG.md) — 20-lane parallel recipe
+- [`SESSION_ARTIFACT_PROTOCOL.md`](./rationalization/SESSION_ARTIFACT_PROTOCOL.md) — agent session folders
+- [`RATIONALIZATION_EXECUTION.md`](../RATIONALIZATION_EXECUTION.md) — merge order + archive shortlist
+
+**AgilePlus** owns spec lifecycle; **phenokits-commons** owns governance templates; this repo owns boundary SSOT.
+
 ---
 
 ## Rich Media Stubs
