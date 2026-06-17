@@ -12,5 +12,5 @@
   "type": "sdk",
   "path": "repos/ObservabilityKit",
   "absorbed_into": "phenotype-python-sdk",
-  "absorption_note": "100% byte match with packages/observability-kit (2026-06-17); see docs/observe/observability-kit-retired.md — archive eligible for deletion after registry update"
+  "absorption_note": "100% byte match with packages/observability-kit (2026-06-17); see phenotype-python-sdk docs/observe/observability-kit-retired.md — archive delete eligible"
 }
