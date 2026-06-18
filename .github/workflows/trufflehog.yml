@@ -15,7 +15,7 @@ jobs:
       # `trufflehog/actions/setup@main` step referenced a non-existent action
       # ("Unable to resolve action trufflehog/actions, repository not found"),
       # which failed the job on every run including main.
-      - uses: trufflesecurity/trufflehog@main
+      - uses: trufflesecurity/trufflehog@3fc0c2aa6648d54242e4af6fbfde0701796e4fb0
         with:
           path: ./
           extra_args: --only-verified
