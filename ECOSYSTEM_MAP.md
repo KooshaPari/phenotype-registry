@@ -31,17 +31,31 @@ Role split for the spec/governance spine (so indexes stop competing):
 
 | Role | Count | Repos |
 |------|-------|-------|
+<<<<<<< HEAD
 | **shared-lib** | 20 | pheno, HexaKit, phenoShared, phenoUtils, phenoXddLib, Authvault, Stashly, Settly, Tasken, Traceon, Metron, Apisync, phenoObservability, PhenoPlugins, FocalPoint, PhenoVCS, Benchora, phenotype-journeys, phenotype-voxel, Compound-Spheres-3D |
+=======
+| **shared-lib** | 21 | pheno, HexaKit, phenoShared, phenoUtils, Authvault, Tasken, Apisync, phenoObservability, PhenoPlugins, FocalPoint, PhenoVCS, Benchora, phenotype-auth-ts, phenotype-journeys, phenotype-voxel, Compound-Spheres-3D |
+
+> **Note 2026-06-18**: `phenotype-auth-ts` was archived in this wave and absorbed into [AuthKit](https://github.com/KooshaPari/AuthKit) `typescript/packages/auth-ts/` (PR #120). The row above is stale pending the next rationalization update.|
+>>>>>>> origin/main
 | **SDK** | 8 | AuthKit, DataKit, ObservabilityKit, ResilienceKit, TestingKit, PlatformKit, PhenoKits, HexaKit |
-| **tooling** | 10 | AgilePlus, phenotype-dep-guard, phenotype-tooling, phenotype-infra, PhenoDevOps, Conft, agent-devops-setups, nanovms, helioscope, Benchora |
+| **tooling** | 11 | AgilePlus, phenotype-dep-guard, phenotype-tooling, phenotype-infra, PhenoDevOps, Conft, agent-devops-setups, helioscope, Benchora, agileplus-spec-harmonizer, PhenoCompose |
 | **product / app** | 10 | Agentora, thegent, Tracera, AgilePlus, PlayCua, Dino, eyetracker, hwLedger, phenoRouterMonitor, slickport |
 | **plugin** | 4 | PhenoPlugins, argis-extensions, phenotype-postfx, Tokn |
 | **docs** | 8 | PhenoSpecs, phenotype-registry, PhenoHandbook, phenodocs, phenoXdd, PhenoDesign, phenotype-hub (scaffold), LIBRARY_RESEARCH_REGISTRY |
 | **landing** | 9 | agileplus-landing, byteport-landing, hwledger-landing, odin-landing\*, phenokits-landing, projects-landing, thegent-landing, AppGen (template) |
 | **fork** | 15 | agentapi-plusplus, bifrost, cliproxyapi-plusplus, DINOForge-UnityDoorstop, forgecode, helios-cli, HeliosLab, MCPForge, OmniRoute, phenotype-omlx, phenotype-ops-mcp, Planify, portage, vibeproxy, WorldSphereMod |
+<<<<<<< HEAD
 | **stub / scaffold** | 5 | phenotype-hub, vibeproxy-monitoring-unified, PhenoProject, phenoStandards (deprecated), Zerokit |
 | **superseded / archived** | 40 | .github, odin-landing, Profila, Project-Spyn, RIP-Fitness-App, sharecli, tehgent, thegent-sharecli, worktree-manager, phenoVessel, phenoTypes, phenoPatch, Diffuse, Servion, Guardrail, Cryptora, forge, phenoForge, router-docs, cheap-llm-mcp, dispatch-mcp, thegent-dispatch, McpKit, PhenoMCP, PhenoProc, Metron, PhenoKits, Stashly, Settly, AuthKit, Traceon, ResilienceKit, TestingKit, BytePort, heliosBench, heliosApp, PolicyStack, nanovms, portage, phenoDesign, phenoXddLib, dagctl, kwality, dinoforge-packs, phenotype-auth-ts |
 | **monorepo (multi-domain)** | 7 | pheno, phenoAI, phenoData, PhenoDevOps, BytePort, HexaKit, phenoShared |
+=======
+| **stub / scaffold** | 6 | phenotype-hub, vibeproxy-monitoring-unified, PhenoProject, phenoStandards (deprecated), Zerokit, Paginary |
+| **superseded / archived** | 40 | .github, odin-landing, Profila, Project-Spyn, RIP-Fitness-App, sharecli, tehgent, thegent-sharecli, worktree-manager, phenoVessel, phenoTypes, phenoPatch, Diffuse, Servion, Guardrail, Cryptora, forge, phenoForge, router-docs, cheap-llm-mcp, dispatch-mcp, thegent-dispatch, McpKit, PhenoMCP, PhenoProc, Metron, PhenoKits, Stashly, Settly, AuthKit, Traceon, ResilienceKit, TestingKit, BytePort, heliosBench, heliosApp, PolicyStack, nanovms, portage, phenoDesign, phenoXddLib, dagctl, kwality, dinoforge-packs, phenotype-auth-ts |
+| **monorepo (multi-domain)** | 6 | pheno, phenoAI, phenoData, PhenoDevOps, HexaKit, phenoShared |
+
+> **Note 2026-06-18** (post-merge, kilo audit #144 + 4-repo retirement): **dagctl**, **kwality**, **dinoforge-packs**, **phenotype-auth-ts** were all archived in the 4-repo retirement wave (findings/2026-06-18-L5-109). dagctl was absorbed into phenodag, dinoforge-packs into Dino/community-packs/, kwality retired into phenotype-tooling/docs/absorbed-from-kwality/, and phenotype-auth-ts into AuthKit/typescript/packages/auth-ts/. All source content preserved at target repos.|
+>>>>>>> origin/main
 | **agent-runtime** | 3 | Agentora, thegent, PhenoAgent |
 | **research / lab** | 2 | HeliosLab, portage |
 
@@ -153,12 +167,12 @@ graph TD
 
 > **Reconciled 2026-06-02** to the dom-services-routing convergence ruling (apex-approved) + OmniRoute `docs/ADR-001-canonical-routing.md`. The earlier "phenoAI canonical / archive OmniRoute" claim was STALE and is corrected below.
 
-> **Superseded 2026-06-17 (ADR-ECO-014):** OmniRoute is **interim MVP**; long-term canonical → **phenotype-gateway**. Tokn remains Rust routing substrate. agentapi-plusplus / cliproxyapi-plusplus / bifrost / argis-extensions merge via Wave H branch supersets.
+> **Superseded 2026-06-17 (ADR-ECO-014 gateway charter):** OmniRoute is **app/shell layer** per [ADR-ECO-015](docs/adrs/ADR-ECO-015-hybrid-gateway-app-layer.md); long-term Go planes → **phenotype-gateway**. Tokn remains Rust routing substrate. agentapi-plusplus / cliproxyapi-plusplus / bifrost / argis-extensions merge via Wave H branch supersets.
 
 | Repo | Status | Verdict |
 |------|--------|---------|
 | **phenotype-gateway** | Planned | **CANONICAL** domain owner — agent API + LLM proxy + enterprise gateway + router revamp |
-| **OmniRoute** (TS) | Active (interim) | **Interim MVP** router — feature parity → revamp inside phenotype-gateway |
+| **OmniRoute** (TS) | Active | **App/shell layer** — router UI + desktop client convergence (ADR-ECO-015); router logic may revamp in `packages/router` |
 | **Tokn** — `tokenledger::routing` | Active, Rust | **CANONICAL Rust routing substrate** (hexagonal: `pareto_router`/ports/adapters). Resolve "Rust routing" here, not the dead bifrost-routing stub. |
 | phenoAI (llm-router crate) | Active, Rust workspace | **Consumer / skeleton** — 64-file skeleton, empty README; NOT the canonical router. May consume OmniRoute / Tokn routing. |
 | phenoRouterMonitor | Active, Rust + Streamlit | Monitoring dashboard; **remove its 15 local phenotype-* path-copies, depend on HexaKit** (see dup table). |
@@ -166,8 +180,8 @@ graph TD
 | bifrost-routing (crate) | — | **Dead stub** (no Cargo.toml; superseded). Not the Rust routing referent — Tokn is. |
 | helios-router | — | Archived / superseded by OmniRoute. |
 | router-docs | Retired (2026-06-16) | Research docs relocated to `OmniRoute/docs/research/archive/router-docs/`; source repo deleted. |
-| **agentapi-plusplus** | Active fork (coder/agentapi) | **CANONICAL** agent terminal API plane → phenotype-gateway `packages/agentapi` |
-| cliproxyapi-plusplus | Fork, Go | **CANONICAL** CLI subscription proxy plane → phenotype-gateway |
+| **agentapi-plusplus** | Active fork (coder/agentapi) | **CANONICAL** agent terminal API plane → phenotype-gateway `packages/agentapi`; branch superset merge (Wave 15) |
+| cliproxyapi-plusplus | Fork, Go | **CANONICAL** CLI subscription proxy plane → phenotype-gateway (ADR-ECO-007 Option B peer/submodule) |
 | helioscope / helios-cli | Forks of codex-monorepo | Keep as tooling entry-point; deduplicate into single helios repo |
 
 ### Cluster H — Gateway superset (Wave H, 2026-06-17)
@@ -227,7 +241,7 @@ See [ADR-ECO-014](docs/adrs/ADR-ECO-014-phenotype-gateway-charter.md) and [GATEW
 |------|-----------------|---------|
 | **HexaKit** | 30+ phenotype-* crates (canonical infra toolkit per description) | **CANONICAL HOME** |
 | pheno | 21 workspace members, overlapping crate names with HexaKit | **DUPLICATE** — merge into HexaKit, retire pheno |
-| phenoShared | Rust crates + @phenotype/shared-utils npm | Merge Rust side into HexaKit; keep npm package as phenoShared/npm |
+| phenoShared | Rust crates + @phenotype/shared-utils npm | **DECOMPOSE** (ADR-ECO-014) — interim staging; route crates to role owners; delete repo |
 | **PhenoProc** | 20 path-deps to phenotype-* crates (local copies!) | **ARCHIVED** 2026-06-17 — absorbed into Agentora (#79) |
 | **phenoRouterMonitor** | 15 path-deps to phenotype-* crates (local copies!) | Repointed → phenoShared / phenotype-types (#632) |
 
@@ -244,7 +258,7 @@ See [ADR-ECO-014](docs/adrs/ADR-ECO-014-phenotype-gateway-charter.md) and [GATEW
 
 | Repo | Verdict |
 |------|---------|
-| **Settly** | CANONICAL (Rust, layered configs, validation) |
+| **Settly** (archived) | **phenotype-config** (`settly` crate) per DOMAIN_ROLES — canonical config owner |
 | Conft | TypeScript config workspace — keep as TS facade |
 | pheno/phenotype-config-core crate | Merge into Settly as Rust workspace crate |
 
@@ -304,6 +318,25 @@ All Astro static sites with near-identical structure. Target: consolidate into s
 
 **Anti-patterns (retired):** `phenotype-rust-sdk`, `phenotype-go-sdk` language buckets — see PhenoMCPServers `retired_anti_patterns` and ADR-017.
 
+### Cluster M — Gateway / Agent Control Plane (wave 15)
+
+> **Corrected 2026-06-17** — prior §6 "archive forks with no local modifications" wrongly included agentapi-plusplus. See [11_GATEWAY_FORK_AUDIT](docs/sessions/20260617-ecosystem-gap-port-retro/11_GATEWAY_FORK_AUDIT.md).
+
+| Repo | Layer | Status | Verdict |
+|------|-------|--------|---------|
+| **OmniRoute** | Platform `route` | Active, 26 branches | **CANONICAL** LLM router (TS) — never archive |
+| **Tokn** `tokenledger::routing` | Platform `route` | Active | **CANONICAL** Rust routing substrate |
+| **agentapi-plusplus** | Platform `cli_proxy` | Active, 35 branches | **UNIFY** — superset merge (G15); fork of coder/agentapi |
+| **cliproxyapi-plusplus** | Platform `cli_proxy` | Active, 16 branches | **UNIFY** — peer gateway (G16); vendored in go-sdk |
+| **substrate** | Platform `connect` | Active, 24 branches | **AFFIRM** — `engine-agentapi` integrates agentapi++ |
+| **agentapi** | — | Archived, 2 branches | **KEEP_ARCHIVED** tombstone; docs-only unique commits |
+| **bifrost** | Engine vendor | Active, 339 branches | **VENDOR-KEEP** — pin `phenotype/vendor-2026-06`; not routing referent |
+| **phenotype-omlx** | Platform `inference` | Archived, 27 branches | **SPLIT** platform/engine (ADR-ECO-008); unarchive gate |
+| **agileplus-spec-harmonizer** | Tooling | Active, 1 branch | **AFFIRM** — spec ingress for AgilePlus merges |
+| **Paginary** | Stub | Archived (private), 11 branches | **TRIAGE** — pagination lib → phenoShared or out-of-fleet |
+
+**Layer doctrine:** Platform repos (agentapi++, cliproxy++, OmniRoute, substrate) undergo **superset merge**. Engine forks (bifrost, upstream omlx) get **vendor pin + branch hygiene** — never merge into OmniRoute.
+
 ---
 
 ## 4. Component / Plugin Extraction Candidates
@@ -341,7 +374,8 @@ These are **traits / interfaces** that span multiple repos in the ecosystem. The
 
 | Action | Repos affected | Notes |
 |--------|---------------|-------|
-| **Archive forks with no local modifications** | Planify, portage, phenotype-omlx, phenotype-ops-mcp | Upstream-maintained only. **agentapi-plusplus REMOVED** — Wave H canonical fork (ADR-ECO-014). OmniRoute interim, not archive. |
+| **Archive forks with no local modifications** | Planify, portage, phenotype-ops-mcp | Upstream-maintained only. **agentapi-plusplus REMOVED** — Wave H canonical fork. **OmniRoute** interim MVP, not archive. **cliproxyapi-plusplus REMOVED** — affirm peer/gateway plane. **phenotype-omlx** → ADR-ECO-008 split, not blind archive. |
+| **Gateway fork superset merge (G15–G16)** | agentapi-plusplus, cliproxyapi-plusplus | Multi-branch hygiene + upstream sync → `main`; phenotype-gateway submodule pins |
 | **Merge pheno → HexaKit** | pheno | 21 crates overlap; HexaKit is the canonical infrakit; retire pheno |
 | **Merge PhenoAgent stub → Agentora** | PhenoAgent | Empty manifest; description says "extracted from phenotype-infra" |
 | **Merge Metron + Traceon → phenoObservability** | Metron, Traceon | Both thin Rust wrappers; phenoObservability is the workspace home |
@@ -355,8 +389,10 @@ These are **traits / interfaces** that span multiple repos in the ecosystem. The
 | **Consolidate 8 landing pages → phenotype-landing** | all *-landing repos | Astro monorepo with sub-packages |
 | **MCP runtime absorption (2026-06-17)** | cheap-llm-mcp, dispatch-mcp, thegent-dispatch | Deleted; absorbed into substrate per ADR-019 |
 | **MCP boundary rationalization (2026-06-17)** | McpKit, PhenoMCP | Archived; superseded by PhenoMCPServers + PhenoFastMCP* per ADR-017 |
-| **Retire vibeproxy-monitoring-unified** | vibeproxy-monitoring-unified | Pure governance stub; no implementation; vibeproxy itself deprecated |
-| **Merge phenotype-hub → phenotype-infra** | phenotype-hub | "Scaffolding only" — governance docs belong in infra |
+| **Merge phenotype-hub → phenotype-infra** | phenotype-hub | "Scaffolding only" — governance docs belong in infra; registry keeps `scaffold/phenotype-hub/` redirect |
+| **Retire vibeproxy-monitoring-unified** | vibeproxy-monitoring-unified | Pure governance stub; merge AGENTS/FR into phenotype-infra (G19) |
+| **Register agileplus-spec-harmonizer** | agileplus-spec-harmonizer | Spec ingress harmonizer for AgilePlus; 12/12 tests; single branch |
+| **Triage Paginary** | Paginary | 11 branches private archive — pagination-only → phenoShared else out-of-fleet |
 | **Consolidate phenoShared npm → phenodocs** | phenoShared (npm layer) | Already depended upon via @phenotype/docs |
 
 #### Canonical Target Repo Set (~45)
@@ -380,11 +416,10 @@ LANGUAGE-SPECIFIC FACADES (3)
   Conft                    — TS config layer
 
 INFRASTRUCTURE / TOOLING (5)
-  phenotype-tooling        — internal ops: usage-poll, agent-forecast, benchmarks
+  phenotype-tooling        — internal ops: usage-poll, agent-forecast, benchmarks, byteport, nanovms
   AgilePlus                — spec-driven dev, polyrepo governance
   FocalPoint               — dependency guard + audit
-  BytePort                 — infrastructure CLI
-  nanovms                  — VM isolation for agents
+  PhenoCompose             — NVMS + process-compose engine/isolation (platform role)
 
 AGENT PLATFORM (7)
   Agentora                 — Rust agent framework (canonical)
@@ -397,8 +432,8 @@ AGENT PLATFORM (7)
 
 DATA / STORAGE (3)
   phenoData                — SurrealDB + Postgres + query planner
-  Stashly                  — caching abstraction
-  Settly                   — configuration management
+  Stashly                  — caching abstraction (archived → phenotype-resilience)
+  phenotype-config         — configuration management (`settly` crate; was Settly)
 
 SECURITY / AUTH (2)
   Authvault                — Rust OAuth2/JWT/RBAC
@@ -409,8 +444,8 @@ OBSERVABILITY (2)
   Tokn                     — LLM cost/usage tracking
 
 TESTING / QA (3)
-  phenotype-journeys       — e2e journey harness
-  phenoXddLib              — xDD utilities (BDD, property, mutation)
+  phenotype-journeys       — e2e journey harness (absorbs phenotype-e2e-base)
+  phenoXdd + journeys      — xDD utilities (BDD, property, mutation; phenoXddLib archived)
   phenotype-dep-guard      — supply chain audit
 
 GAME / 3D (4)
@@ -430,10 +465,12 @@ APPS / PRODUCTS (6)
 LANDING (1)
   phenotype-landing        — consolidated Astro monorepo (was 8 *-landing repos)
 
-ACTIVE FORKS (4)
+ACTIVE FORKS (5)
+  agentapi-plusplus        — CANONICAL cli_proxy (merge superset)
   forgecode                — AI pair-programmer fork (active local use)
   helios-cli               — codex-monorepo fork (active)
   bifrost                  — AI gateway fork (vendor-only use)
+  cliproxyapi-plusplus     — CLI OAuth proxy peer (Plus fork)
   DINOForge-UnityDoorstop  — Unity doorstop (Dino dependency)
 ```
 
