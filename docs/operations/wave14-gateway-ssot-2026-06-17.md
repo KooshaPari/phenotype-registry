@@ -72,6 +72,7 @@ These are the highest-confidence next tasks across registry, HexaKit, and gatewa
 | 14 | Start `libs/nexus` decompose branch with handoff packet and acceptance test plan | registry + target repo | decompose ticket + branch started |
 | 15 | Refresh `GATEWAY_FEATURE_PARITY.md` to require `packages/*` ownership for remaining feature rows (100% mapped target state) | phenotype-registry | completed feature matrix and disposition updates |
 | 16 | Expand `HEXAKIT_EVICTION_INVENTORY.md` with remaining H-lane/No-merge debt and ship progress markers | phenotype-registry | inventory entries updated |
+| 17 | Define and stage a new absorb target for `phenotype-apps` and sibling `apps` repos, then route dispositions into that target | phenotype-registry + apps repos | absorb-target proposal + disposition rows redirected |
 
 ## Next waves (unblocked after merge)
 
