@@ -21,7 +21,7 @@ Establish three-layer doctrine (governance / platform / engine) and unblocks lan
 | bifrost | No | 339 | maximhq/bifrost | **VENDOR-KEEP** — pin + prune (G17) |
 | OmniRoute | No | 26 | diegosouzapw/OmniRoute | **CANONICAL** `route` — never archive |
 | substrate | No | 24 | — | **AFFIRM** — `engine-agentapi` hub |
-| phenotype-omlx | Yes | 27 | jundot/omlx | **SPLIT** platform/engine (G18 ADR) |
+| phenotype-omlx | Yes | 27 | jundot/omlx | **DROP** — stay archived (ADR-ECO-016) |
 | phenotype-hub | Yes | 17 | — | **ABSORB** → phenotype-infra (G19) |
 | vibeproxy-monitoring-unified | Yes | — | — | **RETIRE** stub (G19) |
 | agileplus-spec-harmonizer | No | 1 | — | **AFFIRM** tooling |
@@ -61,7 +61,7 @@ Establish three-layer doctrine (governance / platform / engine) and unblocks lan
 | G15 | agentapi++ | agentapi-plusplus + substrate | **done** — #535 merged; 1 remote (`main`) |
 | G16 | cliproxy | cliproxyapi-plusplus + go-sdk | **done** — #1026, vibeproxy#14, go-sdk#17 merged |
 | G17 | bifrost | bifrost | **done** — #7 merged; tag `phenotype/vendor-2026-06`; 1 remote (`main`) |
-| G18 | omlx | phenotype-registry ADR-ECO-008 | pending |
+| G18 | omlx | phenotype-registry ADR-ECO-016 | **done** — DROP; stay archived; engine jundot/omlx |
 | G19 | stubs | phenotype-infra + registry | **partial** — `projects/*.json` stubs merged (#163); infra absorption pending |
 | 14 | HexaKit | phenoShared + HexaKit | **in_progress** — feat/wave14-phenoshared-decompose (2 pin repoints; cargo blocked on terminal owners) |
 
@@ -77,6 +77,7 @@ Establish three-layer doctrine (governance / platform / engine) and unblocks lan
 | Gateway UPSTREAM SSOT | phenotype-gateway | merged (#4) — OmniRoute canonical peer |
 | H14 phenoShared repoint | HexaKit | pushed (feat/wave14-phenoshared-decompose) |
 | G17 bifrost vendor pin | bifrost | merged (#7); tag `phenotype/vendor-2026-06`; 1 remote |
+| G18 omlx ADR | phenotype-registry | open — ADR-ECO-016 DROP |
 
 ## DELETE gate (fork cluster)
 
@@ -86,12 +87,12 @@ Establish three-layer doctrine (governance / platform / engine) and unblocks lan
 | agentapi-plusplus | UNIFY then AFFIRM | Spec + superset merge (G15) |
 | cliproxyapi-plusplus | UNIFY before pin | go-sdk vendor SHA (G16) |
 | bifrost | KEEP vendor fork | No merge into OmniRoute |
-| phenotype-omlx | SPLIT; optional unarchive | ADR-ECO-008 + staffing gate |
+| phenotype-omlx | **DROP** — stay archived | ADR-ECO-016; engine jundot/omlx; FINISH = staffing gate |
 | OmniRoute | NEVER archive | Canonical `route` |
 
 ## Next
 
-1. **G18** — ADR-ECO-008 omlx platform/engine split
+1. ~~**G18**~~ — done (ADR-ECO-016 DROP; phenotype-omlx stay archived; engine jundot/omlx)
 2. **G19** — phenotype-hub absorption into phenotype-infra
 3. **Desktop** — Electrobun spike in `OmniRoute/apps/desktop/`; harvest vibeproxy menu-bar UX
 4. **W18b** — Agentora stub crates (`phenotype-errors`, `phenotype-error-macros`, `phenotype-config-loader`) blocked on phenotype-types/config Rust absorption
