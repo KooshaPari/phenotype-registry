@@ -7,7 +7,7 @@
 
 | Deliverable | Status |
 |-------------|--------|
-| ADR-ECO-014 phenotype-gateway | this PR |
+| ADR-ECO-014 phenotype-gateway | registry #140 |
 | `GATEWAY_FEATURE_PARITY.md` stub | this PR |
 | disposition-index Cluster H rows | this PR |
 | ECOSYSTEM_MAP Cluster A reconciliation | this PR |
@@ -16,7 +16,7 @@
 
 | Repo | Action | PR |
 |------|--------|-----|
-| `agentapi` | Cherry-pick `FUNDING.yml`; disposition `done` | agentapi-plusplus #TBD |
+| `agentapi` | Cherry-pick `FUNDING.yml`; disposition `done` | agentapi-plusplus #530 |
 | `agentapi-plusplus` | Absorb agentapi branches | #TBD |
 
 ## H2 — agentapi++ branch superset

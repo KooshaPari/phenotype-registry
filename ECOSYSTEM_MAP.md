@@ -167,6 +167,19 @@ graph TD
 | router-docs | Retired (2026-06-16) | Research docs relocated to `OmniRoute/docs/research/archive/router-docs/`; source repo deleted. |
 | **agentapi-plusplus** | Active fork (coder/agentapi) | **CANONICAL** agent terminal API plane → phenotype-gateway `packages/agentapi` |
 | cliproxyapi-plusplus | Fork, Go | **CANONICAL** CLI subscription proxy plane → phenotype-gateway |
+| helioscope / helios-cli | Forks of codex-monorepo | Keep as tooling entry-point; deduplicate into single helios repo |
+
+### Cluster H — Gateway superset (Wave H, 2026-06-17)
+
+See [ADR-ECO-014](docs/adrs/ADR-ECO-014-phenotype-gateway-charter.md) and [GATEWAY_FEATURE_PARITY.md](docs/rationalization/GATEWAY_FEATURE_PARITY.md).
+
+| Repo | Verdict |
+|------|---------|
+| agentapi-plusplus | Canonical fork; absorb agentapi + branch superset |
+| cliproxyapi-plusplus + vibeproxy | Proxy plane merge |
+| bifrost | Vendor-pinned; local-delta only |
+| argis-extensions | Plugin plane |
+| OmniRoute | Interim MVP → router revamp spike |
 
 ### Cluster B — Agent Runtimes (5 repos)
 
