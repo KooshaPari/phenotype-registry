@@ -14,7 +14,7 @@ Close Phase 2 disposition rows after HexaKit wave AB prune and phenoShared utils
 
 | Lane | Repo | PR / branch | Outcome |
 |------|------|-------------|---------|
-| HexaKit AB prune | KooshaPari/HexaKit | [HexaKit#266](https://github.com/KooshaPari/HexaKit/pull/266) on `feat/phase2-e2a-wave-ab-prune` | Exclude `phenotype-iter`, `phenotype-string`, `phenotype-validation` from workspace members; git-pin to phenoShared `feat/wave-e2a-utils-reloc`; restore `phenotype-telemetry` path dep; `cargo check -p phenotype-core` green |
+| HexaKit AB prune | KooshaPari/HexaKit | [HexaKit#266](https://github.com/KooshaPari/HexaKit/pull/266) merged to `main` | Exclude `phenotype-iter`, `phenotype-string`, `phenotype-validation` from workspace members; git-pin to phenoShared `feat/wave-e2a-utils-reloc`; restore `phenotype-telemetry` path dep; `cargo check -p phenotype-core` green |
 | Utils relocation | KooshaPari/phenoShared | `feat/wave-e2a-utils-reloc` | Canonical homes for iter/string/validation crates |
 | Crypto / casbin | KooshaPari/Authvault | `main` | `phenotype-crypto` and `phenotype-casbin-wrapper` pins repointed to Authvault main (Wave C) |
 | MCP edge | KooshaPari/substrate | substrate#28 | Rust MCP canonical; Python `py-pheno-mcp` redirect closed |
@@ -32,10 +32,11 @@ Close Phase 2 disposition rows after HexaKit wave AB prune and phenoShared utils
 
 | Component | ref | SHA |
 |-----------|-----|-----|
-| HexaKit | `feat/phase2-e2a-wave-ab-prune` | `faeb7bad7d482cfdf0871583a98b985ac78aa38a` |
+| HexaKit | `main` | `6406acbf54a3a48c0b830653515ef3616f465b43` |
+| Authvault | `main` | `c9ba3a37186122f6e0b1755aedcfbb960ea8b669` |
 | phenoShared | `feat/wave-e2a-utils-reloc` | `a603d2b4a20de95251de2534ae8d2e833d7f39fd` |
 
-Pins use feature-branch refs until HexaKit#266 and phenoShared utils PR merge to `main`; then refresh refs back to `main` via `./scripts/pin-components.sh`.
+HexaKit#266 is merged — lock ref is `main`. phenoShared stays on `feat/wave-e2a-utils-reloc` until phenoShared#190 merges; then refresh via `./scripts/pin-components.sh`.
 
 ## Verification
 
@@ -55,9 +56,9 @@ jq empty registry/disposition-index.json registry/components.lock
 
 ## Blockers / follow-ups
 
-- **HexaKit#266** still **OPEN** at closeout authoring — no GitHub merge commit yet; lock pins PR head SHA.
-- **phenoShared** utils branch not merged to `main` — lock pins branch tip.
-- After both merge: run `pin-components.sh`, set refs to `main`, re-run ecosystem validate.
+- **HexaKit#266** merged — HexaKit lock ref is `main` at `6406acbf`.
+- **phenoShared** on `main` at `95d74795` — utils branch merged; lock refreshed.
+- Gateway H9 smoke failures logged in phenotype-gateway#6 — follow-up spike fixes.
 
 ---
 
@@ -79,13 +80,13 @@ jq empty registry/disposition-index.json registry/components.lock
 
 | Item | Status | PR / action |
 |------|--------|-------------|
-| agentapi-plusplus `docs/BOUNDARY.md` | PR open | agentapi-plusplus `docs/wave-h-boundary` |
-| cliproxyapi-plusplus `docs/BOUNDARY.md` | PR open | cliproxy `docs/wave-h-boundary` (force-add; `docs/*` gitignore) |
-| bifrost `docs/DISPOSITION.md` | PR open | bifrost `docs/wave-h-disposition` |
-| PhenoSpecs `018-agent-platform` | PR open | PhenoSpecs `docs/018-agent-platform-spec` |
+| agentapi-plusplus `docs/BOUNDARY.md` | PR open | [#538](https://github.com/KooshaPari/agentapi-plusplus/pull/538) |
+| cliproxyapi-plusplus `docs/BOUNDARY.md` | PR open | [#1029](https://github.com/KooshaPari/cliproxyapi-plusplus/pull/1029) |
+| bifrost `docs/DISPOSITION.md` | PR open | [#8](https://github.com/KooshaPari/bifrost/pull/8) |
+| PhenoSpecs `018-agent-platform` | PR open | [#91](https://github.com/KooshaPari/PhenoSpecs/pull/91) |
 | Agentora PhenoProc gap-port | **merged** | #78 workspace, #79 gap port, #80 substrate SDK-ify; `cargo check --workspace` green |
-| vibeproxy archive | pending | `gh repo archive` (fsm done in registry) |
-| helioscope archive | pending | `gh repo archive` → helios-cli redirect |
+| vibeproxy archive | **done** | `gh repo archive` 2026-06-18 |
+| helioscope archive | **done** | `gh repo archive` 2026-06-18 → helios-cli redirect |
 
 ### components.lock pins (post-main refresh)
 
@@ -100,6 +101,6 @@ jq empty registry/disposition-index.json registry/components.lock
 
 ### AgilePlus validate.md
 
-Branch `wip/preserve-agileplus-brand-rename-20260605` exists locally/remotely but **no root `validate.md`** on that branch (only `crates/agileplus-cli/src/commands/validate.rs`). Merge skipped — file not found.
+Branch `wip/preserve-agileplus-brand-rename-20260605` exists but **no root `validate.md`** (only `crates/agileplus-cli/src/commands/validate.rs`). Merge skipped — file not found.
 
-**Batch verdict:** Phase 7 fleet stamp refreshed; Phase 6 boundary docs in flight via PRs; archives pending gh repo archive.
+**Batch verdict:** Phase 7 fleet stamp refreshed; Phase 6 boundary docs in PRs; archives complete.
