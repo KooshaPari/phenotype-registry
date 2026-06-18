@@ -2,7 +2,7 @@
 
 **Predecessor:** [wave13-execution-2026-06-17.md](./wave13-execution-2026-06-17.md)  
 **DAG:** [GATEWAY_MERGE_DAG.md](../rationalization/GATEWAY_MERGE_DAG.md)  
-**ADR:** [ADR-ECO-007-gateway-merge-superset](../adrs/ADR-ECO-007-gateway-merge-superset.md)
+**ADR:** [ADR-ECO-007-gateway-merge-superset](../adrs/ADR-ECO-007-gateway-merge-superset.md), [ADR-ECO-014-phenoshared-decompose](../adrs/ADR-ECO-014-phenoshared-decompose.md)
 
 ## Remote audit baseline (gh, 2026-06-17)
 
@@ -29,6 +29,20 @@
 | BytePort active | ECOSYSTEM_MAP §1 monorepo | ARCHIVED → phenotype-tooling |
 | phenoXddLib owner | BOUNDARY_OWNERS | ARCHIVED; xDD → phenoXdd + journeys |
 | Missing gateway roles | DOMAIN_ROLES | `route`, `cli_proxy`, `inference` |
+| phenoShared as SSOT | ECOSYSTEM_MAP, chokepoints | **DECOMPOSE** — interim staging only; fleet repoint to role owners |
+
+## phenoShared decomposition (ADR-ECO-014)
+
+`phenoShared` is **not** a domain-oriented lib/SDK/framework. P3 git pins are tolerated as **staging**; terminal owners:
+
+| Staging crate | Role owner |
+|---------------|------------|
+| config-loader, settly | phenotype-config |
+| stashly, http-client-core | phenotype-resilience |
+| health traits | PhenoObservability |
+| errors | phenotype-types |
+| event-bus | Eventra |
+| contracts | decompose per domain |
 
 ## PR tracker
 
