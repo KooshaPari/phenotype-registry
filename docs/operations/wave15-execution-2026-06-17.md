@@ -58,8 +58,8 @@ Establish three-layer doctrine (governance / platform / engine) and unblocks lan
 | Wave | ID | Owner repo | Status |
 |------|-----|------------|--------|
 | 15 | SSOT | phenotype-registry | **merged** (#142) |
-| G15 | agentapi++ | agentapi-plusplus + substrate | **in_progress** — branch prune PR #534; 4 remotes (≤5) |
-| G16 | cliproxy | cliproxyapi-plusplus + go-sdk | **in_progress** — PRs #1026, vibeproxy#14, go-sdk#17 |
+| G15 | agentapi++ | agentapi-plusplus + substrate | **done** — #535 merged; 1 remote (`main`) |
+| G16 | cliproxy | cliproxyapi-plusplus + go-sdk | **done** — #1026, vibeproxy#14, go-sdk#17 merged |
 | G17 | bifrost | bifrost | pending |
 | G18 | omlx | phenotype-registry ADR-ECO-008 | pending |
 | G19 | stubs | phenotype-infra + registry | pending |
