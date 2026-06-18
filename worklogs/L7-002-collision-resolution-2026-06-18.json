@@ -1,0 +1,87 @@
+{
+  "id": "L7-002",
+  "parent_id": "L7-001",
+  "title": "resolve repo-name collisions + re-render + re-propagate",
+  "status": "complete",
+  "created_at": "2026-06-18T10:00:00-07:00",
+  "completed_at": "2026-06-18T11:00:00-07:00",
+  "device": "macbook",
+  "scope": "phenotype-registry + 108 canonical ecosystem repos",
+  "method": "forge subagent not needed; pure python resolve-collision.py + render-per-repo.py + propagate-intent-to-repos.py",
+  "depends_on": ["L7-001"],
+  "motivation": "L7-001 produced 125 bound repos, but ~15 had case-only variants (e.g., 'agileplus' + 'AgilePlus') and 6 referenced deprecated/archived repos (per ADR-007, ADR-001, ADR-017, etc.). All these aliases had to be unified into canonical PascalCase names so the intent+boundary files would reflect the correct provenance.",
+  "deliverables": [
+    "scripts/resolve-collision.py — alias-merger with --dry-run mode",
+    "ALIASES.md — auto-generated table of every non-canonical → canonical rename (+ deprecated/archived drops)",
+    "_bindings.json — collapsed from 125 → 108 repos (15 merges + 6 drops)",
+    "docs/intent/<repo>.md × 108 (re-rendered with merged counts)",
+    "docs/boundary/<repo>.md × 108 (re-rendered)",
+    "~17 normalized canonical re-propagations to per-repo docs/"
+  ],
+  "scale": {
+    "before": 125,
+    "after": 108,
+    "merges": 15,
+    "drops": 6,
+    "records_merged_into_canonical": 2076,
+    "records_dropped": 163,
+    "final_kept_records": 10225,
+    "propagated_to_monorepo": 96,
+    "skipped_source_repo": 1,
+    "skipped_no_on_disk_repo": 11
+  },
+  "merges_summary": [
+    "PhenoMCP-cheap → PhenoMCP (37 records)",
+    "PhenotypeMCP → PhenoMCP (36)",
+    "agileplus → AgilePlus (114)",
+    "byteport → BytePort (55)",
+    "focalpoint → FocalPoint (50)",
+    "helios-cli → HeliosCLI (50)",
+    "heliosApp → HeliosApp (146)",
+    "hwledger → hwLedger (23)",
+    "pheno-contracts → PhenoContracts (94)",
+    "phenoMCP → PhenoMCP (2)",
+    "phenoPlugins → PhenoPlugins (5)",
+    "phenoVibeproxy → vibeproxy (1443)",
+    "phenokits → PhenoKits (4)",
+    "phenotype-observability → PhenoObservability (11)",
+    "phenotype-resilience → ResilienceKit (3)"
+  ],
+  "drops_summary": [
+    "Authvault (1) — archived per ADR-007",
+    "NetScript (3) — DELETE per ADR-001",
+    "Stashly (2) — DELETE per ADR-017",
+    "bifrost (150) — archived",
+    "odin-landing (1) — archived",
+    "thegent-landing (6) — archived"
+  ],
+  "top_repos_after_merge": [
+    "AgilePlus: 1937 prompts",
+    "thegent: 1671 prompts, 3 plans",
+    "FocalPoint: 798 prompts, 1 plan",
+    "cliproxyapi-plusplus: 699 prompts",
+    "OmniRoute: 570 prompts, 1 plan",
+    "phenotype-journeys: 447 prompts",
+    "DINOForge-UnityDoorstop: 424 prompts",
+    "phenodocs: 381 prompts",
+    "PhenoProject: 243 prompts, 1 plan",
+    "phenotype-registry: 166 prompts, 8 responses",
+    "ResilienceKit: 166 prompts, 1 plan",
+    "vibeproxy: 162 prompts",
+    "AuthKit: 152 prompts",
+    "HeliosApp: 146 prompts",
+    "HeliosCLI: 135 prompts, 2 plans"
+  ],
+  "push_status": {
+    "contract_branch": "chore/l7-001-contract-only-orphan-2026-06-17 @ remote (was e5275b47 before this round)",
+    "new_commits_pending": "L7-002 collision-resolution + ALIASES.md + re-rendered files",
+    "next_push": "via /tmp/pheno-registry-push orphan bundle when network is idle"
+  },
+  "adrs_referenced": ["ADR-007 (cheap-llm-mcp archive)", "ADR-001 (NetScript delete)", "ADR-017 (Stashly archive)"],
+  "next_steps": [
+    "fill in Intent Statement prose on each docs/intent/<repo>.md (human)",
+    "fill in In Scope / Out of Scope lists on each docs/boundary/<repo>.md (human)",
+    "extract 'on-disk-missing' 11 repos into a single _archived/ intent file",
+    "add resolve-collision.py + ALIASES.md to weekly refresh cron (ADR-024)"
+  ]
+}

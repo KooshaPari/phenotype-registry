@@ -46,3 +46,16 @@ pnpm-debug.log*
 Thumbs.db
 yarn-debug.log*
 yarn-error.log*
+
+# L7-001 scratch artifacts (not for git)
+_curated.jsonl
+_curated.win.jsonl
+_bindings.json
+_bindings.win.json
+_seen.txt
+_seen.win.txt
+_rendered.md
+.scrape-mac*.log
+.scrape-codex*.log
+.scrape-win*.log
+docs/curated-*

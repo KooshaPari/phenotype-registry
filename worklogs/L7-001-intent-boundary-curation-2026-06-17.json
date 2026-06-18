@@ -1,0 +1,89 @@
+{
+  "id": "L7-001",
+  "title": "docs/intent+boundary contract + full prompt+plan+response curation sweep (Mac+Windows)",
+  "status": "complete",
+  "created_at": "2026-06-17T12:30:00-07:00",
+  "completed_at": "2026-06-17T22:30:00-07:00",
+  "device": "macbook",
+  "scope": "phenotype-registry + all canonical ecosystem repos",
+  "method": "forge subagent + python scraper + manual curation",
+  "deliverables": [
+    "docs/intent/README.md (the contract)",
+    "docs/intent/_template.md",
+    "docs/intent/REGISTRY.md",
+    "docs/boundary/_template.md",
+    "docs/curated-prompts/{claude-code,codex,cursor-agent,forge,droid,aider,other}/<YYYY-MM>/<id>.md",
+    "docs/curated-plans/{claude-code,codex,cursor,forge,droid,aider,other}/<YYYY-MM>/<id>.md",
+    "docs/curated-responses/{claude-code,codex,cursor,forge,droid,aider,other}/<YYYY-MM>/<id>.md",
+    "docs/intent/<repo>.md for every canonical ecosystem repo (82 files)",
+    "docs/boundary/<repo>.md for every canonical ecosystem repo (123 files)",
+    "scripts/scrape.py (the scraper, all 7 sources, idempotent incremental)",
+    "scripts/run-all.sh (Mac orchestrator)",
+    "scripts/run-windows.sh (Windows-via-Tailscale orchestrator with auto-merge)",
+    "scripts/render-per-repo.py (intent+boundary renderer)"
+  ],
+  "sources_scraped": {
+    "mac": {
+      "claude-code": "~/.claude/{history.jsonl, projects/*, plans/*, idea-seeds/*, evidence/*, civilization/*, file-history/*, todos/*, sessions/*}",
+      "codex": "~/.codex/{history.jsonl, sessions/**/rollout-*.jsonl, session-archive/logs/*, prompts/*, rules/*, skills/*, memories/*, external_agent_session_imports.json, sqlite/codex-dev.db}",
+      "cursor-agent": "~/.cursor/{prompt_history.json, projects/*/agent-transcripts/*, ai-tracking/ai-code-tracking.db, plans/*, commands/*, rules/*, skills/*}",
+      "forge": "~/Library/Application Support/forge/{conversations/*, config/*} + ~/.config/forge*/",
+      "droid": "n/a on Mac (covered by Codex on Windows)",
+      "aider": "~/.aider/{analytics.json, caches/*}"
+    },
+    "win": {
+      "claude-code": "C:\\Users\\koosh\\.claude\\... (mirror of Mac)",
+      "codex": "C:\\Users\\koosh\\.codex\\... (mirror of Mac; ~16GB rollouts + ~2.6GB logs_2.sqlite)",
+      "cursor-agent": "C:\\Users\\koosh\\.cursor\\... (mirror of Mac)",
+      "forge": "%APPDATA%\\forge\\... (mirror of Mac)",
+      "droid": "C:\\Users\\koosh\\.droid\\...",
+      "aider": "C:\\Users\\koosh\\.aider\\..."
+    }
+  },
+  "scale": {
+    "mac_raw_records": 47774,
+    "mac_kept_records": 41263,
+    "mac_sources_kept": {"claude-code": 27809, "codex": 13757, "cursor-agent": 7, "forge": 12},
+    "win_raw_records": 4512,
+    "win_kept_records": 3829,
+    "win_sources_kept": {"claude-code": 3252, "codex": 578, "cursor-agent": 12},
+    "merged_unique_records": 45091,
+    "repos_bound": 82,
+    "intent_files_rendered": 82,
+    "boundary_files_rendered": 123,
+    "drop_patterns_applied": ["slash-command-only", "single-word-confirm"],
+    "tag_distribution": {"narrative": 24505, "implementation": 4753, "bugfix": 3601, "policy-setting": 4259, "idea": 494, "repo-defining": 3973}
+  },
+  "trash_filter": {
+    "drop_patterns": [
+      "slash-command-only: /^\\/[a-z][a-z0-9-]*\\s*$/i",
+      "single-word-confirm: /^(yes|y|ok|no|n|thanks|thx|👍|k|sure|continue|next|go on|resume)\\s*$/i",
+      "empty-or-null: display/text is null/empty/whitespace",
+      "duplicate-continue: 'go on'/'continue'/'next' after first in same session"
+    ],
+    "keep_with_link": [
+      "truncated-paste: display empty but pastedContents non-empty (link to pasted content)"
+    ]
+  },
+  "repo_bindings": "auto via project-folder → repo-path mapping + ECOSYSTEM_MAP repo list; unbound → docs/curated-prompts/_orphan/. Special-case: bare `repos/` project path binds to `phenotype-registry` (the meta-repo).",
+  "adrs_referenced": ["ADR-023 (device-fit)", "ADR-024 (71-pillar)", "ADR-025 (worklog v2.1)", "ADR-026 (Factory AI Agent Readiness)"],
+  "push_status": {
+    "pushed_branch": "chore/l7-001-contract-only-orphan-2026-06-17",
+    "pushed_at": "2026-06-18T00:35:00-07:00",
+    "pushed_via": "fresh clone + git bundle (87KB) + git push (orphan root, no pack history)",
+    "remote_tree_entries": 262,
+    "remote_url": "https://github.com/KooshaPari/phenotype-registry/tree/chore/l7-001-contract-only-orphan-2026-06-17",
+    "local_only_branch": "chore/l7-001-contract-only-2026-06-17 (full 3.2GB curated corpus, .gitignored data)",
+    "local_only_url": "/Users/kooshapari/CodeProjects/Phenotype/repos/phenotype-registry-intent-bundle/",
+    "rationale": "The 2.0GB pack-objects bottleneck in the local registry repo blocked normal git push for >30 min. Worked around with orphan-branch bundle: 87KB bundle with no shared history was pushed in <60s.",
+    "future_push_strategy": "To push the full 3.2GB curated corpus later: (1) cd /Users/kooshapari/CodeProjects/Phenotype/repos/phenotype-registry-intent-bundle, (2) git checkout chore/l7-001-curation-snapshot-orphan-2026-06-17 (create via same orphan trick), (3) git bundle create /tmp/curation.bundle HEAD, (4) from a fresh shallow clone: git push --force origin chore/l7-001-curation-snapshot-orphan-2026-06-17. The orphan trick works because there is no shared pack-objects history to walk."
+  },
+  "next_steps": [
+    "human review of each docs/intent/<repo>.md to fill in the Intent Statement prose",
+    "human review of each docs/boundary/<repo>.md to fill in the In Scope / Out of Scope lists",
+    "resolve repo-name collisions (Dino vs DINOForge-UnityDoorstop, helios-cli vs HeliosCLI, focalpoint vs FocalPoint, agileplus vs AgilePlus) — likely the lowercase variants are typos or worktrees",
+    "consider extracting orphan records into a _meta/ intent file rather than dropping",
+    "schedule weekly refresh cadence per ADR-024",
+    "push the full 3.2GB curated corpus to chore/l7-001-curation-snapshot-orphan-2026-06-17 when network is idle (use orphan-bundle strategy documented in push_status.future_push_strategy)"
+  ]
+}
