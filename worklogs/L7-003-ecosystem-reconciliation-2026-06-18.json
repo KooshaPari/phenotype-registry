@@ -47,11 +47,18 @@
     "Push L7-003 commits (registries.md, ECOSYSTEM_MAP.md, docs/prompts-to-intent.crosswalk.md) to phenotype-registry main",
     "Mirror to chore/l7-001-contract-only-orphan-2026-06-17 if desired",
     "Schedule ADR-024 weekly cadence (kilo task #144 left a placeholder to push curated_corpus_3_2_gb)",
-    "Optional: Extend scrape.py with template-prefix binding mode + re-run for 27 canonical-but-unbound closures"
+    "Optional: Extend scrape.py with template-prefix binding mode + re-run for 27 canonical-but-unbound closures",
+    "Cherry-pick e9b03342 onto origin/main once — main has 39-commits lead from wave I + wave H9 + #162 (wave H next queue complete, McpKit absorption audit, Wave A row #22, Wave I untracked reduction)"
   ],
   "commits_this_turn": [
-    "registry main: docs(registry): L7-003 — resolve merge conflicts in ECOSYSTEM_MAP.md; add Capability & Intent SSOT section to registries.md; add prompts-to-intent.crosswalk.md"
+    "registry main: docs(registry): L7-003 — resolve merge conflicts in ECOSYSTEM_MAP.md; add Capability & Intent SSOT section to registries.md; add prompts-to-intent.crosswalk.md",
+    "chore/l7-001-contract-only-orphan-2026-06-17 (mirror): docs(registry): L7-003 — reconciliation between ECOSYSTEM_MAP.md and L7-002 _bindings.json"
   ],
-  "branch_target": "main (registry) — push directly since L7-001 orpha branch already mirrors content",
-  "status": "PUSH-PENDING"
+  "branch_target": "main (blocked by 39-commit remote divergence + rebase conflict on ECOSYSTEM_MAP.md),
+                 orphan (LIVE @ c9a524e7)",
+  "remote_status": {
+    "orphan_branch": "chore/l7-001-contract-only-orphan-2026-06-17 @ c9a524e7 (LIVE)",
+    "registry_main": "PUSH-PENDING — 39 new commits on origin/main; cherry-pick needed"
+  },
+  "status": "PARTIAL: orphan branch LIVE, main PUSH-PENDING via future cherry-pick"
 }
