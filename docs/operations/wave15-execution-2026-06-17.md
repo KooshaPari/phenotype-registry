@@ -62,8 +62,8 @@ Establish three-layer doctrine (governance / platform / engine) and unblocks lan
 | G16 | cliproxy | cliproxyapi-plusplus + go-sdk | **done** — #1026, vibeproxy#14, go-sdk#17 merged |
 | G17 | bifrost | bifrost | **done** — #7 merged; tag `phenotype/vendor-2026-06`; 1 remote (`main`) |
 | G18 | omlx | phenotype-registry ADR-ECO-016 | **done** — DROP; stay archived; engine jundot/omlx |
-| G19 | stubs | phenotype-infra + registry | **partial** — `projects/*.json` stubs merged (#163); infra absorption pending |
-| 14 | HexaKit | phenoShared + HexaKit | **in_progress** — feat/wave14-phenoshared-decompose (2 pin repoints; cargo blocked on terminal owners) |
+| G19 | stubs | phenotype-infra + registry | **done** — phenotype-infra#79 merged; hub ABSORB + monitoring stub RETIRE |
+| H14 | phenoShared | phenotype-config + phenotype-types + HexaKit | **in_progress** — [phenotype-config#2](https://github.com/KooshaPari/phenotype-config/pull/2), [phenotype-types#1](https://github.com/KooshaPari/phenotype-types/pull/1), HexaKit `feat/wave14-phenoshared-decompose` pushed (PR pending) |
 
 ## PR tracker
 
@@ -75,9 +75,12 @@ Establish three-layer doctrine (governance / platform / engine) and unblocks lan
 | G16 vibeproxy redirect | vibeproxy | merged (#14) |
 | G16 go-sdk pin | phenotype-go-sdk | merged (#17) |
 | Gateway UPSTREAM SSOT | phenotype-gateway | merged (#4) — OmniRoute canonical peer |
-| H14 phenoShared repoint | HexaKit | pushed (feat/wave14-phenoshared-decompose) |
+| H14 config-loader | phenotype-config | open ([#2](https://github.com/KooshaPari/phenotype-config/pull/2)) |
+| H14 phenotype-errors | phenotype-types | open ([#1](https://github.com/KooshaPari/phenotype-types/pull/1)) |
+| H14 HexaKit pin repoint | HexaKit | pushed (`feat/wave14-phenoshared-decompose`; PR pending) |
 | G17 bifrost vendor pin | bifrost | merged (#7); tag `phenotype/vendor-2026-06`; 1 remote |
-| G18 omlx ADR | phenotype-registry | open — ADR-ECO-016 DROP |
+| G18 omlx ADR | phenotype-registry | open (this PR) — ADR-ECO-016 DROP |
+| G19 stub absorption | phenotype-infra | merged ([#79](https://github.com/KooshaPari/phenotype-infra/pull/79)) |
 
 ## DELETE gate (fork cluster)
 
@@ -93,7 +96,8 @@ Establish three-layer doctrine (governance / platform / engine) and unblocks lan
 ## Next
 
 1. ~~**G18**~~ — done (ADR-ECO-016 DROP; phenotype-omlx stay archived; engine jundot/omlx)
-2. **G19** — phenotype-hub absorption into phenotype-infra
-3. **Desktop** — Electrobun spike in `OmniRoute/apps/desktop/`; harvest vibeproxy menu-bar UX
-4. **W18b** — Agentora stub crates (`phenotype-errors`, `phenotype-error-macros`, `phenotype-config-loader`) blocked on phenotype-types/config Rust absorption
-5. **agentapi-spec** — root `SPEC.md` on agentapi-plusplus
+2. ~~**G19**~~ — done (phenotype-hub → phenotype-infra; vibeproxy-monitoring-unified retired)
+3. **H14** — merge phenotype-config#2 + phenotype-types#1; open/merge HexaKit pin repoint PR; unblock cargo check
+4. **Desktop** — Electrobun spike in `OmniRoute/apps/desktop/`; harvest vibeproxy menu-bar UX
+5. **W18b** — Agentora stub crates unblocked after H14 terminal-owner merges
+6. **agentapi-spec** — root `SPEC.md` on agentapi-plusplus
