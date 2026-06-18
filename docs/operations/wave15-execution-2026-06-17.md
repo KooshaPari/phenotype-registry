@@ -60,7 +60,7 @@ Establish three-layer doctrine (governance / platform / engine) and unblocks lan
 | 15 | SSOT | phenotype-registry | **merged** (#142) |
 | G15 | agentapi++ | agentapi-plusplus + substrate | **done** — #535 merged; 1 remote (`main`) |
 | G16 | cliproxy | cliproxyapi-plusplus + go-sdk | **done** — #1026, vibeproxy#14, go-sdk#17 merged |
-| G17 | bifrost | bifrost | pending |
+| G17 | bifrost | bifrost | **done** — #7 merged; tag `phenotype/vendor-2026-06`; 2 remotes |
 | G18 | omlx | phenotype-registry ADR-ECO-008 | pending |
 | G19 | stubs | phenotype-infra + registry | pending |
 | 14 | HexaKit | phenoShared + HexaKit | **in_progress** — feat/wave14-phenoshared-decompose (2 pin repoints; cargo blocked on terminal owners) |
@@ -70,11 +70,12 @@ Establish three-layer doctrine (governance / platform / engine) and unblocks lan
 | PR | Repo | Status |
 |----|------|--------|
 | docs/wave15-gateway-fork-ssot | phenotype-registry | merged (#142) |
-| G15 branch hygiene | agentapi-plusplus | open (#534) |
-| G16 boundary | cliproxyapi-plusplus | open (#1026) |
-| G16 vibeproxy redirect | vibeproxy | open (#14) |
-| G16 go-sdk pin | phenotype-go-sdk | open (#17) |
+| G15 branch hygiene | agentapi-plusplus | merged (#535) |
+| G16 boundary | cliproxyapi-plusplus | merged (#1026) |
+| G16 vibeproxy redirect | vibeproxy | merged (#14) |
+| G16 go-sdk pin | phenotype-go-sdk | merged (#17) |
 | H14 phenoShared repoint | HexaKit | pushed (feat/wave14-phenoshared-decompose) |
+| G17 bifrost vendor pin | bifrost | merged (#7) |
 
 ## DELETE gate (fork cluster)
 
