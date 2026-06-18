@@ -34,3 +34,7 @@ If you discover a security vulnerability within phenotype-org-governance, please
 ### Scope
 
 This policy covers all code in this repository. Third-party dependencies are covered by their respective security policies.
+
+### MCP-specific guidance
+
+For Model Context Protocol (MCP) server, client, and gateway boundaries — including transport selection (stdio vs SSE/HTTP), schema validation, authentication tiers, and framework/runtime splits — see [`docs/security/mcp-boundary.md`](docs/security/mcp-boundary.md). That document is authoritative for MCP surfaces in the Phenotype fleet.
