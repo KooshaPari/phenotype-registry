@@ -304,7 +304,7 @@ All Astro static sites with near-identical structure. Target: consolidate into s
 | **Runtime** | [substrate](https://github.com/KooshaPari/substrate) | driver-http, driver-argv, fleet dispatch | No standalone cheap-llm MCP repo; MCP tools call HTTP/argv edges |
 | **Edge (Go tier-1)** | MCPForge, phenotype-ops-mcp | HTTP/SSE MCP gateways | Submodule refs in PhenoMCPServers `servers/external/` |
 
-**Legacy repos (retired 2026-06-17; absorption audit merged 2026-06-18 per registry#156):** McpKit (Py SDK), PhenoMCP (Rust/Go library), cheap-llm-mcp (runtime CLI) — all superseded per ADR-017/019; do not add new dependents. McpKit absorption: Rust framework → PhenoFastMCP-rust, Py framework → PhenoFastMCP, implementations → PhenoMCPServers, runtime → substrate, AgentMCP patterns → Agentora. Go/TypeScript SDKs = NO_MERIT (scaffold placeholders, never implemented).
+**Legacy repos (retired 2026-06-17):** McpKit (Py SDK), PhenoMCP (Rust/Go library), cheap-llm-mcp (runtime CLI) — all superseded per ADR-017/019; do not add new dependents.
 
 **Anti-patterns (retired):** `phenotype-rust-sdk`, `phenotype-go-sdk` language buckets — see PhenoMCPServers `retired_anti_patterns` and ADR-017.
 
@@ -490,55 +490,6 @@ ACTIVE FORKS (5)
 | Worker A (Bash/gh api) | 34 phenotype-\* + pheno\* repos | Cargo.toml, package.json, go.mod |
 | Worker B (Bash/gh api) | 22 \*Kit + helios\* + agent repos | Cargo.toml, pyproject.toml, package.json |
 | Worker C (Bash/gh api) | 55 infra + apps + routing + forks + landing | Cargo.toml, go.mod, pyproject.toml |
-
----
-
-## 8. Untracked Reduction Candidates (Wave I, 2026-06-18, #153)
-
-> **Registry pointers only.** Live REST audit (2026-06-18) surfaced **18 fresh
-> candidates** not already covered by this map or `RATIONALIZATION_PLAN.md`.
-> Full triage table, ordering, anomalies, and "confirmed not candidates"
-> list: see **[Wave I in RATIONALIZATION_PLAN.md](RATIONALIZATION_PLAN.md#wave-i--surface-reduction-fresh-triage-2026-06-18-153)**.
-
-Quick index (action class → cluster → owner):
-
-| # | Candidate | Cluster / owner | Action class |
-|---|-----------|-----------------|--------------|
-| 1 | helioscope | Helios → helios-cli (blocked — see caveat) | archive-with-redirect |
-| 2 | HeliosCLI | Helios → helios-cli (blocked — see caveat) | consolidate |
-| 5 | phenotype-runs | registry-extracted stub | delete-after-extract / archive |
-| 6 | phenotype-templates | → phenokits-commons/templates | convert to template repo / archive |
-| 7 | Authvault vs AuthKit | SDK boundary split | record in BOUNDARY_OWNERS |
-| 8 | phenoShared-niche | → phenoShared | fold |
-| 9 | phenoUtils vs phenoShared | crate ownership | DOMAIN_ROLES update |
-| 10 | PhenoFastMCP / -go / -rust | per-language canonical | SUPERSET.md + consolidate |
-| 11 | phenotype-otel + Profila | → PhenoObservability | fold (tracing/profiling dirs exist) |
-| 12 | agileplus-spec-harmonizer | → AgilePlus | merge |
-| 13 | phenotype-water + phenotype-terrain | orphan .NET | archive-after-extract |
-| 14 | Httpora + Quillr | naming drift | reconcile identity first |
-| 15 | phenotype-monorepo-state | → phenotype-registry | fold |
-| 16 | pheno-context | → phenoShared/pheno | fold |
-| 17 | TripleM | **156 MB, 404 anomaly, 2-yr stale** | **investigate via clone first** |
-| 18 | Zerokit | "Restored" scaffold, no src/ | confirm intent / archive |
-
-**Highest-leverage single action:** de-vendor `phenoRouterMonitor` (34 MB) +
-`HexaKit` (22 MB). Each vendors ~60 copies of other org repos at root incl. ~20
-ghost namespaces (`Cmdra, Cursora, Datamold, Docuverse, Duple, Evalora,
-Eventra, Flagward, Flowra, Guardis, KaskMan, Kogito, Logify, Portalis, Queris,
-Schemaforge, Seedloom, Tossy, Tracely, bare-cua, helMo, zen`). Replace
-vendored copies with refs/submodules; delete ghost dirs.
-
-**Helios caveat (verified):** `helios-cli` is a 10% non-building scaffold per
-its own README. Do not archive #1 / #2 until the working code migrates into
-`helios-cli` (or redirect target is retargeted).
-
-**Confirmed NOT candidates (preserved):** `substrate`, `phenotype-gateway`,
-`Apisync`, `Pine`, `services`, `phenoAI`, `dispatch-mcp`, `Agentora`,
-`Tasken`, `Benchora`, `localbase3`, `phenotype-ts-utils`, `phenokits-commons`,
-`Tracera`, `AgilePlus`, `phenodag`, `sharecli`, `thegent`. Landing pages
-already consolidated (`phenotype-landing` canonical; `projects-landing`
-archived). Protected: `KlipDot`, `KodeVibeGo`, `kwality`, `AppGen`,
-`P2/472-P2`, `KVirtualStage`.
 
 ---
 
