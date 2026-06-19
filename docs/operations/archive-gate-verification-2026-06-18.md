@@ -15,6 +15,19 @@ Per `BOUNDARY_OWNERS.md` 5-check gate. **Never delete TestingKit or phenoShared.
 | X-09 | AuthKit | **ARCHIVED** | BOUNDARY_OWNERS 5/5; AuthKit#118 fold merged; Tracera/thegent verified-clean; `gh repo archive` 2026-06-18 |
 | X-10 | phenoShared | **NO DELETE** | P4 decompose incomplete per ADR-ECO-014 |
 
+## Surface reduction batch 1+2 closeout (Phase 4 tasks 71–80, 2026-06-19)
+
+Per `BOUNDARY_OWNERS.md` 5-check gate.
+
+| ID | Repo | Verdict | 5-check | Evidence |
+|----|------|---------|---------|----------|
+| SR-71 | Planify | **ARCHIVED** | 5/5 | Upstream fork; no local delta; `isArchived: true` (verified 2026-06-19) |
+| SR-72 | portage | **ARCHIVED** | 5/5 | Upstream fork; no local delta; `isArchived: true` (verified 2026-06-19) |
+| SR-73 | phenotype-ops-mcp | **ARCHIVED** | 5/5 | Redirect `PhenoMCPServers/servers/external/`; `isArchived: true` (verified 2026-06-19) |
+| SR-74 | agileplus-spec-harmonizer | **ABSORBED** | 5/5 | AgilePlus#756 merged; `crates/agileplus-spec-harmonizer` canonical |
+| SR-75 | agileplus-spec-harmonizer (post-absorb) | **TOMBSTONE** | 5/5 | Source repo 404 (deleted); `gh repo archive` N/A |
+| SR-77 | phenoStandards | **STUB ONLY** | 5/5 | Repo 404; `projects/phenoStandards.json` registry stub; HexaKit absorbed 2026-06-16 |
+
 ## Actions taken
 
 - AuthKit archived 2026-06-18 (X-09 gate pass); Metron tombstoned 2026-06-19 (repo 404 post-absorption; `gh repo archive` N/A)
