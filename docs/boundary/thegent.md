@@ -20,13 +20,13 @@ out_of_scope:
 
 | Not here | Lives in | Reason |
 | -------- | -------- | ------ |
-| <capability> | <other-repo-or-N/A> | <why> |
+| `<capability>` | `<other-repo-or-N/A>` | `<why>` |
 
 ## Boundary Crossings
 
 | Crossing | Direction | Surface | Status |
 | -------- | --------- | ------- | ------ |
-| <capability or interface> | <this-repo→other or other→this-repo> | <Trait / HTTP / CLI / file / event> | <green or amber or red> |
+| `<capability or interface>` | <this-repo→other or | `<this-repo→other|other→this-repo>` | `<Trait / HTTP / CLI / file / event>` | <green or amber or | `<green|amber|red>` |
 
 ## Last Boundary Review
 
