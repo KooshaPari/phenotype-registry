@@ -131,9 +131,9 @@ Gateway fork lanes **G15–G17 complete** (other agent). Registry disposition-in
 
 See [p5-agent-runtime-absorption-2026-06-19.md](./p5-agent-runtime-absorption-2026-06-19.md).
 
-1. **P5-1** — PhenoAgent → Agentora merge ([PhenoAgent](https://github.com/KooshaPari/PhenoAgent) → `crates/pheno-agent/`)
-2. **P5-2** — PhenoAgent archive gate (0 manifest git deps verified)
-3. **P5-3** — PhenoProc archive gate (Agentora#79 absorbed; repo unarchived on GitHub)
+1. ~~**P5-1**~~ — done ([Agentora#91](https://github.com/KooshaPari/Agentora/pull/91); PhenoAgent archived 2026-06-19)
+2. ~~**P5-2**~~ — done (PhenoAgent archive gate)
+3. ~~**P5-3**~~ — done (PhenoProc archive gate)
 4. **P5-4** — phenoRouterMonitor → phenoAI (deferred; repo archived)
 5. **P5-5** — thegent / Agentora boundary audit (AFFIRM split)
 6. **P5-6** — FocalPoint → HexaKit (deferred; 867MB vendor)
