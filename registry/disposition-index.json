@@ -1,5 +1,5 @@
 {
-  "version": "1.4.0",
+  "version": "1.4.1",
   "updated": "2026-06-18",
   "authority": "phenotype-registry",
   "charter": "docs/rationalization/boundary-shaping.md",
@@ -55,6 +55,7 @@
     {"id": "gate-observabilitykit", "path": "KooshaPari/ObservabilityKit", "disposition": "DELETE-eligible", "target": "phenotype-python-sdk", "wave": "X", "fsm": "done", "relocated_date": "2026-06-18", "note": "Repo 404 tombstone; archive-gate-verification-2026-06-18"},
     {"id": "gate-testingkit", "path": "KooshaPari/TestingKit", "disposition": "AFFIRM", "target": "TestingKit", "wave": "X", "fsm": "hold", "note": "HOLD DELETE — never delete per BOUNDARY_OWNERS"},
     {"id": "gate-phenoshared", "path": "KooshaPari/phenoShared", "disposition": "DECOMPOSE", "target": "DOMAIN_ROLES owners", "wave": "X", "fsm": "hold", "adr": "ADR-ECO-014", "note": "NO DELETE until P4 complete"},
+    {"id": "gate-pheno", "path": "KooshaPari/pheno", "disposition": "RETIRE", "target": "HexaKit", "wave": "W18b", "fsm": "archive_pending", "adr": "ADR-ECO-014", "relocated_date": "2026-06-18", "note": "W18b fleet gate pass — org scan 0 KooshaPari/pheno manifest refs (Tracera exempt); 21 crate duplicates canonical in HexaKit; gh repo archive deferred — downstream execution"},
     {"id": "gate-phenotype-runs", "path": "KooshaPari/phenotype-runs", "disposition": "REDIRECT", "target": "surface-reduction", "wave": "X", "fsm": "done", "relocated_date": "2026-06-18", "pr": "phenotype-runs#10", "note": "Retirement README merged"},
     {"id": "block-c-phenotype-python-sdk", "path": "KooshaPari/phenotype-python-sdk", "disposition": "AFFIRM", "target": "phenotype-python-sdk", "wave": "Block-C", "fsm": "done", "relocated_date": "2026-06-18", "pr": "phenotype-python-sdk#18", "note": "Block-C boundary disposition merged"},
     {"id": "block-c-phenoobservability", "path": "KooshaPari/PhenoObservability", "disposition": "AFFIRM", "target": "PhenoObservability", "wave": "Block-C", "fsm": "done", "relocated_date": "2026-06-18", "pr": "PhenoObservability#162", "note": "Block-C boundary disposition merged"},

@@ -127,9 +127,11 @@
       "blocks_archive": "pheno",
       "repoint_to": ["phenotype-types"],
       "interim_staging": "phenoShared",
-      "status": "pending",
+      "status": "verified-clean",
       "wave": "W18b",
-      "adr": "ADR-ECO-014"
+      "adr": "ADR-ECO-014",
+      "verified_at": "2026-06-18",
+      "note": "W18b org scan — 0 KooshaPari/pheno manifest refs"
     },
     {
       "id": "phenotype-gfx-pr-10-merge",
@@ -149,37 +151,44 @@
       "blocks_archive": "pheno",
       "repoint_to": ["phenotype-config", "phenotype-types", "Authvault"],
       "interim_staging": "phenoShared",
-      "status": "pending",
+      "status": "verified-clean",
       "wave": "W18b",
-      "adr": "ADR-ECO-014"
+      "adr": "ADR-ECO-014",
+      "verified_at": "2026-06-18",
+      "note": "W18b org scan — 0 KooshaPari/pheno manifest refs"
     },
     {
       "id": "phenotype-teamcomm",
       "blocks_archive": "pheno",
       "repoint_to": ["phenotype-types", "Eventra"],
       "interim_staging": "phenoShared",
-      "status": "pending",
+      "status": "verified-clean",
       "wave": "W18b",
-      "adr": "ADR-ECO-014"
+      "adr": "ADR-ECO-014",
+      "verified_at": "2026-06-18",
+      "note": "W18b org scan — 0 KooshaPari/pheno manifest refs"
     },
     {
       "id": "phenotype-go-sdk",
       "blocks_archive": "pheno",
       "repoint_to": ["phenotype-types"],
       "interim_staging": "phenoShared",
-      "status": "pending",
+      "status": "verified-clean",
       "wave": "W18b",
-      "adr": "ADR-ECO-014"
+      "adr": "ADR-ECO-014",
+      "verified_at": "2026-06-18",
+      "note": "W18b org scan — 0 KooshaPari/pheno manifest refs"
     },
     {
       "id": "TestingKit",
       "blocks_archive": "pheno",
       "repoint_to": ["PhenoObservability"],
       "interim_staging": "phenoShared",
-      "status": "partial",
+      "status": "verified-clean",
       "wave": "W18b",
       "adr": "ADR-ECO-014",
-      "note": "phenotype-health pin → PhenoObservability (PR pending); no pheno monorepo pins"
+      "verified_at": "2026-06-18",
+      "note": "W18b org scan — 0 KooshaPari/pheno manifest refs; phenotype-health repointed PhenoObservability"
     }
   ]
 }

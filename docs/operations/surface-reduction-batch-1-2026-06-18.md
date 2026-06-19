@@ -33,7 +33,8 @@
 |----------|--------|-----|
 | AgilePlus | **repointed** | [#763](https://github.com/KooshaPari/AgilePlus/pull/763) merged |
 | PhenoPlugins | **repointed** | [#104](https://github.com/KooshaPari/PhenoPlugins/pull/104) merged |
-| phenotype-gfx | pending | — |
-| Civis | pending | — |
-| phenotype-teamcomm | pending | — |
-| phenotype-go-sdk | pending | — |
+| phenotype-gfx | **verified-clean** | W18b org scan |
+| Civis | **verified-clean** | W18b org scan |
+| phenotype-teamcomm | **verified-clean** | W18b org scan |
+| phenotype-go-sdk | **verified-clean** | W18b org scan |
+| TestingKit | **verified-clean** | W18b org scan |

@@ -18,7 +18,7 @@
 | PhenoRuntime | DELETE | 🔶 harvest | Wave 6 harvest |
 | BytePort, Settly, PlatformKit, portage, phenoXddLib | ARCHIVED | ✅ | Wave 18 stubs |
 | phenotype-hub, Paginary, acp, thegent-workspace | ARCHIVED/scaffold | ✅/🔶 | Wave 18 |
-| pheno | ARCHIVED last | ❌ fleet refs | Wave 18b — repoint to **role owners**, not phenoShared |
+| pheno | ARCHIVED last | ✅ fleet gate | Wave 18b — org scan clean; `gh repo archive` deferred |
 | phenoShared | **DECOMPOSE** | ❌ staging monorepo | ADR-ECO-014 — relocate crates then delete |
 | phenotype-e2e-base | ABSORB | 🔶 | Wave 19 → journeys |
 | agileplus-spec-harmonizer | AFFIRM tooling | ✅ | Register in map |
@@ -39,10 +39,6 @@
 
 ## pheno fleet blockers (second-order)
 
-Chokepoints green for named consumers; org manifest scan still finds `KooshaPari/pheno` in:
+**Gate pass (2026-06-18):** org manifest scan — 0 external `KooshaPari/pheno` refs (Tracera exempt per W18b chokepoint). All `pheno_fleet_blockers` in `registry/chokepoints.json` now `verified-clean` or `repointed`. `gh repo archive KooshaPari/pheno` deferred — registry tombstone `projects/pheno.json` + disposition-index `gate-pheno` row (`fsm: archive_pending`).
 
-- PhenoCompose (critical — engine repo)
-- Agentora, AgilePlus, PhenoPlugins, phenotype-gfx
-- Civis, phenotype-teamcomm, phenotype-go-sdk, TestingKit
-
-See `registry/chokepoints.json` → `pheno_fleet_blockers`. Repoint strategy: per-crate **DOMAIN_ROLES** owners (`phenotype-config`, `phenotype-resilience`, `PhenoObservability`, `phenotype-types`, `Eventra`); `phenoShared` is interim staging only ([ADR-ECO-014](../adrs/ADR-ECO-014-phenoshared-decompose.md)).
+Repoint strategy (complete): per-crate **DOMAIN_ROLES** owners (`phenotype-config`, `phenotype-resilience`, `PhenoObservability`, `phenotype-types`, `Eventra`); `phenoShared` is interim staging only ([ADR-ECO-014](../adrs/ADR-ECO-014-phenoshared-decompose.md)).

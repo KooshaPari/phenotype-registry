@@ -1,0 +1,14 @@
+{
+  "name": "pheno",
+  "languages": ["rust"],
+  "primary_language": "rust",
+  "status": "active",
+  "has_readme": true,
+  "type": "monorepo",
+  "path": "repos/pheno",
+  "disposition": "RETIRE",
+  "wave": "W18b",
+  "redirect": "HexaKit + DOMAIN_ROLES terminal owners",
+  "adr": "ADR-ECO-014",
+  "note": "Legacy 21-crate infrakit duplicate — W18b fleet gate pass 2026-06-18 (org scan 0 manifest refs excl. Tracera exempt); gh repo archive deferred to downstream execution"
+}

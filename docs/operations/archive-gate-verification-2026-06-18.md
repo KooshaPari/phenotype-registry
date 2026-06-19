@@ -14,10 +14,12 @@ Per `BOUNDARY_OWNERS.md` 5-check gate. **Never delete TestingKit or phenoShared.
 | X-08 | phenotype-dep-guard | **MERGED** | #54 PolicyStack absorption |
 | X-09 | AuthKit | **ARCHIVED** | BOUNDARY_OWNERS 5/5; AuthKit#118 fold merged; Tracera/thegent verified-clean; `gh repo archive` 2026-06-18 |
 | X-10 | phenoShared | **NO DELETE** | P4 decompose incomplete per ADR-ECO-014 |
+| X-11 | pheno | **ARCHIVE pending** | W18b fleet gate pass — org scan 0 `KooshaPari/pheno` manifest refs (Tracera exempt); `gate-pheno` tombstone; `gh repo archive` deferred |
 
 ## Actions taken
 
 - AuthKit archived 2026-06-18 (X-09 gate pass); Metron archive gate still open
+- pheno W18b fleet gate pass 2026-06-18 (X-11) — org scan clean; `gh repo archive KooshaPari/pheno` deferred
 - Registry rows updated in disposition-index batch PR
 
 ## Phase 3 stale-tail closeout (2026-06-18)

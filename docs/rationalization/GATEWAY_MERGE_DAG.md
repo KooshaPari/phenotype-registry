@@ -82,9 +82,9 @@ flowchart TD
 - [x] PhenoPlugins manifest repoint — [#104](https://github.com/KooshaPari/PhenoPlugins/pull/104) merged
 - [x] HexaKit H14 pin repoint — [#267](https://github.com/KooshaPari/HexaKit/pull/267) merged
 - [x] Agentora consumer repoint — [#90](https://github.com/KooshaPari/Agentora/pull/90) merged; stub crates → phenotype-types/phenotype-config
-- [ ] Org scan: 0 external `KooshaPari/pheno` refs (excl. Tracera)
-- [ ] PhenoCompose repointed per-crate to role owners (not phenoShared terminal)
-- [ ] `gh repo archive KooshaPari/pheno` after gate
+- [x] Org scan: 0 external `KooshaPari/pheno` refs (excl. Tracera)
+- [x] PhenoCompose repointed per-crate to role owners (not phenoShared terminal)
+- [ ] `gh repo archive KooshaPari/pheno` after gate — **deferred** (registry tombstone + `gate-pheno` row `fsm: archive_pending`)
 
 ---
 
