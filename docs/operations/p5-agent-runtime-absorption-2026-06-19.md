@@ -17,8 +17,8 @@ source repos after zero-dep gates. Python proc plane already lives at
 | P5-1 | PhenoAgent Rust/CLI/docs → `crates/pheno-agent/` + absorption doc | PhenoAgent | Agentora | **done** — [Agentora#91](https://github.com/KooshaPari/Agentora/pull/91); archived 2026-06-19 |
 | P5-2 | PhenoAgent archive gate (post P5-1 merge) | PhenoAgent | archive | **done** — archived 2026-06-19 |
 | P5-3 | PhenoProc archive gate verify | PhenoProc | archive | **done** — archived 2026-06-19 |
-| P5-4 | phenoRouterMonitor Rust core → phenoAI | phenoRouterMonitor | phenoAI | **deferred** — repo archived; Streamlit dash retained |
-| P5-5 | thegent vs Agentora boundary | thegent | AFFIRM split | **open** — Python runtime; not duplicate of pheno-agent Rust |
+| P5-4 | phenoRouterMonitor Rust core → phenoAI | phenoRouterMonitor | phenoAI | **deferred** — repo archived; Streamlit dash retained; no code migration, docs-only boundary note |
+| P5-5 | thegent vs Agentora boundary | thegent | AFFIRM split | **open** — Python runtime stays separate from pheno-agent Rust; next step is boundary confirmation and registry handoff |
 | P5-6 | FocalPoint vendor → HexaKit | FocalPoint | HexaKit | **deferred** — 867MB vendor; repo archived |
 
 ## Consumer chokepoints
