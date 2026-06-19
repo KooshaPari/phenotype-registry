@@ -42,7 +42,7 @@ out_of_scope:
 | Go framework absorption | `McpKit → PhenoFastMCP-go` | Go module/server/client/transports | green |
 | Agent package extraction | `McpKit/python/agentmcp → phenotype-python-sdk/packages/agentmcp-hex/` | Python SDK package | amber |
 | Asset crate extraction | `McpKit/rust/phenotype-mcp-asset → phenotype-mcp-asset` | Rust crate | green |
-| Branch-only cleanup | `origin/chore/1st-hygiene-2026-06-08 → archive/decision` | git branch delta | amber |
+| Branch-only cleanup | `origin/chore/1st-hygiene-2026-06-08 → archive-only` | git branch delta | green |
 
 ## Last Boundary Review
 
@@ -51,9 +51,9 @@ out_of_scope:
 **Worklog / finding:** `findings/2026-06-18-McpKit-source-inventory.md`; `worklogs/L7-003-ecosystem-reconciliation-2026-06-18.json`
 **Decisions:**
 - McpKit is not an active implementation boundary.
-- Deletion status is `DELETE_AFTER_PATCHES`.
+- Deletion status is `DELETE`.
 - `PhenoFastMCP`, `PhenoFastMCP-rust`, and `PhenoFastMCP-go` were confirmed as local git clones and own the active framework lanes.
 - `agentmcp-hex` and `phenotype-mcp-asset` preserve the non-framework extracted surfaces.
-- Remaining open work is branch-only cleanup for `origin/chore/1st-hygiene-2026-06-08`.
+- `origin/chore/1st-hygiene-2026-06-08` was reviewed: product-bearing `python/agentmcp` is covered by `agentmcp-hex`; remaining grading, lefthook, Scorecard, Taskfile, grade-report, SSOT, and changelog deltas are generic hygiene/archive evidence and do not block deletion.
 
-**Next review:** on final McpKit branch cleanup or 2026-07-18, whichever comes first.
+**Next review:** 2026-07-18, only if retained as archived historical evidence.
