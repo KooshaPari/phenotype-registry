@@ -1,0 +1,93 @@
+{
+  "id": "L7-004",
+  "title": "Consolidated PROGRESS-REPORT.md across L7-001/002/003/004 wave + 14 subagents (A-N)",
+  "date": "2026-06-18",
+  "device": "macbook",
+  "scope": "phenotype-registry (consolidator turn, no new work — read-only sweep of L7 artifacts)",
+  "subagent": "N",
+  "method": "manager-mode parallel sweep — read all 3 prior worklogs, scripts, contracts, propagate state, render 484-line report",
+  "status": "complete",
+  "deliverables": [
+    "PROGRESS-REPORT.md (484 lines, 8 sections)",
+    "worklogs/L7-004-progress-report-2026-06-18.json (this file)"
+  ],
+  "metrics": {
+    "progress_report_line_count": 484,
+    "section_count": 8,
+    "subagent_count": 14,
+    "subagent_index_rows": 14,
+    "remote_branches_documented": 4,
+    "scripts_documented": 8,
+    "worklogs_documented": 4,
+    "operational_docs_documented": 6,
+    "top_repos_documented": 15,
+    "canon_not_bound_documented": 16,
+    "bound_not_canon_documented": 53,
+    "adrs_referenced": 7,
+    "commit_hash": "PENDING (see git log chore/L7-001-orphan-squashed-2026-06-18)"
+  },
+  "sections": [
+    "1. Executive Summary (5 bullets)",
+    "2. L7 Wave Timeline (L7-001/002/003/004 with metrics per turn)",
+    "3. Subagent Index (table: A, B, ..., M, N; task, outcome, SHA, artifact)",
+    "4. Remote State Table (branch, SHA, status, last touched, URL)",
+    "5. Files Created/Modified This Wave (intent+boundary, scripts, worklogs, ops, local-only)",
+    "6. Per-repo Coverage Stats (top 15 by prompt count + canon-not-bound + bound-not-canon)",
+    "7. Outstanding Items (3 turns: immediate, +1, +2, +3)",
+    "8. Appendix (worklogs, scripts, contracts, branches, ADRs, local-only, propagation banner)",
+    "9. Provenance & Integrity (verification commands, orphan-bundle recap, coherence table)",
+    "10. Closing Notes (net outcome, pattern, L7-005 forecast)"
+  ],
+  "sources_consumed": [
+    "worklogs/L7-001-intent-boundary-curation-2026-06-17.json (89 lines)",
+    "worklogs/L7-002-collision-resolution-2026-06-18.json (87 lines)",
+    "worklogs/L7-003-ecosystem-reconciliation-2026-06-18.json (78 lines)",
+    "ALIASES.md (35 lines, 14 active renames + 6 archived drops)",
+    "PUSH-STATUS.md (117 lines, 87 KB orphan-bundle push strategy)",
+    "PROPAGATION_REPORT.md (72 lines, 95 repos propagated)",
+    "docs/prompts-to-intent.crosswalk.md (136 lines, 80-entry gap reconciliation)",
+    "docs/registries.md (109 lines, 4 SSOT layers)",
+    "ECOSYSTEM_MAP.md (496 lines, 2 merge conflicts resolved)",
+    "_bindings.json (108 repos, top-15 prompt counts derived)",
+    "git log: orphan @ cef45570, main @ 65cca990, squashed @ 893b61f2, cherry-pick @ eb3e57ae"
+  ],
+  "verification_run": [
+    "ls worklogs/L7-00{1,2,3}-*.json — all 3 present",
+    "ls scripts/*.py scripts/*.sh — all 8 present and executable",
+    "ls docs/intent/ | grep -v ^_ | wc -l — 130 per-repo files",
+    "ls docs/boundary/ | grep -v ^_ | wc -l — 128 per-repo files",
+    "python3 -c import json; print(len(json.load(open('phenotype-registry-curation-data/_bindings.json')))) — 108",
+    "git log orphan —oneline -1 — cef45570 (LIVE)",
+    "git log squashed —oneline -1 — 893b61f2 (LOCAL-COMMITTED)"
+  ],
+  "outstanding_items_referenced": [
+    "human review of 108 intent statement prose (L7-001 next_steps)",
+    "human review of 108 boundary in-scope/out-of-scope lists",
+    "resolve 4 remaining semantic collision cases (Dino/DINOForge, helios-cli/HeliosCLI, focalpoint/FocalPoint, agileplus/AgilePlus)",
+    "push 3.2 GB full corpus to orphan via orphan-bundle strategy (PUSH-STATUS.md)",
+    "extend scrape.py with template-prefix binding mode (L7-003 next_steps #1, ~30 min)",
+    "schedule ADR-024 weekly refresh (next: 2026-06-22 09:00 PDT)",
+    "cherry-pick e9b03342 onto origin/main once 39-commit lead closes"
+  ],
+  "next_steps": [
+    "user reviews PROGRESS-REPORT.md and approves push",
+    "user pushes chore/L7-001-orphan-squashed-2026-06-18 to remote main (or accepts orphan-branch strategy)",
+    "L7-005 turn: close 16 remaining canon-not-bound via template-prefix binding mode",
+    "L7-005 turn: run first ADR-024 weekly refresh"
+  ],
+  "branch_target": "chore/L7-001-orphan-squashed-2026-06-18 (LOCAL-COMMITTED, PUSH-PENDING per user directive)",
+  "remote_status": {
+    "orphan_branch": "chore/l7-001-contract-only-orphan-2026-06-17 @ cef45570 (LIVE, 12 commits, 282 tree entries, 87 KB)",
+    "main": "PUSH-PENDING (squash commit ready on local chore/L7-001-orphan-squashed-2026-06-18)",
+    "cherry_pick_branch": "chore/L7-003-cherry-pick-2026-06-18 (LOCAL, worklog-only, optional push)"
+  },
+  "adrs_referenced": [
+    "ADR-023 (device-fit gate, macbook)",
+    "ADR-024 (71-pillar weekly cadence)",
+    "ADR-025 (worklog v2.1 device: column)",
+    "ADR-026 (Factory AI Agent Readiness)",
+    "ADR-001 (NetScript delete — used by L7-002 drop)",
+    "ADR-007 (cheap-llm-mcp archive — used by L7-002 drop)",
+    "ADR-017 (Stashly archive — used by L7-002 drop)"
+  ]
+}
