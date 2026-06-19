@@ -48,7 +48,7 @@
 ## Next steps
 
 1. Open phenoUtils PR for five **extract** branches (governance + test-infra).
-2. After extract merges, delete 21 **archive** remotes via `git push origin --delete '<branch>'` (requires repo admin; `gh api` DELETE returned 404 with current token — 2026-06-18).
+2. **Blocked 2026-06-18:** repo is **archived** (read-only) — branch delete returns 403. Options: (a) `gh api -X PATCH repos/KooshaPari/PhenoLang -f archived=false` → delete 20 `*/feat/docs-site` → re-archive; or (b) accept frozen branches in archive and close `gw-phenolang` on index + phenoUtils extract only.
 3. Close `gw-phenolang` disposition row (`fsm: done`) when phenoUtils index is canonical.
 
 ## References
