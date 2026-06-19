@@ -24,7 +24,8 @@
     "canon_not_bound_documented": 16,
     "bound_not_canon_documented": 53,
     "adrs_referenced": 7,
-    "commit_hash": "PENDING (see git log chore/L7-001-orphan-squashed-2026-06-18)"
+    "progress_report_commit": "508d2225",
+    "worklog_commit": "a63a264d"
   },
   "sections": [
     "1. Executive Summary (5 bullets)",
@@ -75,10 +76,10 @@
     "L7-005 turn: close 16 remaining canon-not-bound via template-prefix binding mode",
     "L7-005 turn: run first ADR-024 weekly refresh"
   ],
-  "branch_target": "chore/L7-001-orphan-squashed-2026-06-18 (LOCAL-COMMITTED, PUSH-PENDING per user directive)",
+  "branch_target": "chore/L7-001-orphan-squashed-2026-06-18 (LOCAL-COMMITTED @ a63a264d, 2 commits ahead of origin, PUSH-PENDING per user directive)",
   "remote_status": {
     "orphan_branch": "chore/l7-001-contract-only-orphan-2026-06-17 @ cef45570 (LIVE, 12 commits, 282 tree entries, 87 KB)",
-    "main": "PUSH-PENDING (squash commit ready on local chore/L7-001-orphan-squashed-2026-06-18)",
+    "main": "PUSH-PENDING (squash commits 508d2225 + a63a264d on local chore/L7-001-orphan-squashed-2026-06-18; 2 commits ahead of origin)",
     "cherry_pick_branch": "chore/L7-003-cherry-pick-2026-06-18 (LOCAL, worklog-only, optional push)"
   },
   "adrs_referenced": [
