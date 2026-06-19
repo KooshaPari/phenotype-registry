@@ -47,7 +47,7 @@ Per `BOUNDARY_OWNERS.md` 5-check gate.
 
 | ID | Item | Verdict | Evidence |
 |----|------|---------|----------|
-| ST-01 | BytePort #201 | **CLOSE BLOCKED** | Repo archived read-only; PR [#201](https://github.com/KooshaPari/BytePort/pull/201) remains OPEN stale — GraphQL locked-issue error on close; governance baseline only; canonical crate in phenotype-tooling `crates/byteport` |
+| ST-01 | BytePort #201 | **UNCLOSABLE** | Repo `KooshaPari/BytePort` archived read-only (2026-06-18); canonical → `phenotype-tooling` `crates/byteport`. PR [#201](https://github.com/KooshaPari/BytePort/pull/201) remains OPEN stale — **cannot close or merge**: GitHub GraphQL `closePullRequest` returns locked-issue / read-only archive error. **Action:** leave open; track as absorbed stale tail; do not block archive gates. See [local-clone-hygiene](../operations/local-clone-hygiene-2026-06-18.md). |
 | ST-02 | phenotype-omlx #22 | **CLOSE BLOCKED** | Repo archived read-only; ADR-ECO-008 triage: scope exceeds docs/benchmark-only; CI blocked |
 | ST-03 | gw-phenolang | **DONE** | phenoUtils#66 index canonical; [gw-phenolang-branch-index.md](../disposition/gw-phenolang-branch-index.md); full branch sweep 2026-06-19 (main-only) |
 | ST-04 | AuthKit X-09 | **ARCHIVED** | 5-check pass; Tracera/thegent repointed; archived 2026-06-18 |
