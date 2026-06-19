@@ -1,6 +1,6 @@
 # KooshaPari Ecosystem Map
 
-> Generated: 2026-06-18 (L7-003 reconciliation) | Repos audited: 13 canonical (live, GitHub-reachable) | Validator: `task validate` → `scripts/validate-ecosystem.sh`
+> Generated: 2026-06-18 (L7-003 reconciliation + McpKit-Absorption-2026-06-18 wave) | Repos audited: 112 canonical (live, GitHub-reachable) | Validator: `task validate` → `scripts/validate-ecosystem.sh`
 > Absorption traceability: `.kilo/audits/kooshapari-absorption-2026-06-18.md` is the authoritative absorption traceability matrix for this update.
 > Last SSOT run: see `scripts/validate-ecosystem.sh --json` (re-run on every map edit)
 
@@ -27,14 +27,14 @@ Role split for the spec/governance spine (so indexes stop competing):
 
 ---
 
-## 1. Role Classification (111 repos)
+## 1. Role Classification (112 repos)
 
 | Role | Count | Repos |
 |------|-------|-------|
-| **shared-lib** | 21 | pheno, HexaKit, phenoShared, phenoUtils, Authvault, Tasken, Apisync, phenoObservability, PhenoPlugins, FocalPoint, PhenoVCS, Benchora, phenotype-auth-ts (archived 2026-06-18, absorbed into AuthKit/typescript/packages/auth-ts/), phenotype-journeys, phenotype-voxel, Compound-Spheres-3D |
+| **shared-lib** | 22 | pheno, HexaKit, phenoShared, phenoUtils, Authvault, Tasken, Apisync, phenoObservability, PhenoPlugins, FocalPoint, PhenoVCS, Benchora, phenotype-auth-ts (archived 2026-06-18, absorbed into AuthKit/typescript/packages/auth-ts/), phenotype-journeys, phenotype-voxel, Compound-Spheres-3D, phenotype-mcp-asset (new 2026-06-18, extracted from McpKit/rust/phenotype-mcp-asset/ v0.2.0, P0 patch) |
 
-> **Note 2026-06-18**: `phenotype-auth-ts` was archived in this wave and absorbed into [AuthKit](https://github.com/KooshaPari/AuthKit) `typescript/packages/auth-ts/`. Listed here for traceability until the next rationalization update. Post-removal the shared-lib count drops 21 → 20.|
-| **SDK** | 8 | AuthKit, DataKit, ObservabilityKit, ResilienceKit, TestingKit, PlatformKit, PhenoKits, HexaKit |
+> **Note 2026-06-18**: `phenotype-auth-ts` was archived in this wave and absorbed into [AuthKit](https://github.com/KooshaPari/AuthKit) `typescript/packages/auth-ts/`. Listed here for traceability until the next rationalization update. Post-removal the shared-lib count drops 22 → 21. `phenotype-mcp-asset` was added 2026-06-18 as the canonical home for the McpKit asset crate, raising the pre-removal count 22 → 23 (post-removal 21 → 22).|
+| **SDK** | 9 | AuthKit, DataKit, ObservabilityKit, ResilienceKit, TestingKit, PlatformKit, PhenoKits, HexaKit, agentmcp-hex (new package 2026-06-18, extracted from McpKit/python/agentmcp/ via phenotype-python-sdk#21 OPEN, P1 patch; lives in phenotype-python-sdk/packages/agentmcp-hex/) |
 | **tooling** | 11 | AgilePlus, phenotype-dep-guard, phenotype-tooling, phenotype-infra, PhenoDevOps, Conft, agent-devops-setups, helioscope, Benchora, agileplus-spec-harmonizer, PhenoCompose |
 | **product / app** | 10 | Agentora, thegent, Tracera, AgilePlus, PlayCua, Dino, eyetracker, hwLedger, phenoRouterMonitor, slickport |
 | **plugin** | 4 | PhenoPlugins, argis-extensions, phenotype-postfx, Tokn |
@@ -45,7 +45,9 @@ Role split for the spec/governance spine (so indexes stop competing):
 | **superseded / archived** | 40 | .github, odin-landing, Profila, Project-Spyn, RIP-Fitness-App, sharecli, tehgent, thegent-sharecli, worktree-manager, phenoVessel, phenoTypes, phenoPatch, Diffuse, Servion, Guardrail, Cryptora, forge, phenoForge, router-docs, cheap-llm-mcp, dispatch-mcp, thegent-dispatch, McpKit, PhenoMCP, PhenoProc, Metron, PhenoKits, Stashly, Settly, AuthKit, Traceon, ResilienceKit, TestingKit, BytePort, heliosBench, heliosApp, PolicyStack, nanovms, portage, phenoDesign, phenoXddLib, dagctl, kwality, dinoforge-packs, phenotype-auth-ts |
 | **monorepo (multi-domain)** | 6 | pheno, phenoAI, phenoData, PhenoDevOps, HexaKit, phenoShared |
 
-> **Note 2026-06-18** (post-merge, kilo audit #144 + 4-repo retirement): **dagctl**, **kwality**, **dinoforge-packs**, **phenotype-auth-ts** were all archived in the 4-repo retirement wave (findings/2026-06-18-L5-109). dagctl was absorbed into phenodag, dinoforge-packs into Dino/community-packs/, kwality retired into phenotype-tooling/docs/absorbed-from-kwality/, and phenotype-auth-ts into AuthKit/typescript/packages/auth-ts/. All source content preserved at target repos.|
+> **Note 2026-06-18** (post-merge, kilo audit #144 + 4-repo retirement): **dagctl**, **kwality**, **dinoforge-packs**, **phenotype-auth-ts** were all archived in the 4-repo retirement wave (findings/2026-06-18-L5-109). dagctl was absorbed into phenodag, dinoforge-packs into Dino/community-packs/, kwality retired into phenotype-tooling/docs/absorbed-from-kwality/, and phenotype-auth-ts into AuthKit/typescript/packages/auth-ts/. All source content preserved at target repos.
+
+> **Note 2026-06-18** (McpKit-Absorption-2026-06-18 wave, L5-110.x): **3 McpKit extraction targets** registered under `docs/intent/` + `docs/boundary/` per the L7-001 squashed structure. (1) **`phenotype-mcp-asset`** — new repo [KooshaPari/phenotype-mcp-asset](https://github.com/KooshaPari/phenotype-mcp-asset) created 2026-06-18 12:17 UTC; extracted from `McpKit/rust/phenotype-mcp-asset/` v0.2.0 → v0.3.0 standalone fleet lib; P0 patch; disposition row 52 (ABSORB, fsm=done). (2) **`agentmcp-hex`** — new package at `phenotype-python-sdk/packages/agentmcp-hex/`; extracted from `McpKit/python/agentmcp/` v0.x.x → 0.3.0; hexagonal DDD pattern preserved; P1 patch; disposition row 54 (ABSORB, fsm=open); PR [phenotype-python-sdk#21](https://github.com/KooshaPari/phenotype-python-sdk/pull/21) OPEN awaiting review. (3) **`Agentora`** — provenance attribution only (`DOCUMENT` disposition = new value: existing target repo, no code extraction); canonical [KooshaPari/Agentora](https://github.com/KooshaPari/Agentora) (47 crates) subsumes the stale `McpKit/rust/agentora/` subdir (1 crate, 13 commits); `ORIGIN.md` added via PR [Agentora#89](https://github.com/KooshaPari/Agentora/pull/89) MERGED 2026-06-19 00:10:54 UTC; disposition row 53 (DOCUMENT, fsm=done). Authoritative audit: `findings/2026-06-18-McpKit-source-inventory.md`. The other 4 McpKit Rust crates (per audit) are absorbed into `PhenoFastMCP-rust` and documented separately there.|
 | **agent-runtime** | 3 | Agentora, thegent, PhenoAgent |
 | **research / lab** | 2 | HeliosLab, portage |
 
@@ -98,7 +100,9 @@ Dino                      -> DINOForge-UnityDoorstop (Unity doorstop), [communit
 AgilePlus                 -> (workspace: agileplus-config, agileplus-proto)
 PhenoMCP (archived)       -> superseded by PhenoMCPServers + PhenoFastMCP* + substrate [ADR-017; library repo retired 2026-06-17]
 McpKit (archived)         -> superseded by PhenoFastMCP + PhenoMCPServers [ADR-017; Py SDK retired 2026-06-17]
-PhenoMCPServers           -> PhenoFastMCP (py framework), substrate (HTTP runtime for fleet tools)
+phenotype-mcp-asset       -> (standalone Rust lib; consumed by PhenoMCPServers) [extracted from McpKit/rust/phenotype-mcp-asset/ v0.2.0 2026-06-18, L5-110.x; disposition row 52]
+agentmcp-hex              -> (sub-package of phenotype-python-sdk; consumed by PhenoFastMCP) [extracted from McpKit/python/agentmcp/ 2026-06-18, L5-110.x; disposition row 54; PR phenotype-python-sdk#21 OPEN]
+PhenoMCPServers           -> PhenoFastMCP (py framework), substrate (HTTP runtime for fleet tools), phenotype-mcp-asset (asset lib)
 substrate                 -> (Rust runtime: driver-http, driver-argv, engine-*; MCP dev copy in driver-mcp/)
 PhenoFastMCP-rust         -> Dicklesworthstone/fastmcp_rust [upstream fork]
 PhenoRMCP                 -> modelcontextprotocol/rust-sdk [upstream fork; spec SDK — not fastmcp]
@@ -305,6 +309,14 @@ All Astro static sites with near-identical structure. Target: consolidate into s
 | **Edge (Go tier-1)** | MCPForge, phenotype-ops-mcp | HTTP/SSE MCP gateways | Submodule refs in PhenoMCPServers `servers/external/` |
 
 **Legacy repos (retired 2026-06-17):** McpKit (Py SDK), PhenoMCP (Rust/Go library), cheap-llm-mcp (runtime CLI) — all superseded per ADR-017/019; do not add new dependents.
+
+**McpKit-Absorption-2026-06-18 wave (L5-110.x) — 3 extraction targets:**
+
+| Disposition row | Source (McpKit) | Target | Disposition | fsm | PR / repo | Notes |
+|---|---|---|---|---|---|---|
+| **52** | `rust/phenotype-mcp-asset/` v0.2.0 | [KooshaPari/phenotype-mcp-asset](https://github.com/KooshaPari/phenotype-mcp-asset) (new repo 2026-06-18 12:17 UTC) | ABSORB | done | new repo | Standalone fleet lib; consumed by PhenoMCPServers; P0 patch |
+| **53** | `rust/agentora/` (stale snapshot) | [KooshaPari/Agentora](https://github.com/KooshaPari/Agentora) (pre-existing canonical, 47 crates) | DOCUMENT | done | [Agentora#89](https://github.com/KooshaPari/Agentora/pull/89) MERGED 2026-06-19 | Provenance attribution only via `ORIGIN.md`; no code migration |
+| **54** | `python/agentmcp/` v0.x.x | `phenotype-python-sdk/packages/agentmcp-hex/` (new package) | ABSORB | open | [phenotype-python-sdk#21](https://github.com/KooshaPari/phenotype-python-sdk/pull/21) OPEN | Hexagonal DDD pattern preserved; P1 patch |
 
 **Anti-patterns (retired):** `phenotype-rust-sdk`, `phenotype-go-sdk` language buckets — see PhenoMCPServers `retired_anti_patterns` and ADR-017.
 

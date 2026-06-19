@@ -22,6 +22,9 @@ non-canonical name → canonical name mapping used in `_bindings.json`.
 | `phenokits` | `PhenoKits` | 4 | case-only |
 | `phenotype-observability` | `PhenoObservability` | 11 | case-only |
 | `phenotype-resilience` | `ResilienceKit` | 3 | case-only |
+| `mcp-asset` | `phenotype-mcp-asset` | 0 | McpKit-Absorption-2026-06-18 (L5-110.x); short alias for new canonical repo |
+| `agentmcp` | `agentmcp-hex` | 0 | McpKit-Absorption-2026-06-18 (L5-110.x); source was McpKit/python/agentmcp/, canonical lives in phenotype-python-sdk/packages/agentmcp-hex/ |
+| `mcpkit-python-agentmcp` | `agentmcp-hex` | 0 | McpKit-Absorption-2026-06-18 (L5-110.x); provenance alias to disambiguate from agentmcp source |
 
 ## Dropped (deprecated / archived)
 
