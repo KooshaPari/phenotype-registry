@@ -1,7 +1,7 @@
 {
-  "version": "1.2.0",
+  "version": "1.2.1",
   "updated": "2026-06-18",
-  "description": "External dependents blocking relocation or archive. Repoint manifests to DOMAIN_ROLES canonical paths — not HexaKit monorepo paths (v2 charter). phenoShared is interim staging only (ADR-ECO-014); never a terminal repoint target.",
+  "description": "External dependents blocking relocation or archive. Repoint manifests to DOMAIN_ROLES canonical paths — not HexaKit monorepo paths (v2 charter). phenoShared is interim staging only (ADR-ECO-014); never a terminal repoint target. 2026-06-18: added phenotype-gfx-pr-10-merge chokepoint gating archive of 4 sister repos (L5-104.7, ADR-004 + ADR-031).",
   "chokepoints": [
     {
       "id": "Pyron",
@@ -130,6 +130,17 @@
       "status": "pending",
       "wave": "W18b",
       "adr": "ADR-ECO-014"
+    },
+    {
+      "id": "phenotype-gfx-pr-10-merge",
+      "type": "pr-merge",
+      "target_pr": "KooshaPari/phenotype-gfx#10",
+      "blocks_repos": ["phenotype-voxel", "phenotype-terrain", "phenotype-water", "phenotype-postfx"],
+      "blocks_action": "archive",
+      "status": "pending",
+      "wave": "L5-104.7",
+      "adr": "ADR-004+ADR-031",
+      "note": "4 sister repos absorbed into KooshaPari/phenotype-gfx via PR #10. Archive (Stream D) gated on PR merge; registry rows already at fsm=awaiting-pr-merge in disposition-index.json"
     },
     {
       "id": "Civis",
