@@ -34,7 +34,7 @@ substrate target and extraction path. See [`SPEC.md`](./SPEC.md) for the full sp
 
 ## When to run this
 
-- **Weekly cron (heavy-runner):** Mon 09:00 PDT — `pheno-ci-templates/drift-detection-check.yml`
+- **Weekly cron (heavy-runner):** Mon 09:00 PDT — `phenotype-tooling/.github/workflows/reusable/python-ci.yml`
 - **On-demand before a v8+ plan release:** scan the entire fleet to seed the
   ADR backlog with drift-extraction candidates.
 - **After bucket changes:** re-run after reclassifying an app repo (e.g.,
@@ -89,4 +89,4 @@ This repo meets the substrate quality bar:
 
 - `pheno-predict` — L72 (predictive-DRY candidate scanner)
 - `pheno-framework-lint` — L73 (tier-convention enforcer)
-- `pheno-ci-templates` — reusable workflows (incl. `drift-detection-check.yml`)
+- `phenotype-tooling` — reusable workflows (incl. `reusable/python-ci.yml`)

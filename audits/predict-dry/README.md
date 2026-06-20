@@ -100,7 +100,7 @@ pheno-predict check-criteria --candidate '{
     --out /tmp/pheno-predict-$(date +\%Y\%m\%d).md
 ```
 
-Or wire it into a GitHub Action with the `pheno-ci-templates/predictive-dry-check.yml`
+Or wire it into a GitHub Action with the `phenotype-tooling/.github/workflows/reusable/python-ci.yml`
 workflow as a reference.
 
 ## Exit codes
@@ -119,8 +119,8 @@ for the policy this tool enforces.
 
 - `pheno-drift-detector` — companion L74 tool (app-substrate drift)
 - `pheno-framework-lint` — companion L73 tool (substrate tier-convention enforcer)
-- `pheno-ci-templates/predictive-dry-check.yml` — GitHub Actions workflow
-  that requires the 4 ADR-047 criteria be addressed in PR descriptions
+- `phenotype-tooling/.github/workflows/reusable/python-ci.yml` — reusable
+  Python CI workflow reference for predictive-DRY repos
 
 ## License
 

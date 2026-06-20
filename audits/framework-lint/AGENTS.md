@@ -71,7 +71,7 @@ pheno-framework-lint check --path ../pheno-config
 
 - `pheno-predict` (L72) — predictive-DRY candidate scanner
 - `pheno-drift-detector` (L74) — app-substrate drift detector
-- `pheno-ci-templates` — reusable CI workflow templates
+- `phenotype-tooling` — reusable CI workflow templates
 - `AGENTS.md` (monorepo) — fleet-wide conventions, ADR table, app-level repo triage
 - `findings/71-pillar-2026-06-19.md` — v1.1 71-pillar scorecard
 - `findings/2026-06-18-L5-110-pheno-framework-lint-absorption-audit.md` — L5-110 audit

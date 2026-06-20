@@ -33,7 +33,7 @@ model, no Python deps. See [`SPEC.md`](./SPEC.md) for the full spec.
 
 ## When to run this
 
-- **Weekly cron (heavy-runner):** Mon 09:00 PDT — `pheno-ci-templates/predictive-dry-check.yml`
+- **Weekly cron (heavy-runner):** Mon 09:00 PDT — `phenotype-tooling/.github/workflows/reusable/python-ci.yml`
 - **On-demand before a v8+ plan release:** run on the entire fleet to seed the
   ADR backlog with predictive candidates.
 - **Before opening a new `pheno-*-lib` PR:** scan your repo against the fleet
@@ -89,4 +89,4 @@ This repo meets the substrate quality bar:
 
 - `pheno-drift-detector` — L74 (drift detection)
 - `pheno-framework-lint` — L73 (tier-convention enforcer)
-- `pheno-ci-templates` — reusable workflows (incl. `predictive-dry-check.yml`)
+- `phenotype-tooling` — reusable workflows (incl. `reusable/python-ci.yml`)
