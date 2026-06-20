@@ -100,9 +100,44 @@
     "phenotype-mcp-asset": {
       "repo": "KooshaPari/phenotype-mcp-asset",
       "ref": "main",
-      "sha": "718edf808de6ab16f2f9602a763c5c7ac983fb22"
+      "sha": "718edf808de6ab16f2f9602a763c5c7ac983fb22",
+      "status": "archived",
+      "archived_date": "2026-06-19",
+      "note": "L5-110.x first-half absorption: extracted from McpKit/rust/phenotype-mcp-asset/. McpKit GitHub archive preserves byte-identical copy. 9-module Rust scaffold, no consumers, no CI, no LICENSE. Source repo archived 2026-06-19 23:00 PDT (delete_repo scope outstanding)."
     },
     "phenotype-tooling": { "repo": "KooshaPari/phenotype-tooling", "ref": "main" },
-    "PhenoMCP": { "repo": "KooshaPari/PhenoMCP", "ref": "main" }
+    "PhenoMCP": { "repo": "KooshaPari/PhenoMCP", "ref": "main" },
+    "pheno-framework-lint": {
+      "repo": "KooshaPari/pheno-framework-lint",
+      "ref": "main",
+      "sha": "main@d990c5e",
+      "status": "archived",
+      "archived_date": "2026-06-19",
+      "note": "L73 substrate-graduation linter (473 LOC, stdlib-only). Absorbed into pheno-scaffold-kit umbrella as _framework_lint.py + new Click subcommand group. PR pheno-scaffold-kit#2 (OPEN)."
+    },
+    "pheno-drift-detector": {
+      "repo": "KooshaPari/pheno-drift-detector",
+      "ref": "main",
+      "sha": "main@8eb0d45",
+      "status": "archived",
+      "archived_date": "2026-06-19",
+      "note": "L74 app-substrate drift detector (413 LOC, stdlib-only). Absorbed into pheno-scaffold-kit umbrella as _drift_detector.py + new Click subcommand group. PR pheno-scaffold-kit#2 (OPEN). 2 prior gaps (missing pyproject.toml, empty CI) resolved by umbrella absorption."
+    },
+    "pheno-predict": {
+      "repo": "KooshaPari/pheno-predict",
+      "ref": "main",
+      "sha": "main@82c0be4",
+      "status": "archived",
+      "archived_date": "2026-06-19",
+      "note": "L72 predictive-DRY scanner (376 LOC, stdlib-only). Absorbed into pheno-scaffold-kit umbrella as _predict.py + new Click subcommand group. PR pheno-scaffold-kit#2 (OPEN). Closes the L72->L73->L74 closed-loop in a single home."
+    },
+    "forge-runner-scripts": {
+      "repo": "KooshaPari/forge-runner-scripts",
+      "ref": "main",
+      "sha": "main@a53b2e0",
+      "status": "archived",
+      "archived_date": "2026-06-19",
+      "note": "33 files, 5,597 LOC. Split placement: 2 dag_*.py already absorbed into phenodag as Go rewrite (L5-113, 2026-06-18, PR phenodag#13). Remaining 31 files (operational scripts, process docs, specs, commands, install.sh, LICENSE) absorbed into phenotype-org-audits/forge-runner-scripts/. PR phenotype-org-audits#49 (OPEN)."
+    }
   }
 }
