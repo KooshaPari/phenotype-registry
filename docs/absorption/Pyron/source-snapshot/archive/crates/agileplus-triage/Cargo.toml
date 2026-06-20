@@ -1,0 +1,24 @@
+[package]
+name = "agileplus-triage"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/KooshaPari/Pyron"
+description = "agileplus triage — Phenotype infrastructure crate (Pyron)"
+documentation = "https://docs.rs/agileplus-triage"
+keywords = ["phenotype", "pyron", "triage"]
+categories = ["development-tools"]
+authors = ["kooshapari"]
+
+[dependencies]
+agileplus-domain = { path = "../agileplus-domain" }
+serde.workspace = true
+serde_json.workspace = true
+chrono.workspace = true
+tracing.workspace = true
+anyhow.workspace = true
+
+[dev-dependencies]
+tempfile = "3"
+tokio = { version = "1", features = ["rt", "macros"] }

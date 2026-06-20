@@ -1,0 +1,44 @@
+[package]
+name = "agileplus-cli"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/KooshaPari/Pyron"
+description = "agileplus cli — Phenotype infrastructure crate (Pyron)"
+documentation = "https://docs.rs/agileplus-cli"
+keywords = ["phenotype", "pyron", "cli"]
+categories = ["command-line-utilities"]
+authors = ["kooshapari"]
+
+[[bin]]
+name = "agileplus"
+path = "src/main.rs"
+
+[dependencies]
+agileplus-domain = { path = "../agileplus-domain" }
+agileplus-plane = { path = "../agileplus-plane" }
+agileplus-sqlite = { path = "../agileplus-sqlite" }
+agileplus-git = { path = "../agileplus-git" }
+agileplus-triage = { path = "../agileplus-triage" }
+agileplus-subcmds = { path = "../agileplus-subcmds" }
+clap = { version = "4", features = ["derive"] }
+tokio.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+sha2.workspace = true
+chrono.workspace = true
+tracing.workspace = true
+tracing-subscriber.workspace = true
+anyhow.workspace = true
+similar = "2"
+# OTEL bridge — declared here (not in dev-dependencies) because the
+# binary's main.rs calls `pheno_otel::init` directly. Wrapped in a
+# feature flag in a follow-up; for now it compiles into the binary
+# unconditionally.
+pheno-otel = { path = "../../../phenotype-otel" }
+
+[dev-dependencies]
+tempfile = "3"
+assert_cmd = "2"
+predicates = "3"

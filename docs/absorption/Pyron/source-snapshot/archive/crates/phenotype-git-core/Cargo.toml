@@ -1,0 +1,13 @@
+[package]
+name = "phenotype-git-core"
+version.workspace = true
+edition.workspace = true
+description = "Phenotype git core crate"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/KooshaPari/Pyron"
+documentation = "https://docs.rs/phenotype-git-core"
+keywords = ["phenotype", "pyron", "core"]
+categories = ["data-structures", "development-tools::version-control"]
+authors = ["kooshapari"]
+
+[dependencies]
