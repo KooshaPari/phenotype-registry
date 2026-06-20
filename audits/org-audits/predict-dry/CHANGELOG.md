@@ -21,8 +21,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - `.gitignore` + `tests/__init__.py` — Python stdlib hygiene
 - **README fix** — `--format gh-issues` → `--format md` (code only supports
   `["json", "csv", "md"]`).
-- **README fix** — `pheno-ci-templates/predictive-dry-check.yml` reference
-  retained; the workflow is added in `KooshaPari/pheno-ci-templates`
+- **README fix** — `phenotype-tooling/predictive-dry-check.yml` reference
+  retained; the workflow is added in `KooshaPari/phenotype-tooling`
   PR `chore/l5-112-predictive-dry-check-workflow-2026-06-19`.
 
 ### Notes

@@ -55,7 +55,7 @@ done
 
 # (b) GitHub Actions backup health (last 5 runs)
 gh actions runs list \
-  --repo KooshaPari/pheno-ci-templates \
+  --repo KooshaPari/phenotype-tooling \
   --workflow=fleet-substrate-tools-backup.yml \
   --limit 5 \
   --json status,conclusion,createdAt,headBranch \
@@ -106,7 +106,7 @@ acceptable, false negatives are not.
 | :----------------------------------------------------- | :--------------------------- | :------------------------------------------------------------------------------ |
 | No `~/.fleet-cron/*.log` for 7+ days                   | **Critical** (cron is dead)  | Check `crontab -l`; check host is up; check `flock` installed                   |
 | No `findings/*-<date>.md` for 7+ days                  | **Critical** (output missing) | Check wrapper logs for `EXIT=1`; check `$REPOS_ROOT`; check `git push` creds    |
-| No `pheno-ci-templates` Actions runs for 7+ days      | **Warning** (backup is dead) | Check workflow file present; check `KooshaPari/pheno-ci-templates` not archived  |
+| No `phenotype-tooling` Actions runs for 7+ days      | **Warning** (backup is dead) | Check workflow file present; check `KooshaPari/phenotype-tooling` not archived  |
 | Drift detector hasn't filed any issues in 4+ weeks     | **Warning** (threshold drift) | Threshold may be too high; review `pheno-drift-detector` `--score-min` default  |
 | Output file is empty / only header                    | **Info** (clean run)          | This is success — no candidates / hits / violations above the threshold        |
 | Wrapper exits 2 (candidates / hits / violations found) | **Info** (expected)           | Triage the output; auto-filed issue (drift) or weekly review (predict / lint)  |
@@ -132,7 +132,7 @@ acceptable, false negatives are not.
    INSTALL.md troubleshooting table; re-run the wrapper manually; verify
    the next scheduled run succeeds.
 3. **GitHub Actions backup is dead:** Check the workflow file is present
-   at `pheno-ci-templates/.github/workflows/fleet-substrate-tools-backup.yml`;
+   at `phenotype-tooling/.github/workflows/reusable/python-ci.yml` and sibling reusable workflows;
    check the workflow file is in the default branch; check the schedule
    is not commented out; trigger a manual `workflow_dispatch` to verify
    the secret / permissions / output artifact blocks all work.
