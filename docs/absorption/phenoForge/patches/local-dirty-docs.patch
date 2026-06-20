@@ -1,0 +1,64 @@
+diff --git a/docs/boundary/phenoForge.md b/docs/boundary/phenoForge.md
+index f056eda..c684406 100644
+--- a/docs/boundary/phenoForge.md
++++ b/docs/boundary/phenoForge.md
+@@ -9,7 +9,8 @@ do-not-edit-locally: regenerate via scripts/propagate-intent-to-repos.py
+ repo: "phenoForge"
+ role: unknown
+ status: active
+-last_boundary_review: 2026-06-17
++archived: false
++last_boundary_review: 2026-06-20
+ review_cadence: 30d
+ in_scope:
+   - "<to be filled>"
+@@ -33,14 +34,14 @@ out_of_scope:
+ 
+ | Crossing | Direction | Surface | Status |
+ | -------- | --------- | ------- | ------ |
+-| <capability or interface> | <this-repo→other\|other→this-repo> | <Trait / HTTP / CLI / file / event> | <green\|amber\|red> |
++| <capability or interface> | <this-repo→other or other→this-repo> | <Trait / HTTP / CLI / file / event> | <green or amber or red> |
+ 
+ ## Last Boundary Review
+ 
+-**Date:** 2026-06-17
+-**Reviewer:** forge subagent (L7-001 sweep)
+-**Worklog / finding:** `worklogs/L7-001-intent-boundary-curation-2026-06-17.json`
++**Date:** 2026-06-20
++**Reviewer:** forge subagent (L7-007 archived-marker pass)
++**Worklog / finding:** `worklogs/L7-007-archived-marker-pass-2026-06-20.json`
+ **Decisions:**
+-- Initial scaffolding; needs human review.
++- Initial scaffolding; archived state per L7-007.
+ 
+-**Next review:** 2026-07-17
++**Next review:** 2026-07-20
+diff --git a/docs/intent/phenoForge.md b/docs/intent/phenoForge.md
+index eba1518..6fb53d2 100644
+--- a/docs/intent/phenoForge.md
++++ b/docs/intent/phenoForge.md
+@@ -10,7 +10,8 @@ repo: "phenoForge"
+ aliases: []
+ role: unknown
+ status: active
+-last_verified: 2026-06-17
++archived: false
++last_verified: 2026-06-20
+ bound_prompts: 2
+ bound_plans: 0
+ bound_responses: 0
+@@ -23,12 +24,13 @@ device: macbook
+ 
+ <To be filled in by hand from the most recent binding prompt. This repo is bound to 2 prompts, 0 plans, and 0 agent responses captured between 2025-08 and 2026-06-17.>
+ 
++
+ ## Bound Prompts
+ 
+ | Date | Source | File | Tag |
+ | ---- | ------ | ---- | --- |
+-| ? | claude-code | `docs/curated-prompts/claude-code/unknown/fe50d281034989f0.md` | implementation |
+ | 2026-04-03 | codex | `docs/curated-prompts/codex/2026-04/690b634bc8090ca8.md` | repo-defining |
++| ? | claude-code | `docs/curated-prompts/claude-code/unknown/fe50d281034989f0.md` | implementation |
+ 
+ ## Bound Plans
+ 
