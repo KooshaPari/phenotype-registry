@@ -26,3 +26,20 @@ Keep `PhenoKits` archived. Deletion is still blocked by TypeScript libs and unpr
 ## 2026-06-20 TypeScript preservation update
 
 TypeScript libs are preserved under `docs/absorption/PhenoKits/typescript-preservation/` in registry commit `5e9a8da0`. This reduces source-loss risk but does not create a real package home.
+
+## 2026-06-20 category preservation update
+
+| Source Item | Source Evidence | Target Repo | Target Evidence | Status | Required Action |
+|---|---|---|---|---|---|
+| Template/governance/config/doc deltas | `templates`, `hexagon`, `governance`, `configs`, `docs` compared against `phenokits-commons` | `phenokits-commons` | branch `chore/preserve-phenokits-deltas-2026-06-20`, commit `354514f`, archive path `archive/PhenoKits-preservation-2026-06-20` | `DONE` | open/merge PR |
+
+## Updated deletion decision
+
+`DELETE_AFTER_PATCHES` is now supportable for PhenoKits after these branches/PRs merge:
+
+1. `phenotype-go-sdk`: `chore/fold-phenokits-go-libs-2026-06-20` (`a3443fe`)
+2. `phenotype-python-sdk`: `chore/fold-phenokit-config-kit-2026-06-20` (`a611d7f`)
+3. `phenokits-commons`: `chore/preserve-phenokits-deltas-2026-06-20` (`354514f`)
+4. `phenotype-registry`: matrix and TypeScript preservation (`5e9a8da0`, `6fcb60f4`)
+
+Until those branches merge, keep `KooshaPari/PhenoKits` archived/read-only rather than deleted.
