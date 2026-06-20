@@ -1,0 +1,22 @@
+[package]
+name = "agileplus-graph"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/KooshaPari/Pyron"
+description = "agileplus graph — Phenotype infrastructure crate (Pyron)"
+documentation = "https://docs.rs/agileplus-graph"
+keywords = ["phenotype", "pyron", "graph"]
+categories = ["data-structures"]
+authors = ["kooshapari"]
+
+[dependencies]
+serde .workspace = true
+serde_json .workspace = true
+thiserror .workspace = true
+tokio .workspace = true
+async-trait = "0.1"
+
+[dev-dependencies]
+tokio = { workspace = true, features = ["full", "macros"] }

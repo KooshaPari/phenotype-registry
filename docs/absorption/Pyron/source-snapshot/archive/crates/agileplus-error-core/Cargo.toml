@@ -1,0 +1,20 @@
+[package]
+name = "agileplus-error-core"
+version = "0.2.0"
+edition = "2021"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/KooshaPari/Pyron"
+description = "Unified error handling for AgilePlus ecosystem"
+documentation = "https://docs.rs/agileplus-error-core"
+keywords = ["phenotype", "pyron", "error"]
+categories = ["rust-patterns", "data-structures"]
+authors = ["kooshapari"]
+
+[dependencies]
+thiserror = "2.0"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+[lib]
+name = "agileplus_error_core"
+path = "src/lib.rs"

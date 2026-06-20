@@ -1,0 +1,22 @@
+[package]
+name = "agileplus-import"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/KooshaPari/Pyron"
+description = "agileplus import — Phenotype infrastructure crate (Pyron)"
+documentation = "https://docs.rs/agileplus-import"
+keywords = ["phenotype", "pyron", "port"]
+categories = ["development-tools", "data-structures"]
+authors = ["kooshapari"]
+
+[dependencies]
+agileplus-domain = { path = "../agileplus-domain" }
+anyhow.workspace = true
+chrono = { workspace = true, features = ["serde"] }
+serde.workspace = true
+serde_json.workspace = true
+sha2.workspace = true
+tracing.workspace = true
+

@@ -1,0 +1,19 @@
+[package]
+name = "phenotype-rate-limit"
+version.workspace = true
+edition.workspace = true
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/KooshaPari/Pyron"
+description = "phenotype rate limit — Phenotype infrastructure crate (Pyron)"
+documentation = "https://docs.rs/phenotype-rate-limit"
+keywords = ["phenotype", "pyron"]
+categories = ["development-tools"]
+authors = ["kooshapari"]
+
+[lib]
+path = "src/lib.rs"
+
+[dependencies]
+serde.workspace = true
+serde_json.workspace = true
+thiserror.workspace = true
