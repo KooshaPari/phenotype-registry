@@ -1,0 +1,40 @@
+# justfile for phenotype-dep-guard
+# https://github.com/casey/just
+
+set shell := ["bash", "-cu"]
+
+default:
+    @just --list
+
+# Format the Rust workspace
+fmt:
+    cargo fmt --all
+
+# Lint with clippy (deny warnings)
+lint:
+    cargo clippy --all-targets --all-features -- -D warnings
+
+# Type/build check
+check:
+    cargo check --all-targets --all-features
+
+# Run the test suite
+test:
+    cargo test --all-features
+
+# Run tests + clippy + fmt-check
+ci: fmt lint check test
+    @echo "ci: ok"
+
+# Clean build artifacts
+clean:
+    cargo clean
+
+# Audit dependencies for security advisories
+audit:
+    cargo audit
+
+# Bump version (usage: just version 0.1.0)
+version VERSION:
+    @echo "Bumping to {{VERSION}}"
+    @sed -i '' 's/^version = ".*"/version = "{{VERSION}}"/' Cargo.toml
