@@ -1,0 +1,24 @@
+[package]
+name = "phenotype-forge"
+version = "0.1.0"
+edition = "2021"
+
+[workspace]
+
+[dev-dependencies]
+proptest = "1"
+
+[dependencies]
+tokio = { version = "1.0", features = ["full"] }
+clap = { version = "4.0", features = ["derive"] }
+serde = { version = "1.0", features = ["derive"] }
+notify = "8.2"
+toml = "1.1"
+thiserror = "2"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+tracing-appender = "0.2"
+
+[[bin]]
+name = "phenotype-forge"
+path = "src/main.rs"
