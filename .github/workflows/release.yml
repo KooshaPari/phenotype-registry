@@ -1,0 +1,64 @@
+# Release — tag + GitHub Release draft
+# Tier-0 hygiene workflow per phenotype-registry v10 DAG.
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Tag to release (e.g. v0.1.0). Leave empty to use the latest pushed tag.'
+        required: false
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  release:
+    name: cut release
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v4
+        with:
+          fetch-depth: 0
+
+      - name: Resolve tag
+        id: tag
+        run: |
+          if [[ -n "${{ inputs.tag }}" ]]; then
+            echo "name=${{ inputs.tag }}" >> "$GITHUB_OUTPUT"
+          else
+            git tag --sort=-creatordate | head -1 | tr -d '\n' | xargs -I {} echo "name={}" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Extract CHANGELOG section
+        id: changelog
+        run: |
+          awk -v tag="${{ steps.tag.outputs.name }}" '
+            /^## \[/ { if (in_section) { exit } in_section = ($0 ~ ("## \\[" tag "\\]")) }
+            in_section { print }
+          ' CHANGELOG.md > release-notes.md
+          if [[ ! -s release-notes.md ]]; then
+            echo "## Changes" > release-notes.md
+            echo "" >> release-notes.md
+            echo "See full changelog: CHANGELOG.md" >> release-notes.md
+          fi
+          echo "Release notes written to release-notes.md"
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@9d7d6d4fb1a76b3f91c87ce3adde1ef9cea6b1c1 # v2
+        with:
+          tag_name: ${{ steps.tag.outputs.name }}
+          name: ${{ steps.tag.outputs.name }}
+          body_path: release-notes.md
+          draft: true
+          prerelease: false

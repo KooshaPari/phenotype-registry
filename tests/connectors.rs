@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: MIT OR Apache-2.0
+
 use phenotype_registry::connector::*;
 use std::future::Future;
 use std::pin::pin;

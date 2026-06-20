@@ -21,7 +21,7 @@ preview:
 
 # Run the test suite
 test:
-    @echo "No tests defined for phenotype-registry docs site"
+    cargo test --workspace --all-features
 
 # Lint Markdown
 lint:
@@ -30,6 +30,39 @@ lint:
 # Apply formatter
 fmt:
     bunx prettier --write "**/*.md" "**/*.json" "**/*.mjs"
+
+# Rust formatter (passes through to cargo fmt)
+fmt-rust:
+    cargo fmt --all
+
+# Rust lints via clippy
+clippy:
+    cargo clippy --workspace --all-targets --all-features -- -D warnings
+
+# Supply-chain vulnerability scan
+audit:
+    cargo install --locked cargo-audit --version '^0.21' || true
+    cargo audit --deny warnings
+
+# cargo-deny: license + advisory + source-policy gate
+deny:
+    cargo install --locked cargo-deny --version '^0.16' || true
+    cargo deny check
+
+# Run the canonical CI gate locally (fast subset)
+ci:
+    @echo "=== ci: format check ==="
+    cargo fmt --all -- --check
+    @echo "=== ci: clippy (deny warnings) ==="
+    cargo clippy --workspace --all-targets --all-features -- -D warnings
+    @echo "=== ci: cargo build ==="
+    cargo build --workspace --all-features
+    @echo "=== ci: cargo test ==="
+    cargo test --workspace --all-features
+    @echo "=== ci: cargo deny ==="
+    just deny
+    @echo "=== ci: cargo audit ==="
+    just audit
 
 # Remove build artifacts
 clean:
