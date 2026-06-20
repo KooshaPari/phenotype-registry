@@ -60,7 +60,7 @@
 | **T1.4** | Refresh governance docs: AGENTS.md (already updated 2026-06-17 12:00 PDT; verify), STATUS.md (refresh with W5 batch + 4 stranded worktree status), SSOT.md (add HOOKS_SKIP=1 env-var spec per P47) | P0 | orchestrator | T1.3 | `git diff main -- AGENTS.md STATUS.md SSOT.md` shows the refresh; `grep -c HOOKS_SKIP SSOT.md` returns ≥ 1 |
 | **T1.5** | Open PR for governance-doc refresh on `repos` meta (or `phenotype-org-audits` per ADR-028 staging-repo decision) | P0 | orchestrator | T1.4 | PR opened with title `chore(governance): refresh AGENTS.md + STATUS.md + SSOT.md (v7 triage)`; CI green |
 | **T1.6** | Open PR for `pheno-*` meta-bundle on each of 5 repos (1 PR per repo) | P0 | orchestrator | T1.3 | 5 PRs opened, one per repo, all with title prefix `chore(meta): add AGENTS.md + llms.txt + WORKLOG.md + CHANGELOG.md + LICENSE-MIT` |
-| **T1.7** | Open PR for HOOKS_SKIP=1 env-var spec in `pheno-ci-templates` | P0 | orchestrator | T1.4 | 1 PR opened in `KooshaPari/pheno-ci-templates` documenting `HOOKS_SKIP=1` and `SKIP=pre-push,pre-commit` env vars; links to AGENTS.md |
+| **T1.7** | Open PR for HOOKS_SKIP=1 env-var spec in `phenotype-tooling` | P0 | orchestrator | T1.4 | 1 PR opened in `KooshaPari/phenotype-tooling` documenting `HOOKS_SKIP=1` and `SKIP=pre-push,pre-commit` env vars; links to AGENTS.md |
 
 **Track 1 PR count: 3** (T1.5 + T1.6 [5 PRs across 5 repos] + T1.7 = 7; counting T1.6 as 5 separate PRs, total = 7. The PR matrix § 5 reports this as 7. Tracking summary at § 2 above rounds to 3 for the headline by counting T1.6 as one batch operation. The authoritative PR matrix is § 5.)
 
@@ -348,7 +348,7 @@ All 38 PRs across 8 tracks. PR# column uses estimated GitHub PR numbers (KooshaP
 | **PR-159** | chore(meta): add meta-bundle to pheno-otel | `KooshaPari/pheno-otel` | T1.6c | PENDING | orchestrator | — |
 | **PR-160** | chore(meta): add meta-bundle to pheno-port-adapter | `KooshaPari/pheno-port-adapter` | T1.6d | PENDING | orchestrator | — |
 | **PR-161** | chore(meta): add meta-bundle to pheno-tracing | `KooshaPari/pheno-tracing` | T1.6e | PENDING | orchestrator | — |
-| **PR-162** | docs(ci): document HOOKS_SKIP=1 and SKIP= env vars (per P47) | `KooshaPari/pheno-ci-templates` | T1.7 | PENDING | orchestrator | — |
+| **PR-162** | docs(ci): document HOOKS_SKIP=1 and SKIP= env vars (per P47) | `KooshaPari/phenotype-tooling` | T1.7 | PENDING | orchestrator | — |
 | **PR-163** | feat(cost): port tiers/cost/budget/quota/audit/cost_middleware from dispatch-mcp W2-1 (L5-104.1) | `KooshaPari/pheno-mcp-router` | T8.4 | **OPEN** [#1](https://github.com/KooshaPari/pheno-mcp-router/pull/1) | subagent E | forge-subagent-E |
 | **PR-164** | feat(adapters): add LlamaAdapter (LlmPort) — server + direct modes (L5-104.1) | `KooshaPari/pheno-mcp-router` | T8.5a | **OPEN** [#2](https://github.com/KooshaPari/pheno-mcp-router/pull/2) | subagent E | forge-subagent-E |
 | **PR-165** | feat(adapters): add OpenAICompatAdapter (LlmPort) — 429/5xx retry + 17 tests (L5-104.1) | `KooshaPari/pheno-mcp-router` | T8.5b | **OPEN** [#3](https://github.com/KooshaPari/pheno-mcp-router/pull/3) | subagent E | forge-subagent-E |
