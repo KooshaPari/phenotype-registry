@@ -26,3 +26,17 @@ Keep `PhenoKits` archived. Deletion is still blocked by TypeScript libs and unpr
 ## 2026-06-20 TypeScript preservation update
 
 TypeScript libs are preserved under `docs/absorption/PhenoKits/typescript-preservation/` in registry commit `5e9a8da0`. This reduces source-loss risk but does not create a real package home.
+
+## 2026-06-20 merge-gate closure update
+
+The following PhenoKits absorption PRs were opened and then merged:
+
+1. `phenotype-go-sdk#21` - folded Go libs from `PhenoKits/libs/go`.
+2. `phenotype-python-sdk#28` - folded divergent `phenokit-config-kit`.
+3. `phenokits-commons#5` - preserved category/template/governance deltas.
+
+TypeScript libs remain preserved in this registry branch under `docs/absorption/PhenoKits/typescript-preservation/` rather than a runtime package home because no `phenotype-ts-utils` repo exists under KooshaPari.
+
+## Updated deletion decision
+
+`DELETE_AFTER_PATCHES` gates for PhenoKits are now closed except final registry merge. After this registry branch merges, `KooshaPari/PhenoKits` can be deleted if repository retention policy allows; otherwise keep archived/read-only as the reversible retention state.
