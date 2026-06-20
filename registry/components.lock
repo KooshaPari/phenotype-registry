@@ -7,23 +7,73 @@
       "status": "archived",
       "archived_date": "2026-06-18",
       "reason": "Source repo KooshaPari/McpKit archived on GitHub; pushes return 'This repository was archived so it is read-only'. Pin retained at c557c3ce (final state before archive); new commits are local-only and not reflected on the lock. Target substrates PhenoMCP#164 + PhenoMCPServers carry the absorbed content per ADR-003 / ADR-017 supersession."
+    },
+    "phenoShared": {
+      "status": "deleted",
+      "deleted_date": "2026-06-19",
+      "reason": "P4 decompose complete; wave 5b fleet drain — 0 production git deps. Final pin 5f4647ef retained here for audit; no lock pin in components. Terminal owners per ADR-ECO-014."
+    },
+    "Pyron": {
+      "status": "deleted",
+      "deleted_date": "2026-06-19",
+      "reason": "P4 gate pass; repo 404 post-absorption. No lock pin — tombstone only."
+    },
+    "phenotype-mcp-asset": {
+      "status": "archived",
+      "archived_date": "2026-06-18",
+      "reason": "9-module Rust scaffold (asset discovery/pack/handler/validation), no CI, no LICENSE, zero consumers. Byte-identical copy preserved in McpKit GitHub archive (L5-104). Pin retained at 718edf80."
+    },
+    "phenotype-analytics": {
+      "status": "archived",
+      "archived_date": "2026-06-18",
+      "reason": "100 LOC async-trait interface library (AnalyticsClient/AnalyticsBackend/Trackable), no concrete backends, zero tests, zero consumers. Created <24h before archive (L5-104). Pin retained at 25622c4a."
+    },
+    "phenotype-registry-data": {
+      "status": "archived",
+      "archived_date": "2026-06-18",
+      "reason": "5.7 MB MANIFEST.tsv index of L7-001 corpus (52,627 entries). Merged into KooshaPari/phenotype-registry as MANIFEST_L7-001.tsv + worklog-L7-001.json (L5-104)."
+    },
+    "pheno-framework-lint": {
+      "status": "archived",
+      "archived_date": "2026-06-19",
+      "reason": "L73 governance tool (substrate graduation & tier-convention linter). Absorbed into pheno-scaffold-kit as _framework_lint.py SUB_LIBRARY (L5-110). PR KooshaPari/pheno-scaffold-kit#2."
+    },
+    "pheno-drift-detector": {
+      "status": "archived",
+      "archived_date": "2026-06-19",
+      "reason": "L74 governance tool (app-substrate drift detection). Absorbed into pheno-scaffold-kit as _drift_detector.py SUB_LIBRARY (L5-111). PR KooshaPari/pheno-scaffold-kit#2."
+    },
+    "pheno-predict": {
+      "status": "archived",
+      "archived_date": "2026-06-19",
+      "reason": "L72 governance tool (token-shingle Jaccard scanner for predictive DRY). Absorbed into pheno-scaffold-kit as _predict.py SUB_LIBRARY (L5-112). PR KooshaPari/pheno-scaffold-kit#2."
+    },
+    "forge-runner-scripts": {
+      "status": "archived",
+      "archived_date": "2026-06-19",
+      "reason": "33 operational shell/python scripts (~290 KB) from ~/.forge/. Split: 2 dag_*.py -> phenodag (Go rewrite, L5-113 2026-06-18); 31 files -> phenotype-org-audits/forge-runner-scripts/. PR KooshaPari/phenotype-org-audits#49."
     }
   },
   "components": {
     "phenotype-registry": {
       "repo": "KooshaPari/phenotype-registry",
       "ref": "main",
-      "sha": "19f3e958a4d147b43d4b40030c94041125137339"
+      "sha": "1eeed5be90ed7c7b983e047475977de034db0f93"
     },
     "HexaKit": {
       "repo": "KooshaPari/HexaKit",
       "ref": "main",
-      "sha": "7aa87f1734e3f5a6aed0d29520ed2b8e8f1216b8"
+      "sha": "d83d1ca26a347e8c5898fc0b28e99a8d54a9ad05"
+    },
+    "phenotype-rust-sdk": {
+      "repo": "KooshaPari/phenotype-rust-sdk",
+      "ref": "main",
+      "sha": "cbf1ccf4077dd631f388ea9e02b7beed2a515f5f"
     },
     "phenotype-types": {
       "repo": "KooshaPari/phenotype-types",
       "ref": "main",
-      "sha": "dd14f735c373e66b1907b7d5d66d3e175abe1df2"
+      "sha": "faa56746434d7f53f3b2028d8cd99d70392049ed"
     },
     "TestingKit": {
       "repo": "KooshaPari/TestingKit",
@@ -33,12 +83,7 @@
     "PhenoObservability": {
       "repo": "KooshaPari/PhenoObservability",
       "ref": "main",
-      "sha": "a3cdb85b1644765390f729fdc94294a61bcde095"
-    },
-    "phenoShared": {
-      "repo": "KooshaPari/phenoShared",
-      "ref": "main",
-      "sha": "5f4647ef79f620f17b925070155827f3248daaa2"
+      "sha": "7e14ba5a91459e900f13459c5ff8a8f028651f8f"
     },
     "substrate": {
       "repo": "KooshaPari/substrate",
@@ -48,27 +93,27 @@
     "Authvault": {
       "repo": "KooshaPari/Authvault",
       "ref": "main",
-      "sha": "7cfd8d7b13df92168b0514571222bc85b703a7f6"
+      "sha": "c2bbf90e45fba29d15f1ec6c2f0e250685dccbb8"
     },
     "Eventra": {
       "repo": "KooshaPari/Eventra",
       "ref": "main",
-      "sha": "445f732c499d24374560846d218828268a1a0319"
+      "sha": "7374d76337f710f35bfb6e045278022dd1f8f11e"
     },
     "Agentora": {
       "repo": "KooshaPari/Agentora",
       "ref": "main",
-      "sha": "1feb69891dad74b8d30cd0479b2e5847c3781eaf"
+      "sha": "77f4dd2b3f289999c04d97cb613089fd57ba9118"
     },
     "ResilienceKit": {
       "repo": "KooshaPari/ResilienceKit",
       "ref": "main",
-      "sha": "c1ca60cf59a7bf6ea553f9818520b20f11a06d0b"
+      "sha": "93cbac70b2306e570a5a46e862150c968f64327e"
     },
     "phenotype-python-sdk": {
       "repo": "KooshaPari/phenotype-python-sdk",
       "ref": "main",
-      "sha": "539fb21f861bab535c91df370bc87509fed58c77"
+      "sha": "844c05ab76ebb40d83d1078f5782707135754423"
     },
     "phenotype-gateway": {
       "repo": "KooshaPari/phenotype-gateway",
@@ -85,7 +130,9 @@
     "phenotype-analytics": {
       "repo": "KooshaPari/phenotype-analytics",
       "ref": "main",
-      "sha": "25622c4ae77b6806cd2c6eb84acc6342be45d05d"
+      "sha": "25622c4ae77b6806cd2c6eb84acc6342be45d05d",
+      "status": "archived",
+      "archived_date": "2026-06-18"
     },
     "nexus": {
       "repo": "KooshaPari/nexus",
@@ -102,42 +149,9 @@
       "ref": "main",
       "sha": "718edf808de6ab16f2f9602a763c5c7ac983fb22",
       "status": "archived",
-      "archived_date": "2026-06-19",
-      "note": "L5-110.x first-half absorption: extracted from McpKit/rust/phenotype-mcp-asset/. McpKit GitHub archive preserves byte-identical copy. 9-module Rust scaffold, no consumers, no CI, no LICENSE. Source repo archived 2026-06-19 23:00 PDT (delete_repo scope outstanding)."
+      "archived_date": "2026-06-18"
     },
     "phenotype-tooling": { "repo": "KooshaPari/phenotype-tooling", "ref": "main" },
-    "PhenoMCP": { "repo": "KooshaPari/PhenoMCP", "ref": "main" },
-    "pheno-framework-lint": {
-      "repo": "KooshaPari/pheno-framework-lint",
-      "ref": "main",
-      "sha": "main@d990c5e",
-      "status": "archived",
-      "archived_date": "2026-06-19",
-      "note": "L73 substrate-graduation linter (473 LOC, stdlib-only). Absorbed into pheno-scaffold-kit umbrella as _framework_lint.py + new Click subcommand group. PR pheno-scaffold-kit#2 (OPEN)."
-    },
-    "pheno-drift-detector": {
-      "repo": "KooshaPari/pheno-drift-detector",
-      "ref": "main",
-      "sha": "main@8eb0d45",
-      "status": "archived",
-      "archived_date": "2026-06-19",
-      "note": "L74 app-substrate drift detector (413 LOC, stdlib-only). Absorbed into pheno-scaffold-kit umbrella as _drift_detector.py + new Click subcommand group. PR pheno-scaffold-kit#2 (OPEN). 2 prior gaps (missing pyproject.toml, empty CI) resolved by umbrella absorption."
-    },
-    "pheno-predict": {
-      "repo": "KooshaPari/pheno-predict",
-      "ref": "main",
-      "sha": "main@82c0be4",
-      "status": "archived",
-      "archived_date": "2026-06-19",
-      "note": "L72 predictive-DRY scanner (376 LOC, stdlib-only). Absorbed into pheno-scaffold-kit umbrella as _predict.py + new Click subcommand group. PR pheno-scaffold-kit#2 (OPEN). Closes the L72->L73->L74 closed-loop in a single home."
-    },
-    "forge-runner-scripts": {
-      "repo": "KooshaPari/forge-runner-scripts",
-      "ref": "main",
-      "sha": "main@a53b2e0",
-      "status": "archived",
-      "archived_date": "2026-06-19",
-      "note": "33 files, 5,597 LOC. Split placement: 2 dag_*.py already absorbed into phenodag as Go rewrite (L5-113, 2026-06-18, PR phenodag#13). Remaining 31 files (operational scripts, process docs, specs, commands, install.sh, LICENSE) absorbed into phenotype-org-audits/forge-runner-scripts/. PR phenotype-org-audits#49 (OPEN)."
-    }
+    "PhenoMCP": { "repo": "KooshaPari/PhenoMCP", "ref": "main" }
   }
 }
