@@ -1178,5 +1178,7 @@
       "pr": "phenotype-ops#4",
       "note": "phenotype-config deprecated in favor of Configra (ADR-031). Archive scheduled 2026-07-15. 1 confirmed consumer migration noted (phenotype-ops)."
     }
+  ,
+    {"id":"gate-focalpoint-p5-6-wave-closure","path":"KooshaPari/FocalPoint","disposition":"DEFER","target":"KooshaPari/HexaKit","wave":"P5","fsm":"deferred","note":"P5-6 wave-closure 2026-06-20: deferred (wave-closure) - superseded by KooshaPari/thegent PR #1114 consolidation; revisit after #1114 merges.","bucket":"wave-closure"}
   ]
 }
