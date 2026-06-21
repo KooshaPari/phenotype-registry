@@ -127,6 +127,14 @@ Gateway fork lanes **G15–G17 complete** (other agent). Registry disposition-in
 14. ~~**Registry L7**~~ — done ([#244](https://github.com/KooshaPari/phenotype-registry/pull/244) intent/boundary + [#245](https://github.com/KooshaPari/phenotype-registry/pull/245) pheno-tracing)
 15. ~~**Phase 4 closeout**~~ — done (backlog #100; `docs:build` [#255](https://github.com/KooshaPari/phenotype-registry/pull/255))
 
+
+## 2026-06-20 archive/delete readiness addendum
+
+| Repo | Current gate | Evidence | Next action |
+|------|--------------|----------|-------------|
+| phenotype-bus | **blocked until repoint PRs merge** | phenoEvents#9 absorbed InMemoryBus; PhenoObservability commit `37d1ee0` removed stale CI tarball dependency; phenokits-commons#7 merged docs disposition; Eidolon#66 and Sidekick#75 repoint remaining production Cargo path deps | Merge #66/#75, then rerun `gh search code "phenotype-bus filename:Cargo.toml org:KooshaPari"` |
+| Pyron | **archive restored / no runtime blocker found** | components.lock correction plus scoped code search found docs/worklogs/task refs, not live manifests | Keep archived; only catalog/doc cleanup remains |
+| PhenoContracts | **hold-decompose** | No external runtime consumer found, but repo is active and owns formal-verification adapters plus Rust crate surfaces | Name terminal owner for TS verification adapters or retire via ADR before archive/delete |
 ## Phase 5 — agent runtime (2026-06-19)
 
 See [p5-agent-runtime-absorption-2026-06-19.md](./p5-agent-runtime-absorption-2026-06-19.md).
@@ -137,3 +145,4 @@ See [p5-agent-runtime-absorption-2026-06-19.md](./p5-agent-runtime-absorption-20
 4. **P5-4** — phenoRouterMonitor → phenoAI (deferred; repo archived)
 5. **P5-5** — thegent / Agentora boundary audit (AFFIRM split; boundary confirmation + registry handoff pending)
 6. **P5-6** — FocalPoint → HexaKit (deferred; 867MB vendor)
+
