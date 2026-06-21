@@ -1193,15 +1193,16 @@
       "note": "v11-016 tier-0 retirement (batch 2). Federated service superseded by pheno-context-otlp + pheno-llms-txt per L5-114 absorption. 12 source files removed (deep_research, tool_proposals, model_proposals, subscription_optimization, etc.)."
     },
     {
-      "id": "absorb-httpora",
-      "path": "KooshaPari/Httpora",
-      "disposition": "SUPERSEDE",
-      "target": "Quillr",
-      "fsm": "done",
-      "archived_date": "2026-06-20",
-      "deleted_date": "2026-06-20",
-      "pr": "Quillr#27, Quillr#28, phenotype-registry#TBD",
-      "note": "Httpora absorbed into Quillr as httpora-core crate. Quillr#28 closed remaining doc-over-code gaps: CORS, injected clocks, idempotent retry policy. Final deletion package at docs/absorption/Httpora/FINAL_DELETION.md."
+      "id": "sr-tracely",
+      "path": "Tracely",
+      "disposition": "DELETE_AFTER_REGISTRY_MERGE",
+      "target": "KooshaPari/PhenoObservability",
+      "wave": "H+",
+      "fsm": "ready",
+      "core_lang": "rust",
+      "adr": "docs/absorption/Tracely/FINAL_DELETION.md",
+      "relocated_date": "2026-06-20",
+      "note": "Tracely observability primitives absorbed by PhenoObservability (matching tracely-core and tracely-sentinel paths); embedded helix-tracing and non-generated source snapshot preserved in registry; generated target output excluded as NO_MERIT."
     }
   ]
 }
