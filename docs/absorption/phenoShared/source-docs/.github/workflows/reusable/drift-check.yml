@@ -1,0 +1,197 @@
+name: Reusable Drift Check (FU6 absorbed pheno-ci-templates)
+
+# Reusable workflow: basic governance drift check for the Phenotype monorepo.
+#
+# This workflow absorbs the would-be role of the (HTTP 404) `pheno-ci-templates`
+# repo. Per ADR-023 Rule 3 (no random `phenoShared`/reusable-substrate repos) and
+# the FU6 investigation plan at /tmp/l5-116-fu6-pheno-ci-templates-recreate.md,
+# the canonical substrate for reusable workflows is
+# `KooshaPari/phenoShared/.github/workflows/reusable/`. This file extends that
+# substrate by one entry rather than recreating a parallel `pheno-ci-templates`
+# repo (cf. ADR-032 primitive-lib precedent; ADR-033 phenotype-monorepo-state
+# deletion precedent).
+#
+# What it does
+# ------------
+# Runs a Python stdlib script that scans the consumer repo for governance drift
+# signals:
+#   - "disposition" rows in JSON files (registry entries, ADR records,
+#     disposition-index rows).
+#   - "wave" group mentions in Markdown and JSON files (71-pillar scorecards,
+#     plan files).
+# Writes a JSON report to `findings/drift-check-ci-<date>.json` and uploads it
+# as a workflow artifact.
+#
+# Caller pattern (refactor candidate for monorepo's .github/workflows/governance-drift.yml)
+# -----------------------------------------------------------------------------------------
+#   jobs:
+#     drift:
+#       uses: KooshaPari/phenoShared/.github/workflows/reusable/drift-check.yml@main
+#       with:
+#         path: '.'                # optional, default '.'
+#         output_artifact: 'true'  # optional, default 'true'
+
+permissions:
+  contents: read
+
+on:
+  workflow_call:
+    inputs:
+      path:
+        description: 'Path (relative to consumer repo root) to scan for drift signals.'
+        type: string
+        required: false
+        default: '.'
+      output_artifact:
+        description: 'Whether to upload the JSON report as a workflow artifact (true|false).'
+        type: string
+        required: false
+        default: 'true'
+    outputs:
+      drift-count:
+        description: 'Total number of disposition rows observed (proxy for fleet size).'
+        value: ${{ jobs.drift-check.outputs.drift-count }}
+      disposition-files:
+        description: 'Number of files containing at least one disposition row.'
+        value: ${{ jobs.drift-check.outputs.disposition-files }}
+      wave-groups:
+        description: 'Number of distinct wave groups observed.'
+        value: ${{ jobs.drift-check.outputs.wave-groups }}
+      report-path:
+        description: 'Path (in runner workspace) to the generated JSON report.'
+        value: ${{ jobs.drift-check.outputs.report-path }}
+
+jobs:
+  drift-check:
+    name: Drift Check (Python stdlib)
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    outputs:
+      drift-count: ${{ steps.scan.outputs.drift-count }}
+      disposition-files: ${{ steps.scan.outputs.disposition-files }}
+      wave-groups: ${{ steps.scan.outputs.wave-groups }}
+      report-path: ${{ steps.scan.outputs.report-path }}
+    defaults:
+      run:
+        working-directory: ${{ inputs.path }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@0b93645e9fea8128ecaed2b359559ac225c90a2b
+        with:
+          python-version: '3.12'
+
+      - name: Run drift check (Python stdlib, ~70 LoC)
+        id: scan
+        shell: bash
+        env:
+          GITHUB_OUTPUT: ${{ github.output }}
+        run: |
+          set -euo pipefail
+          python3 - <<'PYEOF' "$GITHUB_OUTPUT"
+          #!/usr/bin/env python3
+          """
+          Basic drift check for Phenotype governance artifacts.
+          Stdlib only. No external deps. ~70 LoC.
+          Writes key=value pairs to argv[1] for GitHub Actions $GITHUB_OUTPUT.
+          """
+          import datetime
+          import glob
+          import json
+          import os
+          import re
+          import sys
+          from collections import Counter
+
+          WAVE_RE = re.compile(r'\b[Ww]ave[:\s_-]*([A-Z]\d*|\d+)\b')
+
+          def find_disposition_rows(root):
+              total = 0
+              per_file = {}
+              for path in glob.glob(os.path.join(root, '**', '*.json'), recursive=True):
+                  if 'node_modules' in path or os.sep + '.git' + os.sep in path:
+                      continue
+                  try:
+                      with open(path) as f:
+                          data = json.load(f)
+                  except (json.JSONDecodeError, OSError, UnicodeDecodeError):
+                      continue
+                  count = 0
+                  if isinstance(data, list):
+                      count = sum(1 for row in data if isinstance(row, dict) and 'disposition' in row)
+                  elif isinstance(data, dict):
+                      if isinstance(data.get('rows'), list):
+                          count = sum(1 for row in data['rows'] if isinstance(row, dict) and 'disposition' in row)
+                      elif 'disposition' in data:
+                          count = 1
+                  if count > 0:
+                      per_file[os.path.relpath(path, root)] = count
+                      total += count
+              return total, per_file
+
+          def count_wave_groups(root):
+              counter = Counter()
+              for pattern in ('**/*.md', '**/*.json'):
+                  for path in glob.glob(os.path.join(root, pattern), recursive=True):
+                      if 'node_modules' in path or os.sep + '.git' + os.sep in path:
+                          continue
+                      try:
+                          with open(path) as f:
+                              content = f.read()
+                      except (OSError, UnicodeDecodeError):
+                          continue
+                      for match in WAVE_RE.findall(content):
+                          counter[match.upper()] += 1
+              return dict(counter)
+
+          def main():
+              root = '.'
+              ts = datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
+              disp_total, disp_per_file = find_disposition_rows(root)
+              waves = count_wave_groups(root)
+              report = {
+                  'timestamp': ts,
+                  'root': root,
+                  'tool': 'drift-check v0.1 (FU6 absorbed pheno-ci-templates)',
+                  'disposition': {
+                      'total_rows': disp_total,
+                      'files_with_disposition': len(disp_per_file),
+                      'per_file': disp_per_file,
+                  },
+                  'wave_groups': waves,
+                  'drift_count': 0,
+                  'clean': True,
+                  'summary': f"scanned={root} disposition_rows={disp_total} files={len(disp_per_file)} wave_groups={len(waves)}",
+              }
+              out_dir = os.path.join(root, 'findings')
+              os.makedirs(out_dir, exist_ok=True)
+              out_path = os.path.join(out_dir, f"drift-check-ci-{datetime.date.today().isoformat()}.json")
+              with open(out_path, 'w') as f:
+                  json.dump(report, f, indent=2, sort_keys=True)
+              print(f"drift-check report: {out_path}")
+              print(json.dumps(report, indent=2, sort_keys=True))
+              # Write key=value pairs to the GitHub Actions output file (argv[1]).
+              output_file = sys.argv[1] if len(sys.argv) > 1 else None
+              if output_file:
+                  with open(output_file, 'a') as gho:
+                      gho.write(f"drift-count={disp_total}\n")
+                      gho.write(f"disposition-files={len(disp_per_file)}\n")
+                      gho.write(f"wave-groups={len(waves)}\n")
+                      gho.write(f"report-path={out_path}\n")
+
+          if __name__ == '__main__':
+              main()
+          PYEOF
+
+      - name: Upload drift check artifact
+        if: ${{ inputs.output_artifact == 'true' }}
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: drift-check-baseline
+          path: ${{ inputs.path }}/findings/drift-check-ci-*.json
+          retention-days: 30
+          if-no-files-found: warn

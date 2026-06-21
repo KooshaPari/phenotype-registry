@@ -1215,6 +1215,18 @@
       "adr": "docs/absorption/phenotype-bus/FINAL_DELETION.md",
       "relocated_date": "2026-06-21",
       "note": "phenotype-bus deprecated and absorbed by phenoEvents; target provides EventEnvelope, InMemoryBus, SqliteBus, outbox, retry/DLQ, idempotency, schema registry, projections, and observability. Source API/history plus local ahead work preserved as source snapshot and local-ahead patch because source remote is archived/read-only."
+    },
+    {
+      "id": "sr-phenoshared",
+      "path": "phenoShared",
+      "disposition": "DELETE_CONFIRMED_REMOTE_GONE",
+      "target": "domain role owners; see docs/absorption/phenoShared/FINAL_DELETION.md",
+      "wave": "H+",
+      "fsm": "done",
+      "core_lang": "rust",
+      "adr": "ADR-ECO-014-phenoshared-decompose",
+      "relocated_date": "2026-06-21",
+      "note": "Remote KooshaPari/phenoShared resolves 404; local tombstone-only checkout preserved in registry and quarantined. Do not use phenoShared as future target."
     }
   ]
 }
