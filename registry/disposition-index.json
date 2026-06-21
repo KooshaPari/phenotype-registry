@@ -1,6 +1,6 @@
 {
   "version": "1.4.0",
-  "updated": "2026-06-20",
+  "updated": "2026-06-21",
   "authority": "phenotype-registry",
   "charter": "docs/rationalization/boundary-shaping.md",
   "note": "phenoShared targets are interim staging per ADR-ECO-014-phenoshared-decompose; terminal owners are DOMAIN_ROLES repos. 2026-06-18 (post-archive, L5-114): phenotype-voxel/terrain/water/postfx source repos ARCHIVED + DELETED (delete_repo scope) after phenotype-gfx#10 merged. phenotype-gfx is canonical; 4 source rows now terminal archived state. 2026-06-19 (L5-115, ADR-035A): pheno-capacity registered as new pheno-*-lib substrate (extracted from HwLedger per ADR-035A).",
@@ -1203,6 +1203,18 @@
       "adr": "docs/absorption/Tracely/FINAL_DELETION.md",
       "relocated_date": "2026-06-20",
       "note": "Tracely observability primitives absorbed by PhenoObservability (matching tracely-core and tracely-sentinel paths); embedded helix-tracing and non-generated source snapshot preserved in registry; generated target output excluded as NO_MERIT."
+    },
+    {
+      "id": "sr-phenotype-bus",
+      "path": "phenotype-bus",
+      "disposition": "DELETE_AFTER_REGISTRY_MERGE",
+      "target": "KooshaPari/phenoEvents",
+      "wave": "H+",
+      "fsm": "ready",
+      "core_lang": "rust",
+      "adr": "docs/absorption/phenotype-bus/FINAL_DELETION.md",
+      "relocated_date": "2026-06-21",
+      "note": "phenotype-bus deprecated and absorbed by phenoEvents; target provides EventEnvelope, InMemoryBus, SqliteBus, outbox, retry/DLQ, idempotency, schema registry, projections, and observability. Source API/history plus local ahead work preserved as source snapshot and local-ahead patch because source remote is archived/read-only."
     }
   ]
 }
