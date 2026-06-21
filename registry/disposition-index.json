@@ -1060,6 +1060,16 @@
       "note": "867MB vendor; repo archived; manual HexaKit merge deferred"
     },
     {
+      "id": "gate-focalpoint-p5-6-wave-closure",
+      "path": "KooshaPari/FocalPoint",
+      "disposition": "ABSORB",
+      "target": "HexaKit",
+      "wave": "P5",
+      "fsm": "deferred",
+      "bucket": "absorb",
+      "note": "P5-6 wave-closure 2026-06-20: deferred (wave-closure) - superseded by KooshaPari/thegent PR #1114 consolidation; revisit after #1114 merges. Original gate-focalpoint row preserved. Provenance: docs/operations/p5-6-focalpoint-hexakit-deferred-2026-06-20.md"
+    },
+    {
       "id": "gw-pheno-errors",
       "path": "KooshaPari/pheno-errors",
       "disposition": "ARCHIVED",
@@ -1202,7 +1212,7 @@
       "core_lang": "rust",
       "relocated_date": "2026-06-20",
       "pr": "phenotype-registry@5e83abb",
-      "note": "Repo-level archive row for PhenoContracts (alias pheno-contracts). Separate from crate-level crates/phenotype-contracts decomposition row. Registry boundary/intent mark archive-ready; GitHub repo remains active/non-archived; hard delete waits on operational archive plus final consumer/catalog sweep."
+      "note": "Repo-level PhenoContracts row. Current repo remains active/non-archived and owns formal-verification adapter surfaces; no external runtime consumers found in scoped 2026-06-20 search, but archive/delete waits on terminal-owner absorption or explicit retirement ADR."
     }
   ]
 }

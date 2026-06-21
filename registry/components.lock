@@ -63,7 +63,7 @@
     "phenotype-bus": {
       "status": "archived",
       "archived_date": "2026-06-20",
-      "reason": "Archived private Rust event-bus repo. Direct absorption target phenoEvents#9 lifted InMemoryBus adapter plus audit/deny/cliff/version helper; PhenoObservability stale CI tarball dependency removed in commit 37d1ee0. 2026-06-20 delete-readiness sweep: phenokits-commons#7 merged docs disposition; Eidolon#66 repoints remaining production Cargo path deps to phenoEvents; Sidekick#75 removes an unused production Cargo path dep; PhenoObservability#178 removes stale phenotype-bus test/docs surface in favor of phenotype-event-bus. Hard delete deferred until those repoint PRs merge and post-merge code search is clean."
+      "reason": "Archived private Rust event-bus repo. Direct absorption target phenoEvents#9 lifted InMemoryBus adapter plus audit/deny/cliff/version helper; PhenoObservability stale CI tarball dependency removed in commit 37d1ee0. 2026-06-20 delete-readiness sweep: phenokits-commons#7 merged docs disposition; Eidolon#66 and Sidekick#75 remove unused production Cargo path deps; PhenoObservability#178 removes stale phenotype-bus test/docs surface in favor of phenotype-event-bus. Hard delete deferred until those cleanup PRs merge and post-merge code search is clean."
     },
     "PhenoContracts": {
       "status": "hold-decompose",
@@ -185,7 +185,3 @@
     }
   }
 }
-
-
-
-
