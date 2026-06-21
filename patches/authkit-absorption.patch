@@ -4546,34 +4546,7 @@ index 0000000..db2f3de
 +    // Test PEM keys were generated with `openssl` (RSA 2048, EC P-256).
 +    // They are ONLY used in tests; no private key material ships in production.
 +
-+    const RSA_PRIVATE_PEM: &str = "-----BEGIN PRIVATE KEY-----\n\
-+MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDU51jaeL8ulx4i\n\
-+69Qet/ViKLdJMKgpeqgaNnHGOw1dAsyUyqOLO5awuTiytkXq6MtJPS235nXJAQwf\n\
-+ak4hBDAVzKJRwmmeMRS0zSRmHYlkKeK9pI0E6X0Aik+VLRXJ6Cd/Y29FfAeZrw++\n\
-+/MiQJ1sLKKUt7G+Vrq2YwkaS/NzaG2+i2vLzMW29FRlXV3Sc6QT2Os9dpjFDBH4J\n\
-+QOQnbzR6aHSajcgAKdhVYIE8vI3qYmhEcvREdhbuUzaFmaGXbgCwJPcPeaixyKbJ\n\
-+OjYUVExAQ0wlBwysTZkeJ3spdypGQu/uWDoUQhc0NUp5nT8I0oHa6lmmx7Ps6uUc\n\
-+Z7kaeTtFAgMBAAECggEAOYmiVjy+skkt4FMqmvitTM9jJVkMgVVAPAFNwzxvUp0w\n\
-+i9+tzjGW+oC8JXQkNiWe1ta9Vc9nMqDhVVYl8j9O/X01uvHXGGT8SxaLyTsfR94Y\n\
-+BJeFcvflC/HVKyQpmMzwa7mEN1ubNDn+/+cSDv9L2BqudVhKGcJA8SFD8HJ8/0Zf\n\
-+pBs9VWP1oKaDIXOcTfzQFWChhSexGZoGsqwOaWshNLxrpB6L2Mirnz9Z/Q/jRO+E\n\
-+Gf09WT7H6EjMfFplyFCK3ITJ3cdbxgmO+U3V1/eqcTc8yAZmXLsFj/2P9CnuugfN\n\
-+pR19TaVnYPaGGNuIrZndQPLQcE0TdO81ABncLJDGuwKBgQDxuwGtjq6HZ8of65v6\n\
-+WWotztKNQOJiBgD+76HaJYDQmv5OiHexaba4lmxlgl9bhWca+CDFpQlbSZJzH5dw\n\
-+YlI28e6qvOKNFWQ77rGKZQetV1+KES1hKnksnmu7P5lIoJDJfH0ZtJd7eRJ+JonL\n\
-+6utIx45/Mq+WuuD+HyvF1mgnHwKBgQDheLbqQHOt9iBf6BjpOYcfGkXWejTI3f3y\n\
-+93/J4EKh/1lC2QbgQgvF2eVegZVwefjHegxWCA/QYHDhRb/KAshbkUBJlSeF6dw7\n\
-+k7SSeuOt+sfvNpZq6wbe8dSgJ7O8SNRJp9UBpIz4Y7o7CwHLMmQXmIzlocSs3e+2\n\
-+ej2Z65aFGwKBgDIroAOHk42i6v6JBgyFtlXfkS+kAdhaaqZ+0dbW5c9l+9YM2NrH\n\
-+mBbjkYfX8Tarj2S3jwW2ZSS/NlgSfHnkzi99Mw3YuiSSBgWyWsLgiSFe+wNK4WJD\n\
-+UHcEQlPQtV2vhZ1r6wMEylPkIwRvtzXNghvO3zJjMLJWAxB7I7ih8Wf9AoGBALmk\n\
-+cradKqHpLO7KYvhkbWSmdSoKpLteTGFodsb45uQLIqtvlcG/n4HfzoLpnullA/j5\n\
-+/H45VQv02/wfObJSaDU8evoa3NfdnX9QNjUFCcGN4mCLSX3u1VFrO+5BwjMco+2h\n\
-+Sjh4C7nYItXKUkfDzbW/3QKVFyJd+aj9LQs2dlBRAoGBAJJ4r7O5VWMWS7UEx6yS\n\
-+O5hgFRM3gmV/COQzNb/zev1+m6VW/K7NytIrp45ViRkeCr2GIsiuByIz1Bk4jHQL\n\
-+leVzU/atjQNq4q6ltYErheFqi1XnU8/9/ZDhu+KFVxrf+hkiVmGtPvA5nNWP139r\n\
-+2Y43KB8fKmS1eC+qk7PpKiz3\n\
-+-----END PRIVATE KEY-----";
++    const RSA_PRIVATE_PEM: &str = "REDACTED_TEST_RSA_PRIVATE_KEY";
 +
 +    const RSA_PUBLIC_PEM: &str = "-----BEGIN PUBLIC KEY-----\n\
 +MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA1OdY2ni/LpceIuvUHrf1\n\
@@ -4587,11 +4560,7 @@ index 0000000..db2f3de
 +
 +    // jsonwebtoken requires EC private keys in PKCS#8 format (`BEGIN PRIVATE KEY`),
 +    // not the SEC1 `BEGIN EC PRIVATE KEY` format.
-+    const EC_PRIVATE_PEM: &str = "-----BEGIN PRIVATE KEY-----\n\
-+MIGHAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBG0wawIBAQQgNJcPEikDJow0tW+F\n\
-+KOQiDxWheHjIV1EtPOdikLS2Hu2hRANCAAQWFkN2Lqn9Od1Got6MhqLKPNGFnvuv\n\
-+lh7keMRanaF0/PW5Pf0F9QUj+Otg91pp6M+zW+cucHPThnRYg2jr5o6C\n\
-+-----END PRIVATE KEY-----";
++    const EC_PRIVATE_PEM: &str = "REDACTED_TEST_EC_PRIVATE_KEY";
 +
 +    const EC_PUBLIC_PEM: &str = "-----BEGIN PUBLIC KEY-----\n\
 +MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEFhZDdi6p/TndRqLejIaiyjzRhZ77\n\
