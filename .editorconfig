@@ -13,11 +13,15 @@ trim_trailing_whitespace = true
 [*.{rs,toml,py,go,md,yaml,yml,json,html,css,scss}]
 indent_size = 4
 
+[*.{yaml,yml}]
+indent_size = 2
+
 [*.{ts,tsx,js,jsx,mjs,cjs}]
 indent_size = 2
 
 [Makefile]
 indent_style = tab
 
+# Markdown hard-breaks are intentionally preserved.
 [*.md]
-trim_trailing_whitespace = false  # trailing spaces = line break in Markdown
+trim_trailing_whitespace = false
