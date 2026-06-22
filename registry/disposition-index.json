@@ -1249,10 +1249,10 @@
       "disposition": "HOLD_DELETE",
       "target": "Eventra rust/phenotype-event-bus + rust/phenotype-event-contracts; phenotype-python-sdk packages/pheno-events for Python edge bus",
       "wave": "delete-readiness-2026-06-21",
-      "fsm": "hold",
+      "fsm": "blocked-open-prs",
       "core_lang": "rust",
       "archived_date": "2026-06-20",
-      "note": "Archived private repo. Migration evidence: Eventra owns rust/phenotype-event-bus, rust/phenotype-event-contracts, and rust/phenotype-event-sourcing; phenotype-python-sdk owns Python pheno-events bus surfaces. components.lock records direct absorption of InMemoryBus/helper material into phenoEvents#9 and cleanup PRs phenokits-commons#7, Eidolon#66, Sidekick#75, PhenoObservability#178, phenotype-apps#43. Hard delete is NOT yet proven: gate requires those cleanup PRs merged plus post-merge org code/tree search showing no production refs or raw gitlinks."
+      "note": "Archived private repo. Migration evidence: Eventra owns rust/phenotype-event-bus, rust/phenotype-event-contracts, and rust/phenotype-event-sourcing; phenotype-python-sdk owns Python pheno-events bus surfaces. 2026-06-21 gate check: phenokits-commons#7 MERGED and phenotype-apps#43 MERGED, but Eidolon#66 OPEN, Sidekick#75 OPEN, and PhenoObservability#178 OPEN. Org code search still finds active blockers: Eidolon crates/eidolon-mobile/Cargo.toml path dep to ../../../phenotype-bus, Sidekick docs/getting-started.md path dep example, and PhenoObservability phenotype_bus_observability_e2e docs. HOLD_DELETE until those PRs merge and post-merge search shows no production refs/raw gitlinks."
     },
     {
       "id": "gate-phenocontracts",

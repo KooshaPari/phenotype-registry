@@ -53,9 +53,22 @@ Delete blockers:
 
 | Blocker | Required evidence |
 |---------|-------------------|
-| Cleanup PRs | Confirm phenokits-commons#7, Eidolon#66, Sidekick#75, PhenoObservability#178, and phenotype-apps#43 are merged. |
-| Raw gitlinks/path refs | Post-merge org search/tree check must show no production `phenotype-bus` references outside registry/docs. |
+| Cleanup PRs | 2026-06-21 check: `phenokits-commons#7` MERGED and `phenotype-apps#43` MERGED; `Eidolon#66`, `Sidekick#75`, and `PhenoObservability#178` remain OPEN. |
+| Raw gitlinks/path refs | Still blocked. Org search finds `Eidolon/crates/eidolon-mobile/Cargo.toml` with `phenotype-bus = { path = "../../../phenotype-bus" }`, `Sidekick/docs/getting-started.md` with a path dependency example, and PhenoObservability phenotype-bus E2E docs. |
 | Remote state | Current token gets 404; registry says archived private. Treat as archive-held, not hard-delete-ready. |
+
+
+### 2026-06-21 phenotype-bus gate recheck
+
+| Check | Result | Evidence |
+|-------|--------|----------|
+| `phenokits-commons#7` | MERGED | `docs: redirect archived phenotype-bus to phenoEvents`, merged 2026-06-21T01:45:06Z |
+| `phenotype-apps#43` | MERGED | `chore(apps): remove archived delete-gate repo gitlinks`, merged 2026-06-21T06:19:42Z |
+| `Eidolon#66` | OPEN | `fix(eidolon): repoint archived phenotype-bus dependency`; org search still finds `crates/eidolon-mobile/Cargo.toml` path dep |
+| `Sidekick#75` | OPEN | `fix(sidekick): repoint archived phenotype-bus dependency`; org search still finds `docs/getting-started.md` path dep example |
+| `PhenoObservability#178` | OPEN | `fix(observability): remove stale phenotype-bus test surface`; org search still finds phenotype-bus E2E docs |
+
+**Ruling:** keep `gate-phenotype-bus` at HOLD_DELETE / blocked-open-prs. The repo is substantially absorbed, but delete-readiness is not proven while production/path references and stale observability docs remain visible.
 
 ## PhenoContracts granular absorption
 
