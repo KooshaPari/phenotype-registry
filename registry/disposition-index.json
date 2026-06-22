@@ -1172,6 +1172,56 @@
       "relocated_date": "2026-06-19",
       "pr": "phenoShared#196",
       "note": "Terminal owner per ADR-035B event-bus substrate consolidation; phenotype-event-sourcing crate now has blake3 opt-in feature + ZERO_HASH const + async_store + query; 26/26 tests pass default, 29/29 with --features blake3"
+    },
+    {
+      "id": "repo-thegent-sharecli",
+      "path": "KooshaPari/thegent-sharecli",
+      "disposition": "DEPRECATE-MERGED",
+      "target": "KooshaPari/sharecli",
+      "wave": "P5-7",
+      "fsm": "deleted",
+      "adr": "ADR-ECO-014",
+      "relocated_date": "2026-06-21",
+      "deleted_date": "2026-06-21",
+      "note": "Self-described 'DEPRECATED duplicate of sharecli'. sharecli is a strict superset (27 vs 14 files; only unique file was GEMINI.md methodology doc, not application code). All 3 open PRs (#9 GEMINI mirror, #11 phase3 spec, #12 orch-v12 governance) closed as superseded. Repo hard-deleted. Zero cargo pins, zero dependents.",
+      "source": "fleet-rescan-2026-06-21"
+    },
+    {
+      "id": "repo-phenoRouterMonitor",
+      "path": "KooshaPari/phenoRouterMonitor",
+      "disposition": "ABSORB",
+      "target": "KooshaPari/phenoAI/crates/llm-router",
+      "wave": "P5-4",
+      "fsm": "deleted",
+      "adr": "ADR-ECO-014",
+      "relocated_date": "2026-06-20",
+      "deleted_date": "2026-06-21",
+      "note": "Absorbed per docs/operations/p5-4-phenoroutermonitor-absorption-2026-06-20.md. Canonical code lives in phenoAI/crates/llm-router/. PR #634 (orch-v12-s3-019 CODEOWNERS for phenotype-infrakit) closed as mis-located (work belongs in phenotype-infrakit). Repo hard-deleted. Zero cargo pins, zero dependents.",
+      "source": "fleet-rescan-2026-06-21"
+    },
+    {
+      "id": "repo-PhenoProject",
+      "path": "KooshaPari/PhenoProject",
+      "disposition": "ARCHIVED",
+      "target": "phenotype-fleet-workspace",
+      "wave": "P5-7",
+      "fsm": "archived",
+      "adr": "ADR-ECO-014",
+      "archived_date": "2026-06-21",
+      "note": "Fleet-role 'Phenotype PhenoProject domain workspace'. Activity was Dependabot-only (6+ open Dependabot PRs at close time, all auto-bumps for pyjwt / phenoShared CI / alert-sync). Archived 2026-06-21 per surface-reduction directive. Zero cargo pins, zero dependents. Workspace preserved; no content loss.",
+      "source": "fleet-rescan-2026-06-21"
+    },
+    {
+      "id": "gate-phenoroutermonitor-p5-4-resolution",
+      "path": "KooshaPari/phenoRouterMonitor",
+      "disposition": "DONE",
+      "target": "KooshaPari/phenoAI",
+      "wave": "P5-4",
+      "fsm": "done",
+      "adr": "ADR-ECO-014",
+      "verified_at": "2026-06-21",
+      "note": "P5-4 absorption complete: code at phenoAI/crates/llm-router/. Repo hard-deleted. 0 cargo pins, 0 dependents, 0 open PRs. Absorption manifest at Agentora/crates/ABSORPTION_MANIFEST.md documents the move. Ledger row + TRACEABILITY.md updated.",
+      "source": "fleet-rescan-2026-06-21"
     }
   ]
 }
