@@ -94,7 +94,8 @@ REPOS=(
   "Eventra|Eventra|owned: event-bus runtime boundary (Rust CQRS+ES)"
   "Configra|Configra|owned: config boundary (Rust, ADR-031 canonical)"
   "Benchora|Benchora|owned: perf-harness boundary (Rust criterion)"
-  "Authvault|Authvault|owned: auth runtime boundary (Rust OAuth2/JWT/RBAC)"
+  "Authvault|Authvault|owned (archived-superseded 2026-06-20 -> AuthKit; secrets domain historical)"
+  "AuthKit|AuthKit|owned: auth-runtime boundary (Rust successor to Authvault; FR-AUTHV-018 landed)"
   "Quillr|Quillr|owned: http-middleware boundary (Rust httpora-core + TS)"
 )
 

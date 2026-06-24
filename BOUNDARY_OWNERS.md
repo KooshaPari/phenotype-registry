@@ -252,13 +252,14 @@ DELETE archived repo  IFF:
 - **Coverage:** no reqwest/hyper backend, no HTTP/2/3, no OTel export, no moka cache, no mTLS helpers
 - **Recommendation:** **KEEP_ACTIVE** — add reqwest + quinn/h3 + tracing-opentelemetry + moka
 
-### Auth Runtime (refreshed 2026-06-23)
-- **Canonical owner:** `KooshaPari/Authvault`
-- **Stack:** Rust (OAuth2/JWT/RBAC/ABAC, multi-tenant)
+### Auth Runtime (refreshed 2026-06-24)
+- **Canonical owner:** `KooshaPari/AuthKit` (active; successor to archived Authvault)
+- **Historical owner:** `KooshaPari/Authvault` (archived 2026-06-20, commit c7994b9)
+- **Stack:** Rust (OAuth2/OIDC/JWT/RBAC/ABAC, multi-tenant)
 - **Boundary:** Rust auth framework — PKCE, JWS, vault, KMS, audit
-- **Status:** active (v0.1.0; 4 GAP worktrees unmerged: gap008 PKCE, gap009 brute-force, gap010 middleware-adapter)
-- **Absorb from:** AuthKit absorbed per AuthKit#121 2026-06-20; Authvault retains Rust canonical
+- **Status:** AuthKit active (v0.1.0, FR-AUTHV-018 landed 2026-06-24 commit 064b310); Authvault read-only history
+- **Absorb from:** AuthKit created 2026-06-24 to receive the 3 unmerged GAP worktrees (gap008 PKCE, gap009 brute-force, gap010 middleware-adapter); gap009 + gap010 were already merged into Authvault main, gap008 landed in AuthKit
 - **Consumer pattern:** Repointed by eyetracker (consent+SSO), eventra (tenant_id), configra (VaultStore), quillr (token introspection)
-- **Coverage:** Strong on internal JWT/RBAC/PKCE; weak on OIDC/ABAC/WebAuthn/TOTP/KMS/DPoP/audit hash-chain
-- **Recommendation:** **KEEP_ACTIVE** — merge 3 GAP worktrees; add oauth2+openidconnect, oso, webauthn-rs, totp-rs, KMS adapters
+- **Coverage:** Strong on internal JWT/RBAC/PKCE state binding; weak on OIDC/ABAC/WebAuthn/TOTP/KMS/DPoP/audit hash-chain
+- **Recommendation:** **KEEP_ACTIVE** — AUT-SOTA-001..007 (key rotation, OIDC, WebAuthn, TOTP, KMS, DPoP, rate-limiting)
 
