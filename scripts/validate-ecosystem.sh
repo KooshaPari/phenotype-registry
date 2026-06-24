@@ -89,6 +89,13 @@ REPOS=(
   "cheap-llm-mcp|cheap-llm-mcp|V5 EXT focus (consumed into dispatch-mcp)"
   "PhenoCompose|PhenoCompose|V3 focus (NVMS-3-tier isolation monorepo)"
   "AgilePlus|AgilePlus|V3 substrate (spec-driven dev, 22-crate workspace)"
+  # Owned scope (added 2026-06-23 — validator-loop S9)
+  "Eyetracker|eyetracker|owned: interaction boundary (Rust + UniFFI)"
+  "Eventra|Eventra|owned: event-bus runtime boundary (Rust CQRS+ES)"
+  "Configra|Configra|owned: config boundary (Rust, ADR-031 canonical)"
+  "Benchora|Benchora|owned: perf-harness boundary (Rust criterion)"
+  "Authvault|Authvault|owned: auth runtime boundary (Rust OAuth2/JWT/RBAC)"
+  "Quillr|Quillr|owned: http-middleware boundary (Rust httpora-core + TS)"
 )
 
 # --- meta files we expect to find (per V4 D.3 + D.4 + META_FILES_PRESENCE)
