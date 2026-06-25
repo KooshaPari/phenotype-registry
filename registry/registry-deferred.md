@@ -6,7 +6,6 @@ the reason for deferral and the planned authoring batch.
 
 | Repo | Status | Deferred Reason | Planned Batch |
 |---|---|---|---|
-| `KooshaPari/KodeVibe` | deferred | Orchestrator stub only — 5/14 L1 (lacks ABSORPTION_MATRIX, BRANCH_INVENTORY, Last-Resort-Exceptions). Go lint engine; absorbed into `phenotype-infra/tools/kodevibego/` per commit `6b3d3ee`; needs manual audit to confirm absorption | Batch D (manual, post orchestrator hardening) |
 | `KooshaPari/Tracera` | deferred | Orchestrator stub only — 5/14 L1. Reactive-messaging framework; candidate for next manual batch | Batch D (manual) |
 | `KooshaPari/AuthKit` | deferred | Orchestrator stub only — 5/14 L1. Successor to Authvault per PR #365. Needs manual audit + AuthKit bootstrap inventory | Batch D (manual) |
 | `KooshaPari/pheno-specs` | deferred | Orchestrator stub only — 5/14 L1. Spec-only repo, low source content. Need to confirm whether a 7-pillar audit applies to docs-only repos | Batch D (manual, scope clarification needed) |
