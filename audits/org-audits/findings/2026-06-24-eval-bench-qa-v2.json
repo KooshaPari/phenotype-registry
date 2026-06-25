@@ -159,32 +159,34 @@
     },
     {
       "name": "nanovms",
-      "head_sha": "fca93a5",
+      "head_sha": "a287164",
       "lane": "compute (headless VM abstraction)",
-      "scores": {"P01": 1, "P02": 1, "P03": 1, "P04": 1, "P05": 0, "P06": 0, "P07": 1, "P08": 1, "P09": 1, "P10": 0, "P11": 1, "P12": 0, "P13": 0, "P14": 0, "P15": 0, "P16": 0, "P17": 0, "P18": 0, "P19": 1, "P20": 0, "P21": 0, "P22": 0, "P23": 0, "P24": 0},
-      "score_total": 8,
-      "score_max": 24,
-      "score_pct": 33.3,
+      "scores": {"P01": 1, "P02": 1, "P03": 1, "P04": 1, "P05": 0, "P06": 0, "P07": 1, "P08": 1, "P09": 1, "P10": 0, "P11": 1, "P12": 0, "P13": 0, "P14": 0, "P15": 0, "P16": 0, "P17": 0, "P18": 0, "P19": 1, "P20": 0, "P21": 0, "P22": 0, "P23": 0, "P24": 0, "P25": 1},
+      "score_total": 9,
+      "score_max": 25,
+      "score_pct": 36.0,
       "tier": "Tier-2",
-      "delta_from_v1": "0 (no new pillars earned; needed for SOTA P19, blocked on missing SPEC/AGENTS/CI/tests)",
+      "delta_from_v1": "+1 (P25; hygiene bundle rolled out)",
       "notable": [
         "10 local + 1 origin (sandbox hardening) rebased + pushed (d26aeaf..fca93a5)",
+        "Hygiene bundle rolled: Taskfile.yml adds mod-hygiene + mod-verify + ci gate (fc9fd33..a287164, rebased onto dependabot commit 80e192c)",
         "Carry-over: SPEC.md, AGENTS.md, CI, public tests still missing (DAG-T2 next-action list)"
       ]
     },
     {
       "name": "PhenoCompose",
-      "head_sha": "049a4f6",
+      "head_sha": "bd0a7f8",
       "lane": "compute (process-compose + NVMS)",
-      "scores": {"P01": 1, "P02": 1, "P03": 1, "P04": 1, "P05": 0, "P06": 0, "P07": 1, "P08": 1, "P09": 1, "P10": 0, "P11": 1, "P12": 0, "P13": 0, "P14": 0, "P15": 0, "P16": 0, "P17": 0, "P18": 0, "P19": 0, "P20": 0, "P21": 0, "P22": 0, "P23": 0, "P24": 0},
-      "score_total": 7,
-      "score_max": 24,
-      "score_pct": 29.2,
+      "scores": {"P01": 1, "P02": 1, "P03": 1, "P04": 1, "P05": 0, "P06": 0, "P07": 1, "P08": 1, "P09": 1, "P10": 0, "P11": 1, "P12": 0, "P13": 0, "P14": 0, "P15": 0, "P16": 0, "P17": 0, "P18": 0, "P19": 0, "P20": 0, "P21": 0, "P22": 1, "P23": 0, "P24": 0, "P25": 1},
+      "score_total": 9,
+      "score_max": 25,
+      "score_pct": 36.0,
       "tier": "Tier-2",
-      "delta_from_v1": "0 (no new pillars earned; pull-rebase only)",
+      "delta_from_v1": "+2 (P22, P25; cargo hygiene bundle rolled)",
       "notable": [
         "Pulled 2 origin security commits (d960bde..049a4f6)",
-        "Cargo workspace, 73 branches, no Tier-2/Tier-3 work this cycle"
+        "Cargo workspace, 73 branches",
+        "Hygiene bundle rolled: Taskfile.yml adds machete + deny + dep-hygiene + audit + ci gate (049a4f6..bd0a7f8); existing deny.yml workflow already runs cargo-deny in CI"
       ]
     },
     {
