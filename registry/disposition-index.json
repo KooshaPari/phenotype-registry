@@ -1323,7 +1323,7 @@
       "adr": "ADR-017",
       "core_lang": "python+rust",
       "pr": null,
-      "note": "McpKit source archived 2026-06-18; absorbed into PhenoMCPServers (Python server collection) and substrate (Rust runtime crates). Tombstone closed 2026-06-23 (verified via gh api 404 + git clone --bare Repository not found). Retroactive ABSORPTION.md at KooshaPari/phenotype-tooling/docs/absorbed-from-McpKit/ABSORPTION.md. Audit: phenotype-registry/audits/absorption-justifications/McpKit-2026-06-23.md (L4, 14/14). Branch-only bundle (per findings/2026-06-18-McpKit-branch-only/README.md:57) is also N/A — 90-day retention window expired before tombstone was closed."
+      "note": "McpKit source archived 2026-06-18; absorbed into PhenoMCPServers (Python server collection) and substrate (Rust runtime crates). Tombstone closed 2026-06-23 (verified via gh api 404 + git clone --bare Repository not found). Retroactive ABSORPTION.md at KooshaPari/phenotype-tooling/docs/absorbed-from-McpKit/ABSORPTION.md. Audit: phenotype-registry/audits/absorption-justifications/McpKit-2026-06-23.md (L4, 14/14). Branch-only bundle (per findings/2026-06-18-McpKit-branch-only/README.md:57) is also N/A \u2014 90-day retention window expired before tombstone was closed."
     },
     {
       "id": "repo-phenocompose-archive",
@@ -1348,6 +1348,76 @@
       "core_lang": "rust+go+python+typescript",
       "pr": null,
       "note": "Rust SDK + Python SDK + design snapshot to be cross-ported to phenotype-infra (byte-for-byte migration of sdk/rust/include/nvms_syscalls.h). Scorecard L1: 3.3/9.0 (target 4.5+). Fragile replace directive at go.mod:14 to be hardened. Audit: phenotype-registry/audits/absorption-justifications/nanovms-2026-06-23.md (L4, 14/14)."
+    },
+    {
+      "id": "repo-KodeVibe-absorption-2026-06-25",
+      "path": "KooshaPari/KodeVibe",
+      "disposition": "AFFIRM",
+      "fsm": "active",
+      "size_kb": 26867,
+      "remote_branch_count": 15,
+      "last_push": "2026-06-25T05:29:41Z",
+      "grade_score": null,
+      "grade_percentage": null,
+      "audit_artifact": "audits/absorption-justifications/KodeVibe-2026-06-25.md",
+      "source_artifact": "automated:__main__:2026-06-25",
+      "added_at": "2026-06-25T10:01:38.893458Z"
+    },
+    {
+      "id": "repo-Tracera-absorption-2026-06-25",
+      "path": "KooshaPari/Tracera",
+      "disposition": "AFFIRM",
+      "fsm": "active",
+      "size_kb": 1079821,
+      "remote_branch_count": 80,
+      "last_push": "2026-06-25T08:56:22Z",
+      "grade_score": null,
+      "grade_percentage": null,
+      "audit_artifact": "audits/absorption-justifications/Tracera-2026-06-25.md",
+      "source_artifact": "automated:__main__:2026-06-25",
+      "added_at": "2026-06-25T10:01:40.739432Z"
+    },
+    {
+      "id": "repo-AuthKit-absorption-2026-06-25",
+      "path": "KooshaPari/AuthKit",
+      "disposition": "AFFIRM",
+      "fsm": "active",
+      "size_kb": 17,
+      "remote_branch_count": 2,
+      "last_push": "2026-06-25T06:57:21Z",
+      "grade_score": null,
+      "grade_percentage": null,
+      "audit_artifact": "audits/absorption-justifications/AuthKit-2026-06-25.md",
+      "source_artifact": "automated:__main__:2026-06-25",
+      "added_at": "2026-06-25T10:01:42.296612Z"
+    },
+    {
+      "id": "repo-pheno-specs-absorption-2026-06-25",
+      "path": "KooshaPari/pheno-specs",
+      "disposition": "AFFIRM",
+      "fsm": "active",
+      "size_kb": 0,
+      "remote_branch_count": 0,
+      "last_push": null,
+      "grade_score": null,
+      "grade_percentage": null,
+      "audit_artifact": "audits/absorption-justifications/pheno-specs-2026-06-25.md",
+      "source_artifact": "automated:__main__:2026-06-25",
+      "added_at": "2026-06-25T10:01:43.679646Z"
+    },
+    {
+      "id": "repo-Eidolon-absorption-2026-06-25",
+      "path": "KooshaPari/Eidolon",
+      "disposition": "AFFIRM",
+      "fsm": "active",
+      "size_kb": 336,
+      "remote_branch_count": 92,
+      "last_push": "2026-06-22T04:19:12Z",
+      "grade_score": null,
+      "grade_percentage": null,
+      "audit_artifact": "audits/absorption-justifications/Eidolon-2026-06-25.md",
+      "source_artifact": "automated:__main__:2026-06-25",
+      "added_at": "2026-06-25T10:01:45.363960Z"
     }
   ]
 }
