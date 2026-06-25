@@ -12,7 +12,9 @@ GRADER = "/mnt/c/Users/koosh/phenotype-registry/registry/audit-absorption-justif
 AUDITS_DIR = "/mnt/c/Users/koosh/phenotype-registry/audits/absorption-justifications"
 
 results = []
-for f in sorted(glob.glob(os.path.join(AUDITS_DIR, "*-2026-06-23.md"))):
+# Discover audits by pattern: any date (not just 2026-06-23). Future audits
+# added at any date will be auto-included in the fleet grade.
+for f in sorted(glob.glob(os.path.join(AUDITS_DIR, "*-2026-06-*.md"))):
     name = os.path.basename(f)
     p = subprocess.run(["bash", GRADER, f], capture_output=True, text=True)
     try:
