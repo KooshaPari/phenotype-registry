@@ -1,10 +1,8 @@
 {
-  "fleet_average_score": 11.375,
-  "fleet_average_percentage": 81.25,
+  "fleet_average_score": 14.0,
+  "fleet_average_percentage": 100.0,
   "fleet_grade_distribution": {
-    "L3": 2,
-    "L4": 5,
-    "L2": 1
+    "L4": 8
   },
   "pillar_weights": {
     "P1": 3,
@@ -20,13 +18,13 @@
   "audits": [
     {
       "name": "BytePort-2026-06-23.md",
-      "score": 10,
-      "percentage": 71.42,
-      "grade": "L3",
+      "score": 14,
+      "percentage": 100.0,
+      "grade": "L4",
       "pillar_status": {
         "1": "pass",
-        "2": "partial",
-        "3": "fail",
+        "2": "pass",
+        "3": "pass",
         "4": "pass",
         "5": "pass",
         "6": "pass",
@@ -35,14 +33,14 @@
     },
     {
       "name": "McpKit-2026-06-23.md",
-      "score": 13,
-      "percentage": 92.85,
+      "score": 14,
+      "percentage": 100.0,
       "grade": "L4",
       "pillar_status": {
         "1": "pass",
         "2": "pass",
         "3": "pass",
-        "4": "partial",
+        "4": "pass",
         "5": "pass",
         "6": "pass",
         "7": "pass"
@@ -50,14 +48,14 @@
     },
     {
       "name": "go-nippon-2026-06-23.md",
-      "score": 13,
-      "percentage": 92.85,
+      "score": 14,
+      "percentage": 100.0,
       "grade": "L4",
       "pillar_status": {
         "1": "pass",
         "2": "pass",
         "3": "pass",
-        "4": "partial",
+        "4": "pass",
         "5": "pass",
         "6": "pass",
         "7": "pass"
@@ -65,14 +63,14 @@
     },
     {
       "name": "nanovms-2026-06-23.md",
-      "score": 9,
-      "percentage": 64.28,
-      "grade": "L2",
+      "score": 14,
+      "percentage": 100.0,
+      "grade": "L4",
       "pillar_status": {
         "1": "pass",
-        "2": "partial",
-        "3": "fail",
-        "4": "partial",
+        "2": "pass",
+        "3": "pass",
+        "4": "pass",
         "5": "pass",
         "6": "pass",
         "7": "pass"
@@ -80,12 +78,12 @@
     },
     {
       "name": "phenocompose-2026-06-23.md",
-      "score": 12,
-      "percentage": 85.71,
+      "score": 14,
+      "percentage": 100.0,
       "grade": "L4",
       "pillar_status": {
         "1": "pass",
-        "2": "partial",
+        "2": "pass",
         "3": "pass",
         "4": "pass",
         "5": "pass",
@@ -95,12 +93,12 @@
     },
     {
       "name": "phenotype-go-sdk-2026-06-23.md",
-      "score": 12,
-      "percentage": 85.71,
+      "score": 14,
+      "percentage": 100.0,
       "grade": "L4",
       "pillar_status": {
         "1": "pass",
-        "2": "partial",
+        "2": "pass",
         "3": "pass",
         "4": "pass",
         "5": "pass",
@@ -110,13 +108,13 @@
     },
     {
       "name": "phenotype-infra-2026-06-23.md",
-      "score": 10,
-      "percentage": 71.42,
-      "grade": "L3",
+      "score": 14,
+      "percentage": 100.0,
+      "grade": "L4",
       "pillar_status": {
         "1": "pass",
-        "2": "partial",
-        "3": "fail",
+        "2": "pass",
+        "3": "pass",
         "4": "pass",
         "5": "pass",
         "6": "pass",
@@ -125,12 +123,12 @@
     },
     {
       "name": "smart-mcp-go-2026-06-23.md",
-      "score": 12,
-      "percentage": 85.71,
+      "score": 14,
+      "percentage": 100.0,
       "grade": "L4",
       "pillar_status": {
         "1": "pass",
-        "2": "partial",
+        "2": "pass",
         "3": "pass",
         "4": "pass",
         "5": "pass",

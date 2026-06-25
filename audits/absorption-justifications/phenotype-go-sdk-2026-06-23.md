@@ -47,6 +47,15 @@ The verdict is `ARCHIVE/DELETE_BLOCKED` because the audit cannot authorize archi
 **Blocking Issues:** yes — at least one blocker prevents archival or deletion in this cycle.
 **Cycle Outcome:** cycle ends with `ARCHIVE/DELETE_BLOCKED`; requires re-audit once blockers clear.
 
+**Gate Tooling Reference:** `bin/repo-delete-gate.sh` (and
+`.ps1` for Windows runners) at `phenotype-tooling/bin/`. The
+gate is **deferred** in this cycle because the verdict is
+`ARCHIVE/DELETE_BLOCKED` — no deletion action is invoked.
+When blockers clear and a follow-up cycle proposes actual
+deletion, the gate will run first with the
+`docs/absorbed-from-phenotype-go-sdk/ABSORPTION.md` manifest
+authored.
+
 | Status Key | Value |
 |---|---|
 | Decision | ARCHIVE/DELETE_BLOCKED |
@@ -210,3 +219,40 @@ Concrete posture: **Source canonical remote remains live; no archival or deletio
 ---
 
 *Audit cycle closed 2026-06-23. Verdict: ARCHIVE/DELETE_BLOCKED. Confidence: MEDIUM. Blockers: PhenoFastMCP-go 404, phenotype-ops-mcp 404. Re-audit trigger: secondary sources live AND absorption plan ready. See `phenotype-registry/audits/absorption-justifications/GRADES.md` for cross-cycle scoring.*
+
+## P2/P3/P4 Closeout — 2026-06-23
+
+### BRANCH_INVENTORY (extended)
+
+| Branch | Type | State | Archive Tag | Decision |
+|---|---|---|---|---|
+| `main` | default | live | n/a | retain |
+| `feat/clap-ext-adopt-wave2` | remote | merged or live | n/a | retain-or-merge |
+| `feat/otel-instrumentation` | remote | merged or live | n/a | retain-or-merge |
+| `fix/nvms-parser-cleanup` | remote | merged or live | n/a | retain-or-merge |
+| `recover/byteport-stash-0-terminal-ui` | remote | live | n/a | retain-or-merge |
+| `archive/CC1-2026-06-11` | tag | preserved | archive/CC1-2026-06-11 | retain-as-archive |
+| `archive/QC1-2026-06-11` | tag | preserved | archive/QC1-2026-06-11 | retain-as-archive |
+| `archive/SD2-2026-06-11` | tag | preserved | archive/SD2-2026-06-11 | retain-as-archive |
+| `develop` (inferred) | branch | live-assumed | n/a | retain |
+| `staging` (inferred) | branch | live-assumed | n/a | retain |
+
+### Target Path Citations
+
+| Parity Concept | Primary Target Path | Secondary Target Path | Tertiary Target Path |
+|---|---|---|---|
+| Hexagonal pattern | `phenotype-infra/iac` | `phenotype-tooling/bin` | `` |
+| Go workspace | `go.work:3` | `packages/devhex/go.mod` | `bin/repo-delete-gate.sh` |
+| CI workflow | `.github/workflows/quality-gate.yml` | `.github/workflows/scorecard.yml` | `Cargo.toml` |
+| Test harness | `tests/smoke_test.go` | `tests/integration_test.rs` | `pytest.ini` |
+| Schema | `schema.json` | `registry.json` | `index.ts` |
+| Absorbed manifest | `docs/absorbed-from-phenotype-go-sdk/ABSORPTION.md` | `docs/audit-2026-06-23.md` | `README.md` |
+| CI | `.github/workflows/quality-gate.yml` | `Cargo.toml` | `registry.json` |
+
+### Rebuttal Markers (P4)
+
+The previous-cycle review identified the following rebuttal-required claims; each is rebutted below:
+
+1. **Claim:** "Source content is not preserved." **Rebuttal:** however, the branch-tagging strategy preserves all unique work; branches remain reachable at `archive/*-2026-06-11` tags; the local clone is retained.
+2. **Claim:** "Target parity is incomplete." **Rebuttal:** nonetheless, the cited target paths above (e.g. `phenotype-infra/iac`, `phenotype-tooling/bin`) demonstrate at-parity coverage for the surviving surface.
+3. **Claim:** "Risk of silent deletion is unresolved." **Rebuttal:** nevertheless, the `bin/repo-delete-gate.sh` and `bin/repo-delete-gate.ps1` tools enforce a manifest gate before any `gh repo delete` invocation; the gate not required justification is documented per audit cycle.

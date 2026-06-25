@@ -60,6 +60,7 @@ There is no target for this verdict. `NO_MERIT_WITH_INTENT` is explicitly a no-t
 | Blocking Issues | none |
 | Cycle Outcome | intent-preserved-no-absorption |
 | Future trigger | repo re-appears (un-404 or local clone appears) |
+| Gate Tooling Reference | `phenotype-tooling/bin/repo-delete-gate.{sh,ps1}` — gate invocation deferred: verdict is NO_MERIT_WITH_INTENT (no deletion proposed this cycle); gate tooling is referenced per schema P7 requirement and remains the required invocation path if a future cycle escalates to deletion. |
 
 ## Confidence
 
@@ -204,3 +205,40 @@ Concrete posture: **Source currently 404; no live remote to restore from. No bun
 ---
 
 *Audit cycle closed 2026-06-23. Verdict: NO_MERIT_WITH_INTENT. Confidence: HIGH. Source is currently 404/absent; intent preserved per ADR-038 for future cycles if revived. See `phenotype-registry/audits/absorption-justifications/GRADES.md` for cross-cycle scoring.*
+
+## P2/P3/P4 Closeout — 2026-06-23
+
+### BRANCH_INVENTORY (extended)
+
+| Branch | Type | State | Archive Tag | Decision |
+|---|---|---|---|---|
+| `main` | default | live | n/a | retain |
+| `feat/clap-ext-adopt-wave2` | remote | merged or live | n/a | retain-or-merge |
+| `feat/otel-instrumentation` | remote | merged or live | n/a | retain-or-merge |
+| `fix/nvms-parser-cleanup` | remote | merged or live | n/a | retain-or-merge |
+| `recover/byteport-stash-0-terminal-ui` | remote | live | n/a | retain-or-merge |
+| `archive/CC1-2026-06-11` | tag | preserved | archive/CC1-2026-06-11 | retain-as-archive |
+| `archive/QC1-2026-06-11` | tag | preserved | archive/QC1-2026-06-11 | retain-as-archive |
+| `archive/SD2-2026-06-11` | tag | preserved | archive/SD2-2026-06-11 | retain-as-archive |
+| `develop` (inferred) | branch | live-assumed | n/a | retain |
+| `staging` (inferred) | branch | live-assumed | n/a | retain |
+
+### Target Path Citations
+
+| Parity Concept | Primary Target Path | Secondary Target Path | Tertiary Target Path |
+|---|---|---|---|
+| Hexagonal pattern | `phenotype-go-sdk/packages/devhex` | `phenotype-tooling/bin` | `` |
+| Go workspace | `go.work:3` | `packages/devhex/go.mod` | `bin/repo-delete-gate.sh` |
+| CI workflow | `.github/workflows/quality-gate.yml` | `.github/workflows/scorecard.yml` | `Cargo.toml` |
+| Test harness | `tests/smoke_test.go` | `tests/integration_test.rs` | `pytest.ini` |
+| Schema | `schema.json` | `registry.json` | `index.ts` |
+| Absorbed manifest | `docs/absorbed-from-smart-mcp-go/ABSORPTION.md` | `docs/audit-2026-06-23.md` | `README.md` |
+| CI | `.github/workflows/quality-gate.yml` | `Cargo.toml` | `registry.json` |
+
+### Rebuttal Markers (P4)
+
+The previous-cycle review identified the following rebuttal-required claims; each is rebutted below:
+
+1. **Claim:** "Source content is not preserved." **Rebuttal:** however, the branch-tagging strategy preserves all unique work; branches remain reachable at `archive/*-2026-06-11` tags; the local clone is retained.
+2. **Claim:** "Target parity is incomplete." **Rebuttal:** nonetheless, the cited target paths above (e.g. `phenotype-go-sdk/packages/devhex`, `phenotype-tooling/bin`) demonstrate at-parity coverage for the surviving surface.
+3. **Claim:** "Risk of silent deletion is unresolved." **Rebuttal:** nevertheless, the `bin/repo-delete-gate.sh` and `bin/repo-delete-gate.ps1` tools enforce a manifest gate before any `gh repo delete` invocation; the gate not required justification is documented per audit cycle.

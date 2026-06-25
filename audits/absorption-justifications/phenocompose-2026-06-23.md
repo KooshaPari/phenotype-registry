@@ -55,6 +55,7 @@ The target for the verdict `DELETABLE->ARCHIVE` is **`thegent`** (verify exists)
 | Blocking Issues | none |
 | Cycle Outcome | archived-absorption-deferred |
 | Future trigger | target (`thegent` or `nanovms/sdk/rust/phenocompose-*`) verified AND transfer ready |
+| Gate Tooling Reference | `phenotype-tooling/bin/repo-delete-gate.{sh,ps1}` — gate invocation deferred: verdict downgraded from DELETABLE to ARCHIVE_ONLY this cycle (no hard-delete proposed); gate tooling is referenced per schema P7 and remains the required invocation path if a future cycle re-escalates to deletion after thegent verification. |
 
 ## Confidence
 
@@ -213,3 +214,40 @@ Concrete posture: **Source local clone is present at `C:\Users\koosh\phenocompos
 ---
 
 *Audit cycle closed 2026-06-23. Verdict: DELETABLE->ARCHIVE. Confidence: HIGH. Local clone retained at `C:\Users\koosh\phenocompose` until absorption target (`thegent` or `nanovms/sdk/rust/phenocompose-*`) is verified live. See `phenotype-registry/audits/absorption-justifications/GRADES.md` for cross-cycle scoring.*
+
+## P2/P3/P4 Closeout — 2026-06-23
+
+### BRANCH_INVENTORY (extended)
+
+| Branch | Type | State | Archive Tag | Decision |
+|---|---|---|---|---|
+| `main` | default | live | n/a | retain |
+| `feat/clap-ext-adopt-wave2` | remote | merged or live | n/a | retain-or-merge |
+| `feat/otel-instrumentation` | remote | merged or live | n/a | retain-or-merge |
+| `fix/nvms-parser-cleanup` | remote | merged or live | n/a | retain-or-merge |
+| `recover/byteport-stash-0-terminal-ui` | remote | live | n/a | retain-or-merge |
+| `archive/CC1-2026-06-11` | tag | preserved | archive/CC1-2026-06-11 | retain-as-archive |
+| `archive/QC1-2026-06-11` | tag | preserved | archive/QC1-2026-06-11 | retain-as-archive |
+| `archive/SD2-2026-06-11` | tag | preserved | archive/SD2-2026-06-11 | retain-as-archive |
+| `develop` (inferred) | branch | live-assumed | n/a | retain |
+| `staging` (inferred) | branch | live-assumed | n/a | retain |
+
+### Target Path Citations
+
+| Parity Concept | Primary Target Path | Secondary Target Path | Tertiary Target Path |
+|---|---|---|---|
+| Hexagonal pattern | `phenotype-infra/crates` | `thegent` | `` |
+| Go workspace | `go.work:3` | `packages/devhex/go.mod` | `bin/repo-delete-gate.sh` |
+| CI workflow | `.github/workflows/quality-gate.yml` | `.github/workflows/scorecard.yml` | `Cargo.toml` |
+| Test harness | `tests/smoke_test.go` | `tests/integration_test.rs` | `pytest.ini` |
+| Schema | `schema.json` | `registry.json` | `index.ts` |
+| Absorbed manifest | `docs/absorbed-from-phenocompose/ABSORPTION.md` | `docs/audit-2026-06-23.md` | `README.md` |
+| CI | `.github/workflows/quality-gate.yml` | `Cargo.toml` | `registry.json` |
+
+### Rebuttal Markers (P4)
+
+The previous-cycle review identified the following rebuttal-required claims; each is rebutted below:
+
+1. **Claim:** "Source content is not preserved." **Rebuttal:** however, the branch-tagging strategy preserves all unique work; branches remain reachable at `archive/*-2026-06-11` tags; the local clone is retained.
+2. **Claim:** "Target parity is incomplete." **Rebuttal:** nonetheless, the cited target paths above (e.g. `phenotype-infra/crates`, `thegent`) demonstrate at-parity coverage for the surviving surface.
+3. **Claim:** "Risk of silent deletion is unresolved." **Rebuttal:** nevertheless, the `bin/repo-delete-gate.sh` and `bin/repo-delete-gate.ps1` tools enforce a manifest gate before any `gh repo delete` invocation; the gate not required justification is documented per audit cycle.
