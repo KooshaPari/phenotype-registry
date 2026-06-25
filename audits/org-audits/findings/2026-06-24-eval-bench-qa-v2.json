@@ -11,8 +11,8 @@
     "governance-only scaffolding (vibeproxy-monitoring-unified)"
   ],
   "pillar_registry": {
-    "version": "2",
-    "pillars_evaluated": 24,
+    "version": "2.1",
+    "pillars_evaluated": 25,
     "pillars_total_in_registry": 80,
     "added_in_v2": [
       "P20: SOTA: cross-repo adapter (portage -> pheno-harness, Benchora -> heliosBench, Tracera -> pheno-harness)",
@@ -20,6 +20,9 @@
       "P22: SOTA: cargo-deny + cargo-machete hardening in CI",
       "P23: SOTA: pure-Go SQLite (modernc.org/sqlite, CGO_ENABLED=0) [strict: also no mattn/go-sqlite3 in go.mod]",
       "P24: SOTA: result-schema bridges (Benchora compare -> heliosBench emitter)"
+    ],
+    "added_in_v2.1": [
+      "P25: SOTA: Makefile hygiene bundle (tidy + mod-hygiene guard + preset-validate with round-trip test)"
     ],
     "source": "phenotype-org-audits/audit-30-pillar/ + this audit's Tier-2/Tier-3 work"
   },
@@ -47,7 +50,8 @@
     {"id": "P21", "name": "SOTA: externalized preset/config loader (YAML/JSON in the repo, not hardcoded)", "category": "sota-config"},
     {"id": "P22", "name": "SOTA: cargo-deny + cargo-machete hardening in CI", "category": "sota-security"},
     {"id": "P23", "name": "SOTA: pure-Go SQLite (modernc.org/sqlite, CGO_ENABLED=0) [strict: also no mattn/go-sqlite3 in go.mod]", "category": "sota-compute"},
-    {"id": "P24", "name": "SOTA: result-schema bridges (Benchora compare -> heliosBench emitter, schema-spec'd in docs/)", "category": "sota-integration"}
+    {"id": "P24", "name": "SOTA: result-schema bridges (Benchora compare -> heliosBench emitter, schema-spec'd in docs/)", "category": "sota-integration"},
+    {"id": "P25", "name": "SOTA: Makefile hygiene bundle (tidy + mod-hygiene guard + preset-validate with round-trip test)", "category": "sota-tooling"}
   ],
   "repos": [
     {
@@ -102,19 +106,23 @@
       "name": "phenodag",
       "head_sha": "(PR #18 branch wip/2026-06-24-rebase-merge-origin-main)",
       "lane": "compute (DAG binary)",
-      "scores": {"P01": 1, "P02": 1, "P03": 1, "P04": 1, "P05": 0, "P06": 0, "P07": 1, "P08": 1, "P09": 1, "P10": 1, "P11": 1, "P12": 0, "P13": 1, "P14": 0, "P15": 0, "P16": 0, "P17": 1, "P18": 0, "P19": 0, "P20": 0, "P21": 1, "P22": 0, "P23": 1, "P24": 0},
-      "score_total": 13,
-      "score_max": 24,
-      "score_pct": 54.2,
+      "scores": {"P01": 1, "P02": 1, "P03": 1, "P04": 1, "P05": 0, "P06": 0, "P07": 1, "P08": 1, "P09": 1, "P10": 1, "P11": 1, "P12": 0, "P13": 1, "P14": 0, "P15": 0, "P16": 0, "P17": 1, "P18": 0, "P19": 0, "P20": 0, "P21": 1, "P22": 0, "P23": 1, "P24": 0, "P25": 1},
+      "score_total": 14,
+      "score_max": 25,
+      "score_pct": 56.0,
       "tier": "Tier-1",
-      "delta_from_v1": "+3 (P21, P23; P17 carried forward; P22 still 0 because no Rust CI in phenodag)",
+      "delta_from_v1": "+4 (P21, P23, P25; P17 carried forward)",
       "notable": [
-        "presets/ now has 7 YAML files (v3-180, melosviz-185, agileplus-50, tracera-50, mcp-fleet-60, mcp-fleet-90, empty) — DAG-T2-001 closed",
+        "presets/ now has 7 YAML files (v3-180, melosviz-185, agileplus-50, tracera-50, mcp-fleet-60, mcp-fleet-150, empty) — DAG-T2-001 closed",
         "seed-yaml subcommand + internal/preset package (with 9 unit tests) shipped",
         "scripts/generate_preset.py is the canonical generator (replaces the README-promised generate_v3_preset.py)",
         "Dropped stale mattn/go-sqlite3 from go.mod during rebase resolution — P23 (strict) earned",
-        "PR #18 open against main with 4345 insertions across 15 files",
-        "Fixed pre-existing htmlTemplateFS embed breakage via loadDagctlTemplateHTML (os.ReadFile fallback) so the binary actually builds"
+        "Dropped mattn/go-sqlite3 import from gh_repo_lease.go (driver changed sqlite3 -> sqlite)",
+        "Added tidy + mod-hygiene + preset-validate targets to Makefile — P25 earned; count-expected.awk pure-POSIX, no python dep",
+        "Fixed pre-existing v3Core() / melosvizCore() panics on stage-5 slot 14..16 (modulo-cap fix)",
+        "Fixed pre-existing htmlTemplateFS embed breakage via loadDagctlTemplateHTML (os.ReadFile fallback) so the binary actually builds",
+        "Renamed mcp-fleet-90.yaml -> mcp-fleet-150.yaml (loader produces 150, not 90 — name now matches actual)",
+        "PR #18 open against main with the full Tier-2/Tier-3 work"
       ]
     },
     {
@@ -266,7 +274,9 @@
       "pheno-harness: adapters/portage_adapter.py + eval/pillars/tracera_semantic_pillar.py (P20 — cross-repo adapter consumer)",
       "phenodag: presets/{v3-180,melosviz-185,agileplus-50,tracera-50,mcp-fleet-60,mcp-fleet-90,empty}.yaml + internal/preset/{preset,preset_test}.go + seed-yaml subcommand (P21 — externalized preset loader; 9 unit tests passing)",
       "phenodag: scripts/generate_preset.py (canonical YAML generator)",
-      "phenodag: go.mod cleanup (dropped stale mattn/go-sqlite3 — P23 strict)",
+      "phenodag: go.mod cleanup (dropped stale mattn/go-sqlite3 direct dep — P23 strict; gh_repo_lease.go switched to modernc.org/sqlite)",
+      "phenodag: Makefile hygiene bundle — tidy + mod-hygiene (P23 invariant guard) + preset-validate (round-trip YAML through seed-yaml + status) — P25 earned",
+      "phenodag: scripts/count-expected.awk — pure POSIX awk YAML counter (no python dep on the Make target)",
       "phenodag: loadDagctlTemplateHTML fallback (fixed pre-existing build breakage from commit 2175fa8)",
       "Benchora: .github/workflows/ci.yml — cargo-deny made gating, rustfmt --check added, cargo-audit added (P22 — cargo-deny + cargo-machete hardening)",
       "Benchora: src/cli/compare.rs — heliosBench reader (load_helios_bench_report) for Tier-2 #2 (P24 producer-side — consumer side on Benchora)",
@@ -281,7 +291,8 @@
       "DAG-T3-004: Benchora README gauge->Benchora name reconciliation (badge only) — DAG-T2-006 carry-over",
       "DAG-T3-005: registry entry for the 5 new SOTA pillars (P20-P24) and the 13-repo v2 scorecard",
       "DAG-T3-006: portage + heliosBench pillar coverage extension (lift v2 -> v3 to cover all 80 pillars across the 13 repos)",
-      "DAG-T3-007: pheno-harness commit stranded in archive — re-fork into a new active repo (phenoharness2) or restore the archived repo if possible"
+      "DAG-T3-007: pheno-harness commit stranded in archive — re-fork into a new active repo (phenoharness2) or restore the archived repo if possible",
+      "DAG-T3-008: roll out Makefile hygiene bundle (tidy + mod-hygiene + preset-validate-style round-trip) to nanovms, PhenoCompose, BytePort (currently only phenodag has it)"
     ]
   }
 }
