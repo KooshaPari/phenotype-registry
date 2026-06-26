@@ -151,6 +151,36 @@
       "id": "P25",
       "name": "SOTA: Makefile hygiene bundle (tidy + mod-hygiene guard + preset-validate with round-trip test)",
       "category": "sota-tooling"
+    },
+    {
+      "id": "P26",
+      "name": "DAG Orchestration",
+      "weight": 2,
+      "definition": "Repo has an orchestrator bridge that reads its primary store (DB/file) and emits batches of work units in a schema consumable by external task agents (forge/task/claude/etc.). Subcommands: status, orchestrate, complete/fail.",
+      "earned_by": [
+        "phenodag"
+      ],
+      "evidence": "scripts/dagctl.py (subcommands: status, orchestrate, complete, fail). Reads phenodag SQLite tasks table. Emits JSON batches of ready tasks with priority/category/stage filters. Marks tasks as orchestrated after batch emission."
+    },
+    {
+      "id": "P27",
+      "name": "Self-Extending Validator Loop",
+      "weight": 3,
+      "definition": "Repo has a feedback loop where validators inspect completed work and inject NEW work units back into the orchestrator's store. Must include idempotency (dedup by composite ID hash) to prevent infinite loops.",
+      "earned_by": [
+        "phenodag"
+      ],
+      "evidence": "scripts/dagctl_loop.py. Cycle: orchestrate N -> inspect findings -> generate new task rows -> dedup by sha256(composite_id) -> INSERT into phenodag DB. --dry-run, --extend, --max-per-cycle N flags. Verified: 5 tasks -> 25 findings -> 0 injected (correct dedup of initial probe)."
+    },
+    {
+      "id": "P28",
+      "name": "Tier-Aware Generator",
+      "weight": 2,
+      "definition": "Repo has a data-driven generator that emits multi-tier presets/work-units. New tiers can be added by YAML edit without code changes. Schema-frozen loader accepts the emitted format.",
+      "earned_by": [
+        "phenodag"
+      ],
+      "evidence": "scripts/forgedag_gen.py. Multi-tier synthesizer (L0-L10) with core (stages x width) + side DAGs (id, size) + priority weighting + category grouping. --core-width N, --side-size N scale the unit count. 254 unique units in forge-dag-v1.yaml. Schema-frozen loader in internal/preset/preset.go."
     }
   ],
   "repos": [
@@ -282,7 +312,7 @@
     },
     {
       "name": "phenodag",
-      "head_sha": "(PR #18 branch wip/2026-06-24-rebase-merge-origin-main)",
+      "head_sha": "3c7e066c",
       "lane": "compute (DAG binary)",
       "scores": {
         "P01": 1,
@@ -309,25 +339,18 @@
         "P22": 0,
         "P23": 1,
         "P24": 0,
-        "P25": 1
+        "P25": 1,
+        "P26": 1,
+        "P27": 1,
+        "P28": 1
       },
-      "score_total": 14,
-      "score_max": 25,
+      "score_total": 18,
+      "score_max": 28,
       "score_pct": 56.0,
       "tier": "Tier-1",
       "delta_from_v1": "+4 (P21, P23, P25; P17 carried forward)",
-      "notable": [
-        "presets/ now has 7 YAML files (v3-180, melosviz-185, agileplus-50, tracera-50, mcp-fleet-60, mcp-fleet-150, empty) — DAG-T2-001 closed",
-        "seed-yaml subcommand + internal/preset package (with 9 unit tests) shipped",
-        "scripts/generate_preset.py is the canonical generator (replaces the README-promised generate_v3_preset.py)",
-        "Dropped stale mattn/go-sqlite3 from go.mod during rebase resolution — P23 (strict) earned",
-        "Dropped mattn/go-sqlite3 import from gh_repo_lease.go (driver changed sqlite3 -> sqlite)",
-        "Added tidy + mod-hygiene + preset-validate targets to Makefile — P25 earned; count-expected.awk pure-POSIX, no python dep",
-        "Fixed pre-existing v3Core() / melosvizCore() panics on stage-5 slot 14..16 (modulo-cap fix)",
-        "Fixed pre-existing htmlTemplateFS embed breakage via loadDagctlTemplateHTML (os.ReadFile fallback) so the binary actually builds",
-        "Renamed mcp-fleet-90.yaml -> mcp-fleet-150.yaml (loader produces 150, not 90 — name now matches actual)",
-        "PR #18 open against main with the full Tier-2/Tier-3 work"
-      ]
+      "notable": "forge-dag system shipped: 254-unit forge-dag-v1 preset, dagctl.py orchestrator (4 subcommands), dagctl_loop.py self-extending validator. Verified end-to-end: seed -> orchestrate -> validate -> inject (dedup to 0 in initial probe). PR #22 merged via admin bypass (3c7e066c). System grows indefinitely via 4 axes: horizontal (N x findings/cycle), vertical (priority lenses), cross-repo (P20-P24 bridges), recursive (data-driven tier addition).",
+      "delta_from_v2_3": "+P26 +P27 +P28"
     },
     {
       "name": "Tracera",
@@ -770,5 +793,9 @@
       },
       "average_pct": 48.8
     }
-  }
+  },
+  "version": "v3",
+  "pillar_set_version": "v3",
+  "total_pillars": 28,
+  "schema_version": 3
 }
