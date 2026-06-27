@@ -1,0 +1,66 @@
+{
+  "name": "phenocompose-2026-06-23.md",
+  "path": "audits/absorption-justifications/phenocompose-2026-06-23.md",
+  "score": 14,
+  "max": 14,
+  "percentage": 100.0,
+  "grade": "L4",
+  "pillars": [
+    {
+      "id": 1,
+      "name": "manifest-completeness",
+      "status": "pass",
+      "score": 3,
+      "max": 3,
+      "detail": "all 5 mandatory sections present"
+    },
+    {
+      "id": 2,
+      "name": "parity-evidence",
+      "status": "pass",
+      "score": 3,
+      "max": 3,
+      "detail": "6/11 rows with citations"
+    },
+    {
+      "id": 3,
+      "name": "branch-coverage",
+      "status": "pass",
+      "score": 2,
+      "max": 2,
+      "detail": "ABSORPTION_MATRIX + Restore-Command + branch inventory present"
+    },
+    {
+      "id": 4,
+      "name": "last-resort-justification",
+      "status": "pass",
+      "score": 2,
+      "max": 2,
+      "detail": "13 rebuttal markers, 4 sub-question coverage"
+    },
+    {
+      "id": 5,
+      "name": "restore-command-validity",
+      "status": "pass",
+      "score": 1,
+      "max": 1,
+      "detail": "mv=True clone=True sha=True"
+    },
+    {
+      "id": 6,
+      "name": "registry-integration",
+      "status": "pass",
+      "score": 2,
+      "max": 2,
+      "detail": "card=phenocompose.json status=archived disposition=ARCHIVE_ONLY absorbed_into=phenotype-infra"
+    },
+    {
+      "id": 7,
+      "name": "deletion-gate-tooling-coverage",
+      "status": "pass",
+      "score": 1,
+      "max": 1,
+      "detail": "references repo-delete-gate (sh=True, ps1=True)"
+    }
+  ]
+}
