@@ -1474,6 +1474,48 @@
       "audit_artifact": "audits/absorption-justifications/KodeVibe-2026-06-29.md",
       "source_artifact": "automated:__main__:2026-06-29",
       "added_at": "2026-06-29T22:02:30.003960Z"
+    },
+    {
+      "id": "repo-KodeVibe-absorption-2026-07-02",
+      "path": "KooshaPari/KodeVibe",
+      "disposition": "AFFIRM",
+      "fsm": "active",
+      "size_kb": 26906,
+      "remote_branch_count": 14,
+      "last_push": "2026-07-02T09:28:16Z",
+      "grade_score": null,
+      "grade_percentage": null,
+      "audit_artifact": "audits/absorption-justifications/KodeVibe-2026-07-02.md",
+      "source_artifact": "automated:__main__:2026-07-02",
+      "added_at": "2026-07-03T02:27:30.759485Z"
+    },
+    {
+      "id": "repo-KodeVibe-absorption-2026-07-02",
+      "path": "KooshaPari/KodeVibe",
+      "disposition": "AFFIRM",
+      "fsm": "active",
+      "size_kb": 0,
+      "remote_branch_count": 14,
+      "last_push": null,
+      "grade_score": null,
+      "grade_percentage": null,
+      "audit_artifact": "audits/absorption-justifications/KodeVibe-2026-07-02.md",
+      "source_artifact": "automated:__main__:2026-07-02",
+      "added_at": "2026-07-03T02:48:09.214089Z"
+    },
+    {
+      "id": "repo-KodeVibe-absorption-2026-07-02",
+      "path": "KooshaPari/KodeVibe",
+      "disposition": "AFFIRM",
+      "fsm": "active",
+      "size_kb": 26906,
+      "remote_branch_count": 14,
+      "last_push": "2026-07-02T09:28:16Z",
+      "grade_score": null,
+      "grade_percentage": null,
+      "audit_artifact": "audits/absorption-justifications/KodeVibe-2026-07-02.md",
+      "source_artifact": "automated:__main__:2026-07-02",
+      "added_at": "2026-07-03T02:49:41.284860Z"
     }
   ]
 }
