@@ -1,0 +1,17 @@
+{
+  "name": "thegent-2026-07-02.md",
+  "path": "audits/absorption-justifications/thegent-2026-07-02.md",
+  "score": 14,
+  "max": 14,
+  "percentage": 100.0,
+  "grade": "L4",
+  "pillars": [
+    {"id": 1, "name": "manifest-completeness", "status": "pass", "score": 3, "max": 3, "detail": "all 5 mandatory sections present; Branch Inventory + Target Parity + Source Inventory Summary included"},
+    {"id": 2, "name": "parity-evidence", "status": "pass", "score": 3, "max": 3, "detail": "ABSORPTION_MATRIX rows each cite target evidence path under docs/absorbed-from-thegent/ + canonical grade.sh + schema.json"},
+    {"id": 3, "name": "branch-coverage", "status": "pass", "score": 2, "max": 2, "detail": "main branch verified via gh api; size=1001.1MB confirms substantial code surface to inventory"},
+    {"id": 4, "name": "last-resort-justification", "status": "pass", "score": 2, "max": 2, "detail": "3 explicit rebuttals addressing target-absorb inability, residual gap, and archival-insufficiency"},
+    {"id": 5, "name": "restore-command-validity", "status": "pass", "score": 1, "max": 1, "detail": "Restore-Command = git clone https://github.com/KooshaPari/thegent.git; live remote-only repo with verified 200 OK"},
+    {"id": 6, "name": "registry-integration", "status": "pass", "score": 2, "max": 2, "detail": "Project card thegent registered with status=active, absorbed_into=phenotype-infra, disp=AFFIRM (fsm=open)"},
+    {"id": 7, "name": "deletion-gate-tooling-coverage", "status": "pass", "score": 1, "max": 1, "detail": "Audit references bin/repo-delete-gate.sh and bin/repo-delete-gate.ps1 in deletion workflow"}
+  ]
+}
