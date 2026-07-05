@@ -10,6 +10,10 @@ on:
   #   uses: KooshaPari/phenotype-org-audits/.github/workflows/quarterly-audit.yml@main
   workflow_call:
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   audit:
     runs-on: ubuntu-24.04
