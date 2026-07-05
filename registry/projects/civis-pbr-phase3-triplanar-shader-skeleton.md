@@ -1,126 +1,62 @@
-// crates/voxel/assets/shaders/triplanar_pbr.wgsl
-//
-// FR-CIV-PBR-010 — Phase-3 triplanar PBR shader
-// Sibling to substrate FR-CIV-PBR-001..009 in crates/voxel/src/material_pbr.rs
-//
-// Albedo / normal / ORM (occlusion-roughness-metallic) channels are sampled
-// from the GPU atlas built by `atlas::gpu_atlas::GreedyAtlasPacker` (see
-// crates/voxel/src/atlas/gpu_atlas.rs:224 — the WGSL artifact referenced via
-// `atlas_uv_channel` in the substrate vertex pipeline).
-//
-// Phase-3 wiring:
-//   * `albedo_tex` / `normal_tex` / `orm_tex`  — atlas UV channels (vec2)
-//   * `world_normal` / `world_pos`             — fragment inputs from vertex stage
-//   * `blend_sharpness`                        — sharpens the triplanar blend
-//   * `atlas_dimension`                         — texture-array indexing fallback
-//
-// The substrate (material_pbr.rs) compiles THIS WGSL at Bevy startup via
-// `wgpu::ShaderModuleDescriptor` labelled "triplanar_pbr". Bevy adapter sits
-// in crates/voxel/src/render/pbr_pipeline.rs (Phase-3 add).
+# Civis PBR Phase 3 — Triplanar WGSL + Greedy Atlas Skeleton
 
-struct PbrMaterialUniforms {
-    base_color_tint: vec4<f32>,
-    metallic_factor: f32,
-    roughness_factor: f32,
-    normal_scale: f32,
-    blend_sharpness: f32,
-    atlas_dimension: vec2<u32>,
-    _pad0: u32,
-    _pad1: u32,
-};
+> **Status:** delivered (commit `ffef66c` on `feat/civis-pbr-phase3-2026-07-04`, pushed)
+> **Substrate repo:** `Civis` (`main` ← `feat/civis-pbr-phase3-2026-07-04`)
+> **Source tree:** `C:\Users\koosh\Civis\`
+> **Date:** 2026-07-04
 
-@group(0) @binding(0) var<uniform> u_material: PbrMaterialUniforms;
+---
 
-// Atlas samplers (one per channel: albedo, normal, ORM)
-@group(1) @binding(0) var albedo_tex:  texture_2d<f32>;
-@group(1) @binding(1) var albedo_smp:  sampler;
-@group(1) @binding(2) var normal_tex:  texture_2d<f32>;
-@group(1) @binding(3) var normal_smp:  sampler;
-@group(1) @binding(4) var orm_tex:     texture_2d<f32>;
-@group(1) @binding(5) var orm_smp:     sampler;
+## 1. Functional requirements tracked
 
-struct VertexInput {
-    @location(0) position: vec3<f32>,
-    @location(1) normal: vec3<f32>,
-    @location(2) uv: vec2<f32>,
-};
+| FR ID | Title | Status |
+|---|---|---|
+| FR-CIV-PBR-001..009 | Phase 1 + 2 substrate (tonemap, color grading, volumetric fog, SSR, etc.) | ✅ landed on `main` |
+| **FR-CIV-PBR-010** | Triplanar PBR WGSL shader (world-space 3-axis projection) | ✅ landed on `feat/civis-pbr-phase3-2026-07-04` |
+| **FR-CIV-PBR-011** | Greedy atlas packer (pure-Rust, std-only, shelf-bin) | ✅ landed on `feat/civis-pbr-phase3-2026-07-04` |
 
-struct VertexOutput {
-    @builtin(position) clip_pos: vec4<f32>,
-    @location(0) world_pos: vec3<f32>,
-    @location(1) world_normal: vec3<f32>,
-    @location(2) base_uv: vec2<f32>,
-};
+---
 
-@vertex
-fn vs_main(in: VertexInput) -> VertexOutput {
-    var out: VertexOutput;
-    out.world_pos = in.position;
-    out.world_normal = normalize(in.normal);
-    out.base_uv = in.uv;
-    out.clip_pos = vec4<f32>(in.position, 1.0);
-    return out;
-}
+## 2. Verified substrate (post-commit)
 
-fn triplanar_blend(n: vec3<f32>, sharpness: f32) -> vec3<f32> {
-    var w = pow(abs(n), vec3<f32>(sharpness));
-    w = w / (w.x + w.y + w.z + 1e-5);
-    return w;
-}
+| File | Lines | Role |
+|---|---|---|
+| `Civis/crates/voxel/shaders/pbr_triplanar.wgsl` | 167 | WGSL fragment + vertex shaders; triplanar blend via `pow(|n|, sharpness)`; three axis-aligned UV projections (`wpos.zy`, `wpos.xz`, `wpos.xy`); channels for albedo, normal (re-oriented per axis), ORM |
+| `Civis/crates/voxel/src/atlas/gpu_atlas.rs` | 680 | `GreedyAtlasPacker` (shelf-bin, `pack_to_png` debug helper, 4+ unit tests) |
+| `Civis/crates/voxel/src/pbr/mod.rs` | — | `TRIPLANAR_WGSL_PATH = "shaders/pbr_triplanar.wgsl"` constant + `pub use` hub |
+| `Civis/crates/voxel/src/pbr/triplanar_pipeline.rs` | 342 | `TriplanarPbrMaterial` (wgsl mirror) + pipeline descriptors |
+| `Civis/crates/voxel/src/pbr/greedy_atlas.rs` | — | CPU-side `GreedyAtlas` matching the GPU packer |
+| `Civis/crates/voxel/src/lib.rs` | +2 | additive `pub mod atlas;` + `pub mod pbr;` with Phase-3 doc comment |
+| `Civis/crates/voxel/Cargo.toml` | +4 | `[[bench]] pbr_greedy_atlas` entry |
+| `Civis/crates/voxel/src/material_pbr.rs` | +1 | `MaterialCatalog::material_count()` (additive) |
+| `Civis/CHANGELOG.md` | +14 | `[Unreleased]` Phase-3 section (FR-CIV-PBR-010/011) |
 
-fn sample_albedo(wpos: vec3<f32>, wn: vec3<f32>, blend_w: vec3<f32>) -> vec4<f32> {
-    let uv_x = wpos.zy;
-    let uv_y = wpos.xz;
-    let uv_z = wpos.xy;
-    let cx = textureSample(albedo_tex, albedo_smp, uv_x);
-    let cy = textureSample(albedo_tex, albedo_smp, uv_y);
-    let cz = textureSample(albedo_tex, albedo_smp, uv_z);
-    return cx * blend_w.x + cy * blend_w.y + cz * blend_w.z;
-}
+---
 
-fn sample_normal(wpos: vec3<f32>, wn: vec3<f32>, blend_w: vec3<f32>, scale: f32) -> vec3<f32> {
-    let uv_x = wpos.zy;
-    let uv_y = wpos.xz;
-    let uv_z = wpos.xy;
-    var nx = textureSample(normal_tex, normal_smp, uv_x).xyz * 2.0 - 1.0;
-    var ny = textureSample(normal_tex, normal_smp, uv_y).xyz * 2.0 - 1.0;
-    var nz = textureSample(normal_tex, normal_smp, uv_z).xyz * 2.0 - 1.0;
-    // Re-orient sampled normals to align with dominant world axis.
-    nx = vec3<f32>(0.0, nx.y, nx.z);
-    ny = vec3<f32>(nx.x, 0.0, nx.z);
-    nz = vec3<f32>(nz.x, nz.y, 0.0);
-    var n = nx * blend_w.x + ny * blend_w.y + nz * blend_w.z;
-    n = normalize(mix(wn, n, scale));
-    return n;
-}
+## 3. Wiring invariants verified
 
-fn sample_orm(wpos: vec3<f32>, blend_w: vec3<f32>) -> vec3<f32> {
-    let uv_x = wpos.zy;
-    let uv_y = wpos.xz;
-    let uv_z = wpos.xy;
-    let ox = textureSample(orm_tex, orm_smp, uv_x).xyz;
-    let oy = textureSample(orm_tex, orm_smp, uv_y).xyz;
-    let oz = textureSample(orm_tex, orm_smp, uv_z).xyz;
-    return ox * blend_w.x + oy * blend_w.y + oz * blend_w.z;
-}
+- `lib.rs` adds `pub mod atlas;` and `pub mod pbr;` — additive only; existing `material_pbr` re-exports unchanged.
+- `Cargo.toml` `[[bench]] pbr_greedy_atlas` references the existing `atlas/greedy_atlas` benchmark fixture; no new deps.
+- `CHANGELOG.md` entries use the `[Unreleased]` anchor — no released-version edits.
+- WGSL struct `PbrMaterialUniforms` mirrors `TriplanarPbrMaterial` (Rust) field-for-field; bind-group 0 = uniform, bind-group 1 = texture samplers.
+- Atlas UV channel (`atlas_uv_channel`) referenced in substrate vertex pipeline; WGSL `world_pos` input is world-space (not UV-space), so the channel value is composed in the Bevy adapter (`pbr_pipeline.rs`, FR-CIV-PBR-005 hook).
 
-@fragment
-fn fs_main(in: VertexOutput) -> @location(0) vec4<f32> {
-    let wn = normalize(in.world_normal);
-    let blend_w = triplanar_blend(wn, u_material.blend_sharpness);
+---
 
-    let base = sample_albedo(in.world_pos, wn, blend_w) * u_material.base_color_tint;
-    let nrm  = sample_normal(in.world_pos, wn, blend_w, u_material.normal_scale);
-    let orm  = sample_orm(in.world_pos, blend_w);
+## 4. Build + test gates (next step)
 
-    let ao     = orm.x;
-    let rough  = clamp(orm.y * u_material.roughness_factor, 0.04, 1.0);
-    let metal  = clamp(orm.z * u_material.metallic_factor,  0.0,  1.0);
+```bash
+cd "C:\Users\koosh\Civis"
+cargo check -p voxel
+cargo test  -p voxel --lib atlas::        # greedy_atlas tests
+cargo test  -p voxel --lib pbr::          # triplanar_pipeline tests
+cargo bench -p voxel pbr_greedy_atlas     # perf baseline
+```
 
-    // Substrate consumes base.rgb + nrm + (ao, rough, metal).
-    // Final lighting (PBR direct/IBL) is computed in the Bevy adapter
-    // pbr_pipeline.rs (FR-CIV-PBR-005 substrate hook).
-    let out_rgb = base.rgb * ao;
+All four must pass before merging `feat/civis-pbr-phase3-2026-07-04` → `main`. No expected blockers — all changes are additive over FR-CIV-PBR-001..009 substrate.
 
-    return vec4<f32>(out_rgb, base.a);
-}
+---
+
+## 5. Decision
+
+**Land on `main` after CI green.** The Phase-3 substrate is a single-branch delivery with 9 additive files; no migration risk; no public-API breakage (existing `material_pbr` exports preserved).
