@@ -268,3 +268,29 @@
 **Proceed with Phase 1 extraction immediately after this mapping.** The 6 HIGH-priority candidates address real duplication across 8+ active repos and support the Phenotype Org Cross-Project Reuse Protocol.
 
 **Conservative freeze timeline:** After Phase 2 integration completes (3-4 weeks), mark `.archive/` as immutable in all workflows — no new archives without explicit board decision.
+
+---
+
+## Q3 2026 Portfolio Decisions (added 2026-07-05)
+
+The polyrepo portfolio strategy session made the following strict-pause
+decisions. These are NEW archives (vs. the pre-existing dead archives above)
+and carry the active strict-pause banner in the original repos.
+
+| Repo | Decision | Effective | Vendor | Pointer |
+|------|----------|-----------|--------|---------|
+| `KooshaPari/Authvault` | STRICT PAUSE archive (absorbed into AuthKit) | 2026-07-05 | n/a (AuthKit is canonical) | session `2026-07-05-polyrepo-portfolio-strategy` |
+| `KooshaPari/AtomsBot` | STRICT PAUSE archive | 2026-07-05 | n/a (banner in repo) | session `2026-07-05-polyrepo-portfolio-strategy` |
+| `KooshaPari/GDK` | STRICT PAUSE archive | 2026-07-05 | n/a (banner in repo) | session `2026-07-05-polyrepo-portfolio-strategy` |
+| `KooshaPari/KaskMan` | STRICT PAUSE archive | 2026-07-05 | `archive/kaskman/` (this repo) | session `2026-07-05-polyrepo-portfolio-strategy` |
+| `KooshaPari/phenodag` | THIN REDIRECTOR (features absorbed into Tracera + AgilePlus) | 2026-07-05 | n/a (redirector) | PR `phenodag#29` + `Tracera#723` + `AgilePlus#895` |
+
+**Promotion (NOT archives):**
+
+| Repo | Promotion | Pointer |
+|------|-----------|---------|
+| `phenotype-org-audits` | Audit/Inventory spine | PR `phenotype-org-audits#76` |
+| `phenotype-apps` | Apps catalog spine | PR `phenotype-apps#153` |
+| `AuthKit` | Canonical auth boundary (successor to Authvault) | PR `AuthKit#8` |
+
+**Rationale:** See `docs/sessions/2026-07-05-polyrepo-portfolio-strategy/00_MASTER_SYNTHESIS.md`.
