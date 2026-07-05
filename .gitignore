@@ -23,3 +23,23 @@ credentials.json
 # Archive (older than 1 year)
 .archive/2024/
 .archive/2025/
+
+# Node and package-manager artifacts
+.cache/
+.eslintcache
+.npm/
+.parcel-cache/
+.pnp
+.pnp.js
+*.log
+/build/
+/coverage/
+/dist/
+/out/
+lerna-debug.log*
+node_modules/
+npm-debug.log*
+pnpm-debug.log*
+Thumbs.db
+yarn-debug.log*
+yarn-error.log*
