@@ -19,6 +19,14 @@
 > human operator. Bug reports and contributions are still welcome, but please
 > expect AI-generated code, comments, and documentation throughout.
 <!-- AI-DD-META:END -->
+<!-- SPINE-MISSION:START -->
+> **Spine mission:** `phenotype-org-audits` is the **audit/inventory spine** for the
+> Phenotype polyrepo. Every cross-repo audit, pillar, finding, and consolidation
+> lands here. See `docs/INDEX.md` for the master index of all 165 tracked repos
+> and their current audit state. Spine role locked 2026-07-05 in the polyrepo
+> portfolio strategy session.
+<!-- SPINE-MISSION:END -->
+
 > **Work state:** MAINTENANCE · **Progress:** `██████░░░░ 60%`
 > Quarterly org-audit tooling; CI repaired + federatable via workflow_call. · updated 2026-06-02
 
