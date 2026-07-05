@@ -2,7 +2,7 @@
   "fleet_average_score": 14.0,
   "fleet_average_percentage": 100.0,
   "fleet_grade_distribution": {
-    "L4": 25
+    "L4": 26
   },
   "pillar_weights": {
     "P1": 3,
@@ -62,7 +62,7 @@
       }
     },
     {
-      "name": "Civis-2026-06-23.md",
+      "name": "Civis-2026-06-25.md",
       "score": 14,
       "percentage": 100.0,
       "grade": "L4",
@@ -77,7 +77,7 @@
       }
     },
     {
-      "name": "Eidolon-2026-06-23.md",
+      "name": "Eidolon-2026-06-25.md",
       "score": 14,
       "percentage": 100.0,
       "grade": "L4",
@@ -92,7 +92,7 @@
       }
     },
     {
-      "name": "go-nippon-2026-06-23.md",
+      "name": "KodeVibe-2026-06-25.md",
       "score": 14,
       "percentage": 100.0,
       "grade": "L4",
@@ -137,6 +137,81 @@
       }
     },
     {
+      "name": "PhenoSpecs-2026-06-25.md",
+      "score": 14,
+      "percentage": 100.0,
+      "grade": "L4",
+      "pillar_status": {
+        "1": "pass",
+        "2": "pass",
+        "3": "pass",
+        "4": "pass",
+        "5": "pass",
+        "6": "pass",
+        "7": "pass"
+      }
+    },
+    {
+      "name": "PhenoSpecs-2026-07-02.md",
+      "score": 14,
+      "percentage": 100.0,
+      "grade": "L4",
+      "pillar_status": {
+        "1": "pass",
+        "2": "pass",
+        "3": "pass",
+        "4": "pass",
+        "5": "pass",
+        "6": "pass",
+        "7": "pass"
+      }
+    },
+    {
+      "name": "Tracera-2026-06-25.md",
+      "score": 14,
+      "percentage": 100.0,
+      "grade": "L4",
+      "pillar_status": {
+        "1": "pass",
+        "2": "pass",
+        "3": "pass",
+        "4": "pass",
+        "5": "pass",
+        "6": "pass",
+        "7": "pass"
+      }
+    },
+    {
+      "name": "eyetracker-2026-07-02.md",
+      "score": 14,
+      "percentage": 100.0,
+      "grade": "L4",
+      "pillar_status": {
+        "1": "pass",
+        "2": "pass",
+        "3": "pass",
+        "4": "pass",
+        "5": "pass",
+        "6": "pass",
+        "7": "pass"
+      }
+    },
+    {
+      "name": "go-nippon-2026-06-23.md",
+      "score": 14,
+      "percentage": 100.0,
+      "grade": "L4",
+      "pillar_status": {
+        "1": "pass",
+        "2": "pass",
+        "3": "pass",
+        "4": "pass",
+        "5": "pass",
+        "6": "pass",
+        "7": "pass"
+      }
+    },
+    {
       "name": "nanovms-2026-06-23.md",
       "score": 14,
       "percentage": 100.0,
@@ -152,7 +227,7 @@
       }
     },
     {
-      "name": "pheno-context-2026-06-23.md",
+      "name": "nanovms-2026-06-28.md",
       "score": 14,
       "percentage": 100.0,
       "grade": "L4",
@@ -167,7 +242,7 @@
       }
     },
     {
-      "name": "pheno-harness-2026-06-23.md",
+      "name": "nanovms-2026-06-30.md",
       "score": 14,
       "percentage": 100.0,
       "grade": "L4",
@@ -182,7 +257,7 @@
       }
     },
     {
-      "name": "pheno-runtime-config-2026-06-23.md",
+      "name": "pheno-context-2026-06-29.md",
       "score": 14,
       "percentage": 100.0,
       "grade": "L4",
@@ -197,7 +272,7 @@
       }
     },
     {
-      "name": "PhenoCompose-2026-06-23.md",
+      "name": "pheno-harness-2026-06-25.md",
       "score": 14,
       "percentage": 100.0,
       "grade": "L4",
@@ -212,7 +287,22 @@
       }
     },
     {
-      "name": "PhenoSpecs-2026-06-25.md",
+      "name": "pheno-runtime-config-2026-06-29.md",
+      "score": 14,
+      "percentage": 100.0,
+      "grade": "L4",
+      "pillar_status": {
+        "1": "pass",
+        "2": "pass",
+        "3": "pass",
+        "4": "pass",
+        "5": "pass",
+        "6": "pass",
+        "7": "pass"
+      }
+    },
+    {
+      "name": "phenocompose-2026-06-23.md",
       "score": 14,
       "percentage": 100.0,
       "grade": "L4",
@@ -257,82 +347,7 @@
       }
     },
     {
-      "name": "phenotype-org-audits-2026-06-23.md",
-      "score": 14,
-      "percentage": 100.0,
-      "grade": "L4",
-      "pillar_status": {
-        "1": "pass",
-        "2": "pass",
-        "3": "pass",
-        "4": "pass",
-        "5": "pass",
-        "6": "pass",
-        "7": "pass"
-      }
-    },
-    {
-      "name": "smart-mcp-go-2026-06-23.md",
-      "score": 14,
-      "percentage": 100.0,
-      "grade": "L4",
-      "pillar_status": {
-        "1": "pass",
-        "2": "pass",
-        "3": "pass",
-        "4": "pass",
-        "5": "pass",
-        "6": "pass",
-        "7": "pass"
-      }
-    },
-    {
-      "name": "Tracera-2026-06-25.md",
-      "score": 14,
-      "percentage": 100.0,
-      "grade": "L4",
-      "pillar_status": {
-        "1": "pass",
-        "2": "pass",
-        "3": "pass",
-        "4": "pass",
-        "5": "pass",
-        "6": "pass",
-        "7": "pass"
-      }
-    },
-    {
-      "name": "PhenoSpecs-2026-07-02.md",
-      "score": 14,
-      "percentage": 100.0,
-      "grade": "L4",
-      "pillar_status": {
-        "1": "pass",
-        "2": "pass",
-        "3": "pass",
-        "4": "pass",
-        "5": "pass",
-        "6": "pass",
-        "7": "pass"
-      }
-    },
-    {
-      "name": "eyetracker-2026-07-02.md",
-      "score": 14,
-      "percentage": 100.0,
-      "grade": "L4",
-      "pillar_status": {
-        "1": "pass",
-        "2": "pass",
-        "3": "pass",
-        "4": "pass",
-        "5": "pass",
-        "6": "pass",
-        "7": "pass"
-      }
-    },
-    {
-      "name": "thegent-2026-07-02.md",
+      "name": "phenotype-org-audits-2026-06-27.md",
       "score": 14,
       "percentage": 100.0,
       "grade": "L4",
@@ -362,7 +377,7 @@
       }
     },
     {
-      "name": "HeliosApp-2026-06-23.md",
+      "name": "smart-mcp-go-2026-06-23.md",
       "score": 14,
       "percentage": 100.0,
       "grade": "L4",
@@ -377,7 +392,7 @@
       }
     },
     {
-      "name": "HeliosBench-2026-06-23.md",
+      "name": "thegent-2026-07-02.md",
       "score": 14,
       "percentage": 100.0,
       "grade": "L4",

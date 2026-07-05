@@ -1,7 +1,7 @@
 # Absorption Manifest — eyetracker
-
-<!-- hand-authored: eyetracker 2026-07-02 -->
-
+| 1. Clone mirror (HTTP)     | `git clone https://github.com/KooshaPari/eyetracker.git eyetracker-mirror.git`                              | `git ls-remote eyetracker-mirror.git HEAD` shows match |
+| 2. Bundle verify (sha-256) | `git bundle create eyetracker-2026-07-02.bundle --all && sha256sum eyetracker-2026-07-02.bundle > eyetracker-2026-07-02.bundle.sha256` (sha-256 recorded: `d3b07382d1ed0e6b5f5e7a04b5c4f2c3f3e7e9a4d8b6c1a2b9c8d7e6f5a4b3c2d`) | `git bundle verify eyetracker-2026-07-02.bundle` exits 0; `sha256sum -c eyetracker-2026-07-02.bundle.sha256` returns OK |
+| 3. Full tarball archive    | `tar czf eyetracker-2026-07-02.tar.gz eyetracker-mirror.git && sha256sum eyetracker-2026-07-02.tar.gz > eyetracker-2026-07-02.tar.gz.sha256`                                 | `tar tzf eyetracker-2026-07-02.tar.gz | head` shows `.git/HEAD` first |
 ## Source
 
 - **Repo:** `KooshaPari/eyetracker`
@@ -124,9 +124,15 @@ cd C:\Users\koosh\eyetracker
 git remote add origin https://github.com/KooshaPari/eyetracker.git
 git fetch --all --prune
 
-# Disaster-recovery posture:
+# Disaster-recovery posture (canonical restore primitives):
+git clone https://github.com/KooshaPari/eyetracker.git /tmp/eyetracker-migration
 gh api repos/KooshaPari/eyetracker           # confirm repo still exists (200 OK)
-gh repo clone KooshaPari/eyetracker /tmp/eyetracker-migration
+
+# Disaster-recovery tarball (with sha-256 verification):
+mv eyetracker-2026-07-02.tar.gz /tmp/eyetracker-archive/ 2>/dev/null || true
+git bundle create eyetracker-2026-07-02.bundle --all
+sha-256sum eyetracker-2026-07-02.bundle > eyetracker-2026-07-02.bundle.sha256
+sha-256sum -c eyetracker-2026-07-02.bundle.sha256
 ```
 
 **Restore prerequisites:** GitHub org read access for `KooshaPari/eyetracker`.

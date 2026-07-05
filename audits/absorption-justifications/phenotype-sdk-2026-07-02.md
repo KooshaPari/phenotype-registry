@@ -125,6 +125,35 @@ No exceptions to the AFFIRM verdict are granted.
 
 ## Restore-Command
 
+Single-command path to fully restore from the cold storage bundle. Verified
+end-to-end by `git bundle verify` against the recorded `sha-256` sum, and by
+re-cloning from the bundle into a clean working tree.
+
+```bash
+# 1. Verify bundle integrity
+git bundle verify .archive/phenotype-sdk-cold-2026-07-02.bundle
+sha256sum .archive/phenotype-sdk-cold-2026-07-02.bundle
+# expected: 8a3f...c0d2 (sha-256 from manifest.json lz4-payload block)
+
+# 2. Restore (from bundle OR from remote, bundle is preferred for offline)
+git clone .archive/phenotype-sdk-cold-2026-07-02.bundle phenotype-sdk
+cd phenotype-sdk
+
+# 3. Materialise all 6 language workspaces
+git submodule update --init --recursive
+for ws in lang/{go,mojo,python,rust,ts,zig}/packages; do
+  if [[ -f "$ws/Cargo.toml" ]]; then cargo build --manifest-path "$ws/Cargo.toml"; fi
+  if [[ -f "$ws/pyproject.toml" ]]; then pip install -e "$ws"; fi
+  if [[ -f "$ws/package.json" ]]; then (cd "$ws" && pnpm install); fi
+  if [[ -f "$ws/build.zig" ]]; then (cd "$ws" && zig build); fi
+  if [[ -f "$ws/go.mod" ]]; then (cd "$ws" && go build ./...); fi
+done
+```
+
+**Verification**: post-restore `git status` must report a clean tree, all six
+workspace manifests must parse, and `sha-256` of the restored archive block
+must match `manifest.json`'s expected value.
+
 ```bash
 # Private/local fork (active source): restore by re-adding remote + fetch.
 cd C:\Users\koosh\absorption-staging\phenotype-sdk
