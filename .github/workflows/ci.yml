@@ -11,7 +11,7 @@ permissions:
 
 jobs:
   test:
-    name: Test ${REPO}
+    name: Test (${{ github.repository }})
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
