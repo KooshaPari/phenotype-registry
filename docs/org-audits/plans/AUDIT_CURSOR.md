@@ -93,7 +93,7 @@ Order is case-insensitive alphabetical. Each item: `[ ] <repo>` → `[x] <repo>`
 - [ ] portage
 - [ ] Quillr
 - [ ] rich-cli-kit
-- [ ] sharecli
+- [x] sharecli
 - [ ] Sidekick
 - [ ] Stashly
 - [ ] substrate
