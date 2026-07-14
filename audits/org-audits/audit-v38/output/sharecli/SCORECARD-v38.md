@@ -203,3 +203,8 @@ Root `audit_scorecard.json` tracks this v38 card. Do not use the legacy Python 3
 - Spine index: [docs/SPINE-INDEX.md](https://github.com/KooshaPari/phenotype-org-audits/blob/main/docs/SPINE-INDEX.md)
 - CI truth notes: `audit/CI_TRUTH_FINDINGS.md`
 - Boundary: `audit/BOUNDARY_VERIFY_2026-07-10.md`
+
+### 2026-07-13 (MVP finality + OS parity — W10.6)
+- Merged sharecli#247: FINALITY.md, Windows CLI release matrix, tray-linux release job, desktop-builds.yml.
+- Overall stays ~71% C; C11 packaging evidence improved (no GA claim for tray/desktop).
+
