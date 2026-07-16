@@ -1,0 +1,261 @@
+<!-- AI-DD-META:START -->
+<!-- This repository is planned, maintained, and managed by AI Agents only. -->
+<!-- Slop issues are expected and intentionally present as part of an HITL-less -->
+<!-- /minimized AI-DD metaproject of learning, refining, and building brute-force -->
+<!-- training for both agents and the human operator. -->
+![Downloads](https://img.shields.io/github/downloads/KooshaPari/phenotype-registry/total?style=flat-square&label=downloads&color=blue)
+![GitHub release](https://img.shields.io/github/v/release/KooshaPari/phenotype-registry?style=flat-square&label=release)
+![License](https://img.shields.io/github/license/KooshaPari/phenotype-registry?style=flat-square)
+![AI-Slop](https://img.shields.io/badge/AI--DD-Slop%20Expected-orange?style=flat-square)
+![AI-Only-Maintained](https://img.shields.io/badge/Planned%20%26%20Maintained%20by-AI%20Agents%20Only-red?style=flat-square)
+![HITL-less](https://img.shields.io/badge/HITL--less%20AI--DD-metaproject-yellow?style=flat-square)
+
+> ⚠️ **AI-Agent-Only Repository**
+>
+> This repo is **planned, maintained, and managed exclusively by AI Agents**.
+> Slop issues, rough edges, and AI artifacts are **expected and intentionally
+> present** as part of an **HITL-less / minimized AI-DD** metaproject focused
+> on learning, refining, and brute-force training both the agents and the
+> human operator. Bug reports and contributions are still welcome, but please
+> expect AI-generated code, comments, and documentation throughout.
+<!-- AI-DD-META:END -->
+> **Work state:** ACTIVE · **Progress:** `█████████░ 90%`
+> Canonical ecosystem INDEX — ECOSYSTEM_MAP.md live (111 repos, regenerated 2026-05-30); 4-role spine authority declared · updated 2026-06-02
+
+# Phenotype Registry System - Master Index
+
+**Unified entry point for all Phenotype registries.**
+
+> **Canonical ecosystem index:** [`ECOSYSTEM_MAP.md`](./ECOSYSTEM_MAP.md) — repo role classification + dependency graph for the whole org. Start there for "what exists and how it connects."
+
+## The 4-role spec/governance spine
+
+This registry is the **INDEX** of a four-repo spine. Each repo owns one role; they reference each other rather than maintaining competing copies.
+
+| Repo | Role | Owns |
+|------|------|------|
+| **phenotype-registry** (this repo) | **INDEX** | Canonical ecosystem map ([`ECOSYSTEM_MAP.md`](./ECOSYSTEM_MAP.md)) + dependency graph |
+| **PhenoSpecs** | **ADRs / contracts** | Architecture Decision Records (`adrs/`), API contracts, specs |
+| **PhenoHandbook** | **CONVENTIONS** | Patterns, methodologies — how we build |
+| **phenotype-org-governance** | **ENFORCEMENT** | Reusable policy workflows + `deny.toml`/license baseline |
+
+When two documents disagree, authority follows role. Note: `PhenoSpecs/registry.yaml` (linked below) is the spec↔implementation traceability index and is **stale (last updated 2026-04-04)** — it is not the ecosystem index; `ECOSYSTEM_MAP.md` is.
+
+> **Absorbed (rationalization):** Per [RATIONALIZATION_PLAN.md](./RATIONALIZATION_PLAN.md), **PhenoHandbook** is collapsed into this registry **via index link** (its content stays as a standalone VitePress docs site — see [Absorbed: PhenoHandbook](#absorbed-phenohandbook-patterns--guidelines)). No subtree merge: the handbook is a ~740K living docs site (64 markdown docs) best browsed at its published URL, while this registry is the canonical markdown master index that surfaces it.
+
+## Registry Files
+
+### Core Registries
+- [PhenoSpecs Registry](https://github.com/KooshaPari/PhenoSpecs/blob/main/registry.yaml) - Specifications
+- [HexaKit Registry](https://github.com/KooshaPari/HexaKit/blob/main/registry.yaml) - Templates
+- [PhenoHandbook Config](https://github.com/KooshaPari/PhenoHandbook/blob/main/docs/.vitepress/config.mts) - Patterns
+
+### 📚 Library & Research Registry
+**[LIBRARY_RESEARCH_REGISTRY.md](./LIBRARY_RESEARCH_REGISTRY.md)** - Comprehensive catalog of:
+- **150+ libraries** used across all repos
+- **40+ research papers** and technical foundations
+- **Wrap vs Handroll decisions** with rationale
+- **Research bibliographies** by domain
+
+This registry enables informed decisions about when to wrap existing libraries versus build custom solutions.
+- **LIBRARY_RESEARCH_REGISTRY.md** - Libraries, dependencies & research papers
+
+---
+
+## Quick Navigation
+
+| I want to... | Go to... |
+|--------------|----------|
+| Find a spec for a feature | [PhenoSpecs/specs/](https://github.com/KooshaPari/PhenoSpecs/tree/main/specs) |
+| Learn a design pattern | [PhenoHandbook/patterns/](https://github.com/KooshaPari/PhenoHandbook/tree/main/patterns) |
+| See what NOT to do | [PhenoHandbook/anti-patterns/](https://github.com/KooshaPari/PhenoHandbook/tree/main/anti-patterns) |
+| Get coding standards | [PhenoHandbook/guidelines/](https://github.com/KooshaPari/PhenoHandbook/tree/main/guidelines) |
+| Use a methodology (TDD/BDD/DDD) | [PhenoHandbook/methodologies/](https://github.com/KooshaPari/PhenoHandbook/tree/main/methodologies) |
+| Find a code template | [HexaKit/by-language/](https://github.com/KooshaPari/HexaKit/tree/main/by-language) |
+| Scaffold a new project | [HexaKit/by-project/](https://github.com/KooshaPari/HexaKit/tree/main/by-project) |
+
+---
+
+## Registry Relationships
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                   PHENOTYPE REGISTRY SYSTEM                  │
+├─────────────────────────────────────────────────────────────┤
+│                                                              │
+│  ┌────────────────┐      ┌────────────────┐                │
+│  │   PhenoSpecs   │      │ PhenoHandbook  │                │
+│  │                │──────▶                │                │
+│  │ - Specs        │      │ - Patterns     │                │
+│  │ - ADRs         │      │ - Guidelines   │                │
+│  │ - OpenAPI      │      │ - Checklists   │                │
+│  └────────────────┘      └────────────────┘                │
+│           │                       │                         │
+│           │                       │                         │
+│           ▼                       ▼                         │
+│  ┌──────────────────────────────────────────┐              │
+│  │              HexaKit                     │              │
+│  │                                          │              │
+│  │  - Templates informed by specs           │              │
+│  │  - Templates follow patterns             │              │
+│  └──────────────────────────────────────────┘              │
+│                                                              │
+│  ┌──────────────────────────────────────────┐              │
+│  │         Implementation Repos             │              │
+│  │  - phenotype-auth-ts                    │              │
+│  │  - Stashly                               │              │
+│  │  - thegent                               │              │
+│  │  - ...                                   │              │
+│  └──────────────────────────────────────────┘              │
+│                                                              │
+└─────────────────────────────────────────────────────────────┘
+
+Flow:
+1. PhenoSpecs → PhenoHandbook (patterns implement specs)
+2. PhenoSpecs → HexaKit (templates include spec stubs)
+3. PhenoHandbook → HexaKit (templates follow patterns)
+4. All → Implementation (code references specs/patterns via traceability)
+```
+
+---
+
+## Registry Details
+
+### 1. PhenoSpecs - Specification Registry
+
+**Purpose:** Central source of truth for design specifications
+
+**Key Files:**
+- `registry.yaml` - Index of all specs with links to implementations
+- `specs/<domain>/` - Feature specifications by domain
+- `adrs/` - Architecture Decision Records
+- `openapi/` - API contracts
+
+**Usage:**
+```bash
+# Find a spec
+ls PhenoSpecs/specs/auth/
+
+# Check registry
+cat PhenoSpecs/registry.yaml | grep SPEC-AUTH-001
+```
+
+### 2. PhenoHandbook - Patterns & Guidelines Registry
+
+**Purpose:** Living documentation for how to build software
+
+**Key Files:**
+- `patterns/<domain>/` - Design patterns
+- `anti-patterns/` - Common mistakes
+- `guidelines/` - Coding standards
+- `methodologies/` - Development workflows
+- `mkdocs.yml` - Documentation site config
+
+**Usage:**
+```bash
+# Read a pattern
+cat PhenoHandbook/patterns/auth/oauth-pkce.md
+
+# Use a checklist
+cat PhenoHandbook/checklists/deployment.md
+```
+
+**Published Site:** https://kooshapari.com/handbook
+
+---
+
+### Absorbed: PhenoHandbook (Patterns & Guidelines)
+
+PhenoHandbook is absorbed into this registry **as an index link** (rationalization decision: index, not subtree — the handbook remains a standalone VitePress docs site, surfaced here as the canonical entry point). Browse it directly:
+
+- **Repo:** https://github.com/KooshaPari/PhenoHandbook
+- **Published site:** https://kooshapari.com/handbook (base `/handbook/`)
+
+**Handbook index map:**
+
+| Section | Link |
+|---------|------|
+| Patterns — architecture | [docs/patterns/architecture](https://github.com/KooshaPari/PhenoHandbook/tree/main/docs/patterns/architecture) |
+| Patterns — async | [docs/patterns/async](https://github.com/KooshaPari/PhenoHandbook/tree/main/docs/patterns/async) |
+| Patterns — auth | [docs/patterns/auth](https://github.com/KooshaPari/PhenoHandbook/tree/main/docs/patterns/auth) |
+| Patterns — caching | [docs/patterns/caching](https://github.com/KooshaPari/PhenoHandbook/tree/main/docs/patterns/caching) |
+| Patterns — observability | [docs/patterns/observability](https://github.com/KooshaPari/PhenoHandbook/tree/main/docs/patterns/observability) |
+| Patterns — testing | [docs/patterns/testing](https://github.com/KooshaPari/PhenoHandbook/tree/main/docs/patterns/testing) |
+| Governance (stacked PRs, traceability) | [docs/governance](https://github.com/KooshaPari/PhenoHandbook/tree/main/docs/governance) |
+| Guides & getting started | [docs/guide](https://github.com/KooshaPari/PhenoHandbook/tree/main/docs/guide) |
+| Methodologies & development | [docs/development](https://github.com/KooshaPari/PhenoHandbook/tree/main/docs/development) |
+| Reference & operations | [docs/reference](https://github.com/KooshaPari/PhenoHandbook/tree/main/docs/reference) |
+
+### 3. HexaKit - Template Registry
+
+**Purpose:** Code templates and project scaffolding
+
+**Key Files:**
+- `registry.yaml` - Template index with metadata
+- `by-language/<lang>/` - Language templates
+- `by-project/<type>/` - Project templates
+- `by-architecture/<pattern>/` - Architecture templates
+
+**Usage:**
+```bash
+# List templates
+hexakit list --category by-language
+
+# Create from template
+hexakit create go-hexagonal my-service
+```
+
+---
+
+## Connections
+
+Each registry links to the others:
+
+| From | To | Link Type |
+|------|-----|-----------|
+| Specs | Patterns | Specs reference patterns that implement them |
+| Specs | Templates | Specs link to templates that scaffold them |
+| Patterns | Specs | Patterns reference originating specs |
+| Patterns | Templates | Templates follow pattern guidance |
+| Templates | Specs | Templates include spec stubs |
+| Templates | Patterns | Templates implement patterns |
+
+---
+
+## CI/CD Integration
+
+All registries have:
+- Automated validation on PR
+- Link checking (spec → pattern → template)
+- Traceability verification
+- Auto-publish on merge
+
+---
+
+## Contributing
+
+1. **New Spec**: Create in PhenoSpecs, link to pattern in PhenoHandbook
+2. **New Pattern**: Create in PhenoHandbook, reference related specs
+3. **New Template**: Create in HexaKit, follow patterns from PhenoHandbook
+4. **All PRs**: Must update this master index if adding new top-level entries
+
+---
+
+## Links
+
+- [PhenoSpecs](https://github.com/KooshaPari/PhenoSpecs)
+- [PhenoHandbook](https://github.com/KooshaPari/PhenoHandbook)
+- [HexaKit](https://github.com/KooshaPari/HexaKit)
+- [AgilePlus](https://github.com/KooshaPari/AgilePlus) - Spec-driven development
+
+## License
+
+MIT — see [LICENSE](./LICENSE).
+
+---
+
+## Rich Media Stubs
+
+<!-- RICH-MEDIA-STUB type="annotated-screenshot" subject="Registry quickstart — install and first navigation" journey="" status="TODO" -->
+> **[RICH MEDIA PLACEHOLDER]** *Annotated screenshot of the docs site after `bun run dev`, highlighting the registry index.*
+<!-- END-RICH-MEDIA-STUB -->

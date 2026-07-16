@@ -1,0 +1,59 @@
+# Phenotype Registry
+
+Phenotype Registry is the public navigation layer for the Phenotype registry
+system. It connects specification sources, pattern guidance, reusable templates,
+and library research into one reference surface.
+
+## Core Registries
+
+| Registry | Purpose | Canonical Surface |
+| --- | --- | --- |
+| PhenoSpecs | Product specifications, ADRs, and API contracts | [`KooshaPari/PhenoSpecs`](https://github.com/KooshaPari/PhenoSpecs) |
+| PhenoHandbook | Patterns, anti-patterns, guidelines, and methodologies | [`KooshaPari/PhenoHandbook`](https://github.com/KooshaPari/PhenoHandbook) |
+| HexaKit | Template and scaffold registry | [`KooshaPari/HexaKit`](https://github.com/KooshaPari/HexaKit) |
+| Library Research | Wrap-vs-handroll evidence and dependency catalog | [`LIBRARY_RESEARCH_REGISTRY.md`](https://github.com/KooshaPari/phenotype-registry/blob/main/LIBRARY_RESEARCH_REGISTRY.md) |
+
+## Quick Paths
+
+- Use [Registry Reference](./registries.md) to find the correct source of truth.
+- Use [Library Research](./library-research.md) before introducing a new
+  dependency or hand-rolling a capability.
+- Use [Ecosystem rationalization](./rationalization/boundary-shaping.md) for
+  boundary disposition (DECOMPOSE / ABSORB / DYNAMIC-KEEP), [stack policy](./rationalization/STACK_POLICY.md),
+  [domain roles](./rationalization/DOMAIN_ROLES.md), and [zero-shot orchestration](./rationalization/ZERO_SHOT_ORCHESTRATION.md).
+- Use [Zero-Loop Ecosystem Plan](./rationalization/ZERO_LOOP_ECOSYSTEM_PLAN.md) for
+  boundary absorption DAG, AgilePlus governance, and agent session protocol.
+- Session DAG: [20260617-ecosystem-disposition-wave](./sessions/20260617-ecosystem-disposition-wave/03_DAG_WBS.md).
+- Machine indexes: [`registry/disposition-index.json`](../registry/disposition-index.json), [`components.lock`](../registry/components.lock).
+- Keep this repo as a navigation hub. Implementation work belongs in the
+  referenced registries or product repos.
+
+## Rationalization (2026-06)
+
+| Doc | Purpose |
+| --- | --- |
+| [boundary-shaping](./rationalization/boundary-shaping.md) | DECOMPOSE / ABSORB / DYNAMIC-KEEP disposition |
+| [STACK_POLICY](./rationalization/STACK_POLICY.md) | Language stack policy |
+| [DOMAIN_ROLES](./rationalization/DOMAIN_ROLES.md) | Domain role assignments |
+| [ZERO_LOOP_ECOSYSTEM_PLAN](./rationalization/ZERO_LOOP_ECOSYSTEM_PLAN.md) | Master plan: metrics, phases, PR fleet, spec catalog |
+| [ECOSYSTEM_DAG](./rationalization/ECOSYSTEM_DAG.md) | 20-lane parallel recipe with deps |
+| [SESSION_ARTIFACT_PROTOCOL](./rationalization/SESSION_ARTIFACT_PROTOCOL.md) | Resumable session folder contract |
+| [ADR-004 Staging](./adr/ADR-004-absorption-staging-vs-canonical.md) | Absorption staging vs canonical |
+| [ADR-005 AgilePlus](./adr/ADR-005-agileplus-governance-boundary.md) | AgilePlus governance boundary |
+| [ADR-006 Zero-Loop](./adr/ADR-006-zero-loop-agent-session.md) | Zero-loop agent sessions |
+| [BOUNDARY_OWNERS](https://github.com/KooshaPari/phenotype-registry/blob/main/BOUNDARY_OWNERS.md) | Capability SSOT (repo root) |
+
+## Operating Contract
+
+- Registry links should point at canonical repositories, not local worktrees.
+- Registry entries should explain why the destination exists and when to use it.
+- Library decisions should cite the evidence surface that informed them.
+- This docs shell is static and published through GitHub Pages.
+
+---
+
+## Rich Media Stubs
+
+<!-- RICH-MEDIA-STUB type="annotated-screenshot" subject="Phenotype Registry navigation hub overview" journey="" status="TODO" -->
+> **[RICH MEDIA PLACEHOLDER]** *Annotated screenshot of the registry hub showing the four registry tiles and quick-path navigation.*
+<!-- END-RICH-MEDIA-STUB -->
