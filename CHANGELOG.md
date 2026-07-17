@@ -2,6 +2,37 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v1.6.34] - 2026-07-17
+
+### Catalogued (10-row absorption queue, "always keep 10 in queue" policy)
+
+| # | id                            | repo                    | fsm         | disposition        |
+|---|-------------------------------|-------------------------|-------------|--------------------|
+| 1 | gate-pyron                    | Pyron                   | hold        | HOLD_ARCHIVE       |
+| 2 | gate-thegent                  | thegent                 | in-progress | AFFIRM             |
+| 3 | phenotype-sdk                 | phenotype-sdk           | active      | AFFIRM             |
+| 4 | repo-phenotype-ops-configra-migration | phenotype-ops     | noted       | INFORM             |
+| 5 | repo-phenotype-config-deprecation     | phenotype-config  | deprecating | DEPRECATE          |
+| 6 | gw-pheno                      | pheno                   | in-progress | PARTIAL_ARCHIVE    |
+| 7 | repo-benchora-affirm          | Benchora                | verified    | AFFIRM             |
+| 8 | repo-pheno-runtime-config     | pheno-runtime-config    | active      | AFFIRM             |
+| 9 | repo-localbase3               | localbase3              | active      | AFFIRM             |
+| 10 | repo-hwLedger                | hwLedger                | verified    | AFFIRM             |
+
+### Notes
+- All 10 rows are AFFIRM-classified canonical spines or in-progress dismantling
+  (PARTIAL_ARCHIVE/DEPRECATE/HOLD_ARCHIVE) — **no actual absorption required**;
+  these rows are queue-maintenance entries per the standing "always keep 10
+  repos in queue" policy from the prior session.
+- Following user's caution principle (corrections_2026-07-17):
+  - REJECTED as absorbables: forks bound by upstream (forgecode, heliosApp,
+    mobile-mcp, MCPForge, PhenoProject), AI-DD slop repos, HOLD_ARCHIVE
+    PROTECTED personal projects, incomplete-scope apps.
+  - ACCEPTED as canonicals: Tracera, AuthKit, Eidolon, Benchora, pheno-sdk,
+    hwLedger, pheno-runtime-config, localbase3 (all have full
+    absorption-justification manifests in `audits/absorption-justifications/`)
+- 189 rows total; queue held at 10. Pipeline healthy.
+
 ## [Unreleased]
 ### Added
 - `CODE_OF_CONDUCT.md` (Contributor Covenant v2.1) for tier-0 governance hygiene.
