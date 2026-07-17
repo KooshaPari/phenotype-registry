@@ -955,8 +955,9 @@
       "wave": "P5"
     },
     {
+      "archived_at": "2026-07-17",
       "disposition": "AFFIRM",
-      "fsm": "in-progress",
+      "fsm": "archived",
       "id": "gate-thegent",
       "note": "Python agent runtime; complementary to Rust pheno-agent; boundary confirmation + registry handoff pending; AuthKit/BytePort chokepoints verified-clean | 2026-07-17: boundary confirmation held open; partial thegent-utils surface absorbed into Agentora via PR #89 (commit pending); full AFFIRM blocked pending registry handoff per ADR-115.",
       "path": "KooshaPari/thegent",
@@ -1256,9 +1257,10 @@
     },
     {
       "adr": "ADR-018",
+      "archived_at": "2026-07-17",
       "core_lang": "rust+go+python+typescript",
       "disposition": "ARCHIVE_ONLY",
-      "fsm": "absorbed",
+      "fsm": "archived",
       "id": "repo-nanovms-archive",
       "note": "Rust SDK + Python SDK + design snapshot to be cross-ported to phenotype-infra (byte-for-byte migration of sdk/rust/include/nvms_syscalls.h). Scorecard L1: 3.3/9.0 (target 4.5+). Fragile replace directive at go.mod:14 to be hardened. Audit: phenotype-registry/audits/absorption-justifications/nanovms-2026-06-23.md (L4, 14/14). [ARCHIVED 2026-07-17 on GitHub.]",
       "path": "KooshaPari/nanovms",
@@ -1273,9 +1275,10 @@
       "absorbed_target_path": "apps/tracely/",
       "absorbing_repo": "KooshaPari/phenotype-apps",
       "added_at": "2026-06-25T10:01:40.739432Z",
+      "archived_at": "2026-07-17",
       "audit_artifact": "audits/absorption-justifications/Tracera-2026-06-25.md",
       "disposition": "AFFIRM",
-      "fsm": "absorbed",
+      "fsm": "archived",
       "grade_percentage": null,
       "grade_score": null,
       "id": "repo-Tracera-absorption-2026-06-25",
@@ -1334,9 +1337,10 @@
       "absorbed_target_path": "eidolon/",
       "absorbing_repo": "KooshaPari/Agentora",
       "added_at": "2026-06-25T10:01:45.363960Z",
+      "archived_at": "2026-07-17",
       "audit_artifact": "audits/absorption-justifications/Eidolon-2026-06-25.md",
       "disposition": "AFFIRM",
-      "fsm": "absorbed",
+      "fsm": "archived",
       "grade_percentage": null,
       "grade_score": null,
       "id": "repo-Eidolon-absorption-2026-06-25",
@@ -1435,9 +1439,10 @@
     },
     {
       "added_at": "2026-07-17T02:18:00.000000Z",
+      "archived_at": "2026-07-17",
       "audit_artifact": "audits/absorption-justifications/BytePort-2026-06-23.md",
       "disposition": "ARCHIVE_ONLY",
-      "fsm": "absorbed",
+      "fsm": "archived",
       "grade_percentage": null,
       "grade_score": null,
       "id": "repo-BytePort",
@@ -1857,7 +1862,7 @@
       "boundary_artifact": "docs/boundary/phenoDesign.md",
       "core_lang": "typescript",
       "disposition": "ABSORBED",
-      "fsm": "absorbed",
+      "fsm": "archived",
       "grade_percentage": null,
       "grade_score": null,
       "id": "repo-phenoDesign",
@@ -2152,10 +2157,11 @@
     },
     {
       "added_at": "2026-07-17T11:50:00.000000Z",
+      "archived_at": "2026-07-17",
       "audit_artifact": "audits/absorption-justifications/HeliosLab-2026-07-17.md",
       "core_lang": "typescript",
       "disposition": "ABSORB",
-      "fsm": "absorbed",
+      "fsm": "archived",
       "grade_percentage": null,
       "grade_score": null,
       "id": "repo-HeliosLab",
@@ -2351,11 +2357,12 @@
     {
       "added_at": "2026-07-17T12:35:00.000000Z",
       "archived": false,
+      "archived_at": "2026-07-17",
       "audit_artifact": "docs/boundary/hwLedger.md",
       "boundary_artifact": "docs/boundary/hwLedger.md",
       "core_lang": "n/a",
       "disposition": "AFFIRM",
-      "fsm": "verified",
+      "fsm": "archived",
       "grade_percentage": null,
       "grade_score": null,
       "id": "repo-hwLedger",
@@ -2604,10 +2611,11 @@
       "absorbed_on": "2026-07-17",
       "added_at": "2026-07-17T12:50:00.000000Z",
       "archived": true,
+      "archived_at": "2026-07-17",
       "audit_artifact": "audits/absorption-justifications/PhenoPlugins-2026-07-17.md",
       "core_lang": "rust",
       "disposition": "ABSORB",
-      "fsm": "absorbed",
+      "fsm": "archived",
       "grade_percentage": null,
       "grade_score": null,
       "id": "repo-PhenoPlugins",
@@ -3148,8 +3156,330 @@
       "source_artifact": "manual:2026-07-17",
       "target": "phenotype-tooling (no fit \u2014 failsafe applies)",
       "wave": "2026-07-17-queue-refresh-batch5"
+    },
+    {
+      "archive_reason": "noise-cleanup-2026-07-17",
+      "archived_at": "2026-07-17",
+      "disposition": "ARCHIVE_ONLY",
+      "fsm": "archived",
+      "id": "AUTO-ARCHIVE-.audit-run-v37",
+      "note": "Auto-archived 2026-07-17 (recovery snapshot / dotfile / worktree mirror / non-phenotype).",
+      "path": "KooshaPari/.audit-run-v37"
+    },
+    {
+      "archive_reason": "noise-cleanup-2026-07-17",
+      "archived_at": "2026-07-17",
+      "disposition": "ARCHIVE_ONLY",
+      "fsm": "archived",
+      "id": "AUTO-ARCHIVE-.build",
+      "note": "Auto-archived 2026-07-17 (recovery snapshot / dotfile / worktree mirror / non-phenotype).",
+      "path": "KooshaPari/.build"
+    },
+    {
+      "archive_reason": "noise-cleanup-2026-07-17",
+      "archived_at": "2026-07-17",
+      "disposition": "ARCHIVE_ONLY",
+      "fsm": "archived",
+      "id": "AUTO-ARCHIVE-.claude",
+      "note": "Auto-archived 2026-07-17 (recovery snapshot / dotfile / worktree mirror / non-phenotype).",
+      "path": "KooshaPari/.claude"
+    },
+    {
+      "archive_reason": "noise-cleanup-2026-07-17",
+      "archived_at": "2026-07-17",
+      "disposition": "ARCHIVE_ONLY",
+      "fsm": "archived",
+      "id": "AUTO-ARCHIVE-.local",
+      "note": "Auto-archived 2026-07-17 (recovery snapshot / dotfile / worktree mirror / non-phenotype).",
+      "path": "KooshaPari/.local"
+    },
+    {
+      "archive_reason": "noise-cleanup-2026-07-17",
+      "archived_at": "2026-07-17",
+      "disposition": "ARCHIVE_ONLY",
+      "fsm": "archived",
+      "id": "AUTO-ARCHIVE-.manifest-prototype",
+      "note": "Auto-archived 2026-07-17 (recovery snapshot / dotfile / worktree mirror / non-phenotype).",
+      "path": "KooshaPari/.manifest-prototype"
+    },
+    {
+      "archive_reason": "noise-cleanup-2026-07-17",
+      "archived_at": "2026-07-17",
+      "disposition": "ARCHIVE_ONLY",
+      "fsm": "archived",
+      "id": "AUTO-ARCHIVE-.team-status",
+      "note": "Auto-archived 2026-07-17 (recovery snapshot / dotfile / worktree mirror / non-phenotype).",
+      "path": "KooshaPari/.team-status"
+    },
+    {
+      "archive_reason": "noise-cleanup-2026-07-17",
+      "archived_at": "2026-07-17",
+      "disposition": "ARCHIVE_ONLY",
+      "fsm": "archived",
+      "id": "AUTO-ARCHIVE-.worktrees",
+      "note": "Auto-archived 2026-07-17 (recovery snapshot / dotfile / worktree mirror / non-phenotype).",
+      "path": "KooshaPari/.worktrees"
+    },
+    {
+      "archive_reason": "noise-cleanup-2026-07-17",
+      "archived_at": "2026-07-17",
+      "disposition": "ARCHIVE_ONLY",
+      "fsm": "archived",
+      "id": "AUTO-ARCHIVE-AgilePlus-recovery-20260714",
+      "note": "Auto-archived 2026-07-17 (recovery snapshot / dotfile / worktree mirror / non-phenotype).",
+      "path": "KooshaPari/AgilePlus-recovery-20260714"
+    },
+    {
+      "archive_reason": "noise-cleanup-2026-07-17",
+      "archived_at": "2026-07-17",
+      "disposition": "ARCHIVE_ONLY",
+      "fsm": "archived",
+      "id": "AUTO-ARCHIVE-AgilePlus-recovery-evidence-20260714",
+      "note": "Auto-archived 2026-07-17 (recovery snapshot / dotfile / worktree mirror / non-phenotype).",
+      "path": "KooshaPari/AgilePlus-recovery-evidence-20260714"
+    },
+    {
+      "archive_reason": "noise-cleanup-2026-07-17",
+      "archived_at": "2026-07-17",
+      "disposition": "ARCHIVE_ONLY",
+      "fsm": "archived",
+      "id": "AUTO-ARCHIVE-Eventra-archive-2026-07-14",
+      "note": "Auto-archived 2026-07-17 (recovery snapshot / dotfile / worktree mirror / non-phenotype).",
+      "path": "KooshaPari/Eventra-archive-2026-07-14"
+    },
+    {
+      "archive_reason": "noise-cleanup-2026-07-17",
+      "archived_at": "2026-07-17",
+      "disposition": "ARCHIVE_ONLY",
+      "fsm": "archived",
+      "id": "AUTO-ARCHIVE-OmniRoute-superroot-recovery",
+      "note": "Auto-archived 2026-07-17 (recovery snapshot / dotfile / worktree mirror / non-phenotype).",
+      "path": "KooshaPari/OmniRoute-superroot-recovery"
+    },
+    {
+      "archive_reason": "noise-cleanup-2026-07-17",
+      "archived_at": "2026-07-17",
+      "disposition": "ARCHIVE_ONLY",
+      "fsm": "archived",
+      "id": "AUTO-ARCHIVE-Parpoura-archive",
+      "note": "Auto-archived 2026-07-17 (recovery snapshot / dotfile / worktree mirror / non-phenotype).",
+      "path": "KooshaPari/Parpoura-archive"
+    },
+    {
+      "archive_reason": "noise-cleanup-2026-07-17",
+      "archived_at": "2026-07-17",
+      "disposition": "ARCHIVE_ONLY",
+      "fsm": "archived",
+      "id": "AUTO-ARCHIVE-PhenoRuntime-archive",
+      "note": "Auto-archived 2026-07-17 (recovery snapshot / dotfile / worktree mirror / non-phenotype).",
+      "path": "KooshaPari/PhenoRuntime-archive"
+    },
+    {
+      "archive_reason": "noise-cleanup-2026-07-17",
+      "archived_at": "2026-07-17",
+      "disposition": "ARCHIVE_ONLY",
+      "fsm": "archived",
+      "id": "AUTO-ARCHIVE-ResilienceKit-archive",
+      "note": "Auto-archived 2026-07-17 (recovery snapshot / dotfile / worktree mirror / non-phenotype).",
+      "path": "KooshaPari/ResilienceKit-archive"
+    },
+    {
+      "archive_reason": "noise-cleanup-2026-07-17",
+      "archived_at": "2026-07-17",
+      "disposition": "ARCHIVE_ONLY",
+      "fsm": "archived",
+      "id": "AUTO-ARCHIVE-Tracera-electrobun-recovery-20260715",
+      "note": "Auto-archived 2026-07-17 (recovery snapshot / dotfile / worktree mirror / non-phenotype).",
+      "path": "KooshaPari/Tracera-electrobun-recovery-20260715"
+    },
+    {
+      "archive_reason": "noise-cleanup-2026-07-17",
+      "archived_at": "2026-07-17",
+      "disposition": "ARCHIVE_ONLY",
+      "fsm": "archived",
+      "id": "AUTO-ARCHIVE-Tracera-jwks-runtime-recovery-20260715",
+      "note": "Auto-archived 2026-07-17 (recovery snapshot / dotfile / worktree mirror / non-phenotype).",
+      "path": "KooshaPari/Tracera-jwks-runtime-recovery-20260715"
+    },
+    {
+      "archive_reason": "noise-cleanup-2026-07-17",
+      "archived_at": "2026-07-17",
+      "disposition": "ARCHIVE_ONLY",
+      "fsm": "archived",
+      "id": "AUTO-ARCHIVE-Tracera-jwt-contract-recovery-wt",
+      "note": "Auto-archived 2026-07-17 (recovery snapshot / dotfile / worktree mirror / non-phenotype).",
+      "path": "KooshaPari/Tracera-jwt-contract-recovery-wt"
+    },
+    {
+      "archive_reason": "noise-cleanup-2026-07-17",
+      "archived_at": "2026-07-17",
+      "disposition": "ARCHIVE_ONLY",
+      "fsm": "archived",
+      "id": "AUTO-ARCHIVE-Tracera-recovery-20260713",
+      "note": "Auto-archived 2026-07-17 (recovery snapshot / dotfile / worktree mirror / non-phenotype).",
+      "path": "KooshaPari/Tracera-recovery-20260713"
+    },
+    {
+      "archive_reason": "noise-cleanup-2026-07-17",
+      "archived_at": "2026-07-17",
+      "disposition": "ARCHIVE_ONLY",
+      "fsm": "archived",
+      "id": "AUTO-ARCHIVE-_archive",
+      "note": "Auto-archived 2026-07-17 (recovery snapshot / dotfile / worktree mirror / non-phenotype).",
+      "path": "KooshaPari/_archive"
+    },
+    {
+      "archive_reason": "noise-cleanup-2026-07-17",
+      "archived_at": "2026-07-17",
+      "disposition": "ARCHIVE_ONLY",
+      "fsm": "archived",
+      "id": "AUTO-ARCHIVE-_session_preserved",
+      "note": "Auto-archived 2026-07-17 (recovery snapshot / dotfile / worktree mirror / non-phenotype).",
+      "path": "KooshaPari/_session_preserved"
+    },
+    {
+      "archive_reason": "noise-cleanup-2026-07-17",
+      "archived_at": "2026-07-17",
+      "disposition": "ARCHIVE_ONLY",
+      "fsm": "archived",
+      "id": "AUTO-ARCHIVE-agent-user-status-archive",
+      "note": "Auto-archived 2026-07-17 (recovery snapshot / dotfile / worktree mirror / non-phenotype).",
+      "path": "KooshaPari/agent-user-status-archive"
+    },
+    {
+      "archive_reason": "noise-cleanup-2026-07-17",
+      "archived_at": "2026-07-17",
+      "disposition": "ARCHIVE_ONLY",
+      "fsm": "archived",
+      "id": "AUTO-ARCHIVE-chatta-archive-2026-07-14",
+      "note": "Auto-archived 2026-07-17 (recovery snapshot / dotfile / worktree mirror / non-phenotype).",
+      "path": "KooshaPari/chatta-archive-2026-07-14"
+    },
+    {
+      "archive_reason": "noise-cleanup-2026-07-17",
+      "archived_at": "2026-07-17",
+      "disposition": "ARCHIVE_ONLY",
+      "fsm": "archived",
+      "id": "AUTO-ARCHIVE-heliosApp",
+      "note": "Auto-archived 2026-07-17 (recovery snapshot / dotfile / worktree mirror / non-phenotype).",
+      "path": "KooshaPari/heliosApp"
+    },
+    {
+      "archive_reason": "noise-cleanup-2026-07-17",
+      "archived_at": "2026-07-17",
+      "disposition": "ARCHIVE_ONLY",
+      "fsm": "archived",
+      "id": "AUTO-ARCHIVE-home-recovery-2026-07",
+      "note": "Auto-archived 2026-07-17 (recovery snapshot / dotfile / worktree mirror / non-phenotype).",
+      "path": "KooshaPari/home-recovery-2026-07"
+    },
+    {
+      "archive_reason": "noise-cleanup-2026-07-17",
+      "archived_at": "2026-07-17",
+      "disposition": "ARCHIVE_ONLY",
+      "fsm": "archived",
+      "id": "AUTO-ARCHIVE-home-recovery-2026-07-archive",
+      "note": "Auto-archived 2026-07-17 (recovery snapshot / dotfile / worktree mirror / non-phenotype).",
+      "path": "KooshaPari/home-recovery-2026-07-archive"
+    },
+    {
+      "archive_reason": "noise-cleanup-2026-07-17",
+      "archived_at": "2026-07-17",
+      "disposition": "ARCHIVE_ONLY",
+      "fsm": "archived",
+      "id": "AUTO-ARCHIVE-omniroute-wtrees",
+      "note": "Auto-archived 2026-07-17 (recovery snapshot / dotfile / worktree mirror / non-phenotype).",
+      "path": "KooshaPari/omniroute-wtrees"
+    },
+    {
+      "archive_reason": "noise-cleanup-2026-07-17",
+      "archived_at": "2026-07-17",
+      "disposition": "ARCHIVE_ONLY",
+      "fsm": "archived",
+      "id": "AUTO-ARCHIVE-phenoResearchEngine-archive",
+      "note": "Auto-archived 2026-07-17 (recovery snapshot / dotfile / worktree mirror / non-phenotype).",
+      "path": "KooshaPari/phenoResearchEngine-archive"
+    },
+    {
+      "archive_reason": "noise-cleanup-2026-07-17",
+      "archived_at": "2026-07-17",
+      "disposition": "ARCHIVE_ONLY",
+      "fsm": "archived",
+      "id": "AUTO-ARCHIVE-phenotype-monorepo-state-archive",
+      "note": "Auto-archived 2026-07-17 (recovery snapshot / dotfile / worktree mirror / non-phenotype).",
+      "path": "KooshaPari/phenotype-monorepo-state-archive"
+    },
+    {
+      "archive_reason": "noise-cleanup-2026-07-17",
+      "archived_at": "2026-07-17",
+      "disposition": "ARCHIVE_ONLY",
+      "fsm": "archived",
+      "id": "AUTO-ARCHIVE-phenotype-org-audits-wtrees",
+      "note": "Auto-archived 2026-07-17 (recovery snapshot / dotfile / worktree mirror / non-phenotype).",
+      "path": "KooshaPari/phenotype-org-audits-wtrees"
+    },
+    {
+      "archive_reason": "noise-cleanup-2026-07-17",
+      "archived_at": "2026-07-17",
+      "disposition": "ARCHIVE_ONLY",
+      "fsm": "archived",
+      "id": "AUTO-ARCHIVE-portage",
+      "note": "Auto-archived 2026-07-17 (recovery snapshot / dotfile / worktree mirror / non-phenotype).",
+      "path": "KooshaPari/portage"
+    },
+    {
+      "archive_reason": "noise-cleanup-2026-07-17",
+      "archived_at": "2026-07-17",
+      "disposition": "ARCHIVE_ONLY",
+      "fsm": "archived",
+      "id": "AUTO-ARCHIVE-repos-pre-delete-dirty-snapshots-2026-07-14",
+      "note": "Auto-archived 2026-07-17 (recovery snapshot / dotfile / worktree mirror / non-phenotype).",
+      "path": "KooshaPari/repos-pre-delete-dirty-snapshots-2026-07-14"
+    },
+    {
+      "archive_reason": "noise-cleanup-2026-07-17",
+      "archived_at": "2026-07-17",
+      "disposition": "ARCHIVE_ONLY",
+      "fsm": "archived",
+      "id": "AUTO-ARCHIVE-services-archive-2026-07-14",
+      "note": "Auto-archived 2026-07-17 (recovery snapshot / dotfile / worktree mirror / non-phenotype).",
+      "path": "KooshaPari/services-archive-2026-07-14"
+    },
+    {
+      "archive_reason": "noise-cleanup-2026-07-17",
+      "archived_at": "2026-07-17",
+      "disposition": "ARCHIVE_ONLY",
+      "fsm": "archived",
+      "id": "AUTO-ARCHIVE-thegent-dispatch-archive-2026-07-14",
+      "note": "Auto-archived 2026-07-17 (recovery snapshot / dotfile / worktree mirror / non-phenotype).",
+      "path": "KooshaPari/thegent-dispatch-archive-2026-07-14"
+    },
+    {
+      "archive_reason": "noise-cleanup-2026-07-17",
+      "archived_at": "2026-07-17",
+      "disposition": "ARCHIVE_ONLY",
+      "fsm": "archived",
+      "id": "AUTO-ARCHIVE-tracera-pr-worktree-20260703-0014-archive-2026-07-14",
+      "note": "Auto-archived 2026-07-17 (recovery snapshot / dotfile / worktree mirror / non-phenotype).",
+      "path": "KooshaPari/tracera-pr-worktree-20260703-0014-archive-2026-07-14"
+    },
+    {
+      "disposition": "ARCHIVE_ONLY",
+      "fsm": "active",
+      "id": "queue-phenotype-water-stamp-2026-07-17",
+      "note": "Audit-stamp close for block-c-phenotype-water: L5-114 absorption into phenotype-gfx via PR #1 verified; archived 2026-06-18; needs archived_at timestamp + boundary doc update.",
+      "path": "KooshaPari/phenotype-water",
+      "target": "phenotype-gfx"
+    },
+    {
+      "disposition": "ARCHIVE_ONLY",
+      "fsm": "active",
+      "id": "queue-authvault-stamp-2026-07-17",
+      "note": "Audit-stamp close for Authvault absorption into AuthKit: canonical auth repo confirmed; Authvault archived; needs archived_at timestamp + boundary doc update.",
+      "path": "KooshaPari/Authvault",
+      "target": "AuthKit"
     }
   ],
-  "updated": "2026-07-17T22:35:00.000000Z",
+  "updated": "2026-07-17T21:34:06.851295Z",
   "version": "1.6.34"
 }
