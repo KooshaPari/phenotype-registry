@@ -3087,13 +3087,13 @@
       "disposition": "ARCHIVE_DATA",
       "target": "phenotype-registry/dist-sbom/",
       "wave": "2026-07-17-queue-refresh-2",
-      "fsm": "active",
+      "fsm": "absorbed",
       "core_lang": "data",
       "size_kb": 47,
       "last_push": "2026-07-16T20:13:46Z",
       "audit_artifact": "audits/absorption-justifications/dist-sbom-2026-07-17.md",
       "added_at": "2026-07-17T14:30:00.000000Z",
-      "note": "dist/ SBOM artifact cache (47KB). DATA_ONLY archivation into registry/dist-sbom/."
+      "note": "dist/ SBOM artifact cache (47KB). DATA_ONLY archivation into registry/dist-sbom/. [ARCHIVE_DATA 2026-07-17: source repo not found on GitHub (was KooshaPari/dist); data moved to phenotype-registry/dist-sbom/ if local files exist.]"
     },
     {
       "id": "repo-crates",
