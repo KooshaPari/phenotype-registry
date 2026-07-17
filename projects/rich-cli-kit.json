@@ -1,0 +1,18 @@
+{
+  "name": "rich-cli-kit",
+  "languages": [
+    "rust",
+    "python"
+  ],
+  "primary_language": "rust",
+  "status": "active",
+  "has_readme": true,
+  "type": "terminal-ux-toolkit",
+  "path": "repos/rich-cli-kit",
+  "disposition": "ABSORB",
+  "wave": "2026-07-17-queue-refresh-batch5",
+  "absorbed_into": "thegent",
+  "absorption_note": "Terminal-UX toolkit (rck binary + rck-core lib) emitting kitty-graphics, OSC 8/52/133/9. Workspace structure: crates/rck-core + crates/rck-cli + mcp/rich_cli_mcp (FastMCP Python server). Rust half ABSORBED into thegent as crates/rich-cli-kit (the agent-CLI/dispatch spine). MSRV 1.75, edition 2021, MIT/Apache-2.0, v0.1.0. Consumers per README: KLA (agent prompt loop) + thegent-dispatch — confirms thegent is canonical home. Workspace deps align (clap 4.5, thiserror 2.0, tokio 1.39). Tests: tests/smoke_test.rs (integration smoke). Python FastMCP half is a thin stdio bridge — for follow-up after Rust absorption lands; not blocking.",
+  "note": "Deep-audited 2026-07-17; ACTIVE 80% complete; rust half clean absorption candidate.",
+  "adr": "ADR-ECO-007"
+}

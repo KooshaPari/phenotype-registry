@@ -1,0 +1,18 @@
+{
+  "name": "PhenoProject",
+  "languages": [
+    "typescript",
+    "go"
+  ],
+  "primary_language": "typescript",
+  "status": "active",
+  "has_readme": true,
+  "type": "aggregate-holding-cell",
+  "path": "repos/PhenoProject",
+  "disposition": "HOLD_DECOMPOSE",
+  "wave": "2026-07-17-queue-refresh-batch5",
+  "absorbed_into": "Planify + KaskMan (both already canonical)",
+  "absorption_note": "Aggregate/holding-cell repo with two subprojects: rust/Planify/ (misleadingly named — actually a TypeScript/Bun/Turbo monorepo) and go/KaskMan/ (Go-based task/project manager). Both subprojects already exist as canonical top-level repos in repos/ (Planify/ and KaskMan/). PhenoProject itself has no independent identity, role, or authority — it's a redundant wrapper. Per rationalization: aggregate repos without own scope are noise. Action: HOLD_DECOMPOSE until Planify absorption + KaskMan absorption complete; then archive PhenoProject on GitHub (all subproject content already lives in canonical homes). No code transfer needed; resolve with registry row + archive.",
+  "note": "Deep-audited 2026-07-17; aggregate pattern, subprojects already canonical, redundant repo.",
+  "adr": "ADR-ECO-005"
+}
