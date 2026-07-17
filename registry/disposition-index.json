@@ -3146,6 +3146,18 @@
       "archived_at": "2026-07-17T15:21:00Z",
       "absorbing_repo": "KooshaPari/OmniRoute",
       "note": "KooshaPari/argis-extensions (Bifrost plugin plane, 35.6MB on GitHub, 1001 git-tracked files, 100+ remote branches, last push 2026-07-17T11:55:20Z @ wip/2026-07-16-0027-auto dcbc36f). [ABSORB 2026-07-17]: Copy 974 files (6.9MB) -> OmniRoute/extensions/argis/ on main @ 5affb095b8 (commit 'feat(extensions): absorb argis-extensions (Bifrost plugin plane) into extensions/argis/'). Pre-existing gw-argis row (disposition DYNAMIC-KEEP, target phenotype-gateway, wave H, fsm done, pr argis-extensions#82, core_lang go) preserved verbatim -- the gateway-tier 'Plugin plane' view is unchanged; the new repo-argis-extensions row is the physical-side descriptor. Source is a Go (go.mod 1.26) module: 10 plugins under plugins/ (argis/contentsafety/contextfolding/intelligentrouter/learning/promptadapter/researchintel/smartfallback/toolrouter/voyage -- argis plugin itself = 7 .go files, 1660 LOC, satisfies *schemas.LLMPlugin per github.com/maximhq/bifrost/core v1.5.21) + bifrost/core/ (gateway types) + cmd/ (cobra CLI) + api/ (graphql+rest) + config/ + db/sqlc + services/ + providers/ + server/ + costengine/ + account/ + wrappers/ + slm/ + slm-server/ + infra/ + embedded pheno-* substrate modules (pheno-errors/pheno-flags/pheno-llms-txt/pheno-otel/pheno-port-adapter/pheno-scaffold-kit/pheno-secret-scan/pheno-ssot-template/pheno-vibecoding-guard/pheno-worklog-schema). Excluded from copy: .git/ (53MB history), target/, node_modules/, dist/, build/, .next/, vendor/, .grade-reports/, *.log, slm-server/slm-server (11MB prebuilt binary), .claude/, melosviz-wt/, pheno-flags/target/. Pre-commit husky docs-sync hook + pre-push lefthook hooks bypassed via --no-verify: doc-sync fails on unrelated docs/i18n/<locale>/CHANGELOG.md translations gap; lefthook hooks fail on 'node_modules: too many levels of symbolic links' sandbox issue. Both pre-existing project-wide debt, not introduced by this absorb. No wire-up performed: Go package copied into TypeScript-rooted OmniRoute does not build via npm/bun toolchain yet; runtime integration is a future wiring pass (separate audit). Embedded pheno-* modules duplicate upstream Pheno OSS repos but were left in place (no de-dup attempted). Source repo archived via 'gh repo archive KooshaPari/argis-extensions -y' (verified isArchived=true 2026-07-17T15:21:00Z). Pattern matches repo-omniroute-rs (single-workspace absorb into OmniRoute subdir) -- different from repo-omniroute-rust ARCHIVE_ONLY (which was a 13-crate workspace-no-single-crate failure) and repo-crates ARCHIVE_ONLY (foreign-domain content). Audit: audits/absorption-justifications/argis-extensions-2026-07-17.md."
+    },
+    {
+      "id": "repo-netweave-final2-test22-uncommitted-2026-07-17",
+      "path": "KooshaPari/netweave-final2-test22-uncommitted-2026-07-17",
+      "disposition": "ARCHIVE_ONLY",
+      "target": "phenotype-registry",
+      "wave": "2026-07-17-queue-refresh-batch8",
+      "fsm": "absorbed",
+      "core_lang": "go",
+      "size_kb": 4701,
+      "last_push": "2026-07-17T09:17:56Z",
+      "note": "Snapshot of 4 uncommitted files (go.mod/go.sum/.DS_Store/netweave-3 content) [ARCHIVED 2026-07-17: transient working snapshot, no archival value.]"
     }
   ]
 }
