@@ -3484,8 +3484,108 @@
       "note": "Audit-stamp close for Authvault absorption into AuthKit: canonical auth repo confirmed; Authvault archived; needs archived_at timestamp + boundary doc update.",
       "path": "KooshaPari/Authvault",
       "target": "AuthKit"
+    },
+    {
+      "id": "repo-PhenoMCPServers",
+      "name": "PhenoMCPServers",
+      "fsm": "queued",
+      "target": "phenotype-tooling/crates/phench-mcp/",
+      "language": "Rust",
+      "size_kb_estimate": 12,
+      "note": "Phenotype MCP server set",
+      "queued_at": "2026-07-17T23:00:00.000000Z"
+    },
+    {
+      "id": "repo-PhenoRuntime",
+      "name": "PhenoRuntime",
+      "fsm": "queued",
+      "target": "pheno",
+      "language": "Rust",
+      "size_kb_estimate": 100,
+      "note": "Phenotype runtime substrate",
+      "queued_at": "2026-07-17T23:00:00.000000Z"
+    },
+    {
+      "id": "repo-Tasken",
+      "name": "Tasken",
+      "fsm": "queued",
+      "target": "phenotype-tooling/crates/tasken/",
+      "language": "Rust",
+      "size_kb_estimate": 20,
+      "note": "Personal task manager; small Rust app",
+      "queued_at": "2026-07-17T23:00:00.000000Z"
+    },
+    {
+      "id": "repo-Agentora",
+      "name": "Agentora",
+      "fsm": "queued",
+      "target": "pheno (crates/agentora)",
+      "language": "Rust",
+      "note": "Rust hexagonal-architecture framework for AI agents",
+      "queued_at": "2026-07-17T23:00:01.000000Z",
+      "wave": "2026-07-17-queue-refresh-batch4"
+    },
+    {
+      "id": "repo-AgilePlus",
+      "name": "AgilePlus",
+      "fsm": "queued",
+      "target": "pheno (crates/agile-plus)",
+      "language": "Rust",
+      "note": "Phenotype-org spec-driven development toolkit",
+      "queued_at": "2026-07-17T23:00:01.000000Z",
+      "wave": "2026-07-17-queue-refresh-batch4"
+    },
+    {
+      "id": "repo-Grapheon",
+      "name": "Grapheon",
+      "fsm": "queued",
+      "target": "pheno (crates/grapheon)",
+      "language": "Rust",
+      "note": "Canonical Grapheon graph server runtime",
+      "queued_at": "2026-07-17T23:00:01.000000Z",
+      "wave": "2026-07-17-queue-refresh-batch4"
+    },
+    {
+      "id": "repo-HexaKit",
+      "name": "HexaKit",
+      "fsm": "queued",
+      "target": "pheno (crates/hexa-kit)",
+      "language": "Rust",
+      "note": "Phenotype-org hexagonal architecture toolkit",
+      "queued_at": "2026-07-17T23:00:01.000000Z",
+      "wave": "2026-07-17-queue-refresh-batch4"
+    },
+    {
+      "id": "repo-kvirtualdesktop-core",
+      "name": "kvirtualdesktop-core",
+      "fsm": "queued",
+      "target": "pheno (crates/kvirtualdesktop)",
+      "language": "Rust",
+      "note": "Federated kvirtualdesktop core crate",
+      "queued_at": "2026-07-17T23:00:01.000000Z",
+      "wave": "2026-07-17-queue-refresh-batch4"
+    },
+    {
+      "id": "repo-phenotype-config",
+      "name": "phenotype-config",
+      "fsm": "queued",
+      "target": "pheno (crates/phenotype-config)",
+      "language": "Rust",
+      "note": "Federated phenotype config crate",
+      "queued_at": "2026-07-17T23:00:01.000000Z",
+      "wave": "2026-07-17-queue-refresh-batch4"
+    },
+    {
+      "id": "repo-phenocompose",
+      "name": "phenocompose",
+      "fsm": "archived-pending",
+      "target": "phenotype-registry (docs/boundary/phenocompose.md)",
+      "language": "Rust",
+      "note": "High-confidence archive-only (audited 2026-06-23)",
+      "queued_at": "2026-07-17T23:00:01.000000Z",
+      "wave": "2026-07-17-queue-refresh-batch4"
     }
   ],
-  "updated": "2026-07-17T22:45:00.000000Z",
-  "version": "1.6.30"
+  "updated": "2026-07-17T23:00:01.000000Z",
+  "version": "1.6.31"
 }
