@@ -942,7 +942,7 @@ substrates:
   - id: phenotype-journeys
     repo: KooshaPari/phenotype-journeys
     name: phenotype-journeys
-    status: active
+    status: absorbed
     tier: pheno-lib
     architecture: layered
     archetype: library
@@ -951,7 +951,56 @@ substrates:
     boundary: null
     intent: null
     notes: |
-      Journeys/fixtures (Rust CLI) for the `test` role.
+      [ABSORBED 2026-07-17] Journey harness substrate split across two consumers
+      per the ABSORB disposition:
+
+      - **Rust half** → `phenotype-tooling` as a single Cargo workspace member at
+        `crates/journeys-cli/`. Combines `[lib] name = "phenotype_journey_core"`
+        (preserves the upstream crate name so existing
+        `phenotype_journey_core::*` imports keep compiling) plus the
+        `[[bin]] name = "phenotype-journey"` CLI (record / extract-keyframes /
+        verify / validate / assert / sync). All `crates/phenotype-journey-core/src/*`
+        modules lifted unchanged (`agreement`, `assertions`, `pipeline`,
+        `verify/{mock,api}`, `vision` for macOS), plus
+        `bin/phenotype-journey/src/main.rs` (1100 lines) and the canonical
+        `schema/manifest.schema.json` (JSON Schema Draft 2020-12, $defs).
+        `cargo check -p journeys-cli` green in 10.01s cold / 0.21s warm.
+        25 of 27 lib tests pass; the two failing tests
+        (`pipeline::tests::intents_overlay_preserves_manifest_assertions`,
+        `pipeline::tests::verify_collects_violations_from_report`) require
+        `tesseract` plus keyframe fixture PNGs the source repo never ships
+        (pre-existing upstream bugs in pipeline.rs L912 / L1024 — `unwrap()`
+        on `Ocr` error rather than surfacing the violation).
+      - **Vue 3 viewer half** → `phenodocs` as `@phenotype/journeys-ui` under
+        `packages/journeys-ui/`. Components lifted unchanged:
+        `JourneyViewer`, `RecordingEmbed`, `KeyframeLightbox`, `KeyframeGallery`,
+        `JourneyStep`, `JudgeScore`, `Shot`, `ShotGallery`, `StructuralPane`,
+        plus `src/types.ts` and `src/index.ts`. Package was previously
+        `@phenotype/journey-viewer` 0.1.3; renamed to `@phenotype/journeys-ui`
+        to match the directory + the existing `@phenotype/*` phenodocs monorepo
+        convention (component-name exports preserved 1:1, so downstream
+        `import { JourneyViewer } from "@phenotype/journey-viewer"` callers
+        would need to rename — but nothing else in this repo imports it).
+        Picked up automatically by the existing
+        `phenodocs/package.json` `workspaces: ["packages/*"]` glob. No root
+        `package.json` change required.
+
+      Excluded by design (deliberate scope cuts): `crates/klipdot-capture/` —
+      KlipDot terminal image interceptor; zero references to it from
+      `phenotype-journey-core` or `bin/phenotype-journey` (`grep -l klipdot`
+      returns empty), so it was a stray workspace member with no
+      journey-related code. Belongs in its own substrate repo. Similarly out
+      of scope: `npm/journey-playwright/`, `npm/playwright-record/`.
+
+      Source repo `KooshaPari/phenotype-journeys` (~1.5MB total, 684K of which
+      was the Rust crates/ + 264K bin/ + 436K npm/) archived on GitHub via
+      `gh repo archive KooshaPari/phenotype-journeys -y` on 2026-07-17;
+      pre-archive tarball retained at
+      `repos/_archive/phenotype-journeys-2026-07-17.tar.gz` (503K, exclude
+      `target/` + `.git/`) per the standing tarball-not-delete rule.
+      Disposition-index row: `repo-phenotype-journeys`
+      (fsm=absorbed, disposition=ABSORB,
+      target="phenotype-tooling (crates/journeys-cli/) + phenodocs (packages/journeys-ui/)").
 
   - id: phenotype-landing
     repo: KooshaPari/phenotype-landing
