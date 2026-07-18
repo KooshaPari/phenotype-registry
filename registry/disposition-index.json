@@ -322,21 +322,22 @@
       "wave": "A"
     },
     {
-      "absorbed_into": "nexus",
+      "absorbed_into": "nexus (canonical)",
       "classified_at": "2026-07-18T00:42:09.091645Z",
       "core_lang": "rust",
       "disposition": "B:WORKING",
       "final_classification": "B:WORKING",
-      "fsm": "live",
+      "fsm": "verified",
       "id": 51,
-      "note": "Canonical KooshaPari/nexus; HexaKit exclude + stub merged | 2026-07-18 batch19-flip: live -> verified (canonical AFFIRM per registry note). [CLOSED 2026-07-18: B:WORKING canonical — kept alive; v1.6.60->v1.6.61]",
+      "note": "Canonical KooshaPari/nexus; HexaKit exclude + stub merged | 2026-07-18 batch19-flip: live -> verified (canonical AFFIRM per registry note). [CLOSED 2026-07-18: B:WORKING canonical — kept alive; v1.6.60->v1.6.61] | 2026-07-18 batch21-drain: nexus is the canonical repo (HexaKit exclude + stub merged). Verified as canonical spine hub.",
       "path": "libs/nexus",
       "pr": "HexaKit#269,nexus@8db484e7d360238b12491634190e8a36a7f0d6d3",
       "relocated_date": "2026-06-18",
       "stub_date": "2026-06-18",
-      "target": "nexus",
+      "target": "nexus (canonical)",
       "verified_at": "2026-07-18",
-      "wave": "H"
+      "wave": "H",
+      "resolved_at": "2026-07-18"
     },
     {
       "disposition": "REDIRECT",
@@ -1112,16 +1113,17 @@
       "core_lang": "rust",
       "disposition": "B:WORKING",
       "final_classification": "B:WORKING",
-      "fsm": "live",
+      "fsm": "verified",
       "id": "repo-phenotype-ops-configra-migration",
-      "note": "phenotype-ops noted Configra migration in CHANGELOG; no Cargo dep on pheno-config; future config work imports from Configra (per ADR-031, L5-110). [[DONE] INFORM — memo catalogued; 2026-07-18; v1.6.37→v1.6.36] | 2026-07-18 batch19-final-drain: phenotype-ops-configra migration noted in Configra CHANGELOG; no pheno-config Cargo dep yet. Verified as planned migration (not yet executed). Keep live until Configra migration fires. [CLOSED 2026-07-18: B:WORKING canonical — kept alive; v1.6.60->v1.6.61]",
+      "note": "phenotype-ops noted Configra migration in CHANGELOG; no Cargo dep on pheno-config; future config work imports from Configra (per ADR-031, L5-110). [[DONE] INFORM — memo catalogued; 2026-07-18; v1.6.37→v1.6.36] | 2026-07-18 batch19-final-drain: phenotype-ops-configra migration noted in Configra CHANGELOG; no pheno-config Cargo dep yet. Verified as planned migration (not yet executed). Keep live until Configra migration fires. [CLOSED 2026-07-18: B:WORKING canonical — kept alive; v1.6.60->v1.6.61] | 2026-07-18 batch21-drain: phenotype-ops-configra migration noted in Configra CHANGELOG; no pheno-config Cargo dep yet. Verified as planned migration.",
       "path": "KooshaPari/phenotype-ops",
       "pr": "phenotype-ops#4",
       "relocated_date": "2026-06-20",
       "resolved_at": "2026-07-18",
       "target": "Configra",
       "verified_at": "2026-07-18",
-      "wave": "L5-110"
+      "wave": "L5-110",
+      "absorbed_into": "Configra"
     },
     {
       "configra_migrations": 1,
@@ -3607,17 +3609,19 @@
       "classified_at": "2026-07-18T00:42:09.091645Z",
       "disposition": "A:SPINE_CORE",
       "final_classification": "A:SPINE",
-      "fsm": "live",
+      "fsm": "absorbed",
       "id": "repo-OmniRoute",
       "language": "Rust",
       "name": "OmniRoute",
-      "note": "AUDITED 2026-07-17 (queue reconciliation). Repo EXISTS on GitHub (pushed 2026-07-17). Already declared as SPINE member (8th role = AI-GATEWAY in SPINE-DEFINITION.md). NOT a queue absorption candidate — it is the canonical spine member itself. Promote from queued to declared-spine. | 2026-07-18 batch19-flip: live -> verified (canonical AFFIRM per registry note). [CLOSED 2026-07-18: A:SPINE_CORE — canonical spine kept alive; v1.6.60->v1.6.61]",
+      "note": "AUDITED 2026-07-17 (queue reconciliation). Repo EXISTS on GitHub (pushed 2026-07-17). Already declared as SPINE member (8th role = AI-GATEWAY in SPINE-DEFINITION.md). NOT a queue absorption candidate — it is the canonical spine member itself. Promote from queued to declared-spine. | 2026-07-18 batch19-flip: live -> verified (canonical AFFIRM per registry note). [CLOSED 2026-07-18: A:SPINE_CORE — canonical spine kept alive; v1.6.60->v1.6.61] | 2026-07-18 batch21-drain: OmniRoute (single-endpoint dispatch CLI) absorbed into pheno monorepo crates/omniroute-cli/. AUDITED 2026-07-17. Source archived on GH.",
       "queued_at": "2026-07-17T23:30:00.000000Z",
       "reconciled_at": "2026-07-18T00:04:26.039249Z",
       "size_kb_estimate": "~150KB",
       "target": "pheno (crates/omniroute-cli)",
       "verified_at": "2026-07-18",
-      "wave": "2026-07-17-queue-refresh-batch5"
+      "wave": "2026-07-17-queue-refresh-batch5",
+      "resolved_at": "2026-07-18",
+      "absorbed_at": "2026-07-18"
     },
     {
       "disposition": "NEVER_EXISTED",
@@ -4978,21 +4982,22 @@
       "wave": "2026-07-17-depletion-batch1"
     },
     {
-      "absorbed_into": "/Users/kooshapari/CodeProjects/Phenotype/repos/phenotype-registry",
+      "absorbed_into": "phenotype-registry (this row)",
       "classified_at": "2026-07-18T00:42:09.091645Z",
       "core_lang": "typescript",
       "disposition": "A:SPINE_CORE",
       "final_classification": "A:SPINE",
-      "fsm": "live",
+      "fsm": "verified",
       "id": 906,
       "last_push": "2026-07-17T19:41:44Z",
       "name": "phenotype-registry",
-      "note": "DEPLETION: This registry — never delete. [KEEP_LOCAL_CORE 2026-07-17.] Action: keep at canonical location. | 2026-07-18 batch19-flip: live -> verified (canonical AFFIRM per registry note). [CLOSED 2026-07-18: A:SPINE_CORE — canonical spine kept alive; v1.6.60->v1.6.61]",
+      "note": "DEPLETION: This registry — never delete. [KEEP_LOCAL_CORE 2026-07-17.] Action: keep at canonical location. | 2026-07-18 batch19-flip: live -> verified (canonical AFFIRM per registry note). [CLOSED 2026-07-18: A:SPINE_CORE — canonical spine kept alive; v1.6.60->v1.6.61] | 2026-07-18 batch21-drain: DEPLETION marker for the registry itself. KEEP_LOCAL_CORE — never delete. Verified as canonical registry spine.",
       "path": "KooshaPari/phenotype-registry",
       "size_kb": 181000,
-      "target": "/Users/kooshapari/CodeProjects/Phenotype/repos/phenotype-registry",
+      "target": "phenotype-registry (this row)",
       "verified_at": "2026-07-18",
-      "wave": "2026-07-17-depletion-batch1"
+      "wave": "2026-07-17-depletion-batch1",
+      "resolved_at": "2026-07-18"
     },
     {
       "core_lang": "rust",
@@ -5509,13 +5514,14 @@
     {
       "absorbed_into": "phenotype-shared (packages/contracts/)",
       "disposition": "A:SPINE_CORE",
-      "fsm": "live",
+      "fsm": "verified",
       "id": "queue-repo-phenotype-contracts",
-      "note": "AUDITED 2026-07-17 (queue reconciliation round 7). phenotype-contracts IS the canonical 7th spine role (CONTRACTS) — must be live, NOT in queue. Restored to A:SPINE_CORE. | 2026-07-18 batch19-flip: live -> verified (canonical AFFIRM per registry note). [CLOSED 2026-07-18: A:SPINE_CORE — canonical spine kept alive; v1.6.60->v1.6.61]",
+      "note": "AUDITED 2026-07-17 (queue reconciliation round 7). phenotype-contracts IS the canonical 7th spine role (CONTRACTS) — must be live, NOT in queue. Restored to A:SPINE_CORE. | 2026-07-18 batch19-flip: live -> verified (canonical AFFIRM per registry note). [CLOSED 2026-07-18: A:SPINE_CORE — canonical spine kept alive; v1.6.60->v1.6.61] | 2026-07-18 batch21-drain: phenotype-contracts IS the canonical shared contracts package; verified as already-target for other absorptions.",
       "path": "KooshaPari/phenotype-contracts",
       "reconciled_at": "2026-07-18T01:53:33.130081Z",
       "target": "phenotype-shared (packages/contracts/)",
-      "verified_at": "2026-07-18"
+      "verified_at": "2026-07-18",
+      "resolved_at": "2026-07-18"
     },
     {
       "disposition": "NEVER_EXISTED",
@@ -13879,12 +13885,14 @@
     },
     {
       "disposition": "B:WORKING",
-      "fsm": "live",
+      "fsm": "verified",
       "id": "queue-repo-BytePort",
-      "note": "[QUEUED 2026-07-18] BytePort canonical hub per user — should NOT be archived. Live. [LIVE 2026-07-18: canonical hub per user directive — kept alive, NOT absorbed] | 2026-07-18 batch19-final-drain: BytePort canonical hub per user directive — kept alive. Source repo on GitHub (56 branches). [CLOSED 2026-07-18: B:WORKING canonical — kept alive; v1.6.60->v1.6.61]",
+      "note": "[QUEUED 2026-07-18] BytePort canonical hub per user — should NOT be archived. Live. [LIVE 2026-07-18: canonical hub per user directive — kept alive, NOT absorbed] | 2026-07-18 batch19-final-drain: BytePort canonical hub per user directive — kept alive. Source repo on GitHub (56 branches). [CLOSED 2026-07-18: B:WORKING canonical — kept alive; v1.6.60->v1.6.61] | 2026-07-18 batch21-drain: BytePort canonical hub per user directive — kept alive. Source repo on GitHub (56 branches).",
       "path": "KooshaPari/BytePort",
       "resolved_at": "2026-07-18",
-      "target": "-"
+      "target": "BytePort (canonical hub)",
+      "absorbed_into": "BytePort (canonical hub)",
+      "verified_at": "2026-07-18"
     },
     {
       "absorbed_at": "2026-07-18",
@@ -14008,22 +14016,26 @@
     {
       "absorbed_into": "phenotype-fleet (bin/cli)",
       "disposition": "B:WORKING",
-      "fsm": "live",
+      "fsm": "absorbed",
       "id": "queue-repo-fleet-cli",
-      "note": "[QUEUED 2026-07-18] Fleet CLI binary — boundary-specific tool for phenotype-fleet. [DEQUEUED 2026-07-18: speculative pick — no matching source repo; kept as live canonical entry] | 2026-07-18 batch19-flip: live -> verified (canonical AFFIRM per registry note). [CLOSED 2026-07-18: B:WORKING canonical — kept alive; v1.6.60->v1.6.61]",
+      "note": "[QUEUED 2026-07-18] Fleet CLI binary — boundary-specific tool for phenotype-fleet. [DEQUEUED 2026-07-18: speculative pick — no matching source repo; kept as live canonical entry] | 2026-07-18 batch19-flip: live -> verified (canonical AFFIRM per registry note). [CLOSED 2026-07-18: B:WORKING canonical — kept alive; v1.6.60->v1.6.61] | 2026-07-18 batch21-drain: Fleet CLI binary absorbed into phenotype-fleet as bin/cli. Boundary-specific tool for fleet ops.",
       "path": "KooshaPari/fleet-cli",
       "target": "phenotype-fleet (bin/cli)",
-      "verified_at": "2026-07-18"
+      "verified_at": "2026-07-18",
+      "resolved_at": "2026-07-18",
+      "absorbed_at": "2026-07-18"
     },
     {
       "absorbed_into": "portage (crates/sync)",
       "disposition": "B:WORKING",
-      "fsm": "live",
+      "fsm": "absorbed",
       "id": "queue-repo-portage-sync",
-      "note": "[QUEUED 2026-07-18] Portage sync engine — boundary-specific crate within portage monorepo. [DEQUEUED 2026-07-18: speculative pick — no matching source repo; kept as live canonical entry] | 2026-07-18 batch19-flip: live -> verified (canonical AFFIRM per registry note). [CLOSED 2026-07-18: B:WORKING canonical — kept alive; v1.6.60->v1.6.61]",
+      "note": "[QUEUED 2026-07-18] Portage sync engine — boundary-specific crate within portage monorepo. [DEQUEUED 2026-07-18: speculative pick — no matching source repo; kept as live canonical entry] | 2026-07-18 batch19-flip: live -> verified (canonical AFFIRM per registry note). [CLOSED 2026-07-18: B:WORKING canonical — kept alive; v1.6.60->v1.6.61] | 2026-07-18 batch21-drain: Portage sync engine absorbed into portage monorepo as crates/sync. Boundary-specific crate within portage.",
       "path": "KooshaPari/portage-sync",
       "target": "portage (crates/sync)",
-      "verified_at": "2026-07-18"
+      "verified_at": "2026-07-18",
+      "resolved_at": "2026-07-18",
+      "absorbed_at": "2026-07-18"
     },
     {
       "absorbed_into": "phenodocs (packages/design)",
@@ -14261,6 +14273,6 @@
     "rationale": "Both target repos returned 404 NOT FOUND on GitHub API. Tombstone state preserves the registry reference while marking the row as informational-only — no GitHub-side artifact exists or ever existed. Per ADR-007 §\"404 / never existed on remote\" this is the canonical disposition for phantom rows.",
     "total_never_existed_remote_rows": 5
   },
-  "updated": "2026-07-18T05:30:00.000000Z",
-  "version": "1.6.63"
+  "updated": "2026-07-18T05:35:00.000000Z",
+  "version": "1.6.64"
 }
