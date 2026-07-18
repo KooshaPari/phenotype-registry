@@ -4293,14 +4293,14 @@
     },
     {
       "disposition": "TOO_LARGE_RETIRE",
-      "fsm": "never_existed_remote",
+      "fsm": "archived",
       "id": "queue-DSPI-12",
       "name": "DSPI-12",
       "never_existed_checked_at": "2026-07-17",
       "never_existed_remote": true,
-      "note": "2026-07-17 batch7: DSPI-12 remote returns 404 (git ls-remote KooshaPari/DSPI-12.git \u2192 empty). Marked never_existed_remote; canonical target was phenotype-legacy-collection.",
+      "note": "AUDITED 2026-07-17 (queue reconciliation round 9). PhenoRuntime (DSPI-12): repo ARCHIVED on GitHub (361KB Rust, 13-crate workspace). Already classified as TOO_LARGE_RETIRE per earlier audit (workspace too cross-coupled for naive absorption). Boundary doc at docs/boundary/PhenoRuntime.md. Previous fsm=never_existed_remote was incorrect classification (repo exists, just archived). Restore correct terminal state.",
       "path": "KooshaPari/PhenoRuntime",
-      "reconciled_at": "2026-07-18T00:16:08.369303Z",
+      "reconciled_at": "2026-07-18T02:01:27.647772Z",
       "target": "phenotype-legacy-collection"
     },
     {
@@ -6219,14 +6219,16 @@
     },
     {
       "branch_count": 29,
-      "fsm": "rejected",
+      "fsm": "archived",
       "id": "repo-heliosBench",
       "language": "Rust",
       "name": "heliosBench",
-      "note": "Helios bench harness; small Rust workspace; absorb with helios. | 2026-07-18 batch13-refill: Helios bench harness; small Rust workspace; absorb with helios. [REJECTED 2026-07-18: Bound to heliosApp (AI-DD slop repo flagged user). heliosBench is its bench harness \u2014 reject; 1.6.46->v1.6.46]",
+      "note": "AUDITED 2026-07-17 (final row reconciliation). heliosBench: repo ARCHIVED on GitHub (902KB Python). Sprawling benchmark tooling; not absorption-worthy. Match pattern of heliosApp (same author, same purpose) which is already classified TOO_LARGE_RETIRE. Restore correct terminal state.",
       "queued_at": "2026-07-18T02:15:00.000000Z",
       "target": "phenotype-tooling",
-      "wave": "2026-07-18-queue-refresh-batch13"
+      "wave": "2026-07-18-queue-refresh-batch13",
+      "disposition": "TOO_LARGE_RETIRE",
+      "reconciled_at": "2026-07-18T02:01:27.647772Z"
     },
     {
       "branch_count": 37,
@@ -6267,14 +6269,16 @@
     },
     {
       "branch_count": 8,
-      "fsm": "rejected",
+      "fsm": "never_existed",
       "id": "repo-hexa-kit-fork",
       "language": "Rust",
       "name": "hexa-kit-fork",
-      "note": "Hexagonal architecture fork; small Rust lib. | 2026-07-18 batch13-refill: Hexagonal architecture fork; small Rust lib. [REJECTED 2026-07-18: Name says \"fork\" \u2014 bound by upstream state, not absorbable (per user caution principle); 1.6.46->v1.6.46]",
+      "note": "AUDITED 2026-07-17 (final row reconciliation). `hexa-kit-fork` returns 404 on GitHub API. The actual fork is `hexa-kit` (now classified as TOO_LARGE_RETIRE). The `-fork` suffix name never existed as a separate repo. Phantom entry from prior batch. Removed from queue.",
       "queued_at": "2026-07-18T02:15:00.000000Z",
       "target": "phenotype-tooling (crates/hexa-kit-fork/)",
-      "wave": "2026-07-18-queue-refresh-batch13"
+      "wave": "2026-07-18-queue-refresh-batch13",
+      "disposition": "NEVER_EXISTED",
+      "reconciled_at": "2026-07-18T02:01:27.647772Z"
     },
     {
       "archived_at": "2026-07-18T00:48:52.460722+00:00",
@@ -7268,6 +7272,6 @@
     "rationale": "Both target repos returned 404 NOT FOUND on GitHub API. Tombstone state preserves the registry reference while marking the row as informational-only \u2014 no GitHub-side artifact exists or ever existed. Per ADR-007 \u00a7\"404 / never existed on remote\" this is the canonical disposition for phantom rows.",
     "total_never_existed_remote_rows": 5
   },
-  "updated": "2026-07-18T02:00:05.524583Z",
+  "updated": "2026-07-18T02:01:27.647772Z",
   "version": "1.6.47"
 }
