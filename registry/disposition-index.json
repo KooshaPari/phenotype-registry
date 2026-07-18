@@ -327,17 +327,17 @@
       "core_lang": "rust",
       "disposition": "B:WORKING",
       "final_classification": "B:WORKING",
-      "fsm": "verified",
+      "fsm": "live",
       "id": 51,
-      "note": "Canonical KooshaPari/nexus; HexaKit exclude + stub merged | 2026-07-18 batch19-flip: live -> verified (canonical AFFIRM per registry note). [CLOSED 2026-07-18: B:WORKING canonical — kept alive; v1.6.60->v1.6.61] | 2026-07-18 batch21-drain: nexus is the canonical repo (HexaKit exclude + stub merged). Verified as canonical spine hub.",
+      "note": "Canonical KooshaPari/nexus; HexaKit exclude + stub merged | 2026-07-18 batch19-flip: live -> verified (canonical AFFIRM per registry note). [CLOSED 2026-07-18: B:WORKING canonical — kept alive; v1.6.60->v1.6.61] | 2026-07-18 batch21-drain: nexus is the canonical repo (HexaKit exclude + stub merged). Verified as canonical spine hub. [CLOSED 2026-07-18: canonical confirmed]",
       "path": "libs/nexus",
       "pr": "HexaKit#269,nexus@8db484e7d360238b12491634190e8a36a7f0d6d3",
       "relocated_date": "2026-06-18",
+      "resolved_at": "2026-07-18",
       "stub_date": "2026-06-18",
       "target": "nexus (canonical)",
       "verified_at": "2026-07-18",
-      "wave": "H",
-      "resolved_at": "2026-07-18"
+      "wave": "H"
     },
     {
       "disposition": "REDIRECT",
@@ -1101,6 +1101,7 @@
       "target": "pheno/crates/phenotype-flags"
     },
     {
+      "absorbed_into": "Configra",
       "classified_at": "2026-07-18T00:42:09.091645Z",
       "configra_migration": {
         "adr": "ADR-031",
@@ -1113,17 +1114,16 @@
       "core_lang": "rust",
       "disposition": "B:WORKING",
       "final_classification": "B:WORKING",
-      "fsm": "verified",
+      "fsm": "live",
       "id": "repo-phenotype-ops-configra-migration",
-      "note": "phenotype-ops noted Configra migration in CHANGELOG; no Cargo dep on pheno-config; future config work imports from Configra (per ADR-031, L5-110). [[DONE] INFORM — memo catalogued; 2026-07-18; v1.6.37→v1.6.36] | 2026-07-18 batch19-final-drain: phenotype-ops-configra migration noted in Configra CHANGELOG; no pheno-config Cargo dep yet. Verified as planned migration (not yet executed). Keep live until Configra migration fires. [CLOSED 2026-07-18: B:WORKING canonical — kept alive; v1.6.60->v1.6.61] | 2026-07-18 batch21-drain: phenotype-ops-configra migration noted in Configra CHANGELOG; no pheno-config Cargo dep yet. Verified as planned migration.",
+      "note": "phenotype-ops noted Configra migration in CHANGELOG; no Cargo dep on pheno-config; future config work imports from Configra (per ADR-031, L5-110). [[DONE] INFORM — memo catalogued; 2026-07-18; v1.6.37→v1.6.36] | 2026-07-18 batch19-final-drain: phenotype-ops-configra migration noted in Configra CHANGELOG; no pheno-config Cargo dep yet. Verified as planned migration (not yet executed). Keep live until Configra migration fires. [CLOSED 2026-07-18: B:WORKING canonical — kept alive; v1.6.60->v1.6.61] | 2026-07-18 batch21-drain: phenotype-ops-configra migration noted in Configra CHANGELOG; no pheno-config Cargo dep yet. Verified as planned migration. [CLOSED 2026-07-18: canonical confirmed]",
       "path": "KooshaPari/phenotype-ops",
       "pr": "phenotype-ops#4",
       "relocated_date": "2026-06-20",
       "resolved_at": "2026-07-18",
       "target": "Configra",
       "verified_at": "2026-07-18",
-      "wave": "L5-110",
-      "absorbed_into": "Configra"
+      "wave": "L5-110"
     },
     {
       "configra_migrations": 1,
@@ -3605,6 +3605,7 @@
       "wave": "2026-07-17-queue-refresh-batch5"
     },
     {
+      "absorbed_at": "2026-07-18",
       "absorbed_into": "pheno (crates/omniroute-cli)",
       "classified_at": "2026-07-18T00:42:09.091645Z",
       "disposition": "A:SPINE_CORE",
@@ -3616,12 +3617,11 @@
       "note": "AUDITED 2026-07-17 (queue reconciliation). Repo EXISTS on GitHub (pushed 2026-07-17). Already declared as SPINE member (8th role = AI-GATEWAY in SPINE-DEFINITION.md). NOT a queue absorption candidate — it is the canonical spine member itself. Promote from queued to declared-spine. | 2026-07-18 batch19-flip: live -> verified (canonical AFFIRM per registry note). [CLOSED 2026-07-18: A:SPINE_CORE — canonical spine kept alive; v1.6.60->v1.6.61] | 2026-07-18 batch21-drain: OmniRoute (single-endpoint dispatch CLI) absorbed into pheno monorepo crates/omniroute-cli/. AUDITED 2026-07-17. Source archived on GH.",
       "queued_at": "2026-07-17T23:30:00.000000Z",
       "reconciled_at": "2026-07-18T00:04:26.039249Z",
+      "resolved_at": "2026-07-18",
       "size_kb_estimate": "~150KB",
       "target": "pheno (crates/omniroute-cli)",
       "verified_at": "2026-07-18",
-      "wave": "2026-07-17-queue-refresh-batch5",
-      "resolved_at": "2026-07-18",
-      "absorbed_at": "2026-07-18"
+      "wave": "2026-07-17-queue-refresh-batch5"
     },
     {
       "disposition": "NEVER_EXISTED",
@@ -4987,17 +4987,17 @@
       "core_lang": "typescript",
       "disposition": "A:SPINE_CORE",
       "final_classification": "A:SPINE",
-      "fsm": "verified",
+      "fsm": "live",
       "id": 906,
       "last_push": "2026-07-17T19:41:44Z",
       "name": "phenotype-registry",
-      "note": "DEPLETION: This registry — never delete. [KEEP_LOCAL_CORE 2026-07-17.] Action: keep at canonical location. | 2026-07-18 batch19-flip: live -> verified (canonical AFFIRM per registry note). [CLOSED 2026-07-18: A:SPINE_CORE — canonical spine kept alive; v1.6.60->v1.6.61] | 2026-07-18 batch21-drain: DEPLETION marker for the registry itself. KEEP_LOCAL_CORE — never delete. Verified as canonical registry spine.",
+      "note": "DEPLETION: This registry — never delete. [KEEP_LOCAL_CORE 2026-07-17.] Action: keep at canonical location. | 2026-07-18 batch19-flip: live -> verified (canonical AFFIRM per registry note). [CLOSED 2026-07-18: A:SPINE_CORE — canonical spine kept alive; v1.6.60->v1.6.61] | 2026-07-18 batch21-drain: DEPLETION marker for the registry itself. KEEP_LOCAL_CORE — never delete. Verified as canonical registry spine. [CLOSED 2026-07-18: canonical confirmed]",
       "path": "KooshaPari/phenotype-registry",
+      "resolved_at": "2026-07-18",
       "size_kb": 181000,
       "target": "phenotype-registry (this row)",
       "verified_at": "2026-07-18",
-      "wave": "2026-07-17-depletion-batch1",
-      "resolved_at": "2026-07-18"
+      "wave": "2026-07-17-depletion-batch1"
     },
     {
       "core_lang": "rust",
@@ -5056,16 +5056,17 @@
       "classified_at": "2026-07-18T00:42:09.091645Z",
       "disposition": "A:SPINE_CORE",
       "final_classification": "A:SPINE",
-      "fsm": "verified",
+      "fsm": "live",
       "id": "FINAL-phenotype-shared",
       "name": "phenotype-shared",
+      "note": "| 2026-07-18 batch22-finalize: phenotype-shared is the canonical shared libraries monorepo; verified as live spine (not absorbed). [CLOSED 2026-07-18: canonical confirmed]",
       "path": "KooshaPari/phenotype-shared",
-      "target": "phenotype-shared",
       "resolved_at": "2026-07-18",
-      "verified_at": "2026-07-18",
-      "note": "| 2026-07-18 batch22-finalize: phenotype-shared is the canonical shared libraries monorepo; verified as live spine (not absorbed)."
+      "target": "phenotype-shared",
+      "verified_at": "2026-07-18"
     },
     {
+      "absorbed_into": "phenotype-journeys (canonical)",
       "archived_at": "2026-07-18",
       "classified_at": "2026-07-18T00:42:09.091645Z",
       "disposition": "A:SPINE_CORE",
@@ -5073,27 +5074,27 @@
       "fsm": "archived",
       "id": "FINAL-phenotype-journeys",
       "name": "phenotype-journeys",
+      "note": "| 2026-07-18 batch22-finalize: phenotype-journeys session-finalization marker; absorbed via wave6 into phenotype-journeys monorepo. Source archived on GH.",
       "path": "KooshaPari/phenotype-journeys",
-      "target": "phenotype-journeys (canonical)",
       "resolved_at": "2026-07-18",
-      "absorbed_into": "phenotype-journeys (canonical)",
-      "note": "| 2026-07-18 batch22-finalize: phenotype-journeys session-finalization marker; absorbed via wave6 into phenotype-journeys monorepo. Source archived on GH."
+      "target": "phenotype-journeys (canonical)"
     },
     {
       "archived_at": null,
       "classified_at": "2026-07-18T00:42:09.091645Z",
       "disposition": "B:WORKING",
       "final_classification": "B:WORKING",
-      "fsm": "verified",
+      "fsm": "live",
       "id": "FINAL-pheno",
       "name": "pheno",
+      "note": "| 2026-07-18 batch22-finalize: pheno is the canonical monorepo (the SUBJECT itself); verified as live spine. [CLOSED 2026-07-18: canonical confirmed]",
       "path": "KooshaPari/pheno",
-      "target": "pheno (canonical monorepo)",
       "resolved_at": "2026-07-18",
-      "verified_at": "2026-07-18",
-      "note": "| 2026-07-18 batch22-finalize: pheno is the canonical monorepo (the SUBJECT itself); verified as live spine."
+      "target": "pheno (canonical monorepo)",
+      "verified_at": "2026-07-18"
     },
     {
+      "absorbed_into": "phenotype-apps (apps/subject)",
       "archived_at": "2026-07-18",
       "classified_at": "2026-07-18T00:42:09.091645Z",
       "disposition": "B:WORKING",
@@ -5101,27 +5102,27 @@
       "fsm": "archived",
       "id": "FINAL-subject-app",
       "name": "subject-app",
+      "note": "| 2026-07-18 batch22-finalize: subject-app session-finalization; absorbed into phenotype-apps/apps/subject/. Source archived.",
       "path": "KooshaPari/subject-app",
-      "target": "phenotype-apps (apps/subject)",
       "resolved_at": "2026-07-18",
-      "absorbed_into": "phenotype-apps (apps/subject)",
-      "note": "| 2026-07-18 batch22-finalize: subject-app session-finalization; absorbed into phenotype-apps/apps/subject/. Source archived."
+      "target": "phenotype-apps (apps/subject)"
     },
     {
       "archived_at": null,
       "classified_at": "2026-07-18T00:42:09.091645Z",
       "disposition": "B:WORKING",
       "final_classification": "B:WORKING",
-      "fsm": "verified",
+      "fsm": "live",
       "id": "FINAL-phenoAI",
       "name": "phenoAI",
+      "note": "| 2026-07-18 batch22-finalize: phenoAI is the canonical AI agent monorepo (per registry strategy); verified as live spine. [CLOSED 2026-07-18: canonical confirmed]",
       "path": "KooshaPari/phenoAI",
-      "target": "phenoAI (canonical)",
       "resolved_at": "2026-07-18",
-      "verified_at": "2026-07-18",
-      "note": "| 2026-07-18 batch22-finalize: phenoAI is the canonical AI agent monorepo (per registry strategy); verified as live spine."
+      "target": "phenoAI (canonical)",
+      "verified_at": "2026-07-18"
     },
     {
+      "absorbed_into": "phenotype-apps (apps/melosviz)",
       "archived_at": "2026-07-18",
       "classified_at": "2026-07-18T00:42:09.091645Z",
       "disposition": "B:WORKING",
@@ -5129,13 +5130,13 @@
       "fsm": "archived",
       "id": "FINAL-Melosviz",
       "name": "Melosviz",
+      "note": "| 2026-07-18 batch22-finalize: Melosviz session-finalization; absorbed into phenotype-apps/apps/melosviz/. Source archived.",
       "path": "KooshaPari/Melosviz",
-      "target": "phenotype-apps (apps/melosviz)",
       "resolved_at": "2026-07-18",
-      "absorbed_into": "phenotype-apps (apps/melosviz)",
-      "note": "| 2026-07-18 batch22-finalize: Melosviz session-finalization; absorbed into phenotype-apps/apps/melosviz/. Source archived."
+      "target": "phenotype-apps (apps/melosviz)"
     },
     {
+      "absorbed_into": "substrate (canonical)",
       "archived_at": "2026-07-18",
       "classified_at": "2026-07-18T00:42:09.091645Z",
       "disposition": "B:WORKING",
@@ -5143,27 +5144,27 @@
       "fsm": "archived",
       "id": "FINAL-substrate-test",
       "name": "substrate-test",
+      "note": "| 2026-07-18 batch22-finalize: substrate-test session-finalization; absorbed into substrate monorepo. Source archived.",
       "path": "KooshaPari/substrate-test",
-      "target": "substrate (canonical)",
       "resolved_at": "2026-07-18",
-      "absorbed_into": "substrate (canonical)",
-      "note": "| 2026-07-18 batch22-finalize: substrate-test session-finalization; absorbed into substrate monorepo. Source archived."
+      "target": "substrate (canonical)"
     },
     {
       "archived_at": null,
       "classified_at": "2026-07-18T00:42:09.091645Z",
       "disposition": "B:WORKING",
       "final_classification": "B:WORKING",
-      "fsm": "verified",
+      "fsm": "live",
       "id": "FINAL-phenodocs",
       "name": "phenodocs",
+      "note": "| 2026-07-18 batch22-finalize: phenodocs is the canonical documentation hub; verified as live spine. [CLOSED 2026-07-18: canonical confirmed]",
       "path": "KooshaPari/phenodocs",
-      "target": "phenodocs (canonical)",
       "resolved_at": "2026-07-18",
-      "verified_at": "2026-07-18",
-      "note": "| 2026-07-18 batch22-finalize: phenodocs is the canonical documentation hub; verified as live spine."
+      "target": "phenodocs (canonical)",
+      "verified_at": "2026-07-18"
     },
     {
+      "absorbed_into": "phenotype-shared (.github/)",
       "archived_at": "2026-07-18",
       "classified_at": "2026-07-18T00:42:09.091645Z",
       "disposition": "B:WORKING",
@@ -5171,27 +5172,27 @@
       "fsm": "archived",
       "id": "FINAL-.github",
       "name": ".github",
+      "note": "| 2026-07-18 batch22-finalize: .github session-finalization; absorbed into phenotype-shared/.github/. Source archived.",
       "path": "KooshaPari/.github",
-      "target": "phenotype-shared (.github/)",
       "resolved_at": "2026-07-18",
-      "absorbed_into": "phenotype-shared (.github/)",
-      "note": "| 2026-07-18 batch22-finalize: .github session-finalization; absorbed into phenotype-shared/.github/. Source archived."
+      "target": "phenotype-shared (.github/)"
     },
     {
       "archived_at": null,
       "classified_at": "2026-07-18T00:42:09.091645Z",
       "disposition": "B:WORKING",
       "final_classification": "B:WORKING",
-      "fsm": "verified",
+      "fsm": "live",
       "id": "FINAL-phenotype-tooling",
       "name": "phenotype-tooling",
+      "note": "| 2026-07-18 batch22-finalize: phenotype-tooling is the canonical tooling monorepo; verified as live spine. [CLOSED 2026-07-18: canonical confirmed]",
       "path": "KooshaPari/phenotype-tooling",
-      "target": "phenotype-tooling (canonical)",
       "resolved_at": "2026-07-18",
-      "verified_at": "2026-07-18",
-      "note": "| 2026-07-18 batch22-finalize: phenotype-tooling is the canonical tooling monorepo; verified as live spine."
+      "target": "phenotype-tooling (canonical)",
+      "verified_at": "2026-07-18"
     },
     {
+      "absorbed_into": "phenotype-tooling (crates/sharecli)",
       "archived_at": "2026-07-18",
       "classified_at": "2026-07-18T00:42:09.091645Z",
       "disposition": "B:WORKING",
@@ -5199,11 +5200,10 @@
       "fsm": "archived",
       "id": "FINAL-sharecli",
       "name": "sharecli",
+      "note": "| 2026-07-18 batch22-finalize: sharecli session-finalization; absorbed into phenotype-tooling/crates/sharecli. Source archived.",
       "path": "KooshaPari/sharecli",
-      "target": "phenotype-tooling (crates/sharecli)",
       "resolved_at": "2026-07-18",
-      "absorbed_into": "phenotype-tooling (crates/sharecli)",
-      "note": "| 2026-07-18 batch22-finalize: sharecli session-finalization; absorbed into phenotype-tooling/crates/sharecli. Source archived."
+      "target": "phenotype-tooling (crates/sharecli)"
     },
     {
       "archived_at": "2026-07-17",
@@ -5558,14 +5558,14 @@
     {
       "absorbed_into": "phenotype-shared (packages/contracts/)",
       "disposition": "A:SPINE_CORE",
-      "fsm": "verified",
+      "fsm": "live",
       "id": "queue-repo-phenotype-contracts",
-      "note": "AUDITED 2026-07-17 (queue reconciliation round 7). phenotype-contracts IS the canonical 7th spine role (CONTRACTS) — must be live, NOT in queue. Restored to A:SPINE_CORE. | 2026-07-18 batch19-flip: live -> verified (canonical AFFIRM per registry note). [CLOSED 2026-07-18: A:SPINE_CORE — canonical spine kept alive; v1.6.60->v1.6.61] | 2026-07-18 batch21-drain: phenotype-contracts IS the canonical shared contracts package; verified as already-target for other absorptions.",
+      "note": "AUDITED 2026-07-17 (queue reconciliation round 7). phenotype-contracts IS the canonical 7th spine role (CONTRACTS) — must be live, NOT in queue. Restored to A:SPINE_CORE. | 2026-07-18 batch19-flip: live -> verified (canonical AFFIRM per registry note). [CLOSED 2026-07-18: A:SPINE_CORE — canonical spine kept alive; v1.6.60->v1.6.61] | 2026-07-18 batch21-drain: phenotype-contracts IS the canonical shared contracts package; verified as already-target for other absorptions. [CLOSED 2026-07-18: canonical confirmed]",
       "path": "KooshaPari/phenotype-contracts",
       "reconciled_at": "2026-07-18T01:53:33.130081Z",
+      "resolved_at": "2026-07-18",
       "target": "phenotype-shared (packages/contracts/)",
-      "verified_at": "2026-07-18",
-      "resolved_at": "2026-07-18"
+      "verified_at": "2026-07-18"
     },
     {
       "disposition": "NEVER_EXISTED",
@@ -13928,14 +13928,14 @@
       "target": "pheno (crates/agile-plus)"
     },
     {
+      "absorbed_into": "BytePort (canonical hub)",
       "disposition": "B:WORKING",
-      "fsm": "verified",
+      "fsm": "live",
       "id": "queue-repo-BytePort",
-      "note": "[QUEUED 2026-07-18] BytePort canonical hub per user — should NOT be archived. Live. [LIVE 2026-07-18: canonical hub per user directive — kept alive, NOT absorbed] | 2026-07-18 batch19-final-drain: BytePort canonical hub per user directive — kept alive. Source repo on GitHub (56 branches). [CLOSED 2026-07-18: B:WORKING canonical — kept alive; v1.6.60->v1.6.61] | 2026-07-18 batch21-drain: BytePort canonical hub per user directive — kept alive. Source repo on GitHub (56 branches).",
+      "note": "[QUEUED 2026-07-18] BytePort canonical hub per user — should NOT be archived. Live. [LIVE 2026-07-18: canonical hub per user directive — kept alive, NOT absorbed] | 2026-07-18 batch19-final-drain: BytePort canonical hub per user directive — kept alive. Source repo on GitHub (56 branches). [CLOSED 2026-07-18: B:WORKING canonical — kept alive; v1.6.60->v1.6.61] | 2026-07-18 batch21-drain: BytePort canonical hub per user directive — kept alive. Source repo on GitHub (56 branches). [CLOSED 2026-07-18: canonical confirmed]",
       "path": "KooshaPari/BytePort",
       "resolved_at": "2026-07-18",
       "target": "BytePort (canonical hub)",
-      "absorbed_into": "BytePort (canonical hub)",
       "verified_at": "2026-07-18"
     },
     {
@@ -14058,28 +14058,28 @@
       "target": "PhenoMCPServers"
     },
     {
+      "absorbed_at": "2026-07-18",
       "absorbed_into": "phenotype-fleet (bin/cli)",
       "disposition": "B:WORKING",
       "fsm": "absorbed",
       "id": "queue-repo-fleet-cli",
       "note": "[QUEUED 2026-07-18] Fleet CLI binary — boundary-specific tool for phenotype-fleet. [DEQUEUED 2026-07-18: speculative pick — no matching source repo; kept as live canonical entry] | 2026-07-18 batch19-flip: live -> verified (canonical AFFIRM per registry note). [CLOSED 2026-07-18: B:WORKING canonical — kept alive; v1.6.60->v1.6.61] | 2026-07-18 batch21-drain: Fleet CLI binary absorbed into phenotype-fleet as bin/cli. Boundary-specific tool for fleet ops.",
       "path": "KooshaPari/fleet-cli",
-      "target": "phenotype-fleet (bin/cli)",
-      "verified_at": "2026-07-18",
       "resolved_at": "2026-07-18",
-      "absorbed_at": "2026-07-18"
+      "target": "phenotype-fleet (bin/cli)",
+      "verified_at": "2026-07-18"
     },
     {
+      "absorbed_at": "2026-07-18",
       "absorbed_into": "portage (crates/sync)",
       "disposition": "B:WORKING",
       "fsm": "absorbed",
       "id": "queue-repo-portage-sync",
       "note": "[QUEUED 2026-07-18] Portage sync engine — boundary-specific crate within portage monorepo. [DEQUEUED 2026-07-18: speculative pick — no matching source repo; kept as live canonical entry] | 2026-07-18 batch19-flip: live -> verified (canonical AFFIRM per registry note). [CLOSED 2026-07-18: B:WORKING canonical — kept alive; v1.6.60->v1.6.61] | 2026-07-18 batch21-drain: Portage sync engine absorbed into portage monorepo as crates/sync. Boundary-specific crate within portage.",
       "path": "KooshaPari/portage-sync",
-      "target": "portage (crates/sync)",
-      "verified_at": "2026-07-18",
       "resolved_at": "2026-07-18",
-      "absorbed_at": "2026-07-18"
+      "target": "portage (crates/sync)",
+      "verified_at": "2026-07-18"
     },
     {
       "absorbed_into": "phenodocs (packages/design)",
@@ -14186,114 +14186,132 @@
       "target": "phenotype-registry (docs/specs/router-protocol/)"
     },
     {
+      "absorbed_into": "phenodocs (packages/design-tokens/)",
+      "archived_at": "2026-07-18",
       "disposition": "ABSORB",
       "fsm": "archived",
       "id": "q20260718-phenoDesign",
       "note": "Design tokens - boundary-specific absorbed into phenodocs. | 2026-07-18 batch20-drain: phenoDesign already absorbed via batch7 (docs/ecosystem-map/design-tokens.md + phenodocs). Canonical archived state in registry. Source archived on GH.",
       "path": "KooshaPari/phenoDesign",
-      "target": "phenodocs (packages/design-tokens/)",
       "resolved_at": "2026-07-18",
-      "absorbed_into": "phenodocs (packages/design-tokens/)",
-      "archived_at": "2026-07-18"
+      "target": "phenodocs (packages/design-tokens/)"
     },
     {
+      "absorbed_into": "pheno (crates/logkit/)",
+      "archived_at": "2026-07-18",
       "disposition": "ABSORB",
       "fsm": "archived",
       "id": "q20260718-Logify",
       "note": "Structured logging framework (logkit crate) - boundary-specific. | 2026-07-18 batch20-drain: Logify already absorbed into PhenoObservability/crates/logkit/ by airlock daemon wave 9. Canonical archived; both source and target documented.",
       "path": "KooshaPari/Logify",
-      "target": "pheno (crates/logkit/)",
       "resolved_at": "2026-07-18",
-      "absorbed_into": "pheno (crates/logkit/)",
-      "archived_at": "2026-07-18"
+      "target": "pheno (crates/logkit/)"
     },
     {
+      "absorbed_at": "2026-07-18",
+      "absorbed_into": "pheno (crates/phenotype-event-bus)",
       "disposition": "ABSORB",
       "fsm": "absorbed",
       "id": "q20260718-phenoEvents",
       "note": "EventBus port - boundary-specific absorbed into pheno. | 2026-07-18 batch20-drain: phenoEvents absorbed into pheno monorepo crates/phenotype-event-bus per registry plan. 18-branch source. Canonical.",
       "path": "KooshaPari/phenoEvents",
-      "target": "pheno (crates/phenotype-event-bus)",
       "resolved_at": "2026-07-18",
-      "absorbed_into": "pheno (crates/phenotype-event-bus)",
-      "absorbed_at": "2026-07-18"
+      "target": "pheno (crates/phenotype-event-bus)"
     },
     {
+      "absorbed_into": "phenotype-tooling (tools/kwatch)",
+      "archived_at": "2026-07-18",
       "disposition": "ABSORB",
       "fsm": "archived",
       "id": "q20260718-KWatch",
       "note": "Kubernetes monitoring Go binary - boundary-specific tool. | 2026-07-18 batch20-drain: KWatch archived in registry canonical; absorbed into phenotype-tooling via batch10.",
       "path": "KooshaPari/KWatch",
-      "target": "phenotype-tooling (tools/kwatch)",
       "resolved_at": "2026-07-18",
-      "absorbed_into": "phenotype-tooling (tools/kwatch)",
-      "archived_at": "2026-07-18"
+      "target": "phenotype-tooling (tools/kwatch)"
     },
     {
+      "absorbed_into": "phenotype-tooling (crates/benchora)",
+      "archived_at": "2026-07-18",
       "disposition": "ABSORB",
       "fsm": "archived",
       "id": "q20260718-Benchora",
       "note": "Benchmark framework crate - boundary-specific. | 2026-07-18 batch20-drain: Benchora canonical perf-harness; per repo-benchora-affirm (v1.6.29) — VERIFIED canonical AFFIRM. Registry docs/absorption/Benchora/, docs/boundary/Benchora.md.",
       "path": "KooshaPari/Benchora",
-      "target": "phenotype-tooling (crates/benchora)",
       "resolved_at": "2026-07-18",
-      "absorbed_into": "phenotype-tooling (crates/benchora)",
-      "archived_at": "2026-07-18"
+      "target": "phenotype-tooling (crates/benchora)"
     },
     {
+      "absorbed_into": "phenotype-python-sdk",
+      "archived_at": "2026-07-18",
       "disposition": "ABSORB",
       "fsm": "archived",
       "id": "q20260718-PolicyStack",
       "note": "Python policy federation CLI - boundary-specific SDK. | 2026-07-18 batch20-drain: PolicyStack absorbed via batch1+2 by airlock daemon (v1.6.20). README redirects to phenotype-tooling/crates/policystack. Canonical archived.",
       "path": "KooshaPari/PolicyStack",
-      "target": "phenotype-python-sdk",
       "resolved_at": "2026-07-18",
-      "absorbed_into": "phenotype-python-sdk",
-      "archived_at": "2026-07-18"
+      "target": "phenotype-python-sdk"
     },
     {
+      "absorbed_at": "2026-07-18",
+      "absorbed_into": "phenotype-registry (docs/specs/router-protocol/)",
       "disposition": "SUPERSEDE",
       "fsm": "absorbed",
       "id": "q20260718-router-spec",
       "note": "Router protocol spec - absorbed into registry INDEX. | 2026-07-18 batch20-drain: phenotype-router-spec already absorbed into phenotype-registry per prototype session (v1.5.5). Canonical absorbed. 4 JSON schemas + 5 docs preserved at docs/specs/router-protocol/.",
       "path": "KooshaPari/phenotype-router-spec",
-      "target": "phenotype-registry (docs/specs/router-protocol/)",
       "resolved_at": "2026-07-18",
-      "absorbed_into": "phenotype-registry (docs/specs/router-protocol/)",
-      "absorbed_at": "2026-07-18"
+      "target": "phenotype-registry (docs/specs/router-protocol/)"
     },
     {
-      "disposition": "B:WORKING",
-      "fsm": "verified",
-      "id": "q20260718-AuthKit",
-      "note": "AuthKit WorkOS-themed canonical hub kept alive. | 2026-07-18 batch20-drain: AuthKit is itself the canonical SDK row (id=921 fsm=done). Source absorbed into Authvault. This row is a re-queue dup; flip to verified.",
-      "path": "KooshaPari/AuthKit",
-      "target": "AuthKit (canonical spine)",
-      "resolved_at": "2026-07-18",
       "absorbed_into": "AuthKit (canonical spine)",
-      "verified_at": "2026-07-18"
-    },
-    {
       "disposition": "B:WORKING",
-      "fsm": "verified",
-      "id": "q20260718-phenotype-sdk",
-      "note": "phenotype-sdk canonical SDK hub kept alive. | 2026-07-18 batch20-drain: phenotype-sdk is the canonical SDK hub itself (per registry strategy); AFFIRMED. Verified, not absorbed. Already-target for other absorptions.",
-      "path": "KooshaPari/phenotype-sdk",
-      "target": "phenotype-sdk canonical SDK hub",
+      "fsm": "live",
+      "id": "q20260718-AuthKit",
+      "note": "AuthKit WorkOS-themed canonical hub kept alive. | 2026-07-18 batch20-drain: AuthKit is itself the canonical SDK row (id=921 fsm=done). Source absorbed into Authvault. This row is a re-queue dup; flip to verified. [CLOSED 2026-07-18: canonical confirmed]",
+      "path": "KooshaPari/AuthKit",
       "resolved_at": "2026-07-18",
-      "absorbed_into": "phenotype-sdk canonical SDK hub",
+      "target": "AuthKit (canonical spine)",
       "verified_at": "2026-07-18"
     },
     {
+      "absorbed_into": "phenotype-sdk canonical SDK hub",
+      "disposition": "B:WORKING",
+      "fsm": "live",
+      "id": "q20260718-phenotype-sdk",
+      "note": "phenotype-sdk canonical SDK hub kept alive. | 2026-07-18 batch20-drain: phenotype-sdk is the canonical SDK hub itself (per registry strategy); AFFIRMED. Verified, not absorbed. Already-target for other absorptions. [CLOSED 2026-07-18: canonical confirmed]",
+      "path": "KooshaPari/phenotype-sdk",
+      "resolved_at": "2026-07-18",
+      "target": "phenotype-sdk canonical SDK hub",
+      "verified_at": "2026-07-18"
+    },
+    {
+      "absorbed_at": "2026-07-18",
+      "absorbed_into": "substrate (726MB integration hub)",
       "disposition": "TOO_LARGE_RETIRE",
       "fsm": "absorbed",
       "id": "q20260718-substrate",
       "note": "substrate canonical integration hub kept alive. | 2026-07-18 batch20-drain: substrate absorbed (212-branch source, 726MB fleet runtime); canonical absorption into pheno crates/substrate. Federation target.",
       "path": "KooshaPari/substrate",
-      "target": "substrate (726MB integration hub)",
       "resolved_at": "2026-07-18",
-      "absorbed_into": "substrate (726MB integration hub)",
-      "absorbed_at": "2026-07-18"
+      "target": "substrate (726MB integration hub)"
+    },
+    {
+      "id": "repo-pheno-rt-spec-probe",
+      "name": "pheno-rt-spec-probe",
+      "fsm": "archived",
+      "archived_at": "2026-07-18",
+      "absorbed_into": "phenotype-registry",
+      "note": "Local clone of already-absorbed repo (https://github.com/KooshaPari/phenotype-router-spec.git). No separate GH source to archive. Local probe/clone of already-absorbed phenotype-router-spec. Points to same origin.",
+      "source": "local-clone-detection"
+    },
+    {
+      "id": "repo-phenotype-omlx-recovered",
+      "name": "phenotype-omlx-recovered",
+      "fsm": "archived",
+      "archived_at": "2026-07-18",
+      "absorbed_into": "phenotype-tooling",
+      "note": "Local clone of already-absorbed repo (git@github.com:KooshaPari/phenotype-omlx.git). No separate GH source to archive. Local recovery copy of phenotype-omlx, already absorbed into phenotype-tooling.",
+      "source": "local-clone-detection"
     }
   ],
   "tombstone_audit": {
@@ -14317,6 +14335,6 @@
     "rationale": "Both target repos returned 404 NOT FOUND on GitHub API. Tombstone state preserves the registry reference while marking the row as informational-only — no GitHub-side artifact exists or ever existed. Per ADR-007 §\"404 / never existed on remote\" this is the canonical disposition for phantom rows.",
     "total_never_existed_remote_rows": 5
   },
-  "updated": "2026-07-18T05:40:00.000000Z",
-  "version": "1.6.65"
+  "updated": "2026-07-18T06:00:00.000000Z",
+  "version": "1.6.67"
 }
