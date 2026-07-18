@@ -5056,110 +5056,154 @@
       "classified_at": "2026-07-18T00:42:09.091645Z",
       "disposition": "A:SPINE_CORE",
       "final_classification": "A:SPINE",
-      "fsm": "live",
+      "fsm": "verified",
       "id": "FINAL-phenotype-shared",
       "name": "phenotype-shared",
-      "path": "KooshaPari/phenotype-shared"
+      "path": "KooshaPari/phenotype-shared",
+      "target": "phenotype-shared",
+      "resolved_at": "2026-07-18",
+      "verified_at": "2026-07-18",
+      "note": "| 2026-07-18 batch22-finalize: phenotype-shared is the canonical shared libraries monorepo; verified as live spine (not absorbed)."
     },
     {
-      "archived_at": null,
+      "archived_at": "2026-07-18",
       "classified_at": "2026-07-18T00:42:09.091645Z",
       "disposition": "A:SPINE_CORE",
       "final_classification": "A:SPINE",
-      "fsm": "live",
+      "fsm": "archived",
       "id": "FINAL-phenotype-journeys",
       "name": "phenotype-journeys",
-      "path": "KooshaPari/phenotype-journeys"
+      "path": "KooshaPari/phenotype-journeys",
+      "target": "phenotype-journeys (canonical)",
+      "resolved_at": "2026-07-18",
+      "absorbed_into": "phenotype-journeys (canonical)",
+      "note": "| 2026-07-18 batch22-finalize: phenotype-journeys session-finalization marker; absorbed via wave6 into phenotype-journeys monorepo. Source archived on GH."
     },
     {
       "archived_at": null,
       "classified_at": "2026-07-18T00:42:09.091645Z",
       "disposition": "B:WORKING",
       "final_classification": "B:WORKING",
-      "fsm": "live",
+      "fsm": "verified",
       "id": "FINAL-pheno",
       "name": "pheno",
-      "path": "KooshaPari/pheno"
+      "path": "KooshaPari/pheno",
+      "target": "pheno (canonical monorepo)",
+      "resolved_at": "2026-07-18",
+      "verified_at": "2026-07-18",
+      "note": "| 2026-07-18 batch22-finalize: pheno is the canonical monorepo (the SUBJECT itself); verified as live spine."
     },
     {
-      "archived_at": null,
+      "archived_at": "2026-07-18",
       "classified_at": "2026-07-18T00:42:09.091645Z",
       "disposition": "B:WORKING",
       "final_classification": "B:WORKING",
-      "fsm": "live",
+      "fsm": "archived",
       "id": "FINAL-subject-app",
       "name": "subject-app",
-      "path": "KooshaPari/subject-app"
+      "path": "KooshaPari/subject-app",
+      "target": "phenotype-apps (apps/subject)",
+      "resolved_at": "2026-07-18",
+      "absorbed_into": "phenotype-apps (apps/subject)",
+      "note": "| 2026-07-18 batch22-finalize: subject-app session-finalization; absorbed into phenotype-apps/apps/subject/. Source archived."
     },
     {
       "archived_at": null,
       "classified_at": "2026-07-18T00:42:09.091645Z",
       "disposition": "B:WORKING",
       "final_classification": "B:WORKING",
-      "fsm": "live",
+      "fsm": "verified",
       "id": "FINAL-phenoAI",
       "name": "phenoAI",
-      "path": "KooshaPari/phenoAI"
+      "path": "KooshaPari/phenoAI",
+      "target": "phenoAI (canonical)",
+      "resolved_at": "2026-07-18",
+      "verified_at": "2026-07-18",
+      "note": "| 2026-07-18 batch22-finalize: phenoAI is the canonical AI agent monorepo (per registry strategy); verified as live spine."
     },
     {
-      "archived_at": null,
+      "archived_at": "2026-07-18",
       "classified_at": "2026-07-18T00:42:09.091645Z",
       "disposition": "B:WORKING",
       "final_classification": "B:WORKING",
-      "fsm": "live",
+      "fsm": "archived",
       "id": "FINAL-Melosviz",
       "name": "Melosviz",
-      "path": "KooshaPari/Melosviz"
+      "path": "KooshaPari/Melosviz",
+      "target": "phenotype-apps (apps/melosviz)",
+      "resolved_at": "2026-07-18",
+      "absorbed_into": "phenotype-apps (apps/melosviz)",
+      "note": "| 2026-07-18 batch22-finalize: Melosviz session-finalization; absorbed into phenotype-apps/apps/melosviz/. Source archived."
     },
     {
-      "archived_at": null,
+      "archived_at": "2026-07-18",
       "classified_at": "2026-07-18T00:42:09.091645Z",
       "disposition": "B:WORKING",
       "final_classification": "B:WORKING",
-      "fsm": "live",
+      "fsm": "archived",
       "id": "FINAL-substrate-test",
       "name": "substrate-test",
-      "path": "KooshaPari/substrate-test"
+      "path": "KooshaPari/substrate-test",
+      "target": "substrate (canonical)",
+      "resolved_at": "2026-07-18",
+      "absorbed_into": "substrate (canonical)",
+      "note": "| 2026-07-18 batch22-finalize: substrate-test session-finalization; absorbed into substrate monorepo. Source archived."
     },
     {
       "archived_at": null,
       "classified_at": "2026-07-18T00:42:09.091645Z",
       "disposition": "B:WORKING",
       "final_classification": "B:WORKING",
-      "fsm": "live",
+      "fsm": "verified",
       "id": "FINAL-phenodocs",
       "name": "phenodocs",
-      "path": "KooshaPari/phenodocs"
+      "path": "KooshaPari/phenodocs",
+      "target": "phenodocs (canonical)",
+      "resolved_at": "2026-07-18",
+      "verified_at": "2026-07-18",
+      "note": "| 2026-07-18 batch22-finalize: phenodocs is the canonical documentation hub; verified as live spine."
     },
     {
-      "archived_at": null,
+      "archived_at": "2026-07-18",
       "classified_at": "2026-07-18T00:42:09.091645Z",
       "disposition": "B:WORKING",
       "final_classification": "B:WORKING",
-      "fsm": "live",
+      "fsm": "archived",
       "id": "FINAL-.github",
       "name": ".github",
-      "path": "KooshaPari/.github"
+      "path": "KooshaPari/.github",
+      "target": "phenotype-shared (.github/)",
+      "resolved_at": "2026-07-18",
+      "absorbed_into": "phenotype-shared (.github/)",
+      "note": "| 2026-07-18 batch22-finalize: .github session-finalization; absorbed into phenotype-shared/.github/. Source archived."
     },
     {
       "archived_at": null,
       "classified_at": "2026-07-18T00:42:09.091645Z",
       "disposition": "B:WORKING",
       "final_classification": "B:WORKING",
-      "fsm": "live",
+      "fsm": "verified",
       "id": "FINAL-phenotype-tooling",
       "name": "phenotype-tooling",
-      "path": "KooshaPari/phenotype-tooling"
+      "path": "KooshaPari/phenotype-tooling",
+      "target": "phenotype-tooling (canonical)",
+      "resolved_at": "2026-07-18",
+      "verified_at": "2026-07-18",
+      "note": "| 2026-07-18 batch22-finalize: phenotype-tooling is the canonical tooling monorepo; verified as live spine."
     },
     {
-      "archived_at": null,
+      "archived_at": "2026-07-18",
       "classified_at": "2026-07-18T00:42:09.091645Z",
       "disposition": "B:WORKING",
       "final_classification": "B:WORKING",
-      "fsm": "live",
+      "fsm": "archived",
       "id": "FINAL-sharecli",
       "name": "sharecli",
-      "path": "KooshaPari/sharecli"
+      "path": "KooshaPari/sharecli",
+      "target": "phenotype-tooling (crates/sharecli)",
+      "resolved_at": "2026-07-18",
+      "absorbed_into": "phenotype-tooling (crates/sharecli)",
+      "note": "| 2026-07-18 batch22-finalize: sharecli session-finalization; absorbed into phenotype-tooling/crates/sharecli. Source archived."
     },
     {
       "archived_at": "2026-07-17",
@@ -14273,6 +14317,6 @@
     "rationale": "Both target repos returned 404 NOT FOUND on GitHub API. Tombstone state preserves the registry reference while marking the row as informational-only — no GitHub-side artifact exists or ever existed. Per ADR-007 §\"404 / never existed on remote\" this is the canonical disposition for phantom rows.",
     "total_never_existed_remote_rows": 5
   },
-  "updated": "2026-07-18T05:35:00.000000Z",
-  "version": "1.6.64"
+  "updated": "2026-07-18T05:40:00.000000Z",
+  "version": "1.6.65"
 }
