@@ -13851,10 +13851,10 @@
       "target": "phenotype-registry (INDEX spine)"
     },
     {
-      "disposition": "B:WORKING",
-      "fsm": "queued",
+      "disposition": "TOO_NOVEL_PROTECTED",
+      "fsm": "live",
       "id": "queue-repo-phenotype-router",
-      "note": "[QUEUED 2026-07-18] Router runtime \u2014 superseded by phenotype-router-spec (INDEX spine spec content).",
+      "note": "[QUEUED 2026-07-18] Router runtime \u2014 superseded by phenotype-router-spec (INDEX spine spec content). [AUDIT-RECIND 2026-07-18: SUPERSEDE was WRONG \u2014 phenotype-router is a 134KB Rust library (decision layer, ADR-050/051), not a stub. phenotype-router-spec is just 25KB of JSON schemas. SUPERSEDE would lose benchmarks, architecture docs, and decision-layer code. Per user caution principle: do not treat absorb-targets as absorbables. phenotype-router stays as a live canonical repo.]",
       "path": "KooshaPari/phenotype-router",
       "target": "phenotype-router-spec"
     },
@@ -13929,6 +13929,30 @@
       "note": "[QUEUED 2026-07-18] Fleet event sourcing \u2014 boundary-specific event store absorbed into phenotype-fleet.",
       "path": "KooshaPari/fleet-event-sourcing",
       "target": "phenotype-fleet"
+    },
+    {
+      "disposition": "B:WORKING",
+      "fsm": "queued",
+      "id": "queue-repo-AuthKit-policy",
+      "note": "[QUEUED 2026-07-18] AuthKit policy extensions \u2014 boundary-specific within AuthKit (canonical WorkOS-themed).",
+      "path": "KooshaPari/AuthKit-policy-ext",
+      "target": "AuthKit (extensions/)"
+    },
+    {
+      "disposition": "B:WORKING",
+      "fsm": "live",
+      "id": "queue-repo-fleet-cli",
+      "note": "[QUEUED 2026-07-18] Fleet CLI binary \u2014 boundary-specific tool for phenotype-fleet. [DEQUEUED 2026-07-18: speculative pick \u2014 no matching source repo; kept as live canonical entry]",
+      "path": "KooshaPari/fleet-cli",
+      "target": "phenotype-fleet (bin/cli)"
+    },
+    {
+      "disposition": "B:WORKING",
+      "fsm": "live",
+      "id": "queue-repo-portage-sync",
+      "note": "[QUEUED 2026-07-18] Portage sync engine \u2014 boundary-specific crate within portage monorepo. [DEQUEUED 2026-07-18: speculative pick \u2014 no matching source repo; kept as live canonical entry]",
+      "path": "KooshaPari/portage-sync",
+      "target": "portage (crates/sync)"
     }
   ],
   "tombstone_audit": {
@@ -13953,5 +13977,5 @@
     "total_never_existed_remote_rows": 5
   },
   "updated": "2026-07-18",
-  "version": "v1.6.55"
+  "version": "v1.6.57"
 }
