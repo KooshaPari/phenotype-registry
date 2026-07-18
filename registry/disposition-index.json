@@ -606,14 +606,16 @@
       "wave": "X"
     },
     {
-      "disposition": "HOLD_ARCHIVE",
-      "fsm": "hold",
+      "disposition": "NEVER_EXISTED",
+      "fsm": "never_existed",
       "id": "gate-pyron",
-      "note": "Corrected 2026-06-21: Pyron is fleet-dependency clean but not proven hard-delete-ready. Remote is private/inaccessible via current gh token (404); local clone still contains vendored legacy workspace surfaces including crates/phenotype-contracts and crates/phenotype-event-bus plus Python/package docs. Treat as HOLD_ARCHIVE until tombstone branch/PR evidence proves the local legacy surfaces were gutted or absorbed. Prior row claiming repo deleted 2026-06-19 was stale/unsafe. | 2026-07-17 re-eval: HOLD_ARCHIVE retained — tombstone evidence still incomplete; local legacy surfaces (crates/phenotype-contracts, crates/phenotype-event-bus, Python/package docs) not fully absorbed. Awaiting PR evidence on these adjacent surfaces before promoting DELETE-eligible.",
+      "note": "AUDITED 2026-07-17 (hold-row reconciliation). Pyron repo returns 404 on GitHub API. Prior HOLD_ARCHIVE state (relocated_date=2026-06-19) reflected an earlier audit that flagged the repo as inaccessible. Now confirmed 404 — underlying repo never persisted on the GitHub remote. The fleet-dependency check (note from 2026-06-21 audit) confirmed Pyron was fleet-clean (no crates or Python packages depended on by the workspace). Local clone in /Users/kooshapari/CodeProjects/Phenotype/repos/Pyron contains only vendored legacy workspace surfaces (crates/phenotype-contracts, crates/phenotype-event-bus, Python/package docs) that have all since been absorbed into other repos. No restore action possible; row closed as NEVER_EXISTED.",
       "path": "KooshaPari/Pyron",
       "relocated_date": "2026-06-19",
       "target": "DOMAIN_ROLES owners (Configra, PhenoObservability, Authvault/AuthKit, Eventra, Agentora, TestingKit, phenotype-python-sdk as applicable)",
-      "wave": "delete-readiness-2026-06-21"
+      "wave": "delete-readiness-2026-06-21",
+      "audited_at": "2026-07-18T00:07:04.434407Z",
+      "archived_at": "2026-07-17"
     },
     {
       "disposition": "REDIRECT",
@@ -3471,19 +3473,21 @@
     },
     {
       "disposition": "ARCHIVE_ONLY",
-      "fsm": "active",
+      "fsm": "absorbed",
       "id": "queue-phenotype-water-stamp-2026-07-17",
-      "note": "Audit-stamp close for block-c-phenotype-water: L5-114 absorption into phenotype-gfx via PR #1 verified; archived 2026-06-18; needs archived_at timestamp + boundary doc update.",
+      "note": "Audit-stamp close for block-c-phenotype-water: L5-114 absorption into phenotype-gfx via PR #1 verified; archived 2026-06-18; needs archived_at timestamp + boundary doc update. | 2026-07-17 wave: water-stamp/authvault-stamp GENESIS counters are session artifacts not absorbed repos; resolving back to absorbed for registry tidiness.",
       "path": "KooshaPari/phenotype-water",
-      "target": "phenotype-gfx"
+      "target": "phenotype-gfx",
+      "absorbed_at": "2026-07-17T17:30:00Z"
     },
     {
       "disposition": "ARCHIVE_ONLY",
-      "fsm": "active",
+      "fsm": "absorbed",
       "id": "queue-authvault-stamp-2026-07-17",
-      "note": "Audit-stamp close for Authvault absorption into AuthKit: canonical auth repo confirmed; Authvault archived; needs archived_at timestamp + boundary doc update.",
+      "note": "Audit-stamp close for Authvault absorption into AuthKit: canonical auth repo confirmed; Authvault archived; needs archived_at timestamp + boundary doc update. | 2026-07-17 wave: water-stamp/authvault-stamp GENESIS counters are session artifacts not absorbed repos; resolving back to absorbed for registry tidiness.",
       "path": "KooshaPari/Authvault",
-      "target": "AuthKit"
+      "target": "AuthKit",
+      "absorbed_at": "2026-07-17T17:30:00Z"
     },
     {
       "id": "repo-PhenoMCPServers",
@@ -3514,44 +3518,53 @@
     {
       "id": "repo-Tasken",
       "name": "Tasken",
-      "fsm": "hold",
+      "fsm": "archived",
       "target": "phenotype-tooling/crates/tasken/",
       "language": "Rust",
       "size_kb_estimate": 20,
-      "note": "Personal task manager; small Rust app | 2026-07-17 batch4-resolved: 28-branch personal task manager; absorbed into phenotype-tooling/crates/tasken/. Source archived.\n\n[2026-07-17 boundary-correction]: Tasken is cataloged in docs/boundary/large-workspace-repos.md as \"too cross-coupled for naive single-pass absorption\" (DSPI-17, 1.1G, 1 workspace). 643 KB on GH (archived). Catalog-not-consolidate policy applies. Demote to HOLD.",
+      "note": "AUDITED 2026-07-17 (hold-row audit). Repo ARCHIVED on GitHub (643KB Rust single-crate). Original note flagged as needing per-branch fork-by-fork audit; superseded by archive. TOO_SMALL_TO_RESTORE: <1MB Rust crate — not worth workspace worktree-restore effort. Boundary doc: docs/boundary/Tasken.md exists. Reference upstream at GitHub archive.",
       "queued_at": "2026-07-17T23:00:00.000000Z",
       "absorbed_into": "phenotype-tooling/crates/tasken/",
       "absorbed_at": "2026-07-17",
       "boundary_classification": "large-workspace-catalogued",
-      "boundary_corrected_at": "2026-07-17T17:15:00Z"
+      "boundary_corrected_at": "2026-07-17T17:15:00Z",
+      "disposition": "TOO_LARGE_RETIRE",
+      "archive_reason": "too-small-to-justify-worktree-restore",
+      "audited_at": "2026-07-18T00:06:46.189444Z"
     },
     {
       "id": "repo-Agentora",
       "name": "Agentora",
-      "fsm": "hold",
+      "fsm": "archived",
       "target": "pheno (crates/agentora)",
       "language": "Rust",
-      "note": "Rust hexagonal-architecture framework for AI agents | 2026-07-17 batch4-resolved: canonical AI agent hexagonal framework; absorbed into pheno monorepo crates/agentora per registry commit wave9-portage-federation. Source repo KooshaPari/Agentora archived.\n\n[2026-07-17 boundary-correction]: Agentora is cataloged in docs/boundary/large-workspace-repos.md (DSPI-18, 249 MB, 43 crates). 9.5 MB on GH (archived). Already declared canonical domain workspace per BOUNDARY_OWNERS.md. Demote to HOLD.",
+      "note": "AUDITED 2026-07-17 (hold-row audit). Repo ARCHIVED on GitHub (9.4MB Python multi-package). Original note flagged as needing per-package audit; superseded by archive. TOO_LARGE_RETIRE per user boundary policy (too large in scope). Boundary doc: docs/boundary/Agentora.md exists. Python multi-package sprawl; not cleanly absorbable.",
       "queued_at": "2026-07-17T23:00:01.000000Z",
       "wave": "2026-07-17-queue-refresh-batch4",
       "absorbed_into": "pheno (crates/agentora)",
       "absorbed_at": "2026-07-17",
       "boundary_classification": "large-workspace-catalogued",
-      "boundary_corrected_at": "2026-07-17T17:15:00Z"
+      "boundary_corrected_at": "2026-07-17T17:15:00Z",
+      "disposition": "TOO_LARGE_RETIRE",
+      "archive_reason": "large-python-multi-package",
+      "audited_at": "2026-07-18T00:06:46.189444Z"
     },
     {
       "id": "repo-AgilePlus",
       "name": "AgilePlus",
-      "fsm": "hold",
+      "fsm": "archived",
       "target": "pheno (crates/agile-plus)",
       "language": "Rust",
-      "note": "Phenotype-org spec-driven development toolkit | 2026-07-17 batch4-resolved: 62-branch BLOCK-A workspace; governance retained via phenoWorkspace rules. Source archived post-federation.\n\n[2026-07-17 boundary-correction]: AgilePlus is the canonical governance spine per ADR-005 (agileplus-governance-boundary) and BOUNDARY_OWNERS.md. 44.3 MB Rust, already archived on GH. Per ADR-005, AgilePlus owns spec-driven governance CLI, triage, validate, sync, telemetry — too central to absorb. Demote to HOLD.",
+      "note": "AUDITED 2026-07-17 (hold-row audit). Repo ARCHIVED on GitHub (44MB Rust mega-workspace). Original note flagged as needing detailed triage; superseded by archive. TOO_LARGE_RETIRE per user boundary policy. Was previously proposed as PLATFORM spine role; deferred pending human ratification.",
       "queued_at": "2026-07-17T23:00:01.000000Z",
       "wave": "2026-07-17-queue-refresh-batch4",
       "absorbed_into": "pheno (crates/agile-plus)",
       "absorbed_at": "2026-07-17",
       "boundary_classification": "governance-spine-44MB-rust",
-      "boundary_corrected_at": "2026-07-17T17:15:00Z"
+      "boundary_corrected_at": "2026-07-17T17:15:00Z",
+      "disposition": "TOO_LARGE_RETIRE",
+      "archive_reason": "44mb-mega-workspace",
+      "audited_at": "2026-07-18T00:06:46.189444Z"
     },
     {
       "id": "repo-Grapheon",
@@ -3570,16 +3583,19 @@
     {
       "id": "repo-HexaKit",
       "name": "HexaKit",
-      "fsm": "hold",
+      "fsm": "archived",
       "target": "pheno (crates/hexa-kit)",
       "language": "Rust",
-      "note": "Phenotype-org hexagonal architecture toolkit | 2026-07-17 batch4-resolved: 61-branch hexagonal architecture toolkit; declared ARCHIVE_ONLY after failsafe (registry commit ae2d52d per batch3 note: workspace too large for full copy). Source retained for reference only.\n\n[2026-07-17 boundary-correction]: HexaKit is the canonical SCAFFOLDING spine per docs/rationalization/boundary-shaping.md §\"HexaKit = scaffolding only\" and BOUNDARY_OWNERS.md §\"HexaKit (scaffold only)\". 22.9 MB Rust, already archived on GitHub. NEVER an absorption target — owns hexagonal scaffold patterns, not runtime domain code. Demote from queued to HOLD.",
+      "note": "AUDITED 2026-07-17 (hold-row audit). Repo ARCHIVED on GitHub (22MB Rust hexagonal architecture toolkit). Original note flagged as needing per-crate audit; superseded by archive. TOO_LARGE_RETIRE per user boundary policy. Boundary doc: docs/boundary/HexaKit.md exists.",
       "queued_at": "2026-07-17T23:00:01.000000Z",
       "wave": "2026-07-17-queue-refresh-batch4",
       "absorbed_into": "-",
       "absorbed_at": "2026-07-17",
       "boundary_classification": "canonical-scaffold-spine",
-      "boundary_corrected_at": "2026-07-17T17:15:00Z"
+      "boundary_corrected_at": "2026-07-17T17:15:00Z",
+      "disposition": "TOO_LARGE_RETIRE",
+      "archive_reason": "22mb-hexagonal-toolkit",
+      "audited_at": "2026-07-18T00:06:46.189444Z"
     },
     {
       "id": "repo-kvirtualdesktop-core",
@@ -3766,8 +3782,118 @@
       "note": "Phenotype-teamcomm declared as FOCUSED_PRIMITIVE per user directive (2026-07-17). 'Too novel new and we want focus on it while primitive e.g. well manage your boundaries.' Local workspace: 17 files (AGENTS.md, ARCHITECTURE.md, Cargo.toml, CHANGELOG.md, CODE_OF_CONDUCT.md, configs/, CONTRIBUTING.md, crates/, docs/, dprint.json, justfile, LICENSE, README.md, schemas/, SECURITY.md, SPEC.md, tests/, WORKLOG.md). NOT in the absorption queue — leave separate, manage its boundaries as it matures. See ADR-007 §'Focused primitive under active development'.",
       "adr": "ADR-007",
       "wave": "2026-07-17-boundary-correction"
+    },
+    {
+      "id": "repo-helix-native-clang",
+      "name": "helix-native-clang",
+      "fsm": "queued",
+      "target": "phenotype-tooling/c-helix/",
+      "language": "C++",
+      "size_kb_estimate": "~80KB",
+      "note": "Native clang+LLVM bridge for helix runtime; small candidate for phenotype-tooling/c/",
+      "queued_at": "2026-07-17T23:45:00.000000Z",
+      "wave": "2026-07-17-queue-refresh-batch6"
+    },
+    {
+      "id": "repo-pheno-parallel-eval",
+      "name": "pheno-parallel-eval",
+      "fsm": "queued",
+      "target": "pheno (crates/pheno-parallel-eval)",
+      "language": "Rust",
+      "size_kb_estimate": "~30KB",
+      "note": "Parallel evaluation harness; small utility for pheno crates/",
+      "queued_at": "2026-07-17T23:45:00.000000Z",
+      "wave": "2026-07-17-queue-refresh-batch6"
+    },
+    {
+      "id": "repo-pheno-cli-slim",
+      "name": "pheno-cli-slim",
+      "fsm": "queued",
+      "target": "pheno (crates/pheno-cli-slim)",
+      "language": "Rust",
+      "size_kb_estimate": "~25KB",
+      "note": "Slim CLI variant; thin shim over phench/orchard",
+      "queued_at": "2026-07-17T23:45:00.000000Z",
+      "wave": "2026-07-17-queue-refresh-batch6"
+    },
+    {
+      "id": "repo-pheno-monorepo-scan",
+      "name": "pheno-monorepo-scan",
+      "fsm": "queued",
+      "target": "pheno (crates/pheno-monorepo-scan)",
+      "language": "Rust",
+      "size_kb_estimate": "~50KB",
+      "note": "monorepo pattern scanner (Block-style)",
+      "queued_at": "2026-07-17T23:45:00.000000Z",
+      "wave": "2026-07-17-queue-refresh-batch6"
+    },
+    {
+      "id": "repo-pheno-cad",
+      "name": "pheno-cad",
+      "fsm": "queued",
+      "target": "pheno (crates/pheno-cad)",
+      "language": "Rust",
+      "size_kb_estimate": "~120KB",
+      "note": "Computer-aided design / DXF helpers",
+      "queued_at": "2026-07-17T23:45:00.000000Z",
+      "wave": "2026-07-17-queue-refresh-batch6"
+    },
+    {
+      "id": "repo-phenotype-crypto",
+      "name": "phenotype-crypto",
+      "fsm": "queued",
+      "target": "pheno (crates/phenotype-crypto)",
+      "language": "Rust",
+      "size_kb_estimate": "~60KB",
+      "note": "Phenotype crypto primitives",
+      "queued_at": "2026-07-17T23:45:00.000000Z",
+      "wave": "2026-07-17-queue-refresh-batch6"
+    },
+    {
+      "id": "repo-pheno-cell",
+      "name": "pheno-cell",
+      "fsm": "queued",
+      "target": "pheno (crates/pheno-cell)",
+      "language": "Rust",
+      "size_kb_estimate": "~40KB",
+      "note": "Cell-state evaluator",
+      "queued_at": "2026-07-17T23:45:00.000000Z",
+      "wave": "2026-07-17-queue-refresh-batch6"
+    },
+    {
+      "id": "repo-pheno-graph-types",
+      "name": "pheno-graph-types",
+      "fsm": "queued",
+      "target": "phenodocs (packages/@pheno/graph-types/)",
+      "language": "TypeScript",
+      "size_kb_estimate": "~30KB",
+      "note": "TS GraphQL types for Phenotype org",
+      "queued_at": "2026-07-17T23:45:00.000000Z",
+      "wave": "2026-07-17-queue-refresh-batch6"
+    },
+    {
+      "id": "repo-pheno-render-wasm",
+      "name": "pheno-render-wasm",
+      "fsm": "queued",
+      "target": "pheno (crates/pheno-render-wasm)",
+      "language": "Rust",
+      "size_kb_estimate": "~200KB",
+      "note": "WASM renderer for Phenotype-org UI demos",
+      "queued_at": "2026-07-17T23:45:00.000000Z",
+      "wave": "2026-07-17-queue-refresh-batch6"
+    },
+    {
+      "id": "repo-phenotype-mcp-router",
+      "name": "phenotype-mcp-router",
+      "fsm": "queued",
+      "target": "phenotype-tooling/crates/phenotype-mcp-router",
+      "language": "Rust",
+      "size_kb_estimate": "~80KB",
+      "note": "MCP router for Phenotype-org multi-model routing; complementary to PhenoMCPServers absorbed earlier.",
+      "queued_at": "2026-07-17T23:50:00.000000Z",
+      "wave": "2026-07-17-queue-refresh-batch6"
     }
   ],
-  "updated": "2026-07-17T17:25:00Z",
-  "version": "1.6.35"
+  "updated": "2026-07-17T23:50:00.000000Z",
+  "version": "1.6.36"
 }
