@@ -1,0 +1,15 @@
+{
+  "name": "TestingKit",
+  "languages": [
+    "python",
+    "rust"
+  ],
+  "primary_language": "rust",
+  "status": "retired",
+  "has_readme": true,
+  "has_spec": true,
+  "type": "sdk",
+  "path": "repos/TestingKit",
+  "absorbed_into": "phenotype-tooling",
+  "absorption_note": "Rust boundary (phenotype-bdd) absorbed into phenotype-tooling/crates/phenotype-bdd/ on 2026-07-17; source repo KooshaPari/TestingKit GitHub-archived via gh repo archive. Python portion previously absorbed into phenotype-python-sdk/packages/testing-kit on 2026-06-17 (34 blob divergences reconciled, 23 mcp-qa synced, 11 SDK-canonical — see packages/testing-kit/docs/operations/testing-kit-mcp-qa-reconcile.md). Final status: retired/archived."
+}

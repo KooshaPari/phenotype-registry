@@ -1,0 +1,18 @@
+{
+  "name": "phenotype-omlx",
+  "languages": ["swift"],
+  "primary_language": "swift",
+  "status": "active",
+  "has_readme": true,
+  "type": "platform",
+  "path": "repos/phenotype-omlx",
+  "domain_role": "inference",
+  "fork_parent": "jundot/omlx",
+  "engine_upstream": "jundot/omlx",
+  "disposition": "DROP",
+  "wave": "G18",
+  "branch_count": 27,
+  "adr": "ADR-ECO-016-omlx-inference-split",
+  "absorbed_into": "hwledger",
+  "note": "Active but work moving into hwledger per 2026-07-17 instructions."
+}
