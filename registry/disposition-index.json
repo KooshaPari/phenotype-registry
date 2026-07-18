@@ -3488,104 +3488,234 @@
     {
       "id": "repo-PhenoMCPServers",
       "name": "PhenoMCPServers",
-      "fsm": "queued",
+      "fsm": "absorbed",
       "target": "phenotype-tooling/crates/phench-mcp/",
       "language": "Rust",
       "size_kb_estimate": 12,
-      "note": "Phenotype MCP server set",
-      "queued_at": "2026-07-17T23:00:00.000000Z"
+      "note": "Phenotype MCP server set | 2026-07-17 batch4-resolved: 6-branch MCP server set; absorbed into phenotype-tooling/crates/phench-mcp/ alongside phench (Python project-state CLI) absorbed earlier this session. Source archived.",
+      "queued_at": "2026-07-17T23:00:00.000000Z",
+      "absorbed_into": "phenotype-tooling/crates/phench-mcp/",
+      "absorbed_at": "2026-07-17"
     },
     {
       "id": "repo-PhenoRuntime",
       "name": "PhenoRuntime",
-      "fsm": "queued",
+      "fsm": "absorbed",
       "target": "pheno",
       "language": "Rust",
       "size_kb_estimate": 100,
-      "note": "Phenotype runtime substrate",
-      "queued_at": "2026-07-17T23:00:00.000000Z"
+      "note": "Phenotype runtime substrate | 2026-07-17 batch4-resolved: 15-branch runtime substrate; absorbed into pheno monorepo crates/pheno-runtime (distinct from pheno-runtime-config absorbed into crates/pheno-runtime-config/ at v1.6.30). Source archived.",
+      "queued_at": "2026-07-17T23:00:00.000000Z",
+      "absorbed_into": "pheno (crates/pheno-runtime)",
+      "absorbed_at": "2026-07-17"
     },
     {
       "id": "repo-Tasken",
       "name": "Tasken",
-      "fsm": "queued",
+      "fsm": "absorbed",
       "target": "phenotype-tooling/crates/tasken/",
       "language": "Rust",
       "size_kb_estimate": 20,
-      "note": "Personal task manager; small Rust app",
-      "queued_at": "2026-07-17T23:00:00.000000Z"
+      "note": "Personal task manager; small Rust app | 2026-07-17 batch4-resolved: 28-branch personal task manager; absorbed into phenotype-tooling/crates/tasken/. Source archived.",
+      "queued_at": "2026-07-17T23:00:00.000000Z",
+      "absorbed_into": "phenotype-tooling/crates/tasken/",
+      "absorbed_at": "2026-07-17"
     },
     {
       "id": "repo-Agentora",
       "name": "Agentora",
-      "fsm": "queued",
+      "fsm": "absorbed",
       "target": "pheno (crates/agentora)",
       "language": "Rust",
-      "note": "Rust hexagonal-architecture framework for AI agents",
+      "note": "Rust hexagonal-architecture framework for AI agents | 2026-07-17 batch4-resolved: canonical AI agent hexagonal framework; absorbed into pheno monorepo crates/agentora per registry commit wave9-portage-federation. Source repo KooshaPari/Agentora archived.",
       "queued_at": "2026-07-17T23:00:01.000000Z",
-      "wave": "2026-07-17-queue-refresh-batch4"
+      "wave": "2026-07-17-queue-refresh-batch4",
+      "absorbed_into": "pheno (crates/agentora)",
+      "absorbed_at": "2026-07-17"
     },
     {
       "id": "repo-AgilePlus",
       "name": "AgilePlus",
-      "fsm": "queued",
+      "fsm": "archived-pending",
       "target": "pheno (crates/agile-plus)",
       "language": "Rust",
-      "note": "Phenotype-org spec-driven development toolkit",
+      "note": "Phenotype-org spec-driven development toolkit | 2026-07-17 batch4-resolved: 62-branch BLOCK-A workspace; governance retained via phenoWorkspace rules. Source archived post-federation.",
       "queued_at": "2026-07-17T23:00:01.000000Z",
-      "wave": "2026-07-17-queue-refresh-batch4"
+      "wave": "2026-07-17-queue-refresh-batch4",
+      "absorbed_into": "pheno (crates/agile-plus)",
+      "absorbed_at": "2026-07-17"
     },
     {
       "id": "repo-Grapheon",
       "name": "Grapheon",
-      "fsm": "queued",
+      "fsm": "absorbed",
       "target": "pheno (crates/grapheon)",
       "language": "Rust",
-      "note": "Canonical Grapheon graph server runtime",
+      "note": "Canonical Grapheon graph server runtime | 2026-07-17 batch4-resolved: 98-branch canonical Grapheon graph server runtime; absorbed into pheno monorepo crates/grapheon (distinct from earlier grapheon-bindings absorbed into phenotype-go-sdk/packages/graphclient/). Source archived.",
       "queued_at": "2026-07-17T23:00:01.000000Z",
-      "wave": "2026-07-17-queue-refresh-batch4"
+      "wave": "2026-07-17-queue-refresh-batch4",
+      "absorbed_into": "pheno (crates/grapheon)",
+      "absorbed_at": "2026-07-17"
     },
     {
       "id": "repo-HexaKit",
       "name": "HexaKit",
-      "fsm": "queued",
+      "fsm": "archived-pending",
       "target": "pheno (crates/hexa-kit)",
       "language": "Rust",
-      "note": "Phenotype-org hexagonal architecture toolkit",
+      "note": "Phenotype-org hexagonal architecture toolkit | 2026-07-17 batch4-resolved: 61-branch hexagonal architecture toolkit; declared ARCHIVE_ONLY after failsafe (registry commit ae2d52d per batch3 note: workspace too large for full copy). Source retained for reference only.",
       "queued_at": "2026-07-17T23:00:01.000000Z",
-      "wave": "2026-07-17-queue-refresh-batch4"
+      "wave": "2026-07-17-queue-refresh-batch4",
+      "absorbed_into": "-",
+      "absorbed_at": "2026-07-17"
     },
     {
       "id": "repo-kvirtualdesktop-core",
       "name": "kvirtualdesktop-core",
-      "fsm": "queued",
+      "fsm": "verified",
       "target": "pheno (crates/kvirtualdesktop)",
       "language": "Rust",
-      "note": "Federated kvirtualdesktop core crate",
+      "note": "Federated kvirtualdesktop core crate | 2026-07-17 batch4-resolved: portage-federated crate; tracked in portage.git refs/heads/source/... not separate GitHub repo. Canonical kvirtualdesktop-tier substrate.",
       "queued_at": "2026-07-17T23:00:01.000000Z",
-      "wave": "2026-07-17-queue-refresh-batch4"
+      "wave": "2026-07-17-queue-refresh-batch4",
+      "absorbed_into": "portage.git (federated)",
+      "absorbed_at": "2026-07-17"
     },
     {
       "id": "repo-phenotype-config",
       "name": "phenotype-config",
-      "fsm": "queued",
+      "fsm": "verified",
       "target": "pheno (crates/phenotype-config)",
       "language": "Rust",
-      "note": "Federated phenotype config crate",
+      "note": "Federated phenotype config crate | 2026-07-17 batch4-resolved: portage-federated crate (distinct from phenoConfig repo); tracked in portage.git. Canonical federated phenotype-config substrate.",
       "queued_at": "2026-07-17T23:00:01.000000Z",
-      "wave": "2026-07-17-queue-refresh-batch4"
+      "wave": "2026-07-17-queue-refresh-batch4",
+      "absorbed_into": "portage.git (federated)",
+      "absorbed_at": "2026-07-17"
     },
     {
       "id": "repo-phenocompose",
       "name": "phenocompose",
-      "fsm": "archived-pending",
+      "fsm": "archived",
       "target": "phenotype-registry (docs/boundary/phenocompose.md)",
       "language": "Rust",
-      "note": "High-confidence archive-only (audited 2026-06-23)",
+      "note": "High-confidence archive-only (audited 2026-06-23) | 2026-07-17 batch4-resolved: 112-branch workspace; per 2026-06-23 audit, high-confidence archive-only. Boundary doc retained at docs/boundary/PhenoCompose.md. Source archived.",
       "queued_at": "2026-07-17T23:00:01.000000Z",
-      "wave": "2026-07-17-queue-refresh-batch4"
+      "wave": "2026-07-17-queue-refresh-batch4",
+      "absorbed_into": "-",
+      "absorbed_at": "2026-07-17"
+    },
+    {
+      "id": "repo-pf-virtuoso",
+      "name": "pf-virtuoso",
+      "fsm": "queued",
+      "target": "pheno (crates/pf-virtuoso)",
+      "language": "Rust",
+      "size_kb_estimate": "40KB",
+      "note": "rhai scripting + Phenotype federation glue",
+      "queued_at": "2026-07-17T23:30:00.000000Z",
+      "wave": "2026-07-17-queue-refresh-batch5"
+    },
+    {
+      "id": "repo-PhenotypeOpsKernels",
+      "name": "PhenotypeOpsKernels",
+      "fsm": "queued",
+      "target": "pheno (crates/phenotype-ops-kernels)",
+      "language": "Rust",
+      "size_kb_estimate": "~200KB",
+      "note": "low-level kernels for phenotype-ops ops layer",
+      "queued_at": "2026-07-17T23:30:00.000000Z",
+      "wave": "2026-07-17-queue-refresh-batch5"
+    },
+    {
+      "id": "repo-PhenoClaw",
+      "name": "PhenoClaw",
+      "fsm": "queued",
+      "target": "pheno (crates/pheno-claw)",
+      "language": "Rust",
+      "size_kb_estimate": "~50KB",
+      "note": "CLI orchestrator (worktree-aware)",
+      "queued_at": "2026-07-17T23:30:00.000000Z",
+      "wave": "2026-07-17-queue-refresh-batch5"
+    },
+    {
+      "id": "repo-pheno-bench-harness",
+      "name": "pheno-bench-harness",
+      "fsm": "queued",
+      "target": "pheno (crates/pheno-bench-harness)",
+      "language": "Rust",
+      "size_kb_estimate": "~600KB",
+      "note": "Phenotype bench harness",
+      "queued_at": "2026-07-17T23:30:00.000000Z",
+      "wave": "2026-07-17-queue-refresh-batch5"
+    },
+    {
+      "id": "repo-helios-cli-slim",
+      "name": "helios-cli-slim",
+      "fsm": "queued",
+      "target": "pheno (crates/helios-cli-slim)",
+      "language": "Rust",
+      "size_kb_estimate": "~30KB",
+      "note": "Helios CLI slim fork",
+      "queued_at": "2026-07-17T23:30:00.000000Z",
+      "wave": "2026-07-17-queue-refresh-batch5"
+    },
+    {
+      "id": "repo-pheno-design-ops",
+      "name": "pheno-design-ops",
+      "fsm": "queued",
+      "target": "phenodocs (docs/design-ops/)",
+      "language": "Python",
+      "size_kb_estimate": "~25KB",
+      "note": "design-ops docs automation",
+      "queued_at": "2026-07-17T23:30:00.000000Z",
+      "wave": "2026-07-17-queue-refresh-batch5"
+    },
+    {
+      "id": "repo-phenopipe",
+      "name": "phenopipe",
+      "fsm": "queued",
+      "target": "phenotype-python-sdk (packages/phenopipe/)",
+      "language": "Python",
+      "size_kb_estimate": "~12KB",
+      "note": "data pipeline primitives",
+      "queued_at": "2026-07-17T23:30:00.000000Z",
+      "wave": "2026-07-17-queue-refresh-batch5"
+    },
+    {
+      "id": "repo-pheno-blocks",
+      "name": "pheno-blocks",
+      "fsm": "queued",
+      "target": "phenodocs (packages/@pheno/blocks/)",
+      "language": "TypeScript",
+      "size_kb_estimate": "~80KB",
+      "note": "VuePress/VitePress blocks",
+      "queued_at": "2026-07-17T23:30:00.000000Z",
+      "wave": "2026-07-17-queue-refresh-batch5"
+    },
+    {
+      "id": "repo-OmniRoute",
+      "name": "OmniRoute",
+      "fsm": "queued",
+      "target": "pheno (crates/omniroute-cli)",
+      "language": "Rust",
+      "size_kb_estimate": "~150KB",
+      "note": "single-endpoint dispatch CLI",
+      "queued_at": "2026-07-17T23:30:00.000000Z",
+      "wave": "2026-07-17-queue-refresh-batch5"
+    },
+    {
+      "id": "repo-KAIROS",
+      "name": "KAIROS",
+      "fsm": "queued",
+      "target": "pheno (crates/kairos)",
+      "language": "Rust",
+      "size_kb_estimate": "~75KB",
+      "note": "time-aware orchestration",
+      "queued_at": "2026-07-17T23:30:00.000000Z",
+      "wave": "2026-07-17-queue-refresh-batch5"
     }
   ],
-  "updated": "2026-07-17T23:00:01.000000Z",
-  "version": "1.6.31"
+  "updated": "2026-07-17T23:30:00.000000Z",
+  "version": "1.6.32"
 }
