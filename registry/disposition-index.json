@@ -4338,11 +4338,11 @@
       "classified_at": "2026-07-18T00:42:09.091645Z",
       "disposition": "B:WORKING",
       "final_classification": "B:WORKING",
-      "fsm": "verified",
+      "fsm": "done",
       "id": "repo-phenotype-hub",
       "language": "Markdown",
       "name": "phenotype-hub",
-      "note": "Markdown hub doc; absorb as registry doc | 2026-07-18 batch9-resolved: phenotype-hub (598 LOC Markdown, Phenotype-org hub doc) already absorbed into phenodocs per gw-phenotype-hub. Source archive pending GH auth. | 2026-07-18 batch19-flip: live -> absorbed (target documented, absorption per registry note). | 2026-07-18: marked delete_eligible (GH archived + forensic copy in registry/absorbed-crates/). Pending gh auth refresh for delete_repo scope. | 2026-07-18: delete_eligible REMOVED per user directive \u2014 repo should live as canonical.",
+      "note": "Markdown hub doc; absorb as registry doc | 2026-07-18 batch9-resolved: phenotype-hub (598 LOC Markdown, Phenotype-org hub doc) already absorbed into phenodocs per gw-phenotype-hub. Source archive pending GH auth. | 2026-07-18 batch19-flip: live -> absorbed (target documented, absorption per registry note). | 2026-07-18: marked delete_eligible (GH archived + forensic copy in registry/absorbed-crates/). Pending gh auth refresh for delete_repo scope. | 2026-07-18: delete_eligible REMOVED per user directive \u2014 repo should live as canonical. [CLOSED 2026-07-18: processed]",
       "queued_at": "2026-07-18T00:35:00.000000Z",
       "target": "phenodocs (docs/hub/phenotype-hub.md)",
       "verified_at": "2026-07-18",
@@ -14449,5 +14449,5 @@
     "total_never_existed_remote_rows": 5
   },
   "updated": "2026-07-18",
-  "version": "1.6.72"
+  "version": "1.6.73"
 }
