@@ -1,0 +1,26 @@
+{
+  "$schema": "http://cyclonedx.org/schema/bom-1.6.schema.json",
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.6",
+  "serialNumber": "urn:uuid:f6783621-5239-4a56-b738-2d4c17eaa143",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-06-28T12:43:29-07:00",
+    "tools": {
+      "components": [
+        {
+          "type": "application",
+          "author": "anchore",
+          "name": "syft",
+          "version": "1.42.1"
+        }
+      ]
+    },
+    "component": {
+      "bom-ref": "21c0c0242ff61ede",
+      "type": "file",
+      "name": "requirements.txt",
+      "version": "sha256:18b264f27b09a2eb1ce83eae506e97c0a7b5992661e8d8fe31e78d1026e6a572"
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.5",
+  "version": 1,
+  "components": [],
+  "_fallback": true,
+  "_lockfile": "Tokn-wt-feat-clap-ext-adopt-rebased-2026-06-14/Cargo.lock"
+}

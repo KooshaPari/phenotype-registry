@@ -1,0 +1,17 @@
+{
+  "name": "Quillr",
+  "languages": [
+    "rust"
+  ],
+  "primary_language": "rust",
+  "status": "active",
+  "has_readme": true,
+  "type": "library",
+  "path": "repos/Quillr",
+  "disposition": "ABSORB",
+  "wave": "2026-07-17-queue-refresh",
+  "absorbed_into": "Httpora",
+  "absorption_note": "Rust HTTP repo with self-acknowledged naming drift (README: 'repo Quillr/README quill\u2026to reconcile'); 23 branches, 266KB. Per RATIONALIZATION_PLAN.md #14: 'Httpora + Quillr | half-baked HTTP repos | reconcile identity/name first'. Target: Httpora (reconciliation).",
+  "note": "Audited 2026-07-17; reconcile name first with Httpora owner before transfer.",
+  "adr": "ADR-ECO-014"
+}
