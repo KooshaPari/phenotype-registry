@@ -5474,9 +5474,9 @@
     },
     {
       "disposition": "ABSORB",
-      "fsm": "queued",
+      "fsm": "absorbed",
       "id": "queue-repo-phenoEvents",
-      "note": "AUDITED 2026-07-17 (queue reconciliation round 7). Repo `phenoEvents` ARCHIVED on GH \u2014 already physically absorbed into pheno/crates/phenotype-event-bus/ in earlier session (commit a22760c, 45 tests pass). Source archived per absorption policy. Promote from queued to absorbed.",
+      "note": "AUDITED 2026-07-17 (queue reconciliation round 7). Repo `phenoEvents` ARCHIVED on GH \u2014 already physically absorbed into pheno/crates/phenotype-event-bus/ in earlier session (commit a22760c, 45 tests pass). Source archived per absorption policy. Promote from queued to absorbed. [PROMOTED 2026-07-18: per audit-stamp \u2014 source archived on GH, code in pheno/crates/phenotype-event-bus/]",
       "path": "KooshaPari/phenoEvents",
       "reconciled_at": "2026-07-18T01:53:33.130081Z",
       "target": "pheno (crates/pheno-events/)"
@@ -13771,13 +13771,16 @@
       "wave": "2026-07-18-queue-refresh-batch15"
     },
     {
+      "absorbed_at": "2026-07-18",
+      "absorbed_into": "pheno (crates/eidolon-{core,desktop,mobile,sandbox,phenotype-error-core}/)",
+      "archive_pending": true,
       "branch_count": 92,
       "disposition": "B:WORKING",
-      "fsm": "queued",
+      "fsm": "absorbed",
       "id": "repo-Eidolon",
       "language": "?",
       "name": "Eidolon",
-      "note": "| 2026-07-18 batch15: Eidolon (92 branches, real GH repo) \u2014 re-queue for absorption. Target pheno monorepo crates/eidolon/. [PROMOTED 2026-07-18: Eidolon is canonical hub per user \u2014 92 branches, real GH repo, live]",
+      "note": "| 2026-07-18 batch15: Eidolon (92 branches, real GH repo) \u2014 re-queue for absorption. Target pheno monorepo crates/eidolon/. [PROMOTED 2026-07-18: Eidolon is canonical hub per user \u2014 92 branches, real GH repo, live] | 2026-07-18 batch15-execute: Eidolon (92-branch source, 6094 LOC Rust, 5 crates) absorbed into pheno monorepo. Forensic copy retained at registry/absorbed-crates/eidolon/. Boundary spec at docs/boundary/eidolon.md. Source archive pending GH auth.",
       "queued_at": "2026-07-18T03:30:00.000000Z",
       "resolved_at": "2026-07-18",
       "target": "pheno (crates/eidolon)",
@@ -13785,67 +13788,147 @@
     },
     {
       "disposition": "B:WORKING",
-      "fsm": "queued",
+      "fsm": "live",
       "id": "queue-FINAL-phenoAI",
-      "note": "[QUEUED 2026-07-18] AI research workspace - specific to a boundary. Good collection. Live canonical.",
+      "note": "[QUEUED 2026-07-18] AI research workspace - specific to a boundary. Good collection. Live canonical. [LIVE 2026-07-18: canonical hub per user directive \u2014 kept alive, NOT absorbed]",
       "path": "KooshaPari/phenoAI",
       "target": "pheno AI workspace"
     },
     {
       "disposition": "TOO_LARGE_RETIRE",
-      "fsm": "queued",
+      "fsm": "live",
       "id": "queue-repo-PhenoRuntime",
-      "note": "[QUEUED 2026-07-18] 13-crate Rust workspace TOO_LARGE_RETIRE. Kept live (not absorbed) per user principle.",
+      "note": "[QUEUED 2026-07-18] 13-crate Rust workspace TOO_LARGE_RETIRE. Kept live (not absorbed) per user principle. [LIVE 2026-07-18: canonical hub per user directive \u2014 kept alive, NOT absorbed]",
       "path": "KooshaPari/PhenoRuntime",
       "target": "phenotype-legacy-collection"
     },
     {
       "disposition": "B:WORKING",
-      "fsm": "queued",
+      "fsm": "live",
       "id": "queue-repo-AgilePlus",
-      "note": "[QUEUED 2026-07-18] AgilePlus canonical hub per user \u2014 should NOT be archived. Live.",
+      "note": "[QUEUED 2026-07-18] AgilePlus canonical hub per user \u2014 should NOT be archived. Live. [LIVE 2026-07-18: canonical hub per user directive \u2014 kept alive, NOT absorbed]",
       "path": "KooshaPari/AgilePlus",
       "target": "pheno (crates/agile-plus)"
     },
     {
       "disposition": "B:WORKING",
-      "fsm": "queued",
+      "fsm": "live",
       "id": "queue-repo-BytePort",
-      "note": "[QUEUED 2026-07-18] BytePort canonical hub per user \u2014 should NOT be archived. Live.",
+      "note": "[QUEUED 2026-07-18] BytePort canonical hub per user \u2014 should NOT be archived. Live. [LIVE 2026-07-18: canonical hub per user directive \u2014 kept alive, NOT absorbed]",
       "path": "KooshaPari/BytePort",
       "target": "-"
     },
     {
       "disposition": "TOO_LARGE_RETIRE",
-      "fsm": "queued",
+      "fsm": "live",
       "id": "queue-repo-Tracera",
-      "note": "[QUEUED 2026-07-18] Tracera 1.1GB Rust workspace - canonical hub. TOO_LARGE_RETIRE means keep live.",
+      "note": "[QUEUED 2026-07-18] Tracera 1.1GB Rust workspace - canonical hub. TOO_LARGE_RETIRE means keep live. [LIVE 2026-07-18: canonical hub per user directive \u2014 kept alive, NOT absorbed]",
       "path": "KooshaPari/Tracera",
       "target": "Tracera (1.1GB Rust workspace)"
     },
     {
       "disposition": "B:WORKING",
-      "fsm": "queued",
+      "fsm": "live",
       "id": "queue-repo-pheno-context",
-      "note": "[QUEUED 2026-07-18] pheno-context canonical hub. Live.",
+      "note": "[QUEUED 2026-07-18] pheno-context canonical hub. Live. [LIVE 2026-07-18: canonical hub per user directive \u2014 kept alive, NOT absorbed]",
       "path": "KooshaPari/pheno-context",
       "target": "pheno (monorepo)"
     },
     {
       "disposition": "B:WORKING",
-      "fsm": "queued",
+      "fsm": "live",
       "id": "queue-repo-pheno-research",
-      "note": "[QUEUED 2026-07-18] Python research service - specific to a boundary. Good collection.",
+      "note": "[QUEUED 2026-07-18] Python research service - specific to a boundary. Good collection. [LIVE 2026-07-18: canonical hub per user directive \u2014 kept alive, NOT absorbed]",
       "path": "KooshaPari/phenoResearchEngine",
       "target": "pheno research engine"
     },
     {
       "disposition": "B:WORKING",
-      "fsm": "queued",
+      "fsm": "live",
       "id": "queue-repo-PhenoSpecs",
-      "note": "[QUEUED 2026-07-18] PhenoSpecs spec content for the INDEX spine. Good collection.",
+      "note": "[QUEUED 2026-07-18] PhenoSpecs spec content for the INDEX spine. Good collection. [LIVE 2026-07-18: canonical hub per user directive \u2014 kept alive, NOT absorbed]",
       "path": "KooshaPari/PhenoSpecs",
       "target": "phenotype-registry (INDEX spine)"
+    },
+    {
+      "disposition": "B:WORKING",
+      "fsm": "queued",
+      "id": "queue-repo-phenotype-router",
+      "note": "[QUEUED 2026-07-18] Router runtime \u2014 superseded by phenotype-router-spec (INDEX spine spec content).",
+      "path": "KooshaPari/phenotype-router",
+      "target": "phenotype-router-spec"
+    },
+    {
+      "disposition": "TOO_LARGE_RETIRE",
+      "fsm": "queued",
+      "id": "queue-repo-agentora",
+      "note": "[QUEUED 2026-07-18] Agentora canonical hub \u2014 kept live, not absorbed per user principle.",
+      "path": "KooshaPari/Agentora",
+      "target": "-"
+    },
+    {
+      "disposition": "TOO_LARGE_RETIRE",
+      "fsm": "queued",
+      "id": "queue-repo-substrate",
+      "note": "[QUEUED 2026-07-18] substrate canonical hub \u2014 kept live.",
+      "path": "KooshaPari/substrate",
+      "target": "-"
+    },
+    {
+      "disposition": "TOO_LARGE_RETIRE",
+      "fsm": "queued",
+      "id": "queue-repo-portage",
+      "note": "[QUEUED 2026-07-18] portage canonical hub \u2014 kept live.",
+      "path": "KooshaPari/portage",
+      "target": "-"
+    },
+    {
+      "disposition": "B:WORKING",
+      "fsm": "queued",
+      "id": "queue-repo-authvault",
+      "note": "[QUEUED 2026-07-18] Authvault \u2014 superseded by AuthKit (canonical WorkOS-themed spine).",
+      "path": "KooshaPari/Authvault",
+      "target": "AuthKit"
+    },
+    {
+      "disposition": "B:WORKING",
+      "fsm": "queued",
+      "id": "queue-repo-phenowater",
+      "note": "[QUEUED 2026-07-18] phenotype-water \u2014 absorbed into phenotype-gfx (graphics boundary).",
+      "path": "KooshaPari/phenotype-water",
+      "target": "phenotype-gfx"
+    },
+    {
+      "disposition": "B:WORKING",
+      "fsm": "queued",
+      "id": "queue-repo-stashly",
+      "note": "[QUEUED 2026-07-18] Rust caching framework \u2014 boundary-specific crate absorbed into pheno.",
+      "path": "KooshaPari/Stashly",
+      "target": "pheno (crates/stashly)"
+    },
+    {
+      "disposition": "B:WORKING",
+      "fsm": "queued",
+      "id": "queue-repo-phenomcp",
+      "note": "[QUEUED 2026-07-18] PhenoMCP source \u2014 absorbed into PhenoMCPServers+substrate per ADR-017.",
+      "path": "KooshaPari/PhenoMCP",
+      "target": "PhenoMCPServers+substrate"
+    },
+    {
+      "disposition": "B:WORKING",
+      "fsm": "queued",
+      "id": "queue-fleet-rpc-router",
+      "note": "[QUEUED 2026-07-18] Fleet RPC router \u2014 boundary-specific dispatcher absorbed into phenotype-fleet.",
+      "path": "KooshaPari/fleet-rpc-router",
+      "target": "phenotype-fleet"
+    },
+    {
+      "disposition": "B:WORKING",
+      "fsm": "queued",
+      "id": "queue-fleet-event-sourcing",
+      "note": "[QUEUED 2026-07-18] Fleet event sourcing \u2014 boundary-specific event store absorbed into phenotype-fleet.",
+      "path": "KooshaPari/fleet-event-sourcing",
+      "target": "phenotype-fleet"
     }
   ],
   "tombstone_audit": {
@@ -13870,5 +13953,5 @@
     "total_never_existed_remote_rows": 5
   },
   "updated": "2026-07-18",
-  "version": "v1.6.51"
+  "version": "v1.6.55"
 }
