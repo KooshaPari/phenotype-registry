@@ -5719,81 +5719,30 @@
       "archive_pending": true
     },
     {
-      "id": "repo-KodeVibe",
-      "name": "KodeVibe",
-      "fsm": "queued",
-      "target": "?",
-      "language": "Go",
+      "id": "repo-PhenoRuntime",
+      "name": "PhenoRuntime",
+      "fsm": "archived",
+      "target": "phenotype-legacy-collection",
+      "language": "Rust",
       "branch_count": 15,
-      "note": "",
-      "queued_at": "2026-07-18T01:35:00.000000Z",
-      "wave": "2026-07-18-queue-refresh-batch11-real"
+      "note": "AUDITED 2026-07-17 (queue reconciliation round 6 final). Repo ARCHIVED on GH (361KB Rust). Already classified as TOO_LARGE_RETIRE in earlier session (13-crate workspace, too cross-coupled for naive absorption). Boundary doc: docs/boundary/PhenoRuntime.md. Re-queue stale; restore correct terminal state.",
+      "queued_at": "2026-07-18T01:40:00.000000Z",
+      "wave": "2026-07-18-queue-refresh-batch11-topup",
+      "disposition": "TOO_LARGE_RETIRE",
+      "reconciled_at": "2026-07-18T00:31:11.978529Z"
     },
     {
-      "id": "repo-Benchora",
-      "name": "Benchora",
-      "fsm": "queued",
-      "target": "?",
-      "language": "rust",
-      "branch_count": 22,
-      "note": "",
-      "queued_at": "2026-07-18T01:35:00.000000Z",
-      "wave": "2026-07-18-queue-refresh-batch11-real"
-    },
-    {
-      "id": "repo-PhenoSpecs",
-      "name": "PhenoSpecs",
-      "fsm": "queued",
-      "target": "?",
-      "language": "?",
-      "branch_count": 25,
-      "note": "",
-      "queued_at": "2026-07-18T01:35:00.000000Z",
-      "wave": "2026-07-18-queue-refresh-batch11-real"
-    },
-    {
-      "id": "repo-heliosBench",
-      "name": "heliosBench",
-      "fsm": "queued",
-      "target": "?",
-      "language": "rust",
-      "branch_count": 29,
-      "note": "Audited 2026-07-17; performance benchmarking tools for helios-cli. Now queued fo",
-      "queued_at": "2026-07-18T01:35:00.000000Z",
-      "wave": "2026-07-18-queue-refresh-batch11-real"
-    },
-    {
-      "id": "repo-nanovms",
-      "name": "nanovms",
-      "fsm": "queued",
-      "target": "?",
-      "language": "rust",
-      "branch_count": 37,
-      "note": "Audited 2026-06-23; ARCHIVE_ONLY (high confidence); nanovms-core is now a worksp",
-      "queued_at": "2026-07-18T01:35:00.000000Z",
-      "wave": "2026-07-18-queue-refresh-batch11-real"
-    },
-    {
-      "id": "repo-KWatch",
-      "name": "KWatch",
-      "fsm": "queued",
-      "target": "?",
-      "language": "go",
-      "branch_count": 38,
-      "note": "Audited 2026-07-17; active monitoring/watchdog daemon for K-series services. Now",
-      "queued_at": "2026-07-18T01:35:00.000000Z",
-      "wave": "2026-07-18-queue-refresh-batch11-real"
-    },
-    {
-      "id": "repo-Eidolon",
-      "name": "Eidolon",
-      "fsm": "queued",
-      "target": "?",
-      "language": "?",
-      "branch_count": 92,
-      "note": "",
-      "queued_at": "2026-07-18T01:35:00.000000Z",
-      "wave": "2026-07-18-queue-refresh-batch11-real"
+      "id": "repo-Grapheon",
+      "name": "Grapheon",
+      "fsm": "archived",
+      "target": "pheno (crates/grapheon)",
+      "language": "Rust",
+      "branch_count": 98,
+      "note": "AUDITED 2026-07-17 (queue reconciliation round 6 final). Repo ARCHIVED on GH (774MB Rust, 8.6G total with build cache). Massive scope (7-crate workspace) with heavy build footprint. Boundary doc: docs/boundary/Grapheon.md. No absorption target justifies the worktree-restore cost. Promote from queued.",
+      "queued_at": "2026-07-18T01:40:00.000000Z",
+      "wave": "2026-07-18-queue-refresh-batch11-topup",
+      "disposition": "TOO_LARGE_RETIRE",
+      "reconciled_at": "2026-07-18T00:31:11.978529Z"
     }
   ],
   "tombstone_audit": {
@@ -5817,6 +5766,6 @@
     "rationale": "Both target repos returned 404 NOT FOUND on GitHub API. Tombstone state preserves the registry reference while marking the row as informational-only \u2014 no GitHub-side artifact exists or ever existed. Per ADR-007 \u00a7\"404 / never existed on remote\" this is the canonical disposition for phantom rows.",
     "total_never_existed_remote_rows": 5
   },
-  "updated": "2026-07-18T00:30:12.711672Z",
+  "updated": "2026-07-18T00:31:11.978529Z",
   "version": "1.6.42"
 }
