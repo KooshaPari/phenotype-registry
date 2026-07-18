@@ -73,9 +73,43 @@ where
         if !self.nodes.contains(&to) {
             return Err(DagError::NodeNotFound(format!("{:?}", to)));
         }
-        self.children.entry(from.clone()).or_default().push(to.clone());
+        if from == to || self.has_path(&to, &from) {
+            return Err(DagError::CycleDetected(
+                format!("{:?}", from),
+                format!("{:?}", to),
+            ));
+        }
+        self.children
+            .entry(from.clone())
+            .or_default()
+            .push(to.clone());
         self.parents.entry(to).or_default().push(from);
         Ok(())
+    }
+
+    fn has_path(&self, start: &K, target: &K) -> bool {
+        let mut stack = vec![start];
+        let mut visited = HashSet::new();
+
+        while let Some(node) = stack.pop() {
+            if node == target {
+                return true;
+            }
+            if visited.insert(node) {
+                stack.extend(self.children_of(node).unwrap_or(&[]));
+            }
+        }
+
+        false
+    }
+
+    #[cfg(test)]
+    pub(crate) fn add_edge_unchecked(&mut self, from: K, to: K) {
+        self.children
+            .entry(from.clone())
+            .or_default()
+            .push(to.clone());
+        self.parents.entry(to).or_default().push(from);
     }
 
     // -----------------------------------------------------------------------
@@ -173,6 +207,26 @@ mod tests {
         assert_eq!(dag.edge_count(), 1);
         assert_eq!(dag.children_of(&"a"), Some(&["b"][..]));
         assert_eq!(dag.parents_of(&"b"), Some(&["a"][..]));
+    }
+
+    #[test]
+    fn rejects_direct_and_transitive_cycles_without_mutating_graph() {
+        let mut dag = Dag::new();
+        for node in ["a", "b", "c"] {
+            dag.add_node(node).unwrap();
+        }
+        dag.add_edge("a", "b").unwrap();
+        dag.add_edge("b", "c").unwrap();
+
+        assert!(matches!(
+            dag.add_edge("c", "a"),
+            Err(DagError::CycleDetected(_, _))
+        ));
+        assert!(matches!(
+            dag.add_edge("a", "a"),
+            Err(DagError::CycleDetected(_, _))
+        ));
+        assert_eq!(dag.edge_count(), 2);
     }
 
     #[test]

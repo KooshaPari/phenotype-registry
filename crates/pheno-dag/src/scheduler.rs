@@ -20,7 +20,7 @@ use crate::topo;
 
 /// A wall of parallel-execution buckets produced by the scheduler.
 ///
-/// Buckets are ordered: bucket[0] must finish before bucket[1] starts, etc.
+/// Buckets are ordered: bucket\[0\] must finish before bucket\[1\] starts, etc.
 /// Within a bucket all nodes are independent and can be scheduled in parallel.
 pub struct Schedule<K> {
     /// Ordered list of buckets. Each bucket is a set of node references.
@@ -164,10 +164,7 @@ mod tests {
         assert_eq!(sched.max_concurrency, 3); // a1, a2, a3 in parallel
 
         let b1: std::collections::BTreeSet<_> = sched.buckets[1].iter().collect();
-        assert_eq!(
-            b1,
-            std::collections::BTreeSet::from([&"a1", &"a2", &"a3"])
-        );
+        assert_eq!(b1, std::collections::BTreeSet::from([&"a1", &"a2", &"a3"]));
     }
 
     #[test]
@@ -196,7 +193,7 @@ mod tests {
         }
         dag.add_edge("x", "y").unwrap();
         dag.add_edge("y", "z").unwrap();
-        dag.add_edge("z", "x").unwrap();
+        dag.add_edge_unchecked("z", "x");
         assert!(schedule(&dag).is_err());
     }
 

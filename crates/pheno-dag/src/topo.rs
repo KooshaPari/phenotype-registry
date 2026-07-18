@@ -182,7 +182,7 @@ mod tests {
         }
         dag.add_edge("a", "b").unwrap();
         dag.add_edge("b", "c").unwrap();
-        dag.add_edge("c", "a").unwrap(); // cycle
+        dag.add_edge_unchecked("c", "a"); // exercise defensive cycle detection
 
         assert!(kahn_sort(&dag).is_err());
     }
@@ -226,7 +226,7 @@ mod tests {
         }
         dag.add_edge("a", "b").unwrap();
         dag.add_edge("b", "c").unwrap();
-        dag.add_edge("c", "a").unwrap();
+        dag.add_edge_unchecked("c", "a");
         assert!(dfs_sort(&dag).is_err());
     }
 

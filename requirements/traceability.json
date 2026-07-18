@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "requirements": [
+    {
+      "id": "FR-DAG-001",
+      "description": "Create nodes and directed edges and query graph relationships.",
+      "level": "unit",
+      "tests": [
+        {"path": "crates/pheno-dag/src/dag.rs", "name": "simple_edge"}
+      ]
+    },
+    {
+      "id": "FR-DAG-002",
+      "description": "Reject direct and transitive cycles without mutating the graph.",
+      "level": "unit",
+      "tests": [
+        {"path": "crates/pheno-dag/src/dag.rs", "name": "rejects_direct_and_transitive_cycles_without_mutating_graph"}
+      ]
+    },
+    {
+      "id": "FR-DAG-003",
+      "description": "Produce valid topological orders and defensively detect invalid cyclic input.",
+      "level": "unit",
+      "tests": [
+        {"path": "crates/pheno-dag/src/topo.rs", "name": "dfs_sort_matches_kahn"},
+        {"path": "crates/pheno-dag/src/topo.rs", "name": "kahn_cycle_detection"}
+      ]
+    },
+    {
+      "id": "FR-DAG-004",
+      "description": "Group independent DAG nodes into ordered parallel execution buckets.",
+      "level": "unit",
+      "tests": [
+        {"path": "crates/pheno-dag/src/scheduler.rs", "name": "diamond_parallelism"}
+      ]
+    },
+    {
+      "id": "FR-DAG-005",
+      "description": "Round-trip enriched DAG schemas through YAML and JSON.",
+      "level": "unit",
+      "tests": [
+        {"path": "crates/pheno-dag/src/serialize.rs", "name": "cross_format_consistency"}
+      ]
+    },
+    {
+      "id": "FR-CONN-001",
+      "description": "Connect to Plane and fetch a source-identified change.",
+      "level": "e2e",
+      "tests": [
+        {"path": "tests/connectors.rs", "name": "plane_connector_connects_and_fetches_stub_change"}
+      ]
+    },
+    {
+      "id": "FR-CONN-002",
+      "description": "Connect to GitHub and fetch a source-identified change.",
+      "level": "e2e",
+      "tests": [
+        {"path": "tests/connectors.rs", "name": "github_connector_connects_and_fetches_stub_change"}
+      ]
+    },
+    {
+      "id": "FR-CONN-003",
+      "description": "Connect to an import source and fetch a source-identified change.",
+      "level": "e2e",
+      "tests": [
+        {"path": "tests/connectors.rs", "name": "import_connector_connects_and_fetches_stub_change"}
+      ]
+    },
+    {
+      "id": "FR-CONN-004",
+      "description": "Reject a connector configuration whose source kind does not match the adapter.",
+      "level": "e2e",
+      "tests": [
+        {"path": "tests/connectors.rs", "name": "import_connector_rejects_mismatched_config"}
+      ]
+    }
+  ]
+}

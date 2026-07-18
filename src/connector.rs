@@ -142,18 +142,11 @@ mod tests {
     use super::*;
     use std::future::Future;
     use std::pin::pin;
-    use std::sync::Arc;
-    use std::task::{Context, Poll, Wake, Waker};
-
-    struct NoopWake;
-
-    impl Wake for NoopWake {
-        fn wake(self: Arc<Self>) {}
-    }
+    use std::task::{Context, Poll, Waker};
 
     fn block_on<T>(future: impl Future<Output = T>) -> T {
-        let waker = Waker::from(Arc::new(NoopWake));
-        let mut context = Context::from_waker(&waker);
+        let waker = Waker::noop();
+        let mut context = Context::from_waker(waker);
         let mut future = pin!(future);
 
         loop {
@@ -168,13 +161,6 @@ mod tests {
         ConnectorConfig {
             kind,
             endpoint: format!("local://{kind:?}"),
-        }
-    }
-
-    fn config_with_endpoint(kind: ConnectorKind, endpoint: &str) -> ConnectorConfig {
-        ConnectorConfig {
-            kind,
-            endpoint: endpoint.to_owned(),
         }
     }
 
@@ -257,9 +243,9 @@ mod proptests {
     use super::*;
     use proptest::prelude::*;
 
-    /// For every combination of `ConnectorKind` and endpoint string,
-    /// `connection_for` with the matching kind always succeeds and preserves
-    /// the endpoint.
+    // For every combination of `ConnectorKind` and endpoint string,
+    // `connection_for` with the matching kind always succeeds and preserves
+    // the endpoint.
     proptest! {
         #[test]
         fn connection_for_matching_kind_always_succeeds(
@@ -274,8 +260,8 @@ mod proptests {
         }
     }
 
-    /// For every combination of two different `ConnectorKind` values,
-    /// `connection_for` always fails with `KindMismatch`.
+    // For every combination of two different `ConnectorKind` values,
+    // `connection_for` always fails with `KindMismatch`.
     proptest! {
         #[test]
         fn connection_for_non_matching_kind_always_fails(
