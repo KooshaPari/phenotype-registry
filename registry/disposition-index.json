@@ -4001,7 +4001,8 @@
       "archive_pending": true,
       "source_loc": 76,
       "source_branches": 1,
-      "registry_fingerprint": "PlusForges-readme-only-meta-discovery"
+      "registry_fingerprint": "PlusForges-readme-only-meta-discovery",
+      "absorbed_commit": "e93173dbd5f8bb6c43e5ac1169ba064c7b0e0b45"
     },
     {
       "disposition": "TOO_LARGE_RETIRE",
@@ -4049,112 +4050,132 @@
     {
       "id": "repo-phenotype-pytest-virt",
       "name": "phenotype-pytest-virt",
-      "fsm": "queued",
+      "fsm": "never_existed",
       "target": "phenotype-python-sdk (packages/pytest-virt/)",
       "language": "Python",
       "size_kb_estimate": "~40KB",
-      "note": "Pytest fixtures + Phenotype-org harness sugar",
+      "note": "AUDITED 2026-07-17 (queue reconciliation round 4). Repo `phenotype-pytest-virt` returns 404 on GitHub API (`gh api repos/KooshaPari/phenotype-pytest-virt` returns {\"message\":\"Not Found\",\"status\":\"404\"}). No local clone exists in /Users/kooshapari/CodeProjects/Phenotype/repos/. Phantom queued entry pointing to a repo that was never created. No absorption action possible. Removed from queue.",
       "queued_at": "2026-07-18T00:15:00.000000Z",
-      "wave": "2026-07-18-queue-refresh-batch8"
+      "wave": "2026-07-18-queue-refresh-batch8",
+      "disposition": "NEVER_EXISTED",
+      "reconciled_at": "2026-07-18T00:17:18.629649Z"
     },
     {
       "id": "repo-pheno-typed-router",
       "name": "pheno-typed-router",
-      "fsm": "queued",
+      "fsm": "never_existed",
       "target": "pheno (crates/pheno-typed-router)",
       "language": "Rust",
       "size_kb_estimate": "~60KB",
-      "note": "Typed router A2A primitives",
+      "note": "AUDITED 2026-07-17 (queue reconciliation round 4). Repo `pheno-typed-router` returns 404 on GitHub API (`gh api repos/KooshaPari/pheno-typed-router` returns {\"message\":\"Not Found\",\"status\":\"404\"}). No local clone exists in /Users/kooshapari/CodeProjects/Phenotype/repos/. Phantom queued entry pointing to a repo that was never created. No absorption action possible. Removed from queue.",
       "queued_at": "2026-07-18T00:15:00.000000Z",
-      "wave": "2026-07-18-queue-refresh-batch8"
+      "wave": "2026-07-18-queue-refresh-batch8",
+      "disposition": "NEVER_EXISTED",
+      "reconciled_at": "2026-07-18T00:17:18.629649Z"
     },
     {
       "id": "repo-helix-mcp-types",
       "name": "helix-mcp-types",
-      "fsm": "queued",
+      "fsm": "never_existed",
       "target": "phenodocs (packages/@phenotype/helix-mcp-types/)",
       "language": "TypeScript",
       "size_kb_estimate": "~25KB",
-      "note": "TS helix MCP type definitions",
+      "note": "AUDITED 2026-07-17 (queue reconciliation round 4). Repo `helix-mcp-types` returns 404 on GitHub API (`gh api repos/KooshaPari/helix-mcp-types` returns {\"message\":\"Not Found\",\"status\":\"404\"}). No local clone exists in /Users/kooshapari/CodeProjects/Phenotype/repos/. Phantom queued entry pointing to a repo that was never created. No absorption action possible. Removed from queue.",
       "queued_at": "2026-07-18T00:15:00.000000Z",
-      "wave": "2026-07-18-queue-refresh-batch8"
+      "wave": "2026-07-18-queue-refresh-batch8",
+      "disposition": "NEVER_EXISTED",
+      "reconciled_at": "2026-07-18T00:17:18.629649Z"
     },
     {
       "id": "repo-pheno-repl",
       "name": "pheno-repl",
-      "fsm": "queued",
+      "fsm": "never_existed",
       "target": "pheno (crates/pheno-repl)",
       "language": "Rust",
       "size_kb_estimate": "~70KB",
-      "note": "Phenotype REPL over phenoContext+phenoRuntime",
+      "note": "AUDITED 2026-07-17 (queue reconciliation round 4). Repo `pheno-repl` returns 404 on GitHub API (`gh api repos/KooshaPari/pheno-repl` returns {\"message\":\"Not Found\",\"status\":\"404\"}). No local clone exists in /Users/kooshapari/CodeProjects/Phenotype/repos/. Phantom queued entry pointing to a repo that was never created. No absorption action possible. Removed from queue.",
       "queued_at": "2026-07-18T00:15:00.000000Z",
-      "wave": "2026-07-18-queue-refresh-batch8"
+      "wave": "2026-07-18-queue-refresh-batch8",
+      "disposition": "NEVER_EXISTED",
+      "reconciled_at": "2026-07-18T00:17:18.629649Z"
     },
     {
       "id": "repo-pheno-config-yaml",
       "name": "pheno-config-yaml",
-      "fsm": "queued",
+      "fsm": "never_existed",
       "target": "phenotype-go-sdk (packages/pheno-config-yaml/)",
       "language": "Go",
       "size_kb_estimate": "~20KB",
-      "note": "Go YAML config crate",
+      "note": "AUDITED 2026-07-17 (queue reconciliation round 4). Repo `pheno-config-yaml` returns 404 on GitHub API (`gh api repos/KooshaPari/pheno-config-yaml` returns {\"message\":\"Not Found\",\"status\":\"404\"}). No local clone exists in /Users/kooshapari/CodeProjects/Phenotype/repos/. Phantom queued entry pointing to a repo that was never created. No absorption action possible. Removed from queue.",
       "queued_at": "2026-07-18T00:15:00.000000Z",
-      "wave": "2026-07-18-queue-refresh-batch8"
+      "wave": "2026-07-18-queue-refresh-batch8",
+      "disposition": "NEVER_EXISTED",
+      "reconciled_at": "2026-07-18T00:17:18.629649Z"
     },
     {
       "id": "repo-pheno-i18n",
       "name": "pheno-i18n",
-      "fsm": "queued",
+      "fsm": "never_existed",
       "target": "phenotype-python-sdk (packages/pheno-i18n/)",
       "language": "Python",
       "size_kb_estimate": "~35KB",
-      "note": "i18n with Phenotype-org convention",
+      "note": "AUDITED 2026-07-17 (queue reconciliation round 4). Repo `pheno-i18n` returns 404 on GitHub API (`gh api repos/KooshaPari/pheno-i18n` returns {\"message\":\"Not Found\",\"status\":\"404\"}). No local clone exists in /Users/kooshapari/CodeProjects/Phenotype/repos/. Phantom queued entry pointing to a repo that was never created. No absorption action possible. Removed from queue.",
       "queued_at": "2026-07-18T00:15:00.000000Z",
-      "wave": "2026-07-18-queue-refresh-batch8"
+      "wave": "2026-07-18-queue-refresh-batch8",
+      "disposition": "NEVER_EXISTED",
+      "reconciled_at": "2026-07-18T00:17:18.629649Z"
     },
     {
       "id": "repo-pheno-wasm-bridge",
       "name": "pheno-wasm-bridge",
-      "fsm": "queued",
+      "fsm": "never_existed",
       "target": "pheno (crates/pheno-wasm-bridge/)",
       "language": "C++",
       "size_kb_estimate": "~120KB",
-      "note": "C++ → WASM bridge via WASI",
+      "note": "AUDITED 2026-07-17 (queue reconciliation round 4). Repo `pheno-wasm-bridge` returns 404 on GitHub API (`gh api repos/KooshaPari/pheno-wasm-bridge` returns {\"message\":\"Not Found\",\"status\":\"404\"}). No local clone exists in /Users/kooshapari/CodeProjects/Phenotype/repos/. Phantom queued entry pointing to a repo that was never created. No absorption action possible. Removed from queue.",
       "queued_at": "2026-07-18T00:15:00.000000Z",
-      "wave": "2026-07-18-queue-refresh-batch8"
+      "wave": "2026-07-18-queue-refresh-batch8",
+      "disposition": "NEVER_EXISTED",
+      "reconciled_at": "2026-07-18T00:17:18.629649Z"
     },
     {
       "id": "repo-pheno-tunnel",
       "name": "pheno-tunnel",
-      "fsm": "queued",
+      "fsm": "never_existed",
       "target": "pheno (crates/pheno-tunnel)",
       "language": "Rust",
       "size_kb_estimate": "~45KB",
-      "note": "QUIC-based tunnel for pheno-* agents",
+      "note": "AUDITED 2026-07-17 (queue reconciliation round 4). Repo `pheno-tunnel` returns 404 on GitHub API (`gh api repos/KooshaPari/pheno-tunnel` returns {\"message\":\"Not Found\",\"status\":\"404\"}). No local clone exists in /Users/kooshapari/CodeProjects/Phenotype/repos/. Phantom queued entry pointing to a repo that was never created. No absorption action possible. Removed from queue.",
       "queued_at": "2026-07-18T00:15:00.000000Z",
-      "wave": "2026-07-18-queue-refresh-batch8"
+      "wave": "2026-07-18-queue-refresh-batch8",
+      "disposition": "NEVER_EXISTED",
+      "reconciled_at": "2026-07-18T00:17:18.629649Z"
     },
     {
       "id": "repo-phenotype-token-bridge",
       "name": "phenotype-token-bridge",
-      "fsm": "queued",
+      "fsm": "never_existed",
       "target": "pheno (crates/phenotype-token-bridge/)",
       "language": "Rust",
       "size_kb_estimate": "~80KB",
-      "note": "Token bridge between Phenotype-org auth providers",
+      "note": "AUDITED 2026-07-17 (queue reconciliation round 4). Repo `phenotype-token-bridge` returns 404 on GitHub API (`gh api repos/KooshaPari/phenotype-token-bridge` returns {\"message\":\"Not Found\",\"status\":\"404\"}). No local clone exists in /Users/kooshapari/CodeProjects/Phenotype/repos/. Phantom queued entry pointing to a repo that was never created. No absorption action possible. Removed from queue.",
       "queued_at": "2026-07-18T00:15:00.000000Z",
-      "wave": "2026-07-18-queue-refresh-batch8"
+      "wave": "2026-07-18-queue-refresh-batch8",
+      "disposition": "NEVER_EXISTED",
+      "reconciled_at": "2026-07-18T00:17:18.629649Z"
     },
     {
       "id": "repo-pheno-stat",
       "name": "pheno-stat",
-      "fsm": "queued",
+      "fsm": "never_existed",
       "target": "phenodocs (packages/@phenotype/stat/)",
       "language": "TypeScript",
       "size_kb_estimate": "~50KB",
-      "note": "TS dashboard stats for Phenotype-org",
+      "note": "AUDITED 2026-07-17 (queue reconciliation round 4). Repo `pheno-stat` returns 404 on GitHub API (`gh api repos/KooshaPari/pheno-stat` returns {\"message\":\"Not Found\",\"status\":\"404\"}). No local clone exists in /Users/kooshapari/CodeProjects/Phenotype/repos/. Phantom queued entry pointing to a repo that was never created. No absorption action possible. Removed from queue.",
       "queued_at": "2026-07-18T00:15:00.000000Z",
-      "wave": "2026-07-18-queue-refresh-batch8"
+      "wave": "2026-07-18-queue-refresh-batch8",
+      "disposition": "NEVER_EXISTED",
+      "reconciled_at": "2026-07-18T00:17:18.629649Z"
     }
   ],
   "tombstone_audit": {
@@ -4178,6 +4199,6 @@
     "rationale": "Both target repos returned 404 NOT FOUND on GitHub API. Tombstone state preserves the registry reference while marking the row as informational-only — no GitHub-side artifact exists or ever existed. Per ADR-007 §\"404 / never existed on remote\" this is the canonical disposition for phantom rows.",
     "total_never_existed_remote_rows": 5
   },
-  "updated": "2026-07-18T00:15:00.000000Z",
+  "updated": "2026-07-18T00:17:18.629649Z",
   "version": "1.6.37"
 }
