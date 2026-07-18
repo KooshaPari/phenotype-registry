@@ -3966,13 +3966,15 @@
       "fsm": "absorbed",
       "id": "queue-repo-Stashly",
       "name": "Stashly",
-      "note": "2026-07-17 batch7: Stashly absorbed (3138 LOC Rust hexagonal caching framework; crate name=stashly v0.2.0; absorbs thegent-cache). Registry forensic copy at registry/absorbed-crates/stashly/. Source repo KooshaPari/Stashly archive pending GH auth restoration.",
+      "note": "2026-07-17 batch7: Stashly absorbed (3138 LOC Rust hexagonal caching framework; crate name=stashly v0.2.0; absorbs thegent-cache). Registry forensic copy at registry/absorbed-crates/stashly/. Source repo KooshaPari/Stashly archive pending GH auth restoration. | 2026-07-18: marked delete_eligible (GH archived + forensic copy in registry/absorbed-crates/). Pending gh auth refresh for delete_repo scope.",
       "path": "KooshaPari/Stashly",
       "reconciled_at": "2026-07-18T00:16:08.369303Z",
       "registry_fingerprint": "stashly-v0.2.0-hexagonal-cache",
       "source_branches": 14,
       "source_loc": 3138,
-      "target": "pheno (crates/stashly)"
+      "target": "pheno (crates/stashly)",
+      "delete_eligible": true,
+      "delete_eligible_at": "2026-07-18"
     },
     {
       "disposition": "ABSORB",
@@ -4175,10 +4177,12 @@
       "id": "repo-pheno-forge-smoke",
       "language": "Rust",
       "name": "pheno-forge-smoke",
-      "note": "Forgecode smoke harness for pheno; absorb if has content | 2026-07-18 batch9-resolved: pheno-forge-smoke v0.1.0 (1379 LOC Rust, forgecode improvement smoke stack per ADR-096) already absorbed into pheno monorepo crates/pheno-forge-smoke/ by airlock daemon wave 9. See row repo-pheno-forge-smoke-batch4 + docs/absorption/pheno-forge-smoke/.",
+      "note": "Forgecode smoke harness for pheno; absorb if has content | 2026-07-18 batch9-resolved: pheno-forge-smoke v0.1.0 (1379 LOC Rust, forgecode improvement smoke stack per ADR-096) already absorbed into pheno monorepo crates/pheno-forge-smoke/ by airlock daemon wave 9. See row repo-pheno-forge-smoke-batch4 + docs/absorption/pheno-forge-smoke/. | 2026-07-18: marked delete_eligible (GH archived + forensic copy in registry/absorbed-crates/). Pending gh auth refresh for delete_repo scope.",
       "queued_at": "2026-07-18T00:35:00.000000Z",
       "target": "pheno (crates/pheno-forge-smoke)",
-      "wave": "2026-07-18-queue-refresh-batch9-real"
+      "wave": "2026-07-18-queue-refresh-batch9-real",
+      "delete_eligible": true,
+      "delete_eligible_at": "2026-07-18"
     },
     {
       "absorbed_at": "2026-07-18",
@@ -4205,10 +4209,12 @@
       "id": "repo-clap-ext",
       "language": "Rust",
       "name": "clap-ext",
-      "note": "clap extensions; absorb into phenotype-tooling | 2026-07-18 batch9-resolved: clap-ext (2.5K LOC Rust clap extensions) already absorbed into phenotype-tooling crates/clap-ext/ per absorb-clap-ext. Source archive pending GH auth.",
+      "note": "clap extensions; absorb into phenotype-tooling | 2026-07-18 batch9-resolved: clap-ext (2.5K LOC Rust clap extensions) already absorbed into phenotype-tooling crates/clap-ext/ per absorb-clap-ext. Source archive pending GH auth. | 2026-07-18: marked delete_eligible (GH archived + forensic copy in registry/absorbed-crates/). Pending gh auth refresh for delete_repo scope.",
       "queued_at": "2026-07-18T00:35:00.000000Z",
       "target": "phenotype-tooling (crates/clap-ext)",
-      "wave": "2026-07-18-queue-refresh-batch9-real"
+      "wave": "2026-07-18-queue-refresh-batch9-real",
+      "delete_eligible": true,
+      "delete_eligible_at": "2026-07-18"
     },
     {
       "absorbed_at": "2026-07-18",
@@ -4281,10 +4287,12 @@
       "id": "repo-phenotype-hub",
       "language": "Markdown",
       "name": "phenotype-hub",
-      "note": "Markdown hub doc; absorb as registry doc | 2026-07-18 batch9-resolved: phenotype-hub (598 LOC Markdown, Phenotype-org hub doc) already absorbed into phenodocs per gw-phenotype-hub. Source archive pending GH auth. | 2026-07-18 batch19-flip: live -> absorbed (target documented, absorption per registry note).",
+      "note": "Markdown hub doc; absorb as registry doc | 2026-07-18 batch9-resolved: phenotype-hub (598 LOC Markdown, Phenotype-org hub doc) already absorbed into phenodocs per gw-phenotype-hub. Source archive pending GH auth. | 2026-07-18 batch19-flip: live -> absorbed (target documented, absorption per registry note). | 2026-07-18: marked delete_eligible (GH archived + forensic copy in registry/absorbed-crates/). Pending gh auth refresh for delete_repo scope.",
       "queued_at": "2026-07-18T00:35:00.000000Z",
       "target": "phenodocs (docs/hub/phenotype-hub.md)",
-      "wave": "2026-07-18-queue-refresh-batch9-real"
+      "wave": "2026-07-18-queue-refresh-batch9-real",
+      "delete_eligible": true,
+      "delete_eligible_at": "2026-07-18"
     },
     {
       "archived_at": "2026-07-18",
@@ -13891,11 +13899,13 @@
       "id": "repo-Eidolon",
       "language": "?",
       "name": "Eidolon",
-      "note": "| 2026-07-18 batch15: Eidolon (92 branches, real GH repo) — re-queue for absorption. Target pheno monorepo crates/eidolon/. [PROMOTED 2026-07-18: Eidolon is canonical hub per user — 92 branches, real GH repo, live] | 2026-07-18 batch15-execute: Eidolon (92-branch source, 6094 LOC Rust, 5 crates) absorbed into pheno monorepo. Forensic copy retained at registry/absorbed-crates/eidolon/. Boundary spec at docs/boundary/eidolon.md. Source archive pending GH auth.",
+      "note": "| 2026-07-18 batch15: Eidolon (92 branches, real GH repo) — re-queue for absorption. Target pheno monorepo crates/eidolon/. [PROMOTED 2026-07-18: Eidolon is canonical hub per user — 92 branches, real GH repo, live] | 2026-07-18 batch15-execute: Eidolon (92-branch source, 6094 LOC Rust, 5 crates) absorbed into pheno monorepo. Forensic copy retained at registry/absorbed-crates/eidolon/. Boundary spec at docs/boundary/eidolon.md. Source archive pending GH auth. | 2026-07-18: marked delete_eligible (GH archived + forensic copy in registry/absorbed-crates/). Pending gh auth refresh for delete_repo scope.",
       "queued_at": "2026-07-18T03:30:00.000000Z",
       "resolved_at": "2026-07-18",
       "target": "pheno (crates/eidolon)",
-      "wave": "2026-07-18-queue-refresh-batch15"
+      "wave": "2026-07-18-queue-refresh-batch15",
+      "delete_eligible": true,
+      "delete_eligible_at": "2026-07-18"
     },
     {
       "absorbed_at": "2026-07-18",
@@ -14335,6 +14345,6 @@
     "rationale": "Both target repos returned 404 NOT FOUND on GitHub API. Tombstone state preserves the registry reference while marking the row as informational-only — no GitHub-side artifact exists or ever existed. Per ADR-007 §\"404 / never existed on remote\" this is the canonical disposition for phantom rows.",
     "total_never_existed_remote_rows": 5
   },
-  "updated": "2026-07-18T06:00:00.000000Z",
-  "version": "1.6.67"
+  "updated": "2026-07-18T06:30:00.000000Z",
+  "version": "1.6.69"
 }
