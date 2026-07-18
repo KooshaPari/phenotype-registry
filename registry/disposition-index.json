@@ -5451,123 +5451,138 @@
     },
     {
       "disposition": "NEVER_EXISTED",
-      "fsm": "never_existed",
+      "fsm": "never_existed_remote",
       "id": "repo-PhenoDevOps",
       "language": "?",
       "name": "PhenoDevOps",
-      "note": "AUDITED 2026-07-17 (queue reconciliation round 8). Repo `PhenoDevOps` returns 404 on GitHub API. No local clone. Boundary spec at docs/boundary/PhenoDevOps.md; phantom queued entry. Removed from queue.",
+      "note": "AUDITED 2026-07-17 (queue reconciliation round 8). Repo `PhenoDevOps` returns 404 on GitHub API. No local clone. Boundary spec at docs/boundary/PhenoDevOps.md; phantom queued entry. Removed from queue. | 2026-07-18 batch14: docs/boundary/PhenoDevOps.md is a research scaffold only; SSH-verified 404 against git@github.com:KooshaPari/PhenoDevOps. No source content to absorb.",
       "queued_at": "2026-07-18T03:10:00.000000Z",
       "reconciled_at": "2026-07-18T02:00:05.524583Z",
       "target": "boundary doc at docs/boundary/PhenoDevOps.md — verify target",
-      "wave": "2026-07-18-queue-refresh-batch14-boundary"
+      "wave": "2026-07-18-queue-refresh-batch14-boundary",
+      "resolved_at": "2026-07-18"
     },
     {
       "disposition": "NEVER_EXISTED",
-      "fsm": "never_existed",
+      "fsm": "never_existed_remote",
       "id": "repo-phenoAgents",
       "language": "?",
       "name": "phenoAgents",
-      "note": "AUDITED 2026-07-17 (queue reconciliation round 8). Repo `phenoAgents` returns 404 on GitHub API. No local clone. Boundary spec at docs/boundary/phenoAgents.md; phantom queued entry. Removed from queue.",
+      "note": "AUDITED 2026-07-17 (queue reconciliation round 8). Repo `phenoAgents` returns 404 on GitHub API. No local clone. Boundary spec at docs/boundary/phenoAgents.md; phantom queued entry. Removed from queue. | 2026-07-18 batch14: docs/boundary/phenoAgents.md is a research scaffold only; SSH-verified 404. No source content to absorb.",
       "queued_at": "2026-07-18T03:10:00.000000Z",
       "reconciled_at": "2026-07-18T02:00:05.524583Z",
       "target": "boundary doc at docs/boundary/phenoAgents.md — verify target",
-      "wave": "2026-07-18-queue-refresh-batch14-boundary"
+      "wave": "2026-07-18-queue-refresh-batch14-boundary",
+      "resolved_at": "2026-07-18"
     },
     {
       "disposition": "NEVER_EXISTED",
-      "fsm": "never_existed",
+      "fsm": "never_existed_remote",
       "id": "repo-ObservabilityKit",
       "language": "?",
       "name": "ObservabilityKit",
-      "note": "AUDITED 2026-07-17 (queue reconciliation round 8). Repo `ObservabilityKit` returns 404 on GitHub API. No local clone. Boundary spec at docs/boundary/ObservabilityKit.md; phantom queued entry. Removed from queue.",
+      "note": "AUDITED 2026-07-17 (queue reconciliation round 8). Repo `ObservabilityKit` returns 404 on GitHub API. No local clone. Boundary spec at docs/boundary/ObservabilityKit.md; phantom queued entry. Removed from queue. | 2026-07-18 batch14: docs/boundary/ObservabilityKit.md is a research scaffold only; SSH-verified 404. No source content to absorb; observability lives in PhenoObservability monorepo.",
       "queued_at": "2026-07-18T03:10:00.000000Z",
       "reconciled_at": "2026-07-18T02:00:05.524583Z",
       "target": "boundary doc at docs/boundary/ObservabilityKit.md — verify target",
-      "wave": "2026-07-18-queue-refresh-batch14-boundary"
+      "wave": "2026-07-18-queue-refresh-batch14-boundary",
+      "resolved_at": "2026-07-18"
     },
     {
       "disposition": "NEVER_EXISTED",
-      "fsm": "never_existed",
+      "fsm": "never_existed_remote",
       "id": "repo-PhenoProc",
       "language": "?",
       "name": "PhenoProc",
-      "note": "AUDITED 2026-07-17 (queue reconciliation round 8). Repo `PhenoProc` returns 404 on GitHub API. No local clone. Boundary spec at docs/boundary/PhenoProc.md; phantom queued entry. Removed from queue.",
+      "note": "AUDITED 2026-07-17 (queue reconciliation round 8). Repo `PhenoProc` returns 404 on GitHub API. No local clone. Boundary spec at docs/boundary/PhenoProc.md; phantom queued entry. Removed from queue. | 2026-07-18 batch14: docs/boundary/PhenoProc.md is a research scaffold only; SSH-verified 404. No source content to absorb.",
       "queued_at": "2026-07-18T03:10:00.000000Z",
       "reconciled_at": "2026-07-18T02:00:05.524583Z",
       "target": "boundary doc at docs/boundary/PhenoProc.md — verify target",
-      "wave": "2026-07-18-queue-refresh-batch14-boundary"
+      "wave": "2026-07-18-queue-refresh-batch14-boundary",
+      "resolved_at": "2026-07-18"
     },
     {
       "disposition": "NEVER_EXISTED",
-      "fsm": "never_existed",
+      "fsm": "never_existed_remote",
       "id": "repo-vibeproxy",
       "language": "?",
       "name": "vibeproxy",
-      "note": "AUDITED 2026-07-17 (queue reconciliation round 8). Repo `vibeproxy` returns 404 on GitHub API. No local clone. Boundary spec at docs/boundary/vibeproxy.md; phantom queued entry. Removed from queue.",
+      "note": "AUDITED 2026-07-17 (queue reconciliation round 8). Repo `vibeproxy` returns 404 on GitHub API. No local clone. Boundary spec at docs/boundary/vibeproxy.md; phantom queued entry. Removed from queue. | 2026-07-18 batch14: docs/boundary/vibeproxy.md is a research scaffold only; SSH-verified 404. No source content to absorb.",
       "queued_at": "2026-07-18T03:10:00.000000Z",
       "reconciled_at": "2026-07-18T02:00:05.524583Z",
       "target": "boundary doc at docs/boundary/vibeproxy.md — verify target",
-      "wave": "2026-07-18-queue-refresh-batch14-boundary"
+      "wave": "2026-07-18-queue-refresh-batch14-boundary",
+      "resolved_at": "2026-07-18"
     },
     {
       "disposition": "NEVER_EXISTED",
-      "fsm": "never_existed",
+      "fsm": "verified",
       "id": "repo-legacy-game-mods",
       "language": "?",
       "name": "legacy-game-mods",
-      "note": "AUDITED 2026-07-17 (queue reconciliation round 8). Repo `legacy-game-mods` returns 404 on GitHub API. Boundary spec at docs/boundary/legacy-game-mods.md; phantom queued entry. Removed from queue.",
+      "note": "AUDITED 2026-07-17 (queue reconciliation round 8). Repo `legacy-game-mods` returns 404 on GitHub API. Boundary spec at docs/boundary/legacy-game-mods.md; phantom queued entry. Removed from queue. | 2026-07-18 batch14: legacy-game-mods is an AGGREGATE doc covering 4 already-archived game-modding repos (UnityDoorstop-NexusPatched, Compound-Spheres-3D-Backup, WorldSphereMod, Dino) per docs/boundary/legacy-game-mods.md. All 4 child repos already have fsm=archived registry rows; verified not absorbed.",
       "queued_at": "2026-07-18T03:10:00.000000Z",
       "reconciled_at": "2026-07-18T02:00:05.524583Z",
       "target": "boundary doc at docs/boundary/legacy-game-mods.md — verify target",
-      "wave": "2026-07-18-queue-refresh-batch14-boundary"
+      "wave": "2026-07-18-queue-refresh-batch14-boundary",
+      "resolved_at": "2026-07-18",
+      "absorbed_into": "phenotype-registry/docs/boundary/legacy-game-mods.md"
     },
     {
       "disposition": "NEVER_EXISTED",
-      "fsm": "never_existed",
+      "fsm": "archived",
       "id": "repo-PhenoLang",
       "language": "?",
       "name": "PhenoLang",
-      "note": "AUDITED 2026-07-17 (queue reconciliation round 8). Repo `PhenoLang` returns 404 on GitHub API. No local clone. Boundary spec at docs/boundary/PhenoLang.md; phantom queued entry. Removed from queue.",
+      "note": "AUDITED 2026-07-17 (queue reconciliation round 8). Repo `PhenoLang` returns 404 on GitHub API. No local clone. Boundary spec at docs/boundary/PhenoLang.md; phantom queued entry. Removed from queue. | 2026-07-18 batch14: PhenoLang is a speculative language runtime; per registry decision 2026-06-20 ARCHIVE_ONLY. SSH-verified 404 today; boundary spec preserved.",
       "queued_at": "2026-07-18T03:15:00.000000Z",
       "reconciled_at": "2026-07-18T02:00:05.524583Z",
       "target": "absorption record at docs/absorption/PhenoLang/",
-      "wave": "2026-07-18-queue-refresh-batch14-absorption-record"
+      "wave": "2026-07-18-queue-refresh-batch14-absorption-record",
+      "resolved_at": "2026-07-18",
+      "absorbed_into": "-"
     },
     {
       "disposition": "TOO_LARGE_RETIRE",
-      "fsm": "archived",
+      "fsm": "verified",
       "id": "repo-Benchora",
       "language": "?",
       "name": "Benchora",
-      "note": "AUDITED 2026-07-17 (queue reconciliation round 8). Repo `Benchora` returns 404 on GH (was already archived earlier this session). Already classified as TOO_LARGE_RETIRE. Restore correct terminal state.",
+      "note": "AUDITED 2026-07-17 (queue reconciliation round 8). Repo `Benchora` returns 404 on GH (was already archived earlier this session). Already classified as TOO_LARGE_RETIRE. Restore correct terminal state. | 2026-07-18 batch14: Benchora is the canonical perf-harness; per repo-benchora-affirm (v1.6.29) — VERIFIED canonical AFFIRM. Boundary spec at docs/boundary/Benchora.md, absorption record at docs/absorption/Benchora/README.md. No absorption needed.",
       "queued_at": "2026-07-18T03:15:00.000000Z",
       "reconciled_at": "2026-07-18T02:00:05.524583Z",
       "target": "absorption record at docs/absorption/Benchora/",
-      "wave": "2026-07-18-queue-refresh-batch14-absorption-record"
+      "wave": "2026-07-18-queue-refresh-batch14-absorption-record",
+      "resolved_at": "2026-07-18",
+      "absorbed_into": "phenotype-tooling (bin/benchora)"
     },
     {
       "disposition": "NEVER_EXISTED",
-      "fsm": "never_existed",
+      "fsm": "archived",
       "id": "repo-utility-targets",
       "language": "?",
       "name": "utility-targets",
-      "note": "AUDITED 2026-07-17 (queue reconciliation round 8). Repo `utility-targets` returns 404 on GitHub API. No local clone. Phantom queued entry. Removed from queue.",
+      "note": "AUDITED 2026-07-17 (queue reconciliation round 8). Repo `utility-targets` returns 404 on GitHub API. No local clone. Phantom queued entry. Removed from queue. | 2026-07-18 batch14: utility-targets is a policy/Makefile aggregation doc (docs/absorption/utility-targets/README.md); not a source repo. SSH-verified 404; mark as archived policy doc.",
       "queued_at": "2026-07-18T03:15:00.000000Z",
       "reconciled_at": "2026-07-18T02:00:05.524583Z",
       "target": "absorption record at docs/absorption/utility-targets/",
-      "wave": "2026-07-18-queue-refresh-batch14-absorption-record"
+      "wave": "2026-07-18-queue-refresh-batch14-absorption-record",
+      "resolved_at": "2026-07-18",
+      "absorbed_into": "-"
     },
     {
       "disposition": "NEVER_EXISTED",
-      "fsm": "never_existed",
+      "fsm": "archived",
       "id": "repo-PhenoKits",
       "language": "?",
       "name": "PhenoKits",
-      "note": "AUDITED 2026-07-17 (queue reconciliation round 8). Repo `PhenoKits` returns 404 on GitHub API. No local clone. Boundary spec at docs/boundary/PhenoKits.md; phantom queued entry. Removed from queue.",
+      "note": "AUDITED 2026-07-17 (queue reconciliation round 8). Repo `PhenoKits` returns 404 on GitHub API. No local clone. Boundary spec at docs/boundary/PhenoKits.md; phantom queued entry. Removed from queue. | 2026-07-18 batch14: PhenoKits is a templates-deck repo. Per registry decision 2026-06-20, ARCHIVE_ONLY — not absorbed into Phenotype fleet. SSH-verified 404 today; boundary spec preserved at docs/boundary/PhenoKits.md.",
       "queued_at": "2026-07-18T03:15:00.000000Z",
       "reconciled_at": "2026-07-18T02:00:05.524583Z",
       "target": "absorption record at docs/absorption/PhenoKits/",
-      "wave": "2026-07-18-queue-refresh-batch14-absorption-record"
+      "wave": "2026-07-18-queue-refresh-batch14-absorption-record",
+      "resolved_at": "2026-07-18",
+      "absorbed_into": "-"
     },
     {
       "disposition": "AFFIRM",
@@ -13644,6 +13659,57 @@
       "size_kb": 0,
       "last_push": "2026-06-18T00:00:00Z",
       "note": "DEPLETION: Repo returns 404. [NEVER_EXISTED_RETIRE 2026-07-17 per ADR-007 §7.] Action: confirm 404, retire phantom row."
+    },
+    {
+      "id": "repo-pheno-config",
+      "name": "pheno-config",
+      "fsm": "verified",
+      "target": "pheno (crates/pheno-config)",
+      "language": "rust",
+      "branch_count": 1,
+      "note": "Federated crate (2026-06-24 registry sync). Filename `pheno-config.json` (not `p | 2026-07-18 batch15: pheno-config federated crate — already absorbed into pheno monorepo crates/pheno-config per registry plan. Federated, not a separate GH repo.",
+      "queued_at": "2026-07-18T03:30:00.000000Z",
+      "wave": "2026-07-18-queue-refresh-batch15",
+      "resolved_at": "2026-07-18"
+    },
+    {
+      "id": "repo-agent-user-status",
+      "name": "agent-user-status",
+      "fsm": "absorbed",
+      "target": "phenotype-tooling (crates/agent-user-status)",
+      "language": "python",
+      "branch_count": 34,
+      "note": "Audited 2026-07-17; ABSORBED into KooshaPari/phenotype-tooling as crates/agent-u | 2026-07-18 batch15: agent-user-status ABSORBED into KooshaPari/phenotype-tooling as crates/agent-user-status/ per prior registry work; 34 branches on source, portage-federated.",
+      "queued_at": "2026-07-18T03:30:00.000000Z",
+      "wave": "2026-07-18-queue-refresh-batch15",
+      "resolved_at": "2026-07-18",
+      "absorbed_at": "2026-07-18",
+      "absorbed_into": "phenotype-tooling (crates/agent-user-status)",
+      "archive_pending": true
+    },
+    {
+      "id": "repo-hwLedger",
+      "name": "hwLedger",
+      "fsm": "verified",
+      "target": "phenotype-registry/docs/boundary/hwLedger.md",
+      "language": "n/a",
+      "branch_count": 61,
+      "note": "Audited 2026-07-17; n/a primary language (markdown/yaml likely). Hardware ledger | 2026-07-18 batch15: hwLedger canonical Phenotype-org hardware ledger; AFFIRM per registry. 61 branches on source.",
+      "queued_at": "2026-07-18T03:30:00.000000Z",
+      "wave": "2026-07-18-queue-refresh-batch15",
+      "resolved_at": "2026-07-18"
+    },
+    {
+      "id": "repo-Eidolon",
+      "name": "Eidolon",
+      "fsm": "queued",
+      "target": "pheno (crates/eidolon)",
+      "language": "?",
+      "branch_count": 92,
+      "note": "| 2026-07-18 batch15: Eidolon (92 branches, real GH repo) — re-queue for absorption. Target pheno monorepo crates/eidolon/.",
+      "queued_at": "2026-07-18T03:30:00.000000Z",
+      "wave": "2026-07-18-queue-refresh-batch15",
+      "resolved_at": "2026-07-18"
     }
   ],
   "tombstone_audit": {
@@ -13667,6 +13733,6 @@
     "rationale": "Both target repos returned 404 NOT FOUND on GitHub API. Tombstone state preserves the registry reference while marking the row as informational-only — no GitHub-side artifact exists or ever existed. Per ADR-007 §\"404 / never existed on remote\" this is the canonical disposition for phantom rows.",
     "total_never_existed_remote_rows": 5
   },
-  "updated": "2026-07-18T04:53:31.680587Z",
-  "version": "v1.6.49"
+  "updated": "2026-07-18T04:00:00.000000Z",
+  "version": "1.6.52"
 }
