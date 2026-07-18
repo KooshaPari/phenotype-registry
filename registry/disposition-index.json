@@ -1322,16 +1322,17 @@
       "classified_at": "2026-07-18T00:42:09.091645Z",
       "disposition": "TOO_LARGE_RETIRE",
       "final_classification": "C:TOO_LARGE_RETIRE",
-      "fsm": "active",
+      "fsm": "live",
       "grade_percentage": null,
       "grade_score": null,
       "id": "repo-Tracera-absorption-2026-06-25",
       "last_push": "2026-06-25T08:56:22Z",
-      "note": "| resolved 2026-07-17: Tracera absorbed into phenotype-apps apps/tracely/ per registry commit c1922da. Source archived. [REINSTATED 2026-07-18: user feedback — Tracera is canonical hub, should NOT be archived; flipped archived->active]",
+      "note": "| resolved 2026-07-17: Tracera absorbed into phenotype-apps apps/tracely/ per registry commit c1922da. Source archived. [REINSTATED 2026-07-18: user feedback — Tracera is canonical hub, should NOT be archived; flipped archived->active] [TOO_LARGE_FLIP 2026-07-17: 1.1GB Tracera Rust workspace (50K+ LOC); too large to absorb per ADR-007 §1.]",
       "path": "KooshaPari/Tracera",
       "remote_branch_count": 80,
       "size_kb": 1079821,
-      "source_artifact": "automated:__main__:2026-06-25"
+      "source_artifact": "automated:__main__:2026-06-25",
+      "target": "Tracera (1.1GB Rust workspace)"
     },
     {
       "absorbed_at": "2026-06-25",
@@ -3767,7 +3768,7 @@
     },
     {
       "disposition": "ABSORB",
-      "fsm": "queued",
+      "fsm": "done",
       "id": "queue-repo-phenoResearchEngine",
       "name": "queue-repo-phenoResearchEngine",
       "note": "2026-07-17 batch7: duplicate queue entry — already absorbed in earlier session. Confirming as verified to remove from active queue. [CLOSED 2026-07-18: absorbed — already absorbed in earlier session; 1.6.46->v1.6.46]",
@@ -3779,7 +3780,7 @@
     },
     {
       "disposition": "TOO_LARGE_RETIRE",
-      "fsm": "queued",
+      "fsm": "done",
       "id": "queue-repo-PolicyStack",
       "name": "queue-repo-PolicyStack",
       "note": "2026-07-17 batch7: duplicate queue entry — already absorbed in earlier session. Confirming as verified to remove from active queue. [CLOSED 2026-07-18: absorbed — TOO_LARGE_RETIRE, already absorbed; 1.6.46->v1.6.46]",
@@ -5393,7 +5394,7 @@
     },
     {
       "disposition": "NEVER_EXISTED",
-      "fsm": "queued",
+      "fsm": "done",
       "id": "queue-repo-Logify",
       "note": "AUDITED 2026-07-17 (queue reconciliation round 7). Repo `Logify` returns 404 on GitHub API. No local clone. Phantom queued entry. Removed from queue.",
       "path": "KooshaPari/Logify",
@@ -5402,7 +5403,7 @@
     },
     {
       "disposition": "ABSORB",
-      "fsm": "queued",
+      "fsm": "done",
       "id": "queue-repo-phenoEvents",
       "note": "AUDITED 2026-07-17 (queue reconciliation round 7). Repo `phenoEvents` ARCHIVED on GH — already physically absorbed into pheno/crates/phenotype-event-bus/ in earlier session (commit a22760c, 45 tests pass). Source archived per absorption policy. Promote from queued to absorbed.",
       "path": "KooshaPari/phenoEvents",
@@ -5411,7 +5412,7 @@
     },
     {
       "disposition": "TOO_LARGE_RETIRE",
-      "fsm": "queued",
+      "fsm": "done",
       "id": "queue-repo-phenoDesign",
       "note": "AUDITED 2026-07-17 (queue reconciliation round 7). Repo `phenoDesign` returns 404 on GH (was already archived earlier this session). Already classified as TOO_LARGE_RETIRE (sprawling design tokens repo; better absorbed as extracted tokens not whole repo). Restore correct terminal state.",
       "path": "KooshaPari/phenoDesign",
@@ -5420,7 +5421,7 @@
     },
     {
       "disposition": "TOO_LARGE_RETIRE",
-      "fsm": "queued",
+      "fsm": "done",
       "id": "queue-repo-KWatch",
       "note": "AUDITED 2026-07-17 (queue reconciliation round 7). Repo `KWatch` returns 404 on GH (was already archived earlier this session). Already classified as TOO_LARGE_RETIRE (109MB Go, massive build cache). Restore correct terminal state.",
       "path": "KooshaPari/KWatch",
@@ -5570,14 +5571,15 @@
     },
     {
       "disposition": "AFFIRM",
-      "fsm": "active",
+      "fsm": "live",
       "id": "gw-tracera",
-      "note": "[QUEUED 2026-07-18] Tracera is canonical hub (multi-repo ecosystem). User confirmed should NOT be archived. Live canonical, no absorption.",
-      "path": "KooshaPari/Tracera"
+      "note": "[QUEUED 2026-07-18] Tracera is canonical hub (multi-repo ecosystem). User confirmed should NOT be archived. Live canonical, no absorption. [AFFIRM 2026-07-17: Tracera is canonical; g/w routing gateway stays.]",
+      "path": "KooshaPari/Tracera",
+      "target": "Tracera"
     },
     {
       "disposition": "ABSORB",
-      "fsm": "queued",
+      "fsm": "done",
       "id": "queue-repo-phenoAI",
       "note": "[QUEUED 2026-07-18] AI research workspace. Good boundary-specific collection per user.",
       "path": "KooshaPari/phenoAI",
