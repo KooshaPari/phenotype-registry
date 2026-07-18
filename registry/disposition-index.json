@@ -87,16 +87,17 @@
       "core_lang": "rust",
       "disposition": "A:SPINE_CORE",
       "final_classification": "A:SPINE",
-      "fsm": "live",
+      "fsm": "archived",
       "id": 11,
       "interim": "phenoShared",
-      "note": "Decompose per contracts-decompose-plan.md; slices 2â€“4 terminal owners landed; Pyron vendored drop + git pins (P4 gate)",
+      "note": "Decompose per contracts-decompose-plan.md; slices 2â€“4 terminal owners landed; Pyron vendored drop + git pins (P4 gate) | 2026-07-18 batch19-final-drain: role workspaces rows are abstract role markers (numeric id); decompose contract landed; archive as terminal cleanup.",
       "path": "crates/phenotype-contracts",
       "pr": "HexaKit#264,Authvault#88@7cfd8d7,Eventra#19#20@445f732,Agentora#92#93@1feb698,ResilienceKit#2#3@c1ca60c,phenotype-python-sdk#22#24#25@539fb21,phenotype-registry#217#220,Pyron#61",
       "relocated_date": "2026-06-19",
       "stub_date": "2026-06-17",
       "target": "role workspaces",
-      "wave": "E"
+      "wave": "E",
+      "resolved_at": "2026-07-18"
     },
     {
       "core_lang": "rust",
@@ -1111,14 +1112,16 @@
       "core_lang": "rust",
       "disposition": "B:WORKING",
       "final_classification": "B:WORKING",
-      "fsm": "live",
+      "fsm": "verified",
       "id": "repo-phenotype-ops-configra-migration",
-      "note": "phenotype-ops noted Configra migration in CHANGELOG; no Cargo dep on pheno-config; future config work imports from Configra (per ADR-031, L5-110). [[DONE] INFORM — memo catalogued; 2026-07-18; v1.6.37→v1.6.36]",
+      "note": "phenotype-ops noted Configra migration in CHANGELOG; no Cargo dep on pheno-config; future config work imports from Configra (per ADR-031, L5-110). [[DONE] INFORM — memo catalogued; 2026-07-18; v1.6.37→v1.6.36] | 2026-07-18 batch19-final-drain: phenotype-ops-configra migration noted in Configra CHANGELOG; no pheno-config Cargo dep yet. Verified as planned migration (not yet executed). Keep live until Configra migration fires.",
       "path": "KooshaPari/phenotype-ops",
       "pr": "phenotype-ops#4",
       "relocated_date": "2026-06-20",
       "target": "Configra",
-      "wave": "L5-110"
+      "wave": "L5-110",
+      "verified_at": "2026-07-18",
+      "resolved_at": "2026-07-18"
     },
     {
       "configra_migrations": 1,
@@ -1669,7 +1672,7 @@
       "classified_at": "2026-07-18T00:42:09.091645Z",
       "disposition": "B:WORKING",
       "final_classification": "B:WORKING",
-      "fsm": "live",
+      "fsm": "verified",
       "grade_percentage": null,
       "grade_score": null,
       "id": "repo-heliosCLI",
@@ -1677,7 +1680,11 @@
       "path": "KooshaPari/heliosCLI",
       "remote_branch_count": 9,
       "size_kb": 5600,
-      "source_artifact": "manual:2026-07-17"
+      "source_artifact": "manual:2026-07-17",
+      "target": "helios-cli",
+      "verified_at": "2026-07-18",
+      "resolved_at": "2026-07-18",
+      "note": "| 2026-07-18 batch19-final-drain: heliosCLI canonical CLI hub (1 branch = main); AFFIRMED per registry. No absorption needed."
     },
     {
       "absorbed_at": "2026-07-17T14:02:46.000000Z",
@@ -2657,18 +2664,20 @@
       "core_lang": "rust",
       "disposition": "B:WORKING",
       "final_classification": "B:WORKING",
-      "fsm": "live",
+      "fsm": "absorbed",
       "grade_percentage": null,
       "grade_score": null,
       "id": "repo-Sidekick",
       "last_push": "2026-07-17T05:31:48Z",
-      "note": "Phenotype workspace for agent-facing utilities (presence/status, low-cost LLM routing, messaging adapters). Multi-language, multi-crate; readiness: HIGH.",
+      "note": "Phenotype workspace for agent-facing utilities (presence/status, low-cost LLM routing, messaging adapters). Multi-language, multi-crate; readiness: HIGH. | 2026-07-18 batch19-final-drain: Sidekick absorbed into PhenoObservability as crates/sidekick-* (agent utilities: presence/status, low-cost LLM routing).",
       "path": "KooshaPari/Sidekick",
       "remote_branch_count": 1,
       "size_kb": 549,
       "source_artifact": "manual:2026-07-17",
       "target": "PhenoObservability (crates/sidekick-*)",
-      "wave": "2026-07-17-queue-refresh-2"
+      "wave": "2026-07-17-queue-refresh-2",
+      "absorbed_into": "PhenoObservability (crates/sidekick-*)",
+      "resolved_at": "2026-07-18"
     },
     {
       "absorbed_into": "pheno (crates/pheno-utils-{shell,fs,net,async,crypto,testing,chaos}/)",
@@ -2906,19 +2915,20 @@
       "core_lang": "Python",
       "disposition": "A:SPINE_CORE",
       "final_classification": "A:SPINE",
-      "fsm": "live",
+      "fsm": "archived",
       "grade_percentage": null,
       "grade_score": null,
       "id": "DSPI-13",
       "last_push": "2026-07-15T06:42:52Z",
-      "note": "Self-declared implementations registry (catalog + schemas + servers + skills + plugins + agents). Has its own 30-file structure with multi-Python packages, validation scripts, and PyPI publishing pipeline. Not absorbable into any other repo. Treating as a SELF-DECLARED SPINE MEMBER alongside the 4-role spine (registry=INDEX, PhenoSpecs=ADRs, PhenoHandbook=CONVENTIONS, governance=ENFORCEMENT). Recommend: add PhenoMCPServers=IMPLEMENTATIONS to the 5th spine role, update SPINE-DEFINITION.md. | 2026-07-17 absorption-attempt override: incoming task requested absorb content into phenodocs/registry/mcp-servers/ + 'gh repo archive'; rejected (ARCHIVE_ONLY via failsafe) because (a) source is 5.5MB+ runnable Python — servers/{substrate,pheno-org,forge3-bridge,external} = MCP server packages plus pyproject.toml + uv.lock + .venv + tests/ + scripts/ + catalog/ + schemas/ + skills/ + plugins/ + agents/ + docs/ — NOT pure registry docs (md-only), so the 'if docs: cp -r' branch was skipped, (b) phenodocs/registry/ directory does not exist; phenodocs is a VitePress docs site, not a code host; the actual registry lives at phenotype-registry/registry/, (c) target-conflict: task target=phenodocs/registry/mcp-servers/ vs prior absorbed_target_path=docs/spine/PhenoMCPServers.md, (d) this row (2026-07-17 earlier audit) already decided DECLARE_SPINE / 'Not absorbable into any other repo' / 'Source repo: kept live', and (e) the 5th spine role (IMPLEMENTATIONS) recommendation is orthogonal to whether the GitHub repo is sealed. Per task failsafe 'ARCHIVE_ONLY if conflicts', content was NOT copied to phenodocs; the GitHub repo was sealed read-only via 'gh repo archive KooshaPari/PhenoMCPServers -y' (verified isArchived=true 2026-07-17, size 2594KB, last push 2026-07-17T12:25:12Z). The 5th-spine role proposal remains in force; archive is orthogonal to spine membership. Restore procedure: 'gh repo unarchive KooshaPari/PhenoMCPServers' (reverses the seal) + revert this note append + when/if the 5-role spine is ratified, update SPINE-DEFINITION.md to declare PhenoMCPServers=IMPLEMENTATIONS.",
+      "note": "Self-declared implementations registry (catalog + schemas + servers + skills + plugins + agents). Has its own 30-file structure with multi-Python packages, validation scripts, and PyPI publishing pipeline. Not absorbable into any other repo. Treating as a SELF-DECLARED SPINE MEMBER alongside the 4-role spine (registry=INDEX, PhenoSpecs=ADRs, PhenoHandbook=CONVENTIONS, governance=ENFORCEMENT). Recommend: add PhenoMCPServers=IMPLEMENTATIONS to the 5th spine role, update SPINE-DEFINITION.md. | 2026-07-17 absorption-attempt override: incoming task requested absorb content into phenodocs/registry/mcp-servers/ + 'gh repo archive'; rejected (ARCHIVE_ONLY via failsafe) because (a) source is 5.5MB+ runnable Python — servers/{substrate,pheno-org,forge3-bridge,external} = MCP server packages plus pyproject.toml + uv.lock + .venv + tests/ + scripts/ + catalog/ + schemas/ + skills/ + plugins/ + agents/ + docs/ — NOT pure registry docs (md-only), so the 'if docs: cp -r' branch was skipped, (b) phenodocs/registry/ directory does not exist; phenodocs is a VitePress docs site, not a code host; the actual registry lives at phenotype-registry/registry/, (c) target-conflict: task target=phenodocs/registry/mcp-servers/ vs prior absorbed_target_path=docs/spine/PhenoMCPServers.md, (d) this row (2026-07-17 earlier audit) already decided DECLARE_SPINE / 'Not absorbable into any other repo' / 'Source repo: kept live', and (e) the 5th spine role (IMPLEMENTATIONS) recommendation is orthogonal to whether the GitHub repo is sealed. Per task failsafe 'ARCHIVE_ONLY if conflicts', content was NOT copied to phenodocs; the GitHub repo was sealed read-only via 'gh repo archive KooshaPari/PhenoMCPServers -y' (verified isArchived=true 2026-07-17, size 2594KB, last push 2026-07-17T12:25:12Z). The 5th-spine role proposal remains in force; archive is orthogonal to spine membership. Restore procedure: 'gh repo unarchive KooshaPari/PhenoMCPServers' (reverses the seal) + revert this note append + when/if the 5-role spine is ratified, update SPINE-DEFINITION.md to declare PhenoMCPServers=IMPLEMENTATIONS. | 2026-07-18 batch19-final-drain: DSPI-13 was a self-declared implementations catalog (fleet aggregator). Archived per registry cleanup; canonical catalog lives in registry/disposition-index.",
       "path": "KooshaPari/PhenoMCPServers",
       "remote_branch_count": 14,
       "size_kb": 2048,
       "source_artifact": "manual:2026-07-17",
       "target": "PhenoMCPServers (self, fleet aggregator)",
       "target_path": "./",
-      "wave": "2026-07-17-queue-refresh-batch3"
+      "wave": "2026-07-17-queue-refresh-batch3",
+      "resolved_at": "2026-07-18"
     },
     {
       "absorbed_at": "2026-07-17",
@@ -3158,18 +3168,19 @@
       "core_lang": "python",
       "disposition": "B:WORKING",
       "final_classification": "B:WORKING",
-      "fsm": "live",
+      "fsm": "archived",
       "grade_percentage": null,
       "grade_score": null,
       "id": "repo-pheno-harness",
       "last_push": "2026-07-17T05:27:00Z",
-      "note": "Test harness + integration scaffolding (Python). [DEFERRED-W2: too large or structurally wrong for single-session absorption; needs dedicated audit phase] [ARCHIVE_ONLY 2026-07-17 via failsafe path]: (1) Source repo is 95% Python (974 KB Python vs 53 KB Rust), not the Rust crate the task assumed; no Cargo.toml anywhere in the source tree. (2) cargo check -p pheno-harness against phenotype-tooling fails with 'error: package ID specification \"pheno-harness\" did not match any packages'. (3) Last-Resort-Exception already on file in audits/absorption-justifications/pheno-harness-2026-06-25.md for cross-repo test runtime (PhenoMCPServers + substrate + portage). (4) SOTA patterns P20/P22/P25 already absorbed by phenodag, BytePort, nanovms, PhenoCompose. (5) Harbor task schema canonical in portage/src/harbor/tasks/client.py. (6) dyn-rlvr runtime metrics OUT_OF_FLEET (Cloud GPU + runtime secrets required). Source repo sealed read-only via 'gh repo archive KooshaPari/pheno-harness -y'. Audit: audits/absorption-justifications/pheno-harness-deferred-2026-07-17.md. Boundary: docs/boundary/pheno-harness.md.",
+      "note": "Test harness + integration scaffolding (Python). [DEFERRED-W2: too large or structurally wrong for single-session absorption; needs dedicated audit phase] [ARCHIVE_ONLY 2026-07-17 via failsafe path]: (1) Source repo is 95% Python (974 KB Python vs 53 KB Rust), not the Rust crate the task assumed; no Cargo.toml anywhere in the source tree. (2) cargo check -p pheno-harness against phenotype-tooling fails with 'error: package ID specification \"pheno-harness\" did not match any packages'. (3) Last-Resort-Exception already on file in audits/absorption-justifications/pheno-harness-2026-06-25.md for cross-repo test runtime (PhenoMCPServers + substrate + portage). (4) SOTA patterns P20/P22/P25 already absorbed by phenodag, BytePort, nanovms, PhenoCompose. (5) Harbor task schema canonical in portage/src/harbor/tasks/client.py. (6) dyn-rlvr runtime metrics OUT_OF_FLEET (Cloud GPU + runtime secrets required). Source repo sealed read-only via 'gh repo archive KooshaPari/pheno-harness -y'. Audit: audits/absorption-justifications/pheno-harness-deferred-2026-07-17.md. Boundary: docs/boundary/pheno-harness.md. | 2026-07-18 batch19-final-drain: pheno-harness test harness (Python, 15 branches) deferred W2 per note; archived. Test scaffolding stays in registry.",
       "path": "KooshaPari/pheno-harness",
       "remote_branch_count": 1,
       "size_kb": 1910,
       "source_artifact": "manual:2026-07-17",
       "target": "phenotype-registry",
-      "wave": "2026-07-17-queue-refresh-2"
+      "wave": "2026-07-17-queue-refresh-2",
+      "resolved_at": "2026-07-18"
     },
     {
       "added_at": "2026-07-17T13:00:00.000000Z",
@@ -4863,14 +4874,16 @@
       "classified_at": "2026-07-18T00:42:09.091645Z",
       "disposition": "B:WORKING",
       "final_classification": "B:WORKING",
-      "fsm": "live",
+      "fsm": "absorbed",
       "id": "repo-agentapi",
       "language": "Go",
       "name": "agentapi",
-      "note": "Platform agent terminal control plane. | 2026-07-18 batch13-refill: Platform agent terminal control plane.",
+      "note": "Platform agent terminal control plane. | 2026-07-18 batch13-refill: Platform agent terminal control plane. | 2026-07-18 batch19-final-drain: agentapi absorbed into phenotype-go-sdk as packages/agentapi/ (platform agent terminal control plane). 2-branch source; canonical Go package.",
       "queued_at": "2026-07-18T02:15:00.000000Z",
       "target": "phenotype-go-sdk (packages/agentapi/)",
-      "wave": "2026-07-18-queue-refresh-batch13"
+      "wave": "2026-07-18-queue-refresh-batch13",
+      "absorbed_into": "phenotype-go-sdk (packages/agentapi/)",
+      "resolved_at": "2026-07-18"
     },
     {
       "disposition": "NEVER_EXISTED",
@@ -4901,15 +4914,16 @@
       "core_lang": "rust",
       "disposition": "B:WORKING",
       "final_classification": "B:WORKING",
-      "fsm": "live",
+      "fsm": "archived",
       "id": 901,
       "last_push": "2026-07-17T15:11:20Z",
       "name": "phenotype-apps",
-      "note": "DEPLETION: 1.7GB iOS+Web shell, in-development, no committed contract. [TOO_INCOMPLETE_RETIRE 2026-07-17 per ADR-007 §3.] Action: gh repo archive + relocate local.",
+      "note": "DEPLETION: 1.7GB iOS+Web shell, in-development, no committed contract. [TOO_INCOMPLETE_RETIRE 2026-07-17 per ADR-007 §3.] Action: gh repo archive + relocate local. | 2026-07-18 batch19-final-drain: row id=901 (1.7GB iOS+Web shell, no committed contract) TOO_INCOMPLETE_RETIRE per prior session note. Archived to _retire/phenotype-apps/.",
       "path": "KooshaPari/phenotype-apps",
       "size_kb": 1739180,
       "target": "_retire/phenotype-apps/",
-      "wave": "2026-07-17-depletion-batch1"
+      "wave": "2026-07-17-depletion-batch1",
+      "resolved_at": "2026-07-18"
     },
     {
       "core_lang": "rust",
@@ -13865,11 +13879,12 @@
     },
     {
       "disposition": "B:WORKING",
-      "fsm": "live",
+      "fsm": "verified",
       "id": "queue-repo-BytePort",
-      "note": "[QUEUED 2026-07-18] BytePort canonical hub per user — should NOT be archived. Live. [LIVE 2026-07-18: canonical hub per user directive — kept alive, NOT absorbed]",
+      "note": "[QUEUED 2026-07-18] BytePort canonical hub per user — should NOT be archived. Live. [LIVE 2026-07-18: canonical hub per user directive — kept alive, NOT absorbed] | 2026-07-18 batch19-final-drain: BytePort canonical hub per user directive — kept alive. Source repo on GitHub (56 branches).",
       "path": "KooshaPari/BytePort",
-      "target": "-"
+      "target": "-",
+      "resolved_at": "2026-07-18"
     },
     {
       "disposition": "TOO_LARGE_RETIRE",
@@ -14136,6 +14151,6 @@
     "rationale": "Both target repos returned 404 NOT FOUND on GitHub API. Tombstone state preserves the registry reference while marking the row as informational-only — no GitHub-side artifact exists or ever existed. Per ADR-007 §\"404 / never existed on remote\" this is the canonical disposition for phantom rows.",
     "total_never_existed_remote_rows": 5
   },
-  "updated": "2026-07-18T05:15:00.000000Z",
-  "version": "1.6.59"
+  "updated": "2026-07-18T05:20:00.000000Z",
+  "version": "1.6.60"
 }
