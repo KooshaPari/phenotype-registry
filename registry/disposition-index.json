@@ -1411,14 +1411,15 @@
       "deleted_at": "2026-07-18",
       "disposition": "TOO_LARGE_RETIRE",
       "final_classification": "C:TOO_LARGE_RETIRE",
-      "fsm": "deleted",
+      "fsm": "live",
       "grade_percentage": null,
       "grade_score": null,
       "id": "repo-Eidolon-absorption-2026-06-25",
       "last_push": "2026-06-22T04:19:12Z",
-      "note": "| resolved 2026-07-17: Eidolon source absorbed into Agentora as eidolon/. Source archived. [DELETED 2026-07-18: source repo deleted from GitHub after verified code integration]",
+      "note": "| resolved 2026-07-17: Eidolon source absorbed into Agentora as eidolon/. Source archived. [DELETED 2026-07-18: source repo deleted from GitHub after verified code integration] [RESTORED 2026-07-18: user directive \u2014 restored from pheno absorb branch, unarchived]",
       "path": "KooshaPari/Eidolon",
       "remote_branch_count": 92,
+      "restored_at": "2026-07-18",
       "size_kb": 336,
       "source_artifact": "automated:__main__:2026-06-25"
     },
@@ -13971,13 +13972,14 @@
       "branch_count": 92,
       "deleted_at": "2026-07-18",
       "disposition": "B:WORKING",
-      "fsm": "deleted",
+      "fsm": "live",
       "id": "repo-Eidolon",
       "language": "?",
       "name": "Eidolon",
-      "note": "| 2026-07-18 batch15: Eidolon (92 branches, real GH repo) \u2014 re-queue for absorption. Target pheno monorepo crates/eidolon/. [PROMOTED 2026-07-18: Eidolon is canonical hub per user \u2014 92 branches, real GH repo, live] | 2026-07-18 batch15-execute: Eidolon (92-branch source, 6094 LOC Rust, 5 crates) absorbed into pheno monorepo. Forensic copy retained at registry/absorbed-crates/eidolon/. Boundary spec at docs/boundary/eidolon.md. Source archive pending GH auth. | 2026-07-18: marked delete_eligible (GH archived + forensic copy in registry/absorbed-crates/). Pending gh auth refresh for delete_repo scope. | 2026-07-18: delete_eligible REMOVED per user directive \u2014 repo should live as canonical. [DELETED 2026-07-18: source repo deleted from GitHub after verified code integration]",
+      "note": "| 2026-07-18 batch15: Eidolon (92 branches, real GH repo) \u2014 re-queue for absorption. Target pheno monorepo crates/eidolon/. [PROMOTED 2026-07-18: Eidolon is canonical hub per user \u2014 92 branches, real GH repo, live] | 2026-07-18 batch15-execute: Eidolon (92-branch source, 6094 LOC Rust, 5 crates) absorbed into pheno monorepo. Forensic copy retained at registry/absorbed-crates/eidolon/. Boundary spec at docs/boundary/eidolon.md. Source archive pending GH auth. | 2026-07-18: marked delete_eligible (GH archived + forensic copy in registry/absorbed-crates/). Pending gh auth refresh for delete_repo scope. | 2026-07-18: delete_eligible REMOVED per user directive \u2014 repo should live as canonical. [DELETED 2026-07-18: source repo deleted from GitHub after verified code integration] [RESTORED 2026-07-18: user directive \u2014 restored from pheno absorb branch, unarchived]",
       "queued_at": "2026-07-18T03:30:00.000000Z",
       "resolved_at": "2026-07-18",
+      "restored_at": "2026-07-18",
       "target": "pheno (crates/eidolon)",
       "verified_at": "2026-07-18",
       "wave": "2026-07-18-queue-refresh-batch15"
@@ -14447,5 +14449,5 @@
     "total_never_existed_remote_rows": 5
   },
   "updated": "2026-07-18",
-  "version": "1.6.71"
+  "version": "1.6.72"
 }
