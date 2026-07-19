@@ -8,7 +8,7 @@ substrates:
 - id: agentapi-plusplus
   repo: KooshaPari/agentapi-plusplus
   name: agentapi-plusplus
-  status: active
+  status: archived
   tier: federated-service
   architecture: layered
   archetype: fork-tool
@@ -23,7 +23,7 @@ substrates:
 - id: agentora
   repo: KooshaPari/Agentora
   name: Agentora
-  status: done
+  status: active
   tier: phenotype-framework
   architecture: layered
   archetype: app
@@ -38,7 +38,7 @@ substrates:
 - id: apisync
   repo: KooshaPari/Apisync
   name: Apisync
-  status: archived
+  status: active
   tier: pheno-lib
   architecture: layered
   archetype: app
@@ -81,7 +81,7 @@ substrates:
 - id: authvault
   repo: KooshaPari/Authvault
   name: Authvault
-  status: done
+  status: active
   tier: phenotype-framework
   architecture: layered
   archetype: library
@@ -138,7 +138,7 @@ substrates:
 - id: clap-ext
   repo: KooshaPari/clap-ext
   name: clap-ext
-  status: archived
+  status: active
   tier: pheno-lib
   architecture: layered
   archetype: library
@@ -152,7 +152,7 @@ substrates:
 - id: cliproxyapi-plusplus
   repo: KooshaPari/cliproxyapi-plusplus
   name: cliproxyapi-plusplus
-  status: active
+  status: archived
   tier: federated-service
   architecture: layered
   archetype: fork-tool
@@ -212,7 +212,7 @@ substrates:
 - id: conft
   repo: KooshaPari/Conft
   name: Conft
-  status: archived
+  status: active
   tier: pheno-lib
   architecture: layered
   archetype: library
@@ -300,7 +300,7 @@ substrates:
 - id: focalpoint
   repo: KooshaPari/FocalPoint
   name: FocalPoint
-  status: done
+  status: active
   tier: phenotype-framework
   architecture: layered
   archetype: app
@@ -362,7 +362,7 @@ substrates:
 - id: helios-cli
   repo: KooshaPari/helios-cli
   name: helios-cli
-  status: done
+  status: active
   tier: federated-service
   architecture: layered
   archetype: fork-tool
@@ -376,7 +376,7 @@ substrates:
 - id: helioslab
   repo: KooshaPari/HeliosLab
   name: HeliosLab
-  status: done
+  status: active
   tier: federated-service
   architecture: layered
   archetype: fork-tool
@@ -512,7 +512,7 @@ substrates:
 - id: kodevibe
   repo: KooshaPari/KodeVibe
   name: KodeVibe
-  status: deleted
+  status: archived
   tier: phenotype-framework
   architecture: layered
   archetype: tooling
@@ -540,7 +540,7 @@ substrates:
 - id: logify
   repo: KooshaPari/Logify
   name: Logify
-  status: deleted
+  status: archived
   tier: pheno-lib
   architecture: layered
   archetype: library
@@ -573,7 +573,7 @@ substrates:
 - id: nanovms
   repo: KooshaPari/nanovms
   name: nanovms
-  status: deleted
+  status: archived
   tier: federated-service
   architecture: layered
   archetype: infra
@@ -588,7 +588,7 @@ substrates:
 - id: omniroute
   repo: KooshaPari/OmniRoute
   name: OmniRoute
-  status: done
+  status: archived
   tier: federated-service
   architecture: layered
   archetype: fork-tool
@@ -617,7 +617,7 @@ substrates:
 - id: pheno-cdylib-bridge
   repo: KooshaPari/pheno-cdylib-bridge
   name: pheno-cdylib-bridge
-  status: archived
+  status: active
   tier: pheno-lib
   architecture: layered
   archetype: library
@@ -631,7 +631,7 @@ substrates:
 - id: pheno-context
   repo: KooshaPari/pheno-context
   name: pheno-context
-  status: deleted
+  status: archived
   tier: pheno-lib
   architecture: layered
   archetype: library
@@ -645,7 +645,7 @@ substrates:
 - id: pheno-forge-plugins
   repo: KooshaPari/pheno-forge-plugins
   name: pheno-forge-plugins
-  status: archived
+  status: active
   tier: pheno-lib
   architecture: layered
   archetype: plugin
@@ -673,7 +673,7 @@ substrates:
 - id: pheno-runtime-config
   repo: KooshaPari/pheno-runtime-config
   name: pheno-runtime-config
-  status: archived
+  status: active
   tier: pheno-lib
   architecture: layered
   archetype: library
@@ -702,7 +702,7 @@ substrates:
 - id: phenoai
   repo: KooshaPari/phenoAI
   name: phenoAI
-  status: archived
+  status: active
   tier: phenotype-framework
   architecture: layered
   archetype: app
@@ -760,7 +760,7 @@ substrates:
 - id: phenodata
   repo: KooshaPari/phenoData
   name: phenoData
-  status: archived
+  status: active
   tier: phenotype-framework
   architecture: layered
   archetype: app
@@ -774,7 +774,7 @@ substrates:
 - id: phenodesign
   repo: KooshaPari/phenoDesign
   name: phenoDesign
-  status: archived
+  status: active
   tier: pheno-lib
   architecture: layered
   archetype: docs
@@ -848,7 +848,7 @@ substrates:
 - id: phenoobservability
   repo: KooshaPari/PhenoObservability
   name: PhenoObservability
-  status: done
+  status: active
   tier: pheno-lib
   architecture: layered
   archetype: library
@@ -877,7 +877,7 @@ substrates:
 - id: phenoresearchengine
   repo: KooshaPari/phenoResearchEngine
   name: phenoResearchEngine
-  status: deleted
+  status: archived
   tier: phenotype-framework
   architecture: layered
   archetype: service
@@ -891,7 +891,7 @@ substrates:
 - id: phenoruntime
   repo: KooshaPari/PhenoRuntime
   name: PhenoRuntime
-  status: archived
+  status: active
   tier: phenotype-framework
   architecture: layered
   archetype: service
@@ -905,7 +905,7 @@ substrates:
 - id: phenospecs
   repo: KooshaPari/PhenoSpecs
   name: PhenoSpecs
-  status: deleted
+  status: archived
   tier: pheno-lib
   architecture: layered
   archetype: spec
@@ -934,7 +934,7 @@ substrates:
 - id: phenotype-contracts
   repo: KooshaPari/phenotype-contracts
   name: phenotype-contracts
-  status: deleted
+  status: archived
   tier: pheno-lib
   architecture: layered
   archetype: contract
@@ -964,7 +964,7 @@ substrates:
 - id: phenotype-go-sdk
   repo: KooshaPari/phenotype-go-sdk
   name: phenotype-go-sdk
-  status: done
+  status: archived
   tier: phenotype-sdk
   architecture: layered
   archetype: sdk
@@ -1061,7 +1061,7 @@ substrates:
 - id: phenotype-org-audits
   repo: KooshaPari/phenotype-org-audits
   name: phenotype-org-audits
-  status: archived
+  status: active
   tier: pheno-lib
   architecture: layered
   archetype: tooling
@@ -1075,7 +1075,7 @@ substrates:
 - id: phenotype-pm-core
   repo: KooshaPari/phenotype-pm-core
   name: phenotype-pm-core
-  status: deleted
+  status: archived
   tier: pheno-lib
   architecture: layered
   archetype: library
@@ -1120,7 +1120,7 @@ substrates:
 - id: phenotype-router-spec
   repo: KooshaPari/phenotype-router-spec
   name: phenotype-router-spec
-  status: deleted
+  status: archived
   tier: pheno-lib
   architecture: layered
   archetype: spec
@@ -1150,7 +1150,7 @@ substrates:
 - id: phenoutils
   repo: KooshaPari/phenoUtils
   name: phenoUtils
-  status: archived
+  status: active
   tier: pheno-lib
   architecture: layered
   archetype: library
@@ -1198,7 +1198,7 @@ substrates:
 - id: pine
   repo: KooshaPari/Pine
   name: Pine
-  status: archived
+  status: active
   tier: phenotype-framework
   architecture: layered
   archetype: service
@@ -1226,7 +1226,7 @@ substrates:
 - id: plusforges
   repo: KooshaPari/PlusForges
   name: PlusForges
-  status: deleted
+  status: archived
   tier: pheno-lib
   architecture: layered
   archetype: docs
@@ -1241,7 +1241,7 @@ substrates:
 - id: policystack
   repo: KooshaPari/PolicyStack
   name: PolicyStack
-  status: deleted
+  status: archived
   tier: phenotype-framework
   architecture: layered
   archetype: library
@@ -1255,7 +1255,7 @@ substrates:
 - id: portage
   repo: KooshaPari/portage
   name: portage
-  status: done
+  status: active
   tier: federated-service
   architecture: layered
   archetype: fork-tool
@@ -1311,7 +1311,7 @@ substrates:
 - id: sidekick
   repo: KooshaPari/Sidekick
   name: Sidekick
-  status: archived
+  status: active
   tier: phenotype-framework
   architecture: layered
   archetype: service
@@ -1325,7 +1325,7 @@ substrates:
 - id: stashly
   repo: KooshaPari/Stashly
   name: Stashly
-  status: deleted
+  status: archived
   tier: pheno-lib
   architecture: layered
   archetype: library
@@ -1356,7 +1356,7 @@ substrates:
 - id: substrate
   repo: KooshaPari/substrate
   name: substrate
-  status: archived
+  status: active
   tier: federated-service
   architecture: layered
   archetype: monorepo
@@ -1400,7 +1400,7 @@ substrates:
 - id: testingkit
   repo: KooshaPari/TestingKit
   name: TestingKit
-  status: done
+  status: active
   tier: phenotype-framework
   architecture: layered
   archetype: sdk
@@ -1414,7 +1414,7 @@ substrates:
 - id: thegent
   repo: KooshaPari/thegent
   name: thegent
-  status: done
+  status: active
   tier: phenotype-framework
   architecture: layered
   archetype: service
@@ -1442,7 +1442,7 @@ substrates:
 - id: tracely
   repo: KooshaPari/Tracely
   name: Tracely
-  status: done
+  status: active
   tier: pheno-lib
   architecture: layered
   archetype: app
