@@ -4294,13 +4294,13 @@
       "absorbed_into": "phenotype-go-sdk (already-target)",
       "branch_count": 8,
       "classified_at": "2026-07-18T00:42:09.091645Z",
-      "disposition": "B:WORKING",
+      "disposition": "DECOMPOSE",
       "final_classification": "B:WORKING",
-      "fsm": "live",
+      "fsm": "active",
       "id": "repo-phenotype-go-sdk",
       "language": "Go",
       "name": "phenotype-go-sdk",
-      "note": "Already-target! Flip to verified AFFIRM. | 2026-07-18 batch9-resolved: phenotype-go-sdk is itself the canonical target of phenotype-org Go SDK; AFFIRMED per registry strategy. Verified (not absorbed). | 2026-07-18 batch19-flip: live -> absorbed (target documented, absorption per registry note). [FIXED 2026-07-18: absorbed->live, canonical disposition] [USER-DECISION 2026-07-19: user: standalone boundary, tools-only per spec, NO merge]",
+      "note": "Already-target! Flip to verified AFFIRM. | 2026-07-18 batch9-resolved: phenotype-go-sdk is itself the canonical target of phenotype-org Go SDK; AFFIRMED per registry strategy. Verified (not absorbed). | 2026-07-18 batch19-flip: live -> absorbed (target documented, absorption per registry note). [FIXED 2026-07-18: absorbed->live, canonical disposition] [USER-DECISION 2026-07-19: user: standalone boundary, tools-only per spec, NO merge] [RECIND-WRONG-STANDALONE 2026-07-19: user corrected \u2014 wrong absorption candidate. Decompose into multiple absorbs; do NOT treat as standalone SDK. Awaiting decomposition plan before any deletion.] [DECOMPOSE_INTO_MULTIPLE_ABSORBS 2026-07-19: this is wrong absorption candidate \u2014 user 2026-07-18 explicitly stated \"decompose the former do all nt\" meaning decompose into multiple absorbs. NOT standalone SDK. Awaiting decomposition plan.]",
       "queued_at": "2026-07-18T00:35:00.000000Z",
       "target": "phenotype-go-sdk (already-target)",
       "wave": "2026-07-18-queue-refresh-batch9-real"
@@ -4493,7 +4493,7 @@
       "id": "AUTO-IMPORT-phenotype-org-governance",
       "last_push": "2026-06-18",
       "name": "phenotype-org-governance",
-      "note": "AUDITED 2026-07-17 (deep coverage audit). Repo ARCHIVED on GH (sz=960KB, lang=Shell, pushed=2026-06-18). Description: Phenotype-org governance, audits, dashboards, and policy. Tombstoned. | 2026-07-18 batch19-flip: AUTO-IMPORT bookkeeping -> terminal archived. [USER-DECISION 2026-07-19: user: distinct from phenotype-registry, no merge]",
+      "note": "AUDITED 2026-07-17 (deep coverage audit). Repo ARCHIVED on GH (sz=960KB, lang=Shell, pushed=2026-06-18). Description: Phenotype-org governance, audits, dashboards, and policy. Tombstoned. | 2026-07-18 batch19-flip: AUTO-IMPORT bookkeeping -> terminal archived. [USER-DECISION 2026-07-19: user: distinct from phenotype-registry, no merge] [RECIND-MERGE-CANDIDATE 2026-07-19: user corrected \u2014 this was a wrong-absorption candidate I'm not supposed to touch. Keep as its own standalone repo. NO merge, NO delete.] [RECIND-MERGE-CANDIDATE 2026-07-19: user correction \u2014 phenotype-org-governance is a wrong-absorption candidate I was thinking of touching. User said: keep as its own standalone repo. NO merge, NO delete. Keep separate from phenotype-registry.]",
       "path": "KooshaPari/phenotype-org-governance",
       "reconciled_at": "2026-07-18T00:20:55.172040Z",
       "size_kb": 960,
@@ -14498,5 +14498,5 @@
     "total_never_existed_remote_rows": 5
   },
   "updated": "2026-07-19",
-  "version": "1.6.78"
+  "version": "1.6.80"
 }
