@@ -1,17 +1,24 @@
-# PhenoDesign -- Intent
+# PhenoDesign — Intent
 
 ## Intent Statement
 
-PhenoDesign is the design-token and component-pattern library for the Phenotype ecosystem. It defines a single source-of-truth for colors, typography, spacing, motion, and accessibility primitives consumed by every frontend repo (phenoAI, phenoData, phenotype-landing). Output: a published `@phenotype/design` package plus a Figma library.
+PhenoDesign is the **creativity / design / UX spine** for the Phenotype ecosystem. It is the single canonical home for design tokens, component patterns, art direction, and UX conventions consumed by every frontend repo (phenoAI, phenoData, phenotype-landing, heliosApp). Output: a published `@phenotype/design` package, Figma-aligned token library, and fleet-wide UX governance.
+
+The **asset render pipeline** (Blender, FFmpeg, ImageMagick, Unreal) lives in the peer repo [`KooshaPari/asset-engine`](https://github.com/KooshaPari/asset-engine), extracted from the former `engine/` subtree (2026-07-20).
 
 ## Role
 
-`design-system` (per `phenotype-registry/ECOSYSTEM_MAP.md` section 6)
+| Layer | Role |
+|-------|------|
+| **Spine** | `CREATIVITY_DESIGN_UX` (see `docs/spine/SPINE-DEFINITION.md`) |
+| **Ecosystem map** | `design-system` + spine member |
+| **Disposition** | `LIVE` / `DECLARE_SPINE` — absorption into phenodocs reversed 2026-07-20 |
 
 ## Boundary
 
-See [`../boundary/PhenoDesign.md`](../boundary/PhenoDesign.md) for the in-scope / out-of-scope
-declaration.
+See [`../boundary/PhenoDesign.md`](../boundary/PhenoDesign.md) for the in-scope / out-of-scope declaration.
+
+Asset pipeline boundary: [`../boundary/asset-engine.md`](../boundary/asset-engine.md).
 
 ## Curated prompts
 
@@ -20,7 +27,7 @@ See `_bindings.json` key `PhenoDesign` for the bound prompt-hash list
 
 ## Provenance
 
-- Source-of-truth role: `phenotype-registry/ECOSYSTEM_MAP.md` section 6 role table
-- Stub rendered: 2026-06-18 by `scripts/render-stubs.py`
-- Prose filled: 2026-06-19 by `scripts/fill-intent-stubs.py`
+- Spine restoration: 2026-07-20 (GitHub unarchived; registry SSOT updated)
+- Prior absorption reversed: phenodocs/packages/design/ was a mirror, not canonical
+- Source-of-truth role: `phenotype-registry/ECOSYSTEM_MAP.md` + `BOUNDARY_OWNERS.md`
 - Refresh cadence: weekly per ADR-024

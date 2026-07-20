@@ -4,20 +4,26 @@
     "typescript"
   ],
   "primary_language": "typescript",
-  "status": "absorbed",
+  "status": "live",
   "has_readme": true,
   "type": "design-system",
-  "path": "repos/phenoDesign (archived)",
-  "disposition": "ABSORBED",
-  "wave": "2026-07-17-queue-refresh",
-  "absorbed_into": "phenodocs (packages/design)",
-  "absorbed_branch": "absorb/phenoDesign-2026-07-17",
-  "absorption_artifact": "docs/absorption/phenoDesign/README.md",
-  "boundary_artifact": "docs/boundary/phenoDesign.md",
-  "absorbed_at": "2026-07-17T12:00:00.000000Z",
-  "archived": true,
-  "archived_at": "2026-07-17T12:00:00.000000Z",
-  "absorption_note": "TypeScript design tokens + VitePress theme package (@kooshapari/design -> normalized to @phenotype/design). 21 branches, 849KB. Per RATIONALIZATION_PLAN.md: 'phenodocs Absorbs: phenoDesign (design tokens live here)'. 11 files transferred to phenodocs/packages/design/ (3 entry .ts, 1 generator, 1 types, 3 CSS, 1 package.json, 1 .gitignore). Source repo archived 2026-07-17.",
-  "note": "Audited 2026-07-17; absorbed same day. Package identity @phenotype/design preserved; npm scope normalized from @kooshapari/design.",
+  "path": "repos/phenoDesign",
+  "disposition": "DECLARE_SPINE",
+  "spine_role": "CREATIVITY_DESIGN_UX",
+  "wave": "2026-07-20-creativity-spine-restoration",
+  "boundary_artifact": "docs/boundary/PhenoDesign.md",
+  "spine_artifact": "docs/spine/phenoDesign.md",
+  "related_repos": [
+    "KooshaPari/asset-engine"
+  ],
+  "restored_at": "2026-07-20T00:00:00.000000Z",
+  "unarchived_at": "2026-07-20T00:00:00.000000Z",
+  "absorption_reversed": true,
+  "prior_absorption": {
+    "date": "2026-07-17",
+    "target": "phenodocs (packages/design)",
+    "reversed_reason": "Creativity/design/UX requires a dedicated spine repo; token package remains consumable from phenoDesign canonical source."
+  },
+  "note": "Spine repo for creativity, art, design, and UX across Phenotype. Owns @phenotype/design tokens, VitePress theme, component patterns, and design governance. Asset pipeline extracted to KooshaPari/asset-engine (formerly engine/). GitHub unarchived 2026-07-20.",
   "adr": "ADR-ECO-014"
 }
