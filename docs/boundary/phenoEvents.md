@@ -1,39 +1,33 @@
----
-repo: "phenoEvents"
-role: unknown
-status: active
-last_boundary_review: 2026-06-17
-review_cadence: 30d
-in_scope:
-  - "<to be filled>"
-out_of_scope:
-  - "<to be filled>"
----
+# phenoEvents — Absorption Boundary
 
-# Boundary — phenoEvents
+**Status**: `ABSORBED` (2026-07-17)  
+**Source**: `github.com/KooshaPari/phenoEvents`  
+**Target**: `github.com/KooshaPari/pheno` → `crates/pheno-events/`  
+**Type**: Rust workspace crate absorption  
 
-## In Scope
+## Description
 
-<To be filled.>
+PhenoEvents is an EventBus port with hexagonal architecture (192KB, 2 crates: `pheno-events` + `phenoevents-observability`).
 
-## Out of Scope
+## Transfer Record
 
-| Not here | Lives in | Reason |
-| -------- | -------- | ------ |
-| `<capability>` | `<other-repo-or-N/A>` | `<why>` |
+- `phenoevents-observability` was already present in pheno monorepo (`crates/phenoevents-observability/`)
+- Main crate absorbed as `crates/pheno-events/` with nested workspace removed
+- Dep path updated from `crates/phenoevents-observability` to `../phenoevents-observability`
+- `cargo check -p pheno-events`: 0 errors
+- `phenoevents-observability` already at workspace level; nested copy removed
 
-## Boundary Crossings
+## Verification
 
-| Crossing | Direction | Surface | Status |
-| -------- | --------- | ------- | ------ |
-| `<capability or interface>` | `<this-repo→other|other→this-repo>` || `<this-repo→other|other→this-repo>` | `<Trait / HTTP / CLI / file / event>` | `<green|amber|red>` || `<green|amber|red>` || `<green|amber|red>` |
+| Check | Result |
+|-------|--------|
+| Workspace member added | `"crates/pheno-events"` |
+| `cargo check` | clean |
+| Nested workspace removed | done |
+| Duplicate crate removed | done (observability already existed) |
 
-## Last Boundary Review
+## Cleanup
 
-**Date:** 2026-06-17
-**Reviewer:** forge subagent (L7-001 sweep)
-**Worklog / finding:** `worklogs/L7-001-intent-boundary-curation-2026-06-17.json`
-**Decisions:**
-- Initial scaffolding; needs human review.
-
-**Next review:** 2026-07-17
+- [x] Code transferred
+- [x] Dep paths resolved
+- [x] Source repo archived

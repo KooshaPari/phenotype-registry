@@ -46,13 +46,14 @@ Role split for the spec/governance spine (so indexes stop competing):
 > **Note 2026-06-18**: `phenotype-auth-ts` was archived in this wave and absorbed into [AuthKit](https://github.com/KooshaPari/AuthKit) `typescript/packages/auth-ts/` (PR #120). The row above is stale pending the next rationalization update. **McpKit carve-out (2026-06-18)**: the Rust `phenotype-mcp-asset` lib was extracted from `McpKit/rust/phenotype-mcp-asset/` into temporary [KooshaPari/phenotype-mcp-asset](https://github.com/KooshaPari/phenotype-mcp-asset), then folded into [KooshaPari/PhenoFastMCP-rust](https://github.com/KooshaPari/PhenoFastMCP-rust) at `crates/fastmcp-asset`.|
 | **SDK** | 8 | AuthKit, DataKit, ObservabilityKit, ResilienceKit, TestingKit, PlatformKit, PhenoKits, HexaKit |
 | **tooling** | 11 | AgilePlus, phenotype-dep-guard, phenotype-tooling, phenotype-infra, PhenoDevOps, Conft, agent-devops-setups, helioscope, Benchora, agileplus-spec-harmonizer, PhenoCompose |
-| **product / app** | 11 | Agentora, thegent, Tracera, AgilePlus, PlayCua, Dino, eyetracker, hwLedger, phenoRouterMonitor, slickport, **BytePort** (Tauri 2.x desktop app per ADR-022) |
+| **product / app** | 12 | Agentora, thegent, Tracera, AgilePlus, PlayCua, Dino, eyetracker, hwLedger, phenoRouterMonitor, slickport, **BytePort** (Tauri 2.x desktop app per ADR-022), **SessionLedger** (OKF-native session compiler: sl-daemon + sl-viewer) |
 | **plugin** | 4 | PhenoPlugins, argis-extensions, Tokn |
 | **docs** | 8 | PhenoSpecs, phenotype-registry, PhenoHandbook, phenodocs, phenoXdd, PhenoDesign, phenotype-hub (scaffold), LIBRARY_RESEARCH_REGISTRY |
 | **landing** | 9 | agileplus-landing, byteport-landing, hwledger-landing, odin-landing\*, phenokits-landing, projects-landing, thegent-landing, AppGen (template) |
 | **fork** | 15 | agentapi-plusplus, bifrost, cliproxyapi-plusplus, DINOForge-UnityDoorstop, forgecode, helios-cli, HeliosLab, MCPForge, OmniRoute, phenotype-omlx, phenotype-ops-mcp, Planify, portage, vibeproxy, WorldSphereMod |
 | **stub / scaffold** | 5 | phenotype-hub, vibeproxy-monitoring-unified, PhenoProject, phenoStandards (deprecated), Zerokit |
-| **superseded / archived** | 47 | .github, odin-landing, Profila, Project-Spyn, RIP-Fitness-App, sharecli, tehgent, thegent-sharecli, worktree-manager, phenoVessel, phenoTypes, phenoPatch, Diffuse, Servion, Guardrail, Cryptora, forge, phenoForge, router-docs, cheap-llm-mcp, dispatch-mcp, thegent-dispatch, McpKit, PhenoMCP, PhenoProc, Metron, PhenoKits, Stashly, Settly, AuthKit, Traceon, ResilienceKit, TestingKit, heliosBench, heliosApp, PolicyStack, portage, phenoDesign, phenoXddLib, dagctl, kwality, dinoforge-packs, phenotype-auth-ts, **phenotype-voxel, phenotype-terrain, phenotype-water, phenotype-postfx (S→gfx) — ARCHIVED + DELETED 2026-06-18 (L5-114) after [phenotype-gfx#10](https://github.com/KooshaPari/phenotype-gfx/pull/10) merged (sha 5380b2bd)** |
+| **superseded / archived** | 46 | .github, odin-landing, Profila, Project-Spyn, RIP-Fitness-App, sharecli, tehgent, thegent-sharecli, worktree-manager, phenoVessel, phenoTypes, phenoPatch, Diffuse, Servion, Guardrail, Cryptora, forge, phenoForge, router-docs, cheap-llm-mcp, dispatch-mcp, thegent-dispatch, McpKit, PhenoMCP, PhenoProc, Metron, PhenoKits, Stashly, Settly, AuthKit, Traceon, ResilienceKit, TestingKit, heliosBench, heliosApp, PolicyStack, portage, phenoXddLib, dagctl, kwality, dinoforge-packs, phenotype-auth-ts, **phenotype-voxel, phenotype-terrain, phenotype-water, phenotype-postfx (S→gfx) — ARCHIVED + DELETED 2026-06-18 (L5-114) after [phenotype-gfx#10](https://github.com/KooshaPari/phenotype-gfx/pull/10) merged (sha 5380b2bd)** |
+| **spine (creativity stack)** | 2 | **phenoDesign** (CREATIVITY_DESIGN_UX spine, un-archived 2026-07-20), **asset-engine** (asset pipeline, extracted from phenoDesign/engine/) |
 | **monorepo (multi-domain)** | 6 | pheno, phenoAI, phenoData, PhenoDevOps, HexaKit, phenoShared |
 | **compute/infra subtree (NEW 2026-06-23)** | 4 | `phenotype-infra` (IaC), `PhenoCompose` (hex ports), `BytePort` (desktop app), `nanovms` (3-tier VMM/sandbox) — see [docs/compute-infra-subtree.md](./docs/compute-infra-subtree.md) + [ADR-ECO-022](./docs/adrs/ADR-ECO-022-compute-infra-subtree-registry-correction.md) |
 | **unknown / newly mapped (T-SP.2 sweep, 2026-06-24)** | 88 | See [§1.1 Unknown Repos Triage](#11-unknown-repos-triage-t-sp2-2026-06-24) below. Top 18 active in [docs/registry-sweep-2026-06-24.md](./docs/registry-sweep-2026-06-24.md). |
@@ -96,7 +97,7 @@ Reconciliation of `gh repo list KooshaPari` (128 repos, 2026-06-24) against the 
 | **agent-runtime** | 3 | Agentora, thegent, PhenoAgent |
 | **research / lab** | 2 | HeliosLab, portage |
 
-\* Rationalization wave archives (2026-06-17): **PhenoProc**, **Metron**, **PhenoKits**, **Stashly**, **Settly**, **AuthKit**, **Traceon**, **ResilienceKit**, **TestingKit**, **McpKit**, **heliosBench**, **heliosApp**, **PolicyStack**, **portage**, **phenoDesign**, **phenoXddLib** — see `RATIONALIZATION_EXECUTION.md` and `docs/sessions/20260617-ecosystem-gap-port-retro/`. (Note: **BytePort** and **nanovms** are listed in some 2026-06-17 sweep output but were reclassified as active in [ADR-ECO-022](./docs/adrs/ADR-ECO-022-compute-infra-subtree-registry-correction.md) on 2026-06-23; see the **compute/infra subtree** row above.)
+\* Rationalization wave archives (2026-06-17): **PhenoProc**, **Metron**, **PhenoKits**, **Stashly**, **Settly**, **AuthKit**, **Traceon**, **ResilienceKit**, **TestingKit**, **McpKit**, **heliosBench**, **heliosApp**, **PolicyStack**, **portage**, **phenoXddLib** — see `RATIONALIZATION_EXECUTION.md` and `docs/sessions/20260617-ecosystem-gap-port-retro/`. (**phenoDesign** was briefly absorbed 2026-07-17 then **restored as LIVE spine** 2026-07-20 — see `docs/spine/phenoDesign.md`.) (Note: **BytePort** and **nanovms** are listed in some 2026-06-17 sweep output but were reclassified as active in [ADR-ECO-022](./docs/adrs/ADR-ECO-022-compute-infra-subtree-registry-correction.md) on 2026-06-23; see the **compute/infra subtree** row above.)
 
 \* archived / deleted (2026-06-16 archive migration): worktree-manager → PhenoVCS; phenoVessel → PhenoPlugins/pheno-plugin-vessel; phenoTypes → phenotype-types; phenoPatch + Diffuse → phenotype-tooling/phenotype-diff; Servion → phenotype-tooling/phenotype-service-registry; Guardrail → phenotype-tooling/phenotype-resilience; Cryptora → phenoUtils/pheno-crypto; forge + phenoForge → Tasken; router-docs → OmniRoute/docs/research/archive/router-docs/
 
@@ -487,7 +488,8 @@ SHARED CRATES (3)
 
 LANGUAGE-SPECIFIC FACADES (3)
   libs/auth-ts             — TS OAuth2/OIDC (replaces phenotype-auth-ts)
-  phenoDesign              — design tokens + VitePress theme
+  phenoDesign              — CREATIVITY_DESIGN_UX spine — design tokens + UX (@phenotype/design)
+  asset-engine             — asset pipeline (Blender/FFmpeg/ImageMagick/Unreal; extracted from phenoDesign/engine/)
   Conft                    — TS config layer
 
 INFRASTRUCTURE / TOOLING (5)
@@ -526,10 +528,11 @@ TESTING / QA (3)
 GAME / 3D (1)
   phenotype-gfx            — single canonical graphics/visual substrate (Rust core + Zig/Mojo hot-path ports + C#/other edges, ADR-004 single-core-ffi-edges). Unity terrain/water/postfx shims + bevy adapter feature live under `phenotype-gfx/crates/`. Absorbed phenotype-voxel/terrain/water/postfx via [PR #10](https://github.com/KooshaPari/phenotype-gfx/pull/10) (merged 2026-06-18, sha 5380b2bd; 4 source repos archived + deleted L5-114).
 
-APPS / PRODUCTS (6)
+APPS / PRODUCTS (7)
   Tracera                  — requirements traceability
   AgilePlus                (also tooling; dual role)
   hwLedger                 — hardware ledger
+  SessionLedger            — OKF-native session compiler (sl-daemon + sl-viewer; agent capture/archive/replay)
   eyetracker               — eye tracking
   PlayCua                  — computer-use agent
   slickport                — (undocumented; keep for now)
