@@ -33,17 +33,17 @@ This ADR is the consolidating reference.
 | 6 | **JOURNEYS / TRAINING-GROUND** | `phenotype-journeys` | LIVE (spine member, un-archived deliberately) | "AI-Agent-Only Repository" with intentionally generated "slop" — used as training ground for AI agents |
 | 7 | **SHARED-PRIMITIVES** | `phenotype-shared` | LIVE (spine member, un-archived deliberately) | Cross-repo Phenotype primitives (manifest, port-adapter-shim, ffi_utils); adopted by BytePort, OmniRoute, NanoVMS |
 | 8 | **CONTRACTS** | `phenotype-contracts` | LIVE (spine member, un-archived deliberately) | 3 JSON Schemas (provider-model, oauth-refresh-policy, resilience-policy); language-agnostic, consumed by forgecode (Rust), OmniRoute (TS), cliproxyapi-plusplus (Go) |
+| 9 | **CREATIVITY / DESIGN / UX** | `phenoDesign` | LIVE (spine member, un-archived 2026-07-20) | Design tokens (`@phenotype/design`), UX patterns, art direction; peer `asset-engine` owns render pipeline |
 
-> Note: the spine has 4 original roles + 4 newly ratified roles = 8 total, but is conventionally
-> called the "7-role spine" because roles 6 and 7 were ratified together as part of the
-> "operational spines" tier.
+> Note: the spine has 4 original roles + 5 operational roles = 9 total. The label "7-role spine"
+> predates ratification of JOURNEYS, SHARED-PRIMITIVES, CONTRACTS, and CREATIVITY_DESIGN_UX.
 
 ## Spine Tier Classification
 
 | Tier | Roles | Members | Mutability |
 |---|---|---|---|
 | **Tier 1: Foundational** | INDEX, ADRs, CONVENTIONS, ENFORCEMENT | `phenotype-registry`, `PhenoSpecs`, `PhenoHandbook`, `phenotype-org-governance` | Cannot be archived; if changes needed, spine-upgrade ADR |
-| **Tier 2: Operational** | IMPLEMENTATIONS, JOURNEYS, SHARED-PRIMITIVES, CONTRACTS | `PhenoMCPServers`, `phenotype-journeys`, `phenotype-shared`, `phenotype-contracts` | LIVE; consume spine-protocol updates |
+| **Tier 2: Operational** | IMPLEMENTATIONS, JOURNEYS, SHARED-PRIMITIVES, CONTRACTS, CREATIVITY_DESIGN_UX | `PhenoMCPServers`, `phenotype-journeys`, `phenotype-shared`, `phenotype-contracts`, `phenoDesign` | LIVE; consume spine-protocol updates |
 | **Tier 3 (proposed, retracted)** | PLATFORM (BLOCK-A) | `AgilePlus` (proposed) | RETRACTED 2026-07-17 — AgilePlus marked TOO_LARGE_RETIRE (94 crates, 27GB). PLATFORM role reopens when a smaller candidate emerges. |
 
 ## Spine Member Canonical Sources
@@ -62,6 +62,7 @@ an ADR override.
 | `phenotype-journeys` | `github.com/KooshaPari/phenotype-journeys` | n/a | — |
 | `phenotype-shared` | `github.com/KooshaPari/phenotype-shared` | n/a | — |
 | `phenotype-contracts` | `github.com/KooshaPari/phenotype-contracts` | n/a | — |
+| `phenoDesign` | `github.com/KooshaPari/phenoDesign` | n/a | Asset pipeline peer: `github.com/KooshaPari/asset-engine` (extracted from `engine/`) |
 
 ## Outstanding Issues
 
@@ -126,3 +127,4 @@ This ADR is **proposed** on 2026-07-17. Ratification requires:
 ## Changelog
 
 - 2026-07-17: Initial draft consolidating 4 original + 4 newly-ratified spine roles
+- 2026-07-20: Added CREATIVITY_DESIGN_UX spine role (`phenoDesign`); reversed 2026-07-17 absorption; peer `asset-engine` for render pipeline
