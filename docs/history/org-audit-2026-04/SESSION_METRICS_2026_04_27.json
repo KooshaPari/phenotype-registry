@@ -1,0 +1,39 @@
+{
+  "session": "2026-04-27 late",
+  "duration_hours": 5,
+  "cargo_deny": {
+    "total_rust_repos_local": 42,
+    "true_yml_coverage_pre_session": 18,
+    "true_dispatch_coverage_pre_session": 5,
+    "rollout_branches_pushed": 27,
+    "expected_post_merge_yml_coverage": 38,
+    "expected_post_merge_dispatch_coverage": 25
+  },
+  "pages": {
+    "live_sites_at_session_end": [
+      "FocalPoint",
+      "HeliosLab",
+      "Tokn"
+    ],
+    "deferred": [
+      "PolicyStack"
+    ],
+    "billing_blocked": [
+      "KDV"
+    ]
+  },
+  "governance_commits_total": 56,
+  "memory_entries_codified": 8,
+  "false_dashboards_superseded": [
+    "v62",
+    "v63",
+    "v64",
+    "v65",
+    "v66"
+  ],
+  "user_decisions_pending": [
+    "Open 27 cargo-deny PRs once rate limit resets",
+    "Triage helios-cli rand 0.9 direct usage",
+    "PolicyStack legacy-tooling-gate finding"
+  ]
+}

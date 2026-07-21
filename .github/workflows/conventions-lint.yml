@@ -1,0 +1,22 @@
+# Self-CI: governance dogfoods its own conventions-lint policy.
+name: conventions-lint
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+    branches: ["**"]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: conventions-lint-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  conventions-lint:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - run: bash scripts/conventions-lint.sh .

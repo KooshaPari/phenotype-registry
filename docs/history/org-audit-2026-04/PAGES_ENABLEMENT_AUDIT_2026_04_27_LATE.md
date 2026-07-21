@@ -1,0 +1,22 @@
+| Repo | Pages | Build | Source | URL |
+|---|---|---|---|---|
+| AgilePlus | Y | workflow | main | https://kooshapari.github.io/AgilePlus/ |
+| Tokn | Y | workflow | main | https://kooshapari.github.io/Tokn/ |
+| thegent | Y | workflow | gh-pages | https://kooshapari.github.io/thegent/ |
+| PolicyStack | Y | workflow | main | https://kooshapari.github.io/PolicyStack/ |
+| HexaKit | Y | workflow | main | https://kooshapari.github.io/HexaKit/ |
+| HeliosLab | Y | legacy | gh-pages | https://kooshapari.github.io/HeliosLab/ |
+| FocalPoint | Y | workflow | main | https://kooshapari.github.io/FocalPoint/ |
+| AuthKit | N | - | - | - |
+| Sidekick | N | - | - | - |
+| Configra | N | - | - | - |
+| Eidolon | N | - | - | - |
+| Metron | N | - | - | - |
+| GDK | N | - | - | - |
+| PhenoMCP | N | - | - | - |
+| PhenoLibs | N | - | - | - |
+| PhenoObservability | N | - | - | - |
+| Tasken | N | - | - | - |
+| Conft | N | - | - | - |
+| hwLedger | Y | workflow | main | https://kooshapari.github.io/hwLedger/ |
+| heliosApp | Y | workflow | main | https://kooshapari.github.io/heliosApp/ |
