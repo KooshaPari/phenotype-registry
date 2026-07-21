@@ -1,17 +1,25 @@
 {
   "name": "phenotype-go-sdk",
-  "languages": ["go"],
+  "languages": [
+    "go"
+  ],
   "primary_language": "go",
   "status": "archived",
   "has_readme": true,
   "type": "sdk",
   "path": "repos/phenotype-go-sdk",
-  "disposition": "AFFIRM",
+  "disposition": "DECOMPOSE",
   "wave": "absorption-justification-2026-06-23",
   "absorbed_into": "phenotype-infra",
-  "absorption_note": "2026-06-23 audit: phenotype-go-sdk is the canonical Go SDK boundary (10 packages); absorbed McpKit Go side per #14 (ADR-017 cross-absorber) and PlatformKit (DevHex) per repoint. Co-located Go module in PhenoMCP remains a consumer, not a replacement.",
+  "absorption_note": "Per user directive: decompose phenotype-go-sdk into separate Go kits. PlatformKit (platform integration), DevHex (developer experience/hexagonal), McpKit (MCP server/client). Decomposition pending — awaiting user spec.",
   "adr": "ADR-017",
   "note": "Audited 2026-06-23; canonical Go SDK per ADR-017 substrate schema conventions; consumers (agentapi-plusplus, cliproxyapi-plusplus) repointed; packages/devhex, packages/lexer, packages/mcp are the active surfaces",
   "audit_artifact": "audits/absorption-justifications/phenotype-go-sdk-2026-06-23.md",
-  "audited_at": "2026-06-23T23:55:00Z"
+  "audited_at": "2026-06-23T23:55:00Z",
+  "decompose_into": [
+    "PlatformKit",
+    "DevHex",
+    "McpKit"
+  ],
+  "last_updated": "2026-07-21T02:11:21Z"
 }

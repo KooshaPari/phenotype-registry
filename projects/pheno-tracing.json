@@ -1,0 +1,8 @@
+{
+  "name": "pheno-tracing",
+  "status": "merged",
+  "disposition": "MERGED",
+  "absorbed_into": "PhenoObservability",
+  "absorption_note": "Merged into PhenoObservability 2026-07-21. Sampling-policy port + tracing substrate (ADR-036) now lives inside the observability crate.",
+  "merged_at": "2026-07-21T02:11:21Z"
+}

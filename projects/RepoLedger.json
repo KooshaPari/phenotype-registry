@@ -1,0 +1,15 @@
+{
+  "name": "RepoLedger",
+  "languages": [
+    "typescript",
+    "go"
+  ],
+  "primary_language": "typescript",
+  "status": "active",
+  "type": "tool",
+  "disposition": "KEEP",
+  "description": "Ecosystem console — React + @xyflow/react node graph for ecosystem management. Go backend.",
+  "path": "repos/RepoLedger",
+  "absorbed": [],
+  "created": "2026-07-21T02:11:21Z"
+}

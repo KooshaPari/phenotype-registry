@@ -1,0 +1,8 @@
+{
+  "name": "phenoData",
+  "status": "merged",
+  "disposition": "MERGED",
+  "absorbed_into": "phenotype-apps",
+  "absorption_note": "Merged into phenotype-apps 2026-07-21. BLOCK A app collection per ADR-023.",
+  "merged_at": "2026-07-21T02:11:21Z"
+}

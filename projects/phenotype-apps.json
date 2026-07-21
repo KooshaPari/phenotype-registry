@@ -1,0 +1,10 @@
+{
+  "name": "phenotype-apps",
+  "status": "active",
+  "disposition": "KEEP",
+  "absorbed": [
+    "phenoData"
+  ],
+  "absorption_note": "Absorbed phenoData 2026-07-21. BLOCK A app collection per ADR-023.",
+  "created": "2026-07-21T02:11:21Z"
+}

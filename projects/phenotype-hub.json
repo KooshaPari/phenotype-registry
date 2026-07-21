@@ -1,6 +1,8 @@
 {
   "name": "phenotype-hub",
-  "languages": ["markdown"],
+  "languages": [
+    "markdown"
+  ],
   "primary_language": "markdown",
   "status": "absorbed",
   "has_readme": true,
@@ -12,5 +14,9 @@
   "absorb_target": "phenotype-infra",
   "absorbed_into": "phenotype-infra",
   "pr": "phenotype-infra#79",
-  "absorption_note": "Hub docs absorbed into phenotype-infra/docs/absorbed-from/phenotype-hub/ (2026-06-18, phenotype-infra#79). Source repo NOT yet archived — 17 stale remotes remain; archive gate pending fleet lane."
+  "absorption_note": "Absorbed PhenoHandbook 2026-07-21. Patterns/anti-patterns docs into governance scaffold.",
+  "absorbed": [
+    "PhenoHandbook"
+  ],
+  "last_updated": "2026-07-21T02:11:21Z"
 }

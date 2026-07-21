@@ -11,7 +11,11 @@
   "disposition": "ABSORB",
   "wave": "2026-07-17-queue-refresh",
   "absorbed_into": "phenotype-tooling",
-  "absorption_note": "Small Rust PM core lib; 7 branches, 142KB. No README, no production use. Target: phenotype-tooling/crates/pm-core.",
+  "absorption_note": "Absorbed KodeVibeGo 2026-07-21. Quality/QA code guardian merged into PM/quality mono.",
   "note": "Audited 2026-07-17; queued for absorption into phenotype-tooling. No external dependents expected (no README, no Cargo.toml publish).",
-  "adr": "ADR-040"
+  "adr": "ADR-040",
+  "absorbed": [
+    "KodeVibeGo"
+  ],
+  "last_updated": "2026-07-21T02:11:21Z"
 }

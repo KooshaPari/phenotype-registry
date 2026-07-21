@@ -1,0 +1,11 @@
+{
+  "name": "phenotype-registry",
+  "status": "active",
+  "disposition": "KEEP",
+  "absorbed": [
+    "phenotype-org-governance",
+    "phenotype-router-spec"
+  ],
+  "absorption_note": "Absorbed phenotype-org-governance + phenotype-router-spec 2026-07-21. Governance scaffold + router spec content merged into registry.",
+  "created": "2026-07-21T02:11:21Z"
+}

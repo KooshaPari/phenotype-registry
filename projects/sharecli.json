@@ -1,0 +1,10 @@
+{
+  "name": "sharecli",
+  "status": "active",
+  "disposition": "KEEP",
+  "absorbed": [
+    "phenotype-teamcomm"
+  ],
+  "absorption_note": "Absorbed phenotype-teamcomm 2026-07-21. Team communication merged into shared CLI framework.",
+  "created": "2026-07-21T02:11:21Z"
+}
