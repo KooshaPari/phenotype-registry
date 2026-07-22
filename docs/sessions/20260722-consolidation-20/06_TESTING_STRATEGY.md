@@ -4,7 +4,8 @@
 
 - Verify all eight required session files exist.
 - Verify the exact 20 repository names appear in the packet and no candidate is omitted.
-- Verify HOLD, VERIFY-ONLY, fork, and no-READY rules match the specification.
+- Verify exactly one repository is READY (`AgilePlus-recovery-20260714`) and every other repository
+  remains HOLD or VERIFY-ONLY; verify fork rules match the specification.
 - Run whitespace/error validation on the patch.
 - Run targeted Markdown link and local-file-presence checks for this packet.
 

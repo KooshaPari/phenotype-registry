@@ -34,5 +34,5 @@ rewriting history, or mutating fork remotes. All 20 repositories exist and are c
 
 ## Session Outcome
 
-No repository is READY for remote mutation until commit SHA and content parity are proven. Protected
-HOLD and VERIFY-ONLY dispositions preserve uncertain or absorbed history while evidence is completed.
+Exactly one repository is READY: `AgilePlus-recovery-20260714`. Every other repository remains HOLD
+or VERIFY-ONLY, preserving uncertain or absorbed history while its required evidence is completed.

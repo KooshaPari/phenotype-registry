@@ -12,8 +12,13 @@ preservation sublane. This specification authorizes evidence gathering and class
 - FR-01: Track all and only the exact 20 repositories in the session overview.
 - FR-02: Record that all 20 exist and are unarchived.
 - FR-03: Keep `PriceyApp`, `router-docs`, and `template-commons` fork remotes untouched.
-- FR-04: Place `AgilePlus-recovery-20260714` and `AgilePlus-recovery-evidence-20260714` on HOLD until
-  identity is proven.
+- FR-04: Mark only `AgilePlus-recovery-20260714` READY because its sole head
+  `recovery/isolated-20260714` is exact commit `0aafdf9692c11abb6e426f36857aeec7bb6cd942`, and
+  canonical AgilePlus contains that exact commit and tree
+  `eb82ced16353219d85aa83c925819ae48cb36c16` with the exact head.
+- FR-04a: After an immediate preflight, rename the READY source to
+  `zz-archive-AgilePlus-recovery-20260714` and archive it; never delete it.
+- FR-04b: Keep `AgilePlus-recovery-evidence-20260714` on HOLD as unique preservation evidence.
 - FR-05: Place `phenotype-registry-archive`, `phenotype-org-audits-archive2`,
   `PhenoRuntime-archive`, `ResilienceKit-archive`, and `phenotype-shared-archive` on HOLD.
 - FR-06: Place `Stashly` and `phenotype-teamcomm` on HOLD until their contradictions are resolved.
@@ -24,7 +29,8 @@ preservation sublane. This specification authorizes evidence gathering and class
 - FR-09: Classify `router-docs` as VERIFY-ONLY for absorption into OmniRoute.
 - FR-10: Classify `template-commons` as VERIFY-ONLY for absorption into phenokits.
 - FR-11: Place `PriceyApp` on HOLD as an untouched fork.
-- FR-12: Do not mark any repository READY for remote mutation until SHA and content parity pass.
+- FR-12: Mark exactly one repository READY: `AgilePlus-recovery-20260714`. No other repository may
+  become READY until SHA and content parity pass.
 - FR-13: Resolve actual default branches; do not assume `main` for the eight non-`main` sources.
 - FR-14: Correct Batch A placement errors before using its evidence.
 - FR-15: Use partial bare clones under current disk constraints.
@@ -36,7 +42,15 @@ preservation sublane. This specification authorizes evidence gathering and class
 - [ ] Each repository has an evidence record for existence, archive state, default branch, and fork state.
 - [ ] Every HOLD repository remains mutation-blocked.
 - [ ] Every VERIFY-ONLY repository remains mutation-blocked pending its named proof.
-- [ ] SHA parity and content parity are independently recorded for any future READY candidate.
+- [ ] Exactly one repository is READY: `AgilePlus-recovery-20260714`; all others remain HOLD or
+  VERIFY-ONLY.
+- [ ] The READY record includes the sole head `recovery/isolated-20260714`, exact commit
+  `0aafdf9692c11abb6e426f36857aeec7bb6cd942`, and exact tree
+  `eb82ced16353219d85aa83c925819ae48cb36c16` in canonical AgilePlus with the exact head.
+- [ ] The READY action is gated by an immediate preflight and is rename to
+  `zz-archive-AgilePlus-recovery-20260714` followed by archive, never deletion.
+- [ ] `AgilePlus-recovery-evidence-20260714` remains HOLD as unique preservation evidence.
+- [ ] SHA parity and content parity are independently recorded for any additional READY candidate.
 - [ ] No remote mutation, deletion, force-push, or history rewrite occurred.
 - [ ] The three fork remotes were untouched.
 - [ ] Batch A placement errors and all eight non-`main` defaults are explicitly reconciled.
