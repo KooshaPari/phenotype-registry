@@ -29,3 +29,6 @@ inventory confirmation
 | T6 READY preflight | T5 | Complete: sole head, exact commit/tree, and canonical exact head revalidated |
 | T7 READY archive | T6 | Complete: `zz-archive-AgilePlus-recovery-20260714` is `ARCHIVED-PRESERVED`; never deleted |
 | T-P preservation | all | Complete for #1: no deletion, force-push, or history rewrite; other 19 unchanged |
+| T8 tranche-2 audit | T-P | Complete: six candidates, 16 heads, one tag audited |
+| T9 tranche-2 disposition | T8 | Harmonizer parity-proven/policy-hold; five evidence holds |
+| T10 policy resolution | T9 | Sponsor resolves `archive=false` before harmonizer archival |

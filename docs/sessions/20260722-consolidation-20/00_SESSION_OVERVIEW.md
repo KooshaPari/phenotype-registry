@@ -39,3 +39,7 @@ Docket #1 is `ARCHIVED-PRESERVED / complete`: `AgilePlus-recovery-20260714` was 
 `zz-archive-AgilePlus-recovery-20260714` and archived without deletion. The remaining 19
 repositories retain their HOLD or VERIFY-ONLY dispositions, preserving uncertain or absorbed
 history while required evidence is completed.
+
+Tranche 2 audited six VERIFY-ONLY candidates. The harmonizer archive is technically parity-proven
+but remains on policy HOLD because the concurrent preservation ledger sets `archive=false`. The
+other five remain HOLD because one or more refs or parent-boundary proofs are missing.

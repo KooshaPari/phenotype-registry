@@ -28,3 +28,9 @@ are unchanged, and the old source name redirects. The remaining 19 dispositions 
   rename and archive.
 - No mutation of `PriceyApp`, `router-docs`, or `template-commons` fork remotes.
 - No READY classification inferred from naming, reachability, or prior Batch A placement alone.
+
+## Tranche 2 Strategy
+
+Enumerate every source head, tag, and release; resolve its registry-designated parent; then require
+exact ref plus commit/tree reachability. Technical parity does not override a stricter concurrent
+governance packet: the harmonizer archive therefore remains mutation-blocked by `archive=false`.

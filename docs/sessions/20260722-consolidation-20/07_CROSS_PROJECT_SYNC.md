@@ -30,3 +30,14 @@
 - No other project receives a READY remote-mutation signal until both SHA and content parity are
   recorded.
 - Cross-project updates must carry the actual default branch and corrected Batch A destination.
+
+## Tranche 2 Sync
+
+| Candidate | Parent | State |
+|---|---|---|
+| harmonizer tool archive | AgilePlus | PARITY-PROVEN / POLICY-HOLD |
+| `4sgm-archive` | QuadSGM | HOLD: four refs absent |
+| `Parpoura-archive` | Parpoura / phenodocs | HOLD: three refs absent |
+| `phenoResearchEngine-archive` | phenoResearchEngine / pheno | HOLD: exact ref absent |
+| `home-recovery-2026-07-archive` | unresolved | HOLD: parent proof absent |
+| `phenotype-monorepo-state-archive` | phenotype-registry | HOLD: four unique commits absent |

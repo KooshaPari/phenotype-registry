@@ -44,6 +44,12 @@ rename-and-archive preservation transaction authorized for docket #1.
   `0aafdf9692c11abb6e426f36857aeec7bb6cd942`, and exact tree
   `eb82ced16353219d85aa83c925819ae48cb36c16`; canonical exact ref/commit/tree remain unchanged and
   the old name redirects.
+- FR-18: Record tranche-2 ref evidence for the six audited recovery archives; do not infer parity
+  from a canonical descendant or selective content absorption.
+- FR-19: Keep the harmonizer archive on POLICY-HOLD despite exact parity while the concurrent
+  preservation manifest sets `archive=false`.
+- FR-20: Keep the other five tranche-2 candidates on HOLD until every missing ref and parent
+  boundary is preserved.
 
 ## Binary Acceptance Criteria
 
@@ -68,3 +74,6 @@ rename-and-archive preservation transaction authorized for docket #1.
 - [x] The three fork remotes were untouched.
 - [ ] Batch A placement errors and all eight non-`main` defaults are explicitly reconciled.
 - [ ] Evidence collection stays within the partial-bare-clone disk policy.
+- [x] Tranche 2 records all 16 source heads and the single source tag across its six candidates.
+- [x] Exact harmonizer head/tag commit and tree parity is independently verified in AgilePlus.
+- [x] No tranche-2 remote mutation occurred; the preservation manifest policy remains authoritative.

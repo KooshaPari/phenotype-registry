@@ -29,3 +29,11 @@ blockers, not acceptance waivers.
 
 Fresh preflight and postverification passed for docket #1. Rename and archive succeeded; no deletion,
 force-push, or history rewrite occurred. The remaining 19 docket entries were not mutated.
+
+## Tranche 2 Validation
+
+- Enumerate all 16 heads, one tag, and zero releases across the six candidates.
+- Resolve exact commit and tree objects in each designated parent.
+- Treat missing refs, ancestor-only reachability, and selective absorption as non-parity.
+- Verify the harmonizer's namespaced AgilePlus head and tag match exact source commits and trees.
+- Verify no remote state changes while `archive=false` remains unresolved.

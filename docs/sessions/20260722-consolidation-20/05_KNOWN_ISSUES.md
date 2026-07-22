@@ -10,6 +10,8 @@
 | `phenotype-teamcomm` contradiction | Disposition is unsafe | Keep on HOLD until contradiction closes |
 | Ecosystem validator baseline fails | Global validation is not currently green | Track baseline: 18 reachable, 2 unreachable, 17 drift, 47 items |
 | Docs build baseline fails | Full docs gate cannot pass in this session | Fix Vue missing end tag at `docs/specs/pheno-specs/specs/platform/build-system/PRD.md:65:60` |
+| Preservation manifest sets `archive=false` | Harmonizer parity is proven but execution authority conflicts | Keep POLICY-HOLD pending sponsor resolution |
+| Five tranche-2 archives lack complete ref/parent proof | Archival could strand unique history | Preserve sources and import missing refs before reconsideration |
 
 ## Resolved During This Session
 

@@ -32,3 +32,14 @@ misplacements, and incomplete SHA/content parity require a preservation-first, v
 workflow. The one proven exception, `AgilePlus-recovery-20260714`, passed immediate preflight and
 was renamed to `zz-archive-AgilePlus-recovery-20260714` and archived. It is preserved, not deleted;
 the other 19 docket entries remain HOLD or VERIFY-ONLY.
+
+## Tranche 2 Evidence
+
+| Candidate | Evidence | Disposition |
+|---|---|---|
+| `agileplus-spec-harmonizer-tool-archive-2026-07-14` | Source `main` and `v0.1.0` commit/tree pairs exactly match AgilePlus namespaced head and tag; zero releases | PARITY-PROVEN / POLICY-HOLD (`archive=false`) |
+| `4sgm-archive` | Four source heads are absent from `QuadSGM`; canonical `main` has diverged | HOLD |
+| `Parpoura-archive` | One of four heads is exact in `Parpoura`; three Dependabot heads are absent | HOLD |
+| `phenoResearchEngine-archive` | Commit/tree is retained as a canonical ancestor, but exact `local/main` ref is absent | HOLD |
+| `home-recovery-2026-07-archive` | Unique `local/main` has no proven canonical parent | HOLD |
+| `phenotype-monorepo-state-archive` | Five heads representing four unique commits are absent from `phenotype-registry`; original parent is deleted | HOLD |
