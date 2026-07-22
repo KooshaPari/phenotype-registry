@@ -32,3 +32,6 @@ inventory confirmation
 | T8 tranche-2 audit | T-P | Complete: six candidates, 16 heads, one tag audited |
 | T9 tranche-2 disposition | T8 | Harmonizer parity-proven/policy-hold; five evidence holds |
 | T10 policy resolution | T9 | Sponsor resolves `archive=false` before harmonizer archival |
+| T11 tranche-3 audit | T9 | Complete: six candidates and 49 heads audited |
+| T12 tranche-3 disposition | T11 | One parity-proven/policy-hold; five missing-ref holds |
+| T13 provenance import | T12 | Pending: import missing namespaced refs before any archival |

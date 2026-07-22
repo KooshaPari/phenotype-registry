@@ -43,3 +43,21 @@ the other 19 docket entries remain HOLD or VERIFY-ONLY.
 | `phenoResearchEngine-archive` | Commit/tree is retained as a canonical ancestor, but exact `local/main` ref is absent | HOLD |
 | `home-recovery-2026-07-archive` | Unique `local/main` has no proven canonical parent | HOLD |
 | `phenotype-monorepo-state-archive` | Five heads representing four unique commits are absent from `phenotype-registry`; original parent is deleted | HOLD |
+
+The complete tranche-2 ref, commit, tree, and parent-result ledger is
+`artifacts/tranche-2-ref-evidence.tsv`.
+
+## Tranche 3 Evidence
+
+| Candidate | Refs | Evidence | Disposition |
+|---|---:|---|---|
+| `phenotype-registry-archive` | 23 | No complete namespaced ref set; nine commit/tree objects absent and 14 object-present heads still lack complete namespaced preservation | HOLD |
+| `phenotype-org-audits-archive2` | 7 | Seven of seven exact namespaced heads and trees preserved in `phenotype-registry` | PARITY-PROVEN / POLICY-HOLD |
+| `PhenoRuntime-archive` | 3 | Governance head exact in `PhenoRuntime`; two Dependabot objects absent and registry target evidence conflicts between `PhenoRuntime`, `pheno`, and a nonexistent legacy collection | HOLD |
+| `ResilienceKit-archive` | 7 | Local head exact in `ResilienceKit`; six Dependabot objects absent and Python/Rust ownership is split across current and future SDK boundaries | HOLD |
+| `phenotype-shared-archive` | 2 | Both source commit/tree objects absent from `phenotype-shared` | HOLD |
+| `agent-user-status-archive` | 7 | All seven commit/tree objects absent from `phenotype-tooling`; designated crate path absent on main | HOLD |
+
+The nine missing registry-archive commits begin `63b8817`, `82953cf`, `4dd7bfa`, `3b16f0d`,
+`75c8950`, `9248110`, `62be997`, `f10ced4`, and `143a58c`. The complete seven-head
+org-audit namespace is rooted at `archive/phenotype-org-audits/`.

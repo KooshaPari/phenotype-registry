@@ -12,6 +12,8 @@
 | Docs build baseline fails | Full docs gate cannot pass in this session | Fix Vue missing end tag at `docs/specs/pheno-specs/specs/platform/build-system/PRD.md:65:60` |
 | Preservation manifest sets `archive=false` | Harmonizer parity is proven but execution authority conflicts | Keep POLICY-HOLD pending sponsor resolution |
 | Five tranche-2 archives lack complete ref/parent proof | Archival could strand unique history | Preserve sources and import missing refs before reconsideration |
+| Five tranche-3 archives have missing refs | 26 commit objects are absent; additional reachable objects lack complete namespaced refs | Import exact namespaced refs and re-run commit/tree checks |
+| Registry archive has 23 heads | Fourteen objects are reachable but the full source ref namespace is absent | Import all 23 heads, including nine missing objects |
 
 ## Resolved During This Session
 

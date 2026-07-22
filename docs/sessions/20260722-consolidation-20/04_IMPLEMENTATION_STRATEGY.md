@@ -34,3 +34,7 @@ are unchanged, and the old source name redirects. The remaining 19 dispositions 
 Enumerate every source head, tag, and release; resolve its registry-designated parent; then require
 exact ref plus commit/tree reachability. Technical parity does not override a stricter concurrent
 governance packet: the harmonizer archive therefore remains mutation-blocked by `archive=false`.
+
+Tranche 3 applies the same gate to branch-heavy archives: object reachability without a complete
+namespaced ref set is insufficient. Missing histories must be imported additively before archival;
+no deletion, force-push, or source-ref removal is authorized.

@@ -41,3 +41,14 @@
 | `phenoResearchEngine-archive` | phenoResearchEngine / pheno | HOLD: exact ref absent |
 | `home-recovery-2026-07-archive` | unresolved | HOLD: parent proof absent |
 | `phenotype-monorepo-state-archive` | phenotype-registry | HOLD: four unique commits absent |
+
+## Tranche 3 Sync
+
+| Candidate | Parent | State |
+|---|---|---|
+| `phenotype-registry-archive` | phenotype-registry | HOLD: incomplete 23-head namespace, nine objects absent |
+| `phenotype-org-audits-archive2` | phenotype-registry | PARITY-PROVEN / POLICY-HOLD: 7/7 exact |
+| `PhenoRuntime-archive` | unresolved: PhenoRuntime / pheno / legacy collection | HOLD: 2/3 absent plus boundary conflict |
+| `ResilienceKit-archive` | split: ResilienceKit / Python SDK / future Rust SDK | HOLD: 6/7 absent plus ownership split |
+| `phenotype-shared-archive` | phenotype-shared | HOLD: 2/2 absent |
+| `agent-user-status-archive` | phenotype-tooling | HOLD: 7/7 absent |

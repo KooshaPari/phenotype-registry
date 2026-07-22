@@ -50,6 +50,11 @@ rename-and-archive preservation transaction authorized for docket #1.
   preservation manifest sets `archive=false`.
 - FR-20: Keep the other five tranche-2 candidates on HOLD until every missing ref and parent
   boundary is preserved.
+- FR-21: Treat `artifacts/tranche-2-ref-evidence.tsv` as the authoritative tranche-2 ref ledger.
+- FR-22: Record all 49 heads across the six tranche-3 candidates and preserve every candidate whose
+  canonical parent lacks a complete namespaced ref set.
+- FR-23: Keep `phenotype-org-audits-archive2` on POLICY-HOLD despite seven-of-seven exact parity
+  while the concurrent preservation manifest sets `archive=false`.
 
 ## Binary Acceptance Criteria
 
@@ -77,3 +82,6 @@ rename-and-archive preservation transaction authorized for docket #1.
 - [x] Tranche 2 records all 16 source heads and the single source tag across its six candidates.
 - [x] Exact harmonizer head/tag commit and tree parity is independently verified in AgilePlus.
 - [x] No tranche-2 remote mutation occurred; the preservation manifest policy remains authoritative.
+- [x] Every tranche-2 ref has an explicit commit, tree, and parent result in the TSV evidence ledger.
+- [x] Tranche 3 classifies all six candidates and all 49 source heads without remote mutation.
+- [x] The only tranche-3 parity-proven source remains policy-blocked; five evidence holds remain.

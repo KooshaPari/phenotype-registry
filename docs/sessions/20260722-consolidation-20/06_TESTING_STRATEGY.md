@@ -37,3 +37,13 @@ force-push, or history rewrite occurred. The remaining 19 docket entries were no
 - Treat missing refs, ancestor-only reachability, and selective absorption as non-parity.
 - Verify the harmonizer's namespaced AgilePlus head and tag match exact source commits and trees.
 - Verify no remote state changes while `archive=false` remains unresolved.
+- Validate `artifacts/tranche-2-ref-evidence.tsv` contains one header plus 17 ref records: 16 heads
+  and one tag, each with a commit, tree, and parent result.
+
+## Tranche 3 Validation
+
+- Enumerate 49 heads and confirm zero tags/releases across the six candidates.
+- Require exact namespaced refs in addition to commit/tree object reachability.
+- Verify seven-of-seven org-audit heads in `archive/phenotype-org-audits/`.
+- Verify missing-object counts: registry 9, runtime 2, resilience 6, shared 2, user-status 7.
+- Confirm no tranche-3 remote mutation occurred.

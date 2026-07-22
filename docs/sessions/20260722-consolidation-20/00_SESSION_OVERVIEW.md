@@ -43,3 +43,6 @@ history while required evidence is completed.
 Tranche 2 audited six VERIFY-ONLY candidates. The harmonizer archive is technically parity-proven
 but remains on policy HOLD because the concurrent preservation ledger sets `archive=false`. The
 other five remain HOLD because one or more refs or parent-boundary proofs are missing.
+
+Tranche 3 audited six branch-heavy archives containing 49 heads. `phenotype-org-audits-archive2`
+is parity-proven but joins the shared POLICY-HOLD; the other five remain HOLD with missing refs.
