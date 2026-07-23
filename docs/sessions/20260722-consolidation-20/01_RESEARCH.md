@@ -3,7 +3,8 @@
 ## Evidence Summary
 
 - All 20 named repositories existed and were unarchived at intake.
-- `PriceyApp`, `router-docs`, and `template-commons` are forks and must remain untouched.
+- Live metadata confirms only `PriceyApp` is a fork. `router-docs` and `template-commons` are private
+  non-forks and remain mutation-blocked by incomplete absorption evidence.
 - Historical scripts assume `main`, but eight source repositories have non-`main` default branches.
 - Batch A contains placement errors; its conclusions cannot authorize mutation without correction.
 - Disk pressure is critical: 98% used with about 22 GiB free. Evidence collection must use partial bare
@@ -61,3 +62,17 @@ The complete tranche-2 ref, commit, tree, and parent-result ledger is
 The nine missing registry-archive commits begin `63b8817`, `82953cf`, `4dd7bfa`, `3b16f0d`,
 `75c8950`, `9248110`, `62be997`, `f10ced4`, and `143a58c`. The complete seven-head
 org-audit namespace is rooted at `archive/phenotype-org-audits/`.
+
+The authoritative 49-head tranche-3 ledger is `artifacts/tranche-3-ref-evidence.tsv`.
+
+## Tranche 4 Evidence
+
+| Candidate | Refs | Evidence | Disposition |
+|---|---:|---|---|
+| `AgilePlus-recovery-evidence-20260714` | 1 | Private 112,012,704-byte DATA_ONLY forensic package with raw objects, reflogs, bundles, stashes, patches, and untracked archives; sensitive by construction and not replaced by ordinary refs | KEEP-STANDALONE / PRIVATE |
+| `PriceyApp` | 1 | Live fork of `mobile-next/PriceyApp`; no Phenotype parent boundary authorizes mutation | KEEP-FORK / UNTOUCHED |
+| `Quillr` | 25 | Restored live remote conflicts with prior deletion/absorption records; no complete 25-ref map to pheno and phenodocs targets | HOLD |
+| `Stashly` | 17 heads + 1 tag | Registry history conflicts, but later user directive makes the unique cache product canonical standalone | KEEP-STANDALONE |
+| `router-docs` | 1 | Source commit `c4d19f1e3fa6f2c4bfe671428b64aea9227efb00` and tree `e3c1e59321aefeea05e5c077666c0ed5dbf3e647` are absent from OmniRoute | HOLD / IMPORT REQUIRED |
+| `template-commons` | 5 heads + 3 tags | Five unique commit/tree pairs, including the shared three-tag target, are absent from `phenokits-commons`; this is not currently a fork | HOLD / IMPORT REQUIRED |
+| `phenotype-teamcomm` | 8 | Protected five-crate Rust coordination workspace; seven unique head commits absent from pheno and ShareCLI boundary unresolved | KEEP-STANDALONE |

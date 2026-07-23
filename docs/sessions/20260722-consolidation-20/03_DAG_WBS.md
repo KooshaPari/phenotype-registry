@@ -34,4 +34,6 @@ inventory confirmation
 | T10 policy resolution | T9 | Sponsor resolves `archive=false` before harmonizer archival |
 | T11 tranche-3 audit | T9 | Complete: six candidates and 49 heads audited |
 | T12 tranche-3 disposition | T11 | One parity-proven/policy-hold; five missing-ref holds |
-| T13 provenance import | T12 | Pending: import missing namespaced refs before any archival |
+| T13 provenance-import design | T12 | Pending sponsor authorization: propose additive namespaced imports; do not execute implicitly |
+| T14 tranche-4 audit | T12 | Complete: final seven repository boundaries classified |
+| T15 first-20 disposition closure | T14 | Complete: 20/20 classified; execution gates remain explicit |

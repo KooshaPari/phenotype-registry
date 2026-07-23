@@ -14,6 +14,10 @@
 | Five tranche-2 archives lack complete ref/parent proof | Archival could strand unique history | Preserve sources and import missing refs before reconsideration |
 | Five tranche-3 archives have missing refs | 26 commit objects are absent; additional reachable objects lack complete namespaced refs | Import exact namespaced refs and re-run commit/tree checks |
 | Registry archive has 23 heads | Fourteen objects are reachable but the full source ref namespace is absent | Import all 23 heads, including nine missing objects |
+| Recovery evidence contains raw Git artifacts | Historical secrets or deleted material may be retained | Keep private; require dedicated secret scan before any extraction/publication |
+| Quillr has 25 live heads after remote restoration | Prior absorption/deletion records no longer prove current parity | Build an exact 25-ref destination map |
+| Router and template sources are not preserved in designated parents | Absorption claims would strand source history | Design sponsor-approved additive imports; keep sources live |
+| Stashly and teamcomm registry records conflict | Forced absorption could erase canonical product boundaries | Reconcile registry roles as KEEP-STANDALONE |
 
 ## Resolved During This Session
 

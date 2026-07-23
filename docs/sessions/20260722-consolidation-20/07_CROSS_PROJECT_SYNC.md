@@ -10,8 +10,8 @@
 | HOLD | `Stashly`, `phenotype-teamcomm` | Resolve contradictions |
 | VERIFY-ONLY | `agileplus-spec-harmonizer-tool-archive-2026-07-14`, `4sgm-archive`, `Parpoura-archive`, `phenoResearchEngine-archive`, `home-recovery-2026-07-archive`, `phenotype-monorepo-state-archive`, `agent-user-status-archive` | Capture branch, SHA, and content proof |
 | VERIFY-ONLY | `Quillr` | Confirm tombstone evidence |
-| VERIFY-ONLY | `router-docs` | Confirm absorption into OmniRoute; fork remote untouched |
-| VERIFY-ONLY | `template-commons` | Confirm absorption into phenokits; fork remote untouched |
+| VERIFY-ONLY | `router-docs` | Private non-fork; confirm complete absorption into OmniRoute |
+| VERIFY-ONLY | `template-commons` | Private non-fork; confirm complete absorption into phenokits |
 | HOLD | `PriceyApp` | Leave fork remote untouched |
 
 ## Coordination Contract
@@ -52,3 +52,18 @@
 | `ResilienceKit-archive` | split: ResilienceKit / Python SDK / future Rust SDK | HOLD: 6/7 absent plus ownership split |
 | `phenotype-shared-archive` | phenotype-shared | HOLD: 2/2 absent |
 | `agent-user-status-archive` | phenotype-tooling | HOLD: 7/7 absent |
+
+## Tranche 4 Sync
+
+| Candidate | Boundary | State |
+|---|---|---|
+| `AgilePlus-recovery-evidence-20260714` | private forensic evidence | KEEP-STANDALONE |
+| `PriceyApp` | upstream fork | KEEP-FORK / UNTOUCHED |
+| `Quillr` | split pheno + phenodocs claims | HOLD: 25-ref map absent |
+| `Stashly` | canonical cache product | KEEP-STANDALONE |
+| `router-docs` | OmniRoute | HOLD: source commit/tree absent |
+| `template-commons` | phenokits-commons | HOLD: five unique commit/tree pairs absent |
+| `phenotype-teamcomm` | protected coordination primitive | KEEP-STANDALONE |
+
+First-20 disposition totals: one `ARCHIVED-PRESERVED`, two `PARITY-PROVEN / POLICY-HOLD`, three
+`KEEP-STANDALONE`, one `KEEP-FORK / UNTOUCHED`, and thirteen evidence or boundary HOLD entries.

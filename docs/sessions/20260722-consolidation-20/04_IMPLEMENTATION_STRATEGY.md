@@ -26,7 +26,7 @@ are unchanged, and the old source name redirects. The remaining 19 dispositions 
 - No force-push or history rewrite.
 - No further remote mutation; the only completed remote mutation was the authorized docket #1
   rename and archive.
-- No mutation of `PriceyApp`, `router-docs`, or `template-commons` fork remotes.
+- No mutation of the `PriceyApp` fork or the incomplete router-docs/template-commons absorptions.
 - No READY classification inferred from naming, reachability, or prior Batch A placement alone.
 
 ## Tranche 2 Strategy
@@ -36,5 +36,10 @@ exact ref plus commit/tree reachability. Technical parity does not override a st
 governance packet: the harmonizer archive therefore remains mutation-blocked by `archive=false`.
 
 Tranche 3 applies the same gate to branch-heavy archives: object reachability without a complete
-namespaced ref set is insufficient. Missing histories must be imported additively before archival;
-no deletion, force-push, or source-ref removal is authorized.
+namespaced ref set is insufficient. Any future additive import requires an explicit sponsor-approved
+execution packet; this specification does not itself authorize cross-repository ref creation. No
+deletion, force-push, or source-ref removal is authorized.
+
+Tranche 4 distinguishes footprint reduction from forced absorption. Unique products and forensic
+evidence remain standalone when that is the mature boundary; only proven duplicate history becomes
+an archive candidate.

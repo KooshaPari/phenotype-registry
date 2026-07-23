@@ -46,3 +46,7 @@ other five remain HOLD because one or more refs or parent-boundary proofs are mi
 
 Tranche 3 audited six branch-heavy archives containing 49 heads. `phenotype-org-audits-archive2`
 is parity-proven but joins the shared POLICY-HOLD; the other five remain HOLD with missing refs.
+
+Tranche 4 completed deep classification for the final seven. Recovery evidence, Stashly, and
+phenotype-teamcomm remain standalone; PriceyApp remains an untouched fork; Quillr, router-docs,
+and template-commons remain HOLD pending complete ref mapping or additive import.

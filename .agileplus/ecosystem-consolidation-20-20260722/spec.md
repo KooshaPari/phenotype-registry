@@ -13,7 +13,8 @@ rename-and-archive preservation transaction authorized for docket #1.
 - FR-01: Track all and only the exact 20 repositories in the session overview.
 - FR-02: Record that all 20 existed and were unarchived at intake, and that docket #1 is now
   archived under its preservation name.
-- FR-03: Keep `PriceyApp`, `router-docs`, and `template-commons` fork remotes untouched.
+- FR-03: Keep the `PriceyApp` fork untouched. Treat `router-docs` and `template-commons` as private
+  non-forks whose incomplete absorption evidence blocks mutation.
 - FR-04: Record that only `AgilePlus-recovery-20260714` reached READY because its sole head
   `recovery/isolated-20260714` is exact commit `0aafdf9692c11abb6e426f36857aeec7bb6cd942`, and
   canonical AgilePlus contains that exact commit and tree
@@ -37,7 +38,7 @@ rename-and-archive preservation transaction authorized for docket #1.
 - FR-13: Resolve actual default branches; do not assume `main` for the eight non-`main` sources.
 - FR-14: Correct Batch A placement errors before using its evidence.
 - FR-15: Use partial bare clones under current disk constraints.
-- FR-16: Never delete repositories, force-push, rewrite history, or mutate the three fork remotes.
+- FR-16: Never delete repositories, force-push, rewrite history, or mutate the PriceyApp fork.
 - FR-17: Preserve the completed docket #1 metadata: private nonfork, default branch
   `recovery/isolated-20260714`, one branch, zero tags, unchanged
   `pushed_at=2026-07-16T00:20:23Z`, exact commit
@@ -55,6 +56,13 @@ rename-and-archive preservation transaction authorized for docket #1.
   canonical parent lacks a complete namespaced ref set.
 - FR-23: Keep `phenotype-org-audits-archive2` on POLICY-HOLD despite seven-of-seven exact parity
   while the concurrent preservation manifest sets `archive=false`.
+- FR-24: Treat `artifacts/tranche-3-ref-evidence.tsv` as the authoritative 49-head tranche-3 ledger.
+- FR-25: Complete repository-level disposition for the final seven without mutating PriceyApp or
+  any source that lacks a complete preservation map.
+- FR-26: Keep recovery evidence private and standalone because raw Git evidence is sensitive by
+  construction and is not reducible to canonical refs.
+- FR-27: Keep Stashly and phenotype-teamcomm standalone; keep Quillr, router-docs, and
+  template-commons on HOLD pending their named ref/boundary gates.
 
 ## Binary Acceptance Criteria
 
@@ -76,7 +84,8 @@ rename-and-archive preservation transaction authorized for docket #1.
 - [ ] SHA parity and content parity are independently recorded for any additional READY candidate.
 - [x] No remote mutation occurred beyond the authorized docket #1 rename and archive; no deletion,
   force-push, or history rewrite occurred.
-- [x] The three fork remotes were untouched.
+- [x] The PriceyApp fork was untouched; router-docs and template-commons were correctly reclassified
+  as non-forks and were not mutated.
 - [ ] Batch A placement errors and all eight non-`main` defaults are explicitly reconciled.
 - [ ] Evidence collection stays within the partial-bare-clone disk policy.
 - [x] Tranche 2 records all 16 source heads and the single source tag across its six candidates.
@@ -85,3 +94,6 @@ rename-and-archive preservation transaction authorized for docket #1.
 - [x] Every tranche-2 ref has an explicit commit, tree, and parent result in the TSV evidence ledger.
 - [x] Tranche 3 classifies all six candidates and all 49 source heads without remote mutation.
 - [x] The only tranche-3 parity-proven source remains policy-blocked; five evidence holds remain.
+- [x] Every tranche-3 head has an explicit ref, commit, tree, and parent result in the TSV ledger.
+- [x] All 20 docket repositories now have a deep disposition backed by current remote evidence.
+- [x] The final seven were classified without remote mutation or exposure of sensitive evidence.
