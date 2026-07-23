@@ -25,7 +25,10 @@
     {"repo": "benchmarks", "disposition": "ARCHIVE_OR_KEEP", "canonical_source": null}
   ],
   "evidence": {
+    "github_repo_count": 296,
     "registry_project_json_count": 154,
+    "raw_name_gap_rows": 142,
+    "archive_rows_in_registry": 5,
     "source_scan": "GitHub REST user/repos, size <= 1000 KB",
     "verification": ["all project JSON parses", "duplicate project stems absent"],
     "next_gate": "sponsor review before any absorption, archive deletion, or worktree pruning"
