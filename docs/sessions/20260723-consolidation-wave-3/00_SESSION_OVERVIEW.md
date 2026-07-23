@@ -13,6 +13,9 @@ history under namespaced recovery refs before any boundary consolidation.
   `recovery/omniroute-wtrees/*`.
 - AgilePlus dirty/untracked payload was preserved with Airlock but remains blocked from cloud
   publication until its working tree is reconciled.
+- SessionLedger, PhenoObservability, phenotype-tooling, portage, and thegent were published under
+  verified recovery namespaces; forgecode was preserved to the KooshaPari fork after its origin
+  remote rejected the Airlock push.
 - Seven Wave 2 protected repositories remain mutation-blocked.
 
 ## Links
@@ -20,4 +23,3 @@ history under namespaced recovery refs before any boundary consolidation.
 - Parent: `phenotype-registry` main
 - Wave 2: `docs/sessions/20260723-consolidation-wave-2/`
 - Boundary SSOT: `BOUNDARY_OWNERS.md`
-

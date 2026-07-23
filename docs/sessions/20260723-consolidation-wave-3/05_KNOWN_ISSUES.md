@@ -9,4 +9,5 @@
   `/dev/null` configuration was used for evidence scans.
 - The repository-wide ecosystem validator still reports unrelated metadata drift and an unreachable
   `dispatch-mcp` entry.
-
+- Forgecode’s configured `origin` is `tailcallhq/forgecode`; the local Airlock push was denied.
+  The snapshot was preserved to KooshaPari’s `fork` namespace, with no force-push or remote rewrite.
