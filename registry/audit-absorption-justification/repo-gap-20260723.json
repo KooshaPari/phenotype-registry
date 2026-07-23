@@ -6,7 +6,7 @@
     {"repo": "4sgm-archive2", "disposition": "ARCHIVE", "canonical_source": "4sgm"},
     {"repo": "Eidolon-archive", "disposition": "ARCHIVE", "canonical_source": "Eidolon"},
     {"repo": "phenotype-org-audits-archive", "disposition": "ARCHIVE", "canonical_source": "phenotype-org-audits"},
-    {"repo": "planify-wt-archive", "disposition": "ARCHIVE", "canonical_source": "Planify2"},
+    {"repo": "planify-wt-archive", "disposition": "ARCHIVE", "canonical_source": "Planify2", "source_remote_exists": false, "provenance_status": "unresolved_local_clone"},
     {"repo": "home-recovery-2026-07-archive", "disposition": "ARCHIVE", "canonical_source": null},
     {"repo": "zen", "disposition": "ARCHIVE", "canonical_source": "HexaKit"},
     {"repo": "phenotype-gateway", "disposition": "ARCHIVE", "canonical_source": "HexaKit"},
