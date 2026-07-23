@@ -1,0 +1,19 @@
+{
+  "name": "phenoUtils",
+  "languages": [
+    "rust"
+  ],
+  "primary_language": "rust",
+  "status": "queued",
+  "has_readme": true,
+  "type": "utility-library",
+  "path": "repos/phenoUtils",
+  "disposition": "ABSORB",
+  "wave": "2026-07-23-boundary-audit",
+  "queued_at": "2026-07-23",
+  "proposed_target": "phenotype-shared",
+  "proposed_target_repo": "phenotype-shared",
+  "proposed_target_path": "crates/",
+  "absorption_note": "Candidate only: preserve source history and perform package/API conflict review before subtree absorption.",
+  "note": "Foundational shell, filesystem, crypto, network, schema-port, and testing crates."
+}
