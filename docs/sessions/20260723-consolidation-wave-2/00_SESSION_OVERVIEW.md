@@ -8,9 +8,9 @@ canonical-boundary gates. Preserve all unique history before reducing the GitHub
 ## Outcome
 
 - All 20 repositories were audited live; all are unarchived, owned non-forks.
-- Thirteen empty shells have passed live and local-payload gates and await sponsor authorization.
+- Thirteen empty shells passed live and local-payload gates and were archived after sponsor authorization.
 - Seven repositories remain mutation-blocked by provenance, payload, infrastructure, or split-boundary gates.
-- No Wave 2 repository was renamed, archived, deleted, or force-pushed in this session.
+- Thirteen Wave 2 repositories were archived; none were renamed, deleted, or force-pushed.
 - Outside the docket, 13 local `phenotype-omlx-recovered` heads were atomically published under
   `recovery/phenotype-omlx-recovered/*` after a clean gitleaks scan.
 

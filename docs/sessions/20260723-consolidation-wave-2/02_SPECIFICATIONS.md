@@ -22,8 +22,8 @@ Slug: `ecosystem-consolidation-wave-2-20260723`
 - [x] Boundary intent recorded for all 20.
 - [x] Seven blocked repositories remain unmodified.
 - [x] No Wave 2 remote mutation occurred.
-- [ ] Sponsor authorizes or rejects the thirteen empty-shell archive actions.
-- [ ] Authorized actions receive immediate preflight and post-action evidence.
+- [x] Sponsor authorized the thirteen empty-shell archive actions.
+- [x] Authorized actions received immediate preflight and post-action evidence.
 
 ## Out of Scope
 

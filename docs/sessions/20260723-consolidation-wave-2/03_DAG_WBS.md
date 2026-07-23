@@ -16,7 +16,7 @@ A [G] exact docket and live metadata
 |---|---|---|
 | A-D | complete | Three independent evidence lanes plus cloud-gap recovery |
 | E | complete | Authoritative TSV and conservative disposition |
-| F | blocked | Sponsor go/no-go |
+| F | complete | Thirteen empty shells archived after sponsor go |
 | G | blocked | Missing historical local payload evidence |
 | H | blocked | Exact ref preservation and boundary proof |
 | I | pending | Next ranked 20-repository tranche |

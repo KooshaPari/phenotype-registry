@@ -19,7 +19,7 @@
 ## Current results
 
 - `git diff --check`: pass.
-- Evidence ledger: 20 records; 13 `READY_SPONSOR_ARCHIVE`, 7 blocked.
+- Evidence ledger: 20 records; 13 archive actions complete, 7 blocked and untouched.
 - AgilePlus: feature ID 2 is `specified` on the Wave 1 target branch.
 - Gitleaks: repository config reproducibly panics on pre-existing allowlist path `*.lock`; rerunning
   with `/dev/null` configuration scanned 15.88 MB and found no leaks.
