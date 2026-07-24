@@ -262,3 +262,14 @@ DELETE archived repo  IFF:
 - **Consumer pattern:** Repointed by eyetracker (consent+SSO), eventra (tenant_id), configra (VaultStore), quillr (token introspection)
 - **Coverage:** Strong on internal JWT/RBAC/PKCE state binding; weak on OIDC/ABAC/WebAuthn/TOTP/KMS/DPoP/audit hash-chain
 - **Recommendation:** **KEEP_ACTIVE** — AUT-SOTA-001..007 (key rotation, OIDC, WebAuthn, TOTP, KMS, DPoP, rate-limiting)
+
+### Creativity / Design / UX (added 2026-07-20)
+
+| Slice | Canonical owner | Layer | Consumer pattern | Recommendation |
+|-------|-----------------|-------|------------------|----------------|
+| Design tokens + UX spine | **`KooshaPari/phenoDesign`** | Spine `CREATIVITY_DESIGN_UX` | `@phenotype/design` npm/git dep; VitePress theme | **DECLARE_SPINE** — unarchived 2026-07-20; reverses 2026-07-17 phenodocs absorption |
+| Asset render pipeline | **`KooshaPari/asset-engine`** | Domain workspace | Blender/FFmpeg/ImageMagick/Unreal legs; orchestrator | **DECLARE_BOUNDARY_OWNER** — extracted from `phenoDesign/engine/` |
+| Docs site hosting | `phenodocs` | docs | May mirror tokens; not canonical for design | **DOWNSTREAM_CONSUMER** only |
+| 3D graphics SDK | `phenotype-gfx` | shared-lib | Voxel/terrain/water — distinct from design tokens | **KEEP_ACTIVE** — do not merge into phenoDesign |
+
+**Conflict:** 2026-07-17 absorption of phenoDesign tokens into `phenodocs/packages/design/` is **superseded** by spine restoration (2026-07-20). phenoDesign is canonical; phenodocs copies are delegated mirrors if present.
