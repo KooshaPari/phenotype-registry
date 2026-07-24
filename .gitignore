@@ -68,3 +68,4 @@ local/incident-evidence/
 # re-generate these on first build. Tracked per-project Cargo.lock
 # files (under Cargo workspace members) are unaffected.
 Cargo.lock
+worktrees/
