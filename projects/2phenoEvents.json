@@ -1,0 +1,19 @@
+{
+  "name": "2phenoEvents",
+  "languages": [
+    "rust"
+  ],
+  "primary_language": "rust",
+  "status": "queued",
+  "has_readme": true,
+  "type": "event-bus-recovery",
+  "path": "repos/2phenoEvents",
+  "disposition": "ABSORB",
+  "wave": "2026-07-23-boundary-audit",
+  "queued_at": "2026-07-23",
+  "proposed_target": "phenoEvents",
+  "proposed_target_repo": "phenoEvents",
+  "proposed_target_path": ".",
+  "absorption_note": "Restored from an absorb branch; preserve the source ref and compare history before consolidating into phenoEvents.",
+  "note": "EventBus port with hexagonal architecture; no deletion or direct merge proposed."
+}

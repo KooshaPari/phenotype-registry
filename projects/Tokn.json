@@ -1,0 +1,19 @@
+{
+  "name": "Tokn",
+  "languages": [
+    "rust"
+  ],
+  "primary_language": "rust",
+  "status": "queued",
+  "has_readme": true,
+  "type": "usage-ledger",
+  "path": "repos/Tokn",
+  "disposition": "KEEP",
+  "wave": "2026-07-23-boundary-audit",
+  "queued_at": "2026-07-23",
+  "proposed_target": "Tokn",
+  "proposed_target_repo": "Tokn",
+  "proposed_target_path": ".",
+  "absorption_note": null,
+  "note": "Standalone TokenLedger runtime with its own contracts and release surface; registry governs provenance and cross-repo evidence only."
+}

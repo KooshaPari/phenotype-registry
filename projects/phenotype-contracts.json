@@ -1,0 +1,17 @@
+{
+  "name": "phenotype-contracts",
+  "languages": [],
+  "primary_language": "spec",
+  "status": "queued",
+  "has_readme": true,
+  "type": "contract-spec",
+  "path": "repos/phenotype-contracts",
+  "disposition": "KEEP",
+  "wave": "2026-07-23-boundary-audit",
+  "queued_at": "2026-07-23",
+  "proposed_target": "phenotype-contracts",
+  "proposed_target_repo": "phenotype-contracts",
+  "proposed_target_path": ".",
+  "absorption_note": null,
+  "note": "Canonical language-agnostic provider/model contracts and policy specs; retain as an external-consumer SSOT and link from registry."
+}
