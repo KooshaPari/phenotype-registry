@@ -69,3 +69,5 @@ local/incident-evidence/
 # files (under Cargo workspace members) are unaffected.
 Cargo.lock
 worktrees/
+worktrees/consolidation-wave-3-20260723
+worktrees/phenotype-omlx-ffi-validation
