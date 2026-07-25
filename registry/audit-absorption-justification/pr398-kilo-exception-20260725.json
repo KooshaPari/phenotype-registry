@@ -1,0 +1,15 @@
+{
+  "audit_date": "2026-07-25",
+  "pull_request": 398,
+  "merge_commit": "69f8c26e87fa7a0b8d3fadc9d886013e180378f0",
+  "state": "MERGED",
+  "required_check": "Kilo Code Review",
+  "required_check_conclusion": "FAILURE",
+  "kilo_completed_at": "2026-07-23T13:41:04Z",
+  "review_state": "COMMENTED",
+  "other_checks": "SUCCESS_OR_NEUTRAL",
+  "finding": "The registry boundary packet merged despite a failed Kilo review check. This is a governance exception and must not be treated as a clean all-gates-green merge.",
+  "impact": "Boundary records are present on main, but the review exception remains part of their provenance.",
+  "follow_up": "Sponsor/admin review of the exception and confirmation that future registry merges require a passing Kilo check.",
+  "policy": "preserve evidence; do not rewrite or revert the merged commit"
+}
