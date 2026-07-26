@@ -22,6 +22,21 @@
       "prunable_temp_worktree_metadata": 8,
       "security_note": "5 Dependabot findings reported: 4 high, 1 moderate",
       "disposition": "PRESERVE_PENDING_BOUNDARY_REVIEW"
+    },
+    {
+      "name": "phenotype-tooling",
+      "remote": "https://github.com/KooshaPari/phenotype-tooling",
+      "snapshot_ref": "wip/20260726T0042-18c5b02de158dd40",
+      "dirty_entries_at_snapshot": 4,
+      "security_note": "203 Dependabot findings reported: 49 critical, 74 high, 72 moderate, 8 low",
+      "disposition": "PRESERVE_PENDING_SECURITY_AND_BOUNDARY_REVIEW"
+    },
+    {
+      "name": "pheno-harness",
+      "remote": "https://github.com/KooshaPari/pheno-harness",
+      "snapshot_ref": "wip/20260726T0042-18c5b03197fd03e8",
+      "dirty_entries_at_snapshot": 2,
+      "disposition": "PRESERVE_PENDING_BOUNDARY_REVIEW"
     }
   ],
   "invariants": [
