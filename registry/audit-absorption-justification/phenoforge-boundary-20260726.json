@@ -18,6 +18,16 @@
     "local_checkout_kind": "git submodule",
     "local_submodule_pointer": "8433020594adef6609f79348c49a0381396549db",
     "submodule_pointer_is_ancestor_of_remote_main": true,
+    "branch_inventory": {
+      "non_default_branches": 17,
+      "unique_commits_ahead_of_main": {
+        "chore/workflow-hygiene-20260528": 3,
+        "chore/cargo-keywords": 1,
+        "chore/gov-bootstrap-2026-05-02": 1,
+        "dependabot-and-review-branches": "14 additional branches with one commit each or already merged ancestry"
+      },
+      "policy": "Retain branch refs and audit each unique-content branch before any absorption or archive operation."
+    },
     "scope": [
       "parallel task execution",
       "dependency graph resolution",
