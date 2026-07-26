@@ -57,6 +57,28 @@
       "active_work_note": "Qwen3.5/Metal/Harbor evaluation and FFI changes remain in progress",
       "security_note": "No literal secret values found; scripts expect environment-provided LANGFUSE_* and OPENAI_API_KEY values",
       "disposition": "PRESERVE_COMMITTED_RECOVERY_PENDING_PERF_AND_BOUNDARY_REVIEW"
+    },
+    {
+      "name": "sharecli",
+      "remote": "https://github.com/KooshaPari/sharecli",
+      "recovery_ref": "recovery/sharecli-local-20260726",
+      "recovery_commit": "4207165",
+      "airlock_snapshot": "wip/20260726T0124-18c5b27ba8e59f20",
+      "captured_files": 3,
+      "boundary_note": "Recovery-only capture of tray dashboard work; HealthPage.swift is 1008 lines and requires decomposition before production integration.",
+      "security_note": "5 Dependabot findings reported: 1 high, 4 moderate",
+      "disposition": "PRESERVE_RECOVERY_ONLY_PENDING_DECOMPOSITION"
+    },
+    {
+      "name": "thegent",
+      "remote": "https://github.com/KooshaPari/thegent",
+      "recovery_ref": "recovery/thegent-dirty-decomposition-20260726",
+      "recovery_commit": "bbe00eeae5e1116190d539d1e6c85779d3395383",
+      "airlock_snapshot": "wip/20260726T0120-18c5b249daf9b7a8",
+      "captured_files": 7,
+      "boundary_note": "Recovery-only capture; several phench modules exceed the 500-line repository limit and require decomposition before production integration.",
+      "security_note": "88 Dependabot findings reported: 8 critical, 42 high, 32 moderate, 6 low",
+      "disposition": "PRESERVE_RECOVERY_ONLY_PENDING_DECOMPOSITION_AND_SECURITY_REVIEW"
     }
   ],
   "invariants": [
