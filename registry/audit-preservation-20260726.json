@@ -51,10 +51,12 @@
       "remote": "https://github.com/KooshaPari/phenotype-omlx",
       "snapshot_ref": "wip/20260726T0053-18c5b0c6df782988",
       "snapshot_sha": "67ce0a03c1ee71e984f09225d50518fa81a21dd5",
+      "recovery_ref": "recovery/phenotype-omlx-local-20260726",
+      "recovery_commit": "c71bc622",
       "dirty_entries_at_snapshot": 9,
       "active_work_note": "Qwen3.5/Metal/Harbor evaluation and FFI changes remain in progress",
       "security_note": "No literal secret values found; scripts expect environment-provided LANGFUSE_* and OPENAI_API_KEY values",
-      "disposition": "PRESERVE_PENDING_PERF_AND_BOUNDARY_REVIEW"
+      "disposition": "PRESERVE_COMMITTED_RECOVERY_PENDING_PERF_AND_BOUNDARY_REVIEW"
     }
   ],
   "invariants": [
