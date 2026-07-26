@@ -1,0 +1,33 @@
+{
+  "audit_id": "audit-preservation-20260726",
+  "captured_at": "2026-07-26T00:37:15Z",
+  "purpose": "Cloud-preserve dirty high-risk workspace roots before boundary decisions",
+  "records": [
+    {
+      "name": "hwLedger",
+      "remote": "https://github.com/KooshaPari/hwLedger",
+      "snapshot_ref": "wip/20260726T0036-18c5afe0e5de1a58",
+      "snapshot_sha": "d43fc53de90a36f0fc5911d23524f76d944b4a1d",
+      "dirty_entries_at_snapshot": 9,
+      "active_worktree_note": "model-explorer-2026-07-23 remained intact",
+      "security_note": "1 moderate Dependabot finding reported",
+      "disposition": "PRESERVE_PENDING_BOUNDARY_REVIEW"
+    },
+    {
+      "name": "Tracera",
+      "remote": "https://github.com/KooshaPari/Tracera",
+      "snapshot_ref": "wip/20260726T0036-18c5afe2353f24b0",
+      "snapshot_sha": "e939246e6c2b358ed6b3f79e4784a3adc5382787",
+      "dirty_entries_at_snapshot": 10,
+      "prunable_temp_worktree_metadata": 8,
+      "security_note": "5 Dependabot findings reported: 4 high, 1 moderate",
+      "disposition": "PRESERVE_PENDING_BOUNDARY_REVIEW"
+    }
+  ],
+  "invariants": [
+    "No reset, clean, deletion, archive, or source mutation was performed.",
+    "Snapshot refs are pushed to the canonical remotes.",
+    "Prunable metadata remains untouched pending sponsor policy."
+  ],
+  "next_gate": "Review workspace boundaries and security findings before any merge or archive action."
+}
