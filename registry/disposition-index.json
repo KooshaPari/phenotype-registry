@@ -2690,13 +2690,13 @@
     },
     {
       "added_at": "2026-07-17T12:50:00.000000Z",
-      "audit_artifact": "audits/absorption-justifications/Tokn-2026-07-17.md",
+      "audit_artifact": "registry/audit-absorption-justification/tokn-boundary-20260726.json",
       "boundary_doc": "docs/boundary/Tokn.md",
       "classified_at": "2026-07-18T00:42:09.091645Z",
       "core_lang": "rust",
-      "disposition": "TOO_LARGE_RETIRE",
-      "final_classification": "C:TOO_LARGE_RETIRE",
-      "fsm": "archived",
+      "disposition": "KEEP_CANONICAL_STANDALONE",
+      "final_classification": "A:KEEP_CANONICAL_STANDALONE",
+      "fsm": "active",
       "grade_percentage": null,
       "grade_score": null,
       "id": "repo-Tokn",
@@ -2706,7 +2706,7 @@
       "remote_branch_count": 1,
       "size_kb": 2409,
       "source_artifact": "manual:2026-07-17",
-      "target": "phenotype-registry (docs/boundary/Tokn.md)",
+      "target": "KooshaPari/Tokn (canonical standalone)",
       "wave": "2026-07-17-queue-refresh-2"
     },
     {
