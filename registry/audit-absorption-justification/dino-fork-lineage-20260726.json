@@ -8,7 +8,7 @@
       "is_fork": false,
       "parent": null,
       "default_branch": "wsm/agileplus-dag-20260610",
-      "head": "c4033528a4448d7b5e9532e9433ebda95ac6fe0e",
+      "head": "3e0bd5a50a732bef632664cef74548044301471e",
       "latest_observed_commit": "3e0bd5a50a732bef632664cef74548044301471e",
       "license": "MIT",
       "visibility": "public",
