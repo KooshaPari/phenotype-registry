@@ -1,0 +1,22 @@
+{
+  "name": "Melosviz",
+  "languages": ["python", "rust", "typescript"],
+  "primary_language": "python",
+  "status": "active",
+  "has_readme": true,
+  "type": "music-visualization-application",
+  "path": "repos/Melosviz",
+  "role": "music-to-visual-generation",
+  "domain_role": "application",
+  "boundary": "multiruntime-media-app",
+  "gh_url": "https://github.com/KooshaPari/Melosviz",
+  "disposition": "REVIEW_TARGET_CONFLICT",
+  "canonical_routing": false,
+  "recovery_ref": "recovery/melosviz-local-20260726",
+  "recovery_commit": "ab2469d",
+  "airlock_snapshot": "wip/20260726T0154-18c5b424fa7bc378",
+  "absorbed_into": null,
+  "rationale": "Active public multi-runtime application. Existing catalog/disposition entries conflict between phenotype-apps and phenotype-python-sdk targets; current web lockfile changes are preserved, while generated tsbuildinfo is excluded.",
+  "audit_artifact": "registry/audit-absorption-justification/gap-cohort-20260726.json",
+  "registry_author": "phenotype-registry (boundary audit)"
+}
