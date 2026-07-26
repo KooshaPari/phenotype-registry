@@ -2,7 +2,8 @@
   "audit_id": "pr402-kilo-rate-limit-20260726",
   "captured_at": "2026-07-26T01:13:33Z",
   "pull_request": 402,
-  "head_sha": "47a89f093c963df3d9baba8809d6ad707b4b9ab1",
+  "head_sha_at_exception": "47a89f093c963df3d9baba8809d6ad707b4b9ab1",
+  "current_head_sha": "ab7ebaf",
   "purpose": "Record preservation-manifest gate exception without silently merging",
   "check": {
     "name": "Kilo Code Review",
@@ -19,7 +20,7 @@
     "mergify": "neutral/skipped",
     "coderabbit": "rate-limited/commentary"
   },
-  "scope": "Evidence-only preservation manifest for hwLedger, Tracera, phenotype-tooling, pheno-harness, SessionLedger, and phenotype-omlx recovery refs.",
+  "scope": "Evidence-only preservation manifest for hwLedger, Tracera, phenotype-tooling, pheno-harness, SessionLedger, phenotype-omlx, ShareCLI, and thegent recovery refs.",
   "disposition": "OPEN_PENDING_SPONSOR_EXCEPTION_DECISION",
   "invariants": [
     "No source repository was deleted, reset, cleaned, or merged by PR #402.",
