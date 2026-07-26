@@ -37,6 +37,14 @@
       "snapshot_ref": "wip/20260726T0042-18c5b03197fd03e8",
       "dirty_entries_at_snapshot": 2,
       "disposition": "PRESERVE_PENDING_BOUNDARY_REVIEW"
+    },
+    {
+      "name": "SessionLedger",
+      "remote": "https://github.com/KooshaPari/SessionLedger",
+      "snapshot_ref": "wip/20260726T0050-18c5b0a166ba0540",
+      "dirty_entries_at_snapshot": 3,
+      "security_note": "2 Dependabot findings reported: 1 moderate, 1 low",
+      "disposition": "PRESERVE_PENDING_BOUNDARY_REVIEW"
     }
   ],
   "invariants": [
