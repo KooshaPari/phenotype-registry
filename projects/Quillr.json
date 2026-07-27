@@ -25,6 +25,7 @@
     "decision": "preserve standalone; run explicit crate/package comparison before any import"
   },
   "audit_artifact": "registry/audit-quillr-boundary-20260727.json",
+  "review_artifact": "registry/audit-quillr-kilo-rate-limit-20260727.json",
   "audit_date": "2026-07-27",
   "note": "Boundary correction: stale Httpora absorption target superseded by live restored Quillr provenance; historical claims remain queryable in disposition-index.json and refresh artifacts.",
   "adr": "ADR-ECO-014"
