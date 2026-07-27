@@ -855,14 +855,13 @@
       "wave": "surface-reduction-2"
     },
     {
-      "disposition": "RETIRE",
-      "fsm": "done",
+      "disposition": "KEEP_STANDALONE_PENDING_BOUNDARY_REVIEW",
+      "fsm": "active",
       "id": "sr-phenostandards",
-      "note": "BOUNDARY_OWNERS 5/5; repo 404 confirmed 2026-06-19 \u00e2\u20ac\u201d registry stub only (`projects/phenoStandards.json`); content absorbed HexaKit 2026-06-16; no archive step",
+      "note": "2026-07-27 boundary correction: public repo is live at SHA 23c0dda23bfd7bd060f53a608032102287498f85 and contains standards templates/spec/CI; prior 404/empty-stub/HexaKit absorption claim is stale. Preserve standalone pending owner/content-equivalence review. See audits/absorption-justifications/phenoStandards-2026-07-27.md.",
       "path": "phenoStandards",
-      "relocated_date": "2026-06-18",
-      "target": "HexaKit",
-      "wave": "surface-reduction-2"
+      "target": null,
+      "wave": "2026-07-27-boundary-correction"
     },
     {
       "core_lang": "rust",
