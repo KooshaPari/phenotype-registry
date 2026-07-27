@@ -573,16 +573,17 @@ substrates:
 - id: nanovms
   repo: KooshaPari/nanovms
   name: nanovms
-  status: archived
+  status: active
   tier: federated-service
   architecture: layered
   archetype: infra
   language: go
   role: platform
-  boundary: null
-  intent: null
-  notes: '3-tier VMM/sandbox isolation layer per ADR-022. Workspace member of phenotype-infra
-    federation.
+  boundary: docs/boundary/nanovms.md
+  intent: docs/intent/nanovms.md
+  notes: 'Reconciled 2026-07-27: live public MIT repository is unarchived and independently
+    maintained. Integrates with phenotype-infra, but is not absorbed; prior archived/federated
+    state was stale.
 
     '
 - id: omniroute
