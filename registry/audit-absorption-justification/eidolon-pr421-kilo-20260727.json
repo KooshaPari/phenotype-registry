@@ -1,0 +1,25 @@
+{
+  "audit_date": "2026-07-27",
+  "pull_request": 421,
+  "repository": "KooshaPari/phenotype-registry",
+  "scope": "post-check audit for Eidolon boundary refresh",
+  "checks": {
+    "Kilo Code Review": {
+      "status": "failure",
+      "started_at": "2026-07-27T01:39:21Z",
+      "completed_at": "2026-07-27T01:40:55Z",
+      "finding": "No review findings were emitted; service returned failure.",
+      "handling": "transient-service-exception"
+    },
+    "semgrep-cloud-platform/scan": "pass",
+    "SonarCloud Code Analysis": "pass",
+    "GitGuardian Security Checks": "pass",
+    "Socket Security: Project Report": "pass",
+    "Socket Security: Pull Request Alerts": "pass",
+    "Summary": "pass",
+    "CodeRabbit": "pass (rate-limited review; no findings)"
+  },
+  "exception_policy": "Preserve the Kilo failure as an explicit evidence record. Merge requires sponsor-approved exception or a later successful Kilo rerun; do not silently treat the failed check as green.",
+  "validation": ["all changed JSON parses", "git diff --check"],
+  "no_loss": "No deletion, archive, branch pruning, or force update performed."
+}
