@@ -87,7 +87,7 @@
       "wave": "H14"
     },
     {
-      "classified_at": "2026-07-18T00:42:09.091645Z",
+      "classified_at": "2026-07-26T10:42:00Z",
       "core_lang": "rust",
       "deleted_at": "2026-07-18",
       "disposition": "A:SPINE_CORE",
@@ -671,9 +671,9 @@
     },
     {
       "classified_at": "2026-07-18T00:42:09.091645Z",
-      "disposition": "TOO_LARGE_RETIRE",
-      "final_classification": "C:TOO_LARGE_RETIRE",
-      "fsm": "archived",
+      "disposition": "B:WORKING",
+      "final_classification": "B:WORKING",
+      "fsm": "live",
       "id": "block-c-testingkit",
       "note": "Block-C boundary disposition merged",
       "path": "KooshaPari/TestingKit",
@@ -2615,13 +2615,13 @@
       "grade_percentage": null,
       "grade_score": null,
       "id": "repo-PhenoVCS",
-      "last_push": "2026-07-17T09:14:47Z",
-      "note": "VCS primitives registry (Git worktree management). Complements SessionLedger (session bundles) for repo abstractions. [ABSORBED 2026-07-17]",
+      "last_push": "2026-07-25T13:42:59Z",
+      "note": "Active VCS primitives registry (Git worktree management, multi-backend ports, airlock, and observability). Revalidated 2026-07-26; prior archived/absorbed classification was stale. Keep standalone; no source absorption performed.",
       "path": "KooshaPari/PhenoVCS",
       "remote_branch_count": 1,
       "size_kb": 768,
-      "source_artifact": "manual:2026-07-17",
-      "target": "phenotype-registry",
+      "source_artifact": "registry/audit-absorption-justification/phenovcs-boundary-20260726.json",
+      "target": "PhenoVCS",
       "wave": "2026-07-17-queue-refresh-batch4"
     },
     {
