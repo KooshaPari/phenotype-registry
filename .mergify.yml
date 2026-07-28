@@ -1,5 +1,5 @@
 # Mergify Configuration — Optimized for multi-language monorepos
-# Docs: https://docs.mergify.com/
+# Docs: https://docs.mergify.com/ (validated 2026-07-28)
 
 pull_request_rules:
   # Auto-merge when all CI checks pass and PR is approved
