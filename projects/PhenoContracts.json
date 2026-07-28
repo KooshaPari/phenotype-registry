@@ -1,5 +1,7 @@
 {
   "name": "PhenoContracts",
+  "full_name": "KooshaPari/PhenoContracts",
+  "description": "Formal verification ports and shared Rust/TypeScript contract models for the Phenotype ecosystem",
   "languages": [
     "typescript",
     "html",
@@ -10,10 +12,33 @@
   "has_readme": true,
   "type": "verification-port",
   "path": "repos/PhenoContracts",
-  "disposition": "ABSORB",
-  "wave": "2026-07-17-queue-refresh-batch3",
-  "absorbed_into": "PhenoSpecs + TestingKit",
-  "absorption_note": "Phenotype contract verification — formal verification port + Prusti/Kani adapters + contract test bundle. Spec content (JSON schemas + ADRs) → PhenoSpecs; runtime verifier (Prusti/Kani adapters, contract tests, Rust contracts crate) → TestingKit. Upgrades prior HOLD_DECOMPOSE row (id 1259) to ABSORB.",
-  "note": "Audited 2026-07-17; multi-target absorption (specs vs runtime).",
-  "adr": "ADR-017"
+  "role": "formal-verification-contract-runtime",
+  "domain_role": "verification-adapters-and-contract-types",
+  "boundary": "hexagonal-contract-verification",
+  "gh_url": "https://github.com/KooshaPari/PhenoContracts",
+  "default_branch": "main",
+  "remote_default_sha": "39afa275e15bc1191dfc18f123e214ebfcf5d715",
+  "license": "MIT OR Apache-2.0",
+  "disposition": "KEEP_CANONICAL",
+  "canonical_routing": true,
+  "absorbed_into": null,
+  "rationale": "The live repository is an active, independently tested verification boundary: TypeScript port interfaces/tests plus a Rust workspace for contract models, port interfaces, and traits, with Prusti, Kani, and Coq adapter surfaces. PhenoSpecs remains the ADR/specification-governance spine; TestingKit may consume contract tests but does not subsume this repository's verifier ports or source history.",
+  "prior_claim": {
+    "disposition": "ABSORB",
+    "absorbed_into": "PhenoSpecs + TestingKit",
+    "result": "stale_or_unsupported",
+    "reason": "The prior row predates the public GitHub repository's current verification workspace and provides no migration, parity, or source-history merge evidence."
+  },
+  "verification": {
+    "audited_at": "2026-07-28T05:09:20Z",
+    "remote_reachable": true,
+    "working_tree_clean": true,
+    "tracked_file_count": 79,
+    "cargo_test_locked": "pass (workspace/all-features)",
+    "typescript_test": "not run: vitest dependency is not installed in the audit clone",
+    "license_files": ["LICENSE", "LICENSE-MIT", "LICENSE-APACHE"]
+  },
+  "audit_artifact": "registry/audit-absorption-justification/phenocontracts-boundary-20260728.json",
+  "note": "Sibling phenotype-contracts (schema-only SSOT, SHA cc8f34e...) is a separate schema surface; no absorption is inferred.",
+  "registry_author": "phenotype-registry (boundary audit)"
 }

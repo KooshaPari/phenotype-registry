@@ -1,0 +1,51 @@
+{
+  "audit_id": "phenocontracts-boundary-20260728",
+  "captured_at": "2026-07-28T05:09:20Z",
+  "scope": "KooshaPari/PhenoContracts live boundary and prior ABSORB claim",
+  "remote": {
+    "url": "https://github.com/KooshaPari/PhenoContracts",
+    "visibility": "public",
+    "archived": false,
+    "fork": false,
+    "default_branch": "main",
+    "default_sha": "39afa275e15bc1191dfc18f123e214ebfcf5d715",
+    "pushed_at": "2026-07-28T00:25:30Z",
+    "tracked_file_count": 79,
+    "license": "MIT OR Apache-2.0"
+  },
+  "source_evidence": {
+    "readme_role": "formal-verification contract port with Prusti, Kani, and Coq adapters; TypeScript and Rust contract models",
+    "rust_workspace": [
+      "rust/crates/phenotype-contracts",
+      "rust/crates/phenotype-port-interfaces",
+      "rust/crates/phenotype-port-traits"
+    ],
+    "verification": "cargo test --workspace --all-features: pass",
+    "license_files": ["LICENSE", "LICENSE-MIT", "LICENSE-APACHE"]
+  },
+  "sibling_boundary": {
+    "repo": "KooshaPari/phenotype-contracts",
+    "sha": "cc8f34ed34a3f1ae2ba7edd6810a902e51738693",
+    "role": "schema-only provider-model contracts SSOT",
+    "decision": "retain separate; no source merge inferred"
+  },
+  "prior_registry_claim": {
+    "existing_row": "projects/PhenoContracts.json",
+    "prior_disposition": "ABSORB",
+    "prior_absorbed_into": "PhenoSpecs + TestingKit",
+    "result": "stale_or_unsupported",
+    "contradiction": "The live repository has an active public verifier workspace and passing Rust tests; the prior row lacks migration/parity/source-history evidence."
+  },
+  "decision": {
+    "disposition": "KEEP_CANONICAL",
+    "target": "PhenoContracts",
+    "reason": "Keep formal-verification adapters and contract-runtime source history in their own boundary. Link PhenoSpecs and TestingKit through explicit interfaces rather than absorbing source trees.",
+    "next_gate": "Define generated-schema and contract-test exchange surfaces before any future consolidation proposal."
+  },
+  "actions_taken": [
+    "No repositories, branches, worktrees, remotes, or history were deleted, reset, archived, or rewritten.",
+    "Remote facts were read through GitHub API and a shallow clone; exact default-branch SHA recorded.",
+    "Cargo workspace tests were executed successfully; TypeScript tests were not run because the audit clone lacks installed vitest dependencies."
+  ],
+  "registry_author": "phenotype-registry (boundary audit)"
+}
