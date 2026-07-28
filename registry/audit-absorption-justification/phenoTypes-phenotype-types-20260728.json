@@ -1,0 +1,32 @@
+{
+  "audit_id": "phenoTypes-phenotype-types-20260728",
+  "source": {
+    "name": "phenoTypes",
+    "remote": "https://github.com/KooshaPari/phenoTypes",
+    "observed_remote_state": "404_not_found",
+    "local_state": "no_local_checkout_found"
+  },
+  "historical_claim": {
+    "target": "phenotype-types",
+    "source": "projects/phenoTypes.json and 2026-06-16 archive-migration notes",
+    "claim": "empty skeleton superseded by phenotype-types"
+  },
+  "current_checks": [
+    {
+      "remote": "https://github.com/KooshaPari/phenotype-types",
+      "result": "404_not_found"
+    },
+    {
+      "remote": "https://github.com/Phenotype-org/phenotype-types",
+      "result": "404_not_found"
+    }
+  ],
+  "disposition": "RETAIN_RETIRED_RECORD_TARGET_UNRESOLVED",
+  "rationale": "Registry documentation and dependency ledgers reference phenotype-types as a historical terminal owner, but no currently resolvable GitHub repository was found under the owner or organization URLs. This is an availability/provenance gap, not proof that the historical target's content is lost or that a new repository should be created.",
+  "required_follow_up": [
+    "Locate an Airlock/recovery ref, local checkout, archive export, or alternate remote for phenotype-types.",
+    "Verify the historical merged PR and commit cited by the rationalization ledgers before changing the disposition.",
+    "Do not delete phenoTypes metadata or recreate a canonical target without sponsor-approved provenance."
+  ],
+  "checked_at": "2026-07-28"
+}

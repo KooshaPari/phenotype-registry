@@ -8,5 +8,9 @@
   "type": "stub",
   "path": "repos/phenoTypes",
   "absorbed_into": "phenotype-types",
-  "absorption_note": "Empty skeleton; type definitions live in phenotype-types; source repo deleted 2026-06-16"
+  "gh_url": "https://github.com/KooshaPari/phenoTypes",
+  "canonical_target_status": "UNRESOLVED_TARGET_404",
+  "absorption_note": "Historical 2026-06-16 archive note says the empty skeleton was superseded by phenotype-types. Current GitHub checks return 404 for both KooshaPari/phenotype-types and Phenotype-org/phenotype-types, so the target cannot be treated as a live cloud canonical without recovery evidence. Keep this retired record and historical routing claim; do not delete or recreate source content from inference.",
+  "audit_artifact": "registry/audit-absorption-justification/phenoTypes-phenotype-types-20260728.json",
+  "registry_author": "phenotype-registry (target availability audit)"
 }
