@@ -1,0 +1,6 @@
+full_name,path,target,status,executed_at_utc,gate_result,notes
+KooshaPari/thegent-sharecli,thegent-sharecli,thegent,DONE,2026-07-29T23:27:15Z,local_present|api_ok|targeted|no_git_mutation,"copied non-destructively into thegent/sharecli via rsync"
+KooshaPari/phenotype-shared,shared,phenotype-shared,DEFERRED,2026-07-29T23:27:46Z,local_present|api_ok|targeted|already_canonical,"no-physical-absorb; phenotype-shared remains canonical shared mono"
+KooshaPari/HexaKit,HexaKit,pheno (crates/hexa-kit),BLOCKED,2026-07-29T23:27:46Z,missing_target_repo,"resume after creating or restoring target repo 'pheno'"
+KooshaPari/HexaKit,HexaKit,pheno (crates/hexa-kit),BLOCKED,2026-07-29T23:47:00Z,insufficient_disk|target_restore_partial,"clone/restore attempted but aborted by No space left on device during staged copy; requires free space before target ingest."
+KooshaPari/AgilePlus,AgilePlus,pheno (crates/agile-plus),BLOCKED,2026-07-29T23:47:00Z,insufficient_disk|target_restore_partial,"merge attempt blocked by same storage saturation while attempting to restore target checkout and copy source."

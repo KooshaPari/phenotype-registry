@@ -14,6 +14,7 @@ Hard constraint: skip AgilePlus in this turn by sponsor policy.
 |1|KooshaPari/thegent-sharecli|thegent-sharecli|thegent|154|public|archived|**DONE (2026-07-29):** absorbed into `thegent/sharecli/`|
 |2|KooshaPari/phenotype-shared|shared|phenotype-shared|310|private|active|**DEFERRED (2026-07-29):** appears already-canonical (`repo: phenotype-shared` is KEEP_CANONICAL); no physical absorb action executed in this wave slice|
 |3|KooshaPari/HexaKit|HexaKit|pheno (crates/hexa-kit)|23130|public|active|**BLOCKED (2026-07-29):** target repo `pheno` not present locally; requires boundary restore before physical absorb|
+|4|KooshaPari/AgilePlus|AgilePlus|pheno (crates/agile-plus)|928055|public|active|**BLOCKED (2026-07-29):** merge attempt blocked by local storage exhaustion while attempting target restore/ingest. Resume after restoring target `pheno` with adequate capacity.|
 
 ## Hold queue (do not execute until HITL/owner resolves)
 
@@ -67,7 +68,8 @@ Hard constraint: skip AgilePlus in this turn by sponsor policy.
 
 - ✅ `thegent-sharecli` absorbed to `thegent/sharecli/` with preservation metadata (`ABSORPTION_META.json`) and source `.git` untouched.
 - ⚪ `phenotype-shared` no-op for this slice: registry and boundary state already identify `phenotype-shared` as canonical shared mono parent; no source duplication to absorb into itself.
-- ⚠️ `HexaKit` blocked: target checkout `pheno` absent locally, despite `proposed_target_repo = pheno`, so execution deferred until target repo is available/reviewed.
+- ⚠️ `HexaKit` blocked on 2026-07-29T23:47:00Z: target `pheno` was restored attempt but copy failed with `No space left on device`; execution deferred until target space constraints are resolved.
+- ⚠️ `AgilePlus` similarly blocked on 2026-07-29T23:47:00Z due local storage exhaustion during the same staged restore+copy attempt.
 
 ### Evidence artifact
 
