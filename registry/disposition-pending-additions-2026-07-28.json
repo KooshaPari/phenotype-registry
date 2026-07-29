@@ -1,0 +1,113 @@
+{
+  "_meta": {
+    "purpose": "Stage 4 disposition-index rows missing from registry (registry file is FROZEN per disposition-index.json:4-7). User-approved Y on 2026-07-28 for Servion, Guardrail, phenoVessel, router-docs.",
+    "staged_at": "2026-07-28",
+    "staged_by": "forge-session-2026-07-28",
+    "registry_frozen_at": "2026-07-18T08:33:11.546679Z",
+    "registry_unfreeze_required": true,
+    "insertion_point": "Insert before line 14502 (the '],' that closes the 'rows' array) of phenotype-registry/registry/disposition-index.json",
+    "approval_basis": "User feedback 2026-07-28: 'for next 4: 1 need deeeprr eval for next 3 Y to all.' Per-repo Y received for the 3 ready repos: Servion, Guardrail, router-docs. phenoVessel is the 4th but blocked on target missing (PhenoPlugins/ not local).",
+    "per_repo_y_received_2026-07-28": [
+      {"repo": "Servion", "y": true, "execution_status": "ready; blocked on registry unfreeze (H) for index update; source GH-deleted so no source-side squash needed; tombstone pending on phenotype-tooling target"},
+      {"repo": "Guardrail", "y": true, "execution_status": "ready; blocked on registry unfreeze (H) for index update; source GH-deleted so no source-side squash needed; tombstone pending on phenotype-tooling target"},
+      {"repo": "router-docs", "y": true, "execution_status": "ready; blocked on registry unfreeze (H) for index update; source GH-deleted so no source-side squash needed; tombstone pending on OmniRoute target"},
+      {"repo": "phenoVessel", "y": "deferred", "execution_status": "BLOCKED — target PhenoPlugins/ missing locally; awaiting user decision on (a) regenerate, (b) tombstone-only, or (c) skip"}
+    ],
+    "deeper_eval_completed": true,
+    "deeper_eval_findings_ref": "phenotype-registry/registry/absorption-audits/2026-07-28-y-approved-6.md"
+  },
+  "rows_to_add": [
+    {
+      "absorbed_date": "2026-07-28",
+      "archived_at": "2026-06-16",
+      "core_lang": "rust",
+      "deleted_at": "2026-06-16",
+      "disposition": "ABSORB",
+      "final_classification": "B:WORKING",
+      "fsm": "done",
+      "id": "repo-Servion",
+      "last_push": "2025-03-25",
+      "name": "Servion",
+      "note": "ABSORB 2026-06-16 (projects/Servion.json status=retired, absorbed_into=phenotype-tooling/crates/phenotype-service-registry). Confirmed via git audit: target commit 7c5ed3a66 'feat(service-registry): add phenotype-service-registry crate (migrated from Servion) (#76)' in phenotype-tooling. Source repo KooshaPari/Servion deleted from GH 2026-06-16. Boundary doc: phenotype-registry/docs/boundary/phenotype-service-registry.md. [USER-DECISION 2026-07-28] Y approval received via 'for next 3 Y to all'. Source-side squash N/A (no local clone; GH-deleted). Target-side tombstone pending in phenotype-tooling (per-repo Y received; squash-to-1-commit on archive branch NOT executed pending additional confirmation). Docket: phenotype-registry/docs/absorption/servion/SUPERSEDES.md.",
+      "path": "KooshaPari/Servion",
+      "size_kb": 28,
+      "source_artifact": "gh:api",
+      "target": "phenotype-tooling",
+      "wave": "absorption-batch-2026-06-16",
+      "absorption_docket": "phenotype-registry/docs/absorption/servion/SUPERSEDES.md"
+    },
+    {
+      "absorbed_date": "2026-07-28",
+      "archived_at": "2026-06-16",
+      "core_lang": "rust",
+      "deleted_at": "2026-06-16",
+      "disposition": "ABSORB",
+      "final_classification": "B:WORKING",
+      "fsm": "done",
+      "id": "repo-Guardrail",
+      "last_push": "2025-03-25",
+      "name": "Guardrail",
+      "note": "ABSORB 2026-06-16 (projects/Guardrail.json status=retired, absorbed_into=phenotype-tooling/crates/phenotype-resilience). Confirmed via git audit: target commit a298f2355 'feat(resilience): add phenotype-resilience workspace crate (#72)' in phenotype-tooling. Source repo KooshaPari/Guardrail deleted from GH 2026-06-16. Boundary doc: phenotype-registry/docs/boundary/phenotype-resilience.md. Intent doc: phenotype-registry/docs/intent/phenotype-resilience.md. [USER-DECISION 2026-07-28] Y approval received via 'for next 3 Y to all'. Source-side squash N/A (no local clone; GH-deleted). Target-side tombstone pending in phenotype-tooling (per-repo Y received; squash-to-1-commit on archive branch NOT executed pending additional confirmation). Docket: phenotype-registry/docs/absorption/guardrail/SUPERSEDES.md.",
+      "path": "KooshaPari/Guardrail",
+      "size_kb": 48,
+      "source_artifact": "gh:api",
+      "target": "phenotype-tooling",
+      "wave": "absorption-batch-2026-06-16",
+      "absorption_docket": "phenotype-registry/docs/absorption/guardrail/SUPERSEDES.md"
+    },
+    {
+      "absorbed_date": "2026-07-28",
+      "archived_at": "2026-06-16",
+      "core_lang": "rust",
+      "deleted_at": "2026-06-16",
+      "disposition": "ABSORB_BUT_TARGET_MISSING",
+      "final_classification": "E:ABSORB_BUT_TARGET_MISSING",
+      "fsm": "blocked",
+      "id": "repo-phenoVessel",
+      "last_push": "2025-04-03",
+      "name": "phenoVessel",
+      "note": "ABSORB claim per projects/phenoVessel.json: 'Merged into PhenoPlugins as pheno-plugin-vessel crate.' Source repo deleted from GH 2026-06-16. BLOCKER: target repo PhenoPlugins does NOT exist locally (verified 2026-07-28 — 'PhenoPlugins/: No such file or directory'). Cannot verify absorption content via git audit. Three options: (1) scaffold PhenoPlugins/ + pheno-plugin-vessel/ from absorbed content (requires regeneration); (2) mark as tombstone-only (boundary doc + registry row, no functional code merge); (3) skip entirely. [USER-DECISION 2026-07-28] Y approval received for the broader 'next 4' but this repo is the BLOCKED 4th item — target missing. Awaiting user decision on regenerate vs tombstone-only vs skip.",
+      "path": "KooshaPari/phenoVessel",
+      "size_kb": 0,
+      "source_artifact": "gh:api",
+      "target": "PhenoPlugins",
+      "wave": "absorption-batch-2026-06-16",
+      "blocker": "target_repo_missing_locally",
+      "absorption_docket": "phenotype-registry/docs/absorption/phenovessel/SUPERSEDES.md"
+    },
+    {
+      "absorbed_date": "2026-07-28",
+      "archived_at": "2026-06-16",
+      "core_lang": "markdown",
+      "deleted_at": "2026-06-16",
+      "disposition": "ABSORB",
+      "final_classification": "B:WORKING",
+      "fsm": "done",
+      "id": "repo-router-docs",
+      "last_push": "2025-11-30",
+      "name": "router-docs",
+      "note": "ABSORB 2026-06-16 (projects/router-docs.json status=retired, absorbed_into=OmniRoute/docs/research/archive/router-docs). Confirmed via git audit: target commit f2b8b3638 'docs(archive): absorb router-docs research corpus from archive' in OmniRoute. Source repo KooshaPari/router-docs deleted from GH 2026-06-16. Target contains: README.md (172B), reference/ (33 entries), research/ (10 entries). [USER-DECISION 2026-07-28] Y approval received via 'for next 3 Y to all'. Source-side squash N/A (no local clone; GH-deleted). Target-side tombstone pending in OmniRoute (per-repo Y received; squash-to-1-commit on archive branch NOT executed pending additional confirmation). Docket: phenotype-registry/docs/absorption/router-docs/SUPERSEDES.md.",
+      "path": "KooshaPari/router-docs",
+      "size_kb": 0,
+      "source_artifact": "gh:api",
+      "target": "OmniRoute",
+      "wave": "absorption-batch-2026-06-16",
+      "absorption_docket": "phenotype-registry/docs/absorption/router-docs/SUPERSEDES.md"
+    }
+  ],
+  "_apply_procedure": [
+    "1. Obtain explicit user unfreeze approval for phenotype-registry/registry/disposition-index.json.",
+    "2. Use JSON patch tool (e.g., jq) to insert the rows_to_add array into the 'rows' array before its closing '],' (line 14502).",
+    "3. Validate JSON syntax with: python3 -c 'import json; json.load(open(\"phenotype-registry/registry/disposition-index.json\"))'",
+    "4. Update 'version' from 'v1.6.81' to 'v1.6.82' and 'updated' to '2026-07-28'.",
+    "5. Re-freeze the file with frozen=true and update frozen_at/frozen_by/frozen_reason fields.",
+    "6. Append audit log entry to ~/.forge/audit/summary.log.",
+    "7. PER-REPO TOMBSTONES (post-H=Y): for each Y-approved repo (Servion, Guardrail, router-docs), create archive/<date>-<source> branch on TARGET repo with tombstone file ARCHIVED-<source>.md; commit; squash to 1 commit (the squash action is destructive per standing rule but per-repo Y has been received); document in audit log."
+  ],
+  "_per_repo_y_approval_state_2026-07-28": {
+    "Servion": {"y": true, "ready": true, "blocked_on": "registry unfreeze (H) for index update; target-side tombstone creation (manual execution)"},
+    "Guardrail": {"y": true, "ready": true, "blocked_on": "registry unfreeze (H) for index update; target-side tombstone creation (manual execution)"},
+    "router-docs": {"y": true, "ready": true, "blocked_on": "registry unfreeze (H) for index update; target-side tombstone creation (manual execution)"},
+    "phenoVessel": {"y": "deferred", "ready": false, "blocked_on": "target PhenoPlugins/ missing locally"}
+  }
+}
