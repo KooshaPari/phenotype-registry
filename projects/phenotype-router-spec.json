@@ -17,5 +17,5 @@
   "full_name": "KooshaPari/phenotype-router-spec",
   "target": null,
   "registry_author": "phenotype-registry (onboarding backlog action)",
-  "notes": "onboarding_action:queue; local_repo_dir:pheno-rt-spec-probe"
+  "notes": "onboarding_action:queue; local_repo_dir:pheno-rt-spec-probe; hold: remote origin exists but repository not readable (git ls-remote: repository not found), so API/remote provenance remains unresolved"
 }
