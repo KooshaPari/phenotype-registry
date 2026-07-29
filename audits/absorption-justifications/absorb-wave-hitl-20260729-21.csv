@@ -1,0 +1,4 @@
+full_name,path,target,size,private,archived,note,flags
+KooshaPari/thegent-sharecli,thegent-sharecli,thegent,154,public,archived,Deprecated duplicate helper.,"queued_or_active,api_ok,local_present,targeted"
+KooshaPari/phenotype-shared,shared,phenotype-shared,310,private,active,onboarding_action:queue; local_repo_dir:shared,"queued_or_active,api_ok,local_present,targeted"
+KooshaPari/HexaKit,HexaKit,pheno (crates/hexa-kit),23130,public,active,Phenotype-org hexagonal architecture toolkit.,"queued_or_active,api_ok,local_present,targeted"
