@@ -4,16 +4,21 @@
     "rust"
   ],
   "primary_language": "rust",
-  "status": "queued",
+  "status": "archived",
   "has_readme": true,
   "type": "event-bus-recovery",
   "path": "repos/2phenoEvents",
-  "disposition": "ABSORB",
+  "disposition": "NEVER_EXISTED",
   "wave": "2026-07-23-boundary-audit",
   "queued_at": "2026-07-23",
   "proposed_target": "phenoEvents",
   "proposed_target_repo": "phenoEvents",
   "proposed_target_path": ".",
-  "absorption_note": "Restored from an absorb branch; preserve the source ref and compare history before consolidating into phenoEvents.",
-  "note": "EventBus port with hexagonal architecture; no deletion or direct merge proposed."
+  "absorption_note": "Recovery artifact variant of phenoEvents; no valid remote or local source to absorb. Canonical lineage remains phenoEvents.",
+  "note": "EventBus port with hexagonal architecture; no deletion or direct merge proposed. | 2026-07-29: reconciled as 404 phantom to phenoEvents lineage; archive-only close",
+  "lifecycle": "tombstone-only",
+  "archived": true,
+  "archived_at": "2026-07-29",
+  "archived_reason": "Remote 404 during inventory; no local clone exists.",
+  "audit_artifact": "audits/absorption-justifications/2phenoEvents-reconciliation-20260729.md"
 }

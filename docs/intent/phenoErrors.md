@@ -1,9 +1,10 @@
 ---
 repo: "phenoErrors"
-aliases: []
+aliases: ["pheno-errors", "phenotype-errors"]
 role: unknown
-status: active
-last_verified: 2026-06-17
+status: archived
+archived_as_alias_of: "pheno-errors"
+last_verified: 2026-07-29
 bound_prompts: 1
 bound_plans: 0
 bound_responses: 0
@@ -49,3 +50,9 @@ See: [`docs/boundary/phenoErrors.md`](../boundary/phenoErrors.md)
 | Date | Change | Worklog |
 | ---- | ------ | ------- |
 | 2026-06-17 | Initial binding (L7-001 sweep) | `worklogs/L7-001-intent-boundary-curation-2026-06-17.json` |
+| 2026-07-29 | Alias/tombstone reconciliation completed; superseded by `pheno-errors` (archive-only) | `audits/absorption-justifications/pheno-errors-reconciliation-20260729.md` |
+
+## Canonicalization
+
+This typo-boundary entry is intentionally archived.
+`phenoErrors` and `phenotype-errors` resolve to `pheno-errors`.

@@ -1,0 +1,45 @@
+{
+  "audit": "pheno-agents-md-boundary-20260729",
+  "audit_date": "2026-07-29",
+  "sources": [
+    {
+      "repository": "https://github.com/KooshaPari/pheno-agents-md",
+      "default_branch": "main",
+      "remote_sha": "adf63020ee0b15829f1d59ddf7d7f6c7450a3dfd",
+      "archived": true,
+      "archived_at": "2026-07-29T07:50:57Z",
+      "private": false,
+      "size_kb": 43,
+      "observed_at": "2026-07-29T10:37:00Z",
+      "surface": [
+        "AGENTS.md",
+        "src/lib.rs",
+        "src/main.rs",
+        "src/pheno_agents_md/__init__.py",
+        "tests/test_smoke.py",
+        "Cargo.toml",
+        ".github/workflows/ci.yml",
+        "README.md"
+      ],
+      "decision": "ARCHIVE_ONLY",
+      "target": "phenotype-registry",
+      "rationale": "Source repo is archived and already contains a complete parser utility implementation but no verified local canonical target extraction path exists in this cycle. Preserve as provenance and proceed with tombstone-only reconciliation."
+    }
+  ],
+  "prior_registry_conflicts": [
+    "Row AUTO-IMPORT-pheno-agents-md used a staged ABSORB/WORKING state while the source is archived and no safe live absorption run has been executed in this cycle."
+  ],
+  "boundary_map": {
+    "pheno-agents-md": "AGENTS governance parser/validator utility"
+  },
+  "preservation": {
+    "source_mutation": false,
+    "deletion": false,
+    "force_push": false,
+    "restore": "gh repo restore KooshaPari/pheno-agents-md"
+  },
+  "follow_up": [
+    "Run a targeted parser portability audit if sponsor requests reconstitution into a canonical tooling target.",
+    "Reconcile this boundary if a future deterministic merge into phenotype-tooling is approved."
+  ]
+}

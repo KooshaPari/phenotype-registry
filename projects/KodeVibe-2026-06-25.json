@@ -1,6 +1,10 @@
 {
   "name": "KodeVibe",
-  "status": "active",
+  "status": "archived",
+  "disposition": "NEVER_EXISTED",
+  "archived": true,
+  "archived_at": "2026-07-29",
+  "archived_reason": "Date-stamped duplicate inventory row; canonical KodeVibe remains active.",
   "languages": [
     "Go"
   ],
@@ -8,10 +12,9 @@
   "has_readme": true,
   "type": "tooling",
   "path": "repos/KodeVibe",
-  "disposition": "AFFIRM",
   "wave": "absorption-justification-orchestrator-auto",
   "absorbed_into": "phenotype-tooling",
-  "absorption_note": "Auto-projected by `bin/absorption-justification.py` on 2026-06-25. Source repo metadata collected via `gh api`. Gate tooling reference: `bin/repo-delete-gate.sh`. Re-audit quarterly.",
-  "audit_artifact": "audits/absorption-justifications/KodeVibe-2026-06-25.md",
+  "absorption_note": "Date-stamped duplicate inventory row; canonical KodeVibe remains active.",
+  "audit_artifact": "audits/absorption-justifications/dated-snapshot-dupes-reconciliation-20260729.md",
   "audited_at": "2026-06-25T10:59:50.207749Z"
 }

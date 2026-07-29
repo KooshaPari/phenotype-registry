@@ -1,7 +1,8 @@
 ---
 repo: "phenotype-errors"
 role: unknown
-status: active
+status: archived
+archived_as_alias_of: "pheno-errors"
 last_boundary_review: 2026-06-17
 review_cadence: 30d
 in_scope:
@@ -10,7 +11,11 @@ out_of_scope:
   - "<to be filled>"
 ---
 
-# Boundary — phenotype-errors
+# Boundary — phenotype-errors (archived alias)
+
+This boundary record is archived.
+Canonical boundary is the `pheno-errors` project record (`projects/pheno-errors.json`).
+`phenotype-errors` is an alias variant with remote 404 and no surviving source.
 
 ## In Scope
 
@@ -35,5 +40,7 @@ out_of_scope:
 **Worklog / finding:** `worklogs/L7-001-intent-boundary-curation-2026-06-17.json`
 **Decisions:**
 - Initial scaffolding; needs human review.
+- 2026-07-29: canonicalization run marks this as archived alias for `pheno-errors`
+  (remote 404 confirmed in `pheno-errors-reconciliation-20260729.md`).
 
 **Next review:** 2026-07-17

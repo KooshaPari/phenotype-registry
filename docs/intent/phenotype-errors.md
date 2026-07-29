@@ -2,8 +2,9 @@
 repo: "phenotype-errors"
 aliases: []
 role: unknown
-status: active
-last_verified: 2026-06-17
+status: archived
+archived_as_alias_of: "pheno-errors"
+last_verified: 2026-07-29
 bound_prompts: 9
 bound_plans: 0
 bound_responses: 0
@@ -57,3 +58,9 @@ See: [`docs/boundary/phenotype-errors.md`](../boundary/phenotype-errors.md)
 | Date | Change | Worklog |
 | ---- | ------ | ------- |
 | 2026-06-17 | Initial binding (L7-001 sweep) | `worklogs/L7-001-intent-boundary-curation-2026-06-17.json` |
+| 2026-07-29 | Alias/tombstone reconciliation completed; superseded by `pheno-errors` (archive-only) | `audits/absorption-justifications/pheno-errors-reconciliation-20260729.md` |
+
+## Canonicalization
+
+This record is archived as a non-canonical alias.
+`phenotype-errors` resolves to `phenoErrors`, which resolves to `pheno-errors`.
