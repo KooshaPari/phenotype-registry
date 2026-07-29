@@ -1,0 +1,112 @@
+{
+  "packet_id": "pheno-errors-tombstone-20260729",
+  "packet_type": "evidence_only_tombstone_archive",
+  "captured_at": "2026-07-29T09:08:49Z",
+  "authority": "phenotype-registry",
+  "source": {
+    "repository": "KooshaPari/pheno-errors",
+    "url": "https://github.com/KooshaPari/pheno-errors",
+    "visibility": "private",
+    "archived_observed": true,
+    "archived_observed_at": "2026-07-29T09:08:49Z",
+    "default_branch": "main",
+    "head_sha": "01b850e4b9f8ba8ed667c34f35fa46d7cef37214",
+    "head_ref": "refs/heads/main",
+    "pushed_at": "2026-07-28T00:25:19Z",
+    "updated_at": "2026-07-29T07:51:24Z",
+    "size_kib": 13,
+    "license_spdx": null,
+    "description": null
+  },
+  "branch_refs": [
+    {
+      "name": "main",
+      "sha": "01b850e4b9f8ba8ed667c34f35fa46d7cef37214",
+      "protected": true
+    },
+    {
+      "name": "audit/ownership-20260722-pheno-errors",
+      "sha": "ba5c913093f5d13c3042688fa0d5d8e43a4e5a1e",
+      "protected": false
+    }
+  ],
+  "tags": [],
+  "commit_history": [
+    "9524f655c304610353aee731cf0d9aba0d133aeb",
+    "ba5c913093f5d13c3042688fa0d5d8e43a4e5a1e",
+    "bcc323fd3011da1807c543db591026c5d4d8c07c",
+    "b84e5adc09c343572307b55c03a3e4095d0f8229",
+    "0266ab051aa75406e3fd9b966545b7b3a6ffc06d",
+    "01b850e4b9f8ba8ed667c34f35fa46d7cef37214"
+  ],
+  "tree_inventory": {
+    "entry_count": 10,
+    "paths": [
+      ".circleci",
+      ".circleci/config.yml",
+      ".github",
+      ".github/workflows",
+      ".github/workflows/ci.yml",
+      ".gitignore",
+      ".mergify.yml",
+      "Cargo.lock",
+      "README.md",
+      "trunk.yaml"
+    ],
+    "source_manifest_present": false,
+    "rust_source_present": false,
+    "license_file_present": false,
+    "classification": "scratch_only_cargo_ghost_residue"
+  },
+  "canonical_boundary": {
+    "repository": "KooshaPari/pheno",
+    "paths": [
+      "crates/phenotype-error-core",
+      "crates/phenotype-errors"
+    ],
+    "evidence_sha": "eb94c5779cb63f1424b91ee19daf5caa5430d8f6",
+    "decision": "HISTORICAL_ABSORPTION_RETAINED",
+    "qualification": "No new absorption is inferred from the source-free residue."
+  },
+  "preservation": {
+    "cloud_preserved": true,
+    "preservation_refs": [
+      "KooshaPari/pheno-errors@refs/heads/main:01b850e4b9f8ba8ed667c34f35fa46d7cef37214",
+      "KooshaPari/pheno-errors@refs/heads/audit/ownership-20260722-pheno-errors:ba5c913093f5d13c3042688fa0d5d8e43a4e5a1e"
+    ],
+    "local_checkout_found": false,
+    "bundle_required": false,
+    "reason": "The complete recoverable tree and both known branch refs remain on GitHub; no local-only source was found."
+  },
+  "proposed_action": {
+    "disposition": "ARCHIVE_ONLY",
+    "tombstone": true,
+    "archive_remote": "already_archived_observed; no archive mutation performed by this packet",
+    "delete_remote": false,
+    "merge_source": false,
+    "required_before_any_future_mutation": [
+      "sponsor approval",
+      "canonical error-core migration tests remain green",
+      "immutable branch/ref inventory retained",
+      "repo-delete gate is not applicable because deletion is explicitly prohibited"
+    ]
+  },
+  "rollback": {
+    "unarchive_command": "gh api -X PATCH repos/KooshaPari/pheno-errors -f archived=false",
+    "restore_verification": "git clone https://github.com/KooshaPari/pheno-errors.git && git -C pheno-errors fetch origin '+refs/heads/*:refs/remotes/origin/*' && test \"$(git -C pheno-errors rev-parse origin/main)\" = 01b850e4b9f8ba8ed667c34f35fa46d7cef37214",
+    "branch_restore": "git -C pheno-errors fetch origin audit/ownership-20260722-pheno-errors",
+    "warning": "Do not execute unarchive or delete without sponsor authorization; archived state is reversible."
+  },
+  "sponsor_gate": {
+    "required": true,
+    "decision": "PENDING",
+    "scope": "Any GitHub archive/unarchive/delete operation or content migration beyond the recorded historical absorption",
+    "current_mutation_status": "No remote mutation performed by this packet"
+  },
+  "prior_artifacts": [
+    "projects/pheno-errors.json",
+    "audits/absorption-justifications/pheno-errors-reconciliation-20260729.md",
+    "registry/audit-absorption-justification/error-overlap-canonical-20260729.json",
+    "ADR-ECO-027-pheno-errors-absorption"
+  ]
+}
