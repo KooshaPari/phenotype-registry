@@ -9,7 +9,7 @@
   "has_readme": true,
   "has_spec": true,
   "type": "agentic-coding-cli-fork",
-  "path": "repos/forgecode",
+  "path": "forgecode",
   "role": "agentic-coding-provider",
   "domain_role": "agent-runtime-provider",
   "boundary": "coding-agent-cli-and-provider-adapter",

@@ -7,7 +7,7 @@
   "status": "active",
   "has_readme": false,
   "type": "model-scope-service",
-  "path": "repos/hfscope",
+  "path": "hfscope",
   "role": "huggingface-model-scope-ui-api",
   "domain_role": "model-operations",
   "boundary": "model-scope",

@@ -8,7 +8,7 @@
   "status": "active",
   "has_readme": true,
   "type": "platform-runtime",
-  "path": "repos/nanovms",
+  "path": "nanovms",
   "role": "native-sandbox-vmm",
   "boundary": "docs/boundary/nanovms.md",
   "stack": "go-cli-rust-ffi",

@@ -8,7 +8,7 @@
   "status": "active",
   "has_readme": false,
   "type": "ecosystem-console",
-  "path": "repos/RepoLedger",
+  "path": "RepoLedger",
   "role": "repository-ecosystem-governance-console",
   "domain_role": "repository-governance",
   "boundary": "ecosystem-inventory-and-boundary-review",

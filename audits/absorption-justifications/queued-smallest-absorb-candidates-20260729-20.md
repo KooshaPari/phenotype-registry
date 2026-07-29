@@ -1,35 +1,31 @@
 # queued-smallest-absorb-candidates-20260729-20
 
-Generated: 2026-07-29T21:40:58Z UTC
+Generated: 2026-07-29T22:14:40Z UTC
 
 Criteria: `disposition: ABSORB`, `status in (queued,active)` ranked by GitHub `size` ascending (full_name required for API fetch).
 
-## Candidate set (top 20, size ascending)
-
 |rank|repo|status|size|path|target|local|flags|canonical_name|
 |---|---|---|---:|---|---|---|---|---|
-|1|KooshaPari/omniroute-rs|active|0|omniroute-rs|-|none|NO_LOCAL_DIR ,API_FAIL|-|
-|2|KooshaPari/phenotype-router-spec|queued|0|repos/pheno-rt-spec-probe|-|ci|API_FAIL|-|
-|3|KooshaPari/pheno-otel|active|15|pheno-otel|-|none|NO_LOCAL_DIR ,ARCHIVED_REMOTE ,PRIVATE|-|
-|4|KooshaPari/PlusForges|queued|17|PlusForges|-|none|NO_LOCAL_DIR|-|
-|5|KooshaPari/pheno-mcp-router|queued|19|pheno-mcp-router|-|none|NO_LOCAL_DIR|-|
-|6|KooshaPari/tehgent|queued|34|tehgent|-|none|NO_LOCAL_DIR|-|
-|7|KooshaPari/Compound-Spheres-3D-Backup|queued|147|Compound-Spheres-3D-Backup|-|none|NO_LOCAL_DIR ,PRIVATE|-|
-|8|KooshaPari/thegent-sharecli|queued|154|thegent-sharecli|-|exact|ARCHIVED_REMOTE|-|
-|9|KooshaPari/phenotypeActions|queued|171|phenotypeActions|-|none|NO_LOCAL_DIR ,PRIVATE|-|
-|10|KooshaPari/phenotype-pm-core|active|178|phenotype-pm-core|-|none|NO_LOCAL_DIR|-|
-|11|KooshaPari/template-commons|active|259|template-commons|-|none|NO_LOCAL_DIR ,ARCHIVED_REMOTE ,PRIVATE|-|
-|12|KooshaPari/phenotype-go-kit|queued|296|phenotype-go-kit|-|none|NO_LOCAL_DIR ,PRIVATE|-|
-|13|KooshaPari/phenotype-shared|queued|310|repos/shared|-|ci|PRIVATE|-|
-|14|KooshaPari/Conft|active|317|Conft|-|none|NO_LOCAL_DIR|-|
-|15|KooshaPari/phenotype-infrakit|queued|338|phenotype-infrakit|-|none|NO_LOCAL_DIR ,PRIVATE|-|
-|16|KooshaPari/phenodag|active|353|phenodag|-|none|NO_LOCAL_DIR|-|
-|17|KooshaPari/Pine|active|353|Pine|-|none|NO_LOCAL_DIR|-|
-|18|KooshaPari/PhenoRuntime|queued|361|PhenoRuntime|-|none|NO_LOCAL_DIR ,PRIVATE|-|
-|19|KooshaPari/Apisync|active|394|Apisync|-|none|NO_LOCAL_DIR|-|
-|20|KooshaPari/UnityDoorstop-NexusPatched|queued|571|UnityDoorstop-NexusPatched|-|none|NO_LOCAL_DIR|-|
-
+|1|KooshaPari/pheno-otel|queued|15|pheno-otel|-|none|ARCHIVED_REMOTE,PRIVATE|-|
+|2|KooshaPari/PlusForges|queued|17|PlusForges|PhenoPlugins|none|-|-|
+|3|KooshaPari/pheno-mcp-router|queued|19|pheno-mcp-router|phenotype-router|none|-|-|
+|4|KooshaPari/tehgent|queued|34|tehgent|thegent|none|-|-|
+|5|KooshaPari/Compound-Spheres-3D-Backup|queued|147|Compound-Spheres-3D-Backup|phenotype-legacy-collection|none|PRIVATE|-|
+|6|KooshaPari/thegent-sharecli|queued|154|thegent-sharecli|thegent|exact|ARCHIVED_REMOTE|-|
+|7|KooshaPari/phenotypeActions|queued|171|phenotypeActions|phenokits-commons|none|PRIVATE|-|
+|8|KooshaPari/phenotype-pm-core|queued|178|phenotype-pm-core|-|none|-|-|
+|9|KooshaPari/template-commons|queued|259|template-commons|-|none|ARCHIVED_REMOTE,PRIVATE|-|
+|10|KooshaPari/phenotype-go-kit|queued|296|phenotype-go-kit|phenotype-go-sdk|none|PRIVATE|-|
+|11|KooshaPari/phenotype-shared|queued|310|shared|phenotype-shared|exact|PRIVATE|-|
+|12|KooshaPari/Conft|queued|317|Conft|-|none|-|-|
+|13|KooshaPari/phenotype-infrakit|queued|338|phenotype-infrakit|phenotype-tooling|none|PRIVATE|-|
+|14|KooshaPari/phenoAI|queued|348|phenoAI|-|exact|-|-|
+|15|KooshaPari/phenodag|queued|353|phenodag|-|none|-|-|
+|16|KooshaPari/Pine|queued|353|Pine|-|none|-|-|
+|17|KooshaPari/PhenoRuntime|queued|361|PhenoRuntime|phenotype-legacy-collection|none|PRIVATE|-|
+|18|KooshaPari/Apisync|queued|394|Apisync|-|none|-|-|
+|19|KooshaPari/UnityDoorstop-NexusPatched|queued|571|UnityDoorstop-NexusPatched|phenotype-legacy-collection|none|-|-|
+|20|KooshaPari/Tasken|queued|609|Tasken|phenotype-tooling|none|-|-|
 
 ## Coverage note
-- Includes 23 total ABSORB rows with `status` in (queued,active); top 20 rendered by size.
-- `phenoAI` has `full_name` unset and is intentionally excluded from API-size ranking until ownership is confirmed.
+- Includes 20 queued/active ABSORB rows with `full_name` available rendered by size.

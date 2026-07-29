@@ -7,7 +7,7 @@
   "status": "active",
   "has_readme": true,
   "type": "platform",
-  "path": "repos/OmniRoute",
+  "path": "OmniRoute",
   "domain_role": "route",
   "fork_parent": "diegosouzapw/OmniRoute",
   "disposition": "AFFIRM",

@@ -7,7 +7,7 @@
   "status": "active",
   "has_readme": true,
   "type": "shared-lib",
-  "path": "repos/helios-cli",
+  "path": "helios-cli",
   "disposition": "AFFIRM",
   "note": "Active CLI home for Helios (23 crates). Complementary to legacy archived heliosCLI.",
   "full_name": "KooshaPari/helios-cli",

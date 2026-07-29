@@ -5,7 +5,7 @@
   "status": "absorbed",
   "has_readme": false,
   "type": "stub",
-  "path": "repos/vibeproxy-monitoring-unified",
+  "path": "vibeproxy-monitoring-unified",
   "disposition": "RETIRE",
   "wave": "G19",
   "absorbed_into": "phenotype-infra",

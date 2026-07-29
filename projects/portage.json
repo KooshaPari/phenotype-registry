@@ -5,7 +5,7 @@
   "status": "active",
   "has_readme": true,
   "type": "fork",
-  "path": "repos/portage",
+  "path": "portage",
   "disposition": "RETIRE",
   "wave": "surface-reduction-1",
   "absorbed_into": "upstream",

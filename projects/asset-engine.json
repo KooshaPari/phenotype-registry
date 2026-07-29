@@ -8,7 +8,7 @@
   "status": "live",
   "has_readme": true,
   "type": "asset-pipeline",
-  "path": "repos/asset-engine",
+  "path": "asset-engine",
   "disposition": "DECLARE_BOUNDARY_OWNER",
   "wave": "2026-07-20-creativity-spine-restoration",
   "boundary_artifact": "docs/boundary/asset-engine.md",

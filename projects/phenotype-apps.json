@@ -10,7 +10,7 @@
   "status": "active",
   "has_readme": true,
   "type": "apps-collection",
-  "path": "repos/phenotype-apps",
+  "path": "phenotype-apps",
   "role": "application-parent",
   "domain_role": "apps",
   "boundary": "application-collection",

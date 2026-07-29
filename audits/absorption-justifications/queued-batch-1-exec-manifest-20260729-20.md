@@ -1,6 +1,6 @@
 # queued-batch-1-exec-manifest-20260729-20
 
-Generated: 2026-07-29T22:08:25Z UTC
+Generated: 2026-07-29T22:14:40Z UTC
 
 Total queued + ABSORB records with full_name: 24
 
@@ -10,27 +10,23 @@ Execution-first rule: local-first merge only, preserve/skip anything flagged API
 
 |rank|repo|size|path|local|target|flags|default_branch|canonical_name|notes|
 |---|---|---:|---|---|---|---|---|---|---|
-|1|KooshaPari/phenotype-router-spec|0|repos/pheno-rt-spec-probe|ci|-|API_FAIL|-|-|onboarding_action:queue; local_repo_dir:pheno-rt-spec-probe|
-|2|KooshaPari/PlusForges|17|PlusForges|none|-|NO_LOCAL_DIR|main|-|-|
-|3|KooshaPari/pheno-mcp-router|19|pheno-mcp-router|none|-|NO_LOCAL_DIR|main|-|-|
-|4|KooshaPari/tehgent|34|tehgent|none|-|NO_LOCAL_DIR|main|-|-|
-|5|KooshaPari/Compound-Spheres-3D-Backup|147|Compound-Spheres-3D-Backup|none|-|NO_LOCAL_DIR,PRIVATE|wsm3d/main|-|-|
-|6|KooshaPari/thegent-sharecli|154|thegent-sharecli|exact|-|ARCHIVED_REMOTE|main|-|-|
-|7|KooshaPari/phenotypeActions|171|phenotypeActions|none|-|NO_LOCAL_DIR,PRIVATE|main|-|-|
-|8|KooshaPari/phenotype-go-kit|296|phenotype-go-kit|none|-|NO_LOCAL_DIR,PRIVATE|main|-|-|
-|9|KooshaPari/phenotype-shared|310|repos/shared|ci|-|PRIVATE|main|-|onboarding_action:queue; local_repo_dir:shared|
-|10|KooshaPari/phenotype-infrakit|338|phenotype-infrakit|none|-|NO_LOCAL_DIR,PRIVATE|chore/gitattributes|-|-|
-|11|KooshaPari/phenoAI|348|repos/phenoAI|ci|-|ok|main|-|full_name backfilled from airlock bare remote|
-|12|KooshaPari/PhenoRuntime|361|PhenoRuntime|none|-|NO_LOCAL_DIR,PRIVATE|main|-|-|
-|13|KooshaPari/UnityDoorstop-NexusPatched|571|UnityDoorstop-NexusPatched|none|-|NO_LOCAL_DIR|master|-|-|
-|14|KooshaPari/Tasken|609|Tasken|none|-|NO_LOCAL_DIR|main|-|-|
-|15|KooshaPari/PhenoPlugins|627|repos/PhenoPlugins|ci|-|ok|main|-|onboarding_action:queue; local_repo_dir:PhenoPlugins|
-|16|KooshaPari/phenotype-journeys|1080|repos/phenotype-journeys|ci|-|ok|main|-|onboarding_action:queue; local_repo_dir:phenotype-journeys|
-|17|KooshaPari/PhenoMCPServers|3216|PhenoMCPServers|none|-|NO_LOCAL_DIR|main|-|-|
-|18|KooshaPari/phenotype-python-sdk|5884|repos/phenotype-python-sdk|ci|-|ok|main|-|onboarding_action:queue; local_repo_dir:phenotype-python-sdk|
-|19|KooshaPari/PhenoObservability|8494|repos/PhenoObservability|ci|-|ok|main|-|onboarding_action:queue; local_repo_dir:PhenoObservability|
-|20|KooshaPari/HexaKit|23130|HexaKit|exact|-|ok|main|-|-|
-
-## Hold list (review before execution)
-- Records with `API_FAIL` or `NO_LOCAL_DIR` are review-gated for next turn.
-- pheno-router-spec currently API_FAIL; verify rename/deletion before merge execution.
+|1|KooshaPari/PlusForges|17|PlusForges|none|PhenoPlugins|ok|main|-||
+|2|KooshaPari/pheno-mcp-router|19|pheno-mcp-router|none|phenotype-router|ok|main|-||
+|3|KooshaPari/tehgent|34|tehgent|none|thegent|ok|main|-||
+|4|KooshaPari/Compound-Spheres-3D-Backup|147|Compound-Spheres-3D-Backup|none|phenotype-legacy-collection|PRIVATE,ok|wsm3d/main|-||
+|5|KooshaPari/thegent-sharecli|154|thegent-sharecli|exact|thegent|ARCHIVED_REMOTE,ok|main|-||
+|6|KooshaPari/phenotypeActions|171|phenotypeActions|none|phenokits-commons|PRIVATE,ok|main|-||
+|7|KooshaPari/phenotype-go-kit|296|phenotype-go-kit|none|phenotype-go-sdk|PRIVATE,ok|main|-||
+|8|KooshaPari/phenotype-shared|310|shared|exact|phenotype-shared|PRIVATE,ok|main|-|onboarding_action:queue; local_repo_dir:shared|
+|9|KooshaPari/phenotype-infrakit|338|phenotype-infrakit|none|phenotype-tooling|PRIVATE,ok|chore/gitattributes|-||
+|10|KooshaPari/phenoAI|348|phenoAI|exact|-|ok|main|-|full_name backfilled from airlock bare remote|
+|11|KooshaPari/PhenoRuntime|361|PhenoRuntime|none|phenotype-legacy-collection|PRIVATE,ok|main|-||
+|12|KooshaPari/UnityDoorstop-NexusPatched|571|UnityDoorstop-NexusPatched|none|phenotype-legacy-collection|ok|master|-||
+|13|KooshaPari/Tasken|609|Tasken|none|phenotype-tooling|ok|main|-||
+|14|KooshaPari/PhenoPlugins|627|PhenoPlugins|exact|-|ok|main|-|onboarding_action:queue; local_repo_dir:PhenoPlugins|
+|15|KooshaPari/phenotype-journeys|1080|phenotype-journeys|exact|-|ok|main|-|onboarding_action:queue; local_repo_dir:phenotype-journeys|
+|16|KooshaPari/PhenoMCPServers|3216|PhenoMCPServers|none|PhenoMCPServers (self, fleet aggregator)|ok|main|-||
+|17|KooshaPari/phenotype-python-sdk|5884|phenotype-python-sdk|exact|-|ok|main|-|onboarding_action:queue; local_repo_dir:phenotype-python-sdk|
+|18|KooshaPari/PhenoObservability|8494|PhenoObservability|exact|-|ok|main|-|onboarding_action:queue; local_repo_dir:PhenoObservability|
+|19|KooshaPari/HexaKit|23130|HexaKit|exact|pheno (crates/hexa-kit)|ok|main|-||
+|20|KooshaPari/CivicSurvival-public|34177|CivicSurvival-public|exact|-|ok|main|-|onboarding_action:queue; local_repo_dir:CivicSurvival-public|

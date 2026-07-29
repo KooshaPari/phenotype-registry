@@ -9,7 +9,7 @@
   "status": "active",
   "has_readme": true,
   "type": "desktop-agent-tool",
-  "path": "repos/sharecli",
+  "path": "sharecli",
   "role": "agent-sharing-and-observability",
   "domain_role": "desktop-agent-tooling",
   "boundary": "desktop-share-and-health",

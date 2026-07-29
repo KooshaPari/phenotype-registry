@@ -8,7 +8,7 @@
   "status": "active",
   "has_readme": true,
   "type": "ledger",
-  "path": "repos/hwLedger",
+  "path": "hwLedger",
   "disposition": "AFFIRM",
   "wave": "2026-07-17-queue-refresh-batch4",
   "absorbed_into": "self",

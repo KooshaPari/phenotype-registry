@@ -10,7 +10,7 @@
   "status": "active",
   "has_readme": true,
   "type": "tooling-monorepo",
-  "path": "repos/phenotype-tooling",
+  "path": "phenotype-tooling",
   "role": "developer-tooling-and-plugin-spine",
   "domain_role": "tooling",
   "boundary": "developer-tooling",

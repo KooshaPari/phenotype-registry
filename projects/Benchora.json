@@ -8,7 +8,7 @@
   "has_readme": true,
   "has_spec": true,
   "type": "shared-lib",
-  "path": "repos/Benchora",
+  "path": "Benchora",
   "role": "perf-harness",
   "domain_role": "bench",
   "boundary": "perf-harness",

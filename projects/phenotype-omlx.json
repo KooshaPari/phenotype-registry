@@ -7,7 +7,7 @@
   "status": "active",
   "has_readme": true,
   "type": "platform",
-  "path": "repos/phenotype-omlx",
+  "path": "phenotype-omlx",
   "domain_role": "inference",
   "fork_parent": "jundot/omlx",
   "engine_upstream": "jundot/omlx",

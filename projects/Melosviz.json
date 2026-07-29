@@ -9,7 +9,7 @@
   "status": "active",
   "has_readme": true,
   "type": "music-visualization-application",
-  "path": "repos/Melosviz",
+  "path": "Melosviz",
   "role": "music-to-visual-generation",
   "domain_role": "application",
   "boundary": "multiruntime-media-app",

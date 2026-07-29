@@ -13,7 +13,7 @@
   "has_readme": true,
   "type": "landing-factory",
   "archetype": "landing",
-  "path": "repos/phenotype-landing",
+  "path": "phenotype-landing",
   "disposition": "ARCHIVE_ONLY",
   "wave": "2026-07-17-queue-refresh-2",
   "absorbed_into": "phenotype-registry (boundary doc + forward-pointer at phenodocs/packages/landing/)",

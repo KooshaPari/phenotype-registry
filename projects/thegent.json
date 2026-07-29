@@ -8,7 +8,7 @@
   "status": "active",
   "has_readme": true,
   "type": "agent-runtime",
-  "path": "repos/thegent",
+  "path": "thegent",
   "role": "agent-orchestration-runtime",
   "domain_role": "agent-runtime",
   "boundary": "agent-execution-and-governance",

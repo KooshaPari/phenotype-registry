@@ -7,7 +7,7 @@
   "status": "active",
   "has_readme": true,
   "type": "platform",
-  "path": "repos/cliproxyapi-plusplus",
+  "path": "cliproxyapi-plusplus",
   "domain_role": "cli_proxy",
   "fork_parent": "router-for-me/CLIProxyAPI",
   "disposition": "UNIFY",

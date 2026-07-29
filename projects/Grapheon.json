@@ -11,7 +11,7 @@
   "has_readme": true,
   "has_license": true,
   "type": "application-and-library-monorepo",
-  "path": "repos/Grapheon",
+  "path": "Grapheon",
   "gh_url": "https://github.com/KooshaPari/Grapheon",
   "remote_default_branch": "airlock-recovery/wip/2026-07-15-recovered-545e737-main",
   "remote_head_sha": "58ce84b2071ab0b7cf8bae5ec294d5613f3ee96a",
