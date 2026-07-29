@@ -9,5 +9,8 @@
   "type": "shared-lib",
   "path": "repos/helios-cli",
   "disposition": "AFFIRM",
-  "note": "Active CLI home for Helios (23 crates). Complementary to legacy archived heliosCLI."
+  "note": "Active CLI home for Helios (23 crates). Complementary to legacy archived heliosCLI.",
+  "full_name": "KooshaPari/helios-cli",
+  "registry_author": "phenotype-registry (auto-backfill full_name from local remote origin)",
+  "notes": "full_name backfilled from local remote origin for helios-cli"
 }

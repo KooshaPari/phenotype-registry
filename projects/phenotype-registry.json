@@ -1,0 +1,10 @@
+{
+  "path": "repos/phenotype-registry",
+  "full_name": "KooshaPari/phenotype-registry",
+  "status": "active",
+  "disposition": "KEEP_CANONICAL_STANDALONE",
+  "canonical_name": "phenotype-registry",
+  "target": "phenotype-registry",
+  "registry_author": "phenotype-registry (onboarding backlog action)",
+  "notes": "onboarding_action:preserve; local_repo_dir:phenotype-registry"
+}

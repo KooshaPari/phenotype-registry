@@ -43,5 +43,8 @@
   "substrate_consumer_of": [
     "KooshaPari/pheno-capacity (math substrate, ADR-035A)"
   ],
-  "note": "Audited 2026-07-17; n/a primary language (markdown/yaml likely). Hardware ledger with org-wide scope. Boundary doc captured at docs/boundary/hwLedger.md \u2014 declares hwLedger as the canonical Phenotype-org hardware ledger; no absorption target; fsm advanced from active to verified (CANON declaration, not active record)."
+  "note": "Audited 2026-07-17; n/a primary language (markdown/yaml likely). Hardware ledger with org-wide scope. Boundary doc captured at docs/boundary/hwLedger.md \u2014 declares hwLedger as the canonical Phenotype-org hardware ledger; no absorption target; fsm advanced from active to verified (CANON declaration, not active record).",
+  "full_name": "KooshaPari/hwLedger",
+  "registry_author": "phenotype-registry (auto-backfill full_name from local remote origin)",
+  "notes": "full_name backfilled from local remote origin for hwLedger"
 }

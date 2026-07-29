@@ -17,5 +17,8 @@
     "phenotype-go-sdk/third_party",
     "argis-extensions/wrappers/cliproxy"
   ],
-  "note": "CLI subscription proxy gateway \u2014 peer to agentapi++; not routing referent; superset merge G16"
+  "note": "CLI subscription proxy gateway \u2014 peer to agentapi++; not routing referent; superset merge G16",
+  "full_name": "KooshaPari/cliproxyapi-plusplus",
+  "registry_author": "phenotype-registry (auto-backfill full_name from local remote origin)",
+  "notes": "full_name backfilled from local remote origin for cliproxyapi-plusplus"
 }

@@ -27,5 +27,8 @@
   },
   "audit_artifact": "registry/audit-agentora-boundary-20260727.json",
   "audit_date": "2026-07-27",
-  "note": "Boundary correction: stale queued/ABSORB row replaced with live provenance and an explicit no-loss review state."
+  "note": "Boundary correction: stale queued/ABSORB row replaced with live provenance and an explicit no-loss review state.",
+  "full_name": "KooshaPari/Agentora",
+  "registry_author": "phenotype-registry (auto-backfill full_name from local remote origin)",
+  "notes": "full_name backfilled from local remote origin for Agentora"
 }

@@ -1,0 +1,9 @@
+{
+  "path": "repos/PhenoObservability",
+  "full_name": "KooshaPari/PhenoObservability",
+  "status": "queued",
+  "disposition": "ABSORB",
+  "target": null,
+  "registry_author": "phenotype-registry (onboarding backlog action)",
+  "notes": "onboarding_action:queue; local_repo_dir:PhenoObservability"
+}

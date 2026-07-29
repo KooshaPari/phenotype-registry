@@ -25,5 +25,7 @@
   "absorption_note": "Canonical developer-tooling and plugin boundary. Excluded unrelated local editor/agent directories remain untracked and require separate provenance review; no broad absorption is inferred.",
   "rationale": "Active tooling spine with four recoverable elicitate plugins. Recovery commit is provenance-only; remote reports 194 Dependabot findings (49 critical, 66 high, 71 moderate, 8 low) requiring security triage before production integration.",
   "audit_artifact": "registry/audit-preservation-20260726.json",
-  "registry_author": "phenotype-registry (boundary audit)"
+  "registry_author": "phenotype-registry (boundary audit)",
+  "full_name": "KooshaPari/phenotype-tooling",
+  "notes": "full_name backfilled from local remote origin for phenotype-tooling"
 }

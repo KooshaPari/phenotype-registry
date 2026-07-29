@@ -28,5 +28,7 @@
     "registry/disposition-index.json#repo-backend-melosviz"
   ],
   "audit_artifact": "registry/audit-absorption-justification/melosviz-reconciliation-20260726.json",
-  "registry_author": "phenotype-registry (boundary audit)"
+  "registry_author": "phenotype-registry (boundary audit)",
+  "full_name": "KooshaPari/Melosviz",
+  "notes": "full_name backfilled from local remote origin for Melosviz"
 }

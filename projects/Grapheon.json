@@ -40,5 +40,8 @@
     "git ls-tree -r --name-only HEAD reports 80,510 tracked paths",
     "pheno main exposes agileplus-graph but no grapheon crate or Tracera workspace"
   ],
-  "note": "Boundary correction: preserve Grapheon as a standalone private parent; retain grapheon-bindings as an independent historical absorption record pending provenance verification."
+  "note": "Boundary correction: preserve Grapheon as a standalone private parent; retain grapheon-bindings as an independent historical absorption record pending provenance verification.",
+  "full_name": "KooshaPari/Grapheon",
+  "registry_author": "phenotype-registry (auto-backfill full_name from local remote origin)",
+  "notes": "full_name backfilled from local remote origin for Grapheon"
 }

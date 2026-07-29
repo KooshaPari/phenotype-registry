@@ -23,5 +23,7 @@
   "absorption_note": "Do not infer absorption from the archived Dmouse92 mirror or pheno-forge plugin sidecar. KooshaPari/forgecode is the active fork and remains a standalone provider boundary consumed by thegent and OmniRoute.",
   "rationale": "Live public Apache-2.0 fork with recent activity and Phenotype-specific governance branches. The prior Dmouse92 migration audit established zero unique work in that stale mirror; it does not retire this active canonical fork.",
   "audit_artifact": "registry/audit-absorption-justification/forgecode-thegent-tooling-policy-20260726.json",
-  "registry_author": "phenotype-registry (boundary policy audit)"
+  "registry_author": "phenotype-registry (boundary policy audit)",
+  "full_name": "tailcallhq/forgecode",
+  "notes": "full_name backfilled from local remote origin for forgecode"
 }

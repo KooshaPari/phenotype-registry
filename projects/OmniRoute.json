@@ -15,5 +15,8 @@
   "branch_count": 26,
   "canonical_routing": true,
   "rust_counterpart": "Tokn/tokenledger::routing",
-  "note": "CANONICAL org LLM router (TS) \u2014 never archive per Cluster A + ADR-ECO-007"
+  "note": "CANONICAL org LLM router (TS) \u2014 never archive per Cluster A + ADR-ECO-007",
+  "full_name": "KooshaPari/OmniRoute",
+  "registry_author": "phenotype-registry (auto-backfill full_name from local remote origin)",
+  "notes": "full_name backfilled from local remote origin for OmniRoute"
 }

@@ -29,5 +29,8 @@
   "intent": "docs/intent/nanovms.md",
   "note": "Remote and local evidence show an active, unarchived canonical runtime. README documents WASM/gVisor/Firecracker tiers; go.mod is github.com/kooshapari/nanovms; Cargo.toml contains a separate mobile/FFI workspace.",
   "audit_artifact": "audits/boundary-reconciliation/nanovms-2026-07-27.md",
-  "audited_at": "2026-07-27T01:07:00Z"
+  "audited_at": "2026-07-27T01:07:00Z",
+  "full_name": "KooshaPari/nanovms",
+  "registry_author": "phenotype-registry (auto-backfill full_name from local remote origin)",
+  "notes": "full_name backfilled from local remote origin for nanovms"
 }

@@ -1,0 +1,10 @@
+{
+  "path": "repos/airlock",
+  "full_name": "KooshaPari/airlock",
+  "status": "active",
+  "disposition": "KEEP_CANONICAL_STANDALONE",
+  "canonical_name": "airlock",
+  "target": "airlock",
+  "registry_author": "phenotype-registry (onboarding backlog action)",
+  "notes": "onboarding_action:preserve; local_repo_dir:airlock"
+}

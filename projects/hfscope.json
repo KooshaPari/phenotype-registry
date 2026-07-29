@@ -20,5 +20,7 @@
   "absorbed_into": null,
   "rationale": "Distinct private Go model-scope product with current API changes preserved on a recovery branch; no verified parent-equivalence evidence.",
   "audit_artifact": "registry/audit-absorption-justification/gap-cohort-20260726.json",
-  "registry_author": "phenotype-registry (boundary audit)"
+  "registry_author": "phenotype-registry (boundary audit)",
+  "full_name": "KooshaPari/hfscope",
+  "notes": "full_name backfilled from local remote origin for hfscope"
 }

@@ -24,5 +24,7 @@
   "absorption_note": "Canonical agent execution/orchestration boundary. Deprecated naming duplicates and sharecli helper history remain provenance-only until runtime contracts are explicitly reconciled.",
   "rationale": "Active runtime with recovery-preserved decomposition and focused UX test validation. Recovery branch is not production integration; oversized modules and 88 dependency findings require follow-up.",
   "audit_artifact": "registry/audit-preservation-20260726.json",
-  "registry_author": "phenotype-registry (boundary policy audit)"
+  "registry_author": "phenotype-registry (boundary policy audit)",
+  "full_name": "KooshaPari/thegent",
+  "notes": "full_name backfilled from local remote origin for thegent"
 }

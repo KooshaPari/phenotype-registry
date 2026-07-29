@@ -16,5 +16,8 @@
   "proposed_target_repo": "ResearchLedger",
   "proposed_target_path": ".",
   "absorption_note": null,
-  "note": "Standalone local-first research ledger (Tauri + Vite). Preserve as canonical product; registry governs evidence and provenance only."
+  "note": "Standalone local-first research ledger (Tauri + Vite). Preserve as canonical product; registry governs evidence and provenance only.",
+  "full_name": "KooshaPari/ResearchLedger",
+  "registry_author": "phenotype-registry (auto-backfill full_name from local remote origin)",
+  "notes": "full_name backfilled from local remote origin for ResearchLedger"
 }

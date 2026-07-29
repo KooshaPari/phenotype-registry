@@ -22,5 +22,7 @@
   "absorption_note": "Standalone governance console. It visualizes and records repository-boundary actions but is not itself a replacement for phenotype-registry or the managed source repositories.",
   "rationale": "Active public pnpm monorepo with a React/@xyflow ecosystem console and Go state/WebSocket backend. The local checkout is clean at the audited remote SHA; production build passes. No license file is present, so licensing must be resolved before redistribution or absorption.",
   "audit_artifact": "registry/audit-absorption-justification/repoledger-boundary-20260726.json",
-  "registry_author": "phenotype-registry (boundary audit)"
+  "registry_author": "phenotype-registry (boundary audit)",
+  "full_name": "KooshaPari/RepoLedger",
+  "notes": "full_name backfilled from local remote origin for RepoLedger"
 }

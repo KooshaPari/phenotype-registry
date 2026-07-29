@@ -9,5 +9,8 @@
   "type": "utility",
   "path": "repos/turboquant_plus",
   "disposition": "AFFIRM",
-  "note": "Audited 2026-07-17; REFRACT \u2014 Reference-anchored Robust Acid-test for Compressed Transformers (KV-cache fidelity scoring framework)."
+  "note": "Audited 2026-07-17; REFRACT \u2014 Reference-anchored Robust Acid-test for Compressed Transformers (KV-cache fidelity scoring framework).",
+  "full_name": "TheTom/turboquant_plus",
+  "registry_author": "phenotype-registry (auto-backfill full_name from local remote origin)",
+  "notes": "full_name backfilled from local remote origin for turboquant_plus"
 }

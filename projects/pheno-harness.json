@@ -10,5 +10,9 @@
   "disposition": "ABSORBED",
   "absorbed_into": "phenodag (DAG orchestration layer absorbs eval/bench coordination)",
   "audit_artifact": "pheno-harness-2026-06-25.md",
-  "summary": "Archived \u2014 see pheno-harness-2026-06-25.md for absorption-justification (14/14 L4)."
+  "summary": "Archived \u2014 see pheno-harness-2026-06-25.md for absorption-justification (14/14 L4).",
+  "path": "repos/pheno-harness",
+  "full_name": "KooshaPari/pheno-harness",
+  "registry_author": "phenotype-registry (onboarding backlog action)",
+  "notes": "onboarding_action:review; local_repo_dir:pheno-harness"
 }

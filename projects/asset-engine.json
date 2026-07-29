@@ -16,5 +16,8 @@
   "extracted_at": "2026-07-20T00:00:00.000000Z",
   "spine_peer": "KooshaPari/phenoDesign",
   "note": "Canonical asset pipeline (Blender, ImageMagick, FFmpeg, Adobe CC, Unreal). Extracted from phenoDesign/engine/ on 2026-07-20. Owns render orchestration and tool legs; phenoDesign owns design tokens and UX spine.",
-  "adr": "ADR-ECO-014"
+  "adr": "ADR-ECO-014",
+  "full_name": "KooshaPari/asset-engine",
+  "registry_author": "phenotype-registry (auto-backfill full_name from local remote origin)",
+  "notes": "full_name backfilled from local remote origin for asset-engine"
 }

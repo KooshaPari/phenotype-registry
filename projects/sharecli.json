@@ -23,5 +23,7 @@
   "absorption_note": "Keep as a standalone desktop surface until its relationship to thegent-sharecli is specified by runtime contracts; do not infer absorption from the deprecated duplicate row.",
   "rationale": "Active desktop tray/dashboard source with a recovery-only UI capture. HealthPage.swift exceeds the repository file-size target and requires decomposition before production integration.",
   "audit_artifact": "registry/audit-preservation-20260726.json",
-  "registry_author": "phenotype-registry (boundary audit)"
+  "registry_author": "phenotype-registry (boundary audit)",
+  "full_name": "KooshaPari/sharecli",
+  "notes": "full_name backfilled from local remote origin for sharecli"
 }

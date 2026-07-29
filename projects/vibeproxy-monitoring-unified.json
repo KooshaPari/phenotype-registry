@@ -9,5 +9,8 @@
   "disposition": "RETIRE",
   "wave": "G19",
   "absorbed_into": "phenotype-infra",
-  "absorption_note": "Stub retired 2026-06-18; canonical vibeproxy monitoring in cliproxyapi-plusplus; redirect in phenotype-infra/docs/absorbed-from/"
+  "absorption_note": "Stub retired 2026-06-18; canonical vibeproxy monitoring in cliproxyapi-plusplus; redirect in phenotype-infra/docs/absorbed-from/",
+  "full_name": "KooshaPari/vibeproxy-monitoring-unified",
+  "registry_author": "phenotype-registry (auto-backfill full_name from local remote origin)",
+  "notes": "full_name backfilled from local remote origin for vibeproxy-monitoring-unified"
 }
