@@ -3,7 +3,7 @@
   "full_name": "KooshaPari/PhenoObservability",
   "status": "queued",
   "disposition": "ABSORB",
-  "target": null,
+  "target": "phenotype-python-sdk/packages/observability-kit",
   "registry_author": "phenotype-registry (onboarding backlog action)",
-  "notes": "onboarding_action:queue; local_repo_dir:PhenoObservability"
+  "notes": "onboarding_action:queue; local_repo_dir:PhenoObservability; target_backfilled_from_boundary_docs"
 }
