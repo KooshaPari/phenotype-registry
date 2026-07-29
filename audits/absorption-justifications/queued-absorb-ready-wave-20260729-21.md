@@ -6,9 +6,9 @@ Objective: evidence-gated next-wave set for minimal-footprint local-first consol
 
 |rank|repo|size|path|local|target|flags|private|archived|size_covered_by|notes|
 |---|---|---:|---|---|---|---|---|---|---|---|
-|1|KooshaPari/thegent-sharecli|154|thegent-sharecli|exact|thegent|queued_or_active,api_ok,local_present,targeted|public|archived|api|Deprecated duplicate helper.|
-|2|KooshaPari/phenotype-shared|310|shared|exact|phenotype-shared|queued_or_active,api_ok,local_present,targeted|private|active|api|onboarding_action:queue; local_repo_dir:shared|
-|3|KooshaPari/HexaKit|23130|HexaKit|exact|pheno (crates/hexa-kit)|queued_or_active,api_ok,local_present,targeted|public|active|api|Phenotype-org hexagonal architecture toolkit.|
+|1|KooshaPari/thegent-sharecli|154|thegent-sharecli|exact|thegent|queued_or_active,api_ok,local_present,targeted|public|archived|api|**DONE 2026-07-29:** absorbed into `thegent/sharecli/`.|
+|2|KooshaPari/phenotype-shared|310|shared|exact|phenotype-shared|queued_or_active,api_ok,local_present,targeted|private|active|api|**DEFERRED 2026-07-29:** already-canonical (`KEEP_CANONICAL`) boundary; no duplicate absorption into itself.|
+|3|KooshaPari/HexaKit|23130|HexaKit|exact|pheno (crates/hexa-kit)|queued_or_active,api_ok,local_present,targeted|public|active|api|**BLOCKED 2026-07-29:** target repo `pheno` missing locally; resume once target checkout exists.|
 |4|KooshaPari/AgilePlus|928055|AgilePlus|exact|pheno (crates/agile-plus)|queued_or_active,api_ok,local_present,targeted|public|active|api|Phenotype-org spec-driven development; possible migration to omni-rust workflow.|
 |5|KooshaPari/omniroute-rs|-|omniroute-rs|none|-|queued_or_active,api_fail|-|-|api|Audited 2026-07-17; Rust service port of OmniRoute. No README yet — verify scope.|
 |6|KooshaPari/phenotype-router-spec|-|pheno-rt-spec-probe|exact|phenotype-router-spec|queued_or_active,api_fail,local_present,targeted|-|-|api|onboarding_action:queue; local_repo_dir:pheno-rt-spec-probe; hold: remote origin exists but repository not readable (git ls-remote: repository not found), so API/remote provenance remains unresolved|

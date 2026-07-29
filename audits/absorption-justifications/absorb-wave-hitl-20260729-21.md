@@ -11,9 +11,9 @@ Hard constraint: skip AgilePlus in this turn by sponsor policy.
 
 |rank|repo|path|target|size|private|archived|note|
 |---|---|---|---|---:|---|---|---|
-|1|KooshaPari/thegent-sharecli|thegent-sharecli|thegent|154|public|archived|Deprecated duplicate helper.|
-|2|KooshaPari/phenotype-shared|shared|phenotype-shared|310|private|active|onboarding_action:queue; local_repo_dir:shared|
-|3|KooshaPari/HexaKit|HexaKit|pheno (crates/hexa-kit)|23130|public|active|Phenotype-org hexagonal architecture toolkit.|
+|1|KooshaPari/thegent-sharecli|thegent-sharecli|thegent|154|public|archived|**DONE (2026-07-29):** absorbed into `thegent/sharecli/`|
+|2|KooshaPari/phenotype-shared|shared|phenotype-shared|310|private|active|**DEFERRED (2026-07-29):** appears already-canonical (`repo: phenotype-shared` is KEEP_CANONICAL); no physical absorb action executed in this wave slice|
+|3|KooshaPari/HexaKit|HexaKit|pheno (crates/hexa-kit)|23130|public|active|**BLOCKED (2026-07-29):** target repo `pheno` not present locally; requires boundary restore before physical absorb|
 
 ## Hold queue (do not execute until HITL/owner resolves)
 
@@ -62,3 +62,15 @@ Hard constraint: skip AgilePlus in this turn by sponsor policy.
 - Confirm execute order for execute-now queue (smallest-footprint first).
 - Resolve `phenotype-router-spec` provenance: remote not readable despite configured origin/URL.
 - Confirm whether AgilePlus remains policy-skipped or can be queued in a separate archival wave.
+
+## Slice Execution Log (2026-07-29T23:27:xx UTC)
+
+- ✅ `thegent-sharecli` absorbed to `thegent/sharecli/` with preservation metadata (`ABSORPTION_META.json`) and source `.git` untouched.
+- ⚪ `phenotype-shared` no-op for this slice: registry and boundary state already identify `phenotype-shared` as canonical shared mono parent; no source duplication to absorb into itself.
+- ⚠️ `HexaKit` blocked: target checkout `pheno` absent locally, despite `proposed_target_repo = pheno`, so execution deferred until target repo is available/reviewed.
+
+### Evidence artifact
+
+- New boundary doc: `phenotype-registry/docs/boundary/thegent-sharecli.md`
+- Source ingest evidence: `thegent-sharecli/` unchanged except remote `.git` retention (not modified)
+- Target import evidence: `thegent/sharecli/ABSORPTION_META.json`
