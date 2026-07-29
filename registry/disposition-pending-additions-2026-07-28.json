@@ -1,0 +1,125 @@
+{
+  "_meta": {
+    "description": "Pending additions to phenotype-registry/registry/disposition-index.json",
+    "frozen_at_origin": "2026-07-18T08:33:11.546679Z",
+    "frozen_origin_line": "disposition-index.json:4-7",
+    "patch_file_created": "2026-07-28",
+    "author": "forge-session-audit-only (no destructive action)",
+    "unfreeze_required": true,
+    "applied": false,
+    "note": "Registry file is frozen:true since 2026-07-18. This patch is staged; applying requires explicit user unfreeze."
+  },
+  "additions": [
+    {
+      "id": "Servion",
+      "decision": "AFFIRM_ALREADY_ABSORBED",
+      "decision_date": "2026-07-28",
+      "wave": "2026-07-28-audit-only",
+      "source_path": "KooshaPari/Servion",
+      "source_status": "deleted 2026-06-16",
+      "target_path": "phenotype-tooling/crates/phenotype-service-registry/",
+      "target_evidence": {
+        "size": "28K",
+        "files_present": ["Cargo.toml", "src/"],
+        "absorbing_commit": "7c5ed3a66",
+        "commit_message": "feat(service-registry): add phenotype-service-registry crate (migrated from Servion) (#76)"
+      },
+      "user_y_approval": "received 2026-07-28 (parsed 'Y to all for next 3')",
+      "user_target_side_tombstone_approval": "PENDING (I.2=Y required to create archive/ branch on target = destructive of target branch history)",
+      "projects_json_status": "retired, absorbed_into=phenotype-tooling/phenotype-service-registry",
+      "execution_status": "code-absorb DONE; tombstone PENDING user I.2=Y"
+    },
+    {
+      "id": "Guardrail",
+      "decision": "AFFIRM_ALREADY_ABSORBED",
+      "decision_date": "2026-07-28",
+      "wave": "2026-07-28-audit-only",
+      "source_path": "KooshaPari/Guardrail",
+      "source_status": "deleted 2026-06-16",
+      "target_path": "phenotype-tooling/crates/phenotype-resilience/",
+      "target_evidence": {
+        "size": "48K",
+        "files_present": ["Cargo.toml", "src/"],
+        "absorbing_commit": "a298f2355",
+        "commit_message": "feat(resilience): add phenotype-resilience workspace crate (#72)"
+      },
+      "user_y_approval": "received 2026-07-28 (parsed 'Y to all for next 3')",
+      "user_target_side_tombstone_approval": "PENDING (I.2=Y required to create archive/ branch on target)",
+      "projects_json_status": "retired, absorbed_into=phenotype-tooling/phenotype-resilience",
+      "execution_status": "code-absorb DONE; tombstone PENDING user I.2=Y"
+    },
+    {
+      "id": "router-docs",
+      "decision": "AFFIRM_ALREADY_ABSORBED",
+      "decision_date": "2026-07-28",
+      "wave": "2026-07-28-audit-only",
+      "source_path": "KooshaPari/router-docs",
+      "source_status": "deleted 2026-06-16",
+      "target_path": "OmniRoute/docs/research/archive/router-docs/",
+      "target_evidence": {
+        "size": "172B README + reference/ + research/",
+        "files_present": ["README.md", "reference/", "research/"],
+        "absorbing_commit": "f2b8b3638",
+        "commit_message": "docs(archive): absorb router-docs research corpus from archive"
+      },
+      "user_y_approval": "received 2026-07-28 (parsed 'Y to all for next 3')",
+      "user_target_side_tombstone_approval": "PENDING (I.2=Y required to create archive/ branch on target)",
+      "projects_json_status": "retired, absorbed_into=OmniRoute/docs/research/archive/router-docs/",
+      "execution_status": "code-absorb DONE; tombstone PENDING user I.2=Y"
+    },
+    {
+      "id": "phenoVessel",
+      "decision": "BLOCKED_TARGET_MISSING",
+      "decision_date": "2026-07-28",
+      "wave": "2026-07-28-audit-only",
+      "source_path": "KooshaPari/phenoVessel",
+      "source_status": "deleted 2026-06-16",
+      "target_path_declared": "PhenoPlugins/pheno-plugin-vessel",
+      "target_evidence": {
+        "size": "NOT FOUND LOCALLY",
+        "files_present": null,
+        "phenoPlugins_top_level_exists": false,
+        "AgilePlus_PhenoPlugins_exists": true,
+        "AgilePlus_PhenoPlugins_contents": "EMPTY (no README.md, no Cargo.toml)",
+        "pheno-plugin-vessel_search": "0 results across /Users/kooshapari/CodeProjects/Phenotype/repos"
+      },
+      "user_y_approval": "NOT received (BLOCKED on G decision)",
+      "projects_json_status": "retired, absorbed_into=PhenoPlugins/pheno-plugin-vessel; source deleted 2026-06-16",
+      "execution_status": "BLOCKED until target scaffolded OR alt target chosen",
+      "options_for_user": [
+        "(a) scaffold PhenoPlugins/ + crates/pheno-plugin-vessel/ to materialize the absorbed content",
+        "(b) tombstone-only at registry docs/absorption/phenovessel/SUPERSEDES.md (recommended per audit)",
+        "(c) skip and lose audit trail"
+      ]
+    }
+  ],
+  "resolved_ambiguities": [
+    {
+      "item": "B (phenotype-contracts target)",
+      "previously": "B1/B2/B3 open",
+      "resolution": "RESOLVED EXTERNALLY 2026-07-29 by registry/audit-absorption-justification/phenotype-contracts-boundary-20260729.json",
+      "decision": "phenotype-contracts = AFFIRM (canonical neutral schema SSOT, language-agnostic); PhenoContracts = KEEP_STANDALONE_PENDING_BOUNDARY_REVIEW (historical ABSORB claim invalid)",
+      "source_mutation": false,
+      "implication": "no source mutation, no merge with PhenoContracts, no deletion; keep phenotype-contracts live as contracts-spine per projects/phenotype-contracts.json role:contracts-spine"
+    },
+    {
+      "item": "E (argisexec deeper scan)",
+      "previously": "scan requested",
+      "resolution": "DONE 2026-07-28",
+      "finding": "3 commits, 1 branch (main), 4 files (README.md + CHANGELOG.md + SECURITY.md + .github/CODEOWNERS); self-declared 'placeholder - implementation pending'; zero source code",
+      "bare_clone_evidence": "~/.forge/audit/repo-evidence/argisexec/ (116K)"
+    }
+  ],
+  "unresolved_ambiguities": [
+    {"item": "A", "question": "phenotype-router target = thegent/crates/thegent-router Y/N/alt", "blocking": "yes — affects phenotype-router source absorption plan"},
+    {"item": "C", "question": "Compound-Spheres-3D-Backup merge into non-backup variant (C2 tombstone both) Y/N", "blocking": "yes — non-phenotype archival"},
+    {"item": "D", "question": "UnityDoorstop-NexusPatched tombstone (D1) or attempt non-nexus merge (D2) Y/N", "blocking": "yes — non-phenotype fork archival"},
+    {"item": "F", "question": "zen merge = F3 (boundary-doc tombstone only) Y/N (HexaKit/governance missing)", "blocking": "yes — affects zen docket"},
+    {"item": "G", "question": "phenoVessel = (b) tombstone-only Y/N (or a/c)", "blocking": "yes — target missing"}
+  ],
+  "blocked_items": [
+    {"id": 1, "action": "apply this patch to registry/disposition-index.json", "blocker": "registry file is frozen:true since 2026-07-18 (disposition-index.json:4-7); unfreeze requires H=Y"},
+    {"id": 2, "action": "execute per-repo target-side tombstone + squash-to-1-commit for Servion/Guardrail/router-docs", "blocker": "per-repo Y for I.2 required; creates archive/ branch on TARGET repo = destructive of target branch history"},
+    {"id": 3, "action": "resolve phenoVessel", "blocker": "target missing locally (see options_for_user)"}
+  ]
+}
