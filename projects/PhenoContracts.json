@@ -20,7 +20,7 @@
   "domain_role": "contracts-verification",
   "ecosystem": "governance",
   "audit_artifact": "registry/audit-absorption-justification/phenotype-contracts-boundary-20260729.json",
-  "absorption_note": "Retain the active polyglot verification workspace pending a manifest/ancestry/parity review. The prior ABSORB→PhenoSpecs + TestingKit claim is historical and not evidence of a completed migration: the remote still contains TypeScript ports/adapters/tests and three Rust crates, with no verified target commits. No source mutation or archive was performed.",
+  "absorption_note": "Retain the active polyglot verification workspace pending a manifest/ancestry/parity review. The prior ABSORB\u2192PhenoSpecs + TestingKit claim is historical and not evidence of a completed migration: the remote still contains TypeScript ports/adapters/tests and three Rust crates, with no verified target commits. No source mutation or archive was performed.",
   "note": "Remote is active/public/non-archived on main (39afa275). MIT-licensed TypeScript + Rust formal-verification port with Prusti/Kani/Coq adapter surface and contract tests. Reconcile against phenotype-contracts and TestingKit before any future consolidation.",
   "adr": "ADR-017"
 }

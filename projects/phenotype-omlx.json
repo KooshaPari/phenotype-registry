@@ -1,6 +1,8 @@
 {
   "name": "phenotype-omlx",
-  "languages": ["swift"],
+  "languages": [
+    "swift"
+  ],
   "primary_language": "swift",
   "status": "active",
   "has_readme": true,
@@ -9,11 +11,10 @@
   "domain_role": "inference",
   "fork_parent": "jundot/omlx",
   "engine_upstream": "jundot/omlx",
-  "disposition": "DROP",
+  "disposition": "ARCHIVE_ONLY",
   "wave": "G18",
   "branch_count": 27,
   "adr": "ADR-ECO-016-omlx-inference-split",
-  "disposition": "ARCHIVE_ONLY",
   "target": "phenotype-registry (docs/boundary/phenotype-omlx.md)",
   "boundary_doc": "docs/boundary/phenotype-omlx.md",
   "archived": true,

@@ -1,6 +1,11 @@
 {
   "name": "phenotype-tooling",
-  "languages": ["rust", "typescript", "python", "shell"],
+  "languages": [
+    "rust",
+    "typescript",
+    "python",
+    "shell"
+  ],
   "primary_language": "rust",
   "status": "active",
   "has_readme": true,

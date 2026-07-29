@@ -1,6 +1,9 @@
 {
   "name": "McpKit",
-  "languages": ["python", "rust"],
+  "languages": [
+    "python",
+    "rust"
+  ],
   "primary_language": "python",
   "status": "archived",
   "has_readme": true,

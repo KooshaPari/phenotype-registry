@@ -1,11 +1,13 @@
 {
   "name": "turboquant_plus",
-  "languages": ["python"],
+  "languages": [
+    "python"
+  ],
   "primary_language": "python",
   "status": "active",
   "has_readme": true,
   "type": "utility",
   "path": "repos/turboquant_plus",
   "disposition": "AFFIRM",
-  "note": "Audited 2026-07-17; REFRACT — Reference-anchored Robust Acid-test for Compressed Transformers (KV-cache fidelity scoring framework)."
+  "note": "Audited 2026-07-17; REFRACT \u2014 Reference-anchored Robust Acid-test for Compressed Transformers (KV-cache fidelity scoring framework)."
 }

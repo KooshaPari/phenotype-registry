@@ -1,6 +1,9 @@
 {
   "name": "nvms-ffi",
-  "languages": ["rust", "c"],
+  "languages": [
+    "rust",
+    "c"
+  ],
   "primary_language": "rust",
   "status": "active",
   "has_readme": true,
@@ -25,8 +28,12 @@
   "adr": "ADR-049",
   "disposition": "AFFIRM",
   "rationale": "Canonical C-ABI surface for the nanovms substrate. Lives inside phenotype-infra (federated-service, federation-service role) and is the only approved FFI boundary for nanovms-core per ADR-049. Local-only sibling of phenotype-infra (no standalone GitHub repo target); canonical path is phenotype-infra/crates/nvms-ffi.",
-  "ports": ["FfiPort"],
-  "adapters": ["NvmsFfiAdapter"],
+  "ports": [
+    "FfiPort"
+  ],
+  "adapters": [
+    "NvmsFfiAdapter"
+  ],
   "language": "rust",
   "ci_state": "green on phenotype-infra master",
   "note": "Federated crate (2026-06-24 registry sync). Tracked at the workspace-crate level so that consumers can resolve nvms-ffi as an independent substrate even though it has no standalone GitHub target. nanovms-core and the standalone nanovms/ repo (archived 2026-06-17) are upstream; phenocompose (archived 2026-06-17) and pheno-compose-driver are downstream.",

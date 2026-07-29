@@ -1,6 +1,8 @@
 {
   "name": "agentapi-plusplus",
-  "languages": ["go"],
+  "languages": [
+    "go"
+  ],
   "primary_language": "go",
   "status": "active",
   "has_readme": true,
@@ -13,5 +15,5 @@
   "branch_count": 35,
   "integration_hub": "substrate/crates/engine-agentapi",
   "supersedes": "agentapi",
-  "note": "Platform agent terminal control plane — superset merge before archive gate; see wave15 + ADR-ECO-007"
+  "note": "Platform agent terminal control plane \u2014 superset merge before archive gate; see wave15 + ADR-ECO-007"
 }

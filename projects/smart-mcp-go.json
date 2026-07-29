@@ -1,6 +1,8 @@
 {
   "name": "smart-mcp-go",
-  "languages": ["go"],
+  "languages": [
+    "go"
+  ],
   "primary_language": "go",
   "status": "archived",
   "has_readme": true,

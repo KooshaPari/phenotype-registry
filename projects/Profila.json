@@ -1,6 +1,9 @@
 {
   "name": "Profila",
-  "languages": ["python", "shell"],
+  "languages": [
+    "python",
+    "shell"
+  ],
   "primary_language": "python",
   "status": "absorbed",
   "has_readme": true,

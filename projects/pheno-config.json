@@ -1,6 +1,8 @@
 {
   "name": "pheno-config",
-  "languages": ["rust"],
+  "languages": [
+    "rust"
+  ],
   "primary_language": "rust",
   "status": "active",
   "has_readme": true,
@@ -20,13 +22,19 @@
   "federated_into": "phenotype-infra",
   "parent_workspace": "phenotype-infra",
   "parent_crate_path": "crates/pheno-config",
-  "supersedes": ["phenotype-config"],
+  "supersedes": [
+    "phenotype-config"
+  ],
   "absorption_note": "Federated crate of phenotype-infra (ADR-049). Typed Config + ConfigBuilder pulled into the federation workspace as the compute/infra config substrate. Pairs with pheno-compose (config inputs) and nvms-ffi (typed config exported across the C-ABI).",
   "adr": "ADR-049",
   "disposition": "AFFIRM",
   "rationale": "Canonical config library inside phenotype-infra. The legacy phenotype-config standalone repo (projects/phenotype-config.json, status=active RFC-002 owner) remains a separate entry; this federation crate is the new canonical artifact for the phenotype-infra compute/infra workspace. Per ADR-049 the standalone repo is archived as the workspace crate takes over. Pairs with the configra substrate (catalog/registry.yaml) via the ConfigPort trait.",
-  "ports": ["ConfigPort"],
-  "adapters": ["PhenoConfigAdapter"],
+  "ports": [
+    "ConfigPort"
+  ],
+  "adapters": [
+    "PhenoConfigAdapter"
+  ],
   "language": "rust",
   "ci_state": "green on phenotype-infra master",
   "note": "Federated crate (2026-06-24 registry sync). Filename `pheno-config.json` (not `phenotype-config.json`) to avoid collision with the existing standalone-repo project entry (projects/phenotype-config.json, RFC 002 owner). The standalone repo file should be dispositioned ARCHIVE_ONLY in a follow-up cycle; pending that, both entries coexist by slug.",

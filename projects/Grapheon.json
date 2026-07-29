@@ -1,6 +1,10 @@
 {
   "name": "Grapheon",
-  "languages": ["Rust", "Python", "TypeScript"],
+  "languages": [
+    "Rust",
+    "Python",
+    "TypeScript"
+  ],
   "primary_language": "Rust",
   "status": "active",
   "visibility": "private",
@@ -12,7 +16,11 @@
   "remote_default_branch": "airlock-recovery/wip/2026-07-15-recovered-545e737-main",
   "remote_head_sha": "58ce84b2071ab0b7cf8bae5ec294d5613f3ee96a",
   "local_head_sha": "58ce84b2071ab0b7cf8bae5ec294d5613f3ee96a",
-  "workspace_members": ["tracera-server", "tracertm-mcp", "tracera-edge"],
+  "workspace_members": [
+    "tracera-server",
+    "tracertm-mcp",
+    "tracera-edge"
+  ],
   "workspace_member_count": 3,
   "tracked_file_count": 80510,
   "git_object_size_mb": 722,

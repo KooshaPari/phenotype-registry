@@ -13,7 +13,10 @@
   "remote_default_branch": "main",
   "remote_head_sha": "3c905b290660cf6edbefc3fe788e4654a8b22428",
   "local_audit_sha": "336acab2af203a50db22d893a78bc47dc5bb5055",
-  "workspace_members": ["tokenledger-rs", "pareto-rs"],
+  "workspace_members": [
+    "tokenledger-rs",
+    "pareto-rs"
+  ],
   "license": "MIT",
   "canonical_consumer": "OmniRoute (tokenledger::routing)",
   "wave": "2026-07-23-boundary-audit",

@@ -1,6 +1,8 @@
 {
   "name": "helios-cli",
-  "languages": ["rust"],
+  "languages": [
+    "rust"
+  ],
   "primary_language": "rust",
   "status": "active",
   "has_readme": true,

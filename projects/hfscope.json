@@ -1,6 +1,8 @@
 {
   "name": "hfscope",
-  "languages": ["go"],
+  "languages": [
+    "go"
+  ],
   "primary_language": "go",
   "status": "active",
   "has_readme": false,

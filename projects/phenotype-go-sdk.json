@@ -1,6 +1,8 @@
 {
   "name": "phenotype-go-sdk",
-  "languages": ["go"],
+  "languages": [
+    "go"
+  ],
   "primary_language": "go",
   "status": "archived",
   "has_readme": true,

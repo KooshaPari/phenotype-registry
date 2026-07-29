@@ -1,6 +1,10 @@
 {
   "name": "sharecli",
-  "languages": ["rust", "swift", "typescript"],
+  "languages": [
+    "rust",
+    "swift",
+    "typescript"
+  ],
   "primary_language": "rust",
   "status": "active",
   "has_readme": true,

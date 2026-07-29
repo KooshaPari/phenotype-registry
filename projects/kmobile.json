@@ -1,6 +1,8 @@
 {
   "name": "kmobile",
-  "languages": ["typescript"],
+  "languages": [
+    "typescript"
+  ],
   "primary_language": "typescript",
   "status": "active",
   "has_readme": true,

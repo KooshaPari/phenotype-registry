@@ -11,5 +11,5 @@
   "type": "sdk",
   "path": "repos/ResilienceKit",
   "absorbed_into": "phenotype-python-sdk",
-  "absorption_note": "Absorbed into packages/resilience-kit (2026-06-17); 245/247 byte match, 2 pheno-deploy files SDK-canonical — see packages/resilience-kit/docs/operations/resilience-kit-reconcile.md — archive delete eligible"
+  "absorption_note": "Absorbed into packages/resilience-kit (2026-06-17); 245/247 byte match, 2 pheno-deploy files SDK-canonical \u2014 see packages/resilience-kit/docs/operations/resilience-kit-reconcile.md \u2014 archive delete eligible"
 }

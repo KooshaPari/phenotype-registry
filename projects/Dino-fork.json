@@ -1,6 +1,17 @@
 {
   "name": "Dino-fork",
-  "languages": ["csharp", "python", "powershell", "html", "shell", "javascript", "typescript", "rust", "go", "zig"],
+  "languages": [
+    "csharp",
+    "python",
+    "powershell",
+    "html",
+    "shell",
+    "javascript",
+    "typescript",
+    "rust",
+    "go",
+    "zig"
+  ],
   "primary_language": "csharp",
   "status": "active",
   "has_readme": true,

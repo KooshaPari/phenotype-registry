@@ -1,6 +1,9 @@
 {
   "name": "BytePort",
-  "languages": ["rust", "typescript"],
+  "languages": [
+    "rust",
+    "typescript"
+  ],
   "primary_language": "rust",
   "status": "active",
   "has_readme": true,

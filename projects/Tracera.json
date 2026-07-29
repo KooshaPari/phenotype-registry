@@ -1,7 +1,7 @@
 {
   "name": "Tracera",
   "full_name": "KooshaPari/Tracera",
-  "description": "Tracera — tracing and observability runtime for distributed Phenotype services",
+  "description": "Tracera \u2014 tracing and observability runtime for distributed Phenotype services",
   "role": "observability-tracing",
   "disposition": "AFFIRM",
   "source": "absorption-justification",

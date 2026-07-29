@@ -4,7 +4,7 @@
     "../phenotype-org-audits/findings/2026-06-24-eval-bench-qa-v2.json#version=v3"
   ],
   "full_name": "KooshaPari/phenotype-org-audits",
-  "description": "Org-wide audit tooling and compliance tracking — central inventory and metrics hub for the Phenotype organization",
+  "description": "Org-wide audit tooling and compliance tracking \u2014 central inventory and metrics hub for the Phenotype organization",
   "role": "audit-hub",
   "disposition": "AFFIRM",
   "source": "absorption-justification",
@@ -14,7 +14,12 @@
   "ecosystem": "governance",
   "domain": "org-audit",
   "language": "Shell",
-  "languages": ["Shell", "Python", "Go", "Rust"],
+  "languages": [
+    "Shell",
+    "Python",
+    "Go",
+    "Rust"
+  ],
   "absorbed_into": "phenotype-infra",
   "absorption_note": "2026-06-27 audit verdict AFFIRM: org-audit hub with canonical v3 scorecard (COVERAGE_V3.md). Central inventory and metrics for 165-repo org; continues as active governance hub under phenotype-infra consolidation umbrella. Cross-linked to the authoritative v3 scorecard covering 28 pillars, including phenodag P26/P27/P28 orchestration and self-extension capabilities.",
   "adr": "ADR-008, ADR-039",

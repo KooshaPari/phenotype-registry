@@ -1,6 +1,8 @@
 {
   "name": "phenoTypes",
-  "languages": ["python"],
+  "languages": [
+    "python"
+  ],
   "primary_language": "python",
   "status": "retired",
   "has_readme": true,

@@ -1,6 +1,8 @@
 {
   "name": "pheno-compose",
-  "languages": ["rust"],
+  "languages": [
+    "rust"
+  ],
   "primary_language": "rust",
   "status": "active",
   "has_readme": true,
@@ -20,13 +22,19 @@
   "federated_into": "phenotype-infra",
   "parent_workspace": "phenotype-infra",
   "parent_crate_path": "crates/pheno-compose",
-  "supersedes": ["phenocompose"],
+  "supersedes": [
+    "phenocompose"
+  ],
   "absorption_note": "Federated crate of phenotype-infra (ADR-049). The composition framework from the standalone PhenoCompose repo (Dmouse92 archive 2026-06-17) was consolidated into phenotype-infra/crates/pheno-compose-driver; this crate exposes the underlying library surface (lib target) that the driver binary wraps. Pairs with pheno-config via the ComposePort + ConfigPort traits.",
   "adr": "ADR-049",
   "disposition": "AFFIRM",
-  "rationale": "Canonical composition library inside phenotype-infra. Supersedes the standalone phenocompose repo (archived 2026-06-17 per ADR-049). Consumed by pheno-compose-driver (CLI), pheno-config (typed inputs), and downstream callers. Local-only sibling — no standalone GitHub target; canonical path is phenotype-infra/crates/pheno-compose.",
-  "ports": ["ComposePort"],
-  "adapters": ["PhenoComposeAdapter"],
+  "rationale": "Canonical composition library inside phenotype-infra. Supersedes the standalone phenocompose repo (archived 2026-06-17 per ADR-049). Consumed by pheno-compose-driver (CLI), pheno-config (typed inputs), and downstream callers. Local-only sibling \u2014 no standalone GitHub target; canonical path is phenotype-infra/crates/pheno-compose.",
+  "ports": [
+    "ComposePort"
+  ],
+  "adapters": [
+    "PhenoComposeAdapter"
+  ],
   "language": "rust",
   "ci_state": "green on phenotype-infra master",
   "note": "Federated crate (2026-06-24 registry sync). Tracked at the workspace-crate level so pheno-compose resolves independently from pheno-compose-driver. The legacy PhenoCompose standalone repo (projects/phenocompose.json, ARCHIVE_ONLY) retains its disposition history; this entry is the new canonical crate-level artifact.",

@@ -1,6 +1,12 @@
 {
   "name": "pheno",
-  "languages": ["rust", "typescript", "python", "go", "swift"],
+  "languages": [
+    "rust",
+    "typescript",
+    "python",
+    "go",
+    "swift"
+  ],
   "primary_language": "rust",
   "status": "active",
   "has_readme": true,

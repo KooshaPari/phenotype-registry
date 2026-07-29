@@ -1,6 +1,8 @@
 {
   "name": "kvirtualdesktop-core",
-  "languages": ["rust"],
+  "languages": [
+    "rust"
+  ],
   "primary_language": "rust",
   "status": "active",
   "has_readme": true,
@@ -21,12 +23,16 @@
   "parent_workspace": "phenotype-infra",
   "parent_crate_path": "crates/kvirtualdesktop-core",
   "supersedes": [],
-  "absorption_note": "Federated crate of phenotype-infra (ADR-049). KVirtualDesktop VM/desktop isolation core — provides the desktop-session substrate that kvirtualdesktop-mcp-server (sibling MCP adapter) and other federation members consume. Local-only, no standalone GitHub target.",
+  "absorption_note": "Federated crate of phenotype-infra (ADR-049). KVirtualDesktop VM/desktop isolation core \u2014 provides the desktop-session substrate that kvirtualdesktop-mcp-server (sibling MCP adapter) and other federation members consume. Local-only, no standalone GitHub target.",
   "adr": "ADR-049",
   "disposition": "AFFIRM",
   "rationale": "Canonical VM/desktop isolation substrate inside phenotype-infra. Sits next to kvirtual and kvirtualdesktop-mcp-server in the workspace; the federation crate (this entry) is the lib-target surface, while the sibling kvirtual crate holds the higher-level integration and kvirtualdesktop-mcp-server exposes the MCP adapter. Pairs with the federation service via DesktopPort.",
-  "ports": ["DesktopPort"],
-  "adapters": ["KvirtualDesktopAdapter"],
+  "ports": [
+    "DesktopPort"
+  ],
+  "adapters": [
+    "KvirtualDesktopAdapter"
+  ],
   "language": "rust",
   "ci_state": "green on phenotype-infra master",
   "note": "Federated crate (2026-06-24 registry sync). Tracked at the workspace-crate level so kvirtualdesktop-core resolves independently of its siblings (kvirtual, kvirtualdesktop-mcp-server). All three remain sibling crates inside phenotype-infra; only kvirtualdesktop-core is promoted to the federated_crates list per task 5 scope.",

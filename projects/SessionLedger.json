@@ -1,7 +1,7 @@
 {
   "name": "SessionLedger",
   "full_name": "KooshaPari/SessionLedger",
-  "description": "OKF-native session compiler — capture, archive, and replay AI agent sessions (sl-daemon + sl-viewer)",
+  "description": "OKF-native session compiler \u2014 capture, archive, and replay AI agent sessions (sl-daemon + sl-viewer)",
   "role": "session-compiler",
   "disposition": "AFFIRM",
   "source": "v38-spine-registration-2026-07-08",
@@ -9,7 +9,9 @@
   "repo_path": "KooshaPari/SessionLedger",
   "ecosystem": "agent-continuity",
   "domain": "session-artifacts",
-  "languages": ["rust"],
+  "languages": [
+    "rust"
+  ],
   "primary_language": "rust",
   "has_readme": true,
   "type": "product",

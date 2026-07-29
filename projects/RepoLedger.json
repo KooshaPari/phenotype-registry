@@ -1,6 +1,9 @@
 {
   "name": "RepoLedger",
-  "languages": ["typescript", "go"],
+  "languages": [
+    "typescript",
+    "go"
+  ],
   "primary_language": "typescript",
   "status": "active",
   "has_readme": false,

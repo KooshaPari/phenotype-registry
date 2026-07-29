@@ -1,6 +1,8 @@
 {
   "name": "forge",
-  "languages": ["rust"],
+  "languages": [
+    "rust"
+  ],
   "primary_language": "rust",
   "status": "retired",
   "has_readme": true,

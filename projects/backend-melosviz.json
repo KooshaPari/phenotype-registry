@@ -1,6 +1,8 @@
 {
   "name": "backend-melosviz",
-  "languages": ["python"],
+  "languages": [
+    "python"
+  ],
   "primary_language": "python",
   "status": "active",
   "has_readme": true,

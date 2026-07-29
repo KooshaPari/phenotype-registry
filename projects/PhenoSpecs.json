@@ -2,7 +2,17 @@
   "name": "PhenoSpecs",
   "full_name": "KooshaPari/PhenoSpecs",
   "description": "Central specification registry for Phenotype ADRs, API contracts, templates, and traceability data",
-  "languages": ["html", "python", "typescript", "rust", "javascript", "css", "just", "shell", "markdown"],
+  "languages": [
+    "html",
+    "python",
+    "typescript",
+    "rust",
+    "javascript",
+    "css",
+    "just",
+    "shell",
+    "markdown"
+  ],
   "primary_language": "documentation",
   "status": "active",
   "has_readme": true,

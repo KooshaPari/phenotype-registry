@@ -1,6 +1,9 @@
 {
   "name": "thegent",
-  "languages": ["rust", "python"],
+  "languages": [
+    "rust",
+    "python"
+  ],
   "primary_language": "rust",
   "status": "active",
   "has_readme": true,
