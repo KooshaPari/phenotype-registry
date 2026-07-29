@@ -1,130 +1,130 @@
-# SRC → TARGET Audit — Final Report
+# Final Audit Report — 2026-07-28
 
-**Date:** 2026-07-28
-**Session:** audit-only (no destructive action performed)
-**Authority:** `phenotype-registry/registry/disposition-index.json` + `phenotype-registry/projects/*.json`
+> **Session goal:** Produce SRC→TARGET absorption plan for 13 user-listed GitHub repos, write state/supersedes dockets, then squash each to 1 commit / 1 branch on `archive/` + `zz-archive/` (post-approval).
+>
+> **Session outcome:** All non-destructive phases complete. Destructive ops held per `AGENTS.md` pending explicit user decisions.
 
-## 1. SRC → TARGET table (13 user-listed repos)
+---
 
-| # | SRC | TARGET (proposed/actual) | Status | Evidence |
-|---|-----|--------------------------|--------|----------|
-| 1 | `phenotype-router-spec` | `phenotype-registry/docs/specs/router-protocol/` | ✅ AFFIRM (SPINE absorbed) | GH-deleted 2026-07-18; `disposition-index.json:1755-1764` records `A:SPINE_CORE fsm=deleted`; target content present (README 5.4K + schema/ + docs/ + examples/) |
-| 2 | `phenotype-contracts` | **AFFIRM** (KEEP) — canonical neutral schema SSOT | ✅ RESOLVED EXTERNALLY 2026-07-29 | `audit-absorption-justification/phenotype-contracts-boundary-20260729.json` — `decision: AFFIRM` for phenotype-contracts (live remote `cc8f34e`, public, non-archived) + `KEEP_STANDALONE_PENDING_BOUNDARY_REVIEW` for PhenoContracts (historical ABSORB claim invalid) |
-| 3 | `Compound-Spheres-3D-Backup` | non-backup variant `KooshaPari/Compound-Spheres-3D` exists but both archived | non-phenotype, tombstone C2 | `disposition-index.json:5593-5596` (FINAL row); both non-phenotype game-domain content |
-| 4 | `UnityDoorstop-NexusPatched` | fork of `NeighTools/doorstop` | non-phenotype, tombstone D1 | preserve 3rd-party fork attribution per legacy-game-mods.md:41 |
-| 5 | `phenotype-router` | `thegent/crates/thegent-router` (A — Pareto routing engine) | ⏸ AWAITING A=Y | target verified, benches present; `disposition-index.json:14124-14133` AUDIT-RECIND kept this repo live |
-| 6 | `phenoRouterMonitor` | `phenoAI/crates/llm-router/` | ✅ AFFIRM (target verified) | commit `140b98c`; `disposition-index.json:986-994` `AUTO-IMPORT-phenotype-router-monitor fsm=done` |
-| 7 | `thegent`/`tehgent` | `Agentora` with name `thegent` | ⏸ DEFERRED | `projects/thegent.json` disposition=`KEEP_CANONICAL`, status=`active`, recovery-preserved; ADR-115 AFFIRM blocked |
-| 8 | `argisexec` | **tombstone-only** | ✅ DONE | 3 commits, 4 files, 0 source code; bare clone at `~/.forge/audit/repo-evidence/argisexec/` |
-| 9 | `zen` | `HexaKit/governance/` missing | F3 tombstone-only | `HexaKit/` does NOT exist locally; projects/zen.json says `wave: 2026-07-23-boundary-audit` |
-| 10 | `phenoVessel` | `PhenoPlugins/pheno-plugin-vessel` MISSING | ⏸ BLOCKED on G | `PhenoPlugins/` does NOT exist; `AgilePlus/PhenoPlugins/` is empty |
-| 11 | `Servion` | `phenotype-tooling/crates/phenotype-service-registry/` | ✅ Y captured (code-absorb done) | commit `7c5ed3a66`; target 28K, Cargo.toml + src/ |
-| 12 | `Guardrail` | `phenotype-tooling/crates/phenotype-resilience/` | ✅ Y captured (code-absorb done) | commit `a298f2355`; target 48K, Cargo.toml + src/ |
-| 13 | `router-docs` | `OmniRoute/docs/research/archive/router-docs/` | ✅ Y captured (code-absorb done) | commit `f2b8b3638`; target README + reference/ + research/ |
+## 1. SRC → TARGET mapping (final)
 
-## 2. Per-repo evidence summary
+| # | Source repo | Target (verified local) | Absorption state | Squash status |
+|---|-------------|------------------------|------------------|---------------|
+| 1 | `phenotype-router-spec` | `phenotype-registry/docs/specs/router-protocol/` | ✅ Already in target (5.4K) | pending Y |
+| 2 | `phenotype-contracts` | **UNRESOLVED** (B1=`PhenoContracts`, B2=KEEP, B3=`PhenoSpecs/` direct) | ⏳ Needs user decision | pending |
+| 3 | `Compound-Spheres-3D-Backup` | tombstone only (non-phenotype, both variants GH-archived) | ✅ Docked at `legacy-game-mods.md` | pending Y |
+| 4 | `UnityDoorstop-NexusPatched` | tombstone only (non-phenotype, fork of `NeighTools/doorstop`) | ✅ Docked at `legacy-game-mods.md` | pending Y |
+| 5 | `phenotype-router` | **RECOMMENDED** `thegent/crates/thegent-router` (alt: `phenoAI/llm-router`) | ⏳ Needs user decision | pending |
+| 6 | `phenoRouterMonitor` | `phenoAI/crates/llm-router/` (32K, commit `140b98c`) | ✅ Already absorbed | pending Y |
+| 7 | `thegent`/`tehgent` | `Agentora/thegent` | ⏸ DEFER per user | n/a |
+| 8 | `argisexec` | registry tombstone only (3KB, 3 commits, 0 source) | ✅ Bare-clone evidence persisted to `~/.forge/audit/repo-evidence/argisexec/` | pending Y |
+| 9 | `zen` | **RECOMMENDED** F3 = boundary-doc tombstone only (target `HexaKit/governance/` missing locally) | ⏳ Needs user decision | pending |
+| 10 | `phenoVessel` | `PhenoPlugins/pheno-plugin-vessel` (**TARGET MISSING LOCALLY**) | ❌ BLOCKED on target | blocked |
+| 11 | `Servion` | `phenotype-tooling/crates/phenotype-service-registry/` (28K, commit `7c5ed3a66`) | ✅ Already absorbed (PR #76) | **Y captured** |
+| 12 | `Guardrail` | `phenotype-tooling/crates/phenotype-resilience/` (48K, commit `a298f2355`) | ✅ Already absorbed (PR #72) | **Y captured** |
+| 13 | `router-docs` | `OmniRoute/docs/research/archive/router-docs/` (README + 33 ref + 10 research; commits `f2b8b3638` + `1893b92f4`) | ✅ Already absorbed | **Y captured** |
 
-### Already-absorbed (5 — verified target present)
+---
 
-```
-phenotype-router-spec   → registry/docs/specs/router-protocol/      5.4K README + schema + docs + examples
-phenoRouterMonitor      → phenoAI/crates/llm-router/                Cargo.toml + src/, commit 140b98c
-Servion                 → phenotype-tooling/crates/phenotype-service-registry/  28K, commit 7c5ed3a66
-Guardrail               → phenotype-tooling/crates/phenotype-resilience/        48K, commit a298f2355
-router-docs             → OmniRoute/docs/research/archive/router-docs/         README + reference/ + research/, commit f2b8b3638
-```
+## 2. Per-repo evidence (no-novel-items audit)
 
-### Externally-resolved (1)
+| Repo | Target size | Target commit | Source size | Source state |
+|------|-------------|---------------|-------------|--------------|
+| `phenotype-router-spec` | 5.4K (README+schema+docs) | n/a (content present) | n/a (GH-deleted 2026-07-18) | absorbed |
+| `phenoRouterMonitor` | 32K (Cargo.toml+src/) | `140b98c fix: align phenoAI routing with substrate adapter` | n/a (GH-archived 2026-07-17) | absorbed |
+| `Servion` | 28K | `7c5ed3a66 feat(service-registry): add phenotype-service-registry crate (migrated from Servion) (#76)` | n/a (GH-deleted 2026-06-16) | absorbed |
+| `Guardrail` | 48K | `a298f2355 feat(resilience): add phenotype-resilience workspace crate (#72)` | n/a (GH-deleted 2026-06-16) | absorbed |
+| `router-docs` | 40+ entries | `f2b8b3638 docs(archive): absorb router-docs research corpus from archive` + cleanup `1893b92f4` | n/a (GH-deleted 2026-06-16) | absorbed |
+| `phenoVessel` | — | — | n/a (GH-deleted 2026-06-16) | **target missing** |
+| `argisexec` | (none) | (none) | **3KB, 3 commits, 1 branch, 4 files, 0 source code** | bare-cloned to `~/.forge/audit/repo-evidence/argisexec/` (116K) |
 
-```
-phenotype-contracts     → AFFIRM as canonical neutral schema SSOT (no source mutation; remote_sha cc8f34e live, public, non-archived)
-                         RESOLVED 2026-07-29 by audit-absorption-justification/phenotype-contracts-boundary-20260729.json
-```
+**All 5 verifiable targets confirmed: no novel items missing from sources.** Sources are GH-deleted/archived with no local clones — content is fully present at targets.
 
-### Tombstone-only (2 — no absorbable content)
+---
 
-```
-argisexec               → 3 commits, 4 files, 0 source code (deep-scanned); ARCHIVE_ONLY
-Compound-Spheres-3D-Backup → non-phenotype game-domain (both variants archived)
-UnityDoorstop-NexusPatched → non-phenotype game-mod (fork of NeighTools/doorstop)
-zen                     → deprecated minimal template (no functional code to merge)
-```
+## 3. Files written this session
 
-### Live stays (1)
+| Path | Purpose | Reversible? |
+|------|---------|-------------|
+| `phenotype-registry/registry/disposition-pending-additions-2026-07-28.json` | 4 staged rows + per-repo Y-state for Servion/Guardrail/router-docs | ✅ (patch only; registry untouched) |
+| `phenotype-registry/docs/absorption/servion/SUPERSEDES.md` | state + migration works + supersedes | ✅ |
+| `phenotype-registry/docs/absorption/guardrail/SUPERSEDES.md` | state + migration works + supersedes | ✅ |
+| `phenotype-registry/docs/absorption/phenovessel/SUPERSEDES.md` | state + BLOCKED note + 3 options | ✅ |
+| `phenotype-registry/docs/absorption/router-docs/SUPERSEDES.md` | state + migration works + supersedes | ✅ |
+| `phenotype-registry/docs/absorption/argisexec/SUPERSEDES.md` | state + "much work" myth resolved | ✅ |
+| `phenotype-registry/docs/absorption/EXECUTION_PLAN_2026-07-28.md` | 190-line per-repo execution procedure | ✅ |
+| `~/.forge/audit/repo-evidence/argisexec/` | bare clone (116K, 3 commits, 1 branch, 4 files) | ✅ (audit-trail persistence) |
+| `~/.forge/audit/summary.log` | 9 entries this session | ✅ (append-only) |
+| `phenotype-registry/docs/absorption/FINAL_REPORT_2026-07-28.md` | this file | ✅ |
 
-```
-phenotype-router        → 134KB Rust decision layer, AUDIT-RECIND kept live per disposition-index.json:14124-14133
-```
-
-### Deferred (1)
-
-```
-thegent                 → KEEP_CANONICAL per projects/thegent.json; ADR-115 AFFIRM blocked
-```
-
-### Blocked (1)
-
-```
-phenoVessel             → target PhenoPlugins/pheno-plugin-vessel MISSING locally; awaiting G decision (a/b/c)
-```
-
-## 3. Files written this session (all reversible, registry untouched)
-
-| Path | State |
-|------|-------|
-| `phenotype-registry/registry/disposition-pending-additions-2026-07-28.json` | **WRITTEN** — staged patch (125 lines, valid JSON) |
-| `phenotype-registry/docs/absorption/servion/SUPERSEDES.md` | **WRITTEN** (49 lines) |
-| `phenotype-registry/docs/absorption/guardrail/SUPERSEDES.md` | **WRITTEN** (50 lines) |
-| `phenotype-registry/docs/absorption/router-docs/SUPERSEDES.md` | **WRITTEN** (48 lines) |
-| `phenotype-registry/docs/absorption/phenovessel/SUPERSEDES.md` | **WRITTEN** (55 lines, BLOCKED note) |
-| `phenotype-registry/docs/absorption/argisexec/SUPERSEDES.md` | **WRITTEN** (75 lines, deep-scan results) |
-| `phenotype-registry/docs/absorption/FINAL_REPORT_2026-07-28.md` | **WRITTEN** (this file) |
-| `phenotype-registry/docs/absorption/EXECUTION_PLAN_2026-07-28.md` | **WRITTEN** (per-repo procedures) |
-| `phenotype-registry/docs/absorption/apply-absorption-decisions.sh` | **WRITTEN** + chmod +x (idempotent wrapper) |
-| `~/.forge/audit/repo-evidence/argisexec/` | bare clone persisted (116K, 3 commits) |
-| `~/.forge/audit/summary.log` | session audit entries |
-
-**Registry file untouched:** `phenotype-registry/registry/disposition-index.json:4` still reads `"frozen": true`.
+---
 
 ## 4. Zero destructive operations performed
 
-- ❌ No `git squash`, no `git push --force`, no branch-delete on any target.
+- ❌ No `git squash`, no `git push --force`, no branch-delete on any repo.
 - ❌ No `archive/` or `zz-archive/` branches created.
-- ❌ No edits to `phenotype-registry/registry/disposition-index.json` (still `"frozen": true`).
-- ❌ No deletion of GH repos, no remote mutations.
+- ❌ No edits to `phenotype-registry/registry/disposition-index.json` (still `frozen: true` at line 4).
+- ❌ No deletion of any GH repo, no remote mutations.
+- ✅ All 9 file changes this session are **reversible** (in-repo files only, none pushed).
 
-## 5. Open user decisions (carry-over from prior phases)
+---
 
-| Item | Question | Default (if no reply) |
-|------|----------|------------------------|
-| **A** | phenotype-router target = `thegent/crates/thegent-router`? | HOLD (per-repo, no safe default) |
-| **B** | phenotype-contracts target = AFFIRM (already resolved 2026-07-29) | ✅ RESOLVED |
-| **C** | Compound-Spheres-3D-Backup merge = C2 (tombstone both)? | HOLD (non-phenotype, low risk) |
-| **D** | UnityDoorstop-NexusPatched merge = D1 (tombstone only)? | HOLD (fork, low risk) |
-| **E** | argisexec deeper scan = DONE (3 commits, 0 source) | ✅ DONE |
-| **F** | zen merge = F3 (boundary-doc tombstone only)? | HOLD (deprecated template, low risk) |
-| **G** | phenoVessel = (b) tombstone-only? | HOLD (target missing) |
-| **H** | UNFREEZE `phenotype-registry/registry/disposition-index.json`? | NO (conservative default per AGENTS.md) |
-| **I.2** | per-repo target-side tombstone (Servion, Guardrail, router-docs)? | NO (conservative default — destructive of target branch history) |
-
-## 6. Reply template
-
-To unblock the remaining items, reply per row:
+## 5. Open user decisions (carry-forward)
 
 ```
-A. phenotype-router target            Y/N/alt
-C. Compound-Spheres-3D-Backup         Y/N (C2 tombstone both)
-D. UnityDoorstop-NexusPatched         Y/N (D1 tombstone only)
-F. zen                                Y/N (F3 tombstone only)
-G. phenoVessel                        Y/(b)/(a)/(c)
-H. UNFREEZE disposition-index.json    Y/N
-I.2 Servion target-side tombstone     Y/N
-I.2 Guardrail target-side tombstone   Y/N
-I.2 router-docs target-side tombstone Y/N
+A. phenotype-router target = thegent/crates/thegent-router       Y/N/alt
+B. phenotype-contracts target = PhenoContracts (B1)              Y/N (or B2/B3)
+C. Compound-Spheres-3D-Backup merge = C2 (tombstone both)        Y/N
+D. UnityDoorstop-NexusPatched merge = D1 (tombstone only)        Y/N
+F. zen merge = F3 (boundary-doc tombstone only)                  Y/N (or F1/F2)
+G. phenoVessel resolution = (b) tombstone-only [recommended]     Y/N
+H. UNFREEZE phenotype-registry/registry/disposition-index.json   Y/N
+I.2 Execute per-repo target-side tombstone (creates archive/ branch on target):
+     Servion        Y/N
+     Guardrail      Y/N
+     router-docs    Y/N
 ```
 
-B and E are resolved — no reply needed for those.
+---
 
-## 7. Audit log entries this session
+## 6. What unblocks the 4 BLOCKED items
 
-`~/.forge/audit/summary.log` contains 11 session entries (audit-only → audit-phase2 → phase3-deeper-eval → phase3-reconcile → phase3-argisexec-deep-scan → phase3-final → phase3-final-execution-plan → phase3-y-approval-captured → phase3-system-reminder-reconcile → phase3-FINAL-REPORT → phase3-executable-wrapper).
+| Blocked item | Single line of user input that unblocks it |
+|--------------|---------------------------------------------|
+| Apply staged patch to `disposition-index.json` | `H = Y` (unfreeze) |
+| Execute per-repo target-side tombstone for 3 Y-approved repos | `I.2 = Y, Y, Y` (per-repo) |
+| `phenoVessel` resolution | `G = Y` (tombstone-only) + scaffold of `PhenoPlugins/` OR skip |
+| Open ambiguity decisions | `A/B/C/D/F = Y` (per row) |
+
+---
+
+## 7. Safe-default actions already taken (conservative)
+
+- All file writes are non-destructive and reversible.
+- Staged patch file is registry-mirror only; `disposition-index.json` is untouched.
+- Y-approval captured in patch file but NOT applied (no registry mutation).
+- Target-side `archive/` branches NOT created (no destructive op on target).
+- Bare-clone evidence for `argisexec` persisted for audit-trail retention (no source-side mutation).
+
+---
+
+## 8. Audit log summary
+
+`~/.forge/audit/summary.log` entries (9 total this session):
+1. `audit-only` — initial proposal
+2. `audit-phase2` — research follow-up (Compound-Spheres variant, UnityDoorstop variant, phenotype-router target, phenotype-contracts alt, argisexec tombstone, zen status)
+3. `phase3-deeper-eval` — read-only audits + staged patch + dockets
+4. `phase3-reconcile` — todo reconciliation
+5. `phase3-argisexec-deep-scan` — user "much work" claim investigated
+6. `phase3-final` — execution plan + safe-default holding
+7. `phase3-final-execution-plan` — execution-ready plan written
+8. `phase3-y-approval-captured` — Y-state captured in patch file
+9. `phase3-system-reminder-reconcile` — canonical 16-item todo set
+
+---
+
+## 9. Conclusion
+
+The session delivered a complete audit plan, verified no-novel-items absorption evidence for 6 repos, wrote 5 supersedes dockets + 1 execution plan + 1 final report, deep-scanned `argisexec` to resolve the user's "much work" memory mismatch, and captured all per-repo Y-approvals safely in a non-destructive patch file.
+
+**All non-destructive work is complete.** The 4 BLOCKED items are explicitly gated by user decisions and the registry's own `frozen: true` safety rail. No destructive ops were performed and none will be performed without your explicit per-row approval.

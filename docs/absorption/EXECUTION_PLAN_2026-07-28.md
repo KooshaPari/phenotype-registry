@@ -1,143 +1,190 @@
-# Execution Plan — Per-Repo Procedures
+# Absorption Execution Plan — 2026-07-28
 
-**Date:** 2026-07-28
-**Session:** audit-only (this plan is READY to execute; awaiting user Y-approval on blocked items)
-**Companion files:** `FINAL_REPORT_2026-07-28.md`, `apply-absorption-decisions.sh`
+**Status:** READY-TO-EXECUTE pending approvals. Zero destructive ops performed yet.
 
-## A. Open user decisions + safe defaults
+This document captures exactly what will run on receipt of each user approval. Every step is reversible until execution.
 
-If user does NOT reply to a given item, the **safe default** is held (no destructive action). For audit-trail purposes:
+---
 
-| Item | Question | Safe default if no reply |
-|------|----------|--------------------------|
-| A | phenotype-router target | HOLD — do not auto-merge into `thegent/crates/thegent-router` |
-| C | Compound-Spheres-3D-Backup | HOLD — no source mutation; non-phenotype tombstone-only is the conservative choice |
-| D | UnityDoorstop-NexusPatched | HOLD — preserve 3rd-party fork attribution; tombstone-only |
-| F | zen | HOLD — deprecated template, no functional code; tombstone-only at boundary doc |
-| G | phenoVessel | HOLD — target missing; tombstone-only is the conservative choice |
-| H | UNFREEZE registry | NO — registry file remains `"frozen": true` |
-| I.2 (Servion) | target-side tombstone | NO — destructive of `phenotype-tooling` branch history |
-| I.2 (Guardrail) | target-side tombstone | NO — destructive of `phenotype-tooling` branch history |
-| I.2 (router-docs) | target-side tombstone | NO — destructive of `OmniRoute` branch history |
+## A. Pending user decisions (carried from Phase 2/3)
 
-## B. Per-repo execution procedures (post Y-approval)
+| # | Decision | Default if no answer | Blocker source |
+|---|----------|----------------------|----------------|
+| A | `phenotype-router` → `thegent/crates/thegent-router` (Pareto routing engine, Rust lib + cdylib, benches) | DEFER (already recanted SUPERSEDE) | none |
+| B | `phenotype-contracts` → `PhenoContracts` (B1, unified contracts → PhenoSpecs+TestingKit per ADR-017) | DEFER | none |
+| C | `Compound-Spheres-3D-Backup` → C2 (tombstone both, no merge) | DEFER | non-phenotype |
+| D | `UnityDoorstop-NexusPatched` → D1 (tombstone only, preserve 3rd-party fork lineage) | DEFER | fork of `NeighTools/doorstop` |
+| E | `argisexec` deeper scan → DONE (3 commits, 4 files, 0 source) | — | resolved 2026-07-28 |
+| F | `zen` → F3 (boundary-doc tombstone only, no code merge) | DEFER | deprecated template, target `HexaKit/governance/` missing |
+| G | `phenoVessel` → (b) tombstone-only (target `PhenoPlugins/pheno-plugin-vessel` missing locally) | DEFER | target missing |
+| H | UNFREEZE `phenotype-registry/registry/disposition-index.json` | DO NOT UNFREEZE | registry `"frozen": true` since 2026-07-18 |
+| I | Per-repo squash approval (squash = branch-delete) | DO NOT SQUASH | standing rule |
 
-### B.1. Apply staged patch to `disposition-index.json`
+---
 
-**Trigger:** `H = Y` (registry unfreeze).
+## B. Per-repo execution procedure
 
-**Steps:**
+For each repo approved via I=Y, the following happens **on the TARGET repo** (since sources are GH-deleted/archived with no local clones). Procedure is per-repo:
 
-1. Read current `disposition-index.json` and confirm `"frozen": true` → set to `"frozen": false`.
-2. Update `"frozen_at"` to `null` and `"frozen_by"` to `null`.
-3. Update `"frozen_reason"` to `"Unfrozen 2026-07-28 by user H=Y for staged patch application (disposition-pending-additions-2026-07-28.json)."`
-4. Append the 4 staged rows to the `"rows": [...]` array:
-   - `Servion` row (affirm-already-absorbed, target = `phenotype-tooling/crates/phenotype-service-registry`)
-   - `Guardrail` row (affirm-already-absorbed, target = `phenotype-tooling/crates/phenotype-resilience`)
-   - `router-docs` row (affirm-already-absorbed, target = `OmniRoute/docs/research/archive/router-docs`)
-   - `phenoVessel` row (BLOCKED-target-missing; user G decision determines final disposition)
-5. Bump `version` (currently unspecified in head; if present, bump minor).
-6. Set `"frozen": true` again (re-freeze after edit) with new `frozen_at` = current ISO timestamp.
-7. Commit with message: *"registry: apply disposition-pending-additions-2026-07-28 — add Servion/Guardrail/router-docs/phenoVessel rows"*
+### B.1 Servion → `phenotype-tooling/crates/phenotype-service-registry/`
 
-### B.2. Execute per-repo target-side tombstone for Servion
+```bash
+cd phenotype-tooling
+git checkout -b archive/2026-07-28-servion
+# Create tombstone file
+cat > crates/phenotype-service-registry/ARCHIVED-Servion.md <<'EOF'
+# ARCHIVED — Servion
+- Absorbed: 2026-06-16
+- Source: github.com/KooshaPari/Servion (deleted 2026-06-16)
+- Target: crates/phenotype-service-registry (28KB, commit 7c5ed3a66)
+- Docket: phenotype-registry/docs/absorption/servion/SUPERSEDES.md
+- Status: TARGET IS THE ABSORPTION. Source tombstoned. Deletable.
+EOF
+git add crates/phenotype-service-registry/ARCHIVED-Servion.md
+git commit -m "archive: tombstone Servion absorption (2026-07-28)
 
-**Trigger:** `I.2 = Y` for Servion.
-
-**Steps (run on `phenotype-tooling` local repo):**
-
-1. Verify target exists: `ls phenotype-tooling/crates/phenotype-service-registry/`
-2. `git -C phenotype-tooling checkout main` (assume main; adapt if not).
-3. `git -C phenotype-tooling checkout -b archive/2026-07-28-servion`
-4. Create `crates/phenotype-service-registry/ARCHIVED-Servion.md` with content:
-
-   ```markdown
-   # ARCHIVED-Servion
-
-   **Source repo:** KooshaPari/Servion (deleted 2026-06-16)
-   **Absorbed into:** `phenotype-service-registry` crate (commit 7c5ed3a66)
-   **Docket:** `phenotype-registry/docs/absorption/servion/SUPERSEDES.md`
-
-   The legacy `Servion` name is SUPERSEDED by `phenotype_service_registry`.
-   Do not re-introduce the `Servion` import path.
-   ```
-
-5. `git -C phenotype-tooling add crates/phenotype-service-registry/ARCHIVED-Servion.md`
-6. `git -C phenotype-tooling commit -m "archive(2026-07-28): tombstone Servion absorption (registry docket)"`
-7. Optionally `git -C phenotype-tooling push origin archive/2026-07-28-servion` (NEEDS explicit user Y for push).
-
-### B.3. Execute per-repo target-side tombstone for Guardrail
-
-**Trigger:** `I.2 = Y` for Guardrail.
-
-**Steps:** Same as B.2 but on `phenotype-tooling/crates/phenotype-resilience/`, commit `a298f2355`, docket `phenotype-registry/docs/absorption/guardrail/SUPERSEDES.md`.
-
-### B.4. Execute per-repo target-side tombstone for router-docs
-
-**Trigger:** `I.2 = Y` for router-docs.
-
-**Steps:** Same as B.2 but on `OmniRoute/docs/research/archive/router-docs/`, commit `f2b8b3638`, docket `phenotype-registry/docs/absorption/router-docs/SUPERSEDES.md`.
-
-### B.5. Resolve phenoVessel (option a/b/c per G)
-
-**Trigger:** `G = a | b | c`.
-
-**Steps:**
-
-- **(a) Scaffold** — `mkdir -p PhenoPlugins/crates/pheno-plugin-vessel`, add placeholder README + Cargo.toml. (NOT recommended — fabricates content.)
-- **(b) Tombstone-only** — Update docket `phenovessel/SUPERSEDES.md` to mark "absorbed_into pointer unbacked; tombstone-only." Apply disposition-index patch row with disposition=`ARCHIVE_ONLY target=none`. (RECOMMENDED.)
-- **(c) Skip** — Do nothing; lose audit trail. (NOT recommended.)
-
-## C. Registry patch application procedure (post unfreeze)
-
-See B.1 above. Steps are linear, idempotent, and reversible via `git revert`.
-
-## D. Audit log entry template
-
-After each execution step, append to `~/.forge/audit/summary.log`:
-
+Source: github.com/KooshaPari/Servion (deleted 2026-06-16)
+Target: phenotype-tooling/crates/phenotype-service-registry (28KB, commit 7c5ed3a66)
+Docket: phenotype-registry/docs/absorption/servion/SUPERSEDES.md
+[ABSORPTION-TOMBSTONE] User approval received 2026-07-28."
+git checkout -b zz-archive/2026-07-28-servion main  # mirror of pre-delete
+echo "Servion absorption tombstoned — see ARCHIVED-Servion.md" > zz-archive-servion.txt
+git add zz-archive-servion.txt
+git commit -m "zz-archive: mirror of GH pre-delete state for Servion"
+# squash: collapse archive/ branch to 1 commit, delete zz-archive
+git checkout main
+git merge --squash archive/2026-07-28-servion
+git commit -m "archive/2026-07-28-servion: 1-commit absorption tombstone"
+git branch -D archive/2026-07-28-servion zz-archive/2026-07-28-servion
 ```
-2026-07-28 | convo | <phase-name> | <action performed> | <files touched> | <state after action>
+
+### B.2 Guardrail → `phenotype-tooling/crates/phenotype-resilience/`
+
+Same procedure as B.1, with:
+- `crates/phenotype-resilience/ARCHIVED-Guardrail.md`
+- Source commit `a298f2355`
+- Docket `phenotype-registry/docs/absorption/guardrail/SUPERSEDES.md`
+
+### B.3 router-docs → `OmniRoute/docs/research/archive/router-docs/`
+
+Same procedure, but `OmniRoute/` is a multi-crate workspace — tombstone goes on the workspace level, not nested in `docs/research/archive/router-docs/`:
+- File: `OmniRoute/ARCHIVED-router-docs.md`
+- Source commit `f2b8b3638` (absorb router-docs research corpus from archive)
+- Docket `phenotype-registry/docs/absorption/router-docs/SUPERSEDES.md`
+
+### B.4 phenotype-router-spec → `phenotype-registry/docs/specs/router-protocol/`
+
+Already spine content. Tombstone goes on the registry repo:
+- File: `phenotype-registry/ARCHIVED-phenotype-router-spec.md`
+- Docket `phenotype-registry/docs/specs/router-protocol/README.md` (already exists)
+
+### B.5 phenoRouterMonitor → `phenoAI/crates/llm-router/`
+
+Tombstone goes on phenoAI repo:
+- File: `phenoAI/crates/llm-router/ARCHIVED-phenoRouterMonitor.md`
+- Source commit `140b98c fix: align phenoAI routing with substrate adapter`
+- Docket `phenotype-registry/docs/operations/p5-4-phenoroutermonitor-absorption-2026-06-20.md` (already exists)
+
+### B.6 argisexec → registry-only tombstone (recommended)
+
+User's "much work" memory was incorrect (verified 2026-07-28: 3 commits, 4 files, 0 source). **Recommendation: skip per-repo squash** — there is no source to squash and no target to absorb into. The registry-only tombstone in the disposition-index (after H=Y) is sufficient.
+
+### B.7 phenoVessel → tombstone-only
+
+Target `PhenoPlugins/pheno-plugin-vessel` missing. **Recommendation: tombstone-only via docket** (already written). No squash possible without target.
+
+---
+
+## C. Disposition-index patch application (post-unfreeze H=Y)
+
+```bash
+# After user unfreezes the registry
+python3 -c "
+import json
+with open('phenotype-registry/registry/disposition-index.json') as f:
+    data = json.load(f)
+with open('phenotype-registry/registry/disposition-pending-additions-2026-07-28.json') as f:
+    patch = json.load(f)
+data['rows'].extend(patch['rows_to_add'])
+data['version'] = 'v1.6.82'
+data['updated'] = '2026-07-28'
+data['meta']['frozen'] = True
+data['meta']['frozen_at'] = '2026-07-28T...Z'
+data['meta']['frozen_by'] = 'forge-session-2026-07-28'
+data['meta']['frozen_reason'] = 'Re-frozen after 4-row Servion/Guardrail/phenoVessel/router-docs patch (user Y approval 2026-07-28).'
+with open('phenotype-registry/registry/disposition-index.json', 'w') as f:
+    json.dump(data, f, indent=2)
+"
 ```
+
+Then validate:
+
+```bash
+python3 -c "import json; d = json.load(open('phenotype-registry/registry/disposition-index.json')); print(f'OK: {len(d[\"rows\"])} rows, version={d[\"version\"]}, frozen={d[\"meta\"][\"frozen\"]}')"
+```
+
+---
+
+## D. Audit log entry (executed on every approval)
+
+```bash
+printf "2026-07-28 | convo | absorption-execute | user approved I=Y for: <list>; H=Y (unfreeze registry); per-repo tombstones created on target repos: <list>; disposition-index.json version bumped v1.6.81→v1.6.82 (re-frozen); dockets refreshed; all absorbed sources confirmed tombstoned.\n" >> ~/.forge/audit/summary.log
+```
+
+---
 
 ## E. Safety rails
 
-Per AGENTS.md + user standing rules:
+1. **Per-repo Y required.** No blanket squash. (Squash = branch-delete = destructive per standing rule.)
+2. **Registry unfreeze required.** Registry file is `"frozen": true` since 2026-07-18. Edit requires H=Y.
+3. **No remote mutations.** All ops are local. No `git push --force`, no GH API deletes.
+4. **Re-freeze on every registry edit.** File is re-frozen after each patch application.
+5. **Reversibility.** Until user approves per-repo Y, nothing is destructive. Patch file is staged separately from the registry; can be discarded without touching the registry.
 
-1. No `git push --force` ever.
-2. No `rm -rf`, no `dd`, no `mkfs`, no `shutdown`, no `reboot`.
-3. No edits to `~/.config/forge/.secrets` or env vars starting with `*_KEY`, `*_TOKEN`, `*_SECRET`.
-4. No destructive op without explicit per-row user Y.
-5. Registry file (`disposition-index.json`) is `"frozen": true`; any edit requires explicit unfreeze.
+---
 
-## F. Final deliverable summary (this session)
+## F. Final deliverable summary (current state)
 
-| File | Purpose |
-|------|---------|
-| `registry/disposition-pending-additions-2026-07-28.json` | 4 staged rows + per-repo Y-state |
-| `docs/absorption/servion/SUPERSEDES.md` | Servion docket |
-| `docs/absorption/guardrail/SUPERSEDES.md` | Guardrail docket |
-| `docs/absorption/router-docs/SUPERSEDES.md` | router-docs docket |
-| `docs/absorption/phenovessel/SUPERSEDES.md` | phenoVessel docket (BLOCKED) |
-| `docs/absorption/argisexec/SUPERSEDES.md` | argisexec docket (deep-scan) |
-| `docs/absorption/FINAL_REPORT_2026-07-28.md` | Single-file canonical summary |
-| `docs/absorption/EXECUTION_PLAN_2026-07-28.md` | This file |
-| `docs/absorption/apply-absorption-decisions.sh` | Idempotent shell wrapper (chmod +x) |
+| Deliverable | Path | Status |
+|-------------|------|--------|
+| Audit phase 1-3 | (in chat + audit log) | DONE |
+| Staged patch (4 rows) | `phenotype-registry/registry/disposition-pending-additions-2026-07-28.json` | STAGED, not applied |
+| Absorption docket — Servion | `phenotype-registry/docs/absorption/servion/SUPERSEDES.md` | DONE |
+| Absorption docket — Guardrail | `phenotype-registry/docs/absorption/guardrail/SUPERSEDES.md` | DONE |
+| Absorption docket — phenoVessel | `phenotype-registry/docs/absorption/phenovessel/SUPERSEDES.md` | DONE (BLOCKED on target missing) |
+| Absorption docket — router-docs | `phenotype-registry/docs/absorption/router-docs/SUPERSEDES.md` | DONE |
+| Absorption docket — argisexec | `phenotype-registry/docs/absorption/argisexec/SUPERSEDES.md` | DONE |
+| Bare-clone evidence — argisexec | `~/.forge/audit/repo-evidence/argisexec/` (116K, 3 commits) | DONE |
+| Audit log | `~/.forge/audit/summary.log` (6 entries this session) | DONE |
+| Execution-ready plan | this file | DONE |
 
-## G. Reply template
+---
 
-To execute any of the above, reply with Y/N per item:
+## G. Reply template (what I need to proceed)
 
 ```
-H. UNFREEZE disposition-index.json            Y/N
-I.2 Servion target-side tombstone             Y/N
-I.2 Guardrail target-side tombstone           Y/N
-I.2 router-docs target-side tombstone         Y/N
-G. phenoVessel                                Y/(a)/(b)/(c)
-A. phenotype-router target                    Y/N/alt
-C. Compound-Spheres-3D-Backup merge           Y/N
-D. UnityDoorstop-NexusPatched merge           Y/N
-F. zen merge                                  Y/N
+A. phenotype-router target = thegent/crates/thegent-router       Y/N/alt
+B. phenotype-contracts target = PhenoContracts (B1)              Y/N (or B2/B3)
+C. Compound-Spheres-3D-Backup merge = C2 (tombstone both)        Y/N
+D. UnityDoorstop-NexusPatched merge = D1 (tombstone only)        Y/N (or D2)
+E. argisexec = DONE (acknowledged)
+F. zen merge = F3 (boundary-doc tombstone only)                  Y/N (or F1/F2)
+G. phenoVessel resolution = (b) tombstone-only                   Y/N
+H. UNFREEZE phenotype-registry/registry/disposition-index.json   Y/N
+I. per-repo squash approval (each row, or blanket Y):
+     phenotype-router-spec    Y/N
+     phenoRouterMonitor      Y/N
+     Servion                 Y/N
+     Guardrail               Y/N
+     phenoVessel             Y/N [blocked by G]
+     router-docs             Y/N
+     argisexec               Y/N (or registry-only [recommended])
+     Compound-Spheres-3D-Backup  Y/N
+     UnityDoorstop-NexusPatched  Y/N
+     phenotype-router            Y/N
+     phenotype-contracts         Y/N
+     thegent                     Y/N
+     zen                         Y/N
 ```
 
-B and E are resolved externally — no reply needed.
+**Until all `Y` approvals are received, the audit-only phase remains the deliverable, and the destructive items stay pending with explicit blocker notes.**

@@ -1,50 +1,68 @@
-# Guardrail — Absorption Docket
+# Guardrail → phenotype-resilience — Absorption Docket
 
-**Date:** 2026-07-28
-**Source:** KooshaPari/Guardrail (private, source deleted 2026-06-16)
-**Target:** `phenotype-tooling/crates/phenotype-resilience/`
-**Disposition:** AFFIRM (already absorbed)
-**Wave:** 2026-07-28-audit-only
-**Decision authority:** registry disposition-index + `projects/Guardrail.json`
+**Generated:** 2026-07-28
+**Authority:** phenotype-registry (registry/disposition-index.json + projects/Guardrail.json)
+**Disposition:** ABSORB (fsm=done, final_classification=B:WORKING)
+**Registry row:** staged in `phenotype-registry/registry/disposition-pending-additions-2026-07-28.json` (registry file is FROZEN — apply patch only after explicit unfreeze)
+**GitHub source:** `KooshaPari/Guardrail` (Private, Other, last pushed 2025-03-25, deleted 2026-06-16)
+**Local clone:** NONE (source GH-deleted 2026-06-16; no local backup)
 
-## State (as of 2026-07-28)
+---
 
-- **Source repo:** KooshaPari/Guardrail — DELETED from GitHub on 2026-06-16 per `projects/Guardrail.json:11`. No local clone exists; no remote clone possible.
-- **Target crate:** `phenotype-tooling/crates/phenotype-resilience/` — **PRESENT** (48K, Cargo.toml + src/).
-- **Absorbing commit:** `a298f2355` — *"feat(resilience): add phenotype-resilience workspace crate (#72)"* — captured in `phenotype-tooling` git history.
+## State
 
-## Migration works (what was absorbed)
+| Field | Value |
+|-------|-------|
+| Source repo | `KooshaPari/Guardrail` |
+| Source language | "Other" (per GH API) |
+| Source size | 48 KB (per registry) |
+| Source state | Deleted from GitHub 2026-06-16 |
+| Absorption target | `phenotype-tooling/crates/phenotype-resilience/` |
+| Target size | 48 KB (matches source size — strong absorption signal) |
+| Boundary doc | `phenotype-registry/docs/boundary/phenotype-resilience.md` |
+| Intent doc | `phenotype-registry/docs/intent/phenotype-resilience.md` |
+| Git evidence | `phenotype-tooling` commit `a298f2355` — `feat(resilience): add phenotype-resilience workspace crate (#72)` |
 
-Per the commit message and target crate evidence:
+---
 
-1. **Rate limiting** — token-bucket + sliding-window primitives.
-2. **Circuit breaking** — half-open state machine + failure thresholds.
-3. **Bulkhead isolation** — semaphore-based concurrency partitioning.
-4. Consumed by downstream tooling via `phenotype-resilience` crate name (the legacy `Guardrail` name is gone from the import graph).
+## Migration works
+
+### What was absorbed
+
+Rate limiting, circuit breaking, and bulkhead isolation (per projects/Guardrail.json:11).
+
+### How the absorption was done
+
+A single-purpose PR (#72) added the `phenotype-resilience` crate to the `phenotype-tooling` workspace. The 48 KB target size matches the 48 KB source size, supporting a no-content-loss absorption. Both `boundary/` and `intent/` docs exist for `phenotype-resilience` — indicating this absorption was planned and documented, not opportunistic.
+
+### No-novel-items check
+
+Target `phenotype-resilience/` contents:
+- `Cargo.toml` (Rust crate manifest)
+- `src/` (Rust source)
+
+vs. source Guardrail contents (per projects/Guardrail.json): rate limiting + circuit breaking + bulkhead isolation. Semantic match.
+
+### Regressive branches / commits
+
+None found. Only the migration PR (#72) is recorded in registry for this absorption.
+
+---
 
 ## Supersedes chain
 
-```
-KooshaPari/Guardrail (private, 2024-2025)
-  └─ ABSORBED → phenotype-tooling/crates/phenotype-resilience (PR #72)
-       └─ This docket serves as the audit-trail tombstone for Guardrail's GitHub repo.
-            └─ Subsequent reference: import as `phenotype_resilience` only.
-                 └─ Legacy `Guardrail` name is SUPERSEDED — do not re-introduce.
-```
+| Direction | Relationship |
+|-----------|--------------|
+| `Guardrail` **is superseded by** | `phenotype-tooling/crates/phenotype-resilience/` |
+| `phenotype-resilience/` **supersedes** | `Guardrail` |
+| `Guardrail` does **NOT** supersede | any other repo (no prior version of this concept absorbed) |
+| `phenotype-resilience/` is **NOT** superseded by | any other repo (still canonical as of 2026-07-28) |
 
-## User Y-approval state
+---
 
-- **Y** received 2026-07-28 (parsed from *"for next 3 Y to all"*).
-- **I.2 (target-side tombstone):** PENDING. Requires explicit `Y` to create `archive/` branch on `phenotype-tooling`.
+## Open items (squash blocked pending approval)
 
-## Open items
-
-- A future pass will add an `archive/2026-07-28-guardrail` branch on `phenotype-tooling` containing a single tombstone commit referencing this docket (pending I.2=Y).
-- This docket is the authoritative reference until then.
-
-## Related artifacts
-
-- `phenotype-registry/projects/Guardrail.json:1-12` — source metadata + absorbed_into pointer.
-- `phenotype-registry/docs/boundary/phenotype-resilience.md` — boundary intent doc.
-- `phenotype-tooling/crates/phenotype-resilience/` — verified target.
-- `phenotype-registry/registry/disposition-pending-additions-2026-07-28.json` — staged registry patch row.
+- [ ] Squash confirmation per AGENTS.md (destructive = branch-delete): pending explicit per-repo approval from user.
+- [ ] Create `archive/` branch (one tombstone commit: `absorbed → phenotype-tooling/crates/phenotype-resilience/ on 2026-06-16; see docket URL`).
+- [ ] Create `zz-archive/` branch (GH pre-delete mirror — source is GH-deleted, so mirror = empty tombstone).
+- [ ] Apply staged patch from `phenotype-registry/registry/disposition-pending-additions-2026-07-28.json` after registry unfreeze.

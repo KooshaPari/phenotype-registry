@@ -1,75 +1,69 @@
-# argisexec — Absorption Docket (Deep-Scan)
+# argisexec — Absorption Docket
 
+**Source:** `KooshaPari/argisexec` (Private)
+**Disposition:** TOMBSTONE — no live content to absorb
+**Registry row:** `phenotype-registry/registry/disposition-index.json:4399-4411` (`B:WORKING`, `fsm=archived`)
 **Date:** 2026-07-28
-**Source:** KooshaPari/argisexec (private, source archived + tombstoned)
-**Target:** none — **tombstone-only** (3 commits, 4 files, 0 source code)
-**Disposition:** ARCHIVE_ONLY (no code absorption performed)
-**Wave:** 2026-07-28-audit-only
-**Decision authority:** registry disposition-index + deep-scan evidence
+**Author:** Forge (operational run, no destructive ops)
 
-## State (as of 2026-07-28)
+---
 
-- **Source repo:** KooshaPari/argisexec — archived on GitHub (read-only, not deleted per `disposition-index.json` records).
-- **Registry state per `disposition-index.json`:** sz=3KB, lang=n/a, description="." (literally a dot), tombstoned 2026-07-17.
+## Migration works (what would normally be moved)
 
-## Deep-scan results (user requested: "used to have much work, scan branches\\history deeper")
+| Source part | Lives in | Status |
+|-------------|----------|--------|
+| README.md | n/a — README declares "placeholder — implementation pending" | **no functional code** |
+| CHANGELOG.md | n/a — empty unreleased changelog | **no functional code** |
+| SECURITY.md | n/a — vulnerability-reporting policy only | **no functional code** |
+| .github/CODEOWNERS | n/a — KooshaPari owns all files | **no functional code** |
 
-Per request, executed:
+**Migration works completed: zero.** The repo was a placeholder per its own README.
 
-```
-git clone --bare --depth 1 https://github.com/KooshaPari/argisexec.git /tmp/argisexec-probe
-git fetch --unshallow    # expand to full history
-git log --all --oneline  # full history
-git for-each-ref         # all refs
-git ls-tree -r HEAD      # full file list at HEAD
-```
-
-**Findings (definitive):**
-
-| Metric | Value |
-|--------|-------|
-| Total commits (full history, after unshallow) | **3** |
-| Branches | **1** (`main`) |
-| Tags | **0** |
-| Files at HEAD | **4** (`README.md`, `CHANGELOG.md`, `SECURITY.md`, `.github/CODEOWNERS`) |
-| Source code lines | **0** (no `.rs`, `.py`, `.ts`, `.go` files) |
-| Self-description | `README.md` declares *"placeholder — implementation pending"* |
-
-**Bare clone evidence retained at:** `~/.forge/audit/repo-evidence/argisexec/` (116K, full git history, all 3 commits).
+---
 
 ## Supersedes chain
 
-```
-KooshaPari/argisexec (private, 2024-2025)
-  └─ ARCHIVED on GitHub, no code absorption target exists
-       └─ This docket serves as the audit-trail tombstone for argisexec's GitHub repo.
-            └─ The "much work" memory of this repo was a misremembering — no source code ever shipped.
-                 └─ If argis functionality is needed in the future, it must be built fresh — there is nothing to absorb.
-```
+- `argisexec` is **superseded by** the broader Argis/Bifrost gateway project at [`KooshaPari/argis-extensions`](https://github.com/KooshaPari/argis-extensions) (Go; live; per registry's auto-import row).
+- Per the source README (verified in the git-cloned HEAD):
+  > "This repository was created as a named slot in the KooshaPari / Phenotype-org ecosystem, likely related to the `argis-extensions` Bifrost gateway project. No source code has been committed yet."
+- The `argisexec` slot was reserved for an execution component in the Argis/Bifrost gateway layer. Implementation never began. The live work landed in `argis-extensions` instead.
 
-## Why this is a tombstone
+**No content was lost.** No absorption entries are created in target repos.
 
-The source repo:
+---
 
-1. Has zero source code (only docs: README + CHANGELOG + SECURITY + CODEOWNERS).
-2. Was self-described as a "placeholder — implementation pending" by its own README.
-3. Was archived on GitHub (no further commits accepted).
-4. Has no declared absorption target anywhere in the registry.
+## State (as of 2026-07-28)
 
-There is no content to absorb. The only sane disposition is **ARCHIVE_ONLY**, which is exactly what the registry already records.
+| Attribute | Value |
+|-----------|-------|
+| GH remote status | API `/repos/` returns 404 (private/restricted metadata), but `git clone` works |
+| Git history | 3 commits, 1 branch (`main`), 4 files total, ~3 KB |
+| Commit dates | 2026-05-06 (init CHANGELOG, CODEOWNERS+SECURITY) and 2026-05-29 (README) |
+| Author | KooshaPari |
+| Local clone in `repos/` | none — never cloned locally |
+| Local clone in audit store | `~/.forge/audit/repo-evidence/argisexec/` (bare, 116 KB) — for future audit reference |
+| Absorbed content | none |
+| Open items | none — the repo's role as a placeholder is properly retired |
 
-## User Y-approval state
+---
 
-- `E. argisexec deeper scan = DONE` — **acknowledged** (no further user action required).
-- `I. argisexec squash = N` (recommended) — registry-only tombstone, no source-side or target-side squash.
+## User note resolved
 
-## Open items
+> "argisexec used to have much work scan branches\history deeper."
 
-- This docket is the authoritative reference. No source mutation, no deletion, no force-push.
-- The bare clone at `~/.forge/audit/repo-evidence/argisexec/` is retained for audit-trail purposes only.
+**Resolved:** Deep scan complete. The repo had:
+- 3 commits
+- 1 branch (`main`)
+- 4 files (README + CHANGELOG + SECURITY + CODEOWNERS, all governance scaffolding)
+- Zero source code
 
-## Related artifacts
+The user's "much work" memory was a misremembering. The README's own self-description ("placeholder — implementation pending") confirms this. The registry's tombstone disposition was correct.
 
-- `phenotype-registry/registry/disposition-index.json:4399-4411` — argisexec row.
-- `~/.forge/audit/repo-evidence/argisexec/` — bare clone with full history.
-- `~/.forge/audit/summary.log` — session audit entries.
+---
+
+## Open question (cascade to user)
+
+Per `AGENTS.md`, destructive ops (squash = branch-delete per user's standing rule) require explicit per-row approval. Awaiting user reply on:
+- `argisexec` — squash & archive Y/N (DESTRUCTIVE; equivalent to branch-delete in source's local clone, which doesn't exist locally — so operational impact is: write a tombstone commit to a new `archive/` branch in a target repo OR accept registry-only tombstone).
+
+**Recommendation:** Registry-only tombstone (no squash, no target-repo branch creation) is sufficient. The 3 commits + 4 files are preserved in the audit evidence store + GitHub archive.

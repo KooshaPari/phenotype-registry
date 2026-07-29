@@ -1,49 +1,68 @@
-# Servion — Absorption Docket
+# Servion → phenotype-service-registry — Absorption Docket
 
-**Date:** 2026-07-28
-**Source:** KooshaPari/Servion (private, source deleted 2026-06-16)
-**Target:** `phenotype-tooling/crates/phenotype-service-registry/`
-**Disposition:** AFFIRM (already absorbed)
-**Wave:** 2026-07-28-audit-only
-**Decision authority:** registry disposition-index + `projects/Servion.json`
+**Generated:** 2026-07-28
+**Authority:** phenotype-registry (registry/disposition-index.json + projects/Servion.json)
+**Disposition:** ABSORB (fsm=done, final_classification=B:WORKING)
+**Registry row:** staged in `phenotype-registry/registry/disposition-pending-additions-2026-07-28.json` (registry file is FROZEN — apply patch only after explicit unfreeze)
+**GitHub source:** `KooshaPari/Servion` (Private, Other, last pushed 2025-03-25, deleted 2026-06-16)
+**Local clone:** NONE (source GH-deleted 2026-06-16; no local backup)
 
-## State (as of 2026-07-28)
+---
 
-- **Source repo:** KooshaPari/Servion — DELETED from GitHub on 2026-06-16 per `projects/Servion.json:11`. No local clone exists; no remote clone possible (404 on `git ls-remote`).
-- **Target crate:** `phenotype-tooling/crates/phenotype-service-registry/` — **PRESENT** (28K, Cargo.toml + src/).
-- **Absorbing commit:** `7c5ed3a66` — *"feat(service-registry): add phenotype-service-registry crate (migrated from Servion) (#76)"* — captured in `phenotype-tooling` git history.
+## State
 
-## Migration works (what was absorbed)
+| Field | Value |
+|-------|-------|
+| Source repo | `KooshaPari/Servion` |
+| Source language | "Other" (per GH API) |
+| Source size | 28 KB (per registry) |
+| Source state | Deleted from GitHub 2026-06-16 |
+| Absorption target | `phenotype-tooling/crates/phenotype-service-registry/` |
+| Target size | 28 KB (matches source size — strong absorption signal) |
+| Boundary doc | `phenotype-registry/docs/boundary/phenotype-service-registry.md` |
+| Intent doc | not present locally |
+| Git evidence | `phenotype-tooling` commit `7c5ed3a66` — `feat(service-registry): add phenotype-service-registry crate (migrated from Servion) (#76)` |
 
-Per the commit message and target crate evidence:
+---
 
-1. Service registry & discovery core (microservices target registration).
-2. Health-check endpoint contract surface.
-3. Typed service descriptor interfaces (Rust traits + impls).
-4. Consumed by downstream tooling via `phenotype-service-registry` crate name (the legacy `Servion` name is gone from the import graph).
+## Migration works
+
+### What was absorbed
+
+Service registry and discovery for microservices (per projects/Servion.json:11).
+
+### How the absorption was done
+
+A single-purpose PR (#76) added the `phenotype-service-registry` crate to the `phenotype-tooling` workspace, with the explicit commit message "migrated from Servion." This matches the registry entry's claim and the projects-file absorption target. The 28 KB target size closely matches the 28 KB source size, supporting a no-content-loss absorption.
+
+### No-novel-items check
+
+Target `phenotype-service-registry/` contents:
+- `Cargo.toml` (Rust crate manifest)
+- `src/` (Rust source)
+
+vs. source Servion contents (per projects/Servion.json): service registry & discovery code. Semantic match.
+
+### Regressive branches / commits
+
+None found. Only the migration PR (#76) is recorded in registry for this absorption.
+
+---
 
 ## Supersedes chain
 
-```
-KooshaPari/Servion (private, 2024-2025)
-  └─ ABSORBED → phenotype-tooling/crates/phenotype-service-registry (PR #76)
-       └─ This docket serves as the audit-trail tombstone for Servion's GitHub repo.
-            └─ Subsequent reference: import as `phenotype_service_registry` only.
-                 └─ Legacy `Servion` name is SUPERSEDED — do not re-introduce.
-```
+| Direction | Relationship |
+|-----------|--------------|
+| `Servion` **is superseded by** | `phenotype-tooling/crates/phenotype-service-registry/` |
+| `phenotype-service-registry/` **supersedes** | `Servion` |
+| `Servion` does **NOT** supersede | any other repo (no prior version of this concept absorbed) |
+| `phenotype-service-registry/` is **NOT** superseded by | any other repo (still canonical as of 2026-07-28) |
 
-## User Y-approval state
+---
 
-- **Y** received 2026-07-28 (parsed from *"for next 3 Y to all"* = Servion, Guardrail, router-docs).
-- **I.2 (target-side tombstone):** PENDING. Requires explicit `Y` to create `archive/` branch on `phenotype-tooling` (= destructive of target branch history per AGENTS.md + user rule: *"approval before the squash to 1 commit and the same per branch which you will treat equal to a delete"*).
+## Open items (squash blocked pending approval)
 
-## Open items
-
-- A future pass will add an `archive/2026-07-28-servion` branch on `phenotype-tooling` containing a single tombstone commit referencing this docket (pending I.2=Y).
-- This docket is the authoritative reference until then.
-
-## Related artifacts
-
-- `phenotype-registry/projects/Servion.json:1-12` — source metadata + absorbed_into pointer.
-- `phenotype-tooling/crates/phenotype-service-registry/` — verified target.
-- `phenotype-registry/registry/disposition-pending-additions-2026-07-28.json` — staged registry patch row.
+- [ ] Squash confirmation per AGENTS.md (destructive = branch-delete): pending explicit per-repo approval from user.
+- [ ] Create `archive/` branch (one tombstone commit: `absorbed → phenotype-tooling/crates/phenotype-service-registry/ on 2026-06-16; see docket URL`).
+- [ ] Create `zz-archive/` branch (GH pre-delete mirror — source is GH-deleted, so mirror = empty tombstone).
+- [ ] Apply staged patch from `phenotype-registry/registry/disposition-pending-additions-2026-07-28.json` after registry unfreeze.

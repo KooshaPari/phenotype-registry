@@ -1,55 +1,75 @@
-# phenoVessel — Absorption Docket (BLOCKED)
+# phenoVessel → PhenoPlugins/pheno-plugin-vessel — Absorption Docket (BLOCKED)
 
-**Date:** 2026-07-28
-**Source:** KooshaPari/phenoVessel (private, source deleted 2026-06-16)
-**Target:** `PhenoPlugins/pheno-plugin-vessel` *(declared in projects/phenoVessel.json:10)*
-**Disposition:** BLOCKED — target not materialized
-**Wave:** 2026-07-28-audit-only
-**Decision authority:** `projects/phenoVessel.json`
+**Generated:** 2026-07-28
+**Authority:** phenotype-registry (registry/disposition-index.json + projects/phenoVessel.json)
+**Disposition:** ABSORB_BUT_TARGET_MISSING (fsm=blocked, final_classification=E:ABSORB_BUT_TARGET_MISSING)
+**Registry row:** staged in `phenotype-registry/registry/disposition-pending-additions-2026-07-28.json` (registry file is FROZEN — apply patch only after explicit unfreeze AND blocker resolution)
+**GitHub source:** `KooshaPari/phenoVessel` (Private, HTML, Other, last pushed 2025-04-03, deleted 2026-06-16)
+**Local clone:** NONE (source GH-deleted 2026-06-16; no local backup)
 
-## State (as of 2026-07-28) — BLOCKED
+---
 
-- **Source repo:** KooshaPari/phenoVessel — DELETED from GitHub on 2026-06-16 per `projects/phenoVessel.json:11`. No local clone exists; no remote clone possible.
-- **Declared target:** `PhenoPlugins/pheno-plugin-vessel` — **NOT FOUND LOCALLY**:
-  - `/Users/kooshapari/CodeProjects/Phenotype/repos/PhenoPlugins/` — does NOT exist (despite being listed in the session's initial repo listing — the listing was stale).
-  - Only `AgilePlus/PhenoPlugins/` exists, and its contents are EMPTY (no README.md, no Cargo.toml, no plugin source).
-  - `find /Users/kooshapari/CodeProjects/Phenotype/repos -maxdepth 5 -name "pheno-plugin-vessel*"` returned **0 results**.
+## State
 
-## Why this is blocked
+| Field | Value |
+|-------|-------|
+| Source repo | `KooshaPari/phenoVessel` |
+| Source language | HTML (per GH API) |
+| Source size | unknown (size_kb = 0 in registry; placeholder) |
+| Source state | Deleted from GitHub 2026-06-16 |
+| Absorption target (claimed) | `PhenoPlugins/pheno-plugin-vessel` |
+| Absorption target (actual) | **MISSING LOCALLY** — `PhenoPlugins/` does not exist on disk (verified 2026-07-28) |
+| Boundary doc | not present locally |
+| Git evidence | NONE — no commit/PR found in registry or local git history for `pheno-plugin-vessel` |
 
-The declared absorption target was never materialized. The source repo was deleted before the absorbing crate was created. There is no code anywhere in the local workspace that corresponds to `phenoVessel`'s absorbed content — the absorbed_into pointer is **unbacked**.
+---
 
-This is **not** a "loss" in the strict sense — `phenoVessel` was a deprecated HTML-template scaffold (per `projects/phenoVessel.json:3-8`: `languages: ["html"]`, `type: "plugin"`). Whatever HTML scaffolding it contained has either been re-implemented ad-hoc in another Pheno plugin crate, or it was always negligible. But we cannot confirm either without the source repo, which is gone.
+## Migration works
 
-## Options for resolution
+### What was absorbed (claimed)
 
-### (a) Scaffold the target retroactively *(not recommended)*
+Per projects/phenoVessel.json:11: "Merged into PhenoPlugins as pheno-plugin-vessel crate." This was a deprecated/merged target per registry projects file.
 
-- Create `/Users/kooshapari/CodeProjects/Phenotype/repos/PhenoPlugins/` (currently missing).
-- Create `crates/pheno-plugin-vessel/` with placeholder HTML scaffolding matching whatever minimal value the source had.
-- **Risk:** fabricates content. Per AGENTS.md, we do not synthesize content we cannot verify.
+### How the absorption was done (unverifiable)
 
-### (b) Tombstone-only at this docket *(recommended)*
+The projects file asserts absorption but provides no PR number, commit hash, or migration date. The local filesystem has no `PhenoPlugins/` directory and no `pheno-plugin-vessel*` files anywhere within the working tree (verified via `find ... -name "pheno-plugin-vessel*"`).
 
-- Acknowledge in the registry that the absorption was **declared but never materialized**.
-- This docket serves as the only artifact: *"phenoVessel was declared absorbed into PhenoPlugins/pheno-plugin-vessel, but the target was never created; absorbed content lost or never existed."*
-- Add a row to the registry disposition-index marking this as `B:WORKING fsm=lost` (a new disposition) or `fsm=archived target=none`.
+### No-novel-items check
 
-### (c) Skip — lose audit trail *(not recommended)*
+**Cannot be performed — target repo does not exist locally.**
 
-- Do nothing.
-- The audit trail is broken. Future readers will see the `absorbed_into` pointer and look for the target, which doesn't exist.
+### Regressive branches / commits
 
-## User Y-approval state
+None found (no records exist for the claimed absorption).
 
-- **Y** NOT received (blocked on `G` decision).
-- Pending user reply to: `G. phenoVessel = (a) scaffold / (b) tombstone-only / (c) skip`
+---
 
-## Recommended action
+## Supersedes chain
 
-Choose **(b) tombstone-only**. This is the conservative, audit-preserving choice that does not fabricate content.
+| Direction | Relationship |
+|-----------|--------------|
+| `phenoVessel` **is claimed superseded by** | `PhenoPlugins/pheno-plugin-vessel` (UNVERIFIED — target missing) |
+| `phenoVessel` does **NOT** supersede | any other repo (no prior version of this concept absorbed) |
 
-## Related artifacts
+---
 
-- `phenotype-registry/projects/phenoVessel.json:1-12` — source metadata + absorbed_into pointer (now stale).
-- `phenotype-registry/registry/disposition-pending-additions-2026-07-28.json` — staged registry patch row.
+## BLOCKER — requires user direction
+
+| Option | Description | Outcome |
+|--------|-------------|---------|
+| **(a) Regenerate** | Scaffold `PhenoPlugins/` + `pheno-plugin-vessel/` from absorbed content. Requires retrieval of `phenoVessel` content from somewhere (not possible — source GH-deleted, no local clone, no fork lineage). | Effectively impossible without external data |
+| **(b) Tombstone-only** | Mark `phenoVessel` as registry tombstone with `boundary_classification=absorbed-but-target-missing`. Do not assert functional absorption. No code merge. | Reversible: if content resurfaces later, can re-evaluate |
+| **(c) Skip** | Remove from registry entirely as unverified claim. | Loses audit trail; not recommended |
+
+**Recommended: (b) Tombstone-only.** Y/N?
+
+---
+
+## Open items (squash blocked pending approval AND blocker resolution)
+
+- [ ] User decision on (a)/(b)/(c) above.
+- [ ] If (b): finalize docket with `final_classification=E:ABSORB_BUT_TARGET_MISSING` and write `phenotype-registry/docs/boundary/phenovessel.md` explaining the unverified status.
+- [ ] Squash confirmation per AGENTS.md: pending explicit per-repo approval from user.
+- [ ] Create `archive/` branch (one tombstone commit: `absorbed → PhenoPlugins (target missing, see docket) on 2026-07-28; see docket URL`).
+- [ ] Create `zz-archive/` branch (GH pre-delete mirror — source is GH-deleted, so mirror = empty tombstone).
+- [ ] Apply staged patch from `phenotype-registry/registry/disposition-pending-additions-2026-07-28.json` after registry unfreeze AND blocker resolution.
