@@ -57,3 +57,16 @@ Before proposing any branch extraction, compare OmniRoute's `open-sse/executors/
 ### Required reconciliation gate: `agentora-phenoagent-canonical-runtime-v1`
 
 Create a path-by-path, commit-and-hash provenance map for every executable file in `agents/phenoagent/{phenotype-daemon,phenotype-skills}` and the tooling archive, classifying it as canonical `crates/pheno-agent/*`, separately owned, or archive-only. Resolve every non-identical or legacy-only file, including `shims/typescript/langchain.ts`, by an explicit transplant-with-tests or archival decision. Then prove canonical workspace ownership with `cargo metadata --no-deps`, run `cargo test --workspace --all-features`, and pass a daemon request/response plus skill-registry compatibility fixture against canonical paths. Only then may the excluded legacy tree be retired; this gate does not authorize absorbing Agentora into another parent.
+
+## DEDUPE-05 - `.tmp-phenotypes-boundary` and phenotype-registry
+
+|proof|evidence|dedupe finding|
+|---|---|---|
+|remote and ancestry|The temporary checkout and canonical checkout both use `git@github.com:KooshaPari/phenotype-registry.git`. Temporary HEAD `424a9e44a37ba19c5d16f5ef9050dcba8ccae199` is an ancestor of canonical WIP commit `f835eb2b93843d98060ae208207fbbff8aa6fea3`; the reverse is false.|This is a stale local checkout of the canonical registry, not a separate repository boundary.|
+|unique commits and tracked paths|`git rev-list` reports 0 temporary-only commits and 34 canonical-only commits. `git diff --name-status` reports 0 temporary-only tracked paths and 56 canonical-only added paths.|No unique committed source or evidence remains in the temporary checkout.|
+|untracked payload|Untracked-file listing reports 0 files in the temporary checkout and 0 in the canonical checkout.|Git ancestry is not masking local-only payload in the temporary checkout.|
+|disposition|Canonical registry retains all source/evidence; temporary checkout is non-authoritative.|No merge or archive transaction is required. The local checkout is eligible for later retirement only after the remote-ref proof gate passes; no deletion is authorized by this record.|
+
+### Required proof gate: `registry-duplicate-checkout-retirement-v1`
+
+Before any local checkout retirement, record a fresh target ref on `KooshaPari/phenotype-registry`, prove the temporary HEAD is reachable from that remote ref, rerun temporary-only commit/path/untracked checks with all values zero, and verify no linked worktree or active process references `.tmp-phenotypes-boundary`. The gate authorizes only local-checkout cleanup under a separately approved destructive operation; it does not create an archive or alter canonical repository history.
