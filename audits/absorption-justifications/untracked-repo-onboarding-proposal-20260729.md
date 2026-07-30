@@ -44,3 +44,16 @@ Before proposing any branch extraction, compare OmniRoute's `open-sse/executors/
 |disposition|Own reusable instrumentation and exporter primitives|Own durable evidence, trace-link, and audit product state|retain_separate. No branch extraction or workspace merge is justified. A future integration belongs in a thin adapter owned by the producer-consumer contract.|
 
 ### Required compatibility gate: `observability-ledger-consumer-v1`
+
+## DEDUPE-04 - Agentora and legacy PhenoAgent/agentkit copies
+
+|dimension|Agentora|legacy PhenoAgent/agentkit copies|dedupe finding|
+|---|---|---|---|
+|canonical owner|`KooshaPari/Agentora`: root `agentkit` framework plus workspace members `crates/pheno-agent/{phenotype-daemon,phenotype-skills}`|Deleted `KooshaPari/PhenoAgent` source, excluded `Agentora/agents/phenoagent/*` tree, and `phenotype-tooling/docs/absorbed-from-PhenoAgent/` evidence archive|Retain Agentora as the live canonical owner. Cargo metadata includes the `crates/pheno-agent/*` members, while the legacy tree is deliberately excluded from workspace ownership.|
+|provenance|`ORIGIN.md` declares Agentora/agentkit canonical; the PhenoAgent absorption record names `crates/pheno-agent/` canonical|Direct lineage: the record describes an Agentora-to-PhenoAgent forward port at `aee873f`, then reverse absorption; the original remote now returns 404|This is direct historical lineage, not a name-level overlap. The canonical crate absorption and the legacy-tree merge have separate Agentora history.|
+|duplicate state|Canonical daemon and skills paths are registered workspace members and have canonical tests|`agents/phenoagent` is a divergent excluded copy; daemon has 23 files versus canonical 22, including legacy-only `shims/typescript/langchain.ts`; daemon, skills, Cargo, RPC, and protocol files differ. The tooling archive is a third historical snapshot with sampled hashes different from both Agentora trees.|Do not blindly extract, delete, or select a legacy tree: unresolved divergent behavior and provenance remain. The tooling path is archive evidence, not a live runtime owner.|
+|disposition|retain canonical live Agentora|retain deleted-source tombstone and archive evidence; no new runtime product|No repository merge or branch extraction now. The stale Cargo comment pointing to the absent PhenoAgent remote cannot override the documented absorption record.|
+
+### Required reconciliation gate: `agentora-phenoagent-canonical-runtime-v1`
+
+Create a path-by-path, commit-and-hash provenance map for every executable file in `agents/phenoagent/{phenotype-daemon,phenotype-skills}` and the tooling archive, classifying it as canonical `crates/pheno-agent/*`, separately owned, or archive-only. Resolve every non-identical or legacy-only file, including `shims/typescript/langchain.ts`, by an explicit transplant-with-tests or archival decision. Then prove canonical workspace ownership with `cargo metadata --no-deps`, run `cargo test --workspace --all-features`, and pass a daemon request/response plus skill-registry compatibility fixture against canonical paths. Only then may the excluded legacy tree be retired; this gate does not authorize absorbing Agentora into another parent.
