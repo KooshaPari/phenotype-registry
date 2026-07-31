@@ -5,7 +5,7 @@ Evidence timestamp: 2026-07-31 UTC. GitHub values take precedence over stale loc
 | Repo | Local HEAD/state | Authoritative remote evidence | Grade | Gate |
 |---|---|---|---:|---|
 | OmniRoute | `811d5964`; 2 dirty | `main=43f133f9972e`; #481 behind/CI red; #483 blocked | C- | current-main reconciliation and hosted CI |
-| Tracera | `b8d657e7`; dirty preserve packet | `main=774c0061e886`; clean candidate `wip/20260731-tracera-observability-ledger-consumer-v1` at `3abfa031b92d653bb1050a0a7d18875c94684861` | B | hosted CI, review, dogfood |
+| Tracera | `b8d657e7`; dirty preserve packet | `main=774c0061e886`; clean candidate `3abfa031b92d653bb1050a0a7d18875c94684861`; draft PR #771 | C+ | smoke/Vercel failures; remaining hosted checks queued |
 | phenotype-tooling | `5b854782`; 76 ahead stale local main; 2 dirty | `main=587805e38800`; #252 merged, branch 57 ahead/9 behind current main | C | classify post-merge branch |
 | portage | `65e9ae47`; 2 dirty | `main=b35d00454fa8`; #495 dirty and required checks red | D | repair security/lint/type/test/verify |
 | phenotype-registry | `21af7f6`; 5 dirty; 28 ahead local comparison | `main=052c5eff4856`; #432 blocked | C | reconcile authoritative ledger |
