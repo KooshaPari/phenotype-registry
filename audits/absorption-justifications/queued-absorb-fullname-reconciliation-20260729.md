@@ -19,8 +19,8 @@ For each row matching:
 gh api repos/KooshaPari/<name>
 ```
 
-And local path checks were run against
-`/Users/kooshapari/CodeProjects/Phenotype/repos/<path>`.
+And local path checks were run from the repository workspace root against
+`<workspace-root>/<path>`.
 
 ## Reconciled rows
 
@@ -55,4 +55,3 @@ All above were updated with:
 
 - Several rows remain with non-existent local workspace paths (`path` may not exist in this container).
   Those are explicitly kept in `queued` for HITL and do not imply archival action in this pass.
-

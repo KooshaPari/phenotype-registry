@@ -3,7 +3,7 @@ repo: "phenotype-errors"
 role: unknown
 status: archived
 archived_as_alias_of: "pheno-errors"
-last_boundary_review: 2026-06-17
+last_boundary_review: 2026-07-29
 review_cadence: 30d
 in_scope:
   - "<to be filled>"

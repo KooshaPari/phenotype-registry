@@ -19,9 +19,10 @@
 
 set -euo pipefail
 
-REPO_ROOT="/Users/kooshapari/CodeProjects/Phenotype/repos"
-REGISTRY="${REPO_ROOT}/phenotype-registry/registry/disposition-index.json"
-PATCH_FILE="${REPO_ROOT}/phenotype-registry/registry/disposition-pending-additions-2026-07-28.json"
+SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+REPO_ROOT="$(cd -- "${SCRIPT_DIR}/../.." && pwd)"
+REGISTRY="${REPO_ROOT}/registry/disposition-index.json"
+PATCH_FILE="${REPO_ROOT}/registry/disposition-pending-additions-2026-07-28.json"
 AUDIT_LOG="${HOME}/.forge/audit/summary.log"
 
 MODE="${1:-}"
@@ -120,7 +121,7 @@ echo ">>> Per-repo target-side tombstones..."
 echo "    (Per-repo command sequences in EXECUTION_PLAN_2026-07-28.md)"
 
 echo ">>> Logging..."
-printf "2026-07-28 | script | apply-absorption-decisions.sh --execute | Registry unfrozen + patch applied + refrozen v1.6.82. Per-repo tombstones pending manual execution per EXECUTION_PLAN.\n" >> "${AUDIT_LOG}"
+printf "2026-07-28 | script | apply-absorption-decisions.sh --execute | Registry unfrozen + refrozen v1.6.82; patch remains pending manual application. Per-repo tombstones pending manual execution per EXECUTION_PLAN.\n" >> "${AUDIT_LOG}"
 
 echo "============================================================"
 echo "DONE. Registry updated. Per-repo target tombstones require"

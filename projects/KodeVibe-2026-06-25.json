@@ -13,7 +13,6 @@
   "type": "tooling",
   "path": "repos/KodeVibe",
   "wave": "absorption-justification-orchestrator-auto",
-  "absorbed_into": "phenotype-tooling",
   "absorption_note": "Date-stamped duplicate inventory row; canonical KodeVibe remains active.",
   "audit_artifact": "audits/absorption-justifications/dated-snapshot-dupes-reconciliation-20260729.md",
   "audited_at": "2026-06-25T10:59:50.207749Z"
