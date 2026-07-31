@@ -14,6 +14,7 @@ In progress. The estate is not release-complete. Preservation and deduplication 
 - Tracera `observability-ledger-consumer-v1` isolated fixture: `1 passed, 0 failed`.
 - Tracera preservation snapshot: corrected `wip/20260731T0748-18c750581389c880` at remote SHA `3c264baceae0705adaba667826f587fec83193a7` (earlier snapshot retained as history).
 - Tracera fixture review: behavior PASS; contract concern resolved with deterministic PhenoObservability trace/span/correlation metadata. Unrelated workspace formatting drift remains a baseline concern.
+- Clean Tracera promotion candidate: `wip/20260731-tracera-observability-ledger-consumer-v1` at `3abfa031b92d653bb1050a0a7d18875c94684861`.
 - No deletion, reset, clean, rename, force-push, or archive performed.
 
 ## Links
