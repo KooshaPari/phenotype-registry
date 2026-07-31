@@ -24,3 +24,4 @@ In progress. The estate is not release-complete. Preservation and deduplication 
 - AgilePlus spec artifact: `AgilePlus/.agileplus/phenotype-estate-consolidation/spec.md`
 - AgilePlus isolated DB: `/private/tmp/agileplus-estate-consolidation.db`
 - AgilePlus tracked governance mirror: `wip/20260731T0800-estate-governance` at `ad2a1b0705dbadaa5a46af6d0307a2caebc6f84`.
+- Registry governance packet: `wip/20260731T0821-estate-governance` at `87e47212dca8bd1aadb32a2ac0e47db5d6ce7952`.
