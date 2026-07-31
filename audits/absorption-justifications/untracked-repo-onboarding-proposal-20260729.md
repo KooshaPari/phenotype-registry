@@ -70,3 +70,7 @@ Create a path-by-path, commit-and-hash provenance map for every executable file 
 ### Required proof gate: `registry-duplicate-checkout-retirement-v1`
 
 Before any local checkout retirement, record a fresh target ref on `KooshaPari/phenotype-registry`, prove the temporary HEAD is reachable from that remote ref, rerun temporary-only commit/path/untracked checks with all values zero, and verify no linked worktree or active process references `.tmp-phenotypes-boundary`. The gate authorizes only local-checkout cleanup under a separately approved destructive operation; it does not create an archive or alter canonical repository history.
+
+## coordination-lock-queue-v1 publication blocker - thegent-sharecli
+
+The isolated `thegent-sharecli` contract commit `2e1d734067c5d07847235bfbdf0a91c08bebc20b` contains only `src/thegent_cli_share/coordination_contract.py` and `tests/test_thegent_cli_share.py`; its focused normalized JSONL contract test passed. A non-force push to `KooshaPari/thegent-sharecli` was rejected because the GitHub repository is archived and read-only. No alternate remote, archive bypass, or forced publication was attempted. Sponsor direction is required before choosing whether to unarchive/publish, transplant the preserved commit into the established canonical owner, or retain it as local-only preservation evidence.
