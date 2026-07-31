@@ -17,7 +17,8 @@
 | Preflight | fail | formatting diffs in `crates/tracera-cli/*` | pre-existing baseline |
 | Lint & Format | fail | `trunk-io/trunk-action@d90b916...` cannot resolve | workflow infrastructure |
 | Vercel | fail | deployment failure; no candidate-file diagnostic | deployment/baseline |
+| Rust / TS-JS | pending | latest PR workflow still queued | not yet evidence |
 
 ## Decision
 
-The focused Rust fixture remains locally green (`1 passed, 0 failed, 52 filtered out`). Hosted failures are not evidence that the fixture is incorrect, but they block merge because branch protection requires the full check set. Keep PR #771 draft and repair or explicitly quarantine baseline failures through the repository's normal governance path.
+The focused Rust fixture remains locally green (`1 passed, 0 failed, 52 filtered out`). Hosted failures are not evidence that the fixture is incorrect, but they block merge because branch protection requires the full check set. Keep PR #771 draft and repair or explicitly quarantine baseline failures through the repository's normal governance path; do not widen the candidate diff to unrelated frontend, CLI-format, action-pin, or deployment maintenance.

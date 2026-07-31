@@ -8,7 +8,7 @@ Evidence timestamp: 2026-07-31 UTC. GitHub values take precedence over stale loc
 | Tracera | `b8d657e7`; dirty preserve packet | `main=774c0061e886`; clean candidate `3abfa031b92d653bb1050a0a7d18875c94684861`; draft PR #771 | C+ | smoke/Vercel failures; remaining hosted checks queued |
 | phenotype-tooling | `5b854782`; 76 ahead stale local main; 2 dirty | `main=587805e38800`; #252 merged, branch 57 ahead/9 behind current main | C | classify post-merge branch |
 | portage | `65e9ae47`; 2 dirty | `main=b35d00454fa8`; #495 dirty and required checks red | D | repair security/lint/type/test/verify |
-| phenotype-registry | `21af7f6`; 5 dirty; 28 ahead local comparison | `main=052c5eff4856`; #432 blocked | C | reconcile authoritative ledger |
+| phenotype-registry | `689b5cc`; 5 unrelated dirty files; governance packet committed | `main=052c5eff4856`; #432 blocked; packet branch `wip/20260731T0847-estate-governance` | C | reconcile authoritative ledger |
 | SessionLedger | `a22420c2`; 23 dirty; 7 behind | `main=71a781ff3a97`; #391 behind with visual/e2e/provenance failures | D | preserve, rebase, repair |
 | phenoAI | `a73ac4d`; 9 behind/5 ahead; 1 dirty | `main=751a8e77f854`; #69/#70 unstable | C- | stabilize CI/coverage |
 | phenotype-omlx | `ec2ab02a`; clean; 17 ahead local | remote comparison 44 ahead/15 behind | C+ | rebase and parity proof |
@@ -21,4 +21,4 @@ Evidence timestamp: 2026-07-31 UTC. GitHub values take precedence over stale loc
 - Archive/tombstone: none performed; all actions remain sponsor-gated.
 - AgilePlus governance: feature is specified/researched/planned in isolated DB, but validation is `0/6` evidence items until CI/review artifacts are attached.
 - AgilePlus governance mirror is cloud-published at `ad2a1b0705dbadaa5a46af6d0307a2caebc6f84`; the ignored local DB remains supplemental evidence only.
-- Registry governance packet is cloud-published at `87e47212dca8bd1aadb32a2ac0e47db5d6ce7952`.
+- Registry governance packet is cloud-published at `689b5ccd7d30c2f956c842bd37189a05d839751a` on `wip/20260731T0847-estate-governance`.
