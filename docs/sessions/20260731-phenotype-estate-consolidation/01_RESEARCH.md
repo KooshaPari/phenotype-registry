@@ -1,0 +1,33 @@
+# Research
+
+## Canonical boundary owner
+
+`phenotype-registry` is the governance and boundary SSOT. Runtime ownership remains repository-specific; this session does not move runtime code without a separate contract and PR.
+
+## Current authoritative lanes
+
+| Lane | Remote evidence | Local risk |
+|---|---|---|
+| OmniRoute | PR #481 open/behind; #483 blocked | dirty feature branch and failing checks |
+| Tracera | `main=774c0061e886`; PR #748 merged; corrected preservation ref `wip/20260731T0748-18c750581389c880` | dirty preserve packet is recoverable but not a release merge |
+| phenotype-tooling | PR #252 merged | post-merge branch diverges 57 ahead/9 behind |
+| portage | PR #495 open/dirty | security, lint, type, test, verify failures |
+| phenotype-registry | PR #432 blocked | local branch 28 ahead and dirty |
+| SessionLedger | PR #391 behind | visual/e2e/provenance failures |
+| phenoAI | #68 merged; #69/#70 unstable | behind/ahead divergence and dirty state |
+| phenotype-omlx | remote comparison 44 ahead/15 behind | feature branch requires reconciliation |
+
+## Existing boundary decisions
+
+- sharecli and thegent-sharecli remain separate runtimes under `coordination-lock-queue-v1`.
+- cliproxyapi-plusplus and OmniRoute remain separate with explicit path provenance.
+- PhenoObservability is the telemetry substrate; Tracera is the durable evidence/audit consumer.
+- Agentora owns canonical runtime behavior; legacy PhenoAgent is preserved evidence.
+- `.tmp-phenotypes-boundary` is a duplicate checkout and is not authoritative.
+- AgilePlus is parked outside the active merge train.
+
+## Explicit dependencies
+
+- thegent-sharecli is archived; sponsor policy is to request unarchive, not bypass protections.
+- Local GitHub tracking refs may be stale; GitHub remote state wins.
+- The filesystem has critically low free space; avoid broad scans and cache-producing builds.
