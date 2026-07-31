@@ -22,4 +22,4 @@ Evidence timestamp: 2026-07-31 UTC. GitHub values take precedence over stale loc
 - Archive/tombstone: none performed; all actions remain sponsor-gated.
 - AgilePlus governance: feature is specified/researched/planned in isolated DB, but validation is `0/6` evidence items until CI/review artifacts are attached.
 - AgilePlus governance mirror is cloud-published at `ad2a1b0705dbadaa5a46af6d0307a2caebc6f84`; the ignored local DB remains supplemental evidence only.
-- Registry governance packet is cloud-published at `689b5ccd7d30c2f956c842bd37189a05d839751a` on `wip/20260731T0847-estate-governance`.
+- Registry governance packet is cloud-published at `4e8d58e` via Airlock branch `wip/20260731T0921-18c75566f1d3a2d8`.
