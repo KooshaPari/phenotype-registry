@@ -42,7 +42,7 @@ if [[ ! -f "${PATCH_FILE}" ]]; then
 fi
 
 # Verify registry frozen state
-FROZEN=$(jq -r '.meta.frozen // false' "${REGISTRY}" 2>/dev/null || echo "unknown")
+FROZEN=$(jq -r '.frozen // false' "${REGISTRY}" 2>/dev/null || echo "unknown")
 if [[ "${FROZEN}" == "true" && "${MODE}" == "--execute" ]]; then
   echo "ERROR: registry is frozen (frozen: true at ${REGISTRY}:4)"
   echo "       Per-repo user approval H=Y (unfreeze) required before --execute"
@@ -104,7 +104,7 @@ if [[ "${H_APPROVED}" != "y" || "${I_APPROVED}" != "y" ]]; then
 fi
 
 echo ">>> Unfreezing registry..."
-jq '.meta.frozen = false | .meta.unfrozen_at = "2026-07-28" | .meta.unfrozen_by = "user-approval"' "${REGISTRY}" > "${REGISTRY}.tmp"
+jq '.frozen = false | .unfrozen_at = "2026-07-28" | .unfrozen_by = "user-approval"' "${REGISTRY}" > "${REGISTRY}.tmp"
 mv "${REGISTRY}.tmp" "${REGISTRY}"
 
 echo ">>> Applying patch..."
@@ -114,7 +114,13 @@ echo "    MANUAL STEP REQUIRED: jq -s '.[0] * .[1]' ${REGISTRY} ${PATCH_FILE}"
 echo "    Then verify with: jq '.repos | length' ${REGISTRY}"
 
 echo ">>> Refreezing registry..."
-jq '.meta.frozen = true | .meta.version = "1.6.82" | .meta.refrozen_at = "2026-07-28"' "${REGISTRY}" > "${REGISTRY}.tmp"
+jq --arg frozen_at "$(date -u +%Y-%m-%dT%H:%M:%SZ)" '
+  .frozen = true
+  | .version = "1.6.82"
+  | .frozen_at = $frozen_at
+  | .frozen_by = "user-approval"
+  | .frozen_reason = "Re-frozen after approved manual-patch handoff; patch remains pending manual application."
+' "${REGISTRY}" > "${REGISTRY}.tmp"
 mv "${REGISTRY}.tmp" "${REGISTRY}"
 
 echo ">>> Per-repo target-side tombstones..."
