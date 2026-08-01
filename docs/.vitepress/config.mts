@@ -17,6 +17,10 @@ export default defineConfig({
     "**/_stub/**",
     "**/intent/**",
     "**/boundary/**",
+    // Absorption packets and the PhenoSpecs mirror are source/evidence trees,
+    // not curated site pages; they contain literal HTML/templates by design.
+    "**/absorption/**",
+    "**/specs/pheno-specs/**",
   ],
   themeConfig: {
     nav: [
