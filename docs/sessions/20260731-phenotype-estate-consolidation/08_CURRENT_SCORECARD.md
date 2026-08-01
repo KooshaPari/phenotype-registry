@@ -32,6 +32,6 @@ Evidence timestamp: 2026-08-01 09:49 UTC. GitHub values take precedence over sta
 | #441 | `040eb7d` | pheno-errors reversible tombstone evidence | content-ready; required contexts await CI repair promotion and human approval |
 | #442 | `33e0cdf` | four-source provenance metadata and key normalization | ordering fix pushed; Kilo review pending; two outdated threads remain unresolved; required contexts absent; docs-build and secret-guard fail; human approval required |
 | #432 | `495d69b9` | broad absorption/OMLX preservation packet | hold/rework; `phenotype-omlx` gitlink `a7118ed9...` is not cloud-resolvable |
-| #443 | `fd898dc` | coverage workflow recovery trigger and protected check names | draft maintenance PR; `ci / lint`, `ci / test`, and coverage pass; docs-build and unrelated secret-guard baselines remain red; Kilo review pending |
+| #443 | `fd898dc` | coverage workflow recovery trigger and protected check names | ready-for-review maintenance PR; `ci / lint`, `ci / test`, and coverage pass; docs-build and unrelated secret-guard baselines remain red; Kilo review pending |
 
 Repository Actions are enabled. PR #443 proves `coverage.yml` can emit `ci / lint` and `ci / test`; #441 and #442 still require a post-#443 synchronization after the workflow repair is promoted.
