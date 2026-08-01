@@ -35,6 +35,7 @@ jobs:
       - name: Run tests
         run: echo "Running language-specific tests"
   coverage:
+    name: ci / coverage
     if: ${{ !contains(vars.SKIP || '', 'coverage') }}
     runs-on: ubuntu-latest
     steps:
