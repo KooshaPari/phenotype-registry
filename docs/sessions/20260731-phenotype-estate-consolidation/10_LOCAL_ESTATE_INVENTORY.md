@@ -69,7 +69,7 @@ This cohort is a research queue only. No archive or merge action is authorized b
 1. All five dirty lanes now have cloud recovery refs: SessionLedger (`ec278e3c`), pheno-harness
    (`9fdef790`), Tracera (`47ef7f41`), sharecli (`08ad5d10`), and pheno (`6140133`). Classify
    residual generated/local state and parent-boundary semantics before any merge/archive action.
-2. Revalidate PR #442's ordering fix at head `33e0cdf` before any approval request; Kilo review is pending, two outdated threads remain unresolved, and required contexts are absent.
+2. Revalidate PR #442's ordering fix at head `33e0cdf` before any approval request; Kilo review passes and all review threads are resolved, but required contexts are absent and docs/secret-guard/trufflehog fail.
 3. Promote PR #443 through normal review (Kilo pass; human approval and baseline failures remain);
    only then synchronize #441/#442 to materialize `ci / lint` and `ci / test` on their heads.
 4. Keep PR #432 held until the unresolved OMLX gitlink `a7118ed9...` has an immutable,
