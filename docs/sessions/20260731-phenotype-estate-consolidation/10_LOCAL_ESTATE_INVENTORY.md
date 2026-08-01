@@ -1,0 +1,75 @@
+# Local Estate Inventory and Next Cohort
+
+Evidence timestamp: 2026-08-01 08:30 UTC.
+
+## Coverage
+
+The container currently exposes 51 direct Git roots at depth three. Airlock's registered
+estate contains 173 paths; its dry-run cleanup pass visited all 173, recovered 29 stash
+payloads, and reported no execution errors. Registered paths include stale/missing checkout
+records, so the two counts are intentionally kept separate until each path is reconciled.
+
+No repository deletion, reset, clean, force-push, or archive operation was performed in this
+inventory slice.
+
+## Preservation tranche
+
+The following recovery refs are cloud-visible. A `HEAD` snapshot preserves the committed tip;
+it does not claim that still-dirty files are captured. Stash-applied refs are called out
+separately.
+
+| Repo | Local state | Cloud evidence | Dirty payload status |
+|---|---|---|---|
+| AgilePlus | `main@16da102a`, clean after Airlock stash recovery | `wip/preserve-20260801/agileplus-dirty-0605` and Airlock `wip/20260801T0622-18c79a33f7004e48` | captured in committed recovery tip |
+| Tracera | `preserve/tracera-dirty-wave-20260729@bd29bc7c7`, 76 dirty | `wip/20260801T0545-18c7982f6842e798` -> `bd29bc7c7` | remaining dirty/untracked files not captured |
+| SessionLedger | `main@7b1c243e`, 23 dirty | `wip/20260801T0545-18c7982ff4167f78` -> `7b1c243e` plus immutable `a5d315ba` Airlock ref | remaining dirty files not captured |
+| pheno-harness | `fix/pheno-harness-runner-provenance@4131b7c`, 51 dirty | `wip/20260801T0545-18c798307b9e40c0` -> `4131b7c` | remaining dirty/untracked files not captured |
+| pheno | `main@be5da947`, 16 dirty | `wip/20260801T0545-18c79831061b87d0` -> `be5da947` | remaining dirty/untracked files not captured |
+| sharecli | `fix/runtime-openapi-drift@b8eeeb2`, 22 dirty and 8 stashes | `wip/20260801T0545-18c798318ac38d70` -> `b8eeeb2` | stashes/dirty files remain pending capture |
+| forgecode | `preserve/workflow-schema-wave-20260729@aa25f50e`, clean after Airlock stash recovery | `wip/preserve-20260801/forgecode-dirty-0605` and Airlock `wip/20260801T0622-18c79a346ecd6370` | captured in committed recovery tip; fork remote used because origin is upstream-only |
+
+The seven `HEAD` refs are continuity evidence, not a completion claim for the dirty working
+trees. The next preservation action is to capture source-bearing dirty/untracked payloads in
+isolated recovery commits or stash bundles, after excluding generated caches and secrets.
+
+## Next boundary cohort (triage, not merge authorization)
+
+These small or medium surfaces are candidates for parent-boundary review after their source
+refs are preserved. Existing registry boundary documents remain authoritative; the proposed
+parent is a hypothesis until code/spec parity is proven.
+
+| Candidate | Initial parent hypothesis | Evidence to collect before mutation | Initial disposition |
+|---|---|---|---|
+| Agentora | AgilePlus satellite or standalone agent runtime | workspace overlap, consumers, unique refs | HOLD / boundary review |
+| Benchora | phenotype-tooling `crates/benchora/` | verify absorbed tree and remote refs | PARITY CHECK |
+| Grapheon | Tracera data/trace layer | live repo role, shared crates, unique history | HOLD / keep distinct until proven |
+| HexaKit | substrate/library boundary | compare with `pheno` and phenotype-tooling ports | HOLD |
+| Melosviz | observability/UI support | language/build surface and consumers | HOLD |
+| PhenoObservability | canonical observability parent | Sidekick/curated-traces parity and current main | PARENT CANDIDATE |
+| PhenoPlugins | `pheno` plugin crates | verify archived source and tree parity | ARCHIVE-ONLY pending proof |
+| Planify2 | AgilePlus governance consumer | compare specs/tasks and parent ownership | HOLD |
+| PlayCua | desktop/browser automation | consumer graph and standalone release boundary | KEEP-STANDALONE candidate |
+| RepoLedger | registry/AgilePlus governance evidence | exact source refs and target contract | HOLD |
+| ResearchLedger | research/session artifact boundary | relation to SessionLedger/phenoAI | HOLD |
+| Tokn | standalone Rust token library | consumer and API parity with `pheno` | KEEP-STANDALONE candidate |
+| asset-engine | phenotype-apps/graphics boundary | package graph and deployment ownership | HOLD |
+| hfscope | observability/tooling | source size, consumers, duplicate APIs | HOLD |
+| hwLedger | app-plane hardware runtime | existing boundary and OMLX sidecar provenance | KEEP-STANDALONE / archive-only review |
+| nanovms | thegent/PhenoCompose integration | runtime ownership and unique history | HOLD |
+| pheno-rt-spec-probe | pheno spec/test boundary | source refs and consumer contracts | HOLD |
+| phenotype-apps | app-plane parent | deployment surfaces and duplicate sites | KEEP-PARENT candidate |
+| phenotype-hub | integration/product surface | role taxonomy and consumers | HOLD |
+| phenotype-python-sdk | SDK boundary | API compatibility and package ownership | KEEP-STANDALONE candidate |
+| phenotype-journeys | product/workflow surface | relation to AgilePlus and phenotype-apps | HOLD |
+
+This cohort is a research queue only. No archive or merge action is authorized by this table.
+
+## Immediate gates
+
+1. Capture dirty/untracked payloads for SessionLedger, pheno-harness, pheno, sharecli, and
+   Tracera without staging generated caches or secrets.
+2. Repair and revalidate PR #442's schema-review comments before any approval request.
+3. Promote PR #443 through normal review; only then synchronize #441/#442 to materialize
+   `ci / lint` and `ci / test` on their heads.
+4. Keep PR #432 held until the unresolved OMLX gitlink `a7118ed9...` has an immutable,
+   cloud-resolvable owner or is split into an evidence-only packet.
