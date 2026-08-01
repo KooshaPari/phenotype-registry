@@ -28,7 +28,7 @@ canonical implementation of the L37 reloadable-config idiom:
 
 ## Why this crate exists
 
-ADR-095 (June 2026) introduced a Reloadable<T> pattern for hot-reloading
+ADR-095 (June 2026) introduced a `Reloadable<T>` pattern for hot-reloading
 config files in long-lived Phenotype Rust binaries. The pattern was
 implemented inside various repos (pheno, Configra) and consolidated into
 `pheno-runtime-config` for fleet-wide reuse.
