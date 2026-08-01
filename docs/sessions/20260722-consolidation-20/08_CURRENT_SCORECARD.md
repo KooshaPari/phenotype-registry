@@ -34,6 +34,14 @@ finding.
 | Registry reconciliation | BLOCKED | Do not edit `registry/disposition-index.json` until provenance and authorization gates pass |
 | Protected CI promotion | DEFERRED | Resume after contradiction gates and independent registry/CI review are resolved |
 
+## Protected-review checkpoint
+
+PR #443 is ready for review at head `756ee14a9d2df845030ce25b82d48e054098b93a`. Its required
+contexts (`ci / lint`, `ci / test`, and `coverage`) are green, but `main` requires one eligible
+non-author approval. No bypass actors are configured, and current automated reviewers have not
+provided an approval. This is an external governance gate, not evidence that the workflow repair
+is mergeable.
+
 ## Current-state classes
 
 | Class | Count | Safe conclusion | Next proof |
