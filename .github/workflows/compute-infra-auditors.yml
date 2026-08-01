@@ -40,6 +40,8 @@ on:
 
 permissions:
   contents: read
+  actions: read
+  security-events: write
   issues: write
   pull-requests: write
 
