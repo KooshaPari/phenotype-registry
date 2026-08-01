@@ -36,7 +36,7 @@ finding.
 
 ## Protected-review checkpoint
 
-PR #443 is ready for review at head `756ee14a9d2df845030ce25b82d48e054098b93a`. Its required
+PR #443 is ready for review at head `fd898dc17d33251d75d7f91c08d4b7237bc6b263`. Its required
 contexts (`ci / lint`, `ci / test`, and `coverage`) are green, but `main` requires one eligible
 non-author approval. No bypass actors are configured, and current automated reviewers have not
 provided an approval. This is an external governance gate, not evidence that the workflow repair
