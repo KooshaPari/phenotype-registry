@@ -1,6 +1,6 @@
 # Local Estate Inventory and Next Cohort
 
-Evidence timestamp: 2026-08-01 09:42 UTC.
+Evidence timestamp: 2026-08-01 09:49 UTC.
 
 ## Coverage
 
@@ -69,7 +69,7 @@ This cohort is a research queue only. No archive or merge action is authorized b
 1. Capture dirty/untracked payloads for pheno, sharecli, and Tracera without staging generated
    caches or secrets; SessionLedger source-bearing payload is preserved at `ec278e3c` and
    pheno-harness source/evidence payload at `9fdef790`, while both original checkouts remain dirty.
-2. Repair and revalidate PR #442's schema-review comments before any approval request; fix `817a497` is pushed and Kilo re-review is pending.
+2. Revalidate PR #442's ordering fix at head `33e0cdf` before any approval request; Kilo review is pending, two outdated threads remain unresolved, and required contexts are absent.
 3. Promote PR #443 through normal review; only then synchronize #441/#442 to materialize
    `ci / lint` and `ci / test` on their heads.
 4. Keep PR #432 held until the unresolved OMLX gitlink `a7118ed9...` has an immutable,
