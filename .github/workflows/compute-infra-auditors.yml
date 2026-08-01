@@ -40,8 +40,6 @@ on:
 
 permissions:
   contents: read
-  actions: read
-  security-events: write
   issues: write
   pull-requests: write
 
@@ -114,6 +112,7 @@ jobs:
       - name: zizmor (workflow lint)
         uses: zizmorcore/zizmor-action@6fc4b006235f201fdab3722e17240ab420d580e5 # v0.6.1
         with:
+          advanced-security: false
           inputs: |
             ${{ matrix.repo.name }}/.github/workflows
           collect: workflows
