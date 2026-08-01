@@ -9,6 +9,7 @@ Patterns are intentionally high-confidence to avoid blocking ordinary docs.
 from __future__ import annotations
 
 import argparse
+from collections import defaultdict
 import fnmatch
 import os
 import re
@@ -96,6 +97,18 @@ def run_git(args: list[str]) -> list[str]:
     return [line.strip() for line in proc.stdout.splitlines() if line.strip()]
 
 
+def git_diff(args: list[str]) -> str:
+    proc = subprocess.run(
+        ["git", *args],
+        check=True,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+        text=True,
+        errors="replace",
+    )
+    return proc.stdout
+
+
 def repo_root() -> Path:
     return Path(run_git(["rev-parse", "--show-toplevel"])[0])
 
@@ -121,23 +134,9 @@ def is_denied_path(path: str) -> bool:
     return any(fnmatch.fnmatchcase(path, pattern) for pattern in DENIED_PATHS)
 
 
-def scan_file(path: str) -> list[str]:
+def scan_text(text: str, normalized_path: str) -> list[str]:
     findings: list[str] = []
-    normalized_path = normalize(path)
     allowed_labels = SELF_ALLOWED_LABELS.get(normalized_path, set())
-    file_path = Path(path)
-    if not file_path.is_file():
-        return findings
-
-    try:
-        data = file_path.read_bytes()
-    except OSError:
-        return findings
-
-    if b"\0" in data:
-        return findings
-
-    text = data.decode("utf-8", errors="ignore")
     for label, pattern in CONTENT_PATTERNS:
         if label in allowed_labels:
             continue
@@ -152,6 +151,63 @@ def scan_file(path: str) -> list[str]:
     return findings
 
 
+def scan_file(path: str) -> list[str]:
+    file_path = Path(path)
+    if not file_path.is_file():
+        return []
+
+    try:
+        data = file_path.read_bytes()
+    except OSError:
+        return []
+
+    if b"\0" in data:
+        return []
+
+    return scan_text(data.decode("utf-8", errors="ignore"), normalize(path))
+
+
+def diff_arguments(args: argparse.Namespace) -> list[str]:
+    diff = [
+        "diff",
+        "--no-ext-diff",
+        "--no-color",
+        "--unified=0",
+        "--diff-filter=ACMRT",
+        "--format=",
+    ]
+    if args.staged:
+        return [*diff, "--cached"]
+    if args.since_ref:
+        return [*diff, args.since_ref, "HEAD"]
+    return [*diff, "HEAD~1", "HEAD"]
+
+
+def changed_hunks(args: argparse.Namespace) -> dict[str, str]:
+    """Return only added lines for each changed path in a git diff."""
+    if args.files:
+        return {}
+
+    hunks: defaultdict[str, list[str]] = defaultdict(list)
+    current_path: str | None = None
+    in_hunk = False
+    for line in git_diff(diff_arguments(args)).splitlines():
+        if line.startswith("diff --git "):
+            current_path = None
+            in_hunk = False
+            continue
+        if line.startswith("+++ b/"):
+            current_path = normalize(line[6:])
+            continue
+        if line.startswith("@@"):
+            in_hunk = True
+            continue
+        if in_hunk and current_path and line.startswith("+"):
+            hunks[current_path].append(line[1:])
+
+    return {path: "\n".join(lines) for path, lines in hunks.items()}
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description="Block changed files that look like secrets or prompt dumps.")
     parser.add_argument("--staged", action="store_true", help="Scan staged files.")
@@ -163,6 +219,7 @@ def main() -> int:
         os.chdir(repo_root())
 
     paths = sorted(set(changed_files(args)))
+    changed_content = changed_hunks(args)
     failures: list[str] = []
 
     for path in paths:
@@ -170,7 +227,11 @@ def main() -> int:
             failures.append(f"{path}: blocked path for secrets/PII risk")
             continue
 
-        findings = scan_file(path)
+        findings = (
+            scan_file(path)
+            if args.files
+            else scan_text(changed_content.get(path, ""), path)
+        )
         if findings:
             labels = ", ".join(sorted(set(findings)))
             failures.append(f"{path}: potential secret pattern ({labels})")
