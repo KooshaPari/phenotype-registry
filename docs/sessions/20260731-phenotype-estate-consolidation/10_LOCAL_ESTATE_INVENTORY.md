@@ -1,6 +1,6 @@
 # Local Estate Inventory and Next Cohort
 
-Evidence timestamp: 2026-08-01 09:12 UTC.
+Evidence timestamp: 2026-08-01 09:31 UTC.
 
 ## Coverage
 
@@ -23,7 +23,7 @@ separately.
 | AgilePlus | `main@16da102a`, clean after Airlock stash recovery | `wip/preserve-20260801/agileplus-dirty-0605` and Airlock `wip/20260801T0622-18c79a33f7004e48` | captured in committed recovery tip |
 | Tracera | `preserve/tracera-dirty-wave-20260729@d334cd5`, 76 dirty | `wip/20260801T0834-18c7a16c00a168a8` -> `d334cd5` | remaining dirty/untracked files not captured |
 | SessionLedger | `main@7b1c243e`, 19 tracked + 17 untracked dirty | `wip/20260801T0545-18c7982ff4167f78` -> `7b1c243e`; recovery `wip/preserve-20260801/sessionledger-dirty-capture-0902` -> `ec278e3c`; immutable `a5d315ba` Airlock ref | 21 source paths captured; 15 generated coverage/mutation files excluded; original checkout remains dirty |
-| pheno-harness | `fix/pheno-harness-runner-provenance@4131b7c`, 51 dirty | `wip/20260801T0545-18c798307b9e40c0` -> `4131b7c` | remaining dirty/untracked files not captured |
+| pheno-harness | `fix/pheno-harness-runner-provenance@4131b7c`, 2 tracked + 49 untracked dirty | `wip/20260801T0545-18c798307b9e40c0` -> `4131b7c`; recovery `wip/preserve-20260801/pheno-harness-dirty-capture-0902` -> `9fdef790` | 90 source/spec/test/kernel/evidence paths captured; `PRESERVATION_EXCLUSIONS.md` records generated/cache/worktree exclusions; original checkout remains dirty |
 | pheno | `main@be5da947`, 16 dirty | `wip/20260801T0545-18c79831061b87d0` -> `be5da947` | remaining dirty/untracked files not captured |
 | sharecli | `fix/runtime-openapi-drift@b8eeeb2`, 22 dirty and 8 stashes | `wip/20260801T0545-18c798318ac38d70` -> `b8eeeb2` | stashes/dirty files remain pending capture |
 | forgecode | `preserve/workflow-schema-wave-20260729@aa25f50e`, clean after Airlock stash recovery | `wip/preserve-20260801/forgecode-dirty-0605` and Airlock `wip/20260801T0622-18c79a346ecd6370` | captured in committed recovery tip; fork remote used because origin is upstream-only |
@@ -66,9 +66,9 @@ This cohort is a research queue only. No archive or merge action is authorized b
 
 ## Immediate gates
 
-1. Capture dirty/untracked payloads for pheno-harness, pheno, sharecli, and Tracera without
-   staging generated caches or secrets; SessionLedger source-bearing payload is now preserved
-   at `ec278e3c` while its original checkout remains dirty.
+1. Capture dirty/untracked payloads for pheno, sharecli, and Tracera without staging generated
+   caches or secrets; SessionLedger source-bearing payload is preserved at `ec278e3c` and
+   pheno-harness source/evidence payload at `9fdef790`, while both original checkouts remain dirty.
 2. Repair and revalidate PR #442's schema-review comments before any approval request; fix `817a497` is pushed and Kilo re-review is pending.
 3. Promote PR #443 through normal review; only then synchronize #441/#442 to materialize
    `ci / lint` and `ci / test` on their heads.

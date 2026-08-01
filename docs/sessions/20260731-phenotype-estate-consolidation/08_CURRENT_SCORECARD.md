@@ -1,6 +1,6 @@
 # Current Estate Scorecard
 
-Evidence timestamp: 2026-08-01 09:12 UTC. GitHub values take precedence over stale local tracking refs.
+Evidence timestamp: 2026-08-01 09:31 UTC. GitHub values take precedence over stale local tracking refs.
 
 | Repo | Local HEAD/state | Authoritative remote evidence | Grade | Gate |
 |---|---|---|---:|---|
@@ -11,6 +11,7 @@ Evidence timestamp: 2026-08-01 09:12 UTC. GitHub values take precedence over sta
 | portage | `65e9ae47`; 2 dirty | `main=b35d00454fa8`; #495 dirty and required checks red | D | repair security/lint/type/test/verify |
 | phenotype-registry | `097051e`; 6 dirty entries (5 docs + OMLX gitlink); governance packet committed | `main=052c5eff4856`; #441 `040eb7d`, #442 `817a497`, #443 `756ee14`; #432 blocked by unresolved OMLX gitlink | C+ | promote CI repair through normal governance, then synchronize/review promotion PRs |
 | SessionLedger | `7b1c243e`; 19 tracked + 17 untracked dirty; 99 local heads | `main=71a781ff3a97`; recovery `wip/preserve-20260801/sessionledger-dirty-capture-0902` -> `ec278e3c`; #391 behind with visual/e2e/provenance failures | D+ | preserve remaining generated/local payloads, then rebase/repair |
+| pheno-harness | `fix/pheno-harness-runner-provenance@4131b7c`; 2 tracked + 49 untracked dirty | source branch head `4131b7c`; recovery `wip/preserve-20260801/pheno-harness-dirty-capture-0902` -> `9fdef790`; exclusion manifest committed | C+ | preserve linked worktree separately, then evaluate harness/tooling boundary |
 | phenoAI | `a73ac4d`; 9 behind/5 ahead; 1 dirty | `main=751a8e77f854`; #69/#70 unstable | C- | stabilize CI/coverage |
 | phenotype-omlx | `31cada2d`; 1 dirty; feature branch behind 29 | `main=c88431ad6004`; recovery ref `wip/preserve-20260801/phenotype-omlx/recovery--phenotype-omlx-local-20260726` at `8a1150f` | C+ | keep archive-only boundary; finish parity/provenance proof |
 
