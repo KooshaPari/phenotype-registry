@@ -13,7 +13,20 @@ P0 inventory
                                   -> P9 sponsor-approved archive/tombstone
 
 D1 semantic dedup -> D2 contract/parity fixture -> D3 spec review -> D4 quality review
-A0 thegent-sharecli unarchive request -> A1 publish preserved contract after access returns
+A0 thegent-sharecli archive-only lineage -> A1 parity fixture -> A2 sponsor gate
+
+2026-08-01 tranche:
+  C0 source-bearing dirty capture (5/5 cloud refs)
+    -> C1 parent-boundary proof (Tracera + sharecli complete; pheno pending)
+      -> C2 update registry scorecard/DAG (this commit)
+        -> C3 protected PR promotion (#443 -> #441/#442 synchronization)
+          -> C4 residual generated/local classification
+            -> C5 sponsor-gated merge/archive packets
+
+Boundary lanes:
+  Tracera KEEP standalone -- PhenoObservability producer contract -- Grapheon lineage diff
+  sharecli KEEP Rust runtime -- thegent-sharecli archive-only -- coordination parity fixture
+  pheno AgilePlus/HexaKit parent hypothesis -- crate/API/consumer proof -- sponsor gate
 ```
 
 | ID | Tag | Work item | Exit evidence |
@@ -28,5 +41,11 @@ A0 thegent-sharecli unarchive request -> A1 publish preserved contract after acc
 | P7 | [G] | Dogfood | reproducible local/installed run |
 | D1-D4 | [P]/[G] | Dedup and reviews | contract plus two reviewer approvals |
 | P9 | [G] | Archive/tombstone | sponsor-approved reversible packet |
+| C0 | [ok] | Capture SessionLedger, pheno-harness, Tracera, sharecli, and pheno dirty payloads | immutable recovery refs: `ec278e3c`, `9fdef790`, `47ef7f41`, `08ad5d10`, `6140133` |
+| C1 | [wip] | Prove parent boundaries for captured lanes | Tracera KEEP and sharecli KEEP/ARCHIVE_ONLY decisions recorded; pheno audit pending |
+| C2 | [ok] | Refresh scorecard, known issues, inventory, and this DAG | commits `d277759`, `712f43d`; Airlock snapshot required before turn end |
+| C3 | [wip] | Promote protected workflow repair, then synchronize #441/#442 | #443 required checks green; ordinary approval, docs/secret baseline, and protected merge remain |
+| C4 | [pending] | Classify residual generated/local payloads and stash provenance | exclusion manifests plus per-lane reconstitution plan |
+| C5 | [hold] | Merge/archive/tombstone packets | sponsor approval, green protected checks, and reversible evidence |
 
 AgilePlus is a governance dependency, not a prerequisite for preserving source state. AgilePlus's checked-in DB could not open WAL on the full volume; planning used an isolated DB and the limitation is recorded in session overview.
