@@ -2882,8 +2882,8 @@
       "path": "KooshaPari/scripts",
       "remote_branch_count": 1,
       "size_kb": 6,
-      "source_remote_archived": true,
       "source_artifact": "manual:2026-07-17",
+      "source_remote_archived": true,
       "target": "phenotype-tooling (bin/legacy-scripts/)",
       "wave": "2026-07-17-queue-refresh-2"
     },
@@ -2907,8 +2907,8 @@
       "path": "KooshaPari/curated-traces",
       "remote_branch_count": 1,
       "size_kb": 6642,
-      "source_remote_archived": true,
       "source_artifact": "manual:2026-07-17",
+      "source_remote_archived": true,
       "target": "PhenoObservability (curated-traces/)",
       "wave": "2026-07-17-queue-refresh-2"
     },
