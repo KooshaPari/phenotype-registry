@@ -32,6 +32,8 @@ Archived thegent-sharecli is blocked pending sponsor-approved unarchive request.
 | phenotype-tooling | `recovery/phenotype-tooling-plugins-20260726` | `wip/preserve-20260801/phenotype-tooling/recovery--phenotype-tooling-plugins-20260726` | `fd51689ac8c0cf1f2b6ae58e6cc97efd7709be3e` |
 | phenotype-tooling | `wip/2026-07-22-phenotype-tooling-absorbed-go-mod` | `wip/preserve-20260801/phenotype-tooling/wip--2026-07-22-phenotype-tooling-absorbed-go-mod` | `5b854782b2e27021336c67379fa59ab5c77c491b` |
 | portage | `feat/cross-repo-audit-fixes` | `wip/preserve-20260801/portage/feat--cross-repo-audit-fixes` | `8c0c2700aab908adc432f8f0da3cd277dba72846` |
-| SessionLedger | `fix/sessionledger-forward-candidate` | `wip/preserve-20260801/sessionledger/fix--sessionledger-forward-candidate` | `a5d315ba1d6df5f47d81a978b81deac5238dcf38` |
+| SessionLedger | `fix/sessionledger-forward-candidate` | `wip/20260801T0339-18c79151e6bc0418` (Airlock immutable snapshot) | `a5d315ba1d6df5f47d81a978b81deac5238dcf38` |
 | phenoAI | `fix/phenoai-trunk-action-pin` | `wip/preserve-20260801/phenoai/fix--phenoai-trunk-action-pin` | `45b09e7f9a96f321113401cc98f3e5c461df2c90` |
 | phenotype-omlx | `recovery/phenotype-omlx-local-20260726` | `wip/preserve-20260801/phenotype-omlx/recovery--phenotype-omlx-local-20260726` | `8a1150f831b24b5fb673ec3fde8ed71a335f484d` |
+
+The namespaced SessionLedger preservation branch remains cloud-published but advanced to current source `fc541038446b3ff8953fe97138ebf7bb1d2e1fc9`; the original `a5d315ba` payload is preserved immutably by the Airlock ref above. This is provenance repair, not a force-push or deletion.
