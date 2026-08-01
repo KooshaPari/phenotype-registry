@@ -9,13 +9,13 @@
 After explicit sponsor approval, archive the repository (if not already archived):
 
 ```zsh
-gh repo edit KooshaPari/pheno-errors --archived=true
+gh repo archive KooshaPari/pheno-errors --yes
 ```
 
 Rollback is:
 
 ```zsh
-gh repo edit KooshaPari/pheno-errors --archived=false
+gh repo unarchive KooshaPari/pheno-errors --yes
 ```
 
 No remote mutation (archive, delete, or history rewrite) was performed by this packet.
