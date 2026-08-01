@@ -23,7 +23,7 @@ Evidence timestamp: 2026-08-01 09:49 UTC. GitHub values take precedence over sta
 - Archive/tombstone: none performed; all actions remain sponsor-gated.
 - AgilePlus governance: feature is specified/researched/planned in isolated DB, but validation is `0/6` evidence items until CI/review artifacts are attached.
 - AgilePlus governance mirror is cloud-published at `ad2a1b0705dbadaa5a46af6d0307a2caebc6f84`; the ignored local DB remains supplemental evidence only.
-- Registry governance packet is cloud-published through Airlock branch `wip/20260801T0945-18c7a54c94a57d30` at the latest scorecard snapshot.
+- Registry governance packet is cloud-published through Airlock branch `wip/20260801T0950-18c7a592e2b11b88` at the latest scorecard snapshot.
 
 ## Promotion lanes
 
