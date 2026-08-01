@@ -1,6 +1,6 @@
 # Current Estate Scorecard
 
-Evidence timestamp: 2026-08-01 02:26 UTC. GitHub values take precedence over stale local tracking refs.
+Evidence timestamp: 2026-08-01 04:56 UTC. GitHub values take precedence over stale local tracking refs.
 
 | Repo | Local HEAD/state | Authoritative remote evidence | Grade | Gate |
 |---|---|---|---:|---|
@@ -9,7 +9,7 @@ Evidence timestamp: 2026-08-01 02:26 UTC. GitHub values take precedence over sta
 | Tracera | `d58df9a13`; 105 dirty preserve files; 141 local heads | `main=774c0061e886`; clean candidate `3abfa031b92d653bb1050a0a7d18875c94684861`; draft PR #771 | C+ | smoke/Vercel failures; remaining hosted checks queued |
 | phenotype-tooling | `5b854782`; 76 ahead stale local main; 2 dirty | `main=587805e38800`; #252 merged, branch 57 ahead/9 behind current main | C | classify post-merge branch |
 | portage | `65e9ae47`; 2 dirty | `main=b35d00454fa8`; #495 dirty and required checks red | D | repair security/lint/type/test/verify |
-| phenotype-registry | `429e808`; 5 unrelated dirty files; governance packet committed | `main=052c5eff4856`; #441/#442 blocked by Actions/protection mismatch; #432 blocked by unresolved OMLX gitlink | C | repair CI/protection and reconcile authoritative ledger |
+| phenotype-registry | `c0c36c9`; 5 unrelated dirty files; governance packet committed | `main=052c5eff4856`; #441 `040eb7d`, #442 `ab2a6a9`, #443 `756ee14`; #432 blocked by unresolved OMLX gitlink | C+ | promote CI repair through normal governance, then synchronize and review promotion PRs |
 | SessionLedger | `7b1c243e`; 23 dirty; 99 local heads | `main=71a781ff3a97`; #391 behind with visual/e2e/provenance failures | D | preserve, rebase, repair |
 | phenoAI | `a73ac4d`; 9 behind/5 ahead; 1 dirty | `main=751a8e77f854`; #69/#70 unstable | C- | stabilize CI/coverage |
 | phenotype-omlx | `58cd8768`; 2 dirty; 242 local heads | remote main unavailable from current origin transport; prior comparison 44 ahead/15 behind | C+ | rebase and parity proof |
@@ -28,8 +28,8 @@ Evidence timestamp: 2026-08-01 02:26 UTC. GitHub values take precedence over sta
 
 | PR | Head | Scope | Current disposition |
 |---|---|---|---|
-| #441 | `6b90cd4` | pheno-errors reversible tombstone evidence | content-ready; hold for human approval and missing required CI contexts |
-| #442 | `6388f26` | four-source provenance metadata | additive and live-verified; hold for human approval and missing required CI contexts |
+| #441 | `040eb7d` | pheno-errors reversible tombstone evidence | content-ready; required contexts await CI repair promotion and human approval |
+| #442 | `ab2a6a9` | four-source provenance metadata | additive and live-verified; required contexts await CI repair promotion and human approval |
 | #432 | `495d69b9` | broad absorption/OMLX preservation packet | hold/rework; `phenotype-omlx` gitlink `a7118ed9...` is not cloud-resolvable |
 | #443 | `756ee14` | coverage workflow recovery trigger and protected check names | draft maintenance PR; `ci / lint` and `ci / test` pass on its head; unrelated secret-guard baseline remains red |
 
