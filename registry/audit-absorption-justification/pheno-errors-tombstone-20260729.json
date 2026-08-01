@@ -92,7 +92,7 @@
     ]
   },
   "rollback": {
-    "unarchive_command": "gh api -X PATCH repos/KooshaPari/pheno-errors -f archived=false",
+    "unarchive_command": "gh repo edit KooshaPari/pheno-errors --archived=false",
     "restore_verification": "git clone https://github.com/KooshaPari/pheno-errors.git && git -C pheno-errors fetch origin '+refs/heads/*:refs/remotes/origin/*' && test \"$(git -C pheno-errors rev-parse origin/main)\" = 01b850e4b9f8ba8ed667c34f35fa46d7cef37214",
     "branch_restore": "git -C pheno-errors fetch origin audit/ownership-20260722-pheno-errors",
     "warning": "Do not execute unarchive or delete without sponsor authorization; archived state is reversible."
