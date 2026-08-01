@@ -62,7 +62,7 @@ erDiagram
 | event_type | String | "state_transitioned", "created", "synced", "conflict_resolved", etc. |
 | payload | JSON | Event-specific data (serde_json::Value) |
 | actor | String | User, agent name, or "system" |
-| timestamp | DateTime<Utc> | Event time |
+| timestamp | `DateTime<Utc>` | Event time |
 | prev_hash | [u8; 32] | Hash of previous event in entity stream |
 | hash | [u8; 32] | SHA-256(entity_id + event_type + payload + timestamp + actor + prev_hash) |
 | sequence | i64 | Per-entity monotonic sequence number |
