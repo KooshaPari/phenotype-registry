@@ -19,6 +19,7 @@ env:
 
 jobs:
   lint:
+    name: ci / lint
     if: ${{ !contains(vars.SKIP || '', 'lint') }}
     runs-on: ubuntu-latest
     steps:
@@ -26,6 +27,7 @@ jobs:
       - name: Run lint
         run: echo "Running language-specific lint"
   test:
+    name: ci / test
     if: ${{ !contains(vars.SKIP || '', 'test') }}
     runs-on: ubuntu-latest
     steps:
