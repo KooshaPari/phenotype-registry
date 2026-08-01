@@ -1,6 +1,6 @@
 # Local Estate Inventory and Next Cohort
 
-Evidence timestamp: 2026-08-01 09:31 UTC.
+Evidence timestamp: 2026-08-01 09:42 UTC.
 
 ## Coverage
 
@@ -22,8 +22,8 @@ separately.
 |---|---|---|---|
 | AgilePlus | `main@16da102a`, clean after Airlock stash recovery | `wip/preserve-20260801/agileplus-dirty-0605` and Airlock `wip/20260801T0622-18c79a33f7004e48` | captured in committed recovery tip |
 | Tracera | `preserve/tracera-dirty-wave-20260729@d334cd5`, 76 dirty | `wip/20260801T0834-18c7a16c00a168a8` -> `d334cd5` | remaining dirty/untracked files not captured |
-| SessionLedger | `main@7b1c243e`, 19 tracked + 17 untracked dirty | `wip/20260801T0545-18c7982ff4167f78` -> `7b1c243e`; recovery `wip/preserve-20260801/sessionledger-dirty-capture-0902` -> `ec278e3c`; immutable `a5d315ba` Airlock ref | 21 source paths captured; 15 generated coverage/mutation files excluded; original checkout remains dirty |
-| pheno-harness | `fix/pheno-harness-runner-provenance@4131b7c`, 2 tracked + 49 untracked dirty | `wip/20260801T0545-18c798307b9e40c0` -> `4131b7c`; recovery `wip/preserve-20260801/pheno-harness-dirty-capture-0902` -> `9fdef790` | 90 source/spec/test/kernel/evidence paths captured; `PRESERVATION_EXCLUSIONS.md` records generated/cache/worktree exclusions; original checkout remains dirty |
+| SessionLedger | `main@7b1c243e`, 19 tracked + 4 untracked entries (17 files) | `wip/20260801T0545-18c7982ff4167f78` -> `7b1c243e`; recovery `wip/preserve-20260801/sessionledger-dirty-capture-0902` -> `ec278e3c`; immutable `a5d315ba` Airlock ref | 21 source paths captured; 15 generated coverage/mutation files excluded; original checkout remains dirty |
+| pheno-harness | `fix/pheno-harness-runner-provenance@4131b7c`, 2 tracked + 52 untracked entries | `wip/20260801T0545-18c798307b9e40c0` -> `4131b7c`; recovery `wip/preserve-20260801/pheno-harness-dirty-capture-0902` -> `9fdef790` | 90 source/spec/test/kernel/evidence paths captured; `PRESERVATION_EXCLUSIONS.md` records generated/cache/worktree exclusions; original checkout remains dirty |
 | pheno | `main@be5da947`, 16 dirty | `wip/20260801T0545-18c79831061b87d0` -> `be5da947` | remaining dirty/untracked files not captured |
 | sharecli | `fix/runtime-openapi-drift@b8eeeb2`, 22 dirty and 8 stashes | `wip/20260801T0545-18c798318ac38d70` -> `b8eeeb2` | stashes/dirty files remain pending capture |
 | forgecode | `preserve/workflow-schema-wave-20260729@aa25f50e`, clean after Airlock stash recovery | `wip/preserve-20260801/forgecode-dirty-0605` and Airlock `wip/20260801T0622-18c79a346ecd6370` | captured in committed recovery tip; fork remote used because origin is upstream-only |
