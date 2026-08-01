@@ -62,6 +62,13 @@ parent is a hypothesis until code/spec parity is proven.
 | phenotype-python-sdk | SDK boundary | API compatibility and package ownership | KEEP-STANDALONE candidate |
 | phenotype-journeys | product/workflow surface | relation to AgilePlus and phenotype-apps | HOLD |
 
+## Boundary-audit results (no mutation authorized)
+
+| Surface | Evidence-backed disposition | Remaining proof gate |
+|---|---|---|
+| Tracera | KEEP standalone durable trace/evidence/audit consumer; interoperate with PhenoObservability producer and Agentora envelopes by explicit contracts | producer metadata/envelope schema, SQLite+PG route/store parity, replay provenance, consumer inventory, then sponsor gate |
+| sharecli | KEEP Rust runtime as canonical; preserve `thegent-sharecli` as archive-only lineage and label `thegent/sharecli` as an unproven Python facade | run `coordination-lock-queue-v1` parity fixture; reconcile archived-repo and registry boundary-doc contradiction; sponsor gate before extraction/archive |
+
 This cohort is a research queue only. No archive or merge action is authorized by this table.
 
 ## Immediate gates

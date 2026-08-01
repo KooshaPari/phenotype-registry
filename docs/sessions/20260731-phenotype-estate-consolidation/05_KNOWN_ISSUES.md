@@ -7,6 +7,8 @@
 | Baseline | PR #771 hosted failures currently resolve to frontend `@tracertm/web` build exit, missing `trunk-action` revision, and pre-existing `tracera-cli` formatting drift; no failure points at the two candidate files | keep PR draft; repair or quarantine baseline gates before promotion |
 | Blocker | OmniRoute, portage, SessionLedger, phenoAI, and registry PR gates are failing or behind | repair only after current-main reconciliation |
 | Blocker | thegent-sharecli is archived/read-only | request unarchive; do not create an alternate repo |
+| High | sharecli and thegent-sharecli overlap vocabulary but not implementation/provenance; registry boundary docs disagree on absorption | keep Rust sharecli canonical, preserve archived Python lineage, run the parity fixture and reconcile docs before any extraction/archive |
+| High | Tracera and Grapheon share lineage and route vocabulary while diverging in APIs/history; Tracera consumes PhenoObservability metadata rather than implementing its substrate | keep both preserved and standalone; complete API/DB/consumer/lineage diff before any archive or merge |
 | High | AgilePlus checked-in SQLite DB fails WAL pragma with disk I/O error | use isolated DB; retain existing dirty snapshot; do not delete DB files |
 | High | Workspace has critically low free space | route heavy builds to isolated target/cache or heavy runner |
 | Non-blocker | Tracera workspace-wide format check has pre-existing `tracera-cli` drift | keep focused fixture gate separate and record baseline debt |
