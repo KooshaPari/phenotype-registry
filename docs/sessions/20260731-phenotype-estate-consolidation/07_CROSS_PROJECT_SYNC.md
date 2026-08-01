@@ -13,3 +13,10 @@
 | AgilePlus | remain parked; governance spec recorded | no active merge train | sponsor reactivation only |
 
 Archived thegent-sharecli is blocked pending sponsor-approved unarchive request.
+
+## Current ordering
+
+1. Hold PR #432 and split or repair the unresolved OMLX preservation pointer.
+2. Let additive PR #442 precede any broad absorption work once Actions/protection and one human approval are resolved.
+3. Keep PR #441 content-only and reversible; do not archive or delete `pheno-errors` from this packet.
+4. Rebase broad absorption work only after the provenance lane is authoritative.
