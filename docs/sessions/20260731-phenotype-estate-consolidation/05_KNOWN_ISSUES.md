@@ -11,6 +11,6 @@
 | High | Workspace has critically low free space | route heavy builds to isolated target/cache or heavy runner |
 | Non-blocker | Tracera workspace-wide format check has pre-existing `tracera-cli` drift | keep focused fixture gate separate and record baseline debt |
 | Blocker | AgilePlus governance validation currently finds 0/6 required CI/review evidence items | attach remote CI and review artifacts before implementing/validating the feature |
-| Blocker | phenotype-registry Actions are enabled and `coverage.yml` is active, but synchronized PR heads still produce no `ci / lint` or `ci / test` contexts | repair the workflow trigger/manual-dispatch path or replace stale required contexts; do not treat PR #441, #442, or #432 as merge-ready |
+| Blocker | phenotype-registry Actions are enabled and PR #443 proves `ci / lint` and `ci / test`, but #441/#442 still need a post-#443 synchronization; #443 also exposes unrelated secret-guard drift in `compute-infra-auditors.yml` | merge/review the workflow repair through normal governance, then synchronize promotion PRs; keep unrelated action pinning separate |
 | Blocker | PR #432 contains an unresolved `phenotype-omlx` gitlink at `a7118ed9...` with no live remote ref | split the preservation pointer or publish a verifiable immutable ref before any promotion |
 | Deferred | AgilePlus reactivation and any archive/delete action | sponsor gate only |
