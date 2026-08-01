@@ -68,6 +68,8 @@ parent is a hypothesis until code/spec parity is proven.
 |---|---|---|
 | Tracera | KEEP standalone durable trace/evidence/audit consumer; interoperate with PhenoObservability producer and Agentora envelopes by explicit contracts | producer metadata/envelope schema, SQLite+PG route/store parity, replay provenance, consumer inventory, then sponsor gate |
 | sharecli | KEEP Rust runtime as canonical; preserve `thegent-sharecli` as archive-only lineage and label `thegent/sharecli` as an unproven Python facade | run `coordination-lock-queue-v1` parity fixture; reconcile archived-repo and registry boundary-doc contradiction; sponsor gate before extraction/archive |
+| pheno nested AgilePlus | HOLD duplicate shelf; canonical parent remains standalone `AgilePlus` (2,012 of 2,016 captured paths path-identical) | recover ignored Cargo manifests/locks and compare source SHA/API/test provenance before any branch or tombstone action |
+| pheno nested HexaKit | HOLD blanket absorption; canonical parent remains standalone `HexaKit` bootstrap/template workspace; route 14 overlapping crate names individually | recover ignored manifests and prove API/dependency/test parity per crate; reconcile source `BOUNDARY.md` with registry disposition |
 
 This cohort is a research queue only. No archive or merge action is authorized by this table.
 
@@ -76,8 +78,10 @@ This cohort is a research queue only. No archive or merge action is authorized b
 1. All five dirty lanes now have cloud recovery refs: SessionLedger (`ec278e3c`), pheno-harness
    (`9fdef790`), Tracera (`47ef7f41`), sharecli (`08ad5d10`), and pheno (`6140133`). Classify
    residual generated/local state and parent-boundary semantics before any merge/archive action.
-2. Revalidate PR #442's ordering fix at head `33e0cdf` before any approval request; Kilo review passes and all review threads are resolved, but required contexts are absent and docs/secret-guard/trufflehog fail.
-3. Promote PR #443 through normal review (Kilo pass; human approval and baseline failures remain);
+   The pheno ref is preservation-only: nested Cargo manifests were ignored and must be force-added
+   in a follow-up source capture before build or absorption claims.
+2. Revalidate PR #442's ordering fix at head `33e0cdf`; Kilo review passes and all review threads are resolved, but required contexts are absent and docs/secret-guard fail (current trufflehog passes).
+3. Repair the concrete #443 blockers (VitePress parse error and unpinned actions), then
    only then synchronize #441/#442 to materialize `ci / lint` and `ci / test` on their heads.
 4. Keep PR #432 held until the unresolved OMLX gitlink `a7118ed9...` has an immutable,
    cloud-resolvable owner or is split into an evidence-only packet.

@@ -17,7 +17,7 @@ A0 thegent-sharecli archive-only lineage -> A1 parity fixture -> A2 sponsor gate
 
 2026-08-01 tranche:
   C0 source-bearing dirty capture (5/5 cloud refs)
-    -> C1 parent-boundary proof (Tracera + sharecli complete; pheno pending)
+    -> C1 parent-boundary proof (Tracera + sharecli + pheno disposition complete)
       -> C2 update registry scorecard/DAG (this commit)
         -> C3 protected PR promotion (#443 -> #441/#442 synchronization)
           -> C4 residual generated/local classification
@@ -39,13 +39,13 @@ Boundary lanes:
 | P5 | [P] | Repair required checks/reviews | green required checks |
 | P6 | [G] | Merge | protected-branch merge SHA |
 | P7 | [G] | Dogfood | reproducible local/installed run |
-| D1-D4 | [P]/[G] | Dedup and reviews | contract plus two reviewer approvals |
+| D1-D4 | [P]/[G] | Dedup and reviews | contract evidence plus required governance review |
 | P9 | [G] | Archive/tombstone | sponsor-approved reversible packet |
 | C0 | [ok] | Capture SessionLedger, pheno-harness, Tracera, sharecli, and pheno dirty payloads | immutable recovery refs: `ec278e3c`, `9fdef790`, `47ef7f41`, `08ad5d10`, `6140133` |
-| C1 | [wip] | Prove parent boundaries for captured lanes | Tracera KEEP and sharecli KEEP/ARCHIVE_ONLY decisions recorded; pheno audit pending |
+| C1 | [ok] | Prove parent boundaries for captured lanes | Tracera KEEP standalone; sharecli KEEP Rust/archive-only Python; AgilePlus and HexaKit HOLD standalone |
 | C2 | [ok] | Refresh scorecard, known issues, inventory, and this DAG | commits `d277759`, `712f43d`; Airlock snapshot required before turn end |
-| C3 | [wip] | Promote protected workflow repair, then synchronize #441/#442 | #443 required checks green; ordinary approval, docs/secret baseline, and protected merge remain |
-| C4 | [pending] | Classify residual generated/local payloads and stash provenance | exclusion manifests plus per-lane reconstitution plan |
+| C3 | [wip] | Repair #443 docs/secret blockers, then synchronize #441/#442 | `ci / lint`, `ci / test`, and coverage green; VitePress parse + unpinned-action failures remain |
+| C4 | [wip] | Classify residual generated/local payloads and stash provenance | pheno follow-up must force-add ignored manifests; SessionLedger mutation output remains excluded; sharecli post-capture file changed |
 | C5 | [hold] | Merge/archive/tombstone packets | sponsor approval, green protected checks, and reversible evidence |
 
 AgilePlus is a governance dependency, not a prerequisite for preserving source state. AgilePlus's checked-in DB could not open WAL on the full volume; planning used an isolated DB and the limitation is recorded in session overview.

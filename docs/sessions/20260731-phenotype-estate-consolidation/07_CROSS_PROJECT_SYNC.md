@@ -17,7 +17,7 @@ Archived thegent-sharecli is blocked pending sponsor-approved unarchive request.
 ## Current ordering
 
 1. Hold PR #432 and split or repair the unresolved OMLX preservation pointer.
-2. Let additive PR #442 precede any broad absorption work once Actions/protection and one human approval are resolved.
+2. Let additive PR #442 precede any broad absorption work once Actions/protection contexts are green; current branch protection requires no approving review, while sponsor approval remains mandatory for archive/tombstone decisions.
 3. Keep PR #441 content-only and reversible; do not archive or delete `pheno-errors` from this packet.
 4. Rebase broad absorption work only after the provenance lane is authoritative.
 
