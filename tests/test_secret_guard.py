@@ -98,6 +98,14 @@ class SecretGuardChangedContentTests(unittest.TestCase):
         self.assertEqual(result.returncode, 1)
         self.assertIn("blocked path for secrets/PII risk", result.stdout)
 
+    def test_option_like_revision_is_rejected(self) -> None:
+        self.commit("registry/index.json", '{"version": 1}\n', "baseline")
+
+        result = self.run_guard("--since-ref=-bad")
+
+        self.assertEqual(result.returncode, 2)
+        self.assertIn("invalid git revision", result.stderr)
+
 
 if __name__ == "__main__":
     unittest.main()

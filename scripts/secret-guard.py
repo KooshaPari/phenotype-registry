@@ -70,6 +70,8 @@ SELF_ALLOWED_LABELS = {
     "scripts/secret-guard.py": {"raw chat export marker"},
 }
 
+REVISION_PATTERN = re.compile(r"^[A-Za-z0-9][A-Za-z0-9._/~^-]*$")
+
 
 def luhn_valid(candidate: str) -> bool:
     digits = [int(ch) for ch in re.sub(r"\D", "", candidate)]
@@ -97,9 +99,41 @@ def run_git(args: list[str]) -> list[str]:
     return [line.strip() for line in proc.stdout.splitlines() if line.strip()]
 
 
-def git_diff(args: list[str]) -> str:
+def validated_revision(revision: str) -> str:
+    """Resolve a user-supplied revision before using it in a diff command."""
+    if revision.startswith("-") or not REVISION_PATTERN.fullmatch(revision):
+        raise ValueError("invalid git revision")
+
+    resolved = run_git(
+        ["rev-parse", "--verify", "--end-of-options", f"{revision}^{{commit}}"]
+    )
+    if not resolved:
+        raise ValueError("git revision does not resolve to a commit")
+    return resolved[0]
+
+
+def diff_range(args: argparse.Namespace) -> list[str]:
+    if args.staged:
+        return ["--cached"]
+    if args.since_ref:
+        return [validated_revision(args.since_ref), "HEAD"]
+    return ["HEAD~1", "HEAD"]
+
+
+def git_diff(args: argparse.Namespace) -> str:
+    command = [
+        "git",
+        "diff",
+        "--no-ext-diff",
+        "--no-color",
+        "--unified=0",
+        "--diff-filter=ACMRT",
+        "--format=",
+        *diff_range(args),
+        "--",
+    ]
     proc = subprocess.run(
-        ["git", *args],
+        command,
         check=True,
         stdout=subprocess.PIPE,
         stderr=subprocess.PIPE,
@@ -125,7 +159,12 @@ def changed_files(args: argparse.Namespace) -> list[str]:
         return [normalize(path) for path in run_git(["diff", "--cached", "--name-only", "--diff-filter=ACMRT"])]
 
     if args.since_ref:
-        return [normalize(path) for path in run_git(["diff", "--name-only", "--diff-filter=ACMRT", args.since_ref, "HEAD"])]
+        return [
+            normalize(path)
+            for path in run_git(
+                ["diff", "--name-only", "--diff-filter=ACMRT", *diff_range(args), "--"]
+            )
+        ]
 
     return [normalize(path) for path in run_git(["diff", "--name-only", "--diff-filter=ACMRT", "HEAD~1", "HEAD"])]
 
@@ -167,22 +206,6 @@ def scan_file(path: str) -> list[str]:
     return scan_text(data.decode("utf-8", errors="ignore"), normalize(path))
 
 
-def diff_arguments(args: argparse.Namespace) -> list[str]:
-    diff = [
-        "diff",
-        "--no-ext-diff",
-        "--no-color",
-        "--unified=0",
-        "--diff-filter=ACMRT",
-        "--format=",
-    ]
-    if args.staged:
-        return [*diff, "--cached"]
-    if args.since_ref:
-        return [*diff, args.since_ref, "HEAD"]
-    return [*diff, "HEAD~1", "HEAD"]
-
-
 def changed_hunks(args: argparse.Namespace) -> dict[str, str]:
     """Return only added lines for each changed path in a git diff."""
     if args.files:
@@ -191,7 +214,7 @@ def changed_hunks(args: argparse.Namespace) -> dict[str, str]:
     hunks: defaultdict[str, list[str]] = defaultdict(list)
     current_path: str | None = None
     in_hunk = False
-    for line in git_diff(diff_arguments(args)).splitlines():
+    for line in git_diff(args).splitlines():
         if line.startswith("diff --git "):
             current_path = None
             in_hunk = False
@@ -218,8 +241,12 @@ def main() -> int:
     if not args.files:
         os.chdir(repo_root())
 
-    paths = sorted(set(changed_files(args)))
-    changed_content = changed_hunks(args)
+    try:
+        paths = sorted(set(changed_files(args)))
+        changed_content = changed_hunks(args)
+    except ValueError as exc:
+        print(f"secret-guard: {exc}", file=sys.stderr)
+        return 2
     failures: list[str] = []
 
     for path in paths:
