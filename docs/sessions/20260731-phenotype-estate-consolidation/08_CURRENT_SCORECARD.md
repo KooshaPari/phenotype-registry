@@ -1,6 +1,6 @@
 # Current Estate Scorecard
 
-Evidence timestamp: 2026-08-01 09:49 UTC. GitHub values take precedence over stale local tracking refs.
+Evidence timestamp: 2026-08-01 10:15 UTC. GitHub values take precedence over stale local tracking refs.
 
 | Repo | Local HEAD/state | Authoritative remote evidence | Grade | Gate |
 |---|---|---|---:|---|
@@ -9,7 +9,7 @@ Evidence timestamp: 2026-08-01 09:49 UTC. GitHub values take precedence over sta
 | Tracera | `d334cd587`; 76 dirty preserve files; preserve branch ahead 8 | `main=774c0061e886`; latest HEAD snapshot `wip/20260801T0834-18c7a16c00a168a8`; clean candidate `3abfa031b92d653bb1050a0a7d18875c94684861`; draft PR #771 | C+ | capture remaining dirty payload before promotion; smoke/Vercel failures remain |
 | phenotype-tooling | `5b854782`; 76 ahead stale local main; 2 dirty | `main=587805e38800`; #252 merged, branch 57 ahead/9 behind current main | C | classify post-merge branch |
 | portage | `65e9ae47`; 2 dirty | `main=b35d00454fa8`; #495 dirty and required checks red | D | repair security/lint/type/test/verify |
-| phenotype-registry | `fcfde73`; 6 dirty entries (5 docs + OMLX gitlink); governance packet committed | `main=052c5eff4856`; #441 `040eb7d`, #442 `33e0cdf`, #443 `fd898dc`; #432 blocked by unresolved OMLX gitlink | C+ | promote CI repair through normal governance, then synchronize/review promotion PRs |
+| phenotype-registry | `ca5e319`; 6 dirty entries (5 docs + OMLX gitlink); governance packet committed | `main=052c5eff4856`; #441 `040eb7d`, #442 `33e0cdf`, #443 `fd898dc`; #432 blocked by unresolved OMLX gitlink | C+ | promote CI repair through normal governance, then synchronize/review promotion PRs |
 | SessionLedger | `7b1c243e`; 19 tracked + 4 untracked entries (17 files); 99 local heads | `main=71a781ff3a97`; recovery `wip/preserve-20260801/sessionledger-dirty-capture-0902` -> `ec278e3c`; #391 behind with visual/e2e/provenance failures | D+ | preserve remaining generated/local payloads, then rebase/repair |
 | pheno-harness | `fix/pheno-harness-runner-provenance@4131b7c`; 2 tracked + 52 untracked entries | source branch head `4131b7c`; recovery `wip/preserve-20260801/pheno-harness-dirty-capture-0902` -> `9fdef790`; exclusion manifest committed | C+ | preserve linked worktree separately, then evaluate harness/tooling boundary |
 | phenoAI | `a73ac4d`; 9 behind/5 ahead; 1 dirty | `main=751a8e77f854`; #69/#70 unstable | C- | stabilize CI/coverage |
@@ -32,6 +32,6 @@ Evidence timestamp: 2026-08-01 09:49 UTC. GitHub values take precedence over sta
 | #441 | `040eb7d` | pheno-errors reversible tombstone evidence | content-ready; required contexts await CI repair promotion and human approval |
 | #442 | `33e0cdf` | four-source provenance metadata and key normalization | ordering fix pushed; Kilo review pending; two outdated threads remain unresolved; required contexts absent; docs-build and secret-guard fail; human approval required |
 | #432 | `495d69b9` | broad absorption/OMLX preservation packet | hold/rework; `phenotype-omlx` gitlink `a7118ed9...` is not cloud-resolvable |
-| #443 | `fd898dc` | coverage workflow recovery trigger and protected check names | ready-for-review maintenance PR; `ci / lint`, `ci / test`, and coverage pass; docs-build and unrelated secret-guard baselines remain red; Kilo review pending |
+| #443 | `fd898dc` | coverage workflow recovery trigger and protected check names | ready-for-review maintenance PR; `ci / lint`, `ci / test`, and coverage pass; Kilo review passes; docs-build and unrelated secret-guard baselines remain red; human approval required |
 
 Repository Actions are enabled. PR #443 proves `coverage.yml` can emit `ci / lint` and `ci / test`; #441 and #442 still require a post-#443 synchronization after the workflow repair is promoted.
