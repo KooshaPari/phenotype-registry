@@ -29,7 +29,7 @@ erDiagram
 | state | FeatureState | Enum: created→specified→researched→planned→implementing→validated→shipped→retrospected |
 | spec_hash | [u8; 32] | SHA-256 of spec content |
 | target_branch | String | Default: "main" |
-| plane_issue_id | Option<String> | **NEW** — Plane.so issue ID mapping |
+| plane_issue_id | `Option<String>` | **NEW** — Plane.so issue ID mapping |
 | plane_state_id | Option<String> | **NEW** — Plane.so state UUID |
 | labels | Vec<String> | **NEW** — Synced with Plane.so |
 | created_at | DateTime<Utc> | Immutable |
