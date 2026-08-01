@@ -1,5 +1,7 @@
 # pheno-errors tombstone packet (reversible archive evidence)
 
+Revalidated against GitHub remote state at `2026-08-01T03:09:55Z`; no remote mutation was performed.
+
 ## Scope
 
 `KooshaPari/pheno-errors` is private cargo-ghost residue at commit `01b850e4`. It contains no `Cargo.toml`, no Rust source tree, no license, and only low-value CI/metadata configuration files.
