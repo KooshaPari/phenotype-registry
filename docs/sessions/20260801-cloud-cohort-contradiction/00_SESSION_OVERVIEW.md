@@ -15,9 +15,9 @@ archive or unarchive repositories, delete refs, rewrite history, or force-push.
 The twenty intake names resolve into four observable classes:
 
 ```text
-11 renamed + archived repositories  +-- source API path resolves to zz-archive-*
+11 archive-named target/archived rows +-- source API path resolves to zz-archive-*
  2 in-place archived repositories   +-- name retained; archived=true
- 3 HTTP 404 repositories             +-- no current owner repository at that path
+ 3 HTTP 404 repositories             +-- owner API path unavailable under current credentials
  4 active repositories               +-- PriceyApp fork, Quillr, Stashly, phenotype-teamcomm
                                   = 20 intake names
 ```

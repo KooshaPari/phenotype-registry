@@ -4,7 +4,7 @@
 current GitHub metadata snapshot
           |
           v
-classify 11 renamed / 2 in-place / 3 missing / 4 active
+classify 11 archive-named target/archived / 2 in-place / 3 unavailable / 4 active
           |
           +--> preserve heads and local evidence
           |

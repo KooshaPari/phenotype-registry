@@ -13,9 +13,9 @@
 
 | Class | Rows | Safe conclusion | Required next proof |
 |---|---|---|---|
-| Renamed + archived | 11 | Current canonical archive path and head are observable | GitHub audit actor/time plus sponsor receipt or prior authorization |
+| Archive-named target/archived | 11 | Current archive-named path and archived head are observable | GitHub audit actor/time plus sponsor receipt or prior authorization |
 | Archived in place | `router-docs`, `template-commons` | Current repository remains addressable and archived | Same actor/authorization receipt; then reconcile boundary docs |
-| 404 | recovery evidence, harmonizer archive, `4sgm-archive` | Current API path is absent | Bundle/redirect/search/audit evidence; do not recreate or delete |
+| 404 | recovery evidence, harmonizer archive, `4sgm-archive` | Owner API path unavailable under current credentials | Bundle/redirect/search/audit evidence; do not recreate or delete |
 | Active fork | `PriceyApp` | Must remain untouched | None for mutation; preserve current fork metadata |
 | Active non-forks | `Quillr`, `Stashly`, `phenotype-teamcomm` | Current active state is observable | Re-check disposition against current refs before any proposal |
 
