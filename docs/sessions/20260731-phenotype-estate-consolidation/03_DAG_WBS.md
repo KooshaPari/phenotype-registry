@@ -44,7 +44,7 @@ Boundary lanes:
 | C0 | [ok] | Capture SessionLedger, pheno-harness, Tracera, sharecli, and pheno dirty payloads | immutable recovery refs: `ec278e3c`, `9fdef790`, `47ef7f41`, `08ad5d10`, `6140133` |
 | C1 | [ok] | Prove parent boundaries for captured lanes | Tracera KEEP standalone; sharecli KEEP Rust/archive-only Python; AgilePlus and HexaKit HOLD standalone |
 | C2 | [ok] | Refresh scorecard, known issues, inventory, and this DAG | commits `d277759`, `712f43d`; Airlock snapshot required before turn end |
-| C3 | [wip] | Attach isolated docs/workflow repairs, then synchronize #441/#442 | repair refs published (`4160517`, `e25fc2`, `4dc7b5`, `a7c39fe`); checks and sponsor review remain |
+| C3 | [wip] | Attach isolated docs/workflow repairs, then synchronize #441/#442 | repair refs published and diff-scope/YAML verified; hosted checks and sponsor review remain |
 | C4 | [wip] | Classify residual generated/local payloads and stash provenance | pheno follow-up must force-add ignored manifests; SessionLedger mutation output remains excluded; sharecli post-capture file changed |
 | C5 | [hold] | Merge/archive/tombstone packets | sponsor approval, green protected checks, and reversible evidence |
 

@@ -41,5 +41,6 @@ Repository Actions are enabled. PR #443 proves `coverage.yml` can emit `ci / lin
 Isolated repair refs (not merged): #441 docs `wip/preserve-20260802/registry-docs-pr441-angle-fix` -> `4160517`; #442 docs
 `wip/preserve-20260802/registry-docs-pr442-angle-fix` -> `e25fc2`; #443 docs
 `wip/preserve-20260802/registry-docs-pr443-angle-fix` -> `4dc7b5`; shared workflow
-`wip/preserve-20260802/registry-workflow-action-pins` -> `a7c39fe`. Each requires
-diff-scoped checks and normal sponsor review before attachment or merge.
+`wip/preserve-20260802/registry-workflow-action-pins` -> `a7c39fe`. All four are
+diff-scope verified; the workflow YAML parses, but hosted checks and sponsor review
+are still required before attachment or merge.

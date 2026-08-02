@@ -24,5 +24,6 @@
 | High | Current dirty/untracked payloads remain in Tracera (76), SessionLedger (23), pheno-harness (51), pheno (16), and sharecli (22 plus eight stashes) | preserve via isolated stash/bundle or recovery commits after excluding generated caches and secrets; current HEAD refs alone are not sufficient |
 | High | sharecli changed again after capture (`desktop/ShareCLITray/Sources/ShareCLICore/AppState.swift`); SessionLedger retains generated `mutants.out*` reports | take a second source-only sharecli capture before cleanup; keep mutation output excluded unless a dedicated evidence packet is requested |
 | Info | ShareCLI post-capture source-only ref is published at `wip/preserve-20260802/sharecli-postcapture-20260802T014647Z` (`fd2a4eea`) | retain all eight stash refs; parity fixture and sponsor boundary decision remain open |
+| Info | Four isolated registry repair refs are diff-scope verified; none is attached to an open PR yet | run hosted checks, then require sponsor/HITL selection before any PR update or merge |
 | Deferred | AgilePlus reactivation and any archive/delete action | sponsor gate only |
 | High | GitHub Dependabot reports one open high-severity `postcss` advisory on the default branch (alert 1) | create a separate dependency-security remediation lane; do not conflate it with registry boundary promotion |
