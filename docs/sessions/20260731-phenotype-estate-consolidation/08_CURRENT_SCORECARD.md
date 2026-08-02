@@ -1,6 +1,6 @@
 # Current Estate Scorecard
 
-Evidence timestamp: 2026-08-02 20:52 UTC. GitHub values take precedence over stale local tracking refs.
+Evidence timestamp: 2026-08-02 21:43 UTC. GitHub values take precedence over stale local tracking refs.
 
 | Repo | Local HEAD/state | Authoritative remote evidence | Grade | Gate |
 |---|---|---|---:|---|
