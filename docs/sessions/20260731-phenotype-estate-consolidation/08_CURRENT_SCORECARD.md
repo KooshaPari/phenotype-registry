@@ -1,6 +1,6 @@
 # Current Estate Scorecard
 
-Evidence timestamp: 2026-08-02 07:47 UTC. GitHub values take precedence over stale local tracking refs.
+Evidence timestamp: 2026-08-02 08:13 UTC. GitHub values take precedence over stale local tracking refs.
 
 | Repo | Local HEAD/state | Authoritative remote evidence | Grade | Gate |
 |---|---|---|---:|---|
@@ -9,7 +9,7 @@ Evidence timestamp: 2026-08-02 07:47 UTC. GitHub values take precedence over sta
 | Tracera | `9be786f7d`; 76 dirty preserve files; preserve branch ahead 9 | `main=774c0061e886`; recovery `wip/preserve-20260801/tracera-dirty-capture-0955` -> `47ef7f41`; draft PR #771 | C+ | semantic audit recommends KEEP standalone; prove producer/consumer contracts; smoke/Vercel failures remain |
 | phenotype-tooling | `5b854782`; 76 ahead stale local main; 2 dirty | `main=587805e38800`; #252 merged, branch 57 ahead/9 behind current main | C | classify post-merge branch |
 | portage | `65e9ae47`; 2 dirty | `main=b35d00454fa8`; #495 dirty and required checks red | D | repair security/lint/type/test/verify |
-| phenotype-registry | `9b9c147`; 6 dirty entries (5 docs + OMLX gitlink); governance packet committed | `main=052c5eff4856`; #441 `040eb7d`, #442 `33e0cdf`, #443 `fd898dc`; #432 blocked by unresolved OMLX gitlink; Airlock `wip/20260801T2243-18c7cfc6cf70cf10` | C+ | repair concrete docs/secret failures, then synchronize #441/#442 |
+| phenotype-registry | `bb6bf10`; clean preservation branch; governance packet committed | `main=834c721f409b`; #441 `040eb7d`, #442 `33e0cdf`, #443 `fd898dc`, #432 `495d69b`; Airlock `wip/20260802T0753-18c7edc19c1fbe00` | C+ | repair current docs/secret failures; #432 Kilo is failing; synchronize only after protected checks return |
 | SessionLedger | `7b1c243e`; 19 tracked + 4 untracked entries (17 files); 99 local heads | `main=71a781ff3a97`; recovery `wip/preserve-20260801/sessionledger-dirty-capture-0902` -> `ec278e3c`; #391 behind with visual/e2e/provenance failures | D+ | preserve remaining generated/local payloads, then rebase/repair |
 | pheno-harness | `fix/pheno-harness-runner-provenance@4131b7c`; 2 tracked + 52 untracked entries | source branch head `4131b7c`; recovery `wip/preserve-20260801/pheno-harness-dirty-capture-0902` -> `9fdef790`; exclusion manifest committed | C+ | preserve linked worktree separately, then evaluate harness/tooling boundary |
 | sharecli | `fix/runtime-openapi-drift@7bafd605`; post-capture `AppState.swift` delta preserved | base recovery `wip/preserve-20260801/sharecli-dirty-capture-0955` -> `08ad5d10`; follow-up `wip/preserve-20260802/sharecli-postcapture-20260802T014647Z` -> `fd2a4eea` | C+ | KEEP Rust runtime canonical; thegent-sharecli archive-only; parity fixture still unrun |
@@ -32,10 +32,10 @@ Evidence timestamp: 2026-08-02 07:47 UTC. GitHub values take precedence over sta
 
 | PR | Head | Scope | Current disposition |
 |---|---|---|---|
-| #441 | `040eb7d` | pheno-errors reversible tombstone evidence | content-ready; required contexts absent; docs-build and secret-guard fail; all four review threads are outdated/unresolved |
-| #442 | `33e0cdf` | four-source provenance metadata and key normalization | ordering fix present; Kilo pass; all review threads resolved; required contexts absent; docs-build and secret-guard fail; current trufflehog passes |
-| #432 | `495d69b9` | broad absorption/OMLX preservation packet | hold/rework; `phenotype-omlx` gitlink `a7118ed9...` is not cloud-resolvable |
-| #443 | `fd898dc` | coverage workflow recovery trigger and protected check names | `ci / lint`, `ci / test`, and coverage pass; Kilo review passes; docs-build and secret-guard fail; current trufflehog passes; merge state unstable |
+| #441 | `040eb7d` | pheno-errors reversible tombstone evidence | content-ready; required contexts absent; current docs-build and secret-guard fail; all four review threads are outdated/unresolved |
+| #442 | `33e0cdf` | four-source provenance metadata and key normalization | ordering fix present; all review threads resolved; required contexts absent; docs-build fails at PRD.md:65:60; secret-guard flags a potential npm token in `registry/disposition-index.json` |
+| #432 | `495d69b9` | broad absorption/OMLX preservation packet | hold/rework; `phenotype-omlx` gitlink `a7118ed9...` is not cloud-resolvable; current Kilo review fails |
+| #443 | `fd898dc` | coverage workflow recovery trigger and protected check names | protected `ci / lint`, `ci / test`, and coverage are green; docs-build fails at README.md:81:47; secret-guard flags six unpinned workflow refs; merge state behind |
 
 Repository Actions are enabled. PR #443 proves `coverage.yml` can emit `ci / lint`, `ci / test`, and coverage; #441 and #442 still require a post-#443 synchronization after the workflow repair is promoted.
 
