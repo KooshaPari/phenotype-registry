@@ -64,6 +64,37 @@ parent is a hypothesis until code/spec parity is proven.
 | phenotype-python-sdk | SDK boundary | API compatibility and package ownership | KEEP-STANDALONE candidate |
 | phenotype-journeys | product/workflow surface | relation to AgilePlus and phenotype-apps | HOLD |
 
+## Verified next-20 cohort scan
+
+Read-only scan of 45 direct roots, cross-checked against current GitHub metadata on
+2026-08-02. Ranking is an evidence queue, not merge authorization.
+
+| Rank | Repo | Local SHA | GH size/state | Parent hypothesis | Immediate proof gate |
+|---:|---|---|---:|---|---|
+| 1 | RepoLedger | `7dabedc` | 79 KB/live | registry governance satellite | preserve 53 local-only commits; map registry consumers |
+| 2 | asset-engine | `41ade55` | 293 KB/archived | phenotype-apps asset pipeline | prove scripts/assets landed in parent |
+| 3 | Benchora | `b4fd146` | 342 KB/live | phenotype-tooling `crates/benchora` | reconcile live repo vs absorbed registry row |
+| 4 | PhenoPlugins | `e57ee79` | 633 KB/live | pheno plugin crates | prove all five crate hashes/builds before tombstone |
+| 5 | ResearchLedger | `0c207459` | 795 KB/live | standalone research/session boundary | compare SessionLedger/phenoAI ownership |
+| 6 | PlayCua | `29c6c66` | 889 KB/live | standalone browser/desktop automation | complete boundary and consumer inventory |
+| 7 | nanovms | `9a0e286` | 985 KB/live | standalone sandbox/VMM | reconcile stale archive wording and Go consumers |
+| 8 | Tokn | `d51262f` | 2.5 MB/live | standalone token substrate | reconcile upstream vs Airlock mirror and OmniRoute API |
+| 9 | phenotype-python-sdk | `e270d0a` | 5.9 MB/live | standalone Python SDK | map public API ownership and four local commits |
+| 10 | PhenoObservability | `9192f73` | 8.5 MB/live | canonical observability parent | rebase 31 local commits and prove consumers |
+| 11 | Agentora | `53d370c` | 9.5 MB/live | standalone agent runtime | preserve stash; compare embedded agentkit contracts |
+| 12 | hfscope | `f119063` | 10.3 MB/private | observability/tooling satellite | test search-kind delta and consumer overlap |
+| 13 | HexaKit | `b47132a` | 23 MB/live | standalone scaffold/library | review four metadata divergences and mirror hash |
+| 14 | Melosviz | `4a9f195` | 55 MB/live | phenotype-apps UI/observability | reconcile recovery branch and target tree |
+| 15 | Planify2 | `e6b8e23` | origin 404 | AgilePlus/phenotype-apps frontend | prove fork ancestry and unique site/infra |
+| 16 | Grapheon | `8a15328` | 775 MB/private | standalone Tracera-derived runtime | compare route/store/API lineage |
+| 17 | hwLedger | `08a83db` | 543 MB/live | standalone hardware/fleet runtime | reconcile ten local commits and OMLX sidecar |
+| 18 | phenotype-apps | `5a06720` | 1.7 GB/live | canonical app-plane parent | publish missing remote provenance and map duplicates |
+| 19 | phenotype-hub | `667d77c` | archived/0 KB | registry/integration surface | preserve local commits and prove redirect target |
+| 20 | pheno-rt-spec-probe | `5b043a1` | remote 404 | pheno spec/test boundary | publish to live owner or create evidence collection |
+
+Remote default refs and 404/archived states are recorded in the agent audit; no archive,
+merge, or tombstone action is authorized by this table.
+
 ## Boundary-audit results (no mutation authorized)
 
 | Surface | Evidence-backed disposition | Remaining proof gate |
@@ -97,3 +128,6 @@ This cohort is a research queue only. No archive or merge action is authorized b
 6. ResearchLedger source/docs payload is now preserved at `3b3facc` and hfscope's tracked
    client delta at `865670b`; compare their consumers and ownership before any parent,
    archive, or tombstone action.
+7. OmniRoute is the highest-risk residual lane: capture `cbca470e` plus its six local-only
+   stashes before touching conflict-marked source or workflow files. Then preserve forgecode,
+   pheno-harness, and thegent current deltas before boundary work.
