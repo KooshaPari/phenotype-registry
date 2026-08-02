@@ -29,7 +29,8 @@ separately.
 | OmniRoute | `fix/stray-brace-mitm-manager@03c6b8a`; source tree clean after auto-commit; six stashes remain | source capture `03c6b8a`; stash refs `wip/preserve-20260802/omniroute-stash-0..5` | nine source/config/test/workflow paths and all six stash commits are cloud-preserved; original stash stack remains untouched |
 | ResearchLedger | `main@0c207459`, 25 dirty source/docs entries | `wip/preserve-20260802/researchledger-dirty-capture` -> `3b3facc` | 25 source/docs paths captured in isolated ref; original checkout remains dirty |
 | hfscope | `fix/preserve-search-kind@f119063`, one tracked source delta | `wip/preserve-20260802/hfscope-dirty-capture` -> `865670b` | `internal/hfapi/client.go` captured in isolated ref; original checkout remains dirty |
-| forgecode | `preserve/workflow-schema-wave-20260729@aa25f50e`, clean after Airlock stash recovery | `wip/preserve-20260801/forgecode-dirty-0605` and Airlock `wip/20260801T0622-18c79a346ecd6370` | captured in committed recovery tip; fork remote used because origin is upstream-only |
+| forgecode | `preserve/workflow-schema-wave-20260729@4fe8aaf0`, 3 dirty source/docs files | prior recovery `wip/preserve-20260801/forgecode-dirty-0605`; follow-up `wip/preserve-20260802/forgecode-dirty-capture` -> `ab49d70` on fork remote | current `update.rs` and two packaging docs captured; original checkout remains dirty |
+| thegent | `chore/thegent-governance-integration-wave@b0a3517`, source tree clean; 5 stashes remain | current branch is cloud-visible; `wip/preserve-20260802/thegent-stash-0..4` exact remote refs | source test delta and all five stash commits are cloud-preserved; classify payloads before cleanup |
 
 The seven `HEAD` refs are continuity evidence, not a completion claim for the dirty working
 trees. The next preservation action is to capture source-bearing dirty/untracked payloads in
@@ -130,5 +131,6 @@ This cohort is a research queue only. No archive or merge action is authorized b
    client delta at `865670b`; compare their consumers and ownership before any parent,
    archive, or tombstone action.
 7. OmniRoute source and all six stashes are now cloud-preserved (`03c6b8a`,
-   `omniroute-stash-0..5`). Next classify stash payloads, then preserve forgecode,
-   pheno-harness, and thegent current deltas before boundary work.
+   `omniroute-stash-0..5`). Forgecode source is preserved at `ab49d70`, and thegent's
+   five stash commits at `thegent-stash-0..4`; next classify their payloads and verify
+   pheno-harness's generated delta.

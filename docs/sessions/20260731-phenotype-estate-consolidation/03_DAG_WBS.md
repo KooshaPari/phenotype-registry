@@ -58,7 +58,7 @@ Boundary lanes:
 | C1 | [ok] | Prove parent boundaries for captured lanes | Tracera KEEP standalone; sharecli KEEP Rust/archive-only Python; AgilePlus and HexaKit HOLD standalone |
 | C2 | [ok] | Refresh scorecard, known issues, inventory, and this DAG | local baseline `bf9123d`; live `main=3b3edc2`; Airlock `wip/20260802T2150-18c81b6d5de30938` |
 | C3 | [wip] | Synchronize current promotion PRs after live-main repair integration | `wip/preserve-20260802/registry-repair-integration` -> `3b3edc2` is clean against live main; hosted PR synchronization and sponsor review remain |
-| C4 | [wip] | Classify residual generated/local payloads and stash provenance | pheno source follow-up `ee890798` and OmniRoute source/stash refs `03c6b8a`/`omniroute-stash-0..5` are preserved; forgecode, pheno-harness, and thegent residual deltas remain |
+| C4 | [wip] | Classify residual generated/local payloads and stash provenance | pheno source follow-up `ee890798`, OmniRoute `03c6b8a`/`omniroute-stash-0..5`, forgecode `ab49d70`, and thegent `thegent-stash-0..4` are preserved; stash payload classification and pheno-harness checksum review remain |
 | C5 | [hold] | Merge/archive/tombstone packets | sponsor approval, green protected checks, reversible evidence, and OMLX pointer decision; current `60243d...` gitlink is not cloud-resolvable |
 
 AgilePlus is a governance dependency, not a prerequisite for preserving source state. AgilePlus's checked-in DB could not open WAL on the full volume; planning used an isolated DB and the limitation is recorded in session overview.
