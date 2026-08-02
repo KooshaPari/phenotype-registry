@@ -26,6 +26,7 @@ separately.
 | pheno-harness | `fix/pheno-harness-runner-provenance@4131b7c`, 2 tracked + 52 untracked entries | `wip/20260801T0545-18c798307b9e40c0` -> `4131b7c`; recovery `wip/preserve-20260801/pheno-harness-dirty-capture-0902` -> `9fdef790` | 90 source/spec/test/kernel/evidence paths captured; `PRESERVATION_EXCLUSIONS.md` records generated/cache/worktree exclusions; original checkout remains dirty |
 | pheno | `main@a3c9dde`, 14 tracked + 2 untracked entries | `wip/20260801T0545-18c79831061b87d0` -> `be5da947`; recovery `wip/preserve-20260801/pheno-dirty-capture-0955` -> `6140133`; follow-up `wip/preserve-20260802/pheno-source-manifest-capture` -> `ee890798` | 5,236 source/spec/test/config paths plus 119 missing manifests and six whitelisted metadata files captured; generated/cache/worktree exclusions recorded; original checkout remains dirty |
 | sharecli | `fix/runtime-openapi-drift@b8eeeb2`, 22 dirty and 8 stashes | `wip/20260801T0545-18c798318ac38d70` -> `b8eeeb2`; recovery `wip/preserve-20260801/sharecli-dirty-capture-0955` -> `08ad5d10` | 23 tracked/source/doc/manifest paths captured; original stash refs remain untouched |
+| OmniRoute | `fix/stray-brace-mitm-manager@03c6b8a`; source tree clean after auto-commit; six stashes remain | source capture `03c6b8a`; stash refs `wip/preserve-20260802/omniroute-stash-0..5` | nine source/config/test/workflow paths and all six stash commits are cloud-preserved; original stash stack remains untouched |
 | ResearchLedger | `main@0c207459`, 25 dirty source/docs entries | `wip/preserve-20260802/researchledger-dirty-capture` -> `3b3facc` | 25 source/docs paths captured in isolated ref; original checkout remains dirty |
 | hfscope | `fix/preserve-search-kind@f119063`, one tracked source delta | `wip/preserve-20260802/hfscope-dirty-capture` -> `865670b` | `internal/hfapi/client.go` captured in isolated ref; original checkout remains dirty |
 | forgecode | `preserve/workflow-schema-wave-20260729@aa25f50e`, clean after Airlock stash recovery | `wip/preserve-20260801/forgecode-dirty-0605` and Airlock `wip/20260801T0622-18c79a346ecd6370` | captured in committed recovery tip; fork remote used because origin is upstream-only |
@@ -128,6 +129,6 @@ This cohort is a research queue only. No archive or merge action is authorized b
 6. ResearchLedger source/docs payload is now preserved at `3b3facc` and hfscope's tracked
    client delta at `865670b`; compare their consumers and ownership before any parent,
    archive, or tombstone action.
-7. OmniRoute is the highest-risk residual lane: capture `cbca470e` plus its six local-only
-   stashes before touching conflict-marked source or workflow files. Then preserve forgecode,
+7. OmniRoute source and all six stashes are now cloud-preserved (`03c6b8a`,
+   `omniroute-stash-0..5`). Next classify stash payloads, then preserve forgecode,
    pheno-harness, and thegent current deltas before boundary work.
