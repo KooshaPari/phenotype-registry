@@ -9,10 +9,11 @@ Evidence source: [PR #450](https://github.com/KooshaPari/phenotype-registry/pull
 
 Live promotion source: GitHub API snapshots of [PR #453](https://github.com/KooshaPari/phenotype-registry/pull/453),
 [PR #454](https://github.com/KooshaPari/phenotype-registry/pull/454),
-[PR #455](https://github.com/KooshaPari/phenotype-registry/pull/455), `main`, and branch protection at
-2026-08-02 04:57:00Z.
+[PR #455](https://github.com/KooshaPari/phenotype-registry/pull/455),
+[PR #448](https://github.com/KooshaPari/phenotype-registry/pull/448), `main`, and branch protection at
+2026-08-02 08:01:40Z.
 
-Baseline: `phenotype-registry/main` at `6d5aece8319b83400c8a79bb05ea777d8efc5fd0`
+Baseline: `phenotype-registry/main` at `834c721f409b00294c6117a6b7e84f0c1be51e66`
 
 ## Live promotion update
 
@@ -23,7 +24,8 @@ The protected integration lane has advanced since the contradiction snapshot:
 | Workflow/docs integration | PR #453, merge `73220f4853886f26b6195f1fb2d209246befb3ed` | MERGED 2026-08-01 23:33:56Z |
 | Dependency maintenance | PR #454, merge `7ca1252fa95de09c9f256c5f3196d00ae80617e5` | MERGED 2026-08-02 01:00:48Z |
 | Scorecard promotion | PR #455, merge `6d5aece8319b83400c8a79bb05ea777d8efc5fd0` | MERGED 2026-08-02 02:01:45Z |
-| Current default branch | `main` at `6d5aece8319b83400c8a79bb05ea777d8efc5fd0` | authoritative snapshot 2026-08-02 04:57:00Z |
+| Runtime-config docs repair | PR #448, source `bfa56a316ef3ec5174a6312f491cd41847d91ce6`, merge `834c721f409b00294c6117a6b7e84f0c1be51e66` | MERGED 2026-08-02 07:21:21Z |
+| Current default branch | `main` at `834c721f409b00294c6117a6b7e84f0c1be51e66` | authoritative snapshot 2026-08-02 08:01:40Z |
 
 Branch protection now requires **zero approving reviews** for this single-identity repository,
 while retaining strict `ci / lint` and `ci / test` contexts, conversation resolution, linear
@@ -35,7 +37,9 @@ Preserved source refs: `ci/integration-gates-20260801` at
 `380f5b563a220a26da914bc549843977cf70dbf2`, the Dependabot source at
 `d3f47bc8ceba5234942561e443f6930016d9533e`, and
 `docs/scorecard-current-main-20260802` at
-`2f4664eeb894c16a005b4db43b859a271e6d0e7f`. Airlock refs retain the integration,
+`2f4664eeb894c16a005b4db43b859a271e6d0e7f`. The #448 source ref
+`fix/docs-pheno-runtime-config-markup-20260801` at
+`bfa56a316ef3ec5174a6312f491cd41847d91ce6` is also retained. Airlock refs retain the integration,
 security correction, and scorecard heads; the local repair payload is separately retained at
 `wip/20260802T0408-18c7e17e73387238`.
 
@@ -67,8 +71,9 @@ finding.
 ## Protected-review checkpoint
 
 PR #443's workflow recovery and the #444/#447 integration content were promoted through PR #453;
-PR #454 then landed on top of that merge, and PR #455 published this scorecard on the resulting
-default branch. The source PRs remain historical/provenance records and
+PR #454 then landed on top of that merge, PR #455 published this scorecard, and PR #448 landed the
+runtime-config markup repair on the resulting default branch. The source PRs remain
+historical/provenance records and
 are not treated as additional merge candidates. The zero-approval policy removes the impossible
 single-identity review gate, but it does not close the independent provenance, authorization, or
 registry-reconciliation gates below.
