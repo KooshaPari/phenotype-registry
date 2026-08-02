@@ -88,8 +88,9 @@ This cohort is a research queue only. No archive or merge action is authorized b
 2. Revalidate PR #442's ordering fix at head `33e0cdf`; Kilo review passes and all review threads are resolved, but required contexts are absent and docs/secret-guard fail (current trufflehog passes).
 3. Repair the concrete #443 blockers (VitePress parse error and unpinned actions), then
    only then synchronize #441/#442 to materialize `ci / lint` and `ci / test` on their heads.
-4. Keep PR #432 held until the unresolved OMLX gitlink `a7118ed9...` has an immutable,
-   cloud-resolvable owner or is split into an evidence-only packet.
+4. Keep PR #432 held until sponsor review selects the pointer-only candidate
+   `wip/preserve-20260802/registry-omlx-pointer-repair` -> `a407839` (which replaces
+   `a7118ed9...` with cloud-resolvable `52682309...`) and Kilo/protected checks are green.
 5. ShareCLI post-capture source is now preserved at `fd2a4eea`; pheno source-only manifest
    follow-up is now preserved at `ee890798`. Remaining work is the API/dependency/test
    parity audit for overlapping AgilePlus and HexaKit crates.
