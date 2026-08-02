@@ -1,39 +1,53 @@
 ---
-repo: "HexaKit"
+repo: "KooshaPari/HexaKit"
 role: unknown
-status: active
-last_boundary_review: 2026-06-17
+status: absorbed
+last_boundary_review: 2026-07-30
 review_cadence: 30d
 in_scope:
-  - "<to be filled>"
+  - "crates in pheno/crates/hexa-kit"
+  - "de-duplication follow-up against existing pheno crates"
 out_of_scope:
-  - "<to be filled>"
+  - "AgilePlus platform-level consolidation"
+target_repo: "KooshaPari/pheno"
+target_path: "crates/hexa-kit"
 ---
 
 # Boundary — HexaKit
 
 ## In Scope
 
-<To be filled.>
+- Rust crates and service adapters from `HexaKit/` were mirrored into
+  `pheno/crates/hexa-kit/` with preservation metadata.
+- Non-canonical overlap cleanup and canonical path realignment are still pending.
 
 ## Out of Scope
 
 | Not here | Lives in | Reason |
 | -------- | -------- | ------ |
-| `<capability>` | `<other-repo-or-N/A>` | `<why>` |
+| AgilePlus platform spine | `AgilePlus` | `HexaKit` mirrors are not a substitute for AgilePlus spine promotion. |
+
+## Absorption Evidence
+
+- Source local path: `../HexaKit`
+- Target local path: `../pheno/crates/hexa-kit`
+- Result artifact: `../pheno/crates/hexa-kit/ABSORPTION_META.json`
+- Transfer method: `rsync -a --delete --exclude='.git' --exclude='.airlock'`
 
 ## Boundary Crossings
 
 | Crossing | Direction | Surface | Status |
 | -------- | --------- | ------- | ------ |
-| `<capability or interface>` | `<this-repo→other|other→this-repo>` || `<this-repo→other|other→this-repo>` | `<Trait / HTTP / CLI / file / event>` | `<green|amber|red>` || `<green|amber|red>` || `<green|amber|red>` |
+| HexaKit crate inventory | HexaKit → pheno/crates/hexa-kit | crate files | green |
+| Duplicate-reduction follow-up | pheno/crates/hexa-kit → pheno | ownership & import dedupe | amber |
 
 ## Last Boundary Review
 
-**Date:** 2026-06-17
-**Reviewer:** forge subagent (L7-001 sweep)
-**Worklog / finding:** `worklogs/L7-001-intent-boundary-curation-2026-06-17.json`
+**Date:** 2026-07-30
+**Reviewer:** forge/automation lane (`proc` continuation)
+**Worklog / finding:** `phenotype-registry/audits/absorption-justifications/absorb-wave-hitl-20260729-21.md`
 **Decisions:**
-- Initial scaffolding; needs human review.
+- Non-destructive mirror performed for the active de-duplication target (`pheno/crates/hexa-kit`).
+- Source `.git` preserved for provenance.
 
-**Next review:** 2026-07-17
+**Next review:** after de-duplication pass in next wave

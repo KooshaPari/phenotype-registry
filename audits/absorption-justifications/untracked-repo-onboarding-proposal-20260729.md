@@ -19,8 +19,82 @@ Context: 13 local repos not linked by `path/full_name` to existing phenotype-reg
 |airlock|KooshaPari/airlock|main|clean|68670|https://github.com/KooshaPari/airlock|preserve_boundary_root|
 |phenotype-registry|KooshaPari/phenotype-registry|chore/preserve-omlx-ffi-validation|dirty|93559|git@github.com:KooshaPari/phenotype-registry.git|preserve_boundary_root|
 |Civis|KooshaPari/Civis|wip/2026-07-22-civis-quality-manifest|clean|1675291|git@github.com:KooshaPari/Civis.git|review_alias_or_canonical_merge|
-|pheno-rt-spec-probe|KooshaPari/phenotype-router-spec|main|clean|API_FAIL|https://github.com/KooshaPari/phenotype-router-spec.git|queue_as_ABSORB|
+|pheno-rt-spec-probe|KooshaPari/phenotype-router-spec|main|clean|API_FAIL|https://github.com/KooshaPari/phenotype-router-spec.git|archive_as_BOUNDARY_DONE|
 |phenoAI|-|fix/phenoai-codeql-workflow-schema|clean|-|/Users/kooshapari/.airlock/repos/64f03a81ecb2.git|queue_as_ABSORB|
+
+## Cohort 22 dispositions (verified local evidence, unscheduled)
+
+|repo|verified local state|canonical purpose|disposition|rationale and next gate|
+|---|---|---|---|---|
+|RepoLedger|clean; `main` behind `origin/main` by 4|React/Vite ecosystem console with a Go websocket server|retain_independent; evaluate integration branch|A product-facing topology console complements registry governance rather than duplicating it. Fast-forward the clean checkout, then verify its data contract before proposing an adapter branch.|
+|ResearchLedger|clean; `main` synchronized with `origin/main`|Tauri local-first research ledger with Markdown/SQLite provenance, import, search, RAG, and export|retain_independent|Its local research-vault and citation domain is complementary to registry evidence. No absorption or retirement action is justified.|
+|Benchora|clean feature branch `feat/cross-repo-audit-fixes` tracking origin|Published Rust benchmarking and xDD testing toolkit with Criterion, SQLite baselines, mutation coverage, and CLI|retain_independent; preserve active branch|A standalone reusable developer tool, not a registry boundary duplicate. Preserve the feature branch and evaluate downstream crate consumption through an explicit integration proposal.|
+|Grapheon|clean airlock recovery branch tracking origin|Agent-native requirements traceability/project management (`tracertm`) with Python MCP integration and supporting Rust services|preserve_recovery_branch; review alias or canonical merge|Traceability overlaps registry governance at the integration boundary, but is a distinct runtime product. Reconcile recovered branch provenance and map contracts before any canonicalization decision.|
+|PhenoPlugins|clean; `main` synchronized with `origin/main`|Rust trait-based plugin framework, registry, lifecycle, and Git/SQLite/Vessel adapters for Phenotype hosts|queue_as_ABSORB|Verified ecosystem-wide shared-library purpose and explicit AgilePlus migration history support the existing onboarding recommendation. Gate absorption on crate/API dependency mapping and provenance-preserving import plan.|
+
+## Cohort 22B dispositions (verified local evidence, unscheduled)
+
+|repo|verified local state|canonical parent|disposition|rationale and next gate|
+|---|---|---|---|---|
+|CivicSurvival-public|clean; `main` synchronized with `origin/main`|CivicSurvival program|protect public boundary; no merge|The public source/docs client boundary is deliberately source-available, non-buildable, and paired with a closed server; PolyForm Strict and separately licensed assets prohibit an assimilation decision.|
+|Civis|clean `wip/2026-07-22-civis-quality-manifest` tracking origin|Civis|retain independent WIP|Its explicit FR-CIV godgame scope excludes organization governance. Preserve the remote-tracked WIP branch; registry records governance evidence only.|
+|Eidolon|clean local `feat/cross-repo-audit-wave2` with no upstream shown|Eidolon|publish local branch, then retain independent|Device automation is a distinct library product; its archived satellites are extract-on-demand rather than merge candidates. Establish remote provenance for the local branch before further boundary review.|
+|HexaKit|clean `main` ahead of `origin/main` by 1|phenotype-infrakit (HexaKit)|retain canonical; push ahead commit|The canonical Rust infrastructure-kit code boundary complements registry governance. Preserve the ahead commit remotely before any dependency-level consolidation work.|
+|Melosviz|clean recovery branch `recovery/melosviz-local-20260726` tracking origin|Melosviz|retain independent recovery branch|Music visualization (Python backend, React web, Rust WGPU/MIR) has no material registry overlap. Retain and verify recovery-branch provenance.|
+
+## Cohort 22C dispositions (verified active-lane and registry evidence, unscheduled)
+
+|repo|verified local state|canonical parent|disposition|blocker and next gate|
+|---|---|---|---|---|
+|AgilePlus|`main` ahead of origin by 1; materially dirty with source, Airlock-document, and untracked MCP work|AgilePlus PLATFORM spine|preserve WIP; ARCHIVE_ONLY, no absorption|Registry boundary policy requires sponsor ratification of PLATFORM-spine promotion; the dirty 94-crate mega-workspace is unsafe for integration. Snapshot/publish current work before any isolated review.|
+|OmniRoute|dirty `fix/stray-brace-mitm-manager` tracking origin|OmniRoute canonical LLM router|preserve active branch; never archive|The active router remains canonical. The separate archived `omniroute-rust` source needs a 13-crate ownership and provenance reconciliation; no name-level merge is valid.|
+|PlayCua|clean `master` tracking origin|PlayCua archive evidence / phenoAI review target|archive-only evidence; no import|Wave-21 registry evidence records ARCHIVE_ONLY after structural Rust-workspace dependency failures prevented phenoAI ingestion; no merge is required in this wave.|
+|SessionLedger|`main` tracking origin with material tracked source/test changes and untracked coverage/mutant outputs|SessionLedger session-compiler product|preserve WIP; no merge or archive|The active OKF session-compiler boundary is distinct. Publish and validate the dirty worktree in isolation before its no-auto-merge lane can advance.|
+|Tracera|heavily dirty `preserve/tracera-dirty-wave-20260729` tracking origin, including source, docs, and generated paths|Tracera trace/observability/audit ledger|preserve dirty branch; no absorption or archive|Five recovery shells remain recorded as empty with local payload search blocked. Establish recovery parity and isolate generated artifacts before any boundary transaction.|
+
+## Next Cohort dispositions (verified local evidence, unscheduled)
+
+|repo|verified local state|canonical role or parent|disposition|overlap, risk, and next gate|
+|---|---|---|---|---|
+|asset-engine|clean preservation branch `preserve/asset-engine-archive-20260729`|phenoDesign and pheno|ARCHIVED-PRESERVED|README records completed asset-pipeline absorption into phenoDesign/pheno; preserve history only.|
+|cliproxyapi-plusplus|clean WIP branch `wip/2026-07-22-cliproxyapi-go-mod-preservation`|gateway / OmniRoute-adjacent fork|preserve isolated fork|Multi-provider Go proxy has residual Go test failures; require API and fork-provenance mapping before any integration.|
+|forgecode|dirty preservation branch tracking a fork|HeliosLite product|preserve fork WIP|Rust agentic terminal/TUI rebrand atop upstream forgecode; retain independently pending upstream/provenance review.|
+|helios-cli|dirty WIP branch with harness changes|HeliosCLI|preserve independent WIP|Distinct Phenotype harness/CLI product; publish and validate the dirty worktree before any boundary change.|
+|hfscope|dirty remote-tracked Go fix branch; no root README|unclassified|evidence-only HOLD|No root intent/contract evidence supports a parent choice; preserve branch and perform a bounded source/contract audit.|
+|hwLedger|clean remote-tracked WIP branch|hwLedger|retain independent WIP|Pre-alpha hardware capacity/fleet ledger and desktop inference runtime is a distinct product boundary.|
+|nanovms|clean `main` tracking origin|nanovms engine|retain independent canonical engine|May expose an Eidolon adapter crossing, but engine ownership remains independent.|
+|portage|remote-tracked fix branch with staged deletion/type changes|portage / Harbor fork|preserve fork branch|Harbor/Terminal-Bench evaluation fork requires upstream provenance and staged-change validation before action.|
+|sharecli|dirty Rust runtime/OpenAPI branch|sharecli|preserve WIP; dedupe required|OS-adjacent multi-agent runtime overlaps `thegent-sharecli`; compare semantics, contracts, and history before target selection.|
+|pheno|dirty `main` tracking origin|component-level Phenotype infrastructure parent|preserve WIP; decompose only|Broad monorepo is unsafe for wholesale absorption; map component provenance before any redistribution.|
+|phenotype-apps|clean local `main`; no root README or manifest evidence|unproven|evidence-only HOLD|Do not select a parent until a bounded source/intent audit establishes ownership.|
+|phenotype-hub|clean `main` tracking origin|governance coordination scaffold|retain separate scaffold|README declares no runtime source; require content-parity proof before any registry consolidation.|
+|phenotype-omlx|feature branch ahead of origin by 10|phenotype-omlx|publish branch; retain canonical|Explicit canonical MLX-native OMLX research stack; no absorption action is justified.|
+|phenotype-tooling|WIP branch ahead of main by 76|phenotype-tooling|publish WIP; retain canonical|Developer tooling/CI/quality/release workspace; only component-level imports after provenance checks.|
+|thegent|remote-tracked governance branch ahead 26 with dirty work and untracked `sharecli/`|thegent|preserve/publish branch|Unified agent-orchestration CLI has embedded/sharecli overlap; reconcile via API and provenance audit.|
+|thegent-sharecli|clean `main` tracking origin|pending semantic duplicate decision|retain pending dedupe|Python command-sharing/task-queue tool overlaps Rust `sharecli`; do not archive before parity proof.|
+|turboquant_plus|clean `main` tracking origin|TurboQuant research provenance|retain independent research repo|Research/reference/benchmark home with upstream vLLM and llama.cpp adoption; no physical absorption.|
+|vibeproxy-monitoring-unified|clean `main` behind origin by 7|unproven monitoring governance owner|fast-forward then evidence-only HOLD|Spec-only scaffold contains no runtime assets; identify VibeProxy or PhenoObservability owner through content parity.|
+|.tmp-phenotypes-boundary|clean `main` tracking origin; registry-identifying README/manifest|phenotype-registry duplicate boundary evidence|preserve evidence; no product action|Appears to be a full registry clone; prove ref/tree parity against phenotype-registry before treating it as disposable or archival evidence.|
+
+## Wave 23 semantic dedupe - sharecli and thegent-sharecli
+
+|dimension|sharecli|thegent-sharecli|dedupe finding|
+|---|---|---|---|
+|provenance|Rust repository `KooshaPari/sharecli`|Python repository `KooshaPari/thegent-sharecli`|Independent provenance: neither repository contains the other's inspected HEAD object, so no shared merge-base evidence exists.|
+|runtime scope|OS-adjacent process runtime: sessions, FUSE, fleet/thermal control, dashboard, mesh queue, and SmartMerger|In-memory command locks, priority task queue, merge and edit-intent domain models|Only a qualitative 15-25% overlap at coordination vocabulary level; runtime and persistence surfaces differ materially.|
+|canonical ownership|Durable multi-agent coordination runtime|Agent-oriented Python facade|Retain separate. `sharecli` is the canonical runtime owner; no repository merge, extraction, or archival action is justified yet.|
+
+### Required parity gate: `coordination-lock-queue-v1`
+
+Before any branch-level contract extraction is proposed, both adapters must run the same fixture and produce these outcomes:
+
+1. Acquire command hash `H` for `PID1` yields `locked`.
+2. Acquire `H` for `PID2` yields `already_locked`.
+3. Release `H` for `PID1` yields `unlocked`.
+4. Enqueue `low` then `high`; dequeue yields `high` first.
+5. Edit intents `[10,20]` and `[30,40]` do not conflict; `[10,20]` and `[15,25]` conflict.
+
+Missing surface or divergent behavior is decision evidence, not an implementation shortcut. Parity is not established until both durable adapters pass the fixture.
 
 ## DEDUPE-02 - cliproxyapi-plusplus and OmniRoute
 
@@ -44,6 +118,8 @@ Before proposing any branch extraction, compare OmniRoute's `open-sse/executors/
 |disposition|Own reusable instrumentation and exporter primitives|Own durable evidence, trace-link, and audit product state|retain_separate. No branch extraction or workspace merge is justified. A future integration belongs in a thin adapter owned by the producer-consumer contract.|
 
 ### Required compatibility gate: `observability-ledger-consumer-v1`
+
+After Tracera recovery has a remote preservation snapshot and clean-base proof, run an isolated SQLite-backed Tracera server with a sanitized PhenoObservability-produced event fixture containing `artifact_id`, `kind`, `url`, and metadata with a correlation/span identifier. The adapter must make Tracera `POST /evidence` accept the fixture; `GET /evidence` must return it; and `POST /api/v1/trace/forward/{artifact_id}` must address it through the mounted traceability contract. Capture request/response schemas and adapter provenance. Passing proves producer-consumer compatibility only; it does not authorize extraction without a separate path/tree provenance audit.
 
 ## DEDUPE-04 - Agentora and legacy PhenoAgent/agentkit copies
 
