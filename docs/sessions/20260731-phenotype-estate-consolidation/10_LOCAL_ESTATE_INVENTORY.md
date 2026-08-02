@@ -47,7 +47,7 @@ parent is a hypothesis until code/spec parity is proven.
 | Melosviz | observability/UI support | language/build surface and consumers | HOLD |
 | PhenoObservability | canonical observability parent | Sidekick/curated-traces parity and current main | PARENT CANDIDATE |
 | PhenoPlugins | `pheno` plugin crates | verify archived source and tree parity | ARCHIVE-ONLY pending proof |
-| Planify2 | AgilePlus governance consumer | compare specs/tasks and parent ownership | HOLD |
+| Planify2 | AgilePlus/phenotype-apps frontend boundary | local clean `main@e6b8e235`, 5,402 tracked files; `origin` returns repository-not-found; README identifies Plane AGPL upstream plus Phenotype `site/` and `infra/` layers | HOLD / local-only cloud recovery or sponsor-approved new repo boundary |
 | PlayCua | desktop/browser automation | consumer graph and standalone release boundary | KEEP-STANDALONE candidate |
 | RepoLedger | registry/AgilePlus governance evidence | exact source refs and target contract | HOLD |
 | ResearchLedger | research/session artifact boundary | relation to SessionLedger/phenoAI | HOLD |

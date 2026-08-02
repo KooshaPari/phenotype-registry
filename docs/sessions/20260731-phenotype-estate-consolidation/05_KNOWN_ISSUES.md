@@ -13,6 +13,7 @@
 | High | pheno nested AgilePlus is mostly path-identical to standalone AgilePlus, while HexaKit has 14 overlapping crate names with divergent APIs and unique bootstrap/template APIs | keep AgilePlus and HexaKit standalone; review crate-level parity and source SHA before any absorption or tombstone |
 | High | Agentora local checkout is 10 commits behind origin and has a `.trunk/trunk.yaml` conflict plus generated `.trunk` tool state | preserve only source-bearing Agentora changes if found; exclude `.trunk` runtime/tool output and defer parent decision until current-main reconciliation |
 | Info | Grapheon recovery checkout is clean at `523b67d` but its registry boundary evidence is stale relative to current Tracera | retain standalone; refresh route/store/consumer lineage before any parent or archive decision |
+| Blocker | Planify2 is a clean 5,402-file local repository at `e6b8e235`, but its GitHub `origin` returns repository-not-found | preserve a bundle/digest locally, then obtain sponsor direction for a new cloud repo or verified parent-boundary push; do not publish into an unrelated parent implicitly |
 | High | AgilePlus checked-in SQLite DB fails WAL pragma with disk I/O error | use isolated DB; retain existing dirty snapshot; do not delete DB files |
 | High | Workspace has critically low free space | route heavy builds to isolated target/cache or heavy runner |
 | Non-blocker | Tracera workspace-wide format check has pre-existing `tracera-cli` drift | keep focused fixture gate separate and record baseline debt |
