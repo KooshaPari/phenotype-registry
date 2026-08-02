@@ -24,7 +24,7 @@ separately.
 | Tracera | `preserve/tracera-dirty-wave-20260729@9be786f7d`, 57 tracked + 19 untracked dirty | `wip/20260801T0834-18c7a16c00a168a8` -> `d334cd5`; recovery `wip/preserve-20260801/tracera-dirty-capture-0955` -> `47ef7f41` | 62 source/docs/test/manifest paths captured from current tip; original checkout remains dirty |
 | SessionLedger | `main@7b1c243e`, 19 tracked + 4 untracked entries (17 files) | `wip/20260801T0545-18c7982ff4167f78` -> `7b1c243e`; recovery `wip/preserve-20260801/sessionledger-dirty-capture-0902` -> `ec278e3c`; immutable `a5d315ba` Airlock ref | 21 source paths captured; 15 generated coverage/mutation files excluded; original checkout remains dirty |
 | pheno-harness | `fix/pheno-harness-runner-provenance@4131b7c`, 2 tracked + 52 untracked entries | `wip/20260801T0545-18c798307b9e40c0` -> `4131b7c`; recovery `wip/preserve-20260801/pheno-harness-dirty-capture-0902` -> `9fdef790` | 90 source/spec/test/kernel/evidence paths captured; `PRESERVATION_EXCLUSIONS.md` records generated/cache/worktree exclusions; original checkout remains dirty |
-| pheno | `main@be5da947`, 14 tracked + 2 untracked entries | `wip/20260801T0545-18c79831061b87d0` -> `be5da947`; recovery `wip/preserve-20260801/pheno-dirty-capture-0955` -> `6140133` | 5,236 source/spec/test/config paths captured; generated/cache/worktree exclusions recorded; original checkout remains dirty |
+| pheno | `main@a3c9dde`, 14 tracked + 2 untracked entries | `wip/20260801T0545-18c79831061b87d0` -> `be5da947`; recovery `wip/preserve-20260801/pheno-dirty-capture-0955` -> `6140133`; follow-up `wip/preserve-20260802/pheno-source-manifest-capture` -> `ee890798` | 5,236 source/spec/test/config paths plus 119 missing manifests and six whitelisted metadata files captured; generated/cache/worktree exclusions recorded; original checkout remains dirty |
 | sharecli | `fix/runtime-openapi-drift@b8eeeb2`, 22 dirty and 8 stashes | `wip/20260801T0545-18c798318ac38d70` -> `b8eeeb2`; recovery `wip/preserve-20260801/sharecli-dirty-capture-0955` -> `08ad5d10` | 23 tracked/source/doc/manifest paths captured; original stash refs remain untouched |
 | forgecode | `preserve/workflow-schema-wave-20260729@aa25f50e`, clean after Airlock stash recovery | `wip/preserve-20260801/forgecode-dirty-0605` and Airlock `wip/20260801T0622-18c79a346ecd6370` | captured in committed recovery tip; fork remote used because origin is upstream-only |
 
@@ -79,12 +79,15 @@ This cohort is a research queue only. No archive or merge action is authorized b
 1. All five dirty lanes now have cloud recovery refs: SessionLedger (`ec278e3c`), pheno-harness
    (`9fdef790`), Tracera (`47ef7f41`), sharecli (`08ad5d10`), and pheno (`6140133`). Classify
    residual generated/local state and parent-boundary semantics before any merge/archive action.
-   The pheno ref is preservation-only: 119 of 151 nested Cargo manifests/locks are absent and
-   must be force-added in a follow-up source capture before build or absorption claims.
+   The pheno recovery ref is preservation-only. Follow-up source capture
+   `wip/preserve-20260802/pheno-source-manifest-capture` -> `ee890798` now adds the 119
+   previously missing manifests and six whitelisted metadata files; build, parity, and
+   absorption claims remain gated on API/dependency/test evidence.
 2. Revalidate PR #442's ordering fix at head `33e0cdf`; Kilo review passes and all review threads are resolved, but required contexts are absent and docs/secret-guard fail (current trufflehog passes).
 3. Repair the concrete #443 blockers (VitePress parse error and unpinned actions), then
    only then synchronize #441/#442 to materialize `ci / lint` and `ci / test` on their heads.
 4. Keep PR #432 held until the unresolved OMLX gitlink `a7118ed9...` has an immutable,
    cloud-resolvable owner or is split into an evidence-only packet.
-5. ShareCLI post-capture source is now preserved at `fd2a4eea`; pheno still needs a
-   source-only manifest capture because `6140133` omitted ignored Cargo manifests.
+5. ShareCLI post-capture source is now preserved at `fd2a4eea`; pheno source-only manifest
+   follow-up is now preserved at `ee890798`. Remaining work is the API/dependency/test
+   parity audit for overlapping AgilePlus and HexaKit crates.

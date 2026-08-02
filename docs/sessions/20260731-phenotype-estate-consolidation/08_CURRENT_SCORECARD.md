@@ -1,6 +1,6 @@
 # Current Estate Scorecard
 
-Evidence timestamp: 2026-08-01 23:22 UTC. GitHub values take precedence over stale local tracking refs.
+Evidence timestamp: 2026-08-02 07:47 UTC. GitHub values take precedence over stale local tracking refs.
 
 | Repo | Local HEAD/state | Authoritative remote evidence | Grade | Gate |
 |---|---|---|---:|---|
@@ -13,7 +13,7 @@ Evidence timestamp: 2026-08-01 23:22 UTC. GitHub values take precedence over sta
 | SessionLedger | `7b1c243e`; 19 tracked + 4 untracked entries (17 files); 99 local heads | `main=71a781ff3a97`; recovery `wip/preserve-20260801/sessionledger-dirty-capture-0902` -> `ec278e3c`; #391 behind with visual/e2e/provenance failures | D+ | preserve remaining generated/local payloads, then rebase/repair |
 | pheno-harness | `fix/pheno-harness-runner-provenance@4131b7c`; 2 tracked + 52 untracked entries | source branch head `4131b7c`; recovery `wip/preserve-20260801/pheno-harness-dirty-capture-0902` -> `9fdef790`; exclusion manifest committed | C+ | preserve linked worktree separately, then evaluate harness/tooling boundary |
 | sharecli | `fix/runtime-openapi-drift@7bafd605`; post-capture `AppState.swift` delta preserved | base recovery `wip/preserve-20260801/sharecli-dirty-capture-0955` -> `08ad5d10`; follow-up `wip/preserve-20260802/sharecli-postcapture-20260802T014647Z` -> `fd2a4eea` | C+ | KEEP Rust runtime canonical; thegent-sharecli archive-only; parity fixture still unrun |
-| pheno | `main@be5da947`; 14 tracked + ~5,278 untracked entries | recovery `wip/preserve-20260801/pheno-dirty-capture-0955` -> `6140133`; 151 nested Cargo manifests/locks exist locally, 119 are absent from the recovery tree | C | HOLD blanket absorption; force-add the 119 missing manifests plus whitelisted source metadata |
+| pheno | `main@a3c9dde`; 14 tracked + ~5,278 untracked entries | recovery `wip/preserve-20260801/pheno-dirty-capture-0955` -> `6140133`; follow-up `wip/preserve-20260802/pheno-source-manifest-capture` -> `ee890798`; all 151 nested Cargo manifests/locks plus the six-file metadata whitelist are now cloud-preserved | C+ | HOLD blanket absorption; compare API/dependency/test parity per overlapping crate before any parent or tombstone action |
 | phenoAI | `a73ac4d`; 9 behind/5 ahead; 1 dirty | `main=751a8e77f854`; #69/#70 unstable | C- | stabilize CI/coverage |
 | phenotype-omlx | `31cada2d`; 1 dirty; feature branch behind 29 | `main=c88431ad6004`; recovery ref `wip/preserve-20260801/phenotype-omlx/recovery--phenotype-omlx-local-20260726` at `8a1150f` | C+ | keep archive-only boundary; finish parity/provenance proof |
 
@@ -26,6 +26,7 @@ Evidence timestamp: 2026-08-01 23:22 UTC. GitHub values take precedence over sta
 - AgilePlus governance: feature is specified/researched/planned in isolated DB, but validation is `0/6` evidence items until CI/review artifacts are attached.
 - AgilePlus governance mirror is cloud-published at `ad2a1b0705dbadaa5a46af6d0307a2caebc6f84`; the ignored local DB remains supplemental evidence only.
 - Registry governance packet is cloud-published through Airlock branch `wip/20260801T1045-18c7a89048cda260` at the latest scorecard snapshot.
+- Pheno source completeness follow-up is cloud-published at `KooshaPari/pheno:wip/preserve-20260802/pheno-source-manifest-capture` -> `ee890798`; this closes the missing-manifest preservation gate only, not the boundary/parity gate.
 
 ## Promotion lanes
 

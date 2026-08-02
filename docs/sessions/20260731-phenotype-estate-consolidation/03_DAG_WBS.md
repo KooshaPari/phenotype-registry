@@ -45,7 +45,7 @@ Boundary lanes:
 | C1 | [ok] | Prove parent boundaries for captured lanes | Tracera KEEP standalone; sharecli KEEP Rust/archive-only Python; AgilePlus and HexaKit HOLD standalone |
 | C2 | [ok] | Refresh scorecard, known issues, inventory, and this DAG | commits `d277759`, `712f43d`; Airlock snapshot required before turn end |
 | C3 | [wip] | Attach isolated docs/workflow repairs, then synchronize #441/#442 | repair refs published and diff-scope/YAML verified; hosted checks and sponsor review remain |
-| C4 | [wip] | Classify residual generated/local payloads and stash provenance | pheno follow-up must force-add ignored manifests; SessionLedger mutation output remains excluded; sharecli post-capture file changed |
+| C4 | [ok] | Classify residual generated/local payloads and stash provenance | pheno source follow-up `ee890798` captures 119 missing manifests plus six whitelisted metadata files; generated/runtime exclusions remain; SessionLedger mutation output remains excluded |
 | C5 | [hold] | Merge/archive/tombstone packets | sponsor approval, green protected checks, and reversible evidence |
 
 AgilePlus is a governance dependency, not a prerequisite for preserving source state. AgilePlus's checked-in DB could not open WAL on the full volume; planning used an isolated DB and the limitation is recorded in session overview.
