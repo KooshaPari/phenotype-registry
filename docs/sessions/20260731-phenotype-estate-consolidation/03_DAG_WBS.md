@@ -57,7 +57,7 @@ Boundary lanes:
 | C0 | [ok] | Capture SessionLedger, pheno-harness, Tracera, sharecli, and pheno dirty payloads | immutable recovery refs: `ec278e3c`, `9fdef790`, `47ef7f41`, `08ad5d10`, `6140133` |
 | C1 | [ok] | Prove parent boundaries for captured lanes | Tracera KEEP standalone; sharecli KEEP Rust/archive-only Python; AgilePlus and HexaKit HOLD standalone |
 | C2 | [ok] | Refresh scorecard, known issues, inventory, and this DAG | local baseline `bf9123d`; live `main=3b3edc2`; Airlock `wip/20260802T2150-18c81b6d5de30938` |
-| C3 | [wip] | Attach isolated docs/workflow repairs, then synchronize #441/#442 | repair refs are preserved but stale/behind; rebase onto live main, rerun hosted checks, and retain review receipts |
+| C3 | [wip] | Synchronize current promotion PRs after live-main repair integration | `wip/preserve-20260802/registry-repair-integration` -> `3b3edc2` is clean against live main; hosted PR synchronization and sponsor review remain |
 | C4 | [ok] | Classify residual generated/local payloads and stash provenance | pheno source follow-up `ee890798` captures 119 missing manifests plus six whitelisted metadata files; generated/runtime exclusions remain; SessionLedger mutation output remains excluded |
 | C5 | [hold] | Merge/archive/tombstone packets | sponsor approval, green protected checks, reversible evidence, and OMLX pointer decision; current `60243d...` gitlink is not cloud-resolvable |
 
