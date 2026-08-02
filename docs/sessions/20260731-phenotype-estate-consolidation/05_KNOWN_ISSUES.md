@@ -3,6 +3,7 @@
 | Severity | Issue | Mitigation |
 |---|---|---|
 | Blocker | Several lanes have dirty/local-only payloads not yet reconciled to live remote refs | preserve and publish exact refs before promotion |
+| Blocker | phenotype-registry `main` advanced from `834c721f` to `3b3edc2`; previously published repair refs are stale-base until rebased, while open PRs #444-#452 are current hosted state | use live `main=3b3edc2` for any repair integration; preserve old refs but do not attach them directly |
 | Blocker | Tracera draft PR #771 has failing runtime smoke and Vercel checks | inspect exact failing logs; do not merge on local fixture evidence alone |
 | Baseline | PR #771 hosted failures currently resolve to frontend `@tracertm/web` build exit, missing `trunk-action` revision, and pre-existing `tracera-cli` formatting drift; no failure points at the two candidate files | keep PR draft; repair or quarantine baseline gates before promotion |
 | Blocker | OmniRoute, portage, SessionLedger, phenoAI, and registry PR gates are failing or behind | repair only after current-main reconciliation |
