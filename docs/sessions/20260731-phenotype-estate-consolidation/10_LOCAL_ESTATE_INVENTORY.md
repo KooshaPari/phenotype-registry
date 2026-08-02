@@ -78,8 +78,8 @@ This cohort is a research queue only. No archive or merge action is authorized b
 1. All five dirty lanes now have cloud recovery refs: SessionLedger (`ec278e3c`), pheno-harness
    (`9fdef790`), Tracera (`47ef7f41`), sharecli (`08ad5d10`), and pheno (`6140133`). Classify
    residual generated/local state and parent-boundary semantics before any merge/archive action.
-   The pheno ref is preservation-only: nested Cargo manifests were ignored and must be force-added
-   in a follow-up source capture before build or absorption claims.
+   The pheno ref is preservation-only: 119 of 151 nested Cargo manifests/locks are absent and
+   must be force-added in a follow-up source capture before build or absorption claims.
 2. Revalidate PR #442's ordering fix at head `33e0cdf`; Kilo review passes and all review threads are resolved, but required contexts are absent and docs/secret-guard fail (current trufflehog passes).
 3. Repair the concrete #443 blockers (VitePress parse error and unpinned actions), then
    only then synchronize #441/#442 to materialize `ci / lint` and `ci / test` on their heads.
