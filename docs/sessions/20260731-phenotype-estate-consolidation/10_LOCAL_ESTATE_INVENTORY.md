@@ -30,7 +30,7 @@ separately.
 | ResearchLedger | `main@0c207459`, 25 dirty source/docs entries | `wip/preserve-20260802/researchledger-dirty-capture` -> `3b3facc` | 25 source/docs paths captured in isolated ref; original checkout remains dirty |
 | hfscope | `fix/preserve-search-kind@f119063`, one tracked source delta | `wip/preserve-20260802/hfscope-dirty-capture` -> `865670b` | `internal/hfapi/client.go` captured in isolated ref; original checkout remains dirty |
 | forgecode | `preserve/workflow-schema-wave-20260729@4fe8aaf0`, 3 dirty source/docs files | prior recovery `wip/preserve-20260801/forgecode-dirty-0605`; follow-up `wip/preserve-20260802/forgecode-dirty-capture` -> `ab49d70` on fork remote | current `update.rs` and two packaging docs captured; original checkout remains dirty |
-| thegent | `chore/thegent-governance-integration-wave@b0a3517`, source tree clean; 5 stashes remain | current branch is cloud-visible; `wip/preserve-20260802/thegent-stash-0..4` exact remote refs | source test delta and all five stash commits are cloud-preserved; classify payloads before cleanup |
+| thegent | `chore/thegent-governance-integration-wave@d0f31a2`, one tracked post-capture delta; 5 stashes remain | `wip/preserve-20260802/thegent-postcapture` -> `b9ce6c1`; `thegent-stash-0..4` exact remote refs | current source delta and all five stash commits are cloud-preserved; classify payloads before cleanup |
 
 The seven `HEAD` refs are continuity evidence, not a completion claim for the dirty working
 trees. The next preservation action is to capture source-bearing dirty/untracked payloads in
