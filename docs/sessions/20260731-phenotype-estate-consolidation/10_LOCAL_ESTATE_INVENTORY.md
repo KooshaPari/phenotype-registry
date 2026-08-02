@@ -1,6 +1,6 @@
 # Local Estate Inventory and Next Cohort
 
-Evidence timestamp: 2026-08-01 10:42 UTC.
+Evidence timestamp: 2026-08-02 22:12 UTC.
 
 ## Coverage
 
@@ -73,7 +73,7 @@ Read-only scan of 45 direct roots, cross-checked against current GitHub metadata
 |---:|---|---|---:|---|---|
 | 1 | RepoLedger | `7dabedc` | 79 KB/live | registry governance satellite | preserve 53 local-only commits; map registry consumers |
 | 2 | asset-engine | `41ade55` | 293 KB/archived | phenotype-apps asset pipeline | prove scripts/assets landed in parent |
-| 3 | Benchora | `b4fd146` | 342 KB/live | phenotype-tooling `crates/benchora` | reconcile live repo vs absorbed registry row |
+| 3 | Benchora | `main@5dff436` (documented `b4fd146` remains an ancestor) | 342 KB/live | phenotype-tooling `crates/benchora` | reconcile live repo vs absorbed registry row |
 | 4 | PhenoPlugins | `e57ee79` | 633 KB/live | pheno plugin crates | prove all five crate hashes/builds before tombstone |
 | 5 | ResearchLedger | `0c207459` | 795 KB/live | standalone research/session boundary | compare SessionLedger/phenoAI ownership |
 | 6 | PlayCua | `29c6c66` | 889 KB/live | standalone browser/desktop automation | complete boundary and consumer inventory |
@@ -81,7 +81,7 @@ Read-only scan of 45 direct roots, cross-checked against current GitHub metadata
 | 8 | Tokn | `d51262f` | 2.5 MB/live | standalone token substrate | reconcile upstream vs Airlock mirror and OmniRoute API |
 | 9 | phenotype-python-sdk | `e270d0a` | 5.9 MB/live | standalone Python SDK | map public API ownership and four local commits |
 | 10 | PhenoObservability | `9192f73` | 8.5 MB/live | canonical observability parent | rebase 31 local commits and prove consumers |
-| 11 | Agentora | `53d370c` | 9.5 MB/live | standalone agent runtime | preserve stash; compare embedded agentkit contracts |
+| 11 | Agentora | `main@18ac868` (WIP `53d370c` preserved at `wip/20260802T0756-18c7edef121191d8`) | 9.5 MB/live | standalone agent runtime | preserve stash; compare embedded agentkit contracts |
 | 12 | hfscope | `f119063` | 10.3 MB/private | observability/tooling satellite | test search-kind delta and consumer overlap |
 | 13 | HexaKit | `b47132a` | 23 MB/live | standalone scaffold/library | review four metadata divergences and mirror hash |
 | 14 | Melosviz | `4a9f195` | 55 MB/live | phenotype-apps UI/observability | reconcile recovery branch and target tree |
