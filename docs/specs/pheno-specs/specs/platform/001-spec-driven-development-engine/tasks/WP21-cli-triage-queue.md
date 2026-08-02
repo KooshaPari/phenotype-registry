@@ -563,7 +563,7 @@ Write tests in `tests/cli/` that invoke the compiled binary via `assert_cmd`:
 Create one Markdown prompt file per sub-command registered in the WP20 registry
 (~24 files based on the T114 catalogue). Each file follows this template:
 
-```markdown
+````markdown
 ---
 subcommand: triage:classify
 category: triage
@@ -609,7 +609,7 @@ upstream trigger and downstream action.]
 
 [List of analogous commands from spec-kitty, bmad, gsd, openspec that
 informed this sub-command's design.]
-```
+````
 
 The seeding tool must:
 
