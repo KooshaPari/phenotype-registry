@@ -12,7 +12,7 @@ Evidence timestamp: 2026-08-01 23:22 UTC. GitHub values take precedence over sta
 | phenotype-registry | `9b9c147`; 6 dirty entries (5 docs + OMLX gitlink); governance packet committed | `main=052c5eff4856`; #441 `040eb7d`, #442 `33e0cdf`, #443 `fd898dc`; #432 blocked by unresolved OMLX gitlink; Airlock `wip/20260801T2243-18c7cfc6cf70cf10` | C+ | repair concrete docs/secret failures, then synchronize #441/#442 |
 | SessionLedger | `7b1c243e`; 19 tracked + 4 untracked entries (17 files); 99 local heads | `main=71a781ff3a97`; recovery `wip/preserve-20260801/sessionledger-dirty-capture-0902` -> `ec278e3c`; #391 behind with visual/e2e/provenance failures | D+ | preserve remaining generated/local payloads, then rebase/repair |
 | pheno-harness | `fix/pheno-harness-runner-provenance@4131b7c`; 2 tracked + 52 untracked entries | source branch head `4131b7c`; recovery `wip/preserve-20260801/pheno-harness-dirty-capture-0902` -> `9fdef790`; exclusion manifest committed | C+ | preserve linked worktree separately, then evaluate harness/tooling boundary |
-| sharecli | `fix/runtime-openapi-drift@b8eeeb2`; 14 tracked + 8 untracked; 8 stash refs | recovery `wip/preserve-20260801/sharecli-dirty-capture-0955` -> `08ad5d10`; manifest records diff/status hashes and stash provenance | C | semantic audit: KEEP Rust runtime canonical; thegent-sharecli archive-only; parity fixture still unrun |
+| sharecli | `fix/runtime-openapi-drift@7bafd605`; post-capture `AppState.swift` delta preserved | base recovery `wip/preserve-20260801/sharecli-dirty-capture-0955` -> `08ad5d10`; follow-up `wip/preserve-20260802/sharecli-postcapture-20260802T014647Z` -> `fd2a4eea` | C+ | KEEP Rust runtime canonical; thegent-sharecli archive-only; parity fixture still unrun |
 | pheno | `main@be5da947`; 14 tracked + ~5,278 untracked entries | recovery `wip/preserve-20260801/pheno-dirty-capture-0955` -> `6140133`; nested AgilePlus/HexaKit copies preserved but Cargo manifests were omitted by ignore rules | C | HOLD blanket absorption; force-add missing source manifests/specs in a follow-up capture |
 | phenoAI | `a73ac4d`; 9 behind/5 ahead; 1 dirty | `main=751a8e77f854`; #69/#70 unstable | C- | stabilize CI/coverage |
 | phenotype-omlx | `31cada2d`; 1 dirty; feature branch behind 29 | `main=c88431ad6004`; recovery ref `wip/preserve-20260801/phenotype-omlx/recovery--phenotype-omlx-local-20260726` at `8a1150f` | C+ | keep archive-only boundary; finish parity/provenance proof |
@@ -37,3 +37,9 @@ Evidence timestamp: 2026-08-01 23:22 UTC. GitHub values take precedence over sta
 | #443 | `fd898dc` | coverage workflow recovery trigger and protected check names | `ci / lint`, `ci / test`, and coverage pass; Kilo review passes; docs-build and secret-guard fail; current trufflehog passes; merge state unstable |
 
 Repository Actions are enabled. PR #443 proves `coverage.yml` can emit `ci / lint`, `ci / test`, and coverage; #441 and #442 still require a post-#443 synchronization after the workflow repair is promoted.
+
+Isolated repair refs (not merged): #441 docs `wip/preserve-20260802/registry-docs-pr441-angle-fix` -> `4160517`; #442 docs
+`wip/preserve-20260802/registry-docs-pr442-angle-fix` -> `e25fc2`; #443 docs
+`wip/preserve-20260802/registry-docs-pr443-angle-fix` -> `4dc7b5`; shared workflow
+`wip/preserve-20260802/registry-workflow-action-pins` -> `a7c39fe`. Each requires
+diff-scoped checks and normal sponsor review before attachment or merge.

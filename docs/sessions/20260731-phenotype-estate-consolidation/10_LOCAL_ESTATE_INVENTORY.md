@@ -85,3 +85,5 @@ This cohort is a research queue only. No archive or merge action is authorized b
    only then synchronize #441/#442 to materialize `ci / lint` and `ci / test` on their heads.
 4. Keep PR #432 held until the unresolved OMLX gitlink `a7118ed9...` has an immutable,
    cloud-resolvable owner or is split into an evidence-only packet.
+5. ShareCLI post-capture source is now preserved at `fd2a4eea`; pheno still needs a
+   source-only manifest capture because `6140133` omitted ignored Cargo manifests.
