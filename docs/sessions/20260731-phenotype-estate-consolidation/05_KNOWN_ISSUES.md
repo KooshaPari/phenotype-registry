@@ -14,6 +14,7 @@
 | High | Agentora local checkout is 10 commits behind origin and has a `.trunk/trunk.yaml` conflict plus generated `.trunk` tool state | preserve only source-bearing Agentora changes if found; exclude `.trunk` runtime/tool output and defer parent decision until current-main reconciliation |
 | Info | Grapheon recovery checkout is clean at `523b67d` but its registry boundary evidence is stale relative to current Tracera | retain standalone; refresh route/store/consumer lineage before any parent or archive decision |
 | Info | Planify2's original GitHub `origin` returns repository-not-found, but clean `main@e6b8e235` is now preserved on `KooshaPari/Planify:wip/preserve-20260802/planify2-local-main` | keep the branch preservation-only; obtain sponsor direction before any parent merge, archive, or new-repo creation |
+| High | ResearchLedger has 25 dirty source/docs entries and hfscope has one tracked source delta; neither had a cloud recovery ref at the prior inventory cut | preserve source-bearing changes in isolated refs, then compare consumers and API ownership against SessionLedger, phenoAI, and observability parents |
 | High | AgilePlus checked-in SQLite DB fails WAL pragma with disk I/O error | use isolated DB; retain existing dirty snapshot; do not delete DB files |
 | High | Workspace has critically low free space | route heavy builds to isolated target/cache or heavy runner |
 | Non-blocker | Tracera workspace-wide format check has pre-existing `tracera-cli` drift | keep focused fixture gate separate and record baseline debt |
