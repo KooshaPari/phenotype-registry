@@ -40,7 +40,7 @@ parent is a hypothesis until code/spec parity is proven.
 
 | Candidate | Initial parent hypothesis | Evidence to collect before mutation | Initial disposition |
 |---|---|---|---|
-| Agentora | AgilePlus satellite or standalone agent runtime | workspace overlap, consumers, unique refs | HOLD / boundary review |
+| Agentora | AgilePlus satellite or standalone agent runtime | `main@c7edae8`, 10 commits behind origin; only local state is `.trunk` conflict/generated tool metadata; registry audit says embedded pheno-agent crates do not prove migration | HOLD / preserve source separately; exclude `.trunk` runtime state |
 | Benchora | phenotype-tooling `crates/benchora/` | verify absorbed tree and remote refs | PARITY CHECK |
 | Grapheon | Tracera data/trace layer | live repo role, shared crates, unique history | HOLD / keep distinct until proven |
 | HexaKit | substrate/library boundary | compare with `pheno` and phenotype-tooling ports | HOLD |
