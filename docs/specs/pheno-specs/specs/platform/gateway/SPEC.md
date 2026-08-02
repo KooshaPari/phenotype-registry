@@ -2030,7 +2030,7 @@ impl Node {
 ### 11.3 JWT Validation Pipeline
 
 **Validation Steps:**
-1. Extract from Authorization: Bearer <token> header
+1. Extract from Authorization: Bearer `<token>` header
 2. Parse JWT structure (header.payload.signature)
 3. Verify signature using JWKS
 4. Validate claims (iss, aud, exp, nbf, iat)

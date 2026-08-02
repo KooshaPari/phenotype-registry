@@ -50,7 +50,7 @@
 **User Stories**:
 - E3.1: As a developer, I want to run a task by name (`forge <task>`) so that invocation is intuitive.
   - AC: `forge build` runs the `build` task.
-  - AC: Unknown task names exit 1 with "Unknown task: <name>" message.
+  - AC: Unknown task names exit 1 with "Unknown task: `<name>`" message.
   - Source: `src/main.rs` — `Args.task` field (clap Parser)
 - E3.2: As a developer, I want `forge --watch` to automatically re-run the specified task when source files change so I get continuous feedback during development.
   - AC: File system events are captured via the `notify` crate (v6.0).

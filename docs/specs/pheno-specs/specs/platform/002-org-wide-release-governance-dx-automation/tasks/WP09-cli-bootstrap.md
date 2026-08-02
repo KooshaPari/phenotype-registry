@@ -139,15 +139,15 @@ This work package implements the `pheno bootstrap` command to automate DX scaffo
      - `files/release.yml.tpl` (see T054)
      - `files/cliff.toml.tpl` (see T055)
   3. Implement template variable substitution:
-     - `{{ .RepoName }}` → package name or directory name
-     - `{{ .Language }}` → detected language
-     - `{{ .Registry }}` → auto-detected or configured (npm, pypi, crates)
-     - `{{ .RiskProfile }}` → from --risk-profile flag
-     - `{{ .Author }}` → from git config or env
-     - `{{ .Email }}` → from git config or env
+     - <code>&#123;&#123; .RepoName &#125;&#125;</code> → package name or directory name
+     - <code>&#123;&#123; .Language &#125;&#125;</code> → detected language
+     - <code>&#123;&#123; .Registry &#125;&#125;</code> → auto-detected or configured (npm, pypi, crates)
+     - <code>&#123;&#123; .RiskProfile &#125;&#125;</code> → from --risk-profile flag
+     - <code>&#123;&#123; .Author &#125;&#125;</code> → from git config or env
+     - <code>&#123;&#123; .Email &#125;&#125;</code> → from git config or env
   4. Template functions for common operations:
-     - `{{ upper .Language }}` → uppercase language name
-     - `{{ eq .Language "go" }}` → conditional rendering per language
+     - <code>&#123;&#123; upper .Language &#125;&#125;</code> → uppercase language name
+     - <code>&#123;&#123; eq .Language "go" &#125;&#125;</code> → conditional rendering per language
   5. Error handling: wrap template errors with file name and context
 
 - **Files**: `/Users/kooshapari/CodeProjects/Phenotype/repos/AgilePlus/internal/templates/templates.go`, `/Users/kooshapari/CodeProjects/Phenotype/repos/AgilePlus/internal/templates/files/*.tpl`
@@ -557,7 +557,7 @@ This work package implements the `pheno bootstrap` command to automate DX scaffo
      ```
   2. Use temp directories that are cleaned up after test
   3. Verify generated files are valid (parse TOML, YAML, shell syntax)
-  4. Verify template substitution works (check for {{ .Language }} is replaced)
+  4. Verify template substitution works (check for &#123;&#123; .Language &#125;&#125; is replaced)
   5. Test both dry-run and actual file generation
   6. Ensure test runs in <5 seconds
 
@@ -580,7 +580,7 @@ When reviewing WP09 completion:
 
 1. **Bootstrap Command**: Verify `pheno bootstrap` detects language, generates files, respects --dry-run, and handles overwrites correctly.
 2. **Language Detection**: Test with each supported language (Go, Rust, Python, TypeScript); verify correct detection with multiple manifests.
-3. **Template Generation**: Verify all templates render correctly with proper variable substitution; check that no {{ }} remain in output.
+3. **Template Generation**: Verify all templates render correctly with proper variable substitution; check that no &#123;&#123; &#125;&#125; remain in output.
 4. **Mise Tasks**: Generated `mise.toml` is valid TOML; all referenced tasks work (at least for installed tools); tasks are idempotent.
 5. **Hooks**: Pre-commit and pre-push hooks are executable; conventional commit regex works correctly; hook logic matches specification.
 6. **CI Workflows**: Generated workflows reference phenotypeActions correctly; inputs match WP10 signatures; secrets are documented.
