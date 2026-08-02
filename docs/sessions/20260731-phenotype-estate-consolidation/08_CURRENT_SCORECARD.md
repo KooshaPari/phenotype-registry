@@ -5,7 +5,7 @@ Evidence timestamp: 2026-08-02 22:19 UTC. GitHub values take precedence over sta
 | Repo | Local HEAD/state | Authoritative remote evidence | Grade | Gate |
 |---|---|---|---:|---|
 | AgilePlus | `16da102a`; clean; local main ahead 3 after stash recovery | `main=06c5823fea5c`; dirty-state recovery ref `wip/preserve-20260801/agileplus-dirty-0605` at `16da102a`; isolated AgilePlus validation `0/6` | C+ | attach CI/review evidence before any promotion |
-| OmniRoute | `fix/stray-brace-mitm-manager@03c6b8a`; source tree clean after auto-commit | source/config capture is cloud-visible at `03c6b8a`; six stash commits are preserved as `wip/preserve-20260802/omniroute-stash-0..5` | C+ | classify stash payloads and conflict-marked history before any repair or merge |
+| OmniRoute | `fix/stray-brace-mitm-manager@03c6b8a`; source tree clean after auto-commit | source/config capture is cloud-visible at `03c6b8a`; provenance packet `omniroute-stash-packet-2247` -> `d8ab8ac`; six stash commits are preserved as `omniroute-stash-0..5` | C+ | classify stash payloads and conflict-marked history before any repair or merge |
 | Tracera | `9be786f7d`; 76 dirty preserve files; preserve branch ahead 9 | `main=774c0061e886`; recovery `wip/preserve-20260801/tracera-dirty-capture-0955` -> `47ef7f41`; draft PR #771 | C+ | semantic audit recommends KEEP standalone; prove producer/consumer contracts; smoke/Vercel failures remain |
 | phenotype-tooling | `5b854782`; 76 ahead stale local main; 2 dirty | `main=587805e38800`; #252 merged, branch 57 ahead/9 behind current main | C | classify post-merge branch |
 | portage | `65e9ae47`; 2 dirty | `main=b35d00454fa8`; #495 dirty and required checks red | D | repair security/lint/type/test/verify |
