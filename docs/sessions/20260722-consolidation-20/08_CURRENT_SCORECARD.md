@@ -1,13 +1,33 @@
 # Current Estate Scorecard
 
-Date: 2026-08-01
+Date: 2026-08-02
 
 Evidence window: `2026-08-01 08:32:46Z-08:35:27Z`
 
 Evidence source: [PR #450](https://github.com/KooshaPari/phenotype-registry/pull/450), head
 `b31203dd4b72afd81fb608e7c1b91b5438931a7c`
 
-Baseline: `phenotype-registry/main` at `052c5eff4856cf800db0776c286bd53e18f84318`
+Live promotion source: GitHub API snapshots of [PR #453](https://github.com/KooshaPari/phenotype-registry/pull/453),
+[PR #454](https://github.com/KooshaPari/phenotype-registry/pull/454), `main`, and branch protection at
+2026-08-02 01:00:52Z.
+
+Baseline: `phenotype-registry/main` at `7ca1252fa95de09c9f256c5f3196d00ae80617e5`
+
+## Live promotion update
+
+The protected integration lane has advanced since the contradiction snapshot:
+
+| Change | Evidence | State |
+|---|---|---|
+| Workflow/docs integration | PR #453, merge `73220f4853886f26b6195f1fb2d209246befb3ed` | MERGED 2026-08-01 23:33:56Z |
+| Dependency maintenance | PR #454, merge `7ca1252fa95de09c9f256c5f3196d00ae80617e5` | MERGED 2026-08-02 01:00:48Z |
+| Current default branch | `main` at `7ca1252fa95de09c9f256c5f3196d00ae80617e5` | authoritative snapshot 2026-08-02 01:00:52Z |
+
+Branch protection now requires **zero approving reviews** for this single-identity repository,
+while retaining strict `ci / lint` and `ci / test` contexts, conversation resolution, linear
+history, and no force-push or deletion allowance. The required contexts are green on the current
+`main` head. Non-required baseline failures (SonarCloud, build, Scorecard, and SBOM generation)
+remain visible on the head and are not a release-readiness claim.
 
 ## Executive state
 
@@ -36,11 +56,11 @@ finding.
 
 ## Protected-review checkpoint
 
-PR #443 is ready for review at head `fd898dc17d33251d75d7f91c08d4b7237bc6b263`. Its required
-contexts (`ci / lint`, `ci / test`, and `coverage`) are green, but `main` requires one eligible
-non-author approval. No bypass actors are configured, and current automated reviewers have not
-provided an approval. This is an external governance gate, not evidence that the workflow repair
-is mergeable.
+PR #443's workflow recovery and the #444/#447 integration content were promoted through PR #453;
+PR #454 then landed on top of that merge. The source PRs remain historical/provenance records and
+are not treated as additional merge candidates. The zero-approval policy removes the impossible
+single-identity review gate, but it does not close the independent provenance, authorization, or
+registry-reconciliation gates below.
 
 ## Current-state classes
 
