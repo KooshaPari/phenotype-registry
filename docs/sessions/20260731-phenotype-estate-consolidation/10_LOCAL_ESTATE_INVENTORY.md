@@ -109,6 +109,20 @@ merge, or tombstone action is authorized by this table.
 
 This cohort is a research queue only. No archive or merge action is authorized by this table.
 
+## Source-capture wave (2026-08-02)
+
+| Repository | Exact source-bearing capture | Remote/provenance note | Exclusions or gate |
+|---|---|---|---|
+| OmniRoute | merge sweep `ac631202`; native SQLite `355f0b9`; PR481 review fixes `98102bf`; preservation packet `d8ab8ac`; raw stashes `omniroute-stash-0..5` | `KooshaPari/OmniRoute` `wip/preserve-20260802/*` refs verified with `ls-remote` | merge sweep contains labeled conflict markers and is preservation-only; `.trunk` generated state excluded |
+| forgecode | dirty source `64c9a337`; stash `0e091475` | `KooshaPari/forgecode` fork refs verified; tailcallhq Airlock push denied | fork refs are authoritative additive captures; no origin/config rewrite attempted |
+| ResearchLedger | `3b3facc` (25 source files, including `chunking.rs` and `reference_fetch.rs`) | `wip/preserve-20260802/researchledger-dirty-capture` verified | generated/ignored paths and secrets excluded |
+| hfscope | `865670b` (stash-derived `internal/hfapi/client.go`) | `wip/preserve-20260802/hfscope-dirty-capture` verified | source-only; original stash retained |
+| thegent | stash refs `04cfa56`, `116a774`, `e9e54a1`, `9de9c68`, `64162a4` | `KooshaPari/thegent` `wip/preserve-20260802/thegent-stash-0..4` verified | classify payloads before any boundary decision |
+| pheno-harness | existing baseline `9fdef790`; four newer worktree scopes pending capture | no new `wip/preserve-20260802` refs verified yet | generated `bench/results/sota/2026-08-02/snapshot.sha256` excluded; do not claim complete |
+
+These refs preserve source provenance only. They do not establish merge readiness,
+quality, ownership, or archive/tombstone authorization.
+
 ## Immediate gates
 
 1. All five dirty lanes now have cloud recovery refs: SessionLedger (`ec278e3c`), pheno-harness
@@ -130,7 +144,6 @@ This cohort is a research queue only. No archive or merge action is authorized b
 6. ResearchLedger source/docs payload is now preserved at `3b3facc` and hfscope's tracked
    client delta at `865670b`; compare their consumers and ownership before any parent,
    archive, or tombstone action.
-7. OmniRoute source and all six stashes are now cloud-preserved (`03c6b8a`,
-   `omniroute-stash-0..5`). Forgecode source is preserved at `ab49d70`, and thegent's
-   five stash commits at `thegent-stash-0..4`; next classify their payloads and verify
-   pheno-harness's generated delta.
+7. The 2026-08-02 source-capture wave is recorded above: OmniRoute, forgecode,
+   ResearchLedger, hfscope, and thegent have exact remote refs; pheno-harness's four
+   newer worktree scopes still require additive capture and verification.
