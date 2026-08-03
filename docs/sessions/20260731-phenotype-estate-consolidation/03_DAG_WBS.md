@@ -62,3 +62,23 @@ Boundary lanes:
 | C5 | [hold] | Merge/archive/tombstone packets | sponsor approval, green protected checks, reversible evidence, and OMLX pointer decision; current `60243d...` gitlink is not cloud-resolvable |
 
 AgilePlus is a governance dependency, not a prerequisite for preserving source state. AgilePlus's checked-in DB could not open WAL on the full volume; planning used an isolated DB and the limitation is recorded in session overview.
+
+## 2026-08-03 capture/gate checkpoint
+
+```text
+K0 current-main + hosted PR snapshot
+  -> K1 preserve-only refs and local-only boundary classification
+      -> K2 semantic/ancestry/consumer proof
+          -> K3 sponsor-selected PR synchronization
+              -> K4 protected ci / lint + ci / test
+                  -> K5 merge or archive packet (sponsor gate)
+```
+
+| Node | State | Evidence / next gate |
+|---|---|---|
+| K0 | [ok] | live registry `main=3b3edc2`; local docs `0a5eead1`; Airlock `wip/20260803T0019-18c8239a3080e110` |
+| K1 | [ok] | pheno `ee890798`, forgecode `ab49d70`, thegent `b9ce6c1`, ResearchLedger `3b3facc`, phenotype-tooling inbox delta `a24b0329` |
+| K2 | [wip] | pheno-rt-spec-probe 8/9 absorbed-file divergences; Planify2 fork/site/infra proof; next-20 consumer/ancestry checks |
+| K3 | [hold] | #391/#392/#399/#432/#440/#441/#442/#443/#445/#446/#447/#449/#450/#451 behind; #393/#426/#427/#444/#452 dirty |
+| K4 | [hold] | strict protected contexts `ci / lint` and `ci / test` are not green across candidate heads |
+| K5 | [hold] | no merge/archive/tombstone authorized; require sponsor selection and reversible packet |

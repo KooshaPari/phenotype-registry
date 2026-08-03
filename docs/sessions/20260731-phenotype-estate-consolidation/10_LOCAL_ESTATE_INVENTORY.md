@@ -161,3 +161,26 @@ These are evidence-backed holds, not merge/archive/tombstone approvals.
 7. The 2026-08-02 source-capture wave is recorded above: OmniRoute, forgecode,
    ResearchLedger, hfscope, thegent, and the four pheno-harness scopes have exact
    recovery/Airlock refs; quality, ownership, and promotion gates remain separate.
+
+## 2026-08-03 capture and boundary checkpoint
+
+The following evidence is read-only and does not authorize merge, archive, tombstone,
+delete, or remote mutation.
+
+| Surface | Exact local/remote evidence | Recommended boundary | Evidence gap |
+|---|---|---|---|
+| `pheno-rt-spec-probe` | local `main@5b043a1f`; 22 tracked files; origin `KooshaPari/phenotype-router-spec` returns 404 | preserve as a probe/evidence collection under `phenotype-registry`; keep canonical router protocol docs as the parent | 8 of 9 compared protocol/schema files differ from current absorbed copies; semantic reconciliation is required |
+| `phenotype-apps` | local `main@5a067202`; 57 tracked files; no configured remote; GitHub `KooshaPari/phenotype-apps` is active with default `apps-extract`; recovery ref `recovery/phenotype-apps-local-20260726` equals `5a067202` | KEEP standalone as the app-plane parent | registry retirement/archive wording conflicts with live GitHub metadata; reconcile local slice ancestry with `apps-extract`/`main` |
+| `phenotype-hub` | local `main@667d77c`; 194 tracked files; GitHub archived and `diskUsage=0`; live remote HEAD `c7dd053e` | archive-only provenance pointer to the absorbed hub docs; no new parent | local merge and live archived remote diverge; verify the redirect target and preserve local commits before any cleanup |
+| `Planify2` | local `feat/dual-harness-fixture-path-fix@e6b8e235` (local `main` is same); original `KooshaPari/Planify2` returns 404; `Planify:wip/preserve-20260802/planify2-local-main` equals `e6b8e235` | Planify is the preservation parent; keep Planify2 as a source-boundary record pending sponsor decision | fork ancestry, unique `site/`/`infra/` delta, and Planify parent ownership still need proof |
+
+### Next-20 boundary evidence
+
+| Surface | Evidence-backed disposition | Remaining gate |
+|---|---|---|
+| Benchora (`main@5dff436`) | HOLD; nested shelf has 11 paths versus source 112, with only 3 common and all divergent | reconcile source/parent ancestry and unique API ownership |
+| PhenoPlugins (`e57ee79`) | HOLD; 36 common paths, 15 identical, 21 divergent, 62 missing; historical target is unreachable | restore target provenance and complete crate/hash/build comparison |
+| asset-engine (`41ade55`) | KEEP standalone, archive-only candidate; 44 source paths and only a README overlap with PhenoDesign | verify asset pipeline consumers and publish reversible capture |
+| nanovms (`9a0e286`) | KEEP standalone | map runtime/VMM consumers before any parent proposal |
+| PlayCua (`29c6c66`) | HOLD | complete consumer scan and boundary contract |
+| RepoLedger (`7dabedc`) | KEEP standalone; 2 overlapping paths, zero byte-identical, local/remote diverged | preserve local commits and map registry consumers |

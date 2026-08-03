@@ -51,3 +51,22 @@ Isolated repair refs (not merged): #441 docs `wip/preserve-20260802/registry-doc
 `wip/preserve-20260802/registry-workflow-action-pins` -> `a7c39fe`. All four are
 diff-scope verified; the workflow YAML parses, but hosted checks and sponsor review
 are still required before attachment or merge.
+
+## 2026-08-03 hosted and boundary checkpoint
+
+| Lane | Current evidence | Grade/gate |
+|---|---|---|
+| Registry provenance | local docs `HEAD=0a5eead1`; Airlock `wip/20260803T0019-18c8239a3080e110`; live `main=3b3edc2`; worktree clean | C+ / documentation preserved; no promotion claim |
+| Hosted PR fleet | 13 open heads are `BEHIND` (#391, #392, #399, #432, #440, #441, #442, #443, #445, #446, #447, #449, #450, #451) and 5 are `DIRTY` (#393, #426, #427, #444, #452) | D / rebase, repair, and required checks remain open |
+| Protected checks | branch protection requires strict `ci / lint` + `ci / test`; zero approvals; force-push and deletion disabled | HOLD / sponsor review plus green protected checks |
+| pheno-rt-spec-probe | local `5b043a1f`; 404 origin; 8/9 protocol/schema files differ from registry absorbed copies | C- / preserve probe and reconcile semantics |
+| phenotype-apps | local `5a067202`; active GitHub parent default `apps-extract`; recovery ref exact | C / KEEP standalone; stale registry retirement metadata needs reconciliation |
+| phenotype-hub | local `667d77c`; archived remote disk usage 0, live remote HEAD `c7dd053e` | C- / archive-only provenance pointer; preserve local merge |
+| Planify2 | local `e6b8e235`; original origin 404; exact preservation branch on Planify | C / Planify parent candidate; fork/site/infra proof pending |
+| Next-20 boundaries | Benchora/PhenoPlugins/PlayCua HOLD; asset-engine/nanovms/RepoLedger KEEP standalone | C / consumer and ancestry evidence pending |
+
+Cloud refs independently verified in this checkpoint: pheno source manifests
+`ee890798`, forgecode recovery `ab49d70`, thegent post-capture `b9ce6c1`,
+ResearchLedger `3b3facc`, phenotype-tooling plugin recovery `fd51689`, and current
+phenotype-tooling inbox delta `a24b0329` (`wip/preserve-20260803/phenotype-tooling-inbox-delta`).
+These are preservation proofs only; none authorizes merge, archive, or tombstone.

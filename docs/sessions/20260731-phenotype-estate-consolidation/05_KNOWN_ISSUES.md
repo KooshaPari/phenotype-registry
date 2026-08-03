@@ -37,3 +37,28 @@
 | Info | Four isolated registry repair refs are diff-scope verified; none is attached to an open PR yet | run hosted checks, then require sponsor/HITL selection before any PR update or merge |
 | Deferred | AgilePlus reactivation and any archive/delete action | sponsor gate only |
 | High | GitHub Dependabot reports one open high-severity `postcss` advisory on the default branch (alert 1) | create a separate dependency-security remediation lane; do not conflate it with registry boundary promotion |
+
+## 2026-08-03 capture and hosted-gate checkpoint
+
+This is an additive evidence refresh. No merge, archive, tombstone, delete, reset,
+or force-push was performed.
+
+| Severity | Current evidence | Required follow-up |
+|---|---|---|
+| Blocker | phenotype-registry live `main=3b3edc26864b`; required contexts remain strict `ci / lint` and `ci / test`, with zero required approvals and force-push/deletion disabled | keep all stale/dirty PR heads unattached until additive rebase and protected hosted checks are green |
+| High | #391/#392/#399/#432/#440/#441/#442/#443/#445/#446/#447/#449/#450/#451 are `BEHIND`; #393/#426/#427/#444/#452 are `DIRTY` | refresh each candidate from live main only in isolated branches; sponsor selects promotion order |
+| High | #441 has `docs:build` and `secret-guard` failures; #442 has `docs:build`, `secret-guard`, and `trufflehog` failures; #443 has `docs:build`, `secret-guard`, and `trufflehog` failures; #432 Kilo review fails; #391 has `secret-guard` and `regen-ecosystem-map` failures | repair one gate family at a time; do not infer merge readiness from non-required green checks |
+| High | `pheno-rt-spec-probe` local `main@5b043a1f` points to 404 `phenotype-router-spec`; registry absorbed copies are not byte-identical on 8/9 protocol/schema files | preserve the local probe under registry evidence and perform semantic diff before replacing canonical docs |
+| High | `phenotype-apps` local `main@5a067202` has no configured remote, while active GitHub `phenotype-apps` uses default `apps-extract`; exact recovery ref `recovery/phenotype-apps-local-20260726` already exists | reconcile stale registry retirement wording with active-repo metadata; keep app-plane standalone |
+| High | `phenotype-hub` local `main@667d77c` diverges from archived remote HEAD `c7dd053e`; local branch carries unpushed merge work | preserve local commits and redirect provenance; do not delete or re-archive the already archived source |
+| High | `Planify2` original origin is 404; local `e6b8e235` is preserved at `KooshaPari/Planify:wip/preserve-20260802/planify2-local-main` | prove fork ancestry and unique `site/`/`infra/` ownership before any Planify extraction or archive action |
+| High | forgecode current checkout still has the three captured source/docs deltas and a newer `install.sh` delta beyond recovery `ab49d70` | take a follow-up source-only capture for the new installer delta before rebase or parent decision |
+| High | thegent current checkout advanced to `0e719cf`; five historical stashes remain, including stash #1's 2,411-line `phench/service.py` decomposition plus UX test and six new modules; post-capture ref remains `b9ce6c1` | preserve the current head and classify stash #1 atomically before any merge or boundary action |
+| High | ResearchLedger retains 25 dirty source/docs entries and two new Rust modules; recovery ref `3b3facc` is cloud-published | compare artifact ownership with SessionLedger/phenoAI before parent selection |
+| High | phenotype-tooling remains 82 commits ahead of hosted main with tracked `elicitate` source delta and an untracked worktree; recovery ref `fd51689` covers the prior plugin lane | preserve the current source/worktree separately; exclude generated worktree state from promotion |
+| High | pheno-harness current dirty entry is generated `bench/results/sota/2026-08-02/snapshot.sha256`; source recovery `9fdef790` exists | retain checksum as generated evidence only and verify source recovery before any boundary claim |
+| Info | Next-20 audit classified Benchora/PhenoPlugins/PlayCua as HOLD, asset-engine/nanovms/RepoLedger as KEEP standalone | complete consumer/ancestry/hash proof before proposing a parent or archive packet |
+
+The phenotype-tooling inbox source delta is now additionally preserved at
+`wip/preserve-20260803/phenotype-tooling-inbox-delta` -> `a24b0329`; the earlier
+`fd51689` recovery remains immutable historical provenance.
