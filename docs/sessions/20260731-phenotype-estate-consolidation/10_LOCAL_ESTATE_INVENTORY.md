@@ -123,6 +123,20 @@ This cohort is a research queue only. No archive or merge action is authorized b
 These refs preserve source provenance only. They do not establish merge readiness,
 quality, ownership, or archive/tombstone authorization.
 
+## Boundary review wave (2026-08-03)
+
+| Surface | Evidence-backed provisional disposition | Required proof before any move |
+|---|---|---|
+| ResearchLedger | KEEP standalone/HOLD; Tauri/Vite app has no sibling manifest consumer edge | hosted CI/build, lineage and ownership receipt |
+| PlayCua | KEEP split runtime/HOLD; Eidolon exposes only a trait-level conceptual port, not a manifest dependency | concrete transport implementation and target workspace dependency closure |
+| PhenoObservability | KEEP canonical observability spine/HOLD; OmniRoute has Rust path copies and an optional `@pheno-otel/tracing` specifier with prior npm E404 | exact-tree/API parity and hosted consumer CI proof |
+| Agentora | KEEP canonical hub/HOLD; active workspace has no sibling `agentkit` manifest imports; old Python row is archived | live-main CI/license and consumer-boundary proof |
+| hfscope | KEEP standalone/HOLD; Go server and browser extension have no sibling manifest edges | branch reconciliation, Go test/build, extension API and auth hygiene |
+| HexaKit | KEEP canonical scaffold/HOLD; no external manifest consumers found, while registry archive/retire labels conflict | exact crate ownership and parity with Agentora/PhenoObservability |
+| Melosviz | HOLD; registry owner/absorption records conflict and no path consumers were found | authoritative owner, source SHA/tree, test claim, and target parity receipt |
+
+These are evidence-backed holds, not merge/archive/tombstone approvals.
+
 ## Immediate gates
 
 1. All five dirty lanes now have cloud recovery refs: SessionLedger (`ec278e3c`), pheno-harness
