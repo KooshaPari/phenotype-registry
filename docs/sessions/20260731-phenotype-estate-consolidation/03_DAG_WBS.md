@@ -129,3 +129,19 @@ preservation refs.  Current working-tree deltas remain separate evidence and mus
 be captured before rebase or parent selection.  The live registry parent is
 `main=3b3edc26864bc60878192828a186db04c37fed9d`; hosted PR heads remain behind or
 dirty, and strict `ci / lint` plus `ci / test` are not a fleet-wide green gate.
+
+## Prompt-to-gate coverage ledger (2026-08-03)
+
+| Sponsor mandate | State | Evidence / gap that remains |
+|---|---|---|
+| Preserve-first; no destructive reset, delete, prune, force-push, or hidden archive | evidenced | Checkpoints above record preserve-only refs and no destructive action; promotion/retirement remains gated. |
+| Find and consolidate at least 20 small repositories into correct parent boundaries | in progress | Next-20 rows classify Benchora, PhenoPlugins, PlayCua, asset-engine, nanovms, and RepoLedger; complete 20 scored rows with consumer, ancestry, hash, and owner proofs. |
+| Collect local worktrees, unpushed branches, and loose source to the cloud | in progress | Captures include ResearchLedger `c501b0e`, forgecode `8ff6fcb`/installer `6d7ca12`, OmniRoute `e4c5385`, `9a77bea`, `df070a3`, and thegent helper `7cda67f`; current dirty follow-ups and hfscope classification remain. |
+| Mature enterprise-grade registry/governance tree | in progress | Live `main=3b3edc26864bc60878192828a186db04c37fed9d` and protected contexts are recorded; open PRs remain stale/dirty and non-required hosted failures remain. |
+| Maintain split boundaries and avoid premature absorption | evidenced / in progress | Tracera, sharecli, AgilePlus, and HexaKit boundaries are classified; consumer/API/ancestry parity is still required before parent or archive action. |
+| Use delegated agents with Sol as coordinator; close idle workers | in progress | Agent-produced evidence packets are incorporated; worker lifecycle is orchestration metadata and must be closed/verified outside repository commits. |
+| Self-approval only within Koosha-owned repos while respecting branch protection | externally gated | Protection requires strict `ci / lint` and `ci / test`, linear history, and conversation resolution; no bypass or merge is claimed. |
+| Maintain a rich forward DAG/WBS with critical gates | evidenced | P0-P9 and K0-K5 above define inventory, preservation, proof, checks, promotion, dogfood, and sponsor gates. |
+| Validate Luna configuration before claiming Luna execution | in progress | `codex-cli 0.146.0` accepted `gpt-5.6-luna` probe output `LUNA_MODEL_PROBE_OK`; no agent-file selector is documented and full dispatch hung on stdin, so no worker audit is claimed. |
+| Preserve all session goals, prompts, ideas, and decisions without drift | in progress | This ledger maps the principal mandates; exhaustive historical prompt-to-evidence reconciliation remains open. |
+| Keep a dashboard repo-state bracket with exact SHA, gate, and next action | evidenced / in progress | Current scorecard and hosted checkpoints provide SHA/gate brackets; refresh timestamps and newly captured refs before promotion. |
