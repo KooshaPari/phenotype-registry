@@ -89,6 +89,16 @@ the earlier local-only discrepancy: ResearchLedger
 only and do not authorize a merge, archive, or tombstone.  Live registry `main`
 remains `3b3edc26864bc60878192828a186db04c37fed9d`.
 
+### Fresh preservation refs (2026-08-03)
+
+| Lane | Cloud-visible preservation evidence | Disposition |
+|---|---|---|
+| OmniRoute merge sweep | `wip/preserve-20260803/omniroute-main-dirty-20260803T105436` -> `e4c53857c07ac1994186ec24db459d39eb1fe8c5` | preserve-only; classify the 69 tracked modifications and two compression docs before repair or merge |
+| OmniRoute native SQLite | `wip/preserve-20260803/pr481-native-sqlite-dirty-20260803T092433` -> `9a77beadf00961524f303b4a703558db03ea82d0` | preserve-only; retain separately from the merge-sweep payload |
+| OmniRoute review fixes | `wip/preserve-20260803/pr481-review-fixes-dirty-202603T092433` -> `df070a3fbda9ac286d19a599d50244a348193058` | preserve-only; rate-limiter/test payload remains subject to current-main and hosted-gate review |
+| thegent current helper delta | `wip/preserve-20260803/thegent-current-helper-delta` -> `7cda67f9597b0f9994f4f9a014c2586e23ea1da5` | preserve-only; parent `bc91aff123b80a9320c59a657846b09c45058531`; classify before rebase or boundary action |
+| hfscope current baseline | `fix/preserve-search-kind` -> `f119063f2d8d` | clean current checkout; retain prior dirty capture `865670b` as independent provenance |
+
 ### Current parent/gate blockers
 
 - `ResilienceKit` gitlink `a50f52561ba95b656dcd8a612efa3fe3ff78ca11` in live main is
@@ -101,9 +111,10 @@ remains `3b3edc26864bc60878192828a186db04c37fed9d`.
 - Protected registry contexts remain strict `ci / lint` and `ci / test`; the open
   PR fleet is not promotion-ready (`BEHIND` and `DIRTY` states with failed checks).
   No merge, archive, or tombstone is authorized by this scorecard.
-- Luna operational constraint: installed `codex-cli 0.146.0` exposes
-  `--strict-config` for `config.toml` but no documented agent-file selector in
-  `codex exec --help`.  `~/.codex/agents/luna-worker.toml` was inspected but its
-  consumability and model availability have not been validated by this installed
-  CLI.  No Luna execution is claimed; use an already-supported worker until a
-  successful command-level validation is recorded.
+- Luna validation: `~/.codex/agents/luna-worker.toml` exists unchanged; installed
+  `codex-cli 0.146.0` accepted the `gpt-5.6-luna` availability probe, which returned
+  exactly `LUNA_MODEL_PROBE_OK`. `codex exec --help` still documents no agent-file
+  selector (while `--strict-config` applies to `config.toml`). Attempts to run a
+  full bounded audit inherited stdin, hung at `Reading additional input from stdin...`,
+  and were terminated. Therefore this records model availability only, not a Luna
+  worker/audit execution claim.
