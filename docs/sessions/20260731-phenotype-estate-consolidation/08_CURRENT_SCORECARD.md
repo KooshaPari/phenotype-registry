@@ -101,9 +101,14 @@ remains `3b3edc26864bc60878192828a186db04c37fed9d`.
 
 ### Current parent/gate blockers
 
-- `ResilienceKit` gitlink `a50f52561ba95b656dcd8a612efa3fe3ff78ca11` in live main is
-  unreachable; hosted `KooshaPari/ResilienceKit:main` is
-  `fb718eab23c3c68f68b8e56e68e5e12e0bcb27d3`.
+- `ResilienceKit` gitlink `a50f52561ba95b656dcd8a612efa3fe3ff78ca11` in live main
+  is contained by the canonical `KooshaPari/ResilienceKit` main/recovery lineage.
+  Retain the existing gitlink; no pointer retarget is warranted.
+- `phenotype-hub` gitlink `c93bc65f5beb55b1e62406996ebdc24a479071a1` has durable
+  migrated-source provenance at
+  `phenotype-apps:refs/sources/phenotype-hub/audit/ownership-20260722-phenotype-hub`
+  -> `c93bc65f5beb55b1e62406996ebdc24a479071a1`.  Retain the existing gitlink; no
+  pointer retarget is warranted.
 - `phenotype-omlx` gitlink `8eb9891653e00a5dde986e60be3e84bfbf81d943` is not on
   hosted refs; hosted `main=302321a33812ef0c40bf3f3cb934e23b6ef7008e`, and
   `52682309e2576574739fc97b1b937af1d570ef43` is a separate candidate on
@@ -121,9 +126,11 @@ remains `3b3edc26864bc60878192828a186db04c37fed9d`.
 
 ### PR #458 security-gate checkpoint
 
-PR #458 at head `5ac89db...` remains blocked by the baseline/full-history security
-trigger: run `30794174416` (job `91623908467`) verified one `SentryToken` finding,
-left nine additional findings unverified, and exited `183`. No merge or bypass was
-performed. The minimum safe action is non-destructive remediation of the reported
+PR #458 is `DRAFT` and open against `main=3b3edc26864bc60878192828a186db04c37fed9d`
+at head `5ac89db16311c80006067d975882a05fe01167a2`. Its required `ci / lint` and
+`ci / test` checks passed, but the TruffleHog security check remains failed: run
+`30794174416` (job `91623908467`) verified one `SentryToken` finding, left nine
+additional findings unverified, and exited `183`. No merge or bypass was performed.
+The minimum safe action is non-destructive remediation of the reported
 security-gate scope, followed by a fresh full-history run on the same or a
 current-main-reconciled head; do not infer readiness from partial verification.
