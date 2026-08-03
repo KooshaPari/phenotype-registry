@@ -80,10 +80,14 @@ These are preservation proofs only; none authorizes merge, archive, or tombstone
 | phenotype-tooling | `wip/preserve-20260803/phenotype-tooling-inbox-delta` -> `a24b0329f6249538094276e8f35b54388f54cf63` | parent `134d35599d76273c7d404e377834ab30db54c9f1`; tree `829c3d4258079a5033993a10005d31338fd05908`; diff SHA-256 `121411aacf00592bb198c56e49743577728da9e2741b7e8544361cb60415934b` | C+ / preserve; untracked worktree excluded |
 | thegent | `wip/preserve-20260803/thegent-source-delta` -> `0e719cf15d4b8f618674acc4726bb7db8e86b0d8` | parent `d0f31a24d61e7abcd90cb077073f5444892396da`; tree `1bdf7688795bd372cf4ef04e98879dcacce3b018`; diff SHA-256 `6c4d3ba162911ba5e132d5f5c7a24f339abbee4e1fe8745262d0c246125854e3` | C+ / preserve; source/test decomposition follow-up open |
 
-The previously requested prefixes `7c3a043` (ResearchLedger) and `dd03d085`
-(forgecode) are unavailable from fresh local `fsck` and GitHub ref/API checks;
-they are not treated as current evidence.  Live registry `main` remains
-`3b3edc26864bc60878192828a186db04c37fed9d`.
+The formerly disputed source-delta commits are now cloud-verifiable and supersede
+the earlier local-only discrepancy: ResearchLedger
+`wip/preserve-20260803/researchledger-github-source-delta` ->
+`7c3a043f8245e206fc90c9bbf64c6220fdf32a72`, and forgecode (fork remote)
+`wip/preserve-20260803/forgecode-source-delta` ->
+`dd03d08584e839356743d5955ae27f398a62661d`.  They are preservation evidence
+only and do not authorize a merge, archive, or tombstone.  Live registry `main`
+remains `3b3edc26864bc60878192828a186db04c37fed9d`.
 
 ### Current parent/gate blockers
 
@@ -97,3 +101,9 @@ they are not treated as current evidence.  Live registry `main` remains
 - Protected registry contexts remain strict `ci / lint` and `ci / test`; the open
   PR fleet is not promotion-ready (`BEHIND` and `DIRTY` states with failed checks).
   No merge, archive, or tombstone is authorized by this scorecard.
+- Luna operational constraint: installed `codex-cli 0.146.0` exposes
+  `--strict-config` for `config.toml` but no documented agent-file selector in
+  `codex exec --help`.  `~/.codex/agents/luna-worker.toml` was inspected but its
+  consumability and model availability have not been validated by this installed
+  CLI.  No Luna execution is claimed; use an already-supported worker until a
+  successful command-level validation is recorded.

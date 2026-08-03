@@ -65,10 +65,12 @@ The phenotype-tooling inbox source delta is now additionally preserved at
 
 ## 2026-08-03 exact-ref and boundary-gate refresh (05:49-06:01 UTC)
 
-Fresh remote/API checks found no object or hosted ref beginning with the earlier
-requested ResearchLedger `7c3a043` or forgecode `dd03d085` prefixes.  The
-authoritative replacement refs are recorded in the DAG checkpoint; re-capture those
-lanes if the missing prefixes are later identified.  Current source captures are
+Fresh remote checks now verify the formerly missing source-delta objects:
+ResearchLedger `7c3a043f8245e206fc90c9bbf64c6220fdf32a72` on
+`wip/preserve-20260803/researchledger-github-source-delta`, and forgecode
+`dd03d08584e839356743d5955ae27f398a62661d` on the fork ref
+`wip/preserve-20260803/forgecode-source-delta`.  The discrepancy is closed;
+both refs remain preserve-only.  Current source captures are
 `c501b0e66c591cb14737d6a8c356101d14a21000` (ResearchLedger),
 `8ff6fcbe1d2e5490664ddc0a7d4fe126c1c1c56e` plus installer alias
 `6d7ca1265d95fda230ddacf21c6206710d8a2b30` (forgecode),

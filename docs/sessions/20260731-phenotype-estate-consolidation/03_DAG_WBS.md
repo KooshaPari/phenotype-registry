@@ -86,10 +86,12 @@ K0 current-main + hosted PR snapshot
 ## 2026-08-03 source-capture and hosted-gate refresh (05:49 UTC)
 
 The following are the authoritative refs observed from the live remotes during this
-refresh.  The short prefixes `7c3a043` (ResearchLedger) and `dd03d085` (forgecode)
-were not reachable in local object databases or GitHub refs; they are therefore not
-used as evidence.  No merge, archive, tombstone, delete, reset, or force-push was
-performed.
+refresh.  The earlier disputed prefixes are now directly cloud-verifiable:
+`7c3a043f8245e206fc90c9bbf64c6220fdf32a72` on
+`ResearchLedger:wip/preserve-20260803/researchledger-github-source-delta`, and
+`dd03d08584e839356743d5955ae27f398a62661d` on
+`KooshaPari/forgecode:wip/preserve-20260803/forgecode-source-delta`.  No merge,
+archive, tombstone, delete, reset, or force-push was performed.
 
 ```text
 ResearchLedger
