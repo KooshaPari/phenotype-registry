@@ -23,7 +23,7 @@ jobs:
     if: ${{ !contains(vars.SKIP || '', 'lint') }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v4
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v4
       - name: Run lint
         run: echo "Running language-specific lint"
   test:
@@ -31,7 +31,7 @@ jobs:
     if: ${{ !contains(vars.SKIP || '', 'test') }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v4
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v4
       - name: Run tests
         run: echo "Running language-specific tests"
   coverage:
@@ -39,6 +39,6 @@ jobs:
     if: ${{ !contains(vars.SKIP || '', 'coverage') }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v4
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v4
       - name: Generate coverage
         run: echo "Generating coverage (language-specific)"
