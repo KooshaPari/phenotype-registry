@@ -118,3 +118,12 @@ remains `3b3edc26864bc60878192828a186db04c37fed9d`.
   full bounded audit inherited stdin, hung at `Reading additional input from stdin...`,
   and were terminated. Therefore this records model availability only, not a Luna
   worker/audit execution claim.
+
+### PR #458 security-gate checkpoint
+
+PR #458 at head `5ac89db...` remains blocked by the baseline/full-history security
+trigger: run `30794174416` (job `91623908467`) verified one `SentryToken` finding,
+left nine additional findings unverified, and exited `183`. No merge or bypass was
+performed. The minimum safe action is non-destructive remediation of the reported
+security-gate scope, followed by a fresh full-history run on the same or a
+current-main-reconciled head; do not infer readiness from partial verification.
