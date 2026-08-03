@@ -118,7 +118,7 @@ This cohort is a research queue only. No archive or merge action is authorized b
 | ResearchLedger | `3b3facc` (25 source files, including `chunking.rs` and `reference_fetch.rs`) | `wip/preserve-20260802/researchledger-dirty-capture` verified | generated/ignored paths and secrets excluded |
 | hfscope | `865670b` (stash-derived `internal/hfapi/client.go`) | `wip/preserve-20260802/hfscope-dirty-capture` verified | source-only; original stash retained |
 | thegent | stash refs `04cfa56`, `116a774`, `e9e54a1`, `9de9c68`, `64162a4` | `KooshaPari/thegent` `wip/preserve-20260802/thegent-stash-0..4` verified | classify payloads before any boundary decision |
-| pheno-harness | existing baseline `9fdef790`; four newer worktree scopes pending capture | no new `wip/preserve-20260802` refs verified yet | generated `bench/results/sota/2026-08-02/snapshot.sha256` excluded; do not claim complete |
+| pheno-harness | main Harbor gate/test `1ee490d`; core intent `9c3d030`; fix-gen sources `961e662`; prefer-314t docs `a79bbd0`; existing baseline `9fdef790` | dedicated recovery/Airlock refs verified at `wip/20260802T2300-18c81f441c2eada0`, `wip/preserve-20260802/*`, and recovery refs | generated `bench/results/sota/2026-08-02/snapshot.sha256` excluded; larger local main remains ahead of hosted `main=0ee95d9` |
 
 These refs preserve source provenance only. They do not establish merge readiness,
 quality, ownership, or archive/tombstone authorization.
@@ -145,5 +145,5 @@ quality, ownership, or archive/tombstone authorization.
    client delta at `865670b`; compare their consumers and ownership before any parent,
    archive, or tombstone action.
 7. The 2026-08-02 source-capture wave is recorded above: OmniRoute, forgecode,
-   ResearchLedger, hfscope, and thegent have exact remote refs; pheno-harness's four
-   newer worktree scopes still require additive capture and verification.
+   ResearchLedger, hfscope, thegent, and the four pheno-harness scopes have exact
+   recovery/Airlock refs; quality, ownership, and promotion gates remain separate.
