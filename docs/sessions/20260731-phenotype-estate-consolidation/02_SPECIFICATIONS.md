@@ -19,3 +19,12 @@
 - Every promoted PR has green required checks and dogfood evidence.
 - Every tombstone/archive has reversible provenance.
 - Registry main contains the authoritative final scorecard.
+
+### TruffleHog workflow repair contract (2026-08-03)
+
+- Pull requests scan only the base/head differential.
+- Full-history scans run only on `main`, scheduled, and manual-dispatch events.
+- The workflow uses only supported TruffleHog inputs.
+- A verified Sentry finding remains an incident gate; preserve-first forbids history rewrite.
+
+ARU: credential revocation proof is external to this repository and must be verified before any hosted-policy decision.
