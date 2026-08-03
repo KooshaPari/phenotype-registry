@@ -1,6 +1,6 @@
 # Current Estate Scorecard
 
-Evidence timestamp: 2026-08-02 22:19 UTC. GitHub values take precedence over stale local tracking refs.
+Evidence timestamp: 2026-08-03 00:19 UTC. GitHub values take precedence over stale local tracking refs.
 
 | Repo | Local HEAD/state | Authoritative remote evidence | Grade | Gate |
 |---|---|---|---:|---|
@@ -9,7 +9,7 @@ Evidence timestamp: 2026-08-02 22:19 UTC. GitHub values take precedence over sta
 | Tracera | `9be786f7d`; 76 dirty preserve files; preserve branch ahead 9 | `main=774c0061e886`; recovery `wip/preserve-20260801/tracera-dirty-capture-0955` -> `47ef7f41`; draft PR #771 | C+ | semantic audit recommends KEEP standalone; prove producer/consumer contracts; smoke/Vercel failures remain |
 | phenotype-tooling | `5b854782`; 76 ahead stale local main; 2 dirty | `main=587805e38800`; #252 merged, branch 57 ahead/9 behind current main | C | classify post-merge branch |
 | portage | `65e9ae47`; 2 dirty | `main=b35d00454fa8`; #495 dirty and required checks red | D | repair security/lint/type/test/verify |
-| phenotype-registry | evidence checkpoint `5324a7b`; latest docs wrapper `c7475c1`; clean preservation branch | `main=3b3edc26864b`; current open repair/cohort PRs include #444-#452; legacy #441/#442/#443/#432 remain historical lanes; Airlock through `wip/20260802T2219-18c81d07e3762120` | C+ | rebase repair work onto live main; do not attach stale-base refs |
+| phenotype-registry | evidence checkpoint `5324a7b`; latest source-capture ledger `e90ea1f`; clean preservation branch | `main=3b3edc26864b`; current open repair/cohort PRs include #444-#452; legacy #441/#442/#443/#432 remain historical lanes; Airlock `wip/20260803T0014-18c8234d2a908d20` | C+ | rebase repair work onto live main; do not attach stale-base refs |
 | SessionLedger | `7b1c243e`; 19 tracked + 4 untracked entries (17 files); 99 local heads | `main=71a781ff3a97`; recovery `wip/preserve-20260801/sessionledger-dirty-capture-0902` -> `ec278e3c`; #391 behind with visual/e2e/provenance failures | D+ | preserve remaining generated/local payloads, then rebase/repair |
 | pheno-harness | `fix/pheno-harness-runner-provenance@4131b7c`; 2 tracked + 52 untracked entries | source branch head `4131b7c`; recovery `wip/preserve-20260801/pheno-harness-dirty-capture-0902` -> `9fdef790`; exclusion manifest committed | C+ | preserve linked worktree separately, then evaluate harness/tooling boundary |
 | forgecode | `preserve/workflow-schema-wave-20260729@4fe8aaf0`; 3 dirty source/docs files | recovery `wip/preserve-20260802/forgecode-dirty-capture` -> `ab49d70` on fork remote | C+ | compare captured update/packaging diff with current upstream before rebase or parent decision |
