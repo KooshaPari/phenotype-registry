@@ -184,3 +184,18 @@ delete, or remote mutation.
 | nanovms (`9a0e286`) | KEEP standalone | map runtime/VMM consumers before any parent proposal |
 | PlayCua (`29c6c66`) | HOLD | complete consumer scan and boundary contract |
 | RepoLedger (`7dabedc`) | KEEP standalone; 2 overlapping paths, zero byte-identical, local/remote diverged | preserve local commits and map registry consumers |
+
+## Exact source-capture refs (2026-08-03 refresh)
+
+| Repository | Cloud ref and SHA | Parent/tree/diff SHA-256 | Boundary posture |
+|---|---|---|---|
+| ResearchLedger | `wip/preserve-20260803/researchledger-github-dirty-capture` -> `c501b0e66c591cb14737d6a8c356101d14a21000` | `7f4736f401fc225c0594ece59efe1f726df6ec03` / `76b907905358f70fc15695c249c2612cc1e5bcc8` / `83cf54eb26dd136ceb9a0ed813155d48904e325baa3ea2b95e856257c5289b7a` | preserve-only; current dirty source requires another capture |
+| forgecode | `wip/preserve-20260803/forgecode-dirty-capture` -> `8ff6fcbe1d2e5490664ddc0a7d4fe126c1c1c56e`; installer alias `6d7ca1265d95fda230ddacf21c6206710d8a2b30` | `74464752a22e5d53138a821a186c2f78278f670f` / `a7bedd100d01c76ef99b7aa27aa2f041c45a774c` / `38510ad684888a82444061a8d4c062cd0049f09bf0e7cea93beb8f9695656c25` | preserve-only; follow-up source/docs deltas open |
+| phenotype-tooling | `wip/preserve-20260803/phenotype-tooling-inbox-delta` -> `a24b0329f6249538094276e8f35b54388f54cf63` | `134d35599d76273c7d404e377834ab30db54c9f1` / `829c3d4258079a5033993a10005d31338fd05908` / `121411aacf00592bb198c56e49743577728da9e2741b7e8544361cb60415934b` | preserve-only; untracked worktree excluded |
+| thegent | `wip/preserve-20260803/thegent-source-delta` -> `0e719cf15d4b8f618674acc4726bb7db8e86b0d8` | `d0f31a24d61e7abcd90cb077073f5444892396da` / `1bdf7688795bd372cf4ef04e98879dcacce3b018` / `6c4d3ba162911ba5e132d5f5c7a24f339abbee4e1fe8745262d0c246125854e3` | preserve-only; decomposition/source-test follow-up open |
+
+The requested short prefixes `7c3a043` and `dd03d085` were not found in fresh
+remote/API or local object checks and remain an open provenance discrepancy.
+Live registry `main` is `3b3edc26864bc60878192828a186db04c37fed9d`; current
+protected PR gates are not green across the fleet.  No move, merge, archive, or
+tombstone is authorized by this inventory.

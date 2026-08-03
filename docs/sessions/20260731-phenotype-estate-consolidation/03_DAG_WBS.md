@@ -82,3 +82,48 @@ K0 current-main + hosted PR snapshot
 | K3 | [hold] | #391/#392/#399/#432/#440/#441/#442/#443/#445/#446/#447/#449/#450/#451 behind; #393/#426/#427/#444/#452 dirty |
 | K4 | [hold] | strict protected contexts `ci / lint` and `ci / test` are not green across candidate heads |
 | K5 | [hold] | no merge/archive/tombstone authorized; require sponsor selection and reversible packet |
+
+## 2026-08-03 source-capture and hosted-gate refresh (05:49 UTC)
+
+The following are the authoritative refs observed from the live remotes during this
+refresh.  The short prefixes `7c3a043` (ResearchLedger) and `dd03d085` (forgecode)
+were not reachable in local object databases or GitHub refs; they are therefore not
+used as evidence.  No merge, archive, tombstone, delete, reset, or force-push was
+performed.
+
+```text
+ResearchLedger
+  capture  c501b0e66c591cb14737d6a8c356101d14a21000
+  parent   7f4736f401fc225c0594ece59efe1f726df6ec03
+  tree     76b907905358f70fc15695c249c2612cc1e5bcc8
+  diff256  83cf54eb26dd136ceb9a0ed813155d48904e325baa3ea2b95e856257c5289b7a
+  remote   wip/preserve-20260803/researchledger-github-dirty-capture
+
+forgecode
+  capture  8ff6fcbe1d2e5490664ddc0a7d4fe126c1c1c56e
+  parent   74464752a22e5d53138a821a186c2f78278f670f
+  tree     a7bedd100d01c76ef99b7aa27aa2f041c45a774c
+  diff256  38510ad684888a82444061a8d4c062cd0049f09bf0e7cea93beb8f9695656c25
+  remote   wip/preserve-20260803/forgecode-dirty-capture
+  installer 6d7ca1265d95fda230ddacf21c6206710d8a2b30 (same tree/diff)
+
+phenotype-tooling
+  capture  a24b0329f6249538094276e8f35b54388f54cf63
+  parent   134d35599d76273c7d404e377834ab30db54c9f1
+  tree     829c3d4258079a5033993a10005d31338fd05908
+  diff256  121411aacf00592bb198c56e49743577728da9e2741b7e8544361cb60415934b
+  remote   wip/preserve-20260803/phenotype-tooling-inbox-delta
+
+thegent
+  source   0e719cf15d4b8f618674acc4726bb7db8e86b0d8
+  parent   d0f31a24d61e7abcd90cb077073f5444892396da
+  tree     1bdf7688795bd372cf4ef04e98879dcacce3b018
+  diff256  6c4d3ba162911ba5e132d5f5c7a24f339abbee4e1fe8745262d0c246125854e3
+  remote   wip/preserve-20260803/thegent-source-delta
+```
+
+The forgecode installer capture and phenotype-tooling capture are source-only
+preservation refs.  Current working-tree deltas remain separate evidence and must
+be captured before rebase or parent selection.  The live registry parent is
+`main=3b3edc26864bc60878192828a186db04c37fed9d`; hosted PR heads remain behind or
+dirty, and strict `ci / lint` plus `ci / test` are not a fleet-wide green gate.

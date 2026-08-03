@@ -62,3 +62,23 @@ or force-push was performed.
 The phenotype-tooling inbox source delta is now additionally preserved at
 `wip/preserve-20260803/phenotype-tooling-inbox-delta` -> `a24b0329`; the earlier
 `fd51689` recovery remains immutable historical provenance.
+
+## 2026-08-03 exact-ref and boundary-gate refresh (05:49-06:01 UTC)
+
+Fresh remote/API checks found no object or hosted ref beginning with the earlier
+requested ResearchLedger `7c3a043` or forgecode `dd03d085` prefixes.  The
+authoritative replacement refs are recorded in the DAG checkpoint; re-capture those
+lanes if the missing prefixes are later identified.  Current source captures are
+`c501b0e66c591cb14737d6a8c356101d14a21000` (ResearchLedger),
+`8ff6fcbe1d2e5490664ddc0a7d4fe126c1c1c56e` plus installer alias
+`6d7ca1265d95fda230ddacf21c6206710d8a2b30` (forgecode),
+`a24b0329f6249538094276e8f35b54388f54cf63` (phenotype-tooling), and
+`0e719cf15d4b8f618674acc4726bb7db8e86b0d8` (thegent).
+
+| Severity | New evidence | Required follow-up |
+|---|---|---|
+| Blocker | live registry `main=3b3edc26864bc60878192828a186db04c37fed9d`; PR fleet contains `BEHIND` and `DIRTY` heads, while protected `ci / lint` and `ci / test` are not green across candidates | sponsor selects one additive rebase lane; do not attach or merge stale heads |
+| Blocker | live registry tree points `registry/absorbed-crates/ResilienceKit` to gitlink `a50f52561ba95b656dcd8a612efa3fe3ff78ca11`, unreachable locally and absent from `KooshaPari/ResilienceKit` refs; hosted `main` is `fb718eab23c3c68f68b8e56e68e5e12e0bcb27d3` | preserve the malformed pointer as evidence; prove ancestry/tree parity, then repair only through a protected PR |
+| Blocker | live registry tree points `registry/absorbed-crates/phenotype-omlx` to `8eb9891653e00a5dde986e60be3e84bfbf81d943`, absent from hosted refs; hosted OMLX `main=302321a33812ef0c40bf3f3cb934e23b6ef7008e`, while cloud candidate `52682309e2576574739fc97b1b937af1d570ef43` is on `fix/ffi-turbo-quant-validation` and PR #82 | keep the pointer-repair candidate unattached until sponsor selection, ancestry/tree proof, Kilo review, and protected checks |
+| High | ResearchLedger current checkout still has four tracked source/script deltas plus an untracked `worktrees/` directory; forgecode has seven tracked deltas after the installer capture; thegent has source/test decomposition payloads beyond `0e719cf` | take source-only follow-up captures, excluding generated/worktree state, before any rebase or boundary choice |
+| High | PR #441/#442/#443/#445/#446/#447/#449/#450/#451 are behind; #380/#386/#387/#388/#389/#393/#426/#427/#444/#452 are dirty; multiple candidate checks report failures | repair one gate family at a time and require current-main SHA, strict required checks, and review receipt |
