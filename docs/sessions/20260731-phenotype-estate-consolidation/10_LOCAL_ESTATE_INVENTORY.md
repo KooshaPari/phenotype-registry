@@ -185,6 +185,15 @@ delete, or remote mutation.
 | PlayCua (`29c6c66`) | HOLD | complete consumer scan and boundary contract |
 | RepoLedger (`7dabedc`) | KEEP standalone; 2 overlapping paths, zero byte-identical, local/remote diverged | preserve local commits and map registry consumers |
 
+### Benchora and PhenoPlugins exact boundary refresh (2026-08-04)
+
+| Repository | Exact source ref(s) | Structural/blob comparison | Current boundary decision | Required proof before any move |
+|---|---|---|---|---|
+| Benchora | local and `origin/main` `5dff4367bc528c9590ecced0199d54de1728a39f` | 112 source paths / 11 candidate-shelf paths; 3 common, 0 blob-identical, 3 divergent | KEEP standalone; HOLD absorption | target ancestry and canonical owner, crate/API dependency graph, focused build/test proof |
+| PhenoPlugins | local `e57ee7985adabff9cd445557c2cc77ccf4be851f`; `origin/main` `feed4fcf0419d2adf23f2e5805aaa1e5243f3957` | 36 common paths (15 blob-identical, 21 divergent), plus 62 source-only paths; historical proposed target is unreachable | KEEP standalone; HOLD absorption | restore target provenance; prove five-crate hashes, APIs, builds, and consumer closure |
+
+Neither row is a merge, archive, tombstone, or pointer-retarget authorization.
+
 ## Exact source-capture refs (2026-08-03 refresh)
 
 | Repository | Cloud ref and SHA | Parent/tree/diff SHA-256 | Boundary posture |

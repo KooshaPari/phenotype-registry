@@ -99,6 +99,16 @@ remains `3b3edc26864bc60878192828a186db04c37fed9d`.
 | thegent current helper delta | `wip/preserve-20260803/thegent-current-helper-delta` -> `7cda67f9597b0f9994f4f9a014c2586e23ea1da5` | preserve-only; parent `bc91aff123b80a9320c59a657846b09c45058531`; classify before rebase or boundary action |
 | hfscope current baseline | `fix/preserve-search-kind` -> `f119063f2d8d` | clean current checkout; retain prior dirty capture `865670b` as independent provenance |
 
+### Benchora and PhenoPlugins boundary evidence (2026-08-04)
+
+| Source | Exact ref evidence | Overlap/blob evidence | Disposition and proof gap |
+|---|---|---|---|
+| Benchora | local and `KooshaPari/Benchora:main` both `5dff4367bc528c9590ecced0199d54de1728a39f` | 112 source paths versus 11 candidate-shelf paths; 3 common paths and all 3 have divergent blobs (0 identical) | KEEP standalone; HOLD any absorption. Prove crate/API dependency ownership, target ancestry, and focused build/test evidence before a parent decision. |
+| PhenoPlugins | local `e57ee7985adabff9cd445557c2cc77ccf4be851f`; `KooshaPari/PhenoPlugins:main` `feed4fcf0419d2adf23f2e5805aaa1e5243f3957` | 36 common paths: 15 blob-identical and 21 divergent; 62 source-only paths; historical proposed target is unreachable | KEEP standalone; HOLD any absorption. Restore target provenance, then complete five-crate hash/API/build parity and consumer evidence. |
+
+These are preserve-first boundary findings only. They do not authorize a parent
+pointer change, merge, archive, or tombstone.
+
 ### Current parent/gate blockers
 
 - `ResilienceKit` gitlink `a50f52561ba95b656dcd8a612efa3fe3ff78ca11` in live main
