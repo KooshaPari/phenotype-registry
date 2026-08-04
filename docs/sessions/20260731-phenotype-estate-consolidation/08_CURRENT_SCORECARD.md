@@ -162,3 +162,9 @@ additional findings unverified, and exited `183`. No merge or bypass was perform
 The minimum safe action is non-destructive remediation of the reported
 security-gate scope, followed by a fresh full-history run on the same or a
 current-main-reconciled head; do not infer readiness from partial verification.
+
+### PhenoObservability current boundary checkpoint (2026-08-04)
+
+| Surface | Exact evidence | Score and disposition |
+|---|---|---|
+| PhenoObservability | canonical remote `git@github.com:KooshaPari/PhenoObservability.git`; clean local `wip/2026-07-22-phenoobservability-worklog@9192f73e7cc31831f83eba79a5d4f2dcda287c3a`; live `main@7f2e8d778615a0af6aafcdd4e247d541557a7c08`; R2 and bundle manifests are parity-verified; PR #209 is stale/diverged under strict protection | C / KEEP_STANDALONE/HOLD. Sponsor acknowledgement and hosted consumer proof are missing. Reconcile PR #209 to live main and obtain the sponsor gate before any boundary action; this preserve-only evidence authorizes neither promotion nor retirement. |

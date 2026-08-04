@@ -49,7 +49,7 @@ parent is a hypothesis until code/spec parity is proven.
 | Grapheon | Tracera data/trace layer | live repo role, shared crates, unique history | HOLD / keep distinct until proven |
 | HexaKit | substrate/library boundary | compare with `pheno` and phenotype-tooling ports | HOLD |
 | Melosviz | observability/UI support | language/build surface and consumers | HOLD |
-| PhenoObservability | canonical observability parent | Sidekick/curated-traces parity and current main | PARENT CANDIDATE |
+| PhenoObservability | canonical `KooshaPari/PhenoObservability` remote | local clean WIP and live-main parity/gate evidence | KEEP_STANDALONE/HOLD |
 | PhenoPlugins | `pheno` plugin crates | verify archived source and tree parity | ARCHIVE-ONLY pending proof |
 | Planify2 | AgilePlus/phenotype-apps frontend boundary | clean `main@e6b8e235`, 5,402 tracked files; original `origin` returns repository-not-found; preserved to `KooshaPari/Planify:wip/preserve-20260802/planify2-local-main` at the same SHA; README identifies Plane AGPL upstream plus Phenotype `site/` and `infra/` layers | HOLD / preservation branch only; sponsor-approved parent/new-repo decision |
 | PlayCua | desktop/browser automation | consumer graph and standalone release boundary | KEEP-STANDALONE candidate |
@@ -82,7 +82,7 @@ Read-only scan of 45 direct roots, cross-checked against current GitHub metadata
 | 7 | nanovms | `9a0e286` | 985 KB/live | standalone sandbox/VMM | reconcile stale archive wording and Go consumers |
 | 8 | Tokn | `d51262f` | 2.5 MB/live | standalone token substrate | reconcile upstream vs Airlock mirror and OmniRoute API |
 | 9 | phenotype-python-sdk | `e270d0a` | 5.9 MB/live | standalone Python SDK | map public API ownership and four local commits |
-| 10 | PhenoObservability | `9192f73` | 8.5 MB/live | canonical observability parent | rebase 31 local commits and prove consumers |
+| 10 | PhenoObservability | clean `wip/2026-07-22-phenoobservability-worklog@9192f73` | 8.5 MB/live | canonical observability remote | KEEP_STANDALONE/HOLD; reconcile stale/diverged PR #209, strict protection, and consumer proof |
 | 11 | Agentora | `main@18ac868` (WIP `53d370c` preserved at `wip/20260802T0756-18c7edef121191d8`) | 9.5 MB/live | standalone agent runtime | preserve stash; compare embedded agentkit contracts |
 | 12 | hfscope | `f119063` | 10.3 MB/private | observability/tooling satellite | test search-kind delta and consumer overlap |
 | 13 | HexaKit | `b47132a` | 23 MB/live | standalone scaffold/library | review four metadata divergences and mirror hash |
@@ -129,7 +129,7 @@ quality, ownership, or archive/tombstone authorization.
 |---|---|---|
 | ResearchLedger | KEEP standalone/HOLD; Tauri/Vite app has no sibling manifest consumer edge | hosted CI/build, lineage and ownership receipt |
 | PlayCua | KEEP split runtime/HOLD; Eidolon exposes only a trait-level conceptual port, not a manifest dependency | concrete transport implementation and target workspace dependency closure |
-| PhenoObservability | KEEP canonical observability spine/HOLD; OmniRoute has Rust path copies and an optional `@pheno-otel/tracing` specifier with prior npm E404 | exact-tree/API parity and hosted consumer CI proof |
+| PhenoObservability | KEEP_STANDALONE/HOLD; OmniRoute has Rust path copies and an optional `@pheno-otel/tracing` specifier with prior npm E404 | exact-tree/API parity and hosted consumer CI proof |
 | Agentora | KEEP canonical hub/HOLD; active workspace has no sibling `agentkit` manifest imports; old Python row is archived | live-main CI/license and consumer-boundary proof |
 | hfscope | KEEP standalone/HOLD; Go server and browser extension have no sibling manifest edges | branch reconciliation, Go test/build, extension API and auth hygiene |
 | HexaKit | KEEP canonical scaffold/HOLD; no external manifest consumers found, while registry archive/retire labels conflict | exact crate ownership and parity with Agentora/PhenoObservability |
@@ -231,3 +231,9 @@ this inventory.
 |---|---|---|
 | ResearchLedger | source-only chain `wip/preserve-20260804/researchledger-source-delta-20260804T0637` -> `8290fd5b285b966a765309a6a2bf075315f24b3a`; child `wip/preserve-20260804/researchledger-source-delta-20260804T0657` -> `80899613557d85c2ea57ef50ff015abe6dcb3531`; 18 code/test/docs/script paths total | preserve-only; data JSON, cross-encoder JSON fixture, and nested worktree excluded; dirty worktree intentionally retained; ownership/consumer proof remains required before any parent, archive, or tombstone decision |
 | PlayCua | local `master@29c6c66e0f87b7567c9601f49c838dcbaa1337f0`; hosted canonical default `master@cda798f21552789cf51da7541619b1f708685c3d`; non-default `main@43d2e8d34bd8dd7e31c41adab1db71ad1c8d8574`; no manifest consumers; Eidolon bridge is trait-only | KEEP_STANDALONE/HOLD; hosted gates are failing. Treat `master`, not the competing `main`, as canonical until ownership evidence changes; prove a concrete transport implementation and target-workspace dependency closure before any boundary change |
+
+### PhenoObservability exact boundary checkpoint (2026-08-04)
+
+| Surface | Exact evidence | Boundary posture and remaining gate |
+|---|---|---|
+| PhenoObservability | canonical remote `git@github.com:KooshaPari/PhenoObservability.git`; clean local `wip/2026-07-22-phenoobservability-worklog@9192f73e7cc31831f83eba79a5d4f2dcda287c3a`; live `main@7f2e8d778615a0af6aafcdd4e247d541557a7c08`; R2 and bundle manifests are parity-verified | KEEP_STANDALONE/HOLD. Sponsor acknowledgement is missing; PR #209 is stale/diverged and strict branch protection remains in force. Reconcile the PR against live main, obtain sponsor acknowledgement, and prove consumers before any boundary change. This is preservation evidence only, not a promotion or retirement authorization. |
