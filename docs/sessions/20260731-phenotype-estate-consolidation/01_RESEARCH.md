@@ -31,3 +31,18 @@
 - thegent-sharecli is archived; sponsor policy is to request unarchive, not bypass protections.
 - Local GitHub tracking refs may be stale; GitHub remote state wins.
 - The filesystem has critically low free space; avoid broad scans and cache-producing builds.
+
+## sharecli and thegent-sharecli boundary checkpoint (2026-08-04)
+
+- `sharecli` remains the canonical standalone Rust runtime. Its ownership and release
+  boundary are not transferred by this evidence record.
+- The archived Python `thegent-sharecli` facade is substantially absorbed at
+  `thegent/sharecli`: 14 of its 16 compared Python blobs are exact blob matches.
+- This is implementation provenance only, not cross-language equivalence. The two
+  non-matching Python blobs, Rust/Python API and behavior parity, consumer manifests,
+  release/installed-artifact checks, and archived-repository hosted state still need
+  verification.
+- No cross-language merge, extraction, tombstone, archive/unarchive, redirect, or
+  canonical-owner change is authorized from the 14/16 result. Keep the archived Python
+  lineage preserved and use the existing coordination parity fixture before any sponsor
+  gate.
