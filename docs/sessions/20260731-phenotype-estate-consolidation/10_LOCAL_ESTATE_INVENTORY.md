@@ -73,7 +73,7 @@ Read-only scan of 45 direct roots, cross-checked against current GitHub metadata
 
 | Rank | Repo | Local SHA | GH size/state | Parent hypothesis | Immediate proof gate |
 |---:|---|---|---:|---|---|
-| 1 | RepoLedger | `7dabedc` | 79 KB/live | registry governance satellite | preserve 53 local-only commits; map registry consumers |
+| 1 | RepoLedger | `7dabedc` | 79 KB/live | registry governance satellite | reconcile local 2-ahead/54-behind divergence with `origin/main=f6b90b8`; map registry consumers |
 | 2 | asset-engine | `41ade55` | 293 KB/archived | phenotype-apps asset pipeline | prove scripts/assets landed in parent |
 | 3 | Benchora | `main@5dff436` (documented `b4fd146` remains an ancestor) | 342 KB/live | phenotype-tooling `crates/benchora` | reconcile live repo vs absorbed registry row |
 | 4 | PhenoPlugins | `e57ee79` | 633 KB/live | pheno plugin crates | prove all five crate hashes/builds before tombstone |
@@ -182,8 +182,8 @@ delete, or remote mutation.
 | PhenoPlugins (`e57ee79`) | HOLD; 36 common paths, 15 identical, 21 divergent, 62 missing; historical target is unreachable | restore target provenance and complete crate/hash/build comparison |
 | asset-engine (`41ade55`) | archive-only preservation; clean archive branch, archived remote main `e188dab`; no project manifest and README restoration claim remains unproven | prove artifact/asset consumers and any restoration provenance; no parent attach or retirement action |
 | nanovms (`9a0e286`) | KEEP standalone | map runtime/VMM consumers before any parent proposal |
-| PlayCua (`29c6c66`) | HOLD | complete consumer scan and boundary contract |
-| RepoLedger (`7dabedc`) | KEEP/HOLD; clean `main` is ahead 2/behind 53 and preserve ref is remote-verifiable; pnpm/Bun workspace has no registry/AgilePlus edge | complete consumer and divergence proof before any parent or boundary action |
+| PlayCua (`29c6c66`) | KEEP_STANDALONE/HOLD; hosted default is `master=cda798f` while a distinct non-default `main=43d2e8d` also exists; Eidolon bridge remains trait-only | complete concrete transport, consumer scan, and target-workspace dependency closure |
+| RepoLedger (`7dabedc`) | KEEP/HOLD; clean `main` is ahead 2/behind 54 of current `origin/main=f6b90b8`; preserve ref is remote-verifiable; pnpm/Bun workspace has no registry/AgilePlus edge | the older `53 local-only commits` classification is stale; complete consumer ownership and divergence proof before any parent or boundary action |
 
 ### Benchora and PhenoPlugins exact boundary refresh (2026-08-04)
 
@@ -200,7 +200,7 @@ pointer-retarget authorization.
 
 | Repository | Exact evidence | Boundary conclusion |
 |---|---|---|
-| RepoLedger | clean `main@7dabedc39c584f67331722607ed5e7814f31c47d`, ahead 2/behind 53 of `origin/main`; `wip/preserve-20260804/repoledger-local-main-7dabedc` resolves to that exact SHA; pnpm/Bun workspace has no registry or AgilePlus manifest/code edge | KEEP/HOLD until source/remote divergence and actual consumer ownership are proven; preservation ref is not a promotion or parent decision |
+| RepoLedger | clean `main@7dabedc39c584f67331722607ed5e7814f31c47d`, ahead 2/behind 54 of current `origin/main@f6b90b8e90b24e82c1ac415ca5b15815b696e76c`; `wip/preserve-20260804/repoledger-local-main-7dabedc` resolves to the local SHA; pnpm/Bun workspace has no registry or AgilePlus manifest/code edge | KEEP standalone/HOLD until source/remote divergence and actual consumer ownership are proven; the older 53-local-only metadata is stale, and the preservation ref is not a promotion or parent decision |
 | asset-engine | clean `preserve/asset-engine-archive-20260729@41ade55dc10730d5718941cea1fb795f7c23365e`; archived `origin/main@e188dab9c9c5bba97383e3f9d3b71f6ab01b0150`; no Cargo/npm/Python/Go manifest; 48 source paths versus one shared, divergent README blob | KEEP standalone as an archived compatibility/provenance pointer; prove consumer repointing and reversible capture before any retirement packet; no attach, merge, archive mutation, or tombstone action is authorized |
 | nanovms | local `main@9a0e286f3f2f1c24e500a8293775adc6bc9358e1`; `origin/main@84f24f122a11ba02c8950e35946dae46eebb7ebf`; 89 shared paths (70 blob-identical, 19 divergent) and 490 standalone-only paths | KEEP standalone integration boundary; no absorption. Map runtime/VMM consumers and reconcile the 19 divergent paths before any future boundary proposal |
 
@@ -230,4 +230,4 @@ this inventory.
 | Surface | Exact evidence | Boundary posture and remaining gate |
 |---|---|---|
 | ResearchLedger | source-only chain `wip/preserve-20260804/researchledger-source-delta-20260804T0637` -> `8290fd5b285b966a765309a6a2bf075315f24b3a`; child `wip/preserve-20260804/researchledger-source-delta-20260804T0657` -> `80899613557d85c2ea57ef50ff015abe6dcb3531`; 18 code/test/docs/script paths total | preserve-only; data JSON, cross-encoder JSON fixture, and nested worktree excluded; dirty worktree intentionally retained; ownership/consumer proof remains required before any parent, archive, or tombstone decision |
-| PlayCua | local `29c6c66`; canonical `cda798f` is 53 commits ahead; no manifest consumers; Eidolon bridge is trait-only | KEEP_STANDALONE/HOLD; hosted gates are failing. Prove a concrete transport implementation and target-workspace dependency closure before any boundary change |
+| PlayCua | local `master@29c6c66e0f87b7567c9601f49c838dcbaa1337f0`; hosted canonical default `master@cda798f21552789cf51da7541619b1f708685c3d`; non-default `main@43d2e8d34bd8dd7e31c41adab1db71ad1c8d8574`; no manifest consumers; Eidolon bridge is trait-only | KEEP_STANDALONE/HOLD; hosted gates are failing. Treat `master`, not the competing `main`, as canonical until ownership evidence changes; prove a concrete transport implementation and target-workspace dependency closure before any boundary change |
