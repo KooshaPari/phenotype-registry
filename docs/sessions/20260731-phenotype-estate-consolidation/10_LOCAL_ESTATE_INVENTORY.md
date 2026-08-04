@@ -178,7 +178,7 @@ delete, or remote mutation.
 
 | Surface | Evidence-backed disposition | Remaining gate |
 |---|---|---|
-| Benchora (`main@5dff436`) | HOLD; nested shelf has 11 paths versus source 112, with only 3 common and all divergent | reconcile source/parent ancestry and unique API ownership |
+| Benchora (`main@5dff436`) | KEEP standalone; live source is canonical and the nested shelf is not parity | prove a migration manifest/API-owner map, real consumers, and focused source/target build-test evidence before any new boundary proposal |
 | PhenoPlugins (`e57ee79`) | HOLD; 36 common paths, 15 identical, 21 divergent, 62 missing; historical target is unreachable | restore target provenance and complete crate/hash/build comparison |
 | asset-engine (`41ade55`) | KEEP standalone, archive-only candidate; 44 source paths and only a README overlap with PhenoDesign | verify asset pipeline consumers and publish reversible capture |
 | nanovms (`9a0e286`) | KEEP standalone | map runtime/VMM consumers before any parent proposal |
@@ -189,10 +189,12 @@ delete, or remote mutation.
 
 | Repository | Exact source ref(s) | Structural/blob comparison | Current boundary decision | Required proof before any move |
 |---|---|---|---|---|
-| Benchora | local and `origin/main` `5dff4367bc528c9590ecced0199d54de1728a39f` | 112 source paths / 11 candidate-shelf paths; 3 common, 0 blob-identical, 3 divergent | KEEP standalone; HOLD absorption | target ancestry and canonical owner, crate/API dependency graph, focused build/test proof |
+| Benchora | local and `KooshaPari/Benchora:main` `5dff4367bc528c9590ecced0199d54de1728a39f`; target `phenotype-tooling:origin/main` `3b952d66267c06ec5a68e2c4b0a37ac6a59a4e47` | historical import `8e8f3a9` was replaced at `60cccce`; source has 112 paths/19 Rust modules versus 11 target-shelf paths, 3 common/0 blob-identical, and no consumers | KEEP standalone; HOLD absorption | reconcile historical migration/owner map, then prove consumer closure and focused source/target build-test parity; no attach, archive, or tombstone |
 | PhenoPlugins | local `e57ee7985adabff9cd445557c2cc77ccf4be851f`; `origin/main` `feed4fcf0419d2adf23f2e5805aaa1e5243f3957` | 36 common paths (15 blob-identical, 21 divergent), plus 62 source-only paths; historical proposed target is unreachable | KEEP standalone; HOLD absorption | restore target provenance; prove five-crate hashes, APIs, builds, and consumer closure |
 
-Neither row is a merge, archive, tombstone, or pointer-retarget authorization.
+Benchora's legacy absorbed/deleted registry wording is contradicted by the live source
+remote and the current target shelf. Neither row is a merge, archive, tombstone, or
+pointer-retarget authorization.
 
 ## Exact source-capture refs (2026-08-03 refresh)
 

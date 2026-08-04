@@ -103,7 +103,7 @@ remains `3b3edc26864bc60878192828a186db04c37fed9d`.
 
 | Source | Exact ref evidence | Overlap/blob evidence | Disposition and proof gap |
 |---|---|---|---|
-| Benchora | local and `KooshaPari/Benchora:main` both `5dff4367bc528c9590ecced0199d54de1728a39f` | 112 source paths versus 11 candidate-shelf paths; 3 common paths and all 3 have divergent blobs (0 identical) | KEEP standalone; HOLD any absorption. Prove crate/API dependency ownership, target ancestry, and focused build/test evidence before a parent decision. |
+| Benchora | local and `KooshaPari/Benchora:main` both `5dff4367bc528c9590ecced0199d54de1728a39f`; target `phenotype-tooling:origin/main` `3b952d66267c06ec5a68e2c4b0a37ac6a59a4e47` | historical import `8e8f3a9` was replaced at `60cccce`; source has 112 paths/19 Rust modules versus 11 target-shelf paths, 3 common/0 identical blobs, and no consumers | KEEP standalone; legacy absorbed/deleted wording is contradicted. No archive, attach, or tombstone; require migration/owner map, consumer closure, and focused source/target build-test proof before any new parent decision. |
 | PhenoPlugins | local `e57ee7985adabff9cd445557c2cc77ccf4be851f`; `KooshaPari/PhenoPlugins:main` `feed4fcf0419d2adf23f2e5805aaa1e5243f3957` | 36 common paths: 15 blob-identical and 21 divergent; 62 source-only paths; historical proposed target is unreachable | KEEP standalone; HOLD any absorption. Restore target provenance, then complete five-crate hash/API/build parity and consumer evidence. |
 
 These are preserve-first boundary findings only. They do not authorize a parent
