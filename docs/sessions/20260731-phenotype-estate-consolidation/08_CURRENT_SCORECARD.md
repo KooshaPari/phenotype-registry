@@ -99,6 +99,13 @@ remains `3b3edc26864bc60878192828a186db04c37fed9d`.
 | thegent current helper delta | `wip/preserve-20260803/thegent-current-helper-delta` -> `7cda67f9597b0f9994f4f9a014c2586e23ea1da5` | preserve-only; parent `bc91aff123b80a9320c59a657846b09c45058531`; classify before rebase or boundary action |
 | hfscope current baseline | `fix/preserve-search-kind` -> `f119063f2d8d` | clean current checkout; retain prior dirty capture `865670b` as independent provenance |
 
+### ResearchLedger and PlayCua current checkpoint (2026-08-04)
+
+| Surface | Exact evidence | Score and disposition |
+|---|---|---|
+| ResearchLedger | source-only `wip/preserve-20260804/researchledger-source-delta-20260804T0637` -> `8290fd5b285b966a765309a6a2bf075315f24b3a`; child `wip/preserve-20260804/researchledger-source-delta-20260804T0657` -> `80899613557d85c2ea57ef50ff015abe6dcb3531`; 18 code/test/docs/script paths | C+ / preserve-only. Data JSON, cross-encoder JSON fixture, and nested worktree were excluded; dirty worktree is intentionally retained. No parent/archive/tombstone action. |
+| PlayCua | local `29c6c66`; canonical `cda798f` is 53 commits ahead; no manifest consumers; trait-only Eidolon bridge; hosted gates failing | C / KEEP_STANDALONE/HOLD. Require concrete transport implementation and target-workspace dependency closure before any boundary change. |
+
 ### Benchora and PhenoPlugins boundary evidence (2026-08-04)
 
 | Source | Exact ref evidence | Overlap/blob evidence | Disposition and proof gap |

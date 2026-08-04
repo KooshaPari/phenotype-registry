@@ -224,3 +224,10 @@ The prior provenance discrepancy is resolved by named remote refs:
 `3b3edc26864bc60878192828a186db04c37fed9d`; current protected PR gates are not
 green across the fleet.  No move, merge, archive, or tombstone is authorized by
 this inventory.
+
+### ResearchLedger and PlayCua boundary refresh (2026-08-04)
+
+| Surface | Exact evidence | Boundary posture and remaining gate |
+|---|---|---|
+| ResearchLedger | source-only chain `wip/preserve-20260804/researchledger-source-delta-20260804T0637` -> `8290fd5b285b966a765309a6a2bf075315f24b3a`; child `wip/preserve-20260804/researchledger-source-delta-20260804T0657` -> `80899613557d85c2ea57ef50ff015abe6dcb3531`; 18 code/test/docs/script paths total | preserve-only; data JSON, cross-encoder JSON fixture, and nested worktree excluded; dirty worktree intentionally retained; ownership/consumer proof remains required before any parent, archive, or tombstone decision |
+| PlayCua | local `29c6c66`; canonical `cda798f` is 53 commits ahead; no manifest consumers; Eidolon bridge is trait-only | KEEP_STANDALONE/HOLD; hosted gates are failing. Prove a concrete transport implementation and target-workspace dependency closure before any boundary change |
