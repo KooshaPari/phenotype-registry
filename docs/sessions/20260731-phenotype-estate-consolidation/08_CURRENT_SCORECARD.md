@@ -109,6 +109,16 @@ remains `3b3edc26864bc60878192828a186db04c37fed9d`.
 These are preserve-first boundary findings only. They do not authorize a parent
 pointer change, merge, archive, or tombstone.
 
+### asset-engine and nanovms boundary evidence (2026-08-04)
+
+| Source | Exact ref evidence | Overlap/blob evidence | Disposition and proof gap |
+|---|---|---|---|
+| asset-engine | local `41ade55dc10730d5718941cea1fb795f7c23365e`; archived `KooshaPari/asset-engine:main` `e188dab9c9c5bba97383e3f9d3b71f6ab01b0150` | 48 source paths versus one shared README path; that README blob diverges | KEEP standalone as an archived compatibility/provenance pointer. Prove consumer repointing and reversible capture before any retirement packet. |
+| nanovms | local `9a0e286f3f2f1c24e500a8293775adc6bc9358e1`; `KooshaPari/nanovms:main` `84f24f122a11ba02c8950e35946dae46eebb7ebf` | 89 shared paths: 70 blob-identical and 19 divergent; 490 standalone-only paths | KEEP standalone integration boundary; no absorption. Map runtime/VMM consumers and reconcile the 19 divergent paths before any future boundary proposal. |
+
+These are preserve-first boundary findings only. They do not authorize a parent
+pointer change, merge, archive, or tombstone.
+
 ### Current parent/gate blockers
 
 - `ResilienceKit` gitlink `a50f52561ba95b656dcd8a612efa3fe3ff78ca11` in live main

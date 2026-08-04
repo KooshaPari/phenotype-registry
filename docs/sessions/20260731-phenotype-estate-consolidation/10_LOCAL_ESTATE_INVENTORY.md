@@ -196,12 +196,13 @@ Benchora's legacy absorbed/deleted registry wording is contradicted by the live 
 remote and the current target shelf. Neither row is a merge, archive, tombstone, or
 pointer-retarget authorization.
 
-### RepoLedger and asset-engine exact boundary refresh (2026-08-04)
+### RepoLedger, asset-engine, and nanovms exact boundary refresh (2026-08-04)
 
 | Repository | Exact evidence | Boundary conclusion |
 |---|---|---|
 | RepoLedger | clean `main@7dabedc39c584f67331722607ed5e7814f31c47d`, ahead 2/behind 53 of `origin/main`; `wip/preserve-20260804/repoledger-local-main-7dabedc` resolves to that exact SHA; pnpm/Bun workspace has no registry or AgilePlus manifest/code edge | KEEP/HOLD until source/remote divergence and actual consumer ownership are proven; preservation ref is not a promotion or parent decision |
-| asset-engine | clean `preserve/asset-engine-archive-20260729@41ade55dc10730d5718941cea1fb795f7c23365e`; archived `origin/main@e188dab9c9c5bba97383e3f9d3b71f6ab01b0150`; no Cargo/npm/Python/Go manifest; phenotype-apps has separate crates and no manifest edge | archive-only preservation; README restoration claim is unproven, so no attach, merge, archive mutation, or tombstone action is authorized |
+| asset-engine | clean `preserve/asset-engine-archive-20260729@41ade55dc10730d5718941cea1fb795f7c23365e`; archived `origin/main@e188dab9c9c5bba97383e3f9d3b71f6ab01b0150`; no Cargo/npm/Python/Go manifest; 48 source paths versus one shared, divergent README blob | KEEP standalone as an archived compatibility/provenance pointer; prove consumer repointing and reversible capture before any retirement packet; no attach, merge, archive mutation, or tombstone action is authorized |
+| nanovms | local `main@9a0e286f3f2f1c24e500a8293775adc6bc9358e1`; `origin/main@84f24f122a11ba02c8950e35946dae46eebb7ebf`; 89 shared paths (70 blob-identical, 19 divergent) and 490 standalone-only paths | KEEP standalone integration boundary; no absorption. Map runtime/VMM consumers and reconcile the 19 divergent paths before any future boundary proposal |
 
 Benchora remains KEEP standalone under the immediately preceding refresh; no cohort row
 changes that conclusion.
