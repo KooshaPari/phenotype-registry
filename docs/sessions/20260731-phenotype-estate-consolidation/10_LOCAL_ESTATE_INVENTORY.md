@@ -185,6 +185,23 @@ delete, or remote mutation.
 | PlayCua (`29c6c66`) | KEEP_STANDALONE/HOLD; hosted default is `master=cda798f` while a distinct non-default `main=43d2e8d` also exists; Eidolon bridge remains trait-only | complete concrete transport, consumer scan, and target-workspace dependency closure |
 | RepoLedger (`7dabedc`) | KEEP/HOLD; clean `main` is ahead 2/behind 54 of current `origin/main=f6b90b8`; preserve ref is remote-verifiable; pnpm/Bun workspace has no registry/AgilePlus edge | the older `53 local-only commits` classification is stale; complete consumer ownership and divergence proof before any parent or boundary action |
 
+### Next-20 completion checkpoint (2026-08-04)
+
+This finishes evidence coverage for the four remaining named next-20 surfaces. It is a
+preservation and boundary checkpoint only: no merge, archive, tombstone, pointer,
+project-metadata, or pull-request action is authorized.
+
+| Surface | Exact returned ref/state | Evidence-backed disposition | Remaining proof gate |
+|---|---|---|---|
+| Grapheon | recovery checkout clean at `523b67d` (earlier inventory source `8a15328`) | KEEP standalone private Tracera-derived graph runtime | route/store/API lineage against current Tracera and `pheno/crates/agileplus-graph`, plus consumer proof; no proven absorption mapping |
+| hwLedger | local source `08a83db`; GitHub live, 543 MB | KEEP standalone / archive-only review | reconcile ten local commits and OMLX sidecar provenance; classify reusable fleet/capacity capability before any archive proposal |
+| phenotype-apps | local recovery source `5a0672024b798f852b6a36eaa83820c424d0b5aa`; active GitHub default `apps-extract=f4c559fcf1abcbcc2bde210b08ae9dd4e2e18ddb`; `recovery/phenotype-apps-local-20260726` equals the local source | KEEP standalone canonical app-plane parent | reconcile local ancestry with `apps-extract` and `main=6a41bf015b9b4a333d2a2efd8d1f8670706a7a06`; map deployment/manifest ownership and duplicate/consumer surfaces |
+| pheno-rt-spec-probe | local `main@5b043a1f`; 22 tracked files; `KooshaPari/phenotype-router-spec` origin returns 404 | HOLD as registry probe/evidence collection; canonical router protocol docs remain parent | semantic reconciliation for 8 of 9 divergent protocol/schema files; publish to a live owner or create an approved evidence collection |
+
+The next-20 cohort is therefore evidence-complete at the current audit depth, but every
+consolidation decision remains sponsor-gated after the listed ancestry, consumer, parity,
+and ownership proofs are complete.
+
 ### Benchora and PhenoPlugins exact boundary refresh (2026-08-04)
 
 | Repository | Exact source ref(s) | Structural/blob comparison | Current boundary decision | Required proof before any move |
