@@ -168,3 +168,9 @@ current-main-reconciled head; do not infer readiness from partial verification.
 | Surface | Exact evidence | Score and disposition |
 |---|---|---|
 | PhenoObservability | canonical remote `git@github.com:KooshaPari/PhenoObservability.git`; clean local `wip/2026-07-22-phenoobservability-worklog@9192f73e7cc31831f83eba79a5d4f2dcda287c3a`; live `main@7f2e8d778615a0af6aafcdd4e247d541557a7c08`; R2 and bundle manifests are parity-verified; PR #209 is stale/diverged under strict protection | C / KEEP_STANDALONE/HOLD. Sponsor acknowledgement and hosted consumer proof are missing. Reconcile PR #209 to live main and obtain the sponsor gate before any boundary action; this preserve-only evidence authorizes neither promotion nor retirement. |
+
+### AgilePlus plane source capture (2026-08-04)
+
+| Surface | Exact capture evidence | Disposition |
+|---|---|---|
+| AgilePlus plane delta | canonical `main` parent `2fa631baa2a91e9df36b367d821bc47e6eb855a3`; source-only capture `47a9c174ed639fc27478686bae5a8115bda76063` on `wip/preserve-20260804/agileplus-plane-delta-0843`; exactly `crates/agileplus-plane/src/daemon.rs` and `crates/agileplus-plane/src/lib.rs`; patch SHA-256 `35025280160380930915574876baa7f51fd08687c58b294861cc83b192af67fa` | C+ / preserve-only. The original AgilePlus worktree and index remain unchanged (including pre-existing local modifications); this capture authorizes no merge, release, archive, or other promotion. |

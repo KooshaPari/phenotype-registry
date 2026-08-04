@@ -254,3 +254,9 @@ this inventory.
 | Surface | Exact evidence | Boundary posture and remaining gate |
 |---|---|---|
 | PhenoObservability | canonical remote `git@github.com:KooshaPari/PhenoObservability.git`; clean local `wip/2026-07-22-phenoobservability-worklog@9192f73e7cc31831f83eba79a5d4f2dcda287c3a`; live `main@7f2e8d778615a0af6aafcdd4e247d541557a7c08`; R2 and bundle manifests are parity-verified | KEEP_STANDALONE/HOLD. Sponsor acknowledgement is missing; PR #209 is stale/diverged and strict branch protection remains in force. Reconcile the PR against live main, obtain sponsor acknowledgement, and prove consumers before any boundary change. This is preservation evidence only, not a promotion or retirement authorization. |
+
+### AgilePlus plane capture inventory (2026-08-04)
+
+| Repository | Canonical parent and source-only capture | Exact payload and integrity evidence | Boundary and promotion posture |
+|---|---|---|---|
+| AgilePlus | `main` parent `2fa631baa2a91e9df36b367d821bc47e6eb855a3`; capture `47a9c174ed639fc27478686bae5a8115bda76063`; remote-verifiable ref `wip/preserve-20260804/agileplus-plane-delta-0843` | exactly `crates/agileplus-plane/src/daemon.rs` and `crates/agileplus-plane/src/lib.rs`; patch SHA-256 `35025280160380930915574876baa7f51fd08687c58b294861cc83b192af67fa`; original worktree/index unchanged | preserve-only. This is no merge, release, archive, or promotion authorization; retain the original local state for separate review. |
