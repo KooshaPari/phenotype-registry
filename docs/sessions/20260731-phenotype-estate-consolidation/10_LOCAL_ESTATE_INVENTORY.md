@@ -123,6 +123,20 @@ This cohort is a research queue only. No archive or merge action is authorized b
 These refs preserve source provenance only. They do not establish merge readiness,
 quality, ownership, or archive/tombstone authorization.
 
+## Follow-up source-capture wave (2026-08-04)
+
+| Repository | Remote ref and exact commit lineage | Stable diff hash and captured source scope | Explicit exclusions / gate |
+|---|---|---|---|
+| ResearchLedger | `origin:wip/preserve-20260804/researchledger-source-followup-20260804T0913` -> `b649002ce4fd9c41ad2badafd653fe992df99ac3` (parent `c501b0e66c591cb14737d6a8c356101d14a21000`) | patch-id `adb6d443b1d0246ed1e8042c43bd11630dd1d4a3`; desktop Rust command/embedding/GitHub/RAG/storage and CSP work, capture scripts, UI and Rust contract fixtures/tests, docs and package manifest | Generated outputs, caches, ignored material, secrets, and linked-worktree payloads were excluded; preservation receipt only. |
+| forgecode | `fork:wip/preserve-20260804/forgecode-source-followup-20260804T0915` -> `dccf42deda18ca6da8bf204ac8cc4c489473c01d` (parent `8ff6fcbe1d2e5490664ddc0a7d4fe126c1c1c56e`) | patch-id `e6151d4d616ea7b6fbfcbea05d38355f60715aef`; release workflow, Cargo lock, Forge CI publish implementation/tests, main/native update/UI/updater code, and `install.sh` | Generated outputs, caches, ignored material, secrets, and linked-worktree payloads were excluded; fork receipt is additive and does not alter upstream. |
+| thegent | `origin:wip/preserve-20260804/thegent-test-delta-capture` -> `a660a882a1f74750b4d0b825ba0828d4075f093a` (parent `bc91aff123b80a9320c59a657846b09c45058531`) | patch-id `e1e1dfa38f4f3d61647a74cfa97fc2c6173b8cb0`; execution-extraction CLI test delta | Generated outputs, caches, ignored material, secrets, and linked-worktree payloads were excluded; no boundary decision follows. |
+| phenotype-tooling | `origin:wip/preserve-20260804/phenotype-tooling-inbox-delta-capture` -> `97ac922818e1010404ee297938247d33365588c7` (parent `134d35599d76273c7d404e377834ab30db54c9f1`) | patch-id `c1d517c0b87124c3e8c2802d18726dfef9d586d5`; `crates/elicitate/src/inbox/mod.rs` inbox source delta | Generated outputs, caches, ignored material, secrets, and linked-worktree payloads were excluded; preservation receipt only. |
+| pheno-harness | `origin:wip/preserve-20260804/pheno-harness-desktop-lane-followup-20260804T0938` -> `3ab267da9d6eaeacf99263b84cd1a32a6eddf94a` (parent `3b82a033b4e7390f085075306fc7fe1d62071b01`) | patch-id `fb413b30943d081d6d1bd2f88902db32688908bc`; desktop fixture/evaluation/dual-GPU launch scripts plus desktop fixture/eval/launcher tests | Generated outputs, caches, ignored material, secrets, and linked-worktree payloads were excluded; preservation receipt only. |
+
+All five hosted refs were reconciled as capture receipts. This wave makes no claim of
+promotion, quality, ownership, parity, merge readiness, archive/tombstone eligibility, or
+pointer/PR state change.
+
 ## Boundary review wave (2026-08-03)
 
 | Surface | Evidence-backed provisional disposition | Required proof before any move |
