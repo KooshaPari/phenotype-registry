@@ -180,10 +180,10 @@ delete, or remote mutation.
 |---|---|---|
 | Benchora (`main@5dff436`) | KEEP standalone; live source is canonical and the nested shelf is not parity | prove a migration manifest/API-owner map, real consumers, and focused source/target build-test evidence before any new boundary proposal |
 | PhenoPlugins (`e57ee79`) | HOLD; 36 common paths, 15 identical, 21 divergent, 62 missing; historical target is unreachable | restore target provenance and complete crate/hash/build comparison |
-| asset-engine (`41ade55`) | KEEP standalone, archive-only candidate; 44 source paths and only a README overlap with PhenoDesign | verify asset pipeline consumers and publish reversible capture |
+| asset-engine (`41ade55`) | archive-only preservation; clean archive branch, archived remote main `e188dab`; no project manifest and README restoration claim remains unproven | prove artifact/asset consumers and any restoration provenance; no parent attach or retirement action |
 | nanovms (`9a0e286`) | KEEP standalone | map runtime/VMM consumers before any parent proposal |
 | PlayCua (`29c6c66`) | HOLD | complete consumer scan and boundary contract |
-| RepoLedger (`7dabedc`) | KEEP standalone; 2 overlapping paths, zero byte-identical, local/remote diverged | preserve local commits and map registry consumers |
+| RepoLedger (`7dabedc`) | KEEP/HOLD; clean `main` is ahead 2/behind 53 and preserve ref is remote-verifiable; pnpm/Bun workspace has no registry/AgilePlus edge | complete consumer and divergence proof before any parent or boundary action |
 
 ### Benchora and PhenoPlugins exact boundary refresh (2026-08-04)
 
@@ -195,6 +195,16 @@ delete, or remote mutation.
 Benchora's legacy absorbed/deleted registry wording is contradicted by the live source
 remote and the current target shelf. Neither row is a merge, archive, tombstone, or
 pointer-retarget authorization.
+
+### RepoLedger and asset-engine exact boundary refresh (2026-08-04)
+
+| Repository | Exact evidence | Boundary conclusion |
+|---|---|---|
+| RepoLedger | clean `main@7dabedc39c584f67331722607ed5e7814f31c47d`, ahead 2/behind 53 of `origin/main`; `wip/preserve-20260804/repoledger-local-main-7dabedc` resolves to that exact SHA; pnpm/Bun workspace has no registry or AgilePlus manifest/code edge | KEEP/HOLD until source/remote divergence and actual consumer ownership are proven; preservation ref is not a promotion or parent decision |
+| asset-engine | clean `preserve/asset-engine-archive-20260729@41ade55dc10730d5718941cea1fb795f7c23365e`; archived `origin/main@e188dab9c9c5bba97383e3f9d3b71f6ab01b0150`; no Cargo/npm/Python/Go manifest; phenotype-apps has separate crates and no manifest edge | archive-only preservation; README restoration claim is unproven, so no attach, merge, archive mutation, or tombstone action is authorized |
+
+Benchora remains KEEP standalone under the immediately preceding refresh; no cohort row
+changes that conclusion.
 
 ## Exact source-capture refs (2026-08-03 refresh)
 
