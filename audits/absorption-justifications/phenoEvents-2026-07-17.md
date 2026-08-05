@@ -1,9 +1,15 @@
 # phenoEvents — Absorption Justification
 
-**Status:** ABSORBED 2026-07-17
+**Status:** Historical and unverified absorption claim (recorded 2026-07-17)
 **Source:** `KooshaPari/phenoEvents` (664 KB, 17 branches, last push 2026-07-14)
 **Target:** `KooshaPari/pheno` at `crates/phenotype-event-bus/`
-**Disposition:** ABSORB
+**Historical disposition:** ABSORB
+
+> 2026-08-05 reconciliation: this record is not current ownership evidence.
+> `phenoEvents` is public, unarchived, and `KEEP_CANONICAL_STANDALONE`; current
+> pheno main has none of the claimed target paths. Preserve the original claim
+> below as provenance only. Do not use it to move source, archive a repository,
+> or create a path dependency without a new commit-level integration proof.
 
 ## Confidence
 

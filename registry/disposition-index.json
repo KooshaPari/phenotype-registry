@@ -2174,6 +2174,7 @@
       "absorbed_at": "2026-07-17",
       "absorbed_into": "pheno (crates/phenotype-event-bus + crates/phenoevents-observability)",
       "absorbed_target_path": "crates/phenotype-event-bus/",
+      "historical_absorption_status": "unverified",
       "added_at": "2026-07-17T11:30:31.000000Z",
       "audit_artifact": "audits/absorption-justifications/phenoEvents-2026-07-17.md",
       "classified_at": "2026-07-18T00:42:09.091645Z",
@@ -2185,14 +2186,15 @@
       "grade_score": null,
       "id": "repo-phenoEvents",
       "disposition": "KEEP_CANONICAL_STANDALONE",
-      "last_push": "2026-07-22T11:42:32Z",
-      "note": "CURRENT 2026-07-27: public, unarchived standalone phenoEvents verified at main 3d6cc220e73bbc67652a1089bd801a12542e1f96; LICENSE is MIT OR Apache-2.0. Prior 2026-07-17 absorption/archive claim is retained as historical evidence, but current pheno main has no crates/phenotype-event-bus path. Keep standalone pending commit-level source/target reconciliation. [HISTORICAL: prior absorption claim, deletion marker, and restoration marker preserved]",
+      "last_push": "2026-08-05T01:08:26Z",
+      "current_remote_head": "be6573c68797cc611a99533bca6dc1c3dcdb0c88",
+      "note": "CURRENT 2026-08-05: public, unarchived standalone phenoEvents verified at main be6573c68797cc611a99533bca6dc1c3dcdb0c88. The prior 2026-07-17 pheno absorption/archive claim is historical and unverified: pheno main 81d850837848800aa7a3e6a6f007b91b6555ef07 has no claimed event-bus path. [HISTORICAL: prior absorption claim, deletion marker, and restoration marker preserved]",
       "path": "KooshaPari/phenoEvents",
       "remote_branch_count": 23,
       "restored_at": "2026-07-18",
       "size_kb": 664,
       "source_artifact": "manual:2026-07-17",
-      "target": "pending source/target reconciliation; historical pheno (crates/phenotype-event-bus + crates/phenoevents-observability)",
+      "target": "KooshaPari/phenoEvents (canonical standalone); historical pheno target is unverified",
       "wave": "2026-07-17-queue-refresh-batch2"
     },
     {
@@ -5701,11 +5703,13 @@
       "disposition": "KEEP_CANONICAL_STANDALONE",
       "fsm": "live",
       "id": "queue-repo-phenoEvents",
-      "note": "CURRENT 2026-07-27: remote verification shows phenoEvents public and unarchived; keep standalone pending source/target commit-level reconciliation. Prior queue promotion, deletion marker, and restoration marker remain preserved as historical evidence. See audits/absorption-justifications/phenoEvents-reconciliation-20260727.md.",
+      "historical_absorption_status": "unverified",
+      "current_remote_head": "be6573c68797cc611a99533bca6dc1c3dcdb0c88",
+      "note": "CURRENT 2026-08-05: phenoEvents is public, unarchived, and canonical standalone. Prior queue promotion, deletion marker, restoration marker, and pheno target claim remain historical evidence only; the target claim is unverified. See audits/absorption-justifications/phenoEvents-reconciliation-20260727.md.",
       "path": "KooshaPari/phenoEvents",
       "reconciled_at": "2026-07-18T01:53:33.130081Z",
       "restored_at": "2026-07-18",
-      "target": "pheno (crates/pheno-events/)"
+      "target": "KooshaPari/phenoEvents (canonical standalone); historical pheno target is unverified"
     },
     {
       "deleted_at": "2026-07-19",
@@ -14253,14 +14257,16 @@
       "absorbed_at": "2026-07-18",
       "absorbed_into": "pheno (crates/phenotype-event-bus)",
       "deleted_at": "2026-07-18",
-      "disposition": "ABSORB",
+      "disposition": "KEEP_CANONICAL_STANDALONE",
       "fsm": "live",
       "id": "queue-repo-phenoEvents-stamp",
-      "note": "[QUEUED 2026-07-18] EventBus port \u2014 boundary-specific absorbed into pheno. | 2026-07-18 batch18-stamp: canonical disposition applied \u2014 maps to repo-phenoEvents (fsm=live). Stamp bookkeeping cleared; underlying canonical row unchanged. | 2026-07-18 batch19-flip: live -> absorbed (target documented, absorption per registry note). [DELETED 2026-07-18: source repo deleted from GitHub after verified code integration] [RESTORED 2026-07-18: user directive \u2014 restored as standalone repo from pheno absorb branch]",
+      "historical_absorption_status": "unverified",
+      "current_remote_head": "be6573c68797cc611a99533bca6dc1c3dcdb0c88",
+      "note": "Historical queue stamp. The 2026-07-18 pheno absorption wording is retained as provenance, but it is unverified against current pheno main. CURRENT 2026-08-05: phenoEvents is public, unarchived, and the canonical standalone owner.",
       "path": "KooshaPari/phenoEvents",
       "resolved_at": "2026-07-18",
       "restored_at": "2026-07-18",
-      "target": "pheno (crates/phenotype-event-bus)"
+      "target": "KooshaPari/phenoEvents (canonical standalone); historical pheno target is unverified"
     },
     {
       "absorbed_into": "phenotype-tooling",
@@ -14370,14 +14376,16 @@
       "absorbed_at": "2026-07-18",
       "absorbed_into": "pheno (crates/phenotype-event-bus)",
       "deleted_at": "2026-07-18",
-      "disposition": "ABSORB",
+      "disposition": "KEEP_CANONICAL_STANDALONE",
       "fsm": "live",
       "id": "q20260718-phenoEvents",
-      "note": "EventBus port - boundary-specific absorbed into pheno. | 2026-07-18 batch20-drain: phenoEvents absorbed into pheno monorepo crates/phenotype-event-bus per registry plan. 18-branch source. Canonical. [DELETED 2026-07-18: source repo deleted from GitHub after verified code integration] [RESTORED 2026-07-18: user directive \u2014 restored as standalone repo from pheno absorb branch]",
+      "historical_absorption_status": "unverified",
+      "current_remote_head": "be6573c68797cc611a99533bca6dc1c3dcdb0c88",
+      "note": "Historical queue drain stamp. Its pheno absorption wording is retained as provenance but unverified against current pheno main. CURRENT 2026-08-05: phenoEvents is public, unarchived, and the canonical standalone owner.",
       "path": "KooshaPari/phenoEvents",
       "resolved_at": "2026-07-18",
       "restored_at": "2026-07-18",
-      "target": "pheno (crates/phenotype-event-bus)"
+      "target": "KooshaPari/phenoEvents (canonical standalone); historical pheno target is unverified"
     },
     {
       "absorbed_into": "phenotype-tooling (tools/kwatch)",
@@ -14497,6 +14505,19 @@
       "path": "KooshaPari/portage-temp",
       "size_kb": 0,
       "target": ""
+    },
+    {
+      "canonical_owner": "KooshaPari/phenoEvents",
+      "current_remote_status": "not_found_404",
+      "disposition": "HISTORICAL_ALIAS_TOMBSTONE",
+      "fsm": "archived",
+      "historical_absorption_status": "not_applicable",
+      "id": "alias-2phenoEvents",
+      "note": "Historical recovery alias. Its preserved source commit is reachable in canonical phenoEvents, so no source transfer is authorized. Current KooshaPari/2phenoEvents remote returned 404 on 2026-08-05.",
+      "path": "KooshaPari/2phenoEvents",
+      "source_commit": "5bb0c894e44a50079035b3d5ab5d31946fc445c1",
+      "target": "KooshaPari/phenoEvents (canonical standalone)",
+      "verified_at": "2026-08-05"
     }
   ],
   "tombstone_audit": {
@@ -14520,6 +14541,6 @@
     "rationale": "Both target repos returned 404 NOT FOUND on GitHub API. Tombstone state preserves the registry reference while marking the row as informational-only \u2014 no GitHub-side artifact exists or ever existed. Per ADR-007 \u00a7\"404 / never existed on remote\" this is the canonical disposition for phantom rows.",
     "total_never_existed_remote_rows": 5
   },
-  "updated": "2026-07-20",
-  "version": "v1.6.81"
+  "updated": "2026-08-05",
+  "version": "v1.6.82"
 }

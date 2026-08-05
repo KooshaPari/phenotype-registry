@@ -45,3 +45,12 @@ unit/property tests in the target checkout.
 - Keep the historical target pointer for provenance and revisit after a
   commit-level reconciliation with the pheno maintainers.
 
+## 2026-08-05 revalidation
+
+`KooshaPari/phenoEvents` remains public and unarchived at main
+`be6573c68797cc611a99533bca6dc1c3dcdb0c88`. Current `KooshaPari/pheno` main is
+`81d850837848800aa7a3e6a6f007b91b6555ef07`; its tree still has no
+`pheno-events`, `phenoevents-observability`, or `phenotype-event-bus` path.
+The target claim is therefore historical and unverified, not a pending source
+move. `2phenoEvents` is separately reconciled as a historical alias whose
+preserved source commit is reachable in canonical phenoEvents.
