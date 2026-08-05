@@ -1935,7 +1935,7 @@
       "absorbed_at": "2026-07-17T12:00:00.000000Z",
       "absorbed_branch": "absorb/phenoDesign-2026-07-17",
       "absorbed_files_added": 11,
-      "absorbed_npm_scope_normalized_from": "@kooshapari/design",
+      "absorbed_package_scope_normalized_from": "@kooshapari/design",
       "absorbed_package_identity": "@phenotype/design",
       "absorption_reversed_at": "2026-07-20T00:00:00.000000Z",
       "added_at": "2026-07-17T11:16:58.000000Z",
