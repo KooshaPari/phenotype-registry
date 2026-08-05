@@ -42,6 +42,41 @@ def main() -> int:
         "alias must record the current 404 remote state",
     )
 
+    gap_audit = load_json("registry/audit-absorption-justification/repo-gap-20260723.json")
+    alias_candidates = [
+        candidate
+        for candidate in gap_audit.get("candidates", [])
+        if candidate.get("repo") == "2phenoEvents"
+    ]
+    require(
+        errors,
+        len(alias_candidates) == 1,
+        "historical repo-gap audit must contain one 2phenoEvents record",
+    )
+    if alias_candidates:
+        audit_alias = alias_candidates[0]
+        require(
+            errors,
+            audit_alias.get("disposition") == "HISTORICAL_ALIAS_TOMBSTONE",
+            "historical repo-gap audit must not retain 2phenoEvents as an absorb candidate",
+        )
+        require(
+            errors,
+            audit_alias.get("historical_disposition") == "ABSORB_CANDIDATE",
+            "historical repo-gap audit must preserve the superseded absorb-candidate classification",
+        )
+        require(
+            errors,
+            audit_alias.get("canonical_source") == "phenoEvents",
+            "historical repo-gap audit must retain phenoEvents canonical source",
+        )
+        require(
+            errors,
+            audit_alias.get("reconciliation_artifact")
+            == "audits/absorption-justifications/2phenoEvents-reconciliation-20260805.md",
+            "historical repo-gap audit must link to the reconciliation artifact",
+        )
+
     require(
         errors,
         canonical.get("disposition") == "KEEP_CANONICAL_STANDALONE",
