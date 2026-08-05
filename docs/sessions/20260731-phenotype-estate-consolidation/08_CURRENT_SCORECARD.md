@@ -174,3 +174,13 @@ current-main-reconciled head; do not infer readiness from partial verification.
 | Surface | Exact capture evidence | Disposition |
 |---|---|---|
 | AgilePlus plane delta | canonical `main` parent `2fa631baa2a91e9df36b367d821bc47e6eb855a3`; first source-only capture `47a9c174ed639fc27478686bae5a8115bda76063` on `wip/preserve-20260804/agileplus-plane-delta-0843` captured exactly `crates/agileplus-plane/src/daemon.rs` and `crates/agileplus-plane/src/lib.rs` (patch SHA-256 `35025280160380930915574876baa7f51fd08687c58b294861cc83b192af67fa`); recapture `07ab99b9faedb62728faad803def66f1b3f29106` has parent `47a9c174ed639fc27478686bae5a8115bda76063` on `wip/preserve-20260804/agileplus-source-recapture-0925` and captures exactly `crates/agileplus-plane/src/daemon.rs`, `crates/agileplus-dashboard/src/app_state.rs`, and `crates/agileplus-dashboard/src/routes/mod.rs` | C+ / preserve-only. The original AgilePlus `main`, index, and worktree remain untouched; neither capture authorizes merge, release, archive, or other promotion. |
+
+### Dogfood gate refresh (2026-08-05)
+
+| Surface | Exact current evidence | Grade/gate |
+|---|---|---|
+| AgilePlus | canonical `main@1d60137...` is clean/current. Strict required `ci / lint` and `ci / test` are queued; the current Sonar, tag, and benchmark checks fail. Installed `v0.2.1` release digest matches, but no artifact built from current `main` or dogfood transcript is recorded. | HOLD / no promotion or release claim until the strict checks and quality failures are resolved, a current-main artifact is verified, and dogfood evidence is captured. |
+| Tracera | preserve `HEAD@d3a9d84...` diverges from `main@8e579f...`. Installed backend `0.1.3` passes loopback `/health` and `/ready`; frontend is absent, root returns `404`, and full E2E dogfood fails. Application provenance is inferred only because the version hash is `dev`. | HOLD / preserve divergence; backend-only loopback success is insufficient. Restore/verify frontend and full E2E, then establish non-inferred app provenance before any promotion claim. |
+
+This is read-only gate evidence. It authorizes no merge, release, promotion, archive,
+tombstone, or boundary change.
