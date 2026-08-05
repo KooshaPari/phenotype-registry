@@ -19,7 +19,7 @@
     {"repo": "phenotype-router", "disposition": "KEEP", "canonical_source": null},
     {"repo": "Stashly", "disposition": "KEEP", "canonical_source": null},
     {"repo": "thegent-sharecli", "disposition": "ABSORB_CANDIDATE", "canonical_source": "thegent"},
-    {"repo": "2phenoEvents", "disposition": "ABSORB_CANDIDATE", "canonical_source": "phenoEvents"},
+    {"repo": "2phenoEvents", "disposition": "HISTORICAL_ALIAS_TOMBSTONE", "historical_disposition": "ABSORB_CANDIDATE", "canonical_source": "phenoEvents", "reconciled_at": "2026-08-05", "reconciliation_artifact": "audits/absorption-justifications/2phenoEvents-reconciliation-20260805.md"},
     {"repo": "Project-Spyn", "disposition": "HITL", "canonical_source": null},
     {"repo": "benchmark", "disposition": "ARCHIVE_OR_KEEP", "canonical_source": null},
     {"repo": "benchmarks", "disposition": "ARCHIVE_OR_KEEP", "canonical_source": null}
