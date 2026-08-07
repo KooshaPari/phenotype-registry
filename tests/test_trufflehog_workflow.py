@@ -201,6 +201,7 @@ def test_trufflehog_action_and_checkout_are_pinned_and_inputs_allowlisted() -> N
             step for step in job["steps"] if step.get("uses", "").startswith("actions/checkout@")
         )
         assert sha.search(checkout["uses"]), checkout["uses"]
+        assert checkout.get("with", {}).get("persist-credentials") == "false"
         for trufflehog in _trufflehog_steps(job):
             assert sha.search(trufflehog["uses"]), trufflehog["uses"]
             inputs = trufflehog.get("with", {})
