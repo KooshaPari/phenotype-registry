@@ -53,4 +53,8 @@ Total: 16 files added, ~1,174 lines.
 | Source `cargo check` (original repo) | ✅ — passed through `Checking pg-bridge` |
 | Pheno workspace `cargo check` (deferred) | 🟡 Heavy deps (surrealdb + kv-rocksdb, tokio-postgres-rustls) cause >5min build; deferred to CI |
 
-Source repo `KooshaPari/phenoData` archived on GitHub 2026-07-17.
+The historical archival statement is stale: `KooshaPari/phenoData` currently
+reports `archived=false` and has active maintenance refs. See
+[`ACTIVE_SOURCE_REVALIDATION_20260807.md`](ACTIVE_SOURCE_REVALIDATION_20260807.md)
+for exact current refs and the unresolved target decision. This evidence update
+does not change the registry disposition or authorize archive/deletion.
