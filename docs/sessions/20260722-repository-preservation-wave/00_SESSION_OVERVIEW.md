@@ -20,3 +20,12 @@ deleting, renaming, archiving, force-pushing, or merging source content into act
 ## Outcome
 
 W0 ledger authored. W1 and W2 remain pending.
+
+## 2026-08-11 cockpit source-boundary preservation evidence
+
+An additive evidence packet records the non-Git cockpit source chain without moving, replacing,
+or initializing any source directory. It preserves two time-stamped observations: the supplied
+render snapshot at `2026-08-11T06:53:33Z`, and a later rehash that detected source churn.
+
+The operating successor is AgilePlus; phenotype-registry owns the schema and governance record;
+Tracera is a future consumer. This is a boundary decision, not a migration completion claim.
