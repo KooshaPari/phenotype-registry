@@ -40,7 +40,14 @@
       "reason": "Secondary competing cockpit writer is excluded to preserve a single approved builder capture."
     }
   ],
-  "build_command": "python3 /Users/kooshapari/CodeProjects/Phenotype/repos/cockpit/build_leapfrog_cockpit.py",
+  "historical_builder_provenance": {
+    "recorded_builder_path": "/Users/kooshapari/CodeProjects/Phenotype/repos/cockpit/build_leapfrog_cockpit.py",
+    "actual_configured_inputs": [
+      "/Users/kooshapari/CodeProjects/Phenotype/repos/phenotype-dag/beads.jsonl"
+    ],
+    "source_documentation_mismatch": "The copied builder's historical source documentation names ~/.agileplus/audit.jsonl as a mirror input, but its BEAD_SOURCES configuration contains only phenotype-dag/beads.jsonl. The audit mirror is neither a supported configured input nor a captured input for this custody record.",
+    "execution_prohibited": "This is non-executable historical provenance. Do not run the copied builder against live paths: its fixed output path is an excluded rendered cockpit HTML artifact and execution can overwrite that live file."
+  },
   "validation_checks": [
     "python3 -m json.tool provenance-manifest.json",
     "python3 -m py_compile build_leapfrog_cockpit.py",

@@ -17,5 +17,6 @@
 ## 2026-08-12 cockpit source custody decision
 
 - Preserve only the approved `build_leapfrog_cockpit.py` and point-in-time `beads.jsonl` copies under `custody/cockpit/20260812/`; their manifest is the custody boundary.
-- Do not copy `~/.agileplus/audit.jsonl`: the external mirror had 22 scanner hits. Do not retain rendered HTML, the legacy rendered reference, or the secondary `beads/bead-cockpit.py` writer.
+- Do not copy `~/.agileplus/audit.jsonl`: the external mirror had 22 scanner hits. Although the copied builder's historical prose names it as a mirror, `BEAD_SOURCES` actually contains only `phenotype-dag/beads.jsonl`; the mirror was not a supported configured input and is not captured here. Do not retain rendered HTML, the legacy rendered reference, or the secondary `beads/bead-cockpit.py` writer.
+- The copied builder is preserved as non-executable historical provenance. Never run it against live paths: its fixed output path is the excluded cockpit HTML and execution can overwrite that live artifact.
 - This is evidence of captured inputs, not a claim of current source parity, rendered-output validity, publication, or promotion.
