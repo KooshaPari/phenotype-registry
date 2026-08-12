@@ -13,3 +13,9 @@
 ## Authority order
 
 `BOUNDARY_OWNERS.md` and accepted ADRs override stale absorption rows and July 21 catch-all runbooks.
+
+## 2026-08-12 cockpit source custody decision
+
+- Preserve only the approved `build_leapfrog_cockpit.py` and point-in-time `beads.jsonl` copies under `custody/cockpit/20260812/`; their manifest is the custody boundary.
+- Do not copy `~/.agileplus/audit.jsonl`: the external mirror had 22 scanner hits. Do not retain rendered HTML, the legacy rendered reference, or the secondary `beads/bead-cockpit.py` writer.
+- This is evidence of captured inputs, not a claim of current source parity, rendered-output validity, publication, or promotion.
