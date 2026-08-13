@@ -13,3 +13,15 @@
 | governance owners | phenoStandards split between templates and workflows |
 
 Merge order is W0 registry ledger, W1 parent refs, W2 proof, then a separately approved archive wave.
+
+## Cockpit migration roles
+
+| System | Role | Current gate |
+|---|---|---|
+| AgilePlus | Operational successor for workflow writes and lifecycle | Blocked on atomic writer/renderer migration and source-boundary decision |
+| phenotype-registry | Schema, governance, and preservation SSOT | This additive evidence record is committed here |
+| Tracera | Future governed read-model consumer | Blocked on a stable AgilePlus-produced read contract |
+| Local `phenotype-dag/`, `beads/`, `cockpit/` | Preserved historical source chain | Non-Git; do not initialize, move, delete, or replace |
+
+No cross-project source replacement, repository creation, or consumer repoint is authorized by
+this preservation packet.
