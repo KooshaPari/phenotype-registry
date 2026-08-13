@@ -14,19 +14,8 @@
 - Verify branch and tag counts match the manifest.
 - Treat missing reachability as a hard failure; do not proceed to archive review.
 
-## Cockpit evidence checks
+## 2026-08-12 cockpit custody gates
 
-```sh
-shasum -a 256 phenotype-dag/beads.jsonl
-shasum -a 256 beads/bead-cockpit.py
-shasum -a 256 cockpit/bead-cockpit-20260809-191131-f5ca38f7.html
-git -C phenotype-dag rev-parse --is-inside-work-tree
-git -C beads rev-parse --is-inside-work-tree
-git -C cockpit rev-parse --is-inside-work-tree
-```
-
-- Verify the recorded 06:53 snapshot hash chain as a historical observation, not a live-current
-  assertion.
-- Rehash live bytes immediately before a migration proposal; record any mismatch as drift.
-- Confirm no source directory was initialized, moved, deleted, or replaced.
-- Validate this registry documentation diff is limited to the existing preservation-wave session.
+- Parse `custody/cockpit/20260812/provenance-manifest.json` as strict JSON and assert it has no runnable `build_command` key. Assert its historical-builder record identifies `phenotype-dag/beads.jsonl` as the only configured input and records the historical audit-mirror documentation mismatch.
+- Compile the copied builder, parse every copied `beads.jsonl` line as JSON, and recompute copied-file SHA256 and byte-size values against the manifest.
+- Run `git diff --check`; do not run the builder or publish rendered HTML as part of this source-only custody gate. The copied builder's fixed output is excluded live cockpit HTML, so executing it against live paths is prohibited.
