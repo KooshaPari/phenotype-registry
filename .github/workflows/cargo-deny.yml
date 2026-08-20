@@ -12,33 +12,25 @@ permissions:
 
 jobs:
   deny:
-    name: cargo-deny (${{ matrix.location.path }})
+    name: cargo-deny
     runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-      matrix:
-        location:
-          # audits repo: deny.toml at root, Rust aggregator at audits/2026-04-24/aggregator/
-          - path: 'audits/2026-04-24/aggregator'
-            deny: '../../deny.toml'
-            cargo: 'Cargo.toml'
     steps:
       - name: Checkout
-        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+        uses: actions/checkout@v4
 
       - name: Install Rust toolchain
-        uses: dtolnay/rust-toolchain@1d1d528c25b5c4ba9c5b6f4f4d9ea5e2c0e8a8c7 # stable
+        uses: dtolnay/rust-toolchain@stable
         with:
           components: rustfmt, clippy
 
       - name: Cache cargo registry
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: |
             ~/.cargo/registry
             ~/.cargo/git
             target
-          key: ${{ runner.os }}-cargo-deny-${{ hashFiles(matrix.location.cargo) }}
+          key: ${{ runner.os }}-cargo-deny-${{ hashFiles('audits/2026-04-24/aggregator/Cargo.lock') }}
           restore-keys: |
             ${{ runner.os }}-cargo-deny-
 
@@ -48,12 +40,12 @@ jobs:
             tool: cargo-deny
 
       - name: Run cargo-deny check (block-release)
-        working-directory: ${{ matrix.location.path }}
+        working-directory: audits/2026-04-24/aggregator
         run: cargo deny check --all-features
 
-      - name: Run cargo-deny check (advisories only, log-only)
+      - name: Run cargo-deny advisories (log-only on PRs)
         if: github.event_name == 'pull_request'
-        working-directory: ${{ matrix.location.path }}
+        working-directory: audits/2026-04-24/aggregator
         run: |
           cargo deny check advisories --all-features 2>&1 | tee deny-advisories.txt || true
           if [ -s deny-advisories.txt ]; then
