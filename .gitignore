@@ -68,3 +68,7 @@ local/incident-evidence/
 # re-generate these on first build. Tracked per-project Cargo.lock
 # files (under Cargo workspace members) are unaffected.
 Cargo.lock
+worktrees/
+worktrees/consolidation-wave-3-20260723
+worktrees/phenotype-omlx-ffi-validation
+registry/absorbed-crates/phenotype-omlx.worktrees/*/

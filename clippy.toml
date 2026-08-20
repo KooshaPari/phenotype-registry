@@ -1,6 +1,9 @@
 avoid-breaking-exported-api = false
 disallowed-names = []
 disallowed-methods = []
-imports-ignores = []
+# `imports-ignores` was renamed to `allowed-wildcard-imports` in newer clippy
+# versions; setting it to an empty sequence keeps the older and newer lints
+# happy (no wildcard imports will be allowed by this configuration).
+allowed-wildcard-imports = []
 too-many-arguments-threshold = 8
 type-complexity-threshold = 250

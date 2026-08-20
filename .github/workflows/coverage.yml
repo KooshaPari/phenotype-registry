@@ -1,6 +1,9 @@
 name: ci
 
 on:
+  # Keep a manual recovery path for required branch-protection contexts when
+  # Actions are re-enabled or a pull-request event is missed.
+  workflow_dispatch:
   push:
     branches: [main]
   pull_request:
@@ -16,23 +19,26 @@ env:
 
 jobs:
   lint:
-    if: ${{ !contains(env.SKIP, 'lint') }}
+    name: ci / lint
+    if: ${{ !contains(vars.SKIP || '', 'lint') }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v4
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v4
       - name: Run lint
         run: echo "Running language-specific lint"
   test:
-    if: ${{ !contains(env.SKIP, 'test') }}
+    name: ci / test
+    if: ${{ !contains(vars.SKIP || '', 'test') }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v4
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v4
       - name: Run tests
         run: echo "Running language-specific tests"
   coverage:
-    if: ${{ !contains(env.SKIP, 'coverage') }}
+    name: ci / coverage
+    if: ${{ !contains(vars.SKIP || '', 'coverage') }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v4
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v4
       - name: Generate coverage
         run: echo "Generating coverage (language-specific)"

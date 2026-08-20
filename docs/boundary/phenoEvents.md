@@ -1,39 +1,42 @@
----
-repo: "phenoEvents"
-role: unknown
-status: active
-last_boundary_review: 2026-06-17
-review_cadence: 30d
-in_scope:
-  - "<to be filled>"
-out_of_scope:
-  - "<to be filled>"
----
+# phenoEvents - Canonical Event-bus Boundary
 
-# Boundary — phenoEvents
+**Status:** `KEEP_CANONICAL_STANDALONE`
 
-## In Scope
+| Field | Current evidence |
+| --- | --- |
+| Canonical owner | `KooshaPari/phenoEvents` |
+| Default branch | `main` |
+| Verified main | `be6573c68797cc611a99533bca6dc1c3dcdb0c88` |
+| Remote state | public and unarchived (verified 2026-08-05) |
+| Boundary | durable SQLite outbox, retries, DLQ, idempotency, projections, schema registry, and OTLP tracing |
 
-<To be filled.>
+## Current ownership
 
-## Out of Scope
+`phenoEvents` is the live canonical event-bus repository. New consumers that
+need this boundary should depend on its published or explicitly versioned API;
+they must not infer a local `pheno` path dependency from old registry records.
 
-| Not here | Lives in | Reason |
-| -------- | -------- | ------ |
-| `<capability>` | `<other-repo-or-N/A>` | `<why>` |
+The `2phenoEvents` name is a historical alias tombstone. Its preserved source
+commit is reachable in this repository, so it provides no separate source
+material for absorption.
 
-## Boundary Crossings
+## Historical pheno claim
 
-| Crossing | Direction | Surface | Status |
-| -------- | --------- | ------- | ------ |
-| `<capability or interface>` | `<this-repo→other|other→this-repo>` || `<this-repo→other|other→this-repo>` | `<Trait / HTTP / CLI / file / event>` | `<green|amber|red>` || `<green|amber|red>` || `<green|amber|red>` |
+The 2026-07-17 records claimed that `phenoEvents` was absorbed into
+`KooshaPari/pheno`. That claim is **historical and unverified**. At recheck,
+pheno main `81d850837848800aa7a3e6a6f007b91b6555ef07` contains no
+`crates/pheno-events`, `crates/phenoevents-observability`, or
+`crates/phenotype-event-bus` path. The registry preserves the old claim as
+provenance, not as current ownership or an instruction to mutate either repo.
 
-## Last Boundary Review
+A future integration requires exact source and target SHAs, a file/dependency
+mapping, target workspace membership, and focused target tests. Until then,
+Eventra and `phenotype-event-sourcing` are adjacent boundaries rather than
+implicit targets.
 
-**Date:** 2026-06-17
-**Reviewer:** forge subagent (L7-001 sweep)
-**Worklog / finding:** `worklogs/L7-001-intent-boundary-curation-2026-06-17.json`
-**Decisions:**
-- Initial scaffolding; needs human review.
+## Evidence
 
-**Next review:** 2026-07-17
+- `audits/absorption-justifications/phenoEvents-reconciliation-20260727.md`
+- `audits/absorption-justifications/2phenoEvents-reconciliation-20260805.md`
+- `projects/phenoEvents.json`
+- `projects/2phenoEvents.json`
