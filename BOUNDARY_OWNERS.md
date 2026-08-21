@@ -116,6 +116,27 @@ until slices above are explicit consumer defaults.
 **Conflict:** `agileplus-*` staged in **Agentora** `crates/` during PhenoProc wave 5 is **staging only**.
 Canonical home is **AgilePlus** per ADR-005. Agentora owns agent/proc runtime — not governance substrate.
 
+### Beads cockpit evidence and publication (provisional 2026-08-21)
+
+This row records custody discovered during the 2026-08 preservation work.  It deliberately
+does **not** designate a production data owner while the former loose ledger and publication
+paths have no durable, tracked source boundary.  A preserved renderer, manifest, or hosted
+Git ref is evidence of recovery; it is not evidence of a live service, replayable ledger, or
+release-ready cockpit.
+
+| Slice | Provisional owner / status | What is established | What must not be inferred | Gate to affirm a canonical owner |
+|-------|----------------------------|---------------------|----------------------------|----------------------------------|
+| Renderer and generator code | `pheno-harness` — provisional implementation custodian | A tested, hosted preservation branch carries the renderer and its traceability tests | It does not thereby own the user-facing publication or ledger data | Adopt the runnable boundary in a reviewed, tracked home with its dependencies and writer configuration |
+| Immutable custody and provenance | **phenotype-registry** | Dated custody packets and recovery manifests may be indexed here | Registry is not the live writer or dashboard publisher | Verify both hosted preservation and an independent restore from the declared artifact set |
+| Live Beads ledger | **UNASSIGNED** | The former loose `phenotype-dag/beads.jsonl` path was volatile and is not a proven canonical store | No agent may call it the SSOT, replay it, or silently recreate it from a stale copy | Name a tracked or managed store; specify writer identity, schema, retention, and read-only recovery procedure |
+| Cockpit publication | **UNASSIGNED** | The former loose HTML output was volatile; its no-delete producer is retained separately | There is no current production dashboard or publication endpoint | Declare a versioned output target, retained artifact policy, reader contract, and deployment/recovery evidence |
+| Legacy loose paths | **PRESERVE / DO NOT OPERATE** | Historical paths remain evidence only when present | Their absence is not authorization to delete, prune, or synthesize replacement content | Complete the four owner gates above, then make a separate retirement decision under the preserve-first policy |
+
+**Required handoff sequence:** (1) a reviewed source and ledger boundary, (2) a configured
+writer that never deletes prior outputs, (3) content-addressed publication plus retention
+alerts, (4) Git-hosted and second-cloud artifact preservation, and (5) an independently hosted
+restore and read-only smoke.  Until all five are evidenced, status is **preservation in progress**.
+
 ### Agent / process plane (PhenoProc absorption)
 
 | Slice | Canonical owner | Status (2026-06-17) | Recommendation |
