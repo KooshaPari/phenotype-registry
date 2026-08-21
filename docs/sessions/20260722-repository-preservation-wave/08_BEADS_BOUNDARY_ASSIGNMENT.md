@@ -29,6 +29,9 @@ a runnable product:
 
 - Preserve all historical loose copies, branches, manifests, and recovery artifacts when present.
 - Do not create a replacement ledger merely because a loose path has disappeared.
+- A custody capture requires the source to be present for the same-run hash, byte-count, and
+  JSONL-parse preflight. If it disappears before that preflight, stop and record a no-capture
+  event; a prior observation or hash is not a substitute for current source bytes.
 - Do not re-enable a periodic writer or dashboard publisher before Gates 1-3 have a reviewed
   implementation and Gates 4-5 have evidence.
 - A future adoption or retirement decision is a separate reviewed change; this document grants
