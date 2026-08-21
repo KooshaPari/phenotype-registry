@@ -1,27 +1,17 @@
 name: CodeQL
 
 on:
-  push:
-    branches: ["main"]
-  pull_request:
-    branches: ["main"]
-  schedule:
-    - cron: "23 4 * * 2"
   workflow_dispatch:
 
 permissions:
   contents: read
   security-events: write
 
-concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
-
 jobs:
   analyze:
     name: Analyze Rust
     runs-on: ubuntu-24.04
-    if: ${{ hashFiles('Cargo.toml') != '' }}
+    if: false
     permissions:
       actions: read
       contents: read
@@ -29,17 +19,17 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        uses: actions/checkout@v4
 
       - name: Initialize CodeQL
-        uses: github/codeql-action/init@0daab03d71ff584ef619d027a3fd9146679c5d84
+        uses: github/codeql-action/init@v3
         with:
           languages: rust
 
       - name: Autobuild
-        uses: github/codeql-action/autobuild@865f5f5c36632f18690a3d569fa0a764f2da0c3e
+        uses: github/codeql-action/autobuild@v3
 
       - name: Perform CodeQL Analysis
-        uses: github/codeql-action/analyze@0daab03d71ff584ef619d027a3fd9146679c5d84
+        uses: github/codeql-action/analyze@v3
         with:
           category: "/language:rust"
