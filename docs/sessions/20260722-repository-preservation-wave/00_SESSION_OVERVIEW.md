@@ -27,5 +27,9 @@ An additive evidence packet records the non-Git cockpit source chain without mov
 or initializing any source directory. It preserves two time-stamped observations: the supplied
 render snapshot at `2026-08-11T06:53:33Z`, and a later rehash that detected source churn.
 
-The operating successor is AgilePlus; phenotype-registry owns the schema and governance record;
-Tracera is a future consumer. This is a boundary decision, not a migration completion claim.
+That 2026-08-11 observation must be read as historical preservation evidence, not a current
+operating-owner decision.  The later custody review found no durable, tracked live ledger or
+publication boundary.  `BOUNDARY_OWNERS.md` now records `pheno-harness` as the provisional
+renderer/generator custodian, `phenotype-registry` as immutable provenance custodian, and the
+live ledger plus cockpit publication as **UNASSIGNED** until their explicit owner gates pass.
+No claim is made that AgilePlus or Tracera currently operates this surface.
