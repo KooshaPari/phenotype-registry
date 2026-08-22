@@ -68,7 +68,7 @@ jobs:
         uses: anchore/sbom-action@e22c389904149dbc22b58101806040fa8d37a610 # v0
         with:
           format: cyclonedx-json
-          artifact-name: ${{{{ github.repository }}}}.sbom.json
+          artifact-name: \${{ github.repository }}.sbom.json
         continue-on-error: true
 
   slsa-provenance:
