@@ -128,7 +128,7 @@ impl DagSchema {
     /// Reconstruct an internal `Dag<String>` from this schema.
     ///
     /// Returns an error if a duplicate node is encountered.
-    pub fn into_dag(&self) -> Result<Dag<String>, crate::dag::DagError> {
+    pub fn into_dag(self) -> Result<Dag<String>, crate::dag::DagError> {
         let mut dag = Dag::new();
         for node in &self.nodes {
             dag.add_node(node.id.clone())?;
@@ -215,34 +215,26 @@ mod tests {
                         regex: false,
                     },
                 ];
-                node.audit_hooks = vec![
-                    AuditHook::MetricEmit {
-                        name: "build_duration_ms".into(),
-                        value: 0.0,
-                        unit: Some("ms".into()),
-                        timing: HookTiming::Post,
-                    },
-                ];
+                node.audit_hooks = vec![AuditHook::MetricEmit {
+                    name: "build_duration_ms".into(),
+                    value: 0.0,
+                    unit: Some("ms".into()),
+                    timing: HookTiming::Post,
+                }];
             }
             if node.id == "deploy" {
-                node.prerequisites = vec![
-                    Prerequisite::ImageReady {
-                        image: "myapp:latest".into(),
-                    },
-                ];
-                node.acceptance = vec![
-                    AcceptanceCriterion::HttpOk {
-                        url: "https://staging.example.com/health".into(),
-                        expected_status: Some(200),
-                    },
-                ];
-                node.audit_hooks = vec![
-                    AuditHook::Notify {
-                        channel: "slack".into(),
-                        message: "Deploy completed".into(),
-                        timing: HookTiming::OnSuccess,
-                    },
-                ];
+                node.prerequisites = vec![Prerequisite::ImageReady {
+                    image: "myapp:latest".into(),
+                }];
+                node.acceptance = vec![AcceptanceCriterion::HttpOk {
+                    url: "https://staging.example.com/health".into(),
+                    expected_status: Some(200),
+                }];
+                node.audit_hooks = vec![AuditHook::Notify {
+                    channel: "slack".into(),
+                    message: "Deploy completed".into(),
+                    timing: HookTiming::OnSuccess,
+                }];
             }
         }
 
@@ -270,17 +262,27 @@ mod tests {
     #[test]
     fn yaml_round_trip_enriched() {
         let schema = enriched_schema();
-        let yaml = schema.to_yaml().expect("YAML serialization of enriched schema");
+        let yaml = schema
+            .to_yaml()
+            .expect("YAML serialization of enriched schema");
         let restored = DagSchema::from_yaml(&yaml).expect("YAML deserialization");
-        assert_eq!(schema, restored, "Enriched YAML round-trip must be lossless");
+        assert_eq!(
+            schema, restored,
+            "Enriched YAML round-trip must be lossless"
+        );
     }
 
     #[test]
     fn json_round_trip_enriched() {
         let schema = enriched_schema();
-        let json = schema.to_json_pretty().expect("JSON serialization of enriched schema");
+        let json = schema
+            .to_json_pretty()
+            .expect("JSON serialization of enriched schema");
         let restored = DagSchema::from_json(&json).expect("JSON deserialization");
-        assert_eq!(schema, restored, "Enriched JSON round-trip must be lossless");
+        assert_eq!(
+            schema, restored,
+            "Enriched JSON round-trip must be lossless"
+        );
     }
 
     #[test]
