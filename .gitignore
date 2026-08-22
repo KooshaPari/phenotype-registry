@@ -72,3 +72,10 @@ worktrees/
 worktrees/consolidation-wave-3-20260723
 worktrees/phenotype-omlx-ffi-validation
 registry/absorbed-crates/phenotype-omlx.worktrees/*/
+_ci*.json 
+_fail.json 
+_sc*.json 
+_test_sc.json 
+_wfs.json 
+_logs_* 
+_log_*.txt 
