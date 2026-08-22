@@ -110,7 +110,8 @@ for root, dirs, files in os.walk("."):
         except yaml.YAMLError as e:
             mark = getattr(e, "problem_mark", None)
             line = mark.line + 1 if mark else 0
-            print(f"{path}:{line}: YAML syntax error: {e.problem if hasattr(e, "problem") else e}")
+            detail = getattr(e, "problem", str(e))
+            print(f"{path}:{line}: YAML syntax error: {detail}")
             errors += 1
 sys.exit(errors)
 ' 2>&1) || yaml_errors=$?
