@@ -103,7 +103,7 @@ jobs:
           if [ -f .prettierignore ]; then
             ignore_args+=(--ignore-path .prettierignore)
           fi
-          if [ -f .gitignore ] && [ ! -f .prettierignore ]; then
+          if [ -f .gitignore ]; then
             ignore_args+=(--ignore-path .gitignore)
           fi
 
