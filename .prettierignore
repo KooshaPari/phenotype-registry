@@ -3,7 +3,14 @@
 .agileplus/
 archives/
 audits/
-docs/sessions/**
+# Historical preservation sessions only; newly-created sessions stay checked.
+docs/sessions/20260617-ecosystem-disposition-wave/**
+docs/sessions/20260617-ecosystem-gap-port-retro/**
+docs/sessions/20260722-consolidation-20/**
+docs/sessions/20260722-repository-preservation-wave/**
+docs/sessions/20260723-consolidation-wave-2/**
+docs/sessions/20260723-consolidation-wave-3/**
+docs/sessions/20260801-cloud-cohort-contradiction/**
 docs/specs/pheno-specs/archive/**
 grades/**
 registry/bench-results-data/**
