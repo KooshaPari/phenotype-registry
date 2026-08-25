@@ -13,12 +13,18 @@ permissions:
 jobs:
   scorecard:
     runs-on: ubuntu-latest
+    outputs:
+      score: ${{ steps.audit.outputs.score }}
+      total: ${{ steps.audit.outputs.total }}
+      percentage: ${{ steps.audit.outputs.percentage }}
+      threshold: ${{ steps.audit.outputs.threshold }}
+      passed: ${{ steps.audit.outputs.passed }}
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v4
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7
         with:
           python-version: "3.11"
 
@@ -28,7 +34,7 @@ jobs:
           THRESHOLD=${{ github.event.inputs.threshold || '35' }}
           
           # Run audit in JSON mode
-          python scripts/scorecard_ci.py . --exclude-enterprise --output json --threshold "$THRESHOLD" --fail-on-drop > scorecard-report.json 2> scorecard-stderr.txt || EXIT_CODE=$?
+          python scripts/scorecard_ci.py . --exclude-enterprise --output json --threshold "$THRESHOLD" --fail-on-drop > scorecard-report.json 2> scorecard-stderr.txt || true
           
           # Extract score
           SCORE=$(python -c "import json; r=json.load(open('scorecard-report.json')); print(r['score'])")
@@ -36,34 +42,40 @@ jobs:
           PCT=$(python -c "import json; r=json.load(open('scorecard-report.json')); print(f\"{r['percentage']:.1f}\")")
           
           # Generate markdown summary
-          echo "## 88-Pillar Scorecard Result" > scorecard-summary.md
-          echo "" >> scorecard-summary.md
-          echo "| Metric | Value |" >> scorecard-summary.md
-          echo "|--------|-------|" >> scorecard-summary.md
-          echo "| **Score** | **${SCORE}/${TOTAL}** (${PCT}%) |" >> scorecard-summary.md
-          echo "| **Threshold** | ${THRESHOLD} |" >> scorecard-summary.md
-          echo "| **Status** | $( [ "$SCORE" -ge "$THRESHOLD" ] && echo "PASS" || echo "FAIL" ) |" >> scorecard-summary.md
-          echo "" >> scorecard-summary.md
+          {
+            echo "## 88-Pillar Scorecard Result"
+            echo ""
+            echo "| Metric | Value |"
+            echo "|--------|-------|"
+            echo "| **Score** | **${SCORE}/${TOTAL}** (${PCT}%) |"
+            echo "| **Threshold** | ${THRESHOLD} |"
+            echo "| **Status** | $( [ "$SCORE" -ge "$THRESHOLD" ] && echo "PASS" || echo "FAIL" ) |"
+            echo ""
+          } > scorecard-summary.md
           
           # List failed pillars
           if [ "$SCORE" -lt "$THRESHOLD" ]; then
-            echo "### Failed Pillars" >> scorecard-summary.md
-            echo "" >> scorecard-summary.md
+            {
+              echo "### Failed Pillars"
+              echo ""
             python -c "
           import json
           r = json.load(open('scorecard-report.json'))
           for item in r['results']:
               if not item['passed']:
                   print(f'- [ ] Pillar #{item[\"id\"]}: **{item[\"name\"]}**')
-          " >> scorecard-summary.md
+            "
+            } >> scorecard-summary.md
           fi
           
           # Set outputs
-          echo "score=${SCORE}" >> "$GITHUB_OUTPUT"
-          echo "total=${TOTAL}" >> "$GITHUB_OUTPUT"
-          echo "percentage=${PCT}" >> "$GITHUB_OUTPUT"
-          echo "threshold=${THRESHOLD}" >> "$GITHUB_OUTPUT"
-          echo "passed=$( [ "$SCORE" -ge "$THRESHOLD" ] && echo true || echo false )" >> "$GITHUB_OUTPUT"
+          {
+            echo "score=${SCORE}"
+            echo "total=${TOTAL}"
+            echo "percentage=${PCT}"
+            echo "threshold=${THRESHOLD}"
+            echo "passed=$( [ "$SCORE" -ge "$THRESHOLD" ] && echo true || echo false )"
+          } >> "$GITHUB_OUTPUT"
           
           # Post PR comment if applicable
           if [ "${{ github.event_name }}" = "pull_request" ]; then
@@ -93,7 +105,7 @@ jobs:
 
       - name: Upload scorecard report
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
           name: scorecard-report
           path: |
@@ -115,7 +127,6 @@ jobs:
         run: |
           SCORE=${{ needs.scorecard.outputs.score }}
           TOTAL=${{ needs.scorecard.outputs.total }}
-          PCT=${{ needs.scorecard.outputs.percentage }}
           
           # Generate badge SVG
           if [ "${{ needs.scorecard.outputs.passed }}" = "true" ]; then
