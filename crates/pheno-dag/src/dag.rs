@@ -73,7 +73,10 @@ where
         if !self.nodes.contains(&to) {
             return Err(DagError::NodeNotFound(format!("{:?}", to)));
         }
-        self.children.entry(from.clone()).or_default().push(to.clone());
+        self.children
+            .entry(from.clone())
+            .or_default()
+            .push(to.clone());
         self.parents.entry(to).or_default().push(from);
         Ok(())
     }

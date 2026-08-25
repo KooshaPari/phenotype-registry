@@ -14,4 +14,9 @@ name = "phenotype_registry"
 path = "src/lib.rs"
 
 [dev-dependencies]
+criterion = "0.5"
 proptest = "1"
+
+[[bench]]
+name = "criterion_bench"
+harness = false
