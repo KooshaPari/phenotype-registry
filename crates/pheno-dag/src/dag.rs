@@ -252,6 +252,7 @@ mod tests {
         let mut dag = Dag::new();
         dag.add_node("a")?;
         assert_eq!(dag.parents_of(&"x"), None);
+        Ok(())
     }
 
     #[test]
