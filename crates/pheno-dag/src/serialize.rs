@@ -72,6 +72,7 @@ pub struct DagSchema {
     pub edges: Vec<SchemaEdge>,
 }
 
+/// Construction and serialization methods for [`DagSchema`].
 impl DagSchema {
     /// Build a `DagSchema` from an internal `Dag` keyed by `String`.
     ///

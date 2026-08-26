@@ -51,6 +51,7 @@ impl<K> Default for Dag<K> {
     }
 }
 
+/// Core graph operations: node/edge manipulation and queries.
 impl<K> Dag<K>
 where
     K: Eq + Hash + Clone + std::fmt::Debug,
