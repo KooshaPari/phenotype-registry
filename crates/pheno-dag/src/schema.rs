@@ -499,4 +499,277 @@ mod tests {
             timing: HookTiming::Pre,
         };
     }
+
+    // ---- New tests below ----
+
+    #[test]
+    fn prerequisite_resource_exists_round_trip() -> Result<(), Box<dyn std::error::Error>> {
+        let p = Prerequisite::ResourceExists {
+            provider: "aws".into(),
+            resource_type: "s3_bucket".into(),
+            id: "my-bucket".into(),
+        };
+        let json = serde_json::to_string_pretty(&p)?;
+        let back: Prerequisite = serde_json::from_str(&json)?;
+        assert_eq!(p, back);
+        Ok(())
+    }
+
+    #[test]
+    fn prerequisite_file_exists_round_trip() -> Result<(), Box<dyn std::error::Error>> {
+        let p = Prerequisite::FileExists {
+            path: "/etc/config.yaml".into(),
+        };
+        let json = serde_json::to_string(&p)?;
+        let back: Prerequisite = serde_json::from_str(&json)?;
+        assert_eq!(p, back);
+        Ok(())
+    }
+
+    #[test]
+    fn prerequisite_env_var_round_trip() -> Result<(), Box<dyn std::error::Error>> {
+        let p = Prerequisite::EnvironmentVariable {
+            variable: "DATABASE_URL".into(),
+        };
+        let json = serde_json::to_string(&p)?;
+        let back: Prerequisite = serde_json::from_str(&json)?;
+        assert_eq!(p, back);
+        Ok(())
+    }
+
+    #[test]
+    fn prerequisite_custom_script_round_trip() -> Result<(), Box<dyn std::error::Error>> {
+        let p = Prerequisite::CustomScript {
+            command: "test -f /tmp/ready".into(),
+            description: Some("Check readiness file".into()),
+        };
+        let json = serde_json::to_string_pretty(&p)?;
+        let back: Prerequisite = serde_json::from_str(&json)?;
+        assert_eq!(p, back);
+        Ok(())
+    }
+
+    #[test]
+    fn prerequisite_custom_script_no_description() -> Result<(), Box<dyn std::error::Error>> {
+        let p = Prerequisite::CustomScript {
+            command: "echo ok".into(),
+            description: None,
+        };
+        let json = serde_json::to_string(&p)?;
+        assert!(!json.contains("description"), "None should be omitted");
+        Ok(())
+    }
+
+    #[test]
+    fn prerequisite_api_healthy_with_status() -> Result<(), Box<dyn std::error::Error>> {
+        let p = Prerequisite::ApiHealthy {
+            url: "https://api.example.com/health".into(),
+            expected_status: Some(200),
+        };
+        let json = serde_json::to_string_pretty(&p)?;
+        let back: Prerequisite = serde_json::from_str(&json)?;
+        assert_eq!(p, back);
+        Ok(())
+    }
+
+    #[test]
+    fn acceptance_http_ok_round_trip() -> Result<(), Box<dyn std::error::Error>> {
+        let ac = AcceptanceCriterion::HttpOk {
+            url: "https://service.local/health".into(),
+            expected_status: Some(200),
+        };
+        let json = serde_json::to_string_pretty(&ac)?;
+        let back: AcceptanceCriterion = serde_json::from_str(&json)?;
+        assert_eq!(ac, back);
+        Ok(())
+    }
+
+    #[test]
+    fn acceptance_log_check_round_trip() -> Result<(), Box<dyn std::error::Error>> {
+        let ac = AcceptanceCriterion::LogCheck {
+            pattern: "panic".into(),
+            negate: true,
+            source: Some("file:/var/log/app.log".into()),
+        };
+        let json = serde_json::to_string_pretty(&ac)?;
+        let back: AcceptanceCriterion = serde_json::from_str(&json)?;
+        assert_eq!(ac, back);
+        Ok(())
+    }
+
+    #[test]
+    fn acceptance_log_check_defaults() -> Result<(), Box<dyn std::error::Error>> {
+        let json = r#"{"type": "log_check", "pattern": "error"}"#;
+        let ac: AcceptanceCriterion = serde_json::from_str(json)?;
+        match ac {
+            AcceptanceCriterion::LogCheck { negate, source, .. } => {
+                assert!(!negate, "negate should default to false");
+                assert!(source.is_none(), "source should default to None");
+            }
+            _ => panic!("wrong variant"),
+        }
+        Ok(())
+    }
+
+    #[test]
+    fn acceptance_custom_check_round_trip() -> Result<(), Box<dyn std::error::Error>> {
+        let ac = AcceptanceCriterion::CustomCheck {
+            command: "curl -sf http://localhost:8080/readyz".into(),
+            description: Some("Health check".into()),
+        };
+        let json = serde_json::to_string_pretty(&ac)?;
+        let back: AcceptanceCriterion = serde_json::from_str(&json)?;
+        assert_eq!(ac, back);
+        Ok(())
+    }
+
+    #[test]
+    fn acceptance_output_contains_no_regex() -> Result<(), Box<dyn std::error::Error>> {
+        let ac = AcceptanceCriterion::OutputContains {
+            pattern: "Build successful".into(),
+            regex: false,
+        };
+        let json = serde_json::to_string(&ac)?;
+        assert!(!json.contains("\"regex\":true"));
+        Ok(())
+    }
+
+    #[test]
+    fn hook_timing_default_is_post() {
+        let timing = HookTiming::default();
+        assert_eq!(timing, HookTiming::Post);
+    }
+
+    #[test]
+    fn hook_timing_serialization() -> Result<(), Box<dyn std::error::Error>> {
+        for (timing, expected_str) in [
+            (HookTiming::Pre, "\"pre\""),
+            (HookTiming::Post, "\"post\""),
+            (HookTiming::OnSuccess, "\"on_success\""),
+            (HookTiming::OnFailure, "\"on_failure\""),
+        ] {
+            let json = serde_json::to_string(&timing)?;
+            assert_eq!(json, expected_str);
+        }
+        Ok(())
+    }
+
+    #[test]
+    fn audit_hook_webhook_with_headers() -> Result<(), Box<dyn std::error::Error>> {
+        let mut headers = HashMap::new();
+        headers.insert("Authorization".into(), "Bearer token123".into());
+        headers.insert("Content-Type".into(), "application/json".into());
+        let hook = AuditHook::Webhook {
+            url: "https://hooks.example.com/notify".into(),
+            headers: Some(headers),
+            timing: HookTiming::OnSuccess,
+        };
+        let json = serde_json::to_string_pretty(&hook)?;
+        let back: AuditHook = serde_json::from_str(&json)?;
+        assert_eq!(hook, back);
+        Ok(())
+    }
+
+    #[test]
+    fn audit_hook_metric_emit_no_unit() -> Result<(), Box<dyn std::error::Error>> {
+        let hook = AuditHook::MetricEmit {
+            name: "queue_depth".into(),
+            value: 42.0,
+            unit: None,
+            timing: HookTiming::Pre,
+        };
+        let json = serde_json::to_string(&hook)?;
+        assert!(!json.contains("unit"), "None unit should be omitted");
+        Ok(())
+    }
+
+    #[test]
+    fn schema_node_minimal() -> Result<(), Box<dyn std::error::Error>> {
+        let node = SchemaNode {
+            id: "minimal".into(),
+            label: None,
+            description: None,
+            prerequisites: vec![],
+            acceptance: vec![],
+            audit_hooks: vec![],
+            metadata: None,
+        };
+        let json = serde_json::to_string_pretty(&node)?;
+        let back: SchemaNode = serde_json::from_str(&json)?;
+        assert_eq!(node, back);
+        assert!(back.prerequisites.is_empty());
+        assert!(back.acceptance.is_empty());
+        assert!(back.audit_hooks.is_empty());
+        Ok(())
+    }
+
+    #[test]
+    fn schema_edge_minimal() -> Result<(), Box<dyn std::error::Error>> {
+        let edge = SchemaEdge {
+            from: "a".into(),
+            to: "b".into(),
+            label: None,
+            condition: None,
+        };
+        let json = serde_json::to_string_pretty(&edge)?;
+        let back: SchemaEdge = serde_json::from_str(&json)?;
+        assert_eq!(edge, back);
+        Ok(())
+    }
+
+    #[test]
+    fn schema_node_with_metadata() -> Result<(), Box<dyn std::error::Error>> {
+        let node = SchemaNode {
+            id: "node1".into(),
+            label: None,
+            description: None,
+            prerequisites: vec![],
+            acceptance: vec![],
+            audit_hooks: vec![],
+            metadata: Some(HashMap::from([
+                ("key1".into(), "val1".into()),
+                ("key2".into(), "val2".into()),
+            ])),
+        };
+        let json = serde_json::to_string_pretty(&node)?;
+        let back: SchemaNode = serde_json::from_str(&json)?;
+        assert_eq!(node, back);
+        let meta = back.metadata.unwrap();
+        assert_eq!(meta.get("key1").unwrap(), "val1");
+        assert_eq!(meta.get("key2").unwrap(), "val2");
+        Ok(())
+    }
+
+    #[test]
+    fn prerequisite_deserialize_missing_type_field() {
+        let json = r#"{"image": "nginx"}"#;
+        let result: Result<Prerequisite, _> = serde_json::from_str(json);
+        assert!(result.is_err(), "should fail without tag field");
+    }
+
+    #[test]
+    fn acceptance_metric_threshold_partial_bounds() -> Result<(), Box<dyn std::error::Error>> {
+        let ac = AcceptanceCriterion::MetricThreshold {
+            metric: "latency_ms".into(),
+            min: None,
+            max: Some(100.0),
+        };
+        let json = serde_json::to_string_pretty(&ac)?;
+        let back: AcceptanceCriterion = serde_json::from_str(&json)?;
+        assert_eq!(ac, back);
+        Ok(())
+    }
+
+    #[test]
+    fn audit_hook_notify_on_success() -> Result<(), Box<dyn std::error::Error>> {
+        let hook = AuditHook::Notify {
+            channel: "pagerduty".into(),
+            message: "Critical deploy succeeded".into(),
+            timing: HookTiming::OnSuccess,
+        };
+        let json = serde_json::to_string(&hook)?;
+        assert!(json.contains("pagerduty"));
+        assert!(json.contains("on_success"));
+        Ok(())
+    }
 }

@@ -37,8 +37,32 @@
 //! assert_eq!(schema, round);
 //! ```
 
+/// Core DAG data structure with generic node identifiers.
+///
+/// Provides [`Dag<K>`] — a generic directed acyclic graph backed by an
+/// adjacency list with O(1) edge queries in both directions.
 pub mod dag;
+
+/// Parallel-bucket scheduler for DAG execution.
+///
+/// Groups independent nodes into parallel execution buckets using
+/// topological ranking (Kahn's algorithm → rank assignment → bucket grouping).
 pub mod scheduler;
+
+/// Enriched DAG schema types for compute/infra automation.
+///
+/// Defines node and edge metadata including prerequisites, acceptance
+/// criteria, and audit hooks — the domain layer on top of [`dag::Dag`].
 pub mod schema;
+
+/// YAML/JSON serialization for the enriched DAG schema.
+///
+/// Provides [`serialize::DagSchema`] — a portable, serde-friendly
+/// representation of the enriched graph with round-trip fidelity.
 pub mod serialize;
+
+/// Topological sort algorithms (Kahn's BFS + DFS variant).
+///
+/// Both algorithms detect cycles and return [`dag::DagError::CycleDetected`]
+/// on cyclic input.
 pub mod topo;

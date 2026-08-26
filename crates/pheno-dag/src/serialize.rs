@@ -38,8 +38,10 @@ use crate::schema::{SchemaEdge, SchemaNode};
 /// Errors that can occur during DAG serialization / deserialization.
 #[derive(Debug, Error)]
 pub enum DagSerError {
+    /// A YAML serialization or deserialization error occurred.
     #[error("YAML error: {0}")]
     Yaml(#[from] serde_yaml::Error),
+    /// A JSON serialization or deserialization error occurred.
     #[error("JSON error: {0}")]
     Json(#[from] serde_json::Error),
 }
@@ -379,6 +381,126 @@ mod tests {
         assert_eq!(deploy_node.prerequisites.len(), 1);
         assert_eq!(deploy_node.acceptance.len(), 1);
         assert_eq!(deploy_node.audit_hooks.len(), 1);
+        Ok(())
+    }
+
+    // ---- New tests below ----
+
+    #[test]
+    fn into_dag_preserves_edges() -> Result<(), Box<dyn std::error::Error>> {
+        let dag = sample_dag()?;
+        let schema = DagSchema::from_dag(&dag, "1.0.0");
+        let reconstructed = schema.into_dag()?;
+        assert_eq!(reconstructed.edge_count(), 3);
+        assert_eq!(reconstructed.children_of(&"build".to_string()), Some(&["test".to_string()][..]));
+        assert_eq!(reconstructed.children_of(&"test".to_string()), Some(&["deploy".to_string()][..]));
+        Ok(())
+    }
+
+    #[test]
+    fn version_is_preserved() -> Result<(), Box<dyn std::error::Error>> {
+        let dag = sample_dag()?;
+        let schema = DagSchema::from_dag(&dag, "3.14.159");
+        let json = schema.to_json()?;
+        let restored = DagSchema::from_json(&json)?;
+        assert_eq!(restored.version, "3.14.159");
+        Ok(())
+    }
+
+    #[test]
+    fn name_is_set_via_builder() -> Result<(), Box<dyn std::error::Error>> {
+        let dag = sample_dag()?;
+        let schema = DagSchema::from_dag(&dag, "1.0.0").with_name("my-pipeline");
+        assert_eq!(schema.name.as_deref(), Some("my-pipeline"));
+        let yaml = schema.to_yaml()?;
+        assert!(yaml.contains("my-pipeline"));
+        Ok(())
+    }
+
+    #[test]
+    fn name_absent_by_default() -> Result<(), Box<dyn std::error::Error>> {
+        let dag = sample_dag()?;
+        let schema = DagSchema::from_dag(&dag, "1.0.0");
+        assert!(schema.name.is_none());
+        let yaml = schema.to_yaml()?;
+        // Name should not appear when None.
+        assert!(!yaml.contains("name:"));
+        Ok(())
+    }
+
+    #[test]
+    fn duplicate_edges_deduplicated_in_schema() -> Result<(), Box<dyn std::error::Error>> {
+        let mut dag = Dag::new();
+        dag.add_node("a".to_string())?;
+        dag.add_node("b".to_string())?;
+        // Add the same edge twice (Dag allows it in the adjacency list).
+        dag.add_edge("a".into(), "b".into())?;
+        dag.add_edge("a".into(), "b".into())?;
+        let schema = DagSchema::from_dag(&dag, "1.0.0");
+        // BTreeSet dedup should ensure only one edge a→b.
+        let a_to_b: Vec<_> = schema.edges.iter().filter(|e| e.from == "a" && e.to == "b").collect();
+        assert_eq!(a_to_b.len(), 1, "duplicate edges should be deduplicated");
+        Ok(())
+    }
+
+    #[test]
+    fn from_json_invalid_input() {
+        let result = DagSchema::from_json("not valid json {{{");
+        assert!(result.is_err());
+    }
+
+    #[test]
+    fn from_yaml_invalid_input() {
+        let result = DagSchema::from_yaml(":::invalid yaml: [");
+        assert!(result.is_err());
+    }
+
+    #[test]
+    fn json_pretty_is_multiline() -> Result<(), Box<dyn std::error::Error>> {
+        let dag = sample_dag()?;
+        let schema = DagSchema::from_dag(&dag, "1.0.0");
+        let pretty = schema.to_json_pretty()?;
+        // Pretty-printed JSON should have newlines.
+        assert!(pretty.contains('\n'));
+        let compact = schema.to_json()?;
+        assert!(!compact.contains('\n'), "compact JSON should be single line");
+        Ok(())
+    }
+
+    #[test]
+    fn schema_nodes_sorted_deterministically() -> Result<(), Box<dyn std::error::Error>> {
+        let dag = sample_dag()?;
+        let schema = DagSchema::from_dag(&dag, "1.0.0");
+        // Nodes come from a HashSet so order isn't guaranteed, but we can verify
+        // all nodes are present.
+        let ids: Vec<&str> = schema.nodes.iter().map(|n| n.id.as_str()).collect();
+        assert_eq!(ids.len(), 4);
+        assert!(ids.contains(&"checkout"));
+        assert!(ids.contains(&"build"));
+        assert!(ids.contains(&"test"));
+        assert!(ids.contains(&"deploy"));
+        Ok(())
+    }
+
+    #[test]
+    fn into_dag_round_trip_preserves_node_count() -> Result<(), Box<dyn std::error::Error>> {
+        let dag = sample_dag()?;
+        let count = dag.node_count();
+        let schema = DagSchema::from_dag(&dag, "1.0.0");
+        let reconstructed = schema.into_dag()?;
+        assert_eq!(reconstructed.node_count(), count);
+        Ok(())
+    }
+
+    #[test]
+    fn enriched_round_trip_preserves_all_metadata() -> Result<(), Box<dyn std::error::Error>> {
+        let schema = enriched_schema()?;
+        let json = schema.to_json()?;
+        let restored = DagSchema::from_json(&json)?;
+        // Verify metadata survives round-trip.
+        let build = restored.nodes.iter().find(|n| n.id == "build").unwrap();
+        assert_eq!(build.description.as_deref(), Some("Compile the application"));
+        assert_eq!(build.prerequisites.len(), 2);
         Ok(())
     }
 }

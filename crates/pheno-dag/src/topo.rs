@@ -72,11 +72,17 @@ where
 // DFS-based topological sort
 // ---------------------------------------------------------------------------
 
+/// Color state of a node during DFS traversal.
+///
+/// Used internally by [`dfs_sort`] to detect back-edges (cycles).
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 enum DfsColor {
-    White, // unvisited
-    Gray,  // in the current DFS path (cycle detection)
-    Black, // fully processed
+    /// Node has not been visited yet.
+    White,
+    /// Node is on the current DFS path (back-edge detection).
+    Gray,
+    /// Node has been fully processed.
+    Black,
 }
 
 /// Compute a topological ordering using DFS with cycle detection.
@@ -100,6 +106,10 @@ where
     Ok(order)
 }
 
+/// Recursively visit `node`, pushing it onto `order` after all children.
+///
+/// Marks nodes as [`DfsColor::Gray`] while in-progress (for cycle detection)
+/// and [`DfsColor::Black`] once fully processed.
 fn visit<'a, K>(
     dag: &'a Dag<K>,
     node: &'a K,
@@ -260,6 +270,203 @@ mod tests {
         let dag: Dag<u32> = Dag::new();
         let order = dfs_sort(&dag)?;
         assert!(order.is_empty());
+        Ok(())
+    }
+
+    // ---- New tests below ----
+
+    #[test]
+    fn kahn_single_node() -> Result<(), DagError> {
+        let mut dag = Dag::new();
+        dag.add_node("only")?;
+        let order = kahn_sort(&dag)?;
+        assert_eq!(order.len(), 1);
+        assert_eq!(order[0], &"only");
+        Ok(())
+    }
+
+    #[test]
+    fn dfs_single_node() -> Result<(), DagError> {
+        let mut dag = Dag::new();
+        dag.add_node("only")?;
+        let order = dfs_sort(&dag)?;
+        assert_eq!(order.len(), 1);
+        assert_eq!(order[0], &"only");
+        Ok(())
+    }
+
+    #[test]
+    fn kahn_two_independent_nodes() -> Result<(), DagError> {
+        let mut dag = Dag::new();
+        dag.add_node("x")?;
+        dag.add_node("y")?;
+        let order = kahn_sort(&dag)?;
+        assert_eq!(order.len(), 2);
+        // Both nodes must be present.
+        let ids: Vec<&str> = order.into_iter().copied().collect();
+        assert!(ids.contains(&"x"));
+        assert!(ids.contains(&"y"));
+        Ok(())
+    }
+
+    #[test]
+    fn dfs_two_independent_nodes() -> Result<(), DagError> {
+        let mut dag = Dag::new();
+        dag.add_node("x")?;
+        dag.add_node("y")?;
+        let order = dfs_sort(&dag)?;
+        assert_eq!(order.len(), 2);
+        let ids: Vec<&str> = order.into_iter().copied().collect();
+        assert!(ids.contains(&"x"));
+        assert!(ids.contains(&"y"));
+        Ok(())
+    }
+
+    #[test]
+    fn kahn_long_chain_5_nodes() -> Result<(), DagError> {
+        let mut dag = Dag::new();
+        let nodes = ["n1", "n2", "n3", "n4", "n5"];
+        for n in &nodes {
+            dag.add_node(*n)?;
+        }
+        for w in nodes.windows(2) {
+            dag.add_edge(w[0], w[1])?;
+        }
+        let order = kahn_sort(&dag)?;
+        let ids: Vec<&str> = order.into_iter().copied().collect();
+        assert_eq!(ids, vec!["n1", "n2", "n3", "n4", "n5"]);
+        Ok(())
+    }
+
+    #[test]
+    fn dfs_long_chain_5_nodes() -> Result<(), DagError> {
+        let mut dag = Dag::new();
+        let nodes = ["n1", "n2", "n3", "n4", "n5"];
+        for n in &nodes {
+            dag.add_node(*n)?;
+        }
+        for w in nodes.windows(2) {
+            dag.add_edge(w[0], w[1])?;
+        }
+        let order = dfs_sort(&dag)?;
+        let ids: Vec<&str> = order.into_iter().copied().collect();
+        // DFS produces reverse-postorder, reversed → parent before child.
+        assert_eq!(ids, vec!["n1", "n2", "n3", "n4", "n5"]);
+        Ok(())
+    }
+
+    #[test]
+    fn kahn_fan_out_fan_in_ordering() -> Result<(), DagError> {
+        let mut dag = Dag::new();
+        for n in &["root", "a", "b", "c", "sink"] {
+            dag.add_node(*n)?;
+        }
+        dag.add_edge("root", "a")?;
+        dag.add_edge("root", "b")?;
+        dag.add_edge("root", "c")?;
+        dag.add_edge("a", "sink")?;
+        dag.add_edge("b", "sink")?;
+        dag.add_edge("c", "sink")?;
+
+        let order = kahn_sort(&dag)?;
+        let ids: Vec<&str> = order.into_iter().copied().collect();
+        let pos = |name: &str| ids.iter().position(|x| *x == name).unwrap();
+        // root must come first, sink last.
+        assert_eq!(pos("root"), 0);
+        assert_eq!(pos("sink"), 4);
+        // a, b, c must be in positions 1, 2, 3 (order among them may vary).
+        let mid: Vec<&str> = ids[1..4].to_vec();
+        assert!(mid.contains(&"a"));
+        assert!(mid.contains(&"b"));
+        assert!(mid.contains(&"c"));
+        Ok(())
+    }
+
+    #[test]
+    fn kahn_and_dfs_same_length() -> Result<(), DagError> {
+        let mut dag = Dag::new();
+        for n in &["a", "b", "c", "d", "e"] {
+            dag.add_node(*n)?;
+        }
+        dag.add_edge("a", "b")?;
+        dag.add_edge("a", "c")?;
+        dag.add_edge("b", "d")?;
+        dag.add_edge("c", "e")?;
+
+        let kahn_order = kahn_sort(&dag)?;
+        let dfs_order = dfs_sort(&dag)?;
+        assert_eq!(kahn_order.len(), dfs_order.len());
+        assert_eq!(kahn_order.len(), 5);
+        Ok(())
+    }
+
+    #[test]
+    fn kahn_two_node_cycle() -> Result<(), DagError> {
+        let mut dag = Dag::new();
+        dag.add_node("u")?;
+        dag.add_node("v")?;
+        dag.add_edge("u", "v")?;
+        dag.add_edge("v", "u")?; // 2-cycle
+        assert!(kahn_sort(&dag).is_err());
+        Ok(())
+    }
+
+    #[test]
+    fn dfs_two_node_cycle() -> Result<(), DagError> {
+        let mut dag = Dag::new();
+        dag.add_node("u")?;
+        dag.add_node("v")?;
+        dag.add_edge("u", "v")?;
+        dag.add_edge("v", "u")?; // 2-cycle
+        assert!(dfs_sort(&dag).is_err());
+        Ok(())
+    }
+
+    #[test]
+    fn kahn_disconnected_components() -> Result<(), DagError> {
+        // Two disconnected subgraphs: a→b and c→d
+        let mut dag = Dag::new();
+        for n in &["a", "b", "c", "d"] {
+            dag.add_node(*n)?;
+        }
+        dag.add_edge("a", "b")?;
+        dag.add_edge("c", "d")?;
+
+        let order = kahn_sort(&dag)?;
+        assert_eq!(order.len(), 4);
+        let ids: Vec<&str> = order.into_iter().copied().collect();
+        let pos = |name: &str| ids.iter().position(|x| *x == name).unwrap();
+        assert!(pos("a") < pos("b"));
+        assert!(pos("c") < pos("d"));
+        Ok(())
+    }
+
+    #[test]
+    fn kahn_diamond_wide() -> Result<(), DagError> {
+        // root → m1, m2, m3, m4 → sink
+        let mut dag = Dag::new();
+        for n in &["root", "m1", "m2", "m3", "m4", "sink"] {
+            dag.add_node(*n)?;
+        }
+        for mid in &["m1", "m2", "m3", "m4"] {
+            dag.add_edge("root", *mid)?;
+            dag.add_edge(*mid, "sink")?;
+        }
+        let order = kahn_sort(&dag)?;
+        assert_eq!(order.len(), 6);
+        let ids: Vec<&str> = order.into_iter().copied().collect();
+        let pos = |name: &str| ids.iter().position(|x| *x == name).unwrap();
+        assert_eq!(pos("root"), 0);
+        assert_eq!(pos("sink"), 5);
+        Ok(())
+    }
+
+    #[test]
+    fn dfs_self_loop_cycle() -> Result<(), DagError> {
+        let mut dag = Dag::new();
+        dag.add_node("self")?;
+        dag.add_edge("self", "self")?; // self-loop
+        assert!(dfs_sort(&dag).is_err());
         Ok(())
     }
 }
