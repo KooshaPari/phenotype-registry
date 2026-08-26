@@ -43,6 +43,7 @@ permissions:
 jobs:
   fan-out:
     name: auditors
+    runs-on: ubuntu-24.04
     strategy:
       fail-fast: false
       matrix:
@@ -79,7 +80,7 @@ jobs:
           REPO: ${{ matrix.repo.name }}
         run: |
           echo "::group::workflows in $REPO"
-          gh api repos/KooshaPari/$REPO/contents/.github/workflows --jq '.[].name' | tee workflows.txt
+          gh api "repos/KooshaPari/$REPO/contents/.github/workflows" --jq '.[].name' | tee workflows.txt
           echo "::endgroup::"
 
       - name: cargo-deny (Rust repos only)
@@ -118,7 +119,7 @@ jobs:
       - name: mdsh (markdown shell-command linter)
         run: |
           cargo install --locked mdsh 2>/dev/null || cargo install mdsh
-          find ${{ matrix.repo.name }} -name '*.md' -not -path '*/target/*' -not -path '*/node_modules/*' \
+          find "${{ matrix.repo.name }}" -name '*.md' -not -path '*/target/*' -not -path '*/node_modules/*' \
             -exec mdsh --check {} +
         continue-on-error: true
 
@@ -138,13 +139,14 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.PAT_FANOUT || secrets.GITHUB_TOKEN }}
           REPO: ${{ matrix.repo.name }}
+          PLAN: ${{ matrix.repo.plan }}
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
           gh issue create \
-            --repo KooshaPari/$REPO \
+            --repo "KooshaPari/$REPO" \
             --title "compute-infra-auditors: ${{ matrix.repo.name }} audit failed (${{ github.run_id }})" \
             --label compute-infra,audit,automated \
             --body "Daily audit failed. See run: $RUN_URL
 
           This issue is auto-opened by the compute-infra-auditors workflow.
-          Add to the DAG plan (${{ matrix.plan }}) and resolve before next run."
+          Add to the DAG plan ($PLAN) and resolve before next run."
