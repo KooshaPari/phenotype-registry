@@ -182,19 +182,19 @@ mod tests {
     use super::*;
     use crate::schema::*;
 
-    fn sample_dag() -> Dag<String> {
+    fn sample_dag() -> Result<Dag<String>, crate::dag::DagError> {
         let mut dag = Dag::new();
         for n in ["checkout", "build", "test", "deploy"] {
-            dag.add_node(n.to_string()).unwrap();
+            dag.add_node(n.to_string())?;
         }
-        dag.add_edge("checkout".into(), "build".into()).unwrap();
-        dag.add_edge("build".into(), "test".into()).unwrap();
-        dag.add_edge("test".into(), "deploy".into()).unwrap();
-        dag
+        dag.add_edge("checkout".into(), "build".into())?;
+        dag.add_edge("build".into(), "test".into())?;
+        dag.add_edge("test".into(), "deploy".into())?;
+        Ok(dag)
     }
 
-    fn enriched_schema() -> DagSchema {
-        let dag = sample_dag();
+    fn enriched_schema() -> Result<DagSchema, crate::dag::DagError> {
+        let dag = sample_dag()?;
         let mut schema = DagSchema::from_dag(&dag, "2.0.0").with_name("ci-pipeline");
 
         for node in &mut schema.nodes {
@@ -238,91 +238,95 @@ mod tests {
             }
         }
 
-        schema
+        Ok(schema)
     }
 
     #[test]
-    fn yaml_round_trip_basic() {
-        let dag = sample_dag();
+    fn yaml_round_trip_basic() -> Result<(), Box<dyn std::error::Error>> {
+        let dag = sample_dag()?;
         let schema = DagSchema::from_dag(&dag, "2.0.0").with_name("pipeline");
-        let yaml = schema.to_yaml().expect("YAML serialization");
-        let restored = DagSchema::from_yaml(&yaml).expect("YAML deserialization");
+        let yaml = schema.to_yaml()?;
+        let restored = DagSchema::from_yaml(&yaml)?;
         assert_eq!(schema, restored, "YAML round-trip must be lossless");
+        Ok(())
     }
 
     #[test]
-    fn json_round_trip_basic() {
-        let dag = sample_dag();
+    fn json_round_trip_basic() -> Result<(), Box<dyn std::error::Error>> {
+        let dag = sample_dag()?;
         let schema = DagSchema::from_dag(&dag, "2.0.0");
-        let json = schema.to_json().expect("JSON serialization");
-        let restored = DagSchema::from_json(&json).expect("JSON deserialization");
+        let json = schema.to_json()?;
+        let restored = DagSchema::from_json(&json)?;
         assert_eq!(schema, restored, "JSON round-trip must be lossless");
+        Ok(())
     }
 
     #[test]
-    fn yaml_round_trip_enriched() {
-        let schema = enriched_schema();
+    fn yaml_round_trip_enriched() -> Result<(), Box<dyn std::error::Error>> {
+        let schema = enriched_schema()?;
         let yaml = schema
-            .to_yaml()
-            .expect("YAML serialization of enriched schema");
-        let restored = DagSchema::from_yaml(&yaml).expect("YAML deserialization");
+            .to_yaml()?;
+        let restored = DagSchema::from_yaml(&yaml)?;
         assert_eq!(
             schema, restored,
             "Enriched YAML round-trip must be lossless"
         );
+        Ok(())
     }
 
     #[test]
-    fn json_round_trip_enriched() {
-        let schema = enriched_schema();
+    fn json_round_trip_enriched() -> Result<(), Box<dyn std::error::Error>> {
+        let schema = enriched_schema()?;
         let json = schema
-            .to_json_pretty()
-            .expect("JSON serialization of enriched schema");
-        let restored = DagSchema::from_json(&json).expect("JSON deserialization");
+            .to_json_pretty()?;
+        let restored = DagSchema::from_json(&json)?;
         assert_eq!(
             schema, restored,
             "Enriched JSON round-trip must be lossless"
         );
+        Ok(())
     }
 
     #[test]
-    fn cross_format_consistency() {
-        let schema = enriched_schema();
-        let yaml = schema.to_yaml().unwrap();
-        let from_yaml = DagSchema::from_yaml(&yaml).unwrap();
-        let json = from_yaml.to_json().unwrap();
-        let from_json = DagSchema::from_json(&json).unwrap();
+    fn cross_format_consistency() -> Result<(), Box<dyn std::error::Error>> {
+        let schema = enriched_schema()?;
+        let yaml = schema.to_yaml()?;
+        let from_yaml = DagSchema::from_yaml(&yaml)?;
+        let json = from_yaml.to_json()?;
+        let from_json = DagSchema::from_json(&json)?;
         assert_eq!(
             schema, from_json,
             "YAML → JSON cross-format must be consistent"
         );
+        Ok(())
     }
-
     #[test]
-    fn schema_to_dag_and_back() {
-        let dag = sample_dag();
+    fn schema_to_dag_and_back() -> Result<(), Box<dyn std::error::Error>> {
+        let dag = sample_dag()?;
         let schema = DagSchema::from_dag(&dag, "2.0.0");
-        let reconstructed = schema.into_dag().expect("into_dag should succeed");
+        let reconstructed = schema.into_dag()?;
         assert_eq!(dag.node_count(), reconstructed.node_count());
         assert_eq!(dag.edge_count(), reconstructed.edge_count());
         for n in dag.iter_nodes() {
             assert!(reconstructed.contains(n), "node {n} should exist");
         }
+        Ok(())
     }
 
     #[test]
-    fn empty_dag_round_trips() {
+    fn empty_dag_round_trips() -> Result<(), Box<dyn std::error::Error>> {
         let dag: Dag<String> = Dag::new();
         let schema = DagSchema::from_dag(&dag, "0.1.0");
-        let yaml = schema.to_yaml().unwrap();
-        let back = DagSchema::from_yaml(&yaml).unwrap();
+        let yaml = schema.to_yaml()?;
+        let back = DagSchema::from_yaml(&yaml)?;
         assert_eq!(schema, back);
+        Ok(())
     }
 
     #[test]
-    fn yaml_content_is_readable() {
-        let schema = enriched_schema();
-        let yaml = schema.to_yaml().unwrap();
+    fn yaml_content_is_readable() -> Result<(), Box<dyn std::error::Error>> {
+        let schema = enriched_schema()?;
+        let yaml = schema.to_yaml()?;
         assert!(yaml.contains("version:"));
         assert!(yaml.contains("ci-pipeline"));
         assert!(yaml.contains("checkout"));
@@ -330,47 +334,51 @@ mod tests {
         assert!(yaml.contains("prerequisites"));
         assert!(yaml.contains("acceptance"));
         assert!(yaml.contains("audit_hooks"));
+        Ok(())
     }
 
     #[test]
-    fn json_content_is_readable() {
-        let schema = enriched_schema();
-        let json = schema.to_json_pretty().unwrap();
+    fn json_content_is_readable() -> Result<(), Box<dyn std::error::Error>> {
+        let schema = enriched_schema()?;
+        let json = schema.to_json_pretty()?;
         assert!(json.contains("\"version\""));
         assert!(json.contains("\"checkout\""));
         assert!(json.contains("\"deploy\""));
         assert!(json.contains("\"prerequisites\""));
+        Ok(())
     }
 
     #[test]
-    fn diamond_graph_round_trip() {
+    fn diamond_graph_round_trip() -> Result<(), Box<dyn std::error::Error>> {
         let mut dag = Dag::new();
         for n in ["a", "b", "c", "d"] {
-            dag.add_node(n.to_string()).unwrap();
+            dag.add_node(n.to_string())?;
         }
-        dag.add_edge("a".into(), "b".into()).unwrap();
-        dag.add_edge("a".into(), "c".into()).unwrap();
-        dag.add_edge("b".into(), "d".into()).unwrap();
-        dag.add_edge("c".into(), "d".into()).unwrap();
+        dag.add_edge("a".into(), "b".into())?;
+        dag.add_edge("a".into(), "c".into())?;
+        dag.add_edge("b".into(), "d".into())?;
+        dag.add_edge("c".into(), "d".into())?;
 
         let schema = DagSchema::from_dag(&dag, "1.0.0");
-        let json = schema.to_json().unwrap();
-        let back = DagSchema::from_json(&json).unwrap();
+        let json = schema.to_json()?;
+        let back = DagSchema::from_json(&json)?;
         assert_eq!(schema, back);
         assert_eq!(back.edges.len(), 4);
+        Ok(())
     }
 
     #[test]
-    fn enriched_schema_has_correct_prereqs() {
-        let schema = enriched_schema();
-        let build_node = schema.nodes.iter().find(|n| n.id == "build").unwrap();
+    fn enriched_schema_has_correct_prereqs() -> Result<(), Box<dyn std::error::Error>> {
+        let schema = enriched_schema()?;
+        let build_node = schema.nodes.iter().find(|n| n.id == "build").ok_or("build node not found")?;
         assert_eq!(build_node.prerequisites.len(), 2);
         assert_eq!(build_node.acceptance.len(), 2);
         assert_eq!(build_node.audit_hooks.len(), 1);
 
-        let deploy_node = schema.nodes.iter().find(|n| n.id == "deploy").unwrap();
+        let deploy_node = schema.nodes.iter().find(|n| n.id == "deploy").ok_or("deploy node not found")?;
         assert_eq!(deploy_node.prerequisites.len(), 1);
         assert_eq!(deploy_node.acceptance.len(), 1);
         assert_eq!(deploy_node.audit_hooks.len(), 1);
+        Ok(())
     }
 }

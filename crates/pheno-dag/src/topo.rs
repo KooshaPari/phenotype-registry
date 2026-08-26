@@ -45,7 +45,11 @@ where
 
         if let Some(children) = dag.children_of(node) {
             for child in children {
-                let deg = in_degree.get_mut(child).expect("child must be in map");
+                let deg = in_degree
+                    .get_mut(child)
+                    .ok_or_else(|| DagError::InternalInvariant(
+                        format!("child `{:?}` not found in in-degree map during Kahn sort", child),
+                    ))?;
                 *deg -= 1;
                 if *deg == 0 {
                     queue.push_back(child);
@@ -136,72 +140,81 @@ mod tests {
     use super::*;
 
     #[test]
-    fn kahn_linear_chain() {
+    fn kahn_linear_chain() -> Result<(), DagError> {
         let mut dag = Dag::new();
         for n in &["a", "b", "c", "d"] {
-            dag.add_node(*n).unwrap();
+            dag.add_node(*n)?;
         }
-        dag.add_edge("a", "b").unwrap();
-        dag.add_edge("b", "c").unwrap();
-        dag.add_edge("c", "d").unwrap();
+        dag.add_edge("a", "b")?;
+        dag.add_edge("b", "c")?;
+        dag.add_edge("c", "d")?;
 
-        let order = kahn_sort(&dag).unwrap();
+        let order = kahn_sort(&dag)?;
         let ids: Vec<&str> = order.into_iter().copied().collect();
         // a must be before b before c before d
-        let pos = |name: &str| ids.iter().position(|x| *x == name).unwrap();
-        assert!(pos("a") < pos("b"));
-        assert!(pos("b") < pos("c"));
-        assert!(pos("c") < pos("d"));
+        let pos = |name: &str| -> Result<usize, DagError> {
+            ids.iter().position(|x| *x == name)
+                .ok_or_else(|| DagError::InternalInvariant(format!("node {} not found in order", name)))
+        };
+        assert!(pos("a")? < pos("b")?);
+        assert!(pos("b")? < pos("c")?);
+        assert!(pos("c")? < pos("d")?);
+        Ok(())
     }
 
     #[test]
-    fn kahn_diamond() {
+    fn kahn_diamond() -> Result<(), DagError> {
         let mut dag = Dag::new();
         for n in &["a", "b", "c", "d"] {
-            dag.add_node(*n).unwrap();
+            dag.add_node(*n)?;
         }
-        dag.add_edge("a", "b").unwrap();
-        dag.add_edge("a", "c").unwrap();
-        dag.add_edge("b", "d").unwrap();
-        dag.add_edge("c", "d").unwrap();
+        dag.add_edge("a", "b")?;
+        dag.add_edge("a", "c")?;
+        dag.add_edge("b", "d")?;
+        dag.add_edge("c", "d")?;
 
-        let order = kahn_sort(&dag).unwrap();
+        let order = kahn_sort(&dag)?;
         let ids: Vec<&str> = order.into_iter().copied().collect();
-        let pos = |name: &str| ids.iter().position(|x| *x == name).unwrap();
-        assert!(pos("a") < pos("b"));
-        assert!(pos("a") < pos("c"));
-        assert!(pos("b") < pos("d"));
-        assert!(pos("c") < pos("d"));
+        let pos = |name: &str| -> Result<usize, DagError> {
+            ids.iter().position(|x| *x == name)
+                .ok_or_else(|| DagError::InternalInvariant(format!("node {} not found in order", name)))
+        };
+        assert!(pos("a")? < pos("b")?);
+        assert!(pos("a")? < pos("c")?);
+        assert!(pos("b")? < pos("d")?);
+        assert!(pos("c")? < pos("d")?);
+        Ok(())
     }
 
     #[test]
-    fn kahn_cycle_detection() {
+    fn kahn_cycle_detection() -> Result<(), DagError> {
         let mut dag = Dag::new();
         for n in &["a", "b", "c"] {
-            dag.add_node(*n).unwrap();
+            dag.add_node(*n)?;
         }
-        dag.add_edge("a", "b").unwrap();
-        dag.add_edge("b", "c").unwrap();
-        dag.add_edge("c", "a").unwrap(); // cycle
+        dag.add_edge("a", "b")?;
+        dag.add_edge("b", "c")?;
+        dag.add_edge("c", "a")?; // cycle
 
         assert!(kahn_sort(&dag).is_err());
+        Ok(())
     }
 
     #[test]
-    fn dfs_sort_matches_kahn() {
+    fn dfs_sort_matches_kahn() -> Result<(), DagError> {
         let mut dag = Dag::new();
         for n in &["a", "b", "c", "d", "e", "f"] {
-            dag.add_node(*n).unwrap();
+            dag.add_node(*n)?;
         }
-        dag.add_edge("a", "b").unwrap();
-        dag.add_edge("a", "c").unwrap();
-        dag.add_edge("b", "d").unwrap();
-        dag.add_edge("c", "d").unwrap();
-        dag.add_edge("d", "e").unwrap();
-        dag.add_edge("c", "f").unwrap();
+        dag.add_edge("a", "b")?;
+        dag.add_edge("a", "c")?;
+        dag.add_edge("b", "d")?;
+        dag.add_edge("c", "d")?;
+        dag.add_edge("d", "e")?;
+        dag.add_edge("c", "f")?;
 
-        let kahn_order = kahn_sort(&dag).unwrap();
-        let dfs_order = dfs_sort(&dag).unwrap();
+        let kahn_order = kahn_sort(&dag)?;
+        let dfs_order = dfs_sort(&dag)?;
 
         // Both should produce valid topological orders of the same length.
         assert_eq!(kahn_order.len(), dfs_order.len());
@@ -209,38 +222,44 @@ mod tests {
         // Verify DFS order respects all edges.
         for node in dag.iter_nodes() {
             if let Some(children) = dag.children_of(node) {
-                let n_pos = dfs_order.iter().position(|x| *x == node).unwrap();
+                let n_pos = dfs_order.iter().position(|x| *x == node)
+                    .ok_or_else(|| DagError::InternalInvariant(format!("node {:?} not found in DFS order", node)))?;
                 for child in children {
-                    let c_pos = dfs_order.iter().position(|x| *x == child).unwrap();
+                    let c_pos = dfs_order.iter().position(|x| *x == child)
+                        .ok_or_else(|| DagError::InternalInvariant(format!("child {:?} not found in DFS order", child)))?;
                     assert!(n_pos < c_pos, "DFS: {} should come before {}", node, child);
                 }
             }
         }
+        Ok(())
     }
 
     #[test]
-    fn dfs_cycle_detection() {
+    fn dfs_cycle_detection() -> Result<(), DagError> {
         let mut dag = Dag::new();
         for n in &["a", "b", "c"] {
-            dag.add_node(*n).unwrap();
+            dag.add_node(*n)?;
         }
-        dag.add_edge("a", "b").unwrap();
-        dag.add_edge("b", "c").unwrap();
-        dag.add_edge("c", "a").unwrap();
+        dag.add_edge("a", "b")?;
+        dag.add_edge("b", "c")?;
+        dag.add_edge("c", "a")?;
         assert!(dfs_sort(&dag).is_err());
+        Ok(())
     }
 
     #[test]
-    fn kahn_empty_dag() {
+    fn kahn_empty_dag() -> Result<(), DagError> {
         let dag: Dag<u32> = Dag::new();
-        let order = kahn_sort(&dag).unwrap();
+        let order = kahn_sort(&dag)?;
         assert!(order.is_empty());
+        Ok(())
     }
 
     #[test]
-    fn dfs_empty_dag() {
+    fn dfs_empty_dag() -> Result<(), DagError> {
         let dag: Dag<u32> = Dag::new();
-        let order = dfs_sort(&dag).unwrap();
+        let order = dfs_sort(&dag)?;
         assert!(order.is_empty());
+        Ok(())
     }
 }

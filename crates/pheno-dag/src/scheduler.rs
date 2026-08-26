@@ -99,40 +99,41 @@ where
 mod tests {
     use super::*;
 
-    fn build_linear_dag() -> Dag<&'static str> {
+    fn build_linear_dag() -> Result<Dag<&'static str>, DagError> {
         let mut dag = Dag::new();
         for n in &["a", "b", "c"] {
-            dag.add_node(*n).unwrap();
+            dag.add_node(*n)?;
         }
-        dag.add_edge("a", "b").unwrap();
-        dag.add_edge("b", "c").unwrap();
-        dag
+        dag.add_edge("a", "b")?;
+        dag.add_edge("b", "c")?;
+        Ok(dag)
     }
 
     #[test]
-    fn linear_schedule() {
-        let dag = build_linear_dag();
-        let sched = schedule(&dag).unwrap();
+    fn linear_schedule() -> Result<(), DagError> {
+        let dag = build_linear_dag()?;
+        let sched = schedule(&dag)?;
         // 3 nodes, no parallelism → one bucket per node
         assert_eq!(sched.buckets.len(), 3);
         assert_eq!(sched.max_concurrency, 1);
         assert_eq!(sched.buckets[0], vec!["a"]);
         assert_eq!(sched.buckets[1], vec!["b"]);
         assert_eq!(sched.buckets[2], vec!["c"]);
+        Ok(())
     }
 
     #[test]
-    fn diamond_parallelism() {
+    fn diamond_parallelism() -> Result<(), DagError> {
         let mut dag = Dag::new();
         for n in &["a", "b", "c", "d"] {
-            dag.add_node(*n).unwrap();
+            dag.add_node(*n)?;
         }
-        dag.add_edge("a", "b").unwrap();
-        dag.add_edge("a", "c").unwrap();
-        dag.add_edge("b", "d").unwrap();
-        dag.add_edge("c", "d").unwrap();
+        dag.add_edge("a", "b")?;
+        dag.add_edge("a", "c")?;
+        dag.add_edge("b", "d")?;
+        dag.add_edge("c", "d")?;
 
-        let sched = schedule(&dag).unwrap();
+        let sched = schedule(&dag)?;
         // Buckets: [a], [b, c], [d]
         assert_eq!(sched.buckets.len(), 3);
         assert_eq!(sched.max_concurrency, 2);
@@ -144,88 +145,95 @@ mod tests {
         assert_eq!(b0, std::collections::BTreeSet::from([&"a"]));
         assert_eq!(b1, std::collections::BTreeSet::from([&"b", &"c"]));
         assert_eq!(b2, std::collections::BTreeSet::from([&"d"]));
+        Ok(())
     }
 
     #[test]
-    fn fan_out_fan_in() {
+    fn fan_out_fan_in() -> Result<(), DagError> {
         let mut dag = Dag::new();
         for n in &["root", "a1", "a2", "a3", "leaf"] {
-            dag.add_node(*n).unwrap();
+            dag.add_node(*n)?;
         }
-        dag.add_edge("root", "a1").unwrap();
-        dag.add_edge("root", "a2").unwrap();
-        dag.add_edge("root", "a3").unwrap();
-        dag.add_edge("a1", "leaf").unwrap();
-        dag.add_edge("a2", "leaf").unwrap();
-        dag.add_edge("a3", "leaf").unwrap();
+        dag.add_edge("root", "a1")?;
+        dag.add_edge("root", "a2")?;
+        dag.add_edge("root", "a3")?;
+        dag.add_edge("a1", "leaf")?;
+        dag.add_edge("a2", "leaf")?;
+        dag.add_edge("a3", "leaf")?;
 
-        let sched = schedule(&dag).unwrap();
+        let sched = schedule(&dag)?;
         assert_eq!(sched.buckets.len(), 3);
         assert_eq!(sched.max_concurrency, 3); // a1, a2, a3 in parallel
 
         let b1: std::collections::BTreeSet<_> = sched.buckets[1].iter().collect();
         assert_eq!(b1, std::collections::BTreeSet::from([&"a1", &"a2", &"a3"]));
+        Ok(())
     }
 
     #[test]
-    fn empty_schedule() {
+    fn empty_schedule() -> Result<(), DagError> {
         let dag: Dag<u32> = Dag::new();
-        let sched = schedule(&dag).unwrap();
+        let sched = schedule(&dag)?;
         assert!(sched.buckets.is_empty());
         assert_eq!(sched.max_concurrency, 0);
+        Ok(())
     }
 
     #[test]
-    fn single_node() {
+    fn single_node() -> Result<(), DagError> {
         let mut dag = Dag::new();
-        dag.add_node("only").unwrap();
-        let sched = schedule(&dag).unwrap();
+        dag.add_node("only")?;
+        let sched = schedule(&dag)?;
         assert_eq!(sched.buckets.len(), 1);
         assert_eq!(sched.buckets[0], vec!["only"]);
         assert_eq!(sched.max_concurrency, 1);
+        Ok(())
     }
 
     #[test]
-    fn cycle_returns_error() {
+    fn cycle_returns_error() -> Result<(), DagError> {
         let mut dag = Dag::new();
         for n in &["x", "y", "z"] {
-            dag.add_node(*n).unwrap();
+            dag.add_node(*n)?;
         }
-        dag.add_edge("x", "y").unwrap();
-        dag.add_edge("y", "z").unwrap();
-        dag.add_edge("z", "x").unwrap();
+        dag.add_edge("x", "y")?;
+        dag.add_edge("y", "z")?;
+        dag.add_edge("z", "x")?;
         assert!(schedule(&dag).is_err());
+        Ok(())
     }
 
     #[test]
-    fn multi_source_dag() {
+    fn multi_source_dag() -> Result<(), DagError> {
         let mut dag = Dag::new();
         for n in &["s1", "s2", "mid", "t"] {
-            dag.add_node(*n).unwrap();
+            dag.add_node(*n)?;
         }
-        dag.add_edge("s1", "mid").unwrap();
-        dag.add_edge("s2", "mid").unwrap();
-        dag.add_edge("mid", "t").unwrap();
+        dag.add_edge("s1", "mid")?;
+        dag.add_edge("s2", "mid")?;
+        dag.add_edge("mid", "t")?;
 
-        let sched = schedule(&dag).unwrap();
+        let sched = schedule(&dag)?;
         assert_eq!(sched.buckets.len(), 3);
         // Bucket 0: all sources
         let b0: std::collections::BTreeSet<_> = sched.buckets[0].iter().collect();
         assert_eq!(b0, std::collections::BTreeSet::from([&"s1", &"s2"]));
         assert_eq!(sched.max_concurrency, 2);
+        Ok(())
     }
 
     #[test]
-    fn format_output() {
+    fn format_output() -> Result<(), DagError> {
         let mut dag = Dag::new();
         for n in &["a", "b", "c"] {
-            dag.add_node(*n).unwrap();
+            dag.add_node(*n)?;
         }
-        dag.add_edge("a", "b").unwrap();
-        dag.add_edge("a", "c").unwrap();
-        let sched = schedule(&dag).unwrap();
+        dag.add_edge("a", "b")?;
+        dag.add_edge("a", "c")?;
+        let sched = schedule(&dag)?;
         let formatted = format_schedule(&sched);
         assert!(formatted.contains("2 buckets"));
         assert!(formatted.contains("max concurrency = 2"));
+        Ok(())
     }
 }

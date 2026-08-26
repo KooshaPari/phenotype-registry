@@ -16,6 +16,9 @@ pub enum DagError {
 
     #[error("edge from `{0:?}` to `{1:?}` would create a cycle")]
     CycleDetected(String, String),
+
+    #[error("internal invariant violation: {0}")]
+    InternalInvariant(String),
 }
 
 /// A generic directed acyclic graph over node identifiers of type `K`.
@@ -137,58 +140,64 @@ mod tests {
     }
 
     #[test]
-    fn add_and_query_nodes() {
+    fn add_and_query_nodes() -> Result<(), DagError> {
         let mut dag = Dag::new();
-        dag.add_node(1).unwrap();
-        dag.add_node(2).unwrap();
+        dag.add_node(1)?;
+        dag.add_node(2)?;
         assert_eq!(dag.node_count(), 2);
         assert!(dag.contains(&1));
         assert!(dag.contains(&2));
+        Ok(())
     }
 
     #[test]
-    fn duplicate_node_error() {
+    fn duplicate_node_error() -> Result<(), DagError> {
         let mut dag = Dag::new();
-        dag.add_node("a").unwrap();
+        dag.add_node("a")?;
         assert!(dag.add_node("a").is_err());
+        Ok(())
     }
 
     #[test]
-    fn add_edge_missing_source() {
+    fn add_edge_missing_source() -> Result<(), DagError> {
         let mut dag = Dag::<&str>::new();
-        dag.add_node("b").unwrap();
+        dag.add_node("b")?;
         assert!(dag.add_edge("a", "b").is_err());
+        Ok(())
     }
 
     #[test]
-    fn add_edge_missing_target() {
+    fn add_edge_missing_target() -> Result<(), DagError> {
         let mut dag = Dag::<&str>::new();
-        dag.add_node("a").unwrap();
+        dag.add_node("a")?;
         assert!(dag.add_edge("a", "b").is_err());
+        Ok(())
     }
 
     #[test]
-    fn simple_edge() {
+    fn simple_edge() -> Result<(), DagError> {
         let mut dag = Dag::new();
-        dag.add_node("a").unwrap();
-        dag.add_node("b").unwrap();
-        dag.add_edge("a", "b").unwrap();
+        dag.add_node("a")?;
+        dag.add_node("b")?;
+        dag.add_edge("a", "b")?;
         assert_eq!(dag.edge_count(), 1);
         assert_eq!(dag.children_of(&"a"), Some(&["b"][..]));
         assert_eq!(dag.parents_of(&"b"), Some(&["a"][..]));
+        Ok(())
     }
 
     #[test]
-    fn diamond_graph() {
+    fn diamond_graph() -> Result<(), DagError> {
         let mut dag = Dag::new();
         for n in ["a", "b", "c", "d"] {
-            dag.add_node(n).unwrap();
+            dag.add_node(n)?;
         }
-        dag.add_edge("a", "b").unwrap();
-        dag.add_edge("a", "c").unwrap();
-        dag.add_edge("b", "d").unwrap();
-        dag.add_edge("c", "d").unwrap();
+        dag.add_edge("a", "b")?;
+        dag.add_edge("a", "c")?;
+        dag.add_edge("b", "d")?;
+        dag.add_edge("c", "d")?;
         assert_eq!(dag.node_count(), 4);
         assert_eq!(dag.edge_count(), 4);
+        Ok(())
     }
 }

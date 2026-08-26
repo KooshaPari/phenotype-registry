@@ -315,117 +315,127 @@ mod tests {
     use super::*;
 
     #[test]
-    fn prerequisite_image_ready_round_trip() {
+    fn prerequisite_image_ready_round_trip() -> Result<(), Box<dyn std::error::Error>> {
         let p = Prerequisite::ImageReady {
             image: "nginx:1.25".into(),
         };
-        let json = serde_json::to_string_pretty(&p).unwrap();
-        let back: Prerequisite = serde_json::from_str(&json).unwrap();
+        let json = serde_json::to_string_pretty(&p)?;
+        let back: Prerequisite = serde_json::from_str(&json)?;
         assert_eq!(p, back);
+        Ok(())
     }
 
     #[test]
-    fn prerequisite_secret_available() {
+    fn prerequisite_secret_available() -> Result<(), Box<dyn std::error::Error>> {
         let p = Prerequisite::SecretAvailable {
             name: "DB_PASSWORD".into(),
         };
-        let json = serde_json::to_string(&p).unwrap();
+        let json = serde_json::to_string(&p)?;
         assert!(json.contains("\"type\":\"secret_available\""));
         assert!(json.contains("DB_PASSWORD"));
+        Ok(())
     }
 
     #[test]
-    fn prerequisite_api_healthy_default_status() {
+    fn prerequisite_api_healthy_default_status() -> Result<(), Box<dyn std::error::Error>> {
         let p = Prerequisite::ApiHealthy {
             url: "https://example.com/health".into(),
             expected_status: None,
         };
-        let json = serde_json::to_string(&p).unwrap();
-        let back: Prerequisite = serde_json::from_str(&json).unwrap();
+        let json = serde_json::to_string(&p)?;
+        let back: Prerequisite = serde_json::from_str(&json)?;
         assert_eq!(p, back);
+        Ok(())
     }
 
     #[test]
-    fn acceptance_exit_code_default() {
+    fn acceptance_exit_code_default() -> Result<(), Box<dyn std::error::Error>> {
         let ac = AcceptanceCriterion::ExitCode { code: 0 };
-        let json = serde_json::to_string(&ac).unwrap();
+        let json = serde_json::to_string(&ac)?;
         assert!(json.contains("\"code\":0"));
+        Ok(())
     }
 
     #[test]
-    fn acceptance_output_contains_with_regex() {
+    fn acceptance_output_contains_with_regex() -> Result<(), Box<dyn std::error::Error>> {
         let ac = AcceptanceCriterion::OutputContains {
             pattern: r"ERROR|FATAL".into(),
             regex: true,
         };
-        let json = serde_json::to_string(&ac).unwrap();
-        let back: AcceptanceCriterion = serde_json::from_str(&json).unwrap();
+        let json = serde_json::to_string(&ac)?;
+        let back: AcceptanceCriterion = serde_json::from_str(&json)?;
         assert_eq!(ac, back);
+        Ok(())
     }
 
     #[test]
-    fn acceptance_metric_threshold() {
+    fn acceptance_metric_threshold() -> Result<(), Box<dyn std::error::Error>> {
         let ac = AcceptanceCriterion::MetricThreshold {
             metric: "memory_usage_mb".into(),
             min: Some(0.0),
             max: Some(512.0),
         };
-        let json = serde_json::to_string(&ac).unwrap();
-        let back: AcceptanceCriterion = serde_json::from_str(&json).unwrap();
+        let json = serde_json::to_string(&ac)?;
+        let back: AcceptanceCriterion = serde_json::from_str(&json)?;
         assert_eq!(ac, back);
+        Ok(())
     }
 
     #[test]
-    fn audit_hook_webhook_round_trip() {
+    fn audit_hook_webhook_round_trip() -> Result<(), Box<dyn std::error::Error>> {
         let hook = AuditHook::Webhook {
             url: "https://hooks.example.com/audit".into(),
             headers: None,
             timing: HookTiming::Pre,
         };
-        let json = serde_json::to_string_pretty(&hook).unwrap();
-        let back: AuditHook = serde_json::from_str(&json).unwrap();
+        let json = serde_json::to_string_pretty(&hook)?;
+        let back: AuditHook = serde_json::from_str(&json)?;
         assert_eq!(hook, back);
+        Ok(())
     }
 
     #[test]
-    fn audit_hook_log_entry_default_timing() {
+    fn audit_hook_log_entry_default_timing() -> Result<(), Box<dyn std::error::Error>> {
         let hook = AuditHook::LogEntry {
             message: "Node {node_id} completed".into(),
             level: "warn".into(),
             timing: HookTiming::Post,
         };
-        let json = serde_json::to_string(&hook).unwrap();
-        let back: AuditHook = serde_json::from_str(&json).unwrap();
+        let json = serde_json::to_string(&hook)?;
+        let back: AuditHook = serde_json::from_str(&json)?;
         assert_eq!(hook, back);
+        Ok(())
     }
 
     #[test]
-    fn audit_hook_metric_emit() {
+    fn audit_hook_metric_emit() -> Result<(), Box<dyn std::error::Error>> {
         let hook = AuditHook::MetricEmit {
             name: "dag_node_duration_ms".into(),
             value: 1234.5,
             unit: Some("ms".into()),
             timing: HookTiming::Post,
         };
-        let json = serde_json::to_string_pretty(&hook).unwrap();
-        let back: AuditHook = serde_json::from_str(&json).unwrap();
+        let json = serde_json::to_string_pretty(&hook)?;
+        let back: AuditHook = serde_json::from_str(&json)?;
         assert_eq!(hook, back);
+        Ok(())
     }
 
     #[test]
-    fn audit_hook_notify() {
+    fn audit_hook_notify() -> Result<(), Box<dyn std::error::Error>> {
         let hook = AuditHook::Notify {
             channel: "slack".into(),
             message: "DAG node `deploy` failed".into(),
             timing: HookTiming::OnFailure,
         };
-        let json = serde_json::to_string(&hook).unwrap();
-        let back: AuditHook = serde_json::from_str(&json).unwrap();
+        let json = serde_json::to_string(&hook)?;
+        let back: AuditHook = serde_json::from_str(&json)?;
         assert_eq!(hook, back);
+        Ok(())
     }
 
     #[test]
-    fn schema_node_with_all_fields() {
+    fn schema_node_with_all_fields() -> Result<(), Box<dyn std::error::Error>> {
         let node = SchemaNode {
             id: "deploy-staging".into(),
             label: Some("Deploy to Staging".into()),
@@ -452,22 +462,24 @@ mod tests {
                 ("tier".into(), "2".into()),
             ])),
         };
-        let json = serde_json::to_string_pretty(&node).unwrap();
-        let back: SchemaNode = serde_json::from_str(&json).unwrap();
+        let json = serde_json::to_string_pretty(&node)?;
+        let back: SchemaNode = serde_json::from_str(&json)?;
         assert_eq!(node, back);
+        Ok(())
     }
 
     #[test]
-    fn schema_edge_with_condition() {
+    fn schema_edge_with_condition() -> Result<(), Box<dyn std::error::Error>> {
         let edge = SchemaEdge {
             from: "build".into(),
             to: "deploy".into(),
             label: Some("deploy-on-success".into()),
             condition: Some("build.exit_code == 0".into()),
         };
-        let json = serde_json::to_string_pretty(&edge).unwrap();
-        let back: SchemaEdge = serde_json::from_str(&json).unwrap();
+        let json = serde_json::to_string_pretty(&edge)?;
+        let back: SchemaEdge = serde_json::from_str(&json)?;
         assert_eq!(edge, back);
+        Ok(())
     }
 
     #[test]
