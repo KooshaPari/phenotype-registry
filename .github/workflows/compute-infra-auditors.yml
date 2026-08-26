@@ -74,6 +74,14 @@ jobs:
       - name: Checkout registry
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v4
 
+      - name: Checkout matrix repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v4
+        with:
+          repository: KooshaPari/${{ matrix.repo.name }}
+          path: ${{ matrix.repo.name }}
+          token: ${{ secrets.PAT_FANOUT || github.token }}
+          persist-credentials: false
+
       - name: Detect existing audit workflows in ${{ matrix.repo.name }}
         env:
           GH_TOKEN: ${{ secrets.PAT_FANOUT || secrets.GITHUB_TOKEN }}
