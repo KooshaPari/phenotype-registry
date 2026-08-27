@@ -1,11 +1,11 @@
 name: cargo-deny
 
 on:
-  pull_request:
-    branches: [main, master]
-  push:
-    branches: [main, master]
-    tags: ['v*']
+  # push/PR disabled — this repo only has markdown files
+  # cargo-deny requires Rust workspace which doesn't exist here
+  schedule:
+    - cron: '0 4 * * 1'  # Weekly Monday 4am UTC
+  workflow_dispatch:
 
 permissions:
   contents: read
