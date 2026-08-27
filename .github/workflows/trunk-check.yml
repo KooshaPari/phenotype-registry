@@ -8,11 +8,11 @@
 name: Trunk Check
 
 on:
-  pull_request:
-  push:
-    branches: [main, develop]
+  # push/PR disabled — this repo only has markdown files
+  # Trunk linters (ruff, clippy, golangci-lint) don't apply here
   schedule:
     - cron: '0 3 * * 1'  # Weekly Monday 3am UTC
+  workflow_dispatch:
 
 concurrency:
   group: trunk-${{ github.ref }}
