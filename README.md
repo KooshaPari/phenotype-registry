@@ -41,6 +41,20 @@ npm install phenotype_registry
 import { /* ... */ } from "phenotype_registry";
 ```
 
+### Quick Try
+
+Run the registry logic directly in your browser with StackBlitz:
+
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/edit/typescript-node?file=src/index.ts)
+
+### Node.js Quick Start
+
+Try it locally with a single command using `npx tsx`:
+
+```bash
+npx tsx -e 'import { parse_ecosystem_map } from "phenotype_registry"; console.log(parse_ecosystem_map("## Repos\n- Name: my-repo\n  Role: SDK"));'
+```
+
 See [SPEC.md](SPEC.md) for the full specification and [llms.txt](llms.txt) for machine-readable metadata.
 
 ### Parsing the Ecosystem Map (Rust)
