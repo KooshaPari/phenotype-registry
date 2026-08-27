@@ -45,7 +45,21 @@ import { /* ... */ } from "phenotype_registry";
 
 Run the registry logic directly in your browser with StackBlitz:
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/edit/typescript-node?file=src/index.ts)
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/edit/typescript-node?embed=1&file=src/index.ts&dependencies=phenotype_registry&terminal=dev)
+
+<!-- Minimal TypeScript project importing parse_ecosystem_map -->
+```typescript
+// src/index.ts
+import { parse_ecosystem_map } from "phenotype_registry";
+
+const map = `
+## Repos
+- Name: my-repo
+  Role: SDK
+`;
+
+console.log(parse_ecosystem_map(map));
+```
 
 ### Node.js Quick Start
 
