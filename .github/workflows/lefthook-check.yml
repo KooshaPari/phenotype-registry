@@ -1,0 +1,56 @@
+name: Lefthook CI Validation
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  pre-commit-check:
+    name: Pre-commit Checks
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install lefthook
+        run: |
+          curl -fsSL https://raw.githubusercontent.com/evilmartians/lefthook/master/install.sh | sh
+          sudo mv ./bin/lefthook /usr/local/bin/lefthook
+
+      - name: Run pre-commit hooks
+        run: lefthook run pre-commit --env-ci=true
+
+  commit-msg-check:
+    name: Commit Message Validation
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install lefthook
+        run: |
+          curl -fsSL https://raw.githubusercontent.com/evilmartians/lefthook/master/install.sh | sh
+          sudo mv ./bin/lefthook /usr/local/bin/lefthook
+
+      - name: Validate commit message format
+        run: |
+          # Lelefthook commit-msg hook expects a file path as $1
+          # We will create a temporary file with the PR title (for PRs) or the head commit message
+          if [ -n "${{ github.event.pull_request.title }}" ]; then
+            MSG="${{ github.event.pull_request.title }}"
+          else
+            MSG=$(git log -1 --pretty=%B)
+          fi
+          
+          echo "$MSG" > ./.git/COMMIT_MSG_TEMP
+          lefthook run commit-msg --env-ci=true -- .git/COMMIT_MSG_TEMP
