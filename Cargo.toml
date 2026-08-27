@@ -2,6 +2,7 @@
 resolver = "3"
 members = [
     "crates/pheno-dag",
+    "crates/pheno-registry-python",
 ]
 
 [package]
