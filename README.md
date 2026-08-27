@@ -43,6 +43,29 @@ import { /* ... */ } from "phenotype_registry";
 
 See [SPEC.md](SPEC.md) for the full specification and [llms.txt](llms.txt) for machine-readable metadata.
 
+### Parsing the Ecosystem Map (Rust)
+
+Use `parse_ecosystem_map` to parse [`ECOSYSTEM_MAP.md`](./ECOSYSTEM_MAP.md) into structured `RepoEntry` records:
+
+```rust
+use phenotype_registry::ecosystem::parse_ecosystem_map;
+
+let map = std::fs::read_to_string("ECOSYSTEM_MAP.md").expect("read ecosystem map");
+let repos = parse_ecosystem_map(&map).expect("parse ecosystem map");
+
+for repo in &repos {
+    println!("{} [{}] deps: {:?}", repo.name, repo.role, repo.dependencies);
+}
+```
+
+Each `RepoEntry` contains:
+- `name` — repository name
+- `role` — classification (e.g. `"shared-lib"`, `"SDK"`, `"tooling"`)
+- `language` — primary language, when known
+- `status` — lifecycle status (e.g. `"Active"`, `"Archived"`)
+- `notes` — free-form notes
+- `dependencies` — repos this one depends on
+
 
 **Unified entry point for all Phenotype registries.**
 
