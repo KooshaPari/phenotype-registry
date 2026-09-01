@@ -14600,6 +14600,17 @@
       "id": "repo-pheno-research-audit20260901",
       "archived_at": "2026-08-05",
       "deleted_at": "2026-09-01T00:00:00Z"
+    },
+    {
+      "id": "rename-pheno-dag-to-phenotype-dag-core-20260901",
+      "path": "crates/phenotype-dag-core (formerly crates/pheno-dag)",
+      "disposition": "TOMBSTONE_RENAME",
+      "fsm": "renamed",
+      "note": "Tombstone for the 2026-09-01 rename: crates/pheno-dag \u2192 crates/phenotype-dag-core (package name \"pheno-dag\" \u2192 \"phenotype-dag-core\"). Reason: KooshaPari/phenodag (Go multi-agent DAG) was a separate product, fully absorbed into Tracera spec 008 (PRs #723/#725/#727) + AgilePlus mirror (PR #895) and deleted from GH on 2026-09-01. The Rust DAG foundation here was extracted from BytePort per its Cargo.toml and has nothing to do with the Go product \u2014 renaming to phenotype-dag-core removes the namespace ambiguity. ADR: ADR-dag-collision-phenodag-phenodag-2026-09-01.md (was ADR-dag-duplication.md). Cross-ref: PR #543.",
+      "core_lang": "rust",
+      "pr": "phenotype-registry#543",
+      "wave": "J",
+      "relocated_date": "2026-09-01"
     }
   ],
   "tombstone_audit": {
@@ -14624,5 +14635,5 @@
     "total_never_existed_remote_rows": 5
   },
   "updated": "2026-09-01",
-  "version": "v1.6.83"
+"version": "v1.6.84"
 }

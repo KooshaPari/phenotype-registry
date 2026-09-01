@@ -1,4 +1,12 @@
-//! YAML/JSON serialization for the enriched DAG schema.
+//! # DAG schema serialization (YAML / JSON)
+//!
+//! Round-trip serialization for [`DagSchema`](crate::schema::DagSchema).
+//!
+//! Renamed 2026-09-01: this module was previously exposed under
+//! `pheno_dag::serialize::*`. The rename is path-breaking for downstream
+//! consumers but is necessary to break the name collision with the
+//! absorbed Go source `KooshaPari/phenodag`. See
+//! `ADR-dag-collision-phenodag-phenodag-2026-09-01.md` for rationale.
 //!
 //! Provides a portable [`DagSchema`] that uses the enriched [`SchemaNode`]
 //! and [`SchemaEdge`] types with prerequisites, acceptance criteria, and
@@ -7,8 +15,8 @@
 //! # Example
 //!
 //! ```rust
-//! use pheno_dag::dag::Dag;
-//! use pheno_dag::serialize::DagSchema;
+//! use phenotype_dag_core::dag::Dag;
+//! use phenotype_dag_core::serialize::DagSchema;
 //!
 //! let mut dag: Dag<String> = Dag::new();
 //! dag.add_node("build".into()).unwrap();
