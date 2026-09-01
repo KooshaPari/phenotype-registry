@@ -9,8 +9,6 @@
     {
       "path": "beads.jsonl",
       "source_path": "/Users/kooshapari/CodeProjects/Phenotype/repos/phenotype-dag/beads.jsonl",
-      "source_commit": "ff7647ddb4cb66a80ba28814757aceb27a8fb0db",
-      "source_blob": "ed15ee3f2b50d7c3dc18ac74276dedf36f573789",
       "sha256": "d77fe32f3a4603ea28f4ecbc19e4f93ffa5b1b28bd314b1b08fd17b0c1c8cf67",
       "bytes": 1064987,
       "records": 1418
