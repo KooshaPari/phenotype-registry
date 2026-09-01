@@ -1,4 +1,4 @@
-//! # pheno-dag
+//! # phenotype-dag-core
 //!
 //! DAG foundation for Phenotype compute/infra automation (epic F).
 //!
@@ -7,6 +7,11 @@
 //! acyclic graph, topological sort (Kahn + DFS), parallel-bucket scheduling,
 //! enriched node/edge schema (prerequisites, acceptance criteria, audit
 //! hooks), and YAML/JSON serialization.
+//!
+//! Renamed 2026-09-01 from `pheno-dag` to `phenotype-dag-core` to break
+//! the name collision with the absorbed Go source `KooshaPari/phenodag`
+//! (now deleted; absorbed into Tracera spec 008 + 11 queue files +
+//! AgilePlus mirror).
 //!
 //! ## Modules
 //!
@@ -21,8 +26,8 @@
 //! ## Example
 //!
 //! ```rust
-//! use pheno_dag::dag::Dag;
-//! use pheno_dag::serialize::DagSchema;
+//! use phenotype_dag_core::dag::Dag;
+//! use phenotype_dag_core::serialize::DagSchema;
 //!
 //! let mut dag: Dag<String> = Dag::new();
 //! dag.add_node("build".into()).unwrap();
