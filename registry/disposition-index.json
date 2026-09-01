@@ -90,19 +90,20 @@
       "classified_at": "2026-07-26T10:42:00Z",
       "core_lang": "rust",
       "deleted_at": "2026-07-18",
-      "disposition": "A:SPINE_CORE",
+      "disposition": "DEAD_WEIGHT_DELETED",
       "final_classification": "A:SPINE",
       "fsm": "deleted",
       "id": 11,
       "interim": "phenoShared",
-      "note": "Decompose per contracts-decompose-plan.md; slices 2\u00e2\u20ac\u201c4 terminal owners landed; Pyron vendored drop + git pins (P4 gate) | 2026-07-18 batch19-final-drain: role workspaces rows are abstract role markers (numeric id); decompose contract landed; archive as terminal cleanup. [DELETED 2026-07-18: source repo deleted from GitHub after verified code integration]",
+      "note": "Decompose per contracts-decompose-plan.md; slices 2\u00e2\u20ac\u201c4 terminal owners landed; Pyron vendored drop + git pins (P4 gate) | 2026-07-18 batch19-final-drain: role workspaces rows are abstract role markers (numeric id); decompose contract landed; archive as terminal cleanup. [DELETED 2026-07-18: source repo deleted from GitHub after verified code integration] | 2026-09-01: HTTP 404 verified; deleted this session.",
       "path": "crates/phenotype-contracts",
       "pr": "HexaKit#264,Authvault#88@7cfd8d7,Eventra#19#20@445f732,Agentora#92#93@1feb698,ResilienceKit#2#3@c1ca60c,phenotype-python-sdk#22#24#25@539fb21,phenotype-registry#217#220,Pyron#61",
       "relocated_date": "2026-06-19",
       "resolved_at": "2026-07-18",
       "stub_date": "2026-06-17",
       "target": "role workspaces",
-      "wave": "E"
+      "wave": "E",
+      "archived": true
     },
     {
       "core_lang": "rust",
@@ -983,13 +984,15 @@
       "wave": "P5"
     },
     {
-      "disposition": "ABSORB",
-      "fsm": "done",
+      "disposition": "ZZ_ARCHIVE_RENAMED",
+      "fsm": "archived",
       "id": "gate-phenoroutermonitor-p5-4-resolution",
-      "note": "P5-4 resolved 2026-06-20: Rust LLM router canonical in phenoAI/crates/llm-router/ (8KB lib.rs, real impl). phenoRouterMonitor archived empty; no code to migrate. See docs/operations/p5-4-phenoroutermonitor-absorption-2026-06-20.md.",
-      "path": "KooshaPari/phenoRouterMonitor",
+      "note": "P5-4 resolved 2026-06-20: Rust LLM router canonical in phenoAI/crates/llm-router/ (8KB lib.rs, real impl). phenoRouterMonitor archived empty; no code to migrate. See docs/operations/p5-4-phenoroutermonitor-absorption-2026-06-20.md. | 2026-09-01: renamed to zz-archive-phenoRouterMonitor, archived per zz-archive convention.",
+      "path": "KooshaPari/zz-archive-phenoRouterMonitor",
       "target": "phenoAI",
-      "wave": "P5"
+      "wave": "P5",
+      "name": "zz-archive-phenoRouterMonitor",
+      "archived": true
     },
     {
       "archived_at": "2026-07-17",
@@ -2188,21 +2191,22 @@
       "core_lang": "rust",
       "deleted_at": "2026-07-18",
       "final_classification": "B:WORKING",
-      "fsm": "live",
+      "fsm": "deleted",
       "grade_percentage": null,
       "grade_score": null,
       "id": "repo-phenoEvents",
-      "disposition": "KEEP_CANONICAL_STANDALONE",
+      "disposition": "DEAD_WEIGHT_DELETED",
       "last_push": "2026-08-05T01:08:26Z",
       "current_remote_head": "be6573c68797cc611a99533bca6dc1c3dcdb0c88",
-      "note": "CURRENT 2026-08-05: public, unarchived standalone phenoEvents verified at main be6573c68797cc611a99533bca6dc1c3dcdb0c88. The prior 2026-07-17 pheno absorption/archive claim is historical and unverified: pheno main 81d850837848800aa7a3e6a6f007b91b6555ef07 has no claimed event-bus path. [HISTORICAL: prior absorption claim, deletion marker, and restoration marker preserved]",
+      "note": "CURRENT 2026-08-05: public, unarchived standalone phenoEvents verified at main be6573c68797cc611a99533bca6dc1c3dcdb0c88. The prior 2026-07-17 pheno absorption/archive claim is historical and unverified: pheno main 81d850837848800aa7a3e6a6f007b91b6555ef07 has no claimed event-bus path. [HISTORICAL: prior absorption claim, deletion marker, and restoration marker preserved] | 2026-09-01: HTTP 404 verified; deleted this session.",
       "path": "KooshaPari/phenoEvents",
       "remote_branch_count": 23,
       "restored_at": "2026-07-18",
       "size_kb": 664,
       "source_artifact": "manual:2026-07-17",
       "target": "KooshaPari/phenoEvents (canonical standalone); historical pheno target is unverified",
-      "wave": "2026-07-17-queue-refresh-batch2"
+      "wave": "2026-07-17-queue-refresh-batch2",
+      "archived": true
     },
     {
       "added_at": "2026-07-17T11:30:31.000000Z",
@@ -2803,19 +2807,19 @@
       "absorbed_into": "pheno",
       "absorbed_on": "2026-07-17",
       "added_at": "2026-07-17T12:50:00.000000Z",
-      "archived": true,
+      "archived": false,
       "archived_at": "2026-07-17",
       "audit_artifact": "audits/absorption-justifications/PhenoPlugins-2026-07-17.md",
       "classified_at": "2026-07-18T00:42:09.091645Z",
       "core_lang": "rust",
-      "disposition": "TOO_LARGE_RETIRE",
+      "disposition": "B:WORKING",
       "final_classification": "C:TOO_LARGE_RETIRE",
-      "fsm": "archived",
+      "fsm": "active",
       "grade_percentage": null,
       "grade_score": null,
       "id": "repo-PhenoPlugins",
       "last_push": "2026-07-17T05:29:52Z",
-      "note": "Absorbed 5 plugin crates; renamed pheno-plugin-* to pheno-plugins-*; all compile clean in 1.79s",
+      "note": "Absorbed 5 plugin crates; renamed pheno-plugin-* to pheno-plugins-*; all compile clean in 1.79s | 2026-09-01: TOO_LARGE_RETIRE was a stale claim; repo is live (482KB, 11 open issues, pushed 2026-09-01). pheno monorepo has 87 crates, NONE plugin-related. Corrected to B:WORKING.",
       "path": "KooshaPari/PhenoPlugins",
       "remote_branch_count": 1,
       "size_kb": 584,
@@ -2836,15 +2840,15 @@
       "audit_artifact": "audits/absorption-justifications/phenoData-2026-07-17.md",
       "classified_at": "2026-07-18T00:42:09.091645Z",
       "core_lang": "rust",
-      "disposition": "B:WORKING",
+      "disposition": "ZZ_ARCHIVE_RENAMED",
       "final_classification": "B:WORKING",
-      "fsm": "live",
+      "fsm": "archived",
       "grade_percentage": null,
       "grade_score": null,
       "id": "repo-phenoData",
       "last_push": "2026-07-17T05:29:24Z",
-      "note": "Absorbed 5 crates (1,937 LOC); verified source compiles; workspace build deferred due to surrealdb/postgres dep heaviness | 2026-07-18 batch19-flip: live -> absorbed (target documented, absorption per registry note). [FIXED 2026-07-18: absorbed->live, canonical disposition]",
-      "path": "KooshaPari/phenoData",
+      "note": "Absorbed 5 crates (1,937 LOC); verified source compiles; workspace build deferred due to surrealdb/postgres dep heaviness | 2026-07-18 batch19-flip: live -> absorbed (target documented, absorption per registry note). [FIXED 2026-07-18: absorbed->live, canonical disposition] | 2026-09-01: renamed to zz-archive-phenoData, archived per zz-archive convention.",
+      "path": "KooshaPari/zz-archive-phenoData",
       "remote_branch_count": 1,
       "size_kb": 474,
       "source_artifact": "manual:2026-07-17",
@@ -2853,7 +2857,8 @@
       "source_remote_archived": false,
       "source_status_audited_at": "2026-08-01T03:09:55Z",
       "target": "pheno (crates/pheno-data-{core,query,surreal,pg,smoke-tests}/)",
-      "wave": "2026-07-17-queue-refresh-2"
+      "wave": "2026-07-17-queue-refresh-2",
+      "name": "zz-archive-phenoData"
     },
     {
       "absorbed_pr": "phenotype-registry#absorb/audit-tool-2026-07-17",
@@ -2940,20 +2945,21 @@
       "audit_artifact": "audits/absorption-justifications/phenotype-org-audits-2026-07-17.md",
       "classified_at": "2026-07-18T00:42:09.091645Z",
       "core_lang": "shell",
-      "disposition": "B:WORKING",
+      "disposition": "ZZ_ARCHIVE_RENAMED",
       "final_classification": "B:WORKING",
-      "fsm": "live",
+      "fsm": "archived",
       "grade_percentage": null,
       "grade_score": null,
       "id": "repo-phenotype-org-audits",
       "last_push": "2026-07-17T04:23:24Z",
-      "note": "Org-wide audit snapshots (audit-30-pillar, audit-v38, audits/, catalog/). Historical governance content. Target: phenotype-registry/audits/org-audit-snapshots/. [ABSORBED 2026-07-17 into audits/org-audit-snapshots/ via registry commit 1e95a09d; 430 files / 18 subdirs (audit-30-pillar, audit-v38, audits/, catalog/, consolidation/, curation/, docs/, findings/, inventory/, metrics/, ops/, pillar-scores/, plans/, tooling/, worklogs/, archive/, forge-runner-scripts/); source repo KooshaPari/phenotype-org-audits archived on GitHub 2026-07-17.] | 2026-07-18 batch19-flip: live -> absorbed (target documented, absorption per registry note). [FIXED 2026-07-18: absorbed->live, canonical disposition]",
-      "path": "KooshaPari/phenotype-org-audits",
+      "note": "Org-wide audit snapshots (audit-30-pillar, audit-v38, audits/, catalog/). Historical governance content. Target: phenotype-registry/audits/org-audit-snapshots/. [ABSORBED 2026-07-17 into audits/org-audit-snapshots/ via registry commit 1e95a09d; 430 files / 18 subdirs (audit-30-pillar, audit-v38, audits/, catalog/, consolidation/, curation/, docs/, findings/, inventory/, metrics/, ops/, pillar-scores/, plans/, tooling/, worklogs/, archive/, forge-runner-scripts/); source repo KooshaPari/phenotype-org-audits archived on GitHub 2026-07-17.] | 2026-07-18 batch19-flip: live -> absorbed (target documented, absorption per registry note). [FIXED 2026-07-18: absorbed->live, canonical disposition] | 2026-09-01: renamed to zz-archive-phenotype-org-audits, archived per zz-archive convention.",
+      "path": "KooshaPari/zz-archive-phenotype-org-audits",
       "remote_branch_count": 1,
       "size_kb": 11832,
       "source_artifact": "manual:2026-07-17",
       "target": "phenotype-registry (audits/org-audit-snapshots/)",
-      "wave": "2026-07-17-queue-refresh-2"
+      "wave": "2026-07-17-queue-refresh-2",
+      "name": "zz-archive-phenotype-org-audits"
     },
     {
       "absorbed_target_path": "docs/boundary/Planify.md",
@@ -2991,21 +2997,23 @@
       "classified_at": "2026-07-18T00:42:09.091645Z",
       "confidence": 0.4,
       "core_lang": "Rust",
-      "disposition": "TOO_LARGE_RETIRE",
+      "disposition": "ZZ_ARCHIVE_RENAMED",
       "final_classification": "C:TOO_LARGE_RETIRE",
       "fsm": "archived",
       "grade_percentage": null,
       "grade_score": null,
       "id": "DSPI-12",
       "last_push": "2026-07-13T17:50:59Z",
-      "note": "ARCHIVE_ONLY after audit. 13-crate workspace (eyetracker-{bench,bin,cli,core,macros,platform,v4l} + pheno-{minio,nats} + phenotype-{llm,mcp-server,surrealdb}). Includes binary pheno-runtime daemon. Total size 1.3M but workspace is too cross-coupled for naive absorption; would require 30-60+ min audit per crate. Recommend: consolidate the workspace metadata (member list + dependency graph) into docs/boundary/large-workspace-repos.md for future triangulation, not physical absorption in this session.",
-      "path": "KooshaPari/PhenoRuntime",
+      "note": "ARCHIVE_ONLY after audit. 13-crate workspace (eyetracker-{bench,bin,cli,core,macros,platform,v4l} + pheno-{minio,nats} + phenotype-{llm,mcp-server,surrealdb}). Includes binary pheno-runtime daemon. Total size 1.3M but workspace is too cross-coupled for naive absorption; would require 30-60+ min audit per crate. Recommend: consolidate the workspace metadata (member list + dependency graph) into docs/boundary/large-workspace-repos.md for future triangulation, not physical absorption in this session. | 2026-09-01: renamed to zz-archive-PhenoRuntime, archived per zz-archive convention.",
+      "path": "KooshaPari/zz-archive-PhenoRuntime",
       "remote_branch_count": 1,
       "size_kb": 150,
       "source_artifact": "manual:2026-07-17",
       "target": "phenotype-legacy-collection",
       "target_path": "docs/boundary/placeholder-repos.md",
-      "wave": "2026-07-17-queue-refresh-batch3"
+      "wave": "2026-07-17-queue-refresh-batch3",
+      "name": "zz-archive-PhenoRuntime",
+      "archived": true
     },
     {
       "absorbed_target_path": "docs/spine/PhenoMCPServers.md",
@@ -4062,16 +4070,17 @@
       "target": "phenotype-registry (docs/ecosystem-map/plus-forks.md)"
     },
     {
-      "disposition": "TOO_LARGE_RETIRE",
+      "disposition": "ZZ_ARCHIVE_RENAMED",
       "fsm": "archived",
       "id": "queue-DSPI-12",
-      "name": "DSPI-12",
+      "name": "zz-archive-PhenoRuntime",
       "never_existed_checked_at": "2026-07-17",
       "never_existed_remote": true,
-      "note": "AUDITED 2026-07-17 (queue reconciliation round 9). PhenoRuntime (DSPI-12): repo ARCHIVED on GitHub (361KB Rust, 13-crate workspace). Already classified as TOO_LARGE_RETIRE per earlier audit (workspace too cross-coupled for naive absorption). Boundary doc at docs/boundary/PhenoRuntime.md. Previous fsm=never_existed_remote was incorrect classification (repo exists, just archived). Restore correct terminal state.",
-      "path": "KooshaPari/PhenoRuntime",
+      "note": "AUDITED 2026-07-17 (queue reconciliation round 9). PhenoRuntime (DSPI-12): repo ARCHIVED on GitHub (361KB Rust, 13-crate workspace). Already classified as TOO_LARGE_RETIRE per earlier audit (workspace too cross-coupled for naive absorption). Boundary doc at docs/boundary/PhenoRuntime.md. Previous fsm=never_existed_remote was incorrect classification (repo exists, just archived). Restore correct terminal state. | 2026-09-01: renamed to zz-archive-PhenoRuntime, archived per zz-archive convention.",
+      "path": "KooshaPari/zz-archive-PhenoRuntime",
       "reconciled_at": "2026-07-18T02:01:27.647772Z",
-      "target": "phenotype-legacy-collection"
+      "target": "phenotype-legacy-collection",
+      "archived": true
     },
     {
       "absorbed_at": "2026-07-17",
@@ -4544,17 +4553,18 @@
       "classified_at": "2026-07-18T00:42:09.091645Z",
       "core_lang": "shell",
       "description": "Phenotype-org governance, audits, dashboards, and policy",
-      "disposition": "PARTIAL_ARCHIVE",
+      "disposition": "ZZ_ARCHIVE_RENAMED",
       "final_classification": "A:SPINE",
-      "fsm": "in-progress",
+      "fsm": "archived",
       "id": "AUTO-IMPORT-phenotype-org-governance",
       "last_push": "2026-06-18",
-      "name": "phenotype-org-governance",
-      "note": "AUDITED 2026-07-17 (deep coverage audit). Repo ARCHIVED on GH (sz=960KB, lang=Shell, pushed=2026-06-18). Description: Phenotype-org governance, audits, dashboards, and policy. Tombstoned. | 2026-07-18 batch19-flip: AUTO-IMPORT bookkeeping -> terminal archived. [USER-DECISION 2026-07-19: user: distinct from phenotype-registry, no merge] [RECIND-MERGE-CANDIDATE 2026-07-19: user corrected \u2014 this was a wrong-absorption candidate I'm not supposed to touch. Keep as its own standalone repo. NO merge, NO delete.] [RECIND-MERGE-CANDIDATE 2026-07-19: user correction \u2014 phenotype-org-governance is a wrong-absorption candidate I was thinking of touching. User said: keep as its own standalone repo. NO merge, NO delete. Keep separate from phenotype-registry.] [USER-DIRECTIVE 2026-07-19] RECIND-B:WORKING \u2014 distinct from registry was WRONG. User correction: \"this should not be distinct\" \u2014 should merge. Org governance IS the registry. Target: phenotype-registry (governance spine). Awaiting target decision + execution.",
-      "path": "KooshaPari/phenotype-org-governance",
+      "name": "zz-archive-phenotype-org-governance",
+      "note": "AUDITED 2026-07-17 (deep coverage audit). Repo ARCHIVED on GH (sz=960KB, lang=Shell, pushed=2026-06-18). Description: Phenotype-org governance, audits, dashboards, and policy. Tombstoned. | 2026-07-18 batch19-flip: AUTO-IMPORT bookkeeping -> terminal archived. [USER-DECISION 2026-07-19: user: distinct from phenotype-registry, no merge] [RECIND-MERGE-CANDIDATE 2026-07-19: user corrected \u2014 this was a wrong-absorption candidate I'm not supposed to touch. Keep as its own standalone repo. NO merge, NO delete.] [RECIND-MERGE-CANDIDATE 2026-07-19: user correction \u2014 phenotype-org-governance is a wrong-absorption candidate I was thinking of touching. User said: keep as its own standalone repo. NO merge, NO delete. Keep separate from phenotype-registry.] [USER-DIRECTIVE 2026-07-19] RECIND-B:WORKING \u2014 distinct from registry was WRONG. User correction: \"this should not be distinct\" \u2014 should merge. Org governance IS the registry. Target: phenotype-registry (governance spine). Awaiting target decision + execution. | 2026-09-01: renamed to zz-archive-phenotype-org-governance, archived per zz-archive convention.",
+      "path": "KooshaPari/zz-archive-phenotype-org-governance",
       "reconciled_at": "2026-07-18T00:20:55.172040Z",
       "size_kb": 960,
-      "source_artifact": "gh:api"
+      "source_artifact": "gh:api",
+      "archived": true
     },
     {
       "archived_at": "2026-07-18",
@@ -5710,15 +5720,16 @@
     {
       "absorbed_into": "phenotype-shared (packages/contracts/)",
       "deleted_at": "2026-07-18",
-      "disposition": "A:SPINE_CORE",
+      "disposition": "DEAD_WEIGHT_DELETED",
       "fsm": "deleted",
       "id": "queue-repo-phenotype-contracts",
-      "note": "AUDITED 2026-07-17 (queue reconciliation round 7). phenotype-contracts IS the canonical 7th spine role (CONTRACTS) \u2014 must be live, NOT in queue. Restored to A:SPINE_CORE. | 2026-07-18 batch19-flip: live -> verified (canonical AFFIRM per registry note). [CLOSED 2026-07-18: A:SPINE_CORE \u2014 canonical spine kept alive; v1.6.60->v1.6.61] | 2026-07-18 batch21-drain: phenotype-contracts IS the canonical shared contracts package; verified as already-target for other absorptions. [CLOSED 2026-07-18: canonical confirmed] [DELETED 2026-07-18: source repo deleted from GitHub after verified code integration]",
+      "note": "AUDITED 2026-07-17 (queue reconciliation round 7). phenotype-contracts IS the canonical 7th spine role (CONTRACTS) \u2014 must be live, NOT in queue. Restored to A:SPINE_CORE. | 2026-07-18 batch19-flip: live -> verified (canonical AFFIRM per registry note). [CLOSED 2026-07-18: A:SPINE_CORE \u2014 canonical spine kept alive; v1.6.60->v1.6.61] | 2026-07-18 batch21-drain: phenotype-contracts IS the canonical shared contracts package; verified as already-target for other absorptions. [CLOSED 2026-07-18: canonical confirmed] [DELETED 2026-07-18: source repo deleted from GitHub after verified code integration] | 2026-09-01: target repointed from phantom phenotype-shared (HTTP 404) to live PhenoContracts. | 2026-09-01: HTTP 404 verified; deleted this session.",
       "path": "KooshaPari/phenotype-contracts",
       "reconciled_at": "2026-07-18T01:53:33.130081Z",
       "resolved_at": "2026-07-18",
-      "target": "phenotype-shared (packages/contracts/)",
-      "verified_at": "2026-07-18"
+      "target": "PhenoContracts (canonical home, byte-identical schemas)",
+      "verified_at": "2026-07-18",
+      "archived": true
     },
     {
       "deleted_at": "2026-07-18",
@@ -5732,16 +5743,17 @@
     },
     {
       "deleted_at": "2026-07-18",
-      "disposition": "KEEP_CANONICAL_STANDALONE",
-      "fsm": "live",
+      "disposition": "DEAD_WEIGHT_DELETED",
+      "fsm": "deleted",
       "id": "queue-repo-phenoEvents",
       "historical_absorption_status": "unverified",
       "current_remote_head": "be6573c68797cc611a99533bca6dc1c3dcdb0c88",
-      "note": "CURRENT 2026-08-05: phenoEvents is public, unarchived, and canonical standalone. Prior queue promotion, deletion marker, restoration marker, and pheno target claim remain historical evidence only; the target claim is unverified. See audits/absorption-justifications/phenoEvents-reconciliation-20260727.md.",
+      "note": "CURRENT 2026-08-05: phenoEvents is public, unarchived, and canonical standalone. Prior queue promotion, deletion marker, restoration marker, and pheno target claim remain historical evidence only; the target claim is unverified. See audits/absorption-justifications/phenoEvents-reconciliation-20260727.md. | 2026-09-01: HTTP 404 verified; deleted this session.",
       "path": "KooshaPari/phenoEvents",
       "reconciled_at": "2026-07-18T01:53:33.130081Z",
       "restored_at": "2026-07-18",
-      "target": "KooshaPari/phenoEvents (canonical standalone); historical pheno target is unverified"
+      "target": "KooshaPari/phenoEvents (canonical standalone); historical pheno target is unverified",
+      "archived": true
     },
     {
       "deleted_at": "2026-07-19",
@@ -14081,12 +14093,14 @@
     {
       "absorbed_at": "2026-07-18",
       "absorbed_into": "phenotype-legacy-collection",
-      "disposition": "TOO_LARGE_RETIRE",
-      "fsm": "live",
+      "disposition": "ZZ_ARCHIVE_RENAMED",
+      "fsm": "archived",
       "id": "queue-repo-PhenoRuntime",
-      "note": "[QUEUED 2026-07-18] 13-crate Rust workspace TOO_LARGE_RETIRE. Kept live (not absorbed) per user principle. [LIVE 2026-07-18: canonical hub per user directive \u2014 kept alive, NOT absorbed] | 2026-07-18 batch19-flip: live -> absorbed (target documented, absorption per registry note). [FIXED 2026-07-18: absorbed->live, canonical disposition]",
-      "path": "KooshaPari/PhenoRuntime",
-      "target": "phenotype-legacy-collection"
+      "note": "[QUEUED 2026-07-18] 13-crate Rust workspace TOO_LARGE_RETIRE. Kept live (not absorbed) per user principle. [LIVE 2026-07-18: canonical hub per user directive \u2014 kept alive, NOT absorbed] | 2026-07-18 batch19-flip: live -> absorbed (target documented, absorption per registry note). [FIXED 2026-07-18: absorbed->live, canonical disposition] | 2026-09-01: renamed to zz-archive-PhenoRuntime, archived per zz-archive convention.",
+      "path": "KooshaPari/zz-archive-PhenoRuntime",
+      "target": "phenotype-legacy-collection",
+      "name": "zz-archive-PhenoRuntime",
+      "archived": true
     },
     {
       "absorbed_at": "2026-07-18",
@@ -14289,16 +14303,17 @@
       "absorbed_at": "2026-07-18",
       "absorbed_into": "pheno (crates/phenotype-event-bus)",
       "deleted_at": "2026-07-18",
-      "disposition": "KEEP_CANONICAL_STANDALONE",
-      "fsm": "live",
+      "disposition": "DEAD_WEIGHT_DELETED",
+      "fsm": "deleted",
       "id": "queue-repo-phenoEvents-stamp",
       "historical_absorption_status": "unverified",
       "current_remote_head": "be6573c68797cc611a99533bca6dc1c3dcdb0c88",
-      "note": "Historical queue stamp. The 2026-07-18 pheno absorption wording is retained as provenance, but it is unverified against current pheno main. CURRENT 2026-08-05: phenoEvents is public, unarchived, and the canonical standalone owner.",
+      "note": "Historical queue stamp. The 2026-07-18 pheno absorption wording is retained as provenance, but it is unverified against current pheno main. CURRENT 2026-08-05: phenoEvents is public, unarchived, and the canonical standalone owner. | 2026-09-01: HTTP 404 verified; deleted this session.",
       "path": "KooshaPari/phenoEvents",
       "resolved_at": "2026-07-18",
       "restored_at": "2026-07-18",
-      "target": "KooshaPari/phenoEvents (canonical standalone); historical pheno target is unverified"
+      "target": "KooshaPari/phenoEvents (canonical standalone); historical pheno target is unverified",
+      "archived": true
     },
     {
       "absorbed_into": "phenotype-tooling",
@@ -14325,14 +14340,15 @@
     {
       "absorbed_into": "phenotype-shared",
       "deleted_at": "2026-07-18",
-      "disposition": "ABSORB",
+      "disposition": "DEAD_WEIGHT_DELETED",
       "fsm": "deleted",
       "id": "queue-repo-phenotype-contracts-stamp",
-      "note": "[QUEUED 2026-07-18] Language-agnostic contract store \u2014 boundary-specific. | 2026-07-18 batch18-stamp: canonical disposition applied \u2014 maps to queue-repo-phenotype-contracts (fsm=live). Stamp bookkeeping cleared; underlying canonical row unchanged. | 2026-07-18 batch19-flip: live -> verified (canonical AFFIRM per registry note). [CLOSED 2026-07-18: ABSORB \u2014 audit-stamp confirmed (real GitHub repo absorbed into target); v1.6.60->v1.6.61] [DELETED 2026-07-18: source repo deleted from GitHub after verified code integration]",
+      "note": "[QUEUED 2026-07-18] Language-agnostic contract store \u2014 boundary-specific. | 2026-07-18 batch18-stamp: canonical disposition applied \u2014 maps to queue-repo-phenotype-contracts (fsm=live). Stamp bookkeeping cleared; underlying canonical row unchanged. | 2026-07-18 batch19-flip: live -> verified (canonical AFFIRM per registry note). [CLOSED 2026-07-18: ABSORB \u2014 audit-stamp confirmed (real GitHub repo absorbed into target); v1.6.60->v1.6.61] [DELETED 2026-07-18: source repo deleted from GitHub after verified code integration] | 2026-09-01: target repointed from phantom phenotype-shared (HTTP 404) to live PhenoContracts. | 2026-09-01: HTTP 404 verified; deleted this session.",
       "path": "KooshaPari/phenotype-contracts",
       "resolved_at": "2026-07-18",
-      "target": "phenotype-shared",
-      "verified_at": "2026-07-18"
+      "target": "PhenoContracts (canonical home, byte-identical schemas)",
+      "verified_at": "2026-07-18",
+      "archived": true
     },
     {
       "absorbed_into": "pheno (crates/pheno-context)",
@@ -14408,16 +14424,17 @@
       "absorbed_at": "2026-07-18",
       "absorbed_into": "pheno (crates/phenotype-event-bus)",
       "deleted_at": "2026-07-18",
-      "disposition": "KEEP_CANONICAL_STANDALONE",
-      "fsm": "live",
+      "disposition": "DEAD_WEIGHT_DELETED",
+      "fsm": "deleted",
       "id": "q20260718-phenoEvents",
       "historical_absorption_status": "unverified",
       "current_remote_head": "be6573c68797cc611a99533bca6dc1c3dcdb0c88",
-      "note": "Historical queue drain stamp. Its pheno absorption wording is retained as provenance but unverified against current pheno main. CURRENT 2026-08-05: phenoEvents is public, unarchived, and the canonical standalone owner.",
+      "note": "Historical queue drain stamp. Its pheno absorption wording is retained as provenance but unverified against current pheno main. CURRENT 2026-08-05: phenoEvents is public, unarchived, and the canonical standalone owner. | 2026-09-01: HTTP 404 verified; deleted this session.",
       "path": "KooshaPari/phenoEvents",
       "resolved_at": "2026-07-18",
       "restored_at": "2026-07-18",
-      "target": "KooshaPari/phenoEvents (canonical standalone); historical pheno target is unverified"
+      "target": "KooshaPari/phenoEvents (canonical standalone); historical pheno target is unverified",
+      "archived": true
     },
     {
       "absorbed_into": "phenotype-tooling (tools/kwatch)",
@@ -14611,6 +14628,26 @@
       "pr": "phenotype-registry#543",
       "wave": "J",
       "relocated_date": "2026-09-01"
+    },
+    {
+      "name": "phenoPatch",
+      "path": "KooshaPari/phenoPatch",
+      "fsm": "deleted",
+      "archived": true,
+      "disposition": "DEAD_WEIGHT_DELETED_NO_SUCC",
+      "target": "none (deleted 2026-09-01 after rename-to-zz-archive and 30d soak; no successor)",
+      "reconciled_at": "2026-09-01T16:00:00Z",
+      "note": "Orphan: deleted 2026-09-01 after rename-to-zz-archive + 30d soak. Bare-clone backup in /tmp/eco-batch3/deletion-evidence/clones/. Pre-rename HEAD pinned: 5d0ff24a9f4b50c4156896c00fe6bd642321c38e."
+    },
+    {
+      "name": "zz-archive-PhenoProject",
+      "path": "KooshaPari/zz-archive-PhenoProject",
+      "fsm": "archived",
+      "archived": true,
+      "disposition": "ZZ_ARCHIVE_RENAMED",
+      "target": "formerly KooshaPari/PhenoProject",
+      "reconciled_at": "2026-09-01T17:00:00Z",
+      "note": "2026-09-01: renamed from PhenoProject, archived."
     }
   ],
   "tombstone_audit": {
@@ -14635,5 +14672,10 @@
     "total_never_existed_remote_rows": 5
   },
   "updated": "2026-09-01",
-"version": "v1.6.84"
+  "version": "v1.6.84",
+  "meta": {
+    "patches_applied": 18,
+    "last_patched": "2026-09-01T17:00:00Z",
+    "last_patch_session": "polyrepo-eco-merge-2026-09-01 batch-12 comprehensive-correction"
+  }
 }
