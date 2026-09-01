@@ -2803,19 +2803,19 @@
       "absorbed_into": "pheno",
       "absorbed_on": "2026-07-17",
       "added_at": "2026-07-17T12:50:00.000000Z",
-      "archived": true,
+      "archived": false,
       "archived_at": "2026-07-17",
       "audit_artifact": "audits/absorption-justifications/PhenoPlugins-2026-07-17.md",
       "classified_at": "2026-07-18T00:42:09.091645Z",
       "core_lang": "rust",
-      "disposition": "TOO_LARGE_RETIRE",
+      "disposition": "B:WORKING",
       "final_classification": "C:TOO_LARGE_RETIRE",
-      "fsm": "archived",
+      "fsm": "active",
       "grade_percentage": null,
       "grade_score": null,
       "id": "repo-PhenoPlugins",
       "last_push": "2026-07-17T05:29:52Z",
-      "note": "Absorbed 5 plugin crates; renamed pheno-plugin-* to pheno-plugins-*; all compile clean in 1.79s",
+      "note": "Absorbed 5 plugin crates; renamed pheno-plugin-* to pheno-plugins-*; all compile clean in 1.79s | 2026-09-01: TOO_LARGE_RETIRE was a stale claim; repo is live (482KB, 11 open issues, pushed 2026-09-01). pheno monorepo has 87 crates, NONE plugin-related. Corrected to B:WORKING.",
       "path": "KooshaPari/PhenoPlugins",
       "remote_branch_count": 1,
       "size_kb": 584,
@@ -5713,11 +5713,11 @@
       "disposition": "A:SPINE_CORE",
       "fsm": "deleted",
       "id": "queue-repo-phenotype-contracts",
-      "note": "AUDITED 2026-07-17 (queue reconciliation round 7). phenotype-contracts IS the canonical 7th spine role (CONTRACTS) \u2014 must be live, NOT in queue. Restored to A:SPINE_CORE. | 2026-07-18 batch19-flip: live -> verified (canonical AFFIRM per registry note). [CLOSED 2026-07-18: A:SPINE_CORE \u2014 canonical spine kept alive; v1.6.60->v1.6.61] | 2026-07-18 batch21-drain: phenotype-contracts IS the canonical shared contracts package; verified as already-target for other absorptions. [CLOSED 2026-07-18: canonical confirmed] [DELETED 2026-07-18: source repo deleted from GitHub after verified code integration]",
+      "note": "AUDITED 2026-07-17 (queue reconciliation round 7). phenotype-contracts IS the canonical 7th spine role (CONTRACTS) \u2014 must be live, NOT in queue. Restored to A:SPINE_CORE. | 2026-07-18 batch19-flip: live -> verified (canonical AFFIRM per registry note). [CLOSED 2026-07-18: A:SPINE_CORE \u2014 canonical spine kept alive; v1.6.60->v1.6.61] | 2026-07-18 batch21-drain: phenotype-contracts IS the canonical shared contracts package; verified as already-target for other absorptions. [CLOSED 2026-07-18: canonical confirmed] [DELETED 2026-07-18: source repo deleted from GitHub after verified code integration] | 2026-09-01: target repointed from phantom phenotype-shared (HTTP 404) to live PhenoContracts.",
       "path": "KooshaPari/phenotype-contracts",
       "reconciled_at": "2026-07-18T01:53:33.130081Z",
       "resolved_at": "2026-07-18",
-      "target": "phenotype-shared (packages/contracts/)",
+      "target": "PhenoContracts (canonical home, byte-identical schemas)",
       "verified_at": "2026-07-18"
     },
     {
@@ -14328,10 +14328,10 @@
       "disposition": "ABSORB",
       "fsm": "deleted",
       "id": "queue-repo-phenotype-contracts-stamp",
-      "note": "[QUEUED 2026-07-18] Language-agnostic contract store \u2014 boundary-specific. | 2026-07-18 batch18-stamp: canonical disposition applied \u2014 maps to queue-repo-phenotype-contracts (fsm=live). Stamp bookkeeping cleared; underlying canonical row unchanged. | 2026-07-18 batch19-flip: live -> verified (canonical AFFIRM per registry note). [CLOSED 2026-07-18: ABSORB \u2014 audit-stamp confirmed (real GitHub repo absorbed into target); v1.6.60->v1.6.61] [DELETED 2026-07-18: source repo deleted from GitHub after verified code integration]",
+      "note": "[QUEUED 2026-07-18] Language-agnostic contract store \u2014 boundary-specific. | 2026-07-18 batch18-stamp: canonical disposition applied \u2014 maps to queue-repo-phenotype-contracts (fsm=live). Stamp bookkeeping cleared; underlying canonical row unchanged. | 2026-07-18 batch19-flip: live -> verified (canonical AFFIRM per registry note). [CLOSED 2026-07-18: ABSORB \u2014 audit-stamp confirmed (real GitHub repo absorbed into target); v1.6.60->v1.6.61] [DELETED 2026-07-18: source repo deleted from GitHub after verified code integration] | 2026-09-01: target repointed from phantom phenotype-shared (HTTP 404) to live PhenoContracts.",
       "path": "KooshaPari/phenotype-contracts",
       "resolved_at": "2026-07-18",
-      "target": "phenotype-shared",
+      "target": "PhenoContracts (canonical home, byte-identical schemas)",
       "verified_at": "2026-07-18"
     },
     {
@@ -14611,6 +14611,16 @@
       "pr": "phenotype-registry#543",
       "wave": "J",
       "relocated_date": "2026-09-01"
+    },
+    {
+      "name": "phenoPatch",
+      "path": "KooshaPari/phenoPatch",
+      "fsm": "deleted",
+      "archived": true,
+      "disposition": "DEAD_WEIGHT_DELETED_NO_SUCC",
+      "target": "none (deleted 2026-09-01 after rename-to-zz-archive and 30d soak; no successor)",
+      "reconciled_at": "2026-09-01T16:00:00Z",
+      "note": "Orphan: deleted 2026-09-01 after rename-to-zz-archive + 30d soak. Bare-clone backup in /tmp/eco-batch3/deletion-evidence/clones/. Pre-rename HEAD pinned: 5d0ff24a9f4b50c4156896c00fe6bd642321c38e."
     }
   ],
   "tombstone_audit": {
@@ -14635,5 +14645,10 @@
     "total_never_existed_remote_rows": 5
   },
   "updated": "2026-09-01",
-"version": "v1.6.84"
+  "version": "v1.6.84",
+  "meta": {
+    "patches_applied": 3,
+    "last_patched": "2026-09-01T16:00:00Z",
+    "last_patch_session": "polyrepo-eco-merge-2026-09-01 batch-10 tier3-APPLIED (rebased)"
+  }
 }
