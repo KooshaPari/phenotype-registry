@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file.
 
+## [Unreleased] - 2026-09-01
+
+### Boundary governance reconciliation (post-Codex-resume handoff)
+
+- **projects/AgilePlus.json**: flipped `status` from `queued` → `active`, `disposition` from `ABSORB` → `KEEP`, nulled `proposed_target*` fields. Aligns with RATIONALIZATION_PLAN.md line 182 and BOUNDARY_OWNERS.md line 109. Resolves P0 drift between project card and authoritative governance docs.
+- **projects/Grapheon.json**: updated `remote_default_branch` to `main`, refreshed `remote_head_sha` and `local_head_sha` to current `e8222c3600d33900a4cd1297cbf51457cc154ad1`. Recovery branch metadata was correct at 2026-07-27 audit but is now superseded.
+- **projects/cockpit-source.json** (new): created missing SSOT card for the live cockpit-source repository. Boundary = `cockpit-source-custodian`; disposition = KEEP. Resolves P0 registry gap (cockpit-source was completely absent from all SSOT files).
+- **audits/absorption-justifications/cockpit-source-2026-09-01.md** (new): audit evidence for the cockpit-source reconciliation.
+
 ## [1.1.0](https://github.com/KooshaPari/phenotype-registry/compare/v1.0.0...v1.1.0) (2026-08-27)
 
 
