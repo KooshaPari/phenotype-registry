@@ -1,14 +1,14 @@
 {
-  "name": "Grapheon",
+  "name": "zz-archive-grapheon",
   "languages": ["Rust", "Python", "TypeScript"],
   "primary_language": "Rust",
-  "status": "active",
+  "status": "archived",
   "visibility": "private",
   "has_readme": true,
   "has_license": true,
   "type": "application-and-library-monorepo",
   "path": "repos/Grapheon",
-  "gh_url": "https://github.com/KooshaPari/Grapheon",
+  "gh_url": "https://github.com/KooshaPari/zz-archive-grapheon",
   "remote_default_branch": "main",
   "remote_head_sha": "e8222c3600d33900a4cd1297cbf51457cc154ad1",
   "local_head_sha": "e8222c3600d33900a4cd1297cbf51457cc154ad1",
@@ -18,7 +18,7 @@
   "git_object_size_mb": 722,
   "domain_role": "claims-graph-and-trace-runtime",
   "boundary": "standalone-private-runtime",
-  "disposition": "KEEP_STANDALONE_PENDING_BOUNDARY_REVIEW",
+  "disposition": "ZZ_ARCHIVE_RENAMED",
   "proposed_target": null,
   "absorbed_into": null,
   "recovery_ref": "airlock-recovery/wip/2026-07-15-recovered-545e737-main",
@@ -32,5 +32,12 @@
     "git ls-tree -r --name-only HEAD reports 80,510 tracked paths",
     "pheno main exposes agileplus-graph but no grapheon crate or Tracera workspace"
   ],
-  "note": "Boundary correction: preserve Grapheon as a standalone private parent; retain grapheon-bindings as an independent historical absorption record pending provenance verification."
+  "note": "Boundary correction: preserve Grapheon as a standalone private parent; retain grapheon-bindings as an independent historical absorption record pending provenance verification.",
+  "retirement": {
+    "renamed_to": "zz-archive-grapheon",
+    "renamed_on": "2026-09-03",
+    "approved_by": "sponsor",
+    "preserve_refs": 15,
+    "final_gate": "dual-cloud second-remote archival still pending R2/B2 credentials"
+  }
 }
