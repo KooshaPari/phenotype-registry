@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "captured_at": "2026-09-04T08:03:33Z",
+  "source_repository": "KooshaPari/zz-archive-grapheon",
+  "source_local_path": "repos/Grapheon",
+  "source_head": "8b57aa380dd6d288f451be5ef0e4e766f606c7fb",
+  "bundle_path": "/tmp/grapheon-preservation-all-20260904-0757.bundle",
+  "bundle_bytes": 431515603,
+  "bundle_sha256": "828023ca7f034b796a9e4867ae008fa0c1f5443162c78e256746402a082185f0",
+  "bundle_verify": "PASS",
+  "bundle_ref_count": 47,
+  "preservation_namespace_entries": 20,
+  "isolated_restore_path": "/tmp/grapheon-restore.wosUZJ/repo.git",
+  "isolated_restore_fetch": "PASS",
+  "isolated_restore_fsck": "PASS",
+  "isolated_restore_head": "8b57aa380dd6d288f451be5ef0e4e766f606c7fb",
+  "r2_upload": "NOT_EXECUTED_CREDENTIALS_AND_MULTIPART_CLIENT_ABSENT",
+  "second_cloud_restore": "NOT_EXECUTED",
+  "source_mutation": false,
+  "remote_mutation": false
+}
