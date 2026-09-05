@@ -55,6 +55,13 @@
   `get_feature("grapheon-tracera-absorption")` call returns gRPC `NOT_FOUND`.
   No lifecycle feature, work-package chain, or audit record exists for this
   program; feature creation must be performed by the AgilePlus owner.
+- A source-controlled workflow scan of archived Grapheon found 17 workflow
+  files, 25 `ubuntu-latest` jobs, 10 Blacksmith jobs, and 2 matrix-OS jobs.
+  Three workflows are scheduled (`nightly` cron `17 6 * * *`, `trunk-check`
+  cron `0 3 * * 1`, and `scorecard` cron `25 4 * * 1`); 11 expose
+  `workflow_dispatch`. This is an exposure inventory, not proof of billing or
+  zero-cost execution. Owner-controlled suspension or an approved free/self-
+  hosted runner attestation is still required.
 
 ## Gate decision
 
