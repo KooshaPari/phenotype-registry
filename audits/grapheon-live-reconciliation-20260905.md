@@ -54,7 +54,11 @@
 - AgilePlus MCP `health_check` is healthy (`grpc_core=ok`), but the direct
   `get_feature("grapheon-tracera-absorption")` call returns gRPC `NOT_FOUND`.
   No lifecycle feature, work-package chain, or audit record exists for this
-  program; feature creation must be performed by the AgilePlus owner.
+  program; the owner-scoped spec is now committed in AgilePlus as
+  `bc36bec6` (`kitty-specs/grapheon-tracera-absorption/spec.md`) and the live
+  `agileplus_specify` call accepted it as queued. A subsequent `get_feature`
+  still returns `NOT_FOUND`, so lifecycle creation remains pending engine
+  processing/owner action.
 - A source-controlled workflow scan of archived Grapheon found 17 workflow
   files, 25 `ubuntu-latest` jobs, 10 Blacksmith jobs, and 2 matrix-OS jobs.
   Three workflows are scheduled (`nightly` cron `17 6 * * *`, `trunk-check`
