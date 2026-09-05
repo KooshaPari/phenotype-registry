@@ -42,6 +42,10 @@
   yanked `chacha20`/`spin` lock entries updated. `rustfmt`, `cargo deny`, and
   locked metadata pass; the crate test remains blocked by four unrelated
   current-main code/dependency errors. It is unpushed.
+- AgilePlus MCP `health_check` is healthy (`grpc_core=ok`), but the direct
+  `get_feature("grapheon-tracera-absorption")` call returns gRPC `NOT_FOUND`.
+  No lifecycle feature, work-package chain, or audit record exists for this
+  program; feature creation must be performed by the AgilePlus owner.
 
 ## Gate decision
 
