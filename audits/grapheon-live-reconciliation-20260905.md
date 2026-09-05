@@ -40,8 +40,12 @@
 - A protected Tracera successor branch based on current remote `main` has local
   commit `ec47038ad181d2772e83e14419a96955f642612c`: Rust doc syntax fixed and
   yanked `chacha20`/`spin` lock entries updated. `rustfmt`, `cargo deny`, and
-  locked metadata pass; the crate test remains blocked by four unrelated
-  current-main code/dependency errors. It is unpushed.
+  locked metadata pass. The follow-up dependency/source fixes are present
+  uncommitted in that same worktree; `cargo check -p tracera-workos --locked`
+  now passes and `cargo test -p tracera-workos --locked` reaches 46/47 tests.
+  The sole failure is the pre-existing `authorize_url_rejects_invalid_characters_in_redirect_uri`
+  assertion, whose raw `&` input contradicts the production allow-list. It is
+  unpushed and not hosted-CI proof.
 - AgilePlus MCP `health_check` is healthy (`grpc_core=ok`), but the direct
   `get_feature("grapheon-tracera-absorption")` call returns gRPC `NOT_FOUND`.
   No lifecycle feature, work-package chain, or audit record exists for this
