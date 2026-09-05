@@ -12,4 +12,3 @@
 - Broad feature acceptance is less established for gpt-load and Atlas than for KeiRouter or token-monitor.
 - Runtime tests of proposed changes have not been run: implementation is outside this request.
 - No statement that a project has little review implies that unsafe or poorly verified contributions are appropriate.
-

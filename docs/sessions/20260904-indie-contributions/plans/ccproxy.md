@@ -10,7 +10,7 @@ Inspected September 5 UTC 2026. Refresh HEAD and issue/PR state before execution
 
 **Overlap and policy:** All five HOLD for maintainer responsiveness and architecture alignment with #16. Open #20 MiniMax, #19 Requesty, #12 num_workers and #5 thinking-budget are occupied. Current pyproject version 2.0.0 is AGPL-3.0-or-later, not an AGPL version-2 license; coverage floor 86%.
 
-**Repository checks:** `uv run pytest && uv run ruff check src tests`. Commands are proposed validation, not checks run on upstream changes in this session. 
+**Repository checks:** `uv run pytest && uv run ruff check src tests`. Commands are proposed validation, not checks run on upstream changes in this session.
 
 ## CP01: Publish current v2 validation quickstart
 
@@ -91,5 +91,3 @@ Inspected September 5 UTC 2026. Refresh HEAD and issue/PR state before execution
 - [ ] Reproduce the concrete scenario; retire/re-scope if already addressed.
 - [ ] Agree scope, implement one bounded change, and verify using the scenarios and repository checks above.
 - [ ] Prepare a PR with before/after evidence and attribution when submission is authorized.
-
-

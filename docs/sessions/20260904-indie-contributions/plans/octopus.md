@@ -91,5 +91,3 @@ Inspected September 5 UTC 2026. Refresh HEAD and issue/PR state before execution
 - [ ] Reproduce the concrete scenario; retire/re-scope if already addressed.
 - [ ] Agree scope, implement one bounded change, and verify using the scenarios and repository checks above.
 - [ ] Prepare a PR with before/after evidence and attribution when submission is authorized.
-
-

@@ -23,4 +23,3 @@ Feature: indie-contribution-program-20260904.
 ## Out of scope
 
 Upstream implementation, outreach, submitting fifty PRs, changing project licenses, installing applications into the user's live environment, and predicting future popularity. Source-level proposals are planning artifacts; reproductions and runtime tests happen during implementation.
-

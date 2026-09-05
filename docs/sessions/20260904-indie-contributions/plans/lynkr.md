@@ -10,7 +10,7 @@ Inspected September 5 UTC 2026. Refresh HEAD and issue/PR state before execution
 
 **Overlap and policy:** Latest 50 issue/PR titles screened. Closed #100/#101 and #91/#92 already cover broad policy/streaming work; additions need an actual gap. Manifest requires Node >=20.
 
-**Repository checks:** `npm run lint && npm run test:unit`. Commands are proposed validation, not checks run on upstream changes in this session. 
+**Repository checks:** `npm run lint && npm run test:unit`. Commands are proposed validation, not checks run on upstream changes in this session.
 
 ## LY01: Correct contributor runtime and commands
 
@@ -91,5 +91,3 @@ Inspected September 5 UTC 2026. Refresh HEAD and issue/PR state before execution
 - [ ] Reproduce the concrete scenario; retire/re-scope if already addressed.
 - [ ] Agree scope, implement one bounded change, and verify using the scenarios and repository checks above.
 - [ ] Prepare a PR with before/after evidence and attribution when submission is authorized.
-
-

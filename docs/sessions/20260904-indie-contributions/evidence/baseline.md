@@ -67,4 +67,3 @@ The target is a useful growing product with an active owner who demonstrably wel
 ## Reproduction
 
 Read-only commands used included `gh api repos/diegosouzapw/OmniRoute`, `gh api users/diegosouzapw`, individual `gh api repos/diegosouzapw/OmniRoute/pulls/NUMBER`, and their `/reviews` endpoints. Earliest PR discovery used the repository pulls endpoint sorted by creation ascending and GitHub issue search bounded before March 15, 2026, followed by individual PR verification. No acceptance rate was inferred from those discovery results.
-

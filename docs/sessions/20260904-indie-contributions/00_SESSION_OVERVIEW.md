@@ -33,4 +33,3 @@ Status: planning documentation. No upstream issues, comments, or PRs have been s
 Primary owner of this program record: phenotype-registry. Upstream maintainers retain ownership of their respective projects. This is not repository absorption.
 
 AgilePlus feature requested: indie-contribution-program-20260904. Actual registration outcome is recorded in the publication document.
-

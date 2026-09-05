@@ -43,4 +43,3 @@ Observed September 4 Pacific / September 5 UTC 2026 through GitHub API. Stars ar
 The sampled claude-octopus feature needed 11 commits, 34 inline comments and repeated CodeRabbit changes requests. [borg-ui 893](https://github.com/karanhudia/borg-ui/pull/893) had 18 inline comments and three review rounds. These are counterexamples to assuming small size means low friction.
 
 Verified profile names: Javis603 uses Javis; pacifio uses Adib Mohsin. Other identities, agency backgrounds, and solo status are unknown. Suggested fit: token-monitor supports cost visibility; macparakeet supports local transcription; DeskcommCRM provides SMB workflow experience. These are strategic judgments, not promises of PR acceptance or future popularity.
-

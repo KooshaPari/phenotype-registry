@@ -7,4 +7,3 @@ Use one coherent problem per PR. Start with a failing regression scenario for be
 Preserve project-specific contribution rules. Octopus's prohibition on submitting test files does not waive local verification: retain verification evidence outside its submitted patch. Discuss meaningful feature/API changes when upstream requires it. Contributor attribution and published credit should remain explicit when maintainers fold work into follow-up PRs.
 
 Resume evidence should describe shipped functionality and measured impact, not projected value or lines changed. Useful outcomes include reliable routing, accurate usage accounting, usable desktop behavior, and SMB workflow correctness.
-

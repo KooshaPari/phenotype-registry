@@ -17,4 +17,3 @@ Each repo has its own queue. At execution time, start with one PR per repo, and 
 Primary first wave: KR, TM. Next wave: OC, LY. Secondary projects follow after evidence of fit. Per-plan dependencies override this suggested scheduling; do not force artificial dependency chains between independent fixes.
 
 Effort estimates in plans measure engineering work, not maintainer response time. They are preliminary until reproduction and environment setup.
-

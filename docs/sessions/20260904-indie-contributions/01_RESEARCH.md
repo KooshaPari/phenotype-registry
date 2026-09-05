@@ -27,4 +27,3 @@ No source retirement, archive, boundary transfer, or fork deletion is involved. 
 ## Selection rationale
 
 Prefer demonstrated substantial outside merges, owner help with integration, useful features we can dogfood, and finite review effort. The first cohort is KeiRouter, token-monitor, Octopus, and Lynkr. Secondary cohort: gpt-load, macparakeet, DeskcommCRM, Atlas, jayjay. CCProxy remains conditional on current responsiveness. Public star totals cannot predict a breakout.
-

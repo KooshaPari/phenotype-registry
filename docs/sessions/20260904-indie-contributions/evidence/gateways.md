@@ -50,4 +50,3 @@ Snapshot: September 4 Pacific / September 5 UTC, 2026. Read-only GitHub research
 [NadirClaw contribution terms](https://github.com/NadirRouter/NadirClaw/blob/main/CONTRIBUTING.md) specify PolyForm Noncommercial and a perpetual commercial relicensing grant. [Clipal rules](https://github.com/PAIArtCom/Clipal/blob/main/CONTRIBUTING.md) and the sampled PR indicate more scrutiny than its star count suggests.
 
 The most promising people are mydisha, bestruirui, and observed Lynkr reviewer veerareddyvishal144. Their public profiles do not establish backgrounds comparable to Diego's agency experience. All suggested future PR topics remain hypotheses until reproduced and checked against the current backlog.
-

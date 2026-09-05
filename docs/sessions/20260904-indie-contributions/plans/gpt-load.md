@@ -10,7 +10,7 @@ Inspected September 5 UTC 2026. Refresh HEAD and issue/PR state before execution
 
 **Overlap and policy:** Targets 2.x; do not reuse 1.x architecture. Open issues and open PR endpoint checked September 5; no open PRs returned at that instant. Runtime reports still require current reproduction.
 
-**Repository checks:** `make test && make check`. Commands are proposed validation, not checks run on upstream changes in this session. 
+**Repository checks:** `make test && make check`. Commands are proposed validation, not checks run on upstream changes in this session.
 
 ## GL01: Recover transient subscription refresh failures
 
@@ -91,5 +91,3 @@ Inspected September 5 UTC 2026. Refresh HEAD and issue/PR state before execution
 - [ ] Reproduce the concrete scenario; retire/re-scope if already addressed.
 - [ ] Agree scope, implement one bounded change, and verify using the scenarios and repository checks above.
 - [ ] Prepare a PR with before/after evidence and attribution when submission is authorized.
-
-

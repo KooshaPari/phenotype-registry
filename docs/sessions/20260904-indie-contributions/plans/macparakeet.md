@@ -91,5 +91,3 @@ Inspected September 5 UTC 2026. Evidence links and paths reflect the planning sn
 - [ ] Exercise the validation scenario; if already passing, identify an actual missing case or retire this proposal.
 - [ ] Agree the bounded scope, implement it with focused regression evidence, and run repository checks above.
 - [ ] Prepare one PR with before/after behavior, tests, and source attribution when upstream submission is authorized.
-
-

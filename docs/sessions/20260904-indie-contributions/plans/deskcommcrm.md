@@ -10,7 +10,7 @@ Inspected September 5 UTC 2026. Refresh HEAD and issue/PR state before execution
 
 **Overlap and policy:** Active triage/reconciliation: inspect #576/#578/#590 and issue ownership before code. Public open PR endpoint returned none at snapshot, not a guarantee of no parallel work. Tests requiring DB use pnpm test:db in isolated services.
 
-**Repository checks:** `pnpm test:unit && pnpm typecheck && pnpm lint`. Commands are proposed validation, not checks run on upstream changes in this session. 
+**Repository checks:** `pnpm test:unit && pnpm typecheck && pnpm lint`. Commands are proposed validation, not checks run on upstream changes in this session.
 
 ## DC01: Follow-up graph collision validation
 
@@ -91,5 +91,3 @@ Inspected September 5 UTC 2026. Refresh HEAD and issue/PR state before execution
 - [ ] Reproduce the concrete scenario; retire/re-scope if already addressed.
 - [ ] Agree scope, implement one bounded change, and verify using the scenarios and repository checks above.
 - [ ] Prepare a PR with before/after evidence and attribution when submission is authorized.
-
-
