@@ -29,6 +29,18 @@
   `127.0.0.1:8080`, and has an unfinished Tracera adapter. No authenticated
   append/query/health dogfood, telemetry delivery, or AgilePlus compliance run
   is evidenced.
+- A focused local compatibility patch is present in the existing dirty
+  `pheno-harness` owner checkout (`pheno/runtime_config.py` and
+  `pheno/trace_store/tracera.py`): canonical `GRAPHEON_*` variables now take
+  precedence while `TRACERA_*` aliases remain supported. The black-box tests
+  `tests/test_runtime_config.py` and `tests/trace_store/test_tracera.py` pass
+  35/35 via `python3 -m pytest -q -c /dev/null ...`. It is uncommitted and not
+  production/dogfood proof.
+- A protected Tracera successor branch based on current remote `main` has local
+  commit `ec47038ad181d2772e83e14419a96955f642612c`: Rust doc syntax fixed and
+  yanked `chacha20`/`spin` lock entries updated. `rustfmt`, `cargo deny`, and
+  locked metadata pass; the crate test remains blocked by four unrelated
+  current-main code/dependency errors. It is unpushed.
 
 ## Gate decision
 
