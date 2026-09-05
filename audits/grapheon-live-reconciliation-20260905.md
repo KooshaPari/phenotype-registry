@@ -47,6 +47,10 @@
   `cargo deny check advisories` pass. Workspace-wide formatting still reports
   unrelated pre-existing drift. The commits are unpushed and not hosted-CI
   proof.
+- Before any push, those two successor commits were preserved in
+  `/tmp/tracera-workos-successor-20260905-0416.bundle`; `git bundle verify`
+  passes and SHA-256 is
+  `9a27c9eceeeef81c8f74da61fa3682e5520d0754a03e12221efca1b3c3da70d0`.
 - AgilePlus MCP `health_check` is healthy (`grpc_core=ok`), but the direct
   `get_feature("grapheon-tracera-absorption")` call returns gRPC `NOT_FOUND`.
   No lifecycle feature, work-package chain, or audit record exists for this
