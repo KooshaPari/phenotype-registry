@@ -3094,7 +3094,7 @@
       "grade_score": null,
       "id": "DSPI-16",
       "last_push": "2026-07-17T09:20:39Z",
-      "note": "ARCHIVE_ONLY after audit; sponsor-approved retirement rename completed 2026-09-03. Preserve the standalone Tracera/Grapheon workspace and all source-bearing refs; no absorption into pheno is proven or performed. Archived remote exposes 21 branches and 15 preservation refs.",
+      "note": "ARCHIVE_ONLY after audit; sponsor-approved retirement rename completed 2026-09-03. Live reconciliation 2026-09-05 records archived main HEAD 8b57aa380dd6d288f451be5ef0e4e766f606c7fb. Preserve the standalone Tracera/Grapheon workspace and all source-bearing refs; no absorption into pheno is proven or performed. Archived remote exposes 21 branches and 15 preservation refs. Dual-cloud second-remote archival remains pending.",
       "path": "KooshaPari/zz-archive-grapheon",
       "remote_branch_count": 21,
       "size_kb": 4096,
