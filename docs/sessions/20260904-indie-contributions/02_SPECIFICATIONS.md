@@ -1,0 +1,26 @@
+# Contribution planning specification
+
+Feature: indie-contribution-program-20260904.
+
+## Requirements
+
+1. Preserve the 50 unique candidate records and the historical reference evidence.
+2. Provide exactly five separately identifiable PR proposals for each selected repository, fifty total.
+3. Each proposal identifies evidence/source paths, a bounded change, tests and binary acceptance criteria, dependencies, effort estimate, and contribution rationale.
+4. Distinguish observed source behavior, unverified hypotheses, maintainer agreement, and completed work.
+5. Avoid duplicate work already merged or actively owned upstream; explicitly gate proposals where overlap remains unresolved.
+6. Keep contribution quality high while minimizing unnecessary scope and review friction.
+7. Publish additive documentation on a dedicated phenotype-registry branch and verify its remote commit.
+
+## Acceptance criteria
+
+- Ten linked plan files exist, with five unique IDs each.
+- Research includes fifty unique repositories within the recorded discovery scope; limitations are explicit.
+- Internal documentation links resolve and git diff has no whitespace errors.
+- Documentation publication is verified through the remote branch SHA.
+- No upstream implementation or contribution submission is claimed.
+
+## Out of scope
+
+Upstream implementation, outreach, submitting fifty PRs, changing project licenses, installing applications into the user's live environment, and predicting future popularity. Source-level proposals are planning artifacts; reproductions and runtime tests happen during implementation.
+
