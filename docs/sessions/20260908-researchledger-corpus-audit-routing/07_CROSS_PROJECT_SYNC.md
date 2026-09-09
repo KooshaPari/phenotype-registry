@@ -3,7 +3,7 @@
 | Field | Value |
 | --- | --- |
 | Primary implementation | ResearchLedger only; its program-audit document remains the corpus WBS authority. |
-| Benchora owner artifact | `audits/ci-exceptions/2026-09-08-pr107-scorecard-repair-plan.md` relative to Benchora root; presently only on a committed, unpublished temporary branch in `/tmp/benchora-107-prep.9U2QCl`. |
+| Benchora owner artifact | Hosted, pinned owner plan: [`audits/ci-exceptions/2026-09-08-pr107-scorecard-repair-plan.md`](https://github.com/KooshaPari/Benchora/blob/65ccb50288e3ddfa0f537aef80c82c1a26553244/audits/ci-exceptions/2026-09-08-pr107-scorecard-repair-plan.md). The temporary/unpublished checkout state is historical. |
 | Benchora remote reference | #107 historical `668ceed`; no claim that the local artifact exists on the remote. |
 | ResearchLedger remote reference | #81 published `5ada3d8`; `fbf2d0d` and active list-support tests are unpublished evidence. |
 | Registry tracker | This session directory routes and links; it is not owner evidence. |
