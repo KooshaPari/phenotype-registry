@@ -2,9 +2,7 @@
 
 ## Boundaries
 
-ResearchLedger owns corpus-repair implementation and its candidate evidence. Benchora owns performance-harness and PR #107 remediation under `BOUNDARY_OWNERS.md` Performance / Benchmark Harness (status: active per `projects/Benchora.json` and `BOUNDARY_OWNERS.md`). phenotype-registry owns only routing links.
-
-**Benchora lane status:** Blocked until ownership records are reconciled. The Benchora lane for PR #107 remediation is not gated by this session's routing packet; exact-head revalidation and scorecard/Sonar/Infisical evidence belong to Benchora.
+ResearchLedger owns corpus-repair implementation and its candidate evidence. Benchora owns performance-harness and PR #107 remediation under `BOUNDARY_OWNERS.md` Performance / Benchmark Harness. phenotype-registry owns only routing links.
 
 ## Split targets
 
