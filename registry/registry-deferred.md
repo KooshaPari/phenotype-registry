@@ -40,3 +40,13 @@ manually following the same pattern as the 8 audited repos.
 - Template: `phenotype-tooling/bin/ABSORPTION_TEMPLATE.md` (5 mandatory headings)
 - Orchestrator: `phenotype-tooling/bin/absorption-justification.{sh,py}`
 - Fleet state: `audits/absorption-justifications/GRADES.json` (8 audits, 100%, L4)
+
+## 2026-09-09 — PhenoSpecs → phenotype-registry migration
+
+PhenoSpecs tombstoned. registry.yaml content migrated to:
+  registry/specs/from-PhenoSpecs/registry.yaml
+
+Consumers referencing KooshaPari/PhenoSpecs/registry.yaml should update
+to phenotype-registry/registry/specs/from-PhenoSpecs/registry.yaml.
+
+Git history preserved on KooshaPari/zz-no-archive-PhenoSpecs (hist branch).
