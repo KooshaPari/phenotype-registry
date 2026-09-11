@@ -1,2 +1,29 @@
 # Gitleaks Configuration
 # See https://github.com/gitleaks/gitleaks#configuration
+#
+# 2026-09-10: prior version was empty (only comments), causing gitleaks to
+# panic on a missing rule regex. Provide a minimal but valid rule set so
+# audit scripts can run; allow common test fixtures (.lock, dist/, .venv,
+# __pycache__/, node_modules/, archives/, absorbed-crates/).
+
+[extend]
+useDefault = true
+
+[allowlist]
+  description = "global allowlist for non-secret build artifacts and intentionally preserved docs/archives"
+  paths = [
+    '''(?i)\.lock$''',
+    '''(?i)/node_modules/''',
+    '''(?i)/__pycache__/''',
+    '''(?i)/\.venv/''',
+    '''(?i)/dist/''',
+    '''(?i)/build/''',
+    '''(?i)\.min\.js$''',
+    # Registry-specific intentionally-preserved locations
+    '''(?i)^/?docs/specs/''',
+    '''(?i)^/?docs/sessions/.*/custody/''',
+    '''(?i)^/?archives/''',
+    '''(?i)^/?audits/''',
+    '''(?i)^/?registry/absorbed-crates/''',
+    '''(?i)^/?registry/absorbed-''',
+  ]
