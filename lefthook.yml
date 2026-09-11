@@ -62,7 +62,7 @@ commit-msg:
     conventional:
       run: |
         # Validate conventional commit format
-        MSG=$(cat "$1")
+        MSG=$(cat "{1}")
         if echo "$MSG" | grep -qE '^(feat|fix|docs|style|refactor|perf|test|build|ci|chore|revert)(\(.+\))?: .{1,100}'; then
           echo "Commit message OK"
         else
