@@ -16,3 +16,18 @@ The local AgilePlus database and generated tracking directory are deliberately n
 Use branch `fix/lefthook-ci-install-20260911`, based on fetched origin/main.
 An isolated Git index and commit-tree preserve shared main, its index, and unrelated changes.
 No new worktree, branch switch, force push, or merge.
+
+## Outcome
+
+Implementation commit: `5e34438c2f27ce040e940e650000f55ba2f79d9c`.
+Branch successfully published and independently verified with git ls-remote.
+PR creation was attempted but GitHub CLI returned HTTP 401. Subsequent gh auth status
+confirmed the active KooshaPari token became invalid during the session. No PR was
+created by this session, and no merge was performed. User must reauthenticate with
+`gh auth login -h github.com` before CLI PR creation can continue.
+
+Compare/create URL:
+https://github.com/KooshaPari/phenotype-registry/compare/main...fix/lefthook-ci-install-20260911
+
+All 11 local tests and scoped validation passed. Hosted Linux CI is not yet verified
+because the branch workflow only triggers on main pushes or pull requests.
