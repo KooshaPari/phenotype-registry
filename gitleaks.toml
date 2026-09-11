@@ -10,20 +10,25 @@
 useDefault = true
 
 [allowlist]
-  description = "global allowlist for non-secret build artifacts and intentionally preserved docs/archives"
+  description = "global allowlist for non-secret build artifacts and intentionally preserved docs/archives. All paths are valid regex (NOT globs); gitleaks v8 requires this. Each path uses '(?:^|/)' so root-level OR nested paths match."
   paths = [
-    '''(?i)\.lock$''',
-    '''(?i)/node_modules/''',
-    '''(?i)/__pycache__/''',
-    '''(?i)/\.venv/''',
-    '''(?i)/dist/''',
-    '''(?i)/build/''',
-    '''(?i)\.min\.js$''',
+    '''(?i)(?:^|/)[^/]*\.lock$''',
+    '''(?i)(?:^|/)node_modules/''',
+    '''(?i)(?:^|/)__pycache__/''',
+    '''(?i)(?:^|/)\.venv/''',
+    '''(?i)(?:^|/)dist/''',
+    '''(?i)(?:^|/)build/''',
+    '''(?i)(?:^|/)[^/]*\.min\.js$''',
     # Registry-specific intentionally-preserved locations
-    '''(?i)^/?docs/specs/''',
-    '''(?i)^/?docs/sessions/.*/custody/''',
-    '''(?i)^/?archives/''',
-    '''(?i)^/?audits/''',
-    '''(?i)^/?registry/absorbed-crates/''',
-    '''(?i)^/?registry/absorbed-''',
+    '''(?i)(?:^|/)docs/specs/''',
+    '''(?i)(?:^|/)docs/sessions/.*/custody/''',
+    '''(?i)(?:^|/)archives/''',
+    '''(?i)(?:^|/)audits/''',
+    '''(?i)(?:^|/)registry/absorbed-crates/''',
+    '''(?i)(?:^|/)registry/absorbed-''',
+    # Test fixtures (deliberately fake test-* keys/tokens/secrets)
+    '''(?i)(?:^|/)(?:[^/]*/)?pytest/fixtures/''',
+    '''(?i)(?:^|/)(?:[^/]*/)?tests/fixtures/''',
+    '''(?i)(?:^|/)(?:[^/]*/)?testdata/''',
+    '''(?i)(?:^|/)(?:[^/]*/)?test_data/''',
   ]
