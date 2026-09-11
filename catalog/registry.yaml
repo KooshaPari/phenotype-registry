@@ -1316,7 +1316,7 @@ substrates:
   tier: phenotype-framework
   architecture: layered
   archetype: service
-  language: python
+  language: rust
   role: agent-presence
   boundary: null
   intent: null
