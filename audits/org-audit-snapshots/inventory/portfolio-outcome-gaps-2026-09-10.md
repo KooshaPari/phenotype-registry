@@ -159,6 +159,80 @@ state" is the same kind of index corruption and may also resolve to a
 much smaller real diff if the same index-restore is applied — but
 Stashly was **not touched** in this batch per scope-preservation rules.
 
+### Post-execution updates — 2026-09-10 (batch closed by operator "do all / finish work")
+
+#### WP-ALL-1: Coverage measurement (≥85% floor per portfolio-assurance-v2)
+
+Measured with `cargo-llvm-cov 0.6.18` (llvm-tools-aarch64-apple-darwin,
+`rustc 1.99.0-nightly`), command `cargo llvm-cov --all-targets --all-features --summary-only`,
+run 2026-09-10 per repo:
+
+| Repo | Lines | Covered | **Line %** | Regions % | ≥85% floor | Verdict |
+|---|---|---|---|---|---|---|
+| Sidekick | 332 | 221 | **66.57%** | 66.16% | **NO** | Gap **−18.4 pts** |
+| Stashly | 1062 | 890 | **83.80%** | 86.67% | **NO** | Gap −1.2 pts |
+| Tasken | 6120 | 5141 | **84.00%** | 84.97% | **NO** | Gap −1.0 pt |
+
+All three are bound to (or proposed for) a non-terminal outcome, so all three were
+measured. **None satisfy the 85% line-coverage floor.** Sidekick is the outlier: its
+aggregate is dragged down by `sidekick-obs-core/src/bin/healthcheck.rs` at **0%**
+(4 functions, 25 lines, never exercised) and `sidekick-obs-core/src/correlation.rs`
+at **~73%** (5 of 15 functions missed), while `sidekick-messaging/src/lib.rs` is
+100%. Sitek `healthcheck` bin and `correlation` are the two highest-leverage targets
+for closing the Sidekick gap.
+
+Stashly/Tasken are marginally under the floor (83.8% / 84.0%); the strongest
+shortfalls are `adapters/memory.rs` still-high-function-miss (Stashly) and
+`adapters/secondary/memory.rs` + `application/queries.rs` 0% (Tasken).
+
+WP-ALL-1 status: **DONE (measurement)**. Coverage-increase work is a new bounded
+work-package gated on disposition binding.
+
+#### WP-TK-2: Case-collision root cause — now precise
+
+Two distinct defects share the same checkout signature (`D` phantom entries /
+"deletion" state). Both were diagnosed to ground truth 2026-09-10:
+
+1. **PR-template case collision (both repos).** Each tracks BOTH
+   `.github/PULL_REQUEST_TEMPLATE.md` **and** `.github/pull_request_template.md` —
+   two paths differing only by case, impossible to both materialize on macOS APFS
+   (case-insensitive). Commit/BLOB facts:
+   - Tasken: both templates are the **same blob** `26fcee7…` (byte-identical).
+     Duplicate is safe to remove; only one template exists in content.
+   - Stashly: the two are **different blobs** (`26fcee7…` uppercase vs
+     `7e3bcec…` lowercase — two distinct PR descriptions). Removing either loses
+     distinct content → genuinely operator-bound (pick one or rename lower to
+     e.g. `PR_TEMPLATE_alt.md`).
+
+2. **`.pre-commit-config.yaml` malformed symlink (both repos).** The tracked entry
+   is mode `120000` (symlink) whose blob `0cece7a…` is the **full 2.5 KB YAML body**
+   (a git-commit that stored the file as a symlink but wrote the content into the
+   link target). On macOS, git tries to create a symlink whose target is that whole
+   YAML string → APFS errors *"File name too long"* → file silently dropped →
+   phantom `D`. Clean checkout is impossible while HEAD stores it as a malformed
+   symlink. Fix requires an upstream commit rewriting that entry to mode `100644`
+   (regular file) with the same blob content.
+
+Because both defects live in the tracked tree that is already pushed to
+`origin/main`, repairing them is a public-repo write (history-touching / content
+change to PR templates + pre-commit file mode). Per safety rails and
+EXECUTION-CORRECTION's "no new repository-write authority", each needs an explicit
+operator go before the fix commit is pushed. Workdir recovery (`.pre-commit-config.yaml`
+restored as a regular file via `git show > file`) was applied locally, and the phantom
+`D` entries cleared without touching the index of the live repo.
+
+#### Bounded-WP status board (authoritative, 2026-09-10)
+
+| WP | Repo | Status |
+|---|---|---|
+| WP-SK-1 | Sidekick `Cargo.lock` refresh | ✅ DONE + pushed `4fac11f..3d41df7` |
+| WP-TK-1 | Tasken OTel `field::Empty` fix | ✅ DONE + pushed `0d6d463..a1315aa` |
+| WP-DOC-1 | Registry outcome-gap snapshot | ✅ DONE + pushed `c18d3da..1a1040e5` |
+| WP-ALL-1 | Coverage measurement | ✅ DONE — no repo meets 85% (see table) |
+| WP-SK-2 / WP-ST-1 / WP-TK-3 | Disposition reconciliation | 🔒 decision-bound (operator binds retain/absorb/archive) |
+| WP-TK-2 | Case-collision + malformed symlink repair | 🔒 decision-bound (public-repo content/mode write) |
+| WP-ALL-2 | Coverage above 85% floor | 🔒 gated on WP-ALL-1 + disposition |
+
 ### Sidekick state confirmation
 
 Sidekick `main` remains at `3d41df7` (`Cargo.lock` refresh), synced with
