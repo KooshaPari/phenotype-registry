@@ -240,3 +240,50 @@ Sidekick `main` remains at `3d41df7` (`Cargo.lock` refresh), synced with
 `fix/refresh-cargo-lock-20260910` was deleted post-merge in the prior
 step.
 
+### WP-TK-2 / WP-ST-2 prep commits — local-only, push-pending (2026-09-10 ~23:46 PT)
+
+Per the operator "proc" iteration on the closed batch, the bounded fixes
+diagnosed in the WP-TK-2 / WP-ST-2 section were prepared as **isolated local
+branches** (no push, no merge to `main`). This matches the bounded-PR pattern
+used earlier for `Sidekick/Cargo.lock` and `Tasken/src/infrastructure/otel.rs`:
+commit goes through the operator's hands before any remote action.
+
+| Repo | Branch | HEAD | Parent (main) | Files | Net content delta |
+|---|---|---|---|---|---|
+| Tasken | `fix/cleanup-checks-20260910` | `4155da6` | `a1315aa` (origin/main) | 2 | `D .github/pull_request_template.md` (same blob as uppercase, no content loss); mode `120000 → 100644` on `.pre-commit-config.yaml` (same blob content) |
+| Stashly | `fix/cleanup-checks-20260910` | `c89b9b4` | `2a3e3d6` (origin/main) | 1 | mode `120000 → 100644` on `.pre-commit-config.yaml` (same blob content). PR-template case collision NOT touched (different blobs, operator-bound). |
+
+#### Validation
+
+- Both `.pre-commit-config.yaml` files now materialize as 2,571-byte regular UTF-8
+  text files (verified via `ls -la` and `file(1)`).
+- Both YAML bodies parse cleanly (`yaml.safe_load` succeeds).
+- `pre-commit` is installed locally at `/opt/homebrew/bin/pre-commit`; the YAML
+  config is syntactically valid for it.
+- No behavioral change vs prior symlink blob — the YAML ruleset is identical.
+
+#### Push gating
+
+Both branches are local-only, exactly `ahead 1` vs `main`, linear (no divergence).
+Push authorization remains operator-bound per EXECUTION-CORRECTION:
+
+| Repo | Push command | Required because |
+|---|---|---|
+| Tasken | `git -C Tasken push -u origin fix/cleanup-checks-20260910` (then PR → merge to main) | removes a tracked file on the public repo |
+| Stashly | `git -C Stashly push -u origin fix/cleanup-checks-20260910` (then PR → merge to main) | changes a tracked file's mode on the public repo |
+| Tasken + Stashly pre-existing workdir state | none | left untouched per scope preservation |
+
+#### Bounded-WP status board update
+
+| WP | Repo | Status |
+|---|---|---|
+| WP-SK-1 | Sidekick `Cargo.lock` refresh | ✅ DONE + pushed `4fac11f..3d41df7` |
+| WP-TK-1 | Tasken OTel `field::Empty` fix | ✅ DONE + pushed `0d6d463..a1315aa` |
+| WP-DOC-1 | Registry outcome-gap snapshot | ✅ DONE + pushed `c18d3da..1a1040e5` |
+| WP-ALL-1 | Coverage measurement | ✅ DONE — no repo meets 85% |
+| WP-TK-2-prep | Tasken PR-template dedupe + symlink fix | ✅ DONE (local commit `4155da6`, push-pending) |
+| WP-ST-2-prep | Stashly symlink fix (PR-template collision deferred) | ✅ DONE (local commit `c89b9b4`, push-pending) |
+| WP-SK-2 / WP-ST-1 / WP-TK-3 | Disposition reconciliation | 🔒 decision-bound (operator binds retain/absorb/archive) |
+| WP-ST-3 | Stashly PR-template collision | 🔒 operator-bound (different blobs) |
+| WP-ALL-2 | Coverage above 85% floor | 🔒 gated on WP-ALL-1 + disposition |
+
