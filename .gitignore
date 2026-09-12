@@ -79,3 +79,13 @@ _test_sc.json
 _wfs.json 
 _logs_* 
 _log_*.txt 
+
+# Forge session scratch artifacts
+registry/absorbed-crates/
+ecosystem-consolidation/
+audits/wtree-archives-*/
+audits/wtree-sprawl-*.md
+.agileplus/
+docs/sessions/
+.grade-reports/
+grade.sh
