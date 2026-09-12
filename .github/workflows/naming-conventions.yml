@@ -5,18 +5,18 @@
 name: naming-conventions
 on:
   schedule:
-    - cron: '0 6 * * 1'   # Monday 06:00 UTC
+    - cron: "0 6 * * 1" # Monday 06:00 UTC
   workflow_dispatch:
   pull_request:
     paths:
-      - 'catalog/registry.yaml'
-      - 'registry/disposition-index.json'
+      - "catalog/registry.yaml"
+      - "registry/disposition-index.json"
 
 jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
       - name: enforce pheno-* naming conventions
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
