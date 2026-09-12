@@ -2,7 +2,7 @@
 
 ## Functional requirements
 
-1. Route each non-ResearchLedger finding to an owner-repository artifact plus a registry link.
+1. Route each non-ResearchLedger finding with a `VERIFIED` destination to an owner-repository artifact plus a registry link. `HISTORICAL` and `UNKNOWN` entries remain unresolved and must not be auto-routed; `MISSING` means unlinked in the inspected corpus, not demonstrated absent.
 2. Keep the full corpus WBS authoritative in ResearchLedger; registry content may only cover routing, ownership, dependencies, and evidence limits.
 3. Distinguish local committed/unpublished artifacts from remote/published files.
 4. Preserve catalog records without schema or disposition changes.
