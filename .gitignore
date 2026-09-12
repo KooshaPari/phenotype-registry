@@ -79,3 +79,21 @@ _test_sc.json
 _wfs.json 
 _logs_* 
 _log_*.txt 
+
+# Forge session scratch artifacts
+registry/absorbed-crates/**/*.lock
+registry/absorbed-crates/**/target/
+registry/absorbed-crates/**/node_modules/
+registry/absorbed-crates/phenotype-omlx.worktrees/
+registry/absorbed-crates/**/*.db
+registry/absorbed-crates/ResilienceKit/
+registry/absorbed-crates/clap-ext/
+registry/absorbed-crates/phenotype-hub/
+registry/absorbed-crates/phenotype-omlx/
+ecosystem-consolidation/
+audits/wtree-archives-*/
+audits/wtree-sprawl-*.md
+.agileplus/
+docs/sessions/
+.grade-reports/
+grade.sh

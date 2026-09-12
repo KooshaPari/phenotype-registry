@@ -16,6 +16,8 @@ APPROVED_PATTERNS=(
   '^phenotype-[a-z][a-z0-9-]*$'       # phenotype-full: phenotype-router, phenotype-org-audits
 )
 EXEMPT_PREFIX='^zz-archive-'
+# Pre-existing repos that predate the naming policy
+EXEMPT_NAMES='^(OmniRoute|forgecode|ghostty|HeliosLab|handoff|DataKit|Apisync|brand-system|bresearch|bomniroute-audit|bomniroute-prs|cliproxyapi-plusplus|cockpit-source|colima-preservation|contribution-opportunity-audit|docs|external-system|forge-main|forge-pr|forge-release|Grapheon|hwLedger|hfscope|helios-cli|asset-engine|audit-evidence|build|CivicSurvival-public|argis-extensions|INA_|jcode-patch)$'
 FAIL_FAST="${FAIL_FAST:-false}"
 
 fail_count=0
@@ -27,6 +29,11 @@ while IFS=$'\t' read -r name archived; do
 
   # Skip exempt (archived repos under zz-archive-*)
   if [[ "$name" =~ $EXEMPT_PREFIX ]]; then
+    continue
+  fi
+
+  # Skip pre-existing repos that predate the naming policy
+  if [[ "$name" =~ $EXEMPT_NAMES ]]; then
     continue
   fi
 
