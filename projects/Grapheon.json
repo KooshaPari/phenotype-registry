@@ -22,7 +22,7 @@
   "proposed_target": null,
   "absorbed_into": null,
   "recovery_ref": "airlock-recovery/wip/2026-07-15-recovered-545e737-main",
-  "recovery_note": "Current private default branch is an Airlock recovery branch preserving the Tracera workspace and historical Grapheon crates.",
+  "recovery_note": "Historical recovery reference from Airlock; the remote default branch is main (unchanged). The recovery branch preserves the Tracera workspace and historical Grapheon crates.",
   "conflict_note": "Stale catalog/disposition rows proposed ABSORB into pheno (crates/grapheon). The current workspace is Tracera (three active members); grapheon-* crates are not workspace members and pheno currently exposes agileplus-graph, a distinct graph layer. No safe source-to-target mapping is proven.",
   "rationale": "Private, archived MIT repository with 80,534 tracked paths and a 417 MiB .git object store at the 2026-09-05 audit. The source is materially larger than a single crate and its current workspace package metadata points to Tracera, so absorption into pheno would destroy boundary and provenance clarity; the 80,510/722 MB figures in the original 2026-07-27 rationale are historical.",
   "audit_date": "2026-09-05",

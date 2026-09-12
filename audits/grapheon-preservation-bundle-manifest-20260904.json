@@ -14,7 +14,7 @@
   "isolated_restore_fetch": "PASS",
   "isolated_restore_fsck": "PASS",
   "isolated_restore_head": "8b57aa380dd6d288f451be5ef0e4e766f606c7fb",
-  "r2_upload": "NOT_EXECUTED_IMMUTABILITY_AND_MULTIPART_ROUTE_PENDING",
+  "r2_upload": "PENDING_IMMUTABLE_KEY: preservation/zz-archive-grapheon/828023ca7f034b796a9e4867ae008fa0c1f5443162c78e256746402a082185f0.bundle",
   "revalidated_at": "2026-09-05T05:28:00Z",
   "bundle_hash_revalidation": "PASS",
   "bundle_verify_revalidation": "PASS",
