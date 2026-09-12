@@ -65,7 +65,7 @@ function has_allow(line,    i, token, list, arr, n) {
 # R3 allowlist via regex. The default regex (configurable via
 # HAPPY_PATH_BIG_CONSTANT_ALLOW_REGEX) covers well-known root-cause constants
 # such as the canonical WSM3D VoxelScaleMultiplier=8.0 fix. Override per-repo.
-# Note: gawk's `(?i)` inline flag is silently dropped when a regex is passed
+# Note: the (?i) inline flag in gawk is silently dropped when a regex is passed
 # via a string variable, so we strip the prefix and lower-case both the
 # regex and the input line. Callers already pass `lc` (lowercased body).
 # This keeps the default `(?i)voxelscalemultiplier` and any case-insensitive
@@ -73,7 +73,7 @@ function has_allow(line,    i, token, list, arr, n) {
 function matches_allow_regex(line,    re) {
   re = big_allow_re
   if (re == "") return 0
-  # Strip any leading inline flags (e.g. "(?i)") so they don't end up in
+  # Strip any leading inline flags (e.g. (?i)) so they do not end up in
   # the matched text. Inline flags accepted: (?i) for case-insensitive.
   sub(/^\(\?[imx]+\)/, "", re)
   re = tolower(re)

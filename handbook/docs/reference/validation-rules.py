@@ -1,6 +1,6 @@
 # Validation rules reference
-
-Reference implementation absorbed from the Guardis workstream.
+#
+# Reference implementation absorbed from the Guardis workstream.
 
 """Composable validation helpers absorbed from the Guardis workstream."""
 

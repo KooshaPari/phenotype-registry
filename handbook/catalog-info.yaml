@@ -1,14 +1,14 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: phenohandbook
-  title: PhenoHandbook
-  description: Patterns, anti-patterns, guidelines, and best practices for the Phenotype ecosystem
+  name: phenohandbook-absorbed
+  title: PhenoHandbook (absorbed)
+  description: Patterns, anti-patterns, guidelines, and best practices for the Phenotype ecosystem (absorbed from KooshaPari/PhenoHandbook)
   annotations:
-    github.com/project-slug: KooshaPari/PhenoHandbook
+    github.com/project-slug: KooshaPari/phenotype-registry
     backstage.io/techdocs-ref: dir:./
     phenotype.dev/registry-type: handbook
-    phenotype.dev/documentation: mkdocs
+    phenotype.dev/documentation: vitepress
   tags:
     - patterns
     - guidelines
