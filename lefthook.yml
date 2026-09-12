@@ -6,12 +6,12 @@ pre-commit:
   parallel: true
   commands:
     secret-guard:
-      run: python scripts/secret-guard.py --staged
+      run: python3 scripts/secret-guard.py --staged
       skip:
         - merge
         - rebase
     workflow-action-guard:
-      run: python scripts/workflow-action-guard.py
+      run: python3 scripts/workflow-action-guard.py
       skip:
         - merge
         - rebase
