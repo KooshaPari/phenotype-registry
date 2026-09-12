@@ -11,7 +11,6 @@ on:
     branches: [main, master]
     paths:
       - ".github/workflows/infisical.yml"
-  pull_request:
 
 jobs:
   sync-secrets:
@@ -27,11 +26,22 @@ jobs:
           curl -1sLf "https://dl.cloudsmith.io/public/infisical/infisical-cli/setup.deb.sh" | sudo -E bash
           sudo apt-get install -y infisical
 
+      - name: Resolve environment
+        id: resolve-env
+        run: |
+          if [ "${{ github.ref }}" = "refs/heads/main" ]; then
+            echo "env=prod" >> "$GITHUB_OUTPUT"
+          elif [ "${{ github.ref }}" = "refs/heads/staging" ]; then
+            echo "env=staging" >> "$GITHUB_OUTPUT"
+          else
+            echo "env=dev" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Pull secrets to .env
         env:
           INFISICAL_TOKEN: ${{ secrets.INFISICAL_TOKEN }}
           INFISICAL_PROJECT_ID: ${{ vars.INFISICAL_PROJECT_ID || secrets.INFISICAL_PROJECT_ID }}
-          INFISICAL_ENV: ${{ vars.INFISICAL_ENV || github.ref == 'refs/heads/main' && 'prod' || github.ref == 'refs/heads/staging' && 'staging' || 'dev' }}
+          INFISICAL_ENV: ${{ vars.INFISICAL_ENV || steps.resolve-env.outputs.env }}
         run: |
           # Validate required secrets are present
           if [ -z "$INFISICAL_TOKEN" ]; then
@@ -52,7 +62,7 @@ jobs:
 
       - name: Upload secrets as artifact (debug only, never published)
         if: failure()
-        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
         with:
           name: infisical-debug
           path: .env

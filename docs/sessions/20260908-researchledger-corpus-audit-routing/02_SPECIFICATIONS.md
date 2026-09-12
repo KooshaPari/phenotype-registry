@@ -9,7 +9,7 @@
 
 ## Acceptance criteria
 
-- [ ] `07_CROSS_PROJECT_SYNC.md` names the repo-relative Benchora artifact path and its temporary/unpublished status.
+- [ ] `07_CROSS_PROJECT_SYNC.md` names the repo-relative Benchora artifact path and its hosted/pinned status.
 - [ ] No registry catalog, schema, code, or owner-repository source change is part of this session.
 - [ ] ResearchLedger and Benchora are separate lanes with no cross-project pass inference.
 - [ ] A later implementation PR links a real AgilePlus spec ID or remains governance-blocked.
