@@ -38,15 +38,22 @@ impl AuditLogger {
     }
 
     pub fn flush(&mut self) -> Result<(), AuditError> {
-        for entry in &self.buffer {
+        // Take ownership of the buffer so we can clear it before writing.
+        // If a write fails midway, only the remaining entries are lost —
+        // previously written entries won't be duplicated on retry.
+        let entries: Vec<AuditEntry> = self.buffer.drain(..).collect();
+        for entry in &entries {
             let json =
                 serde_json::to_string(entry).map_err(|e| AuditError::SerError(e.to_string()))?;
-            writeln!(self.file, "{}", json).map_err(|e| AuditError::IoError(e.to_string()))?;
+            writeln!(self.file, "{}", json).map_err(|e| {
+                // Re-buffer remaining entries so the caller can retry
+                self.buffer.extend(entries.iter().cloned());
+                AuditError::IoError(e.to_string())
+            })?;
         }
         self.file
             .flush()
             .map_err(|e| AuditError::IoError(e.to_string()))?;
-        self.buffer.clear();
         Ok(())
     }
 

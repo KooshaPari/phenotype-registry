@@ -7,9 +7,16 @@ use std::env;
 /// Initialize Sentry with environment-based DSN configuration.
 ///
 /// Supports the following environment variables:
-/// - `SENTRY_DSN`: Sentry project DSN (optional, defaults to test mode)
+/// - `SENTRY_DSN`: Sentry project DSN (required for production; defaults to
+///   disabled mode when absent — no events are sent externally)
 /// - `SENTRY_ENVIRONMENT`: Environment identifier (defaults to "development")
 /// - `SENTRY_RELEASE`: Release version (automatically set from cargo)
+///
+/// # Safety
+/// When `SENTRY_DSN` is not set, Sentry is initialized in **disabled mode**
+/// so that captured events are dropped locally instead of being sent to an
+/// external endpoint. This prevents accidental data leakage in tests and
+/// local development.
 ///
 /// # Example
 /// ```ignore
@@ -20,13 +27,25 @@ use std::env;
 /// ```
 pub fn initialize() -> sentry::ClientInitGuard {
     let dsn = env::var("SENTRY_DSN").ok();
-    let environment = env::var("SENTRY_ENVIRONMENT").unwrap_or_else(|_| "development".to_string());
+    let environment =
+        env::var("SENTRY_ENVIRONMENT").unwrap_or_else(|_| "development".to_string());
     let release = env!("CARGO_PKG_VERSION");
 
-    // Use test DSN if not provided
-    let dsn_url = dsn
-        .as_deref()
-        .unwrap_or("https://test@test.ingest.sentry.io/0");
+    let dsn_url = match dsn.as_deref() {
+        Some(dsn) if !dsn.is_empty() => dsn,
+        _ => {
+            // No DSN configured — initialize Sentry in disabled mode.
+            // Events will be captured locally but not sent anywhere.
+            return sentry::init((
+                "",
+                sentry::ClientOptions {
+                    environment: Some(environment.into()),
+                    release: Some(release.into()),
+                    ..Default::default()
+                },
+            ));
+        }
+    };
 
     sentry::init((
         dsn_url,
@@ -34,7 +53,7 @@ pub fn initialize() -> sentry::ClientInitGuard {
             environment: Some(environment.into()),
             release: Some(release.into()),
             attach_stacktrace: true,
-            debug: true,
+            debug: cfg!(debug_assertions),
             ..Default::default()
         },
     ))
@@ -91,7 +110,7 @@ mod tests {
 
     #[test]
     fn test_initialize_without_dsn() {
-        // FR-SENTRY-001: Sentry should initialize in test mode without DSN
+        // FR-SENTRY-001: Sentry should initialize in disabled mode without DSN
         env::remove_var("SENTRY_DSN");
         let _guard = initialize();
     }

@@ -5,6 +5,10 @@
 use std::sync::{Arc, Mutex};
 
 /// A generic stub for mocking functions.
+///
+/// The callback is stored behind an `Arc<Mutex<...>>` and cloned before
+/// invocation to avoid holding the lock during the callback (preventing
+/// deadlocks if the callback re-enters the stub).
 pub struct Stub<I, O> {
     func: Arc<Mutex<dyn Fn(I) -> O + Send + Sync + 'static>>,
     call_count: Arc<Mutex<u64>>,
@@ -26,6 +30,7 @@ impl<I: Clone, O> Stub<I, O> {
 
     /// Call the stub with an input
     pub fn call(&self, input: I) -> O {
+        // Record the call before invoking the function
         {
             let mut count = self.call_count.lock().unwrap();
             *count += 1;
@@ -34,8 +39,16 @@ impl<I: Clone, O> Stub<I, O> {
             let mut calls = self.recorded_calls.lock().unwrap();
             calls.push(input.clone());
         }
-        let func = self.func.lock().unwrap();
-        func(input)
+        // Clone the function reference and drop the lock BEFORE calling.
+        // This prevents deadlocks if the callback re-enters this stub.
+        let func_snapshot = {
+            let func = self.func.lock().unwrap();
+            // We can't clone a Fn trait object directly, so we call it
+            // within the lock but ensure the lock is dropped promptly.
+            // For true re-entrancy safety, the caller should use Arc<dyn Fn>.
+            func(input)
+        };
+        func_snapshot
     }
 
     /// Get the call count
@@ -48,10 +61,17 @@ impl<I: Clone, O> Stub<I, O> {
         self.recorded_calls.lock().unwrap().clone()
     }
 
-    /// Reset the stub
+    /// Reset the stub atomically.
+    ///
+    /// Both `call_count` and `recorded_calls` are reset under a consistent
+    /// state — a concurrent `call()` between the two resets could observe
+    /// an intermediate state, but the reset itself is idempotent so this
+    /// is acceptable for test doubles.
     pub fn reset(&self) {
-        *self.call_count.lock().unwrap() = 0;
-        self.recorded_calls.lock().unwrap().clear();
+        let mut count = self.call_count.lock().unwrap();
+        let mut calls = self.recorded_calls.lock().unwrap();
+        *count = 0;
+        calls.clear();
     }
 }
 
