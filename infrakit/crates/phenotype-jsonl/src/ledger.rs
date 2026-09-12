@@ -5,6 +5,41 @@ use sha2::{Digest, Sha256};
 use std::collections::HashMap;
 use std::path::Path;
 
+/// Errors that can occur during ledger operations
+#[derive(Debug, Clone)]
+pub enum LedgerError {
+    /// Failed to read the ledger file
+    ReadError(String),
+    /// Failed to write to the ledger file
+    WriteError(String),
+    /// A ledger line could not be parsed as JSON
+    ParseError { line: usize, detail: String },
+    /// The prev_hash chain is broken at the given line
+    HashChainBroken { line: usize },
+    /// The stored rolling_hash does not match the computed hash
+    RollingHashMismatch { line: usize },
+}
+
+impl std::fmt::Display for LedgerError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match self {
+            Self::ReadError(msg) => write!(f, "Failed to read ledger: {msg}"),
+            Self::WriteError(msg) => write!(f, "Failed to write ledger: {msg}"),
+            Self::ParseError { line, detail } => {
+                write!(f, "Parse error at line {line}: {detail}")
+            }
+            Self::HashChainBroken { line } => {
+                write!(f, "Hash chain broken at line {line}")
+            }
+            Self::RollingHashMismatch { line } => {
+                write!(f, "Rolling hash mismatch at line {line}")
+            }
+        }
+    }
+}
+
+impl std::error::Error for LedgerError {}
+
 /// Verifies the integrity of the action ledger using rolling hashes
 #[derive(Debug, Clone)]
 pub struct LedgerVerifier {
@@ -16,6 +51,24 @@ pub struct IntegrityReport {
     pub valid: bool,
     pub count: usize,
     pub errors: Vec<String>,
+}
+
+/// Strip the `rolling_hash` field from a JSON string for hashing.
+/// This ensures the hash is computed over the canonical representation
+/// (without the rolling_hash), matching what `record_artifact` hashes.
+fn strip_rolling_hash(line: &str) -> String {
+    // Find and remove the ,"rolling_hash":"..." suffix
+    if let Some(pos) = line.rfind(",\"rolling_hash\":\"") {
+        let prefix = &line[..pos];
+        // Find the closing } after the rolling_hash value
+        if let Some(end) = line[pos..].find('}') {
+            format!("{}{}", prefix, &line[pos + end..])
+        } else {
+            line.to_string()
+        }
+    } else {
+        line.to_string()
+    }
 }
 
 impl LedgerVerifier {
@@ -36,7 +89,17 @@ impl LedgerVerifier {
             return report;
         }
 
-        let content = std::fs::read_to_string(&self.ledger_path).unwrap_or_default();
+        let content = match std::fs::read_to_string(&self.ledger_path) {
+            Ok(c) => c,
+            Err(e) => {
+                report.valid = false;
+                report
+                    .errors
+                    .push(format!("Failed to read ledger: {e}"));
+                return report;
+            }
+        };
+
         let mut last_hash = String::new();
 
         for (i, line) in content.lines().enumerate() {
@@ -62,24 +125,41 @@ impl LedgerVerifier {
 
                 if prev_hash != last_hash {
                     report.valid = false;
-                    report
-                        .errors
-                        .push(format!("Hash mismatch at line {}", i + 1));
+                    report.errors.push(format!(
+                        "Hash chain broken at line {}: expected prev_hash='{}', got '{}'",
+                        i + 1,
+                        last_hash,
+                        prev_hash
+                    ));
                 }
 
-                // Compute rolling hash of current entry
-                // Note: Simplified - in production would strip rolling_hash field
+                // Hash the canonical form (without rolling_hash) to match record_artifact
+                let canonical = strip_rolling_hash(line);
                 let mut hasher = Sha256::new();
-                hasher.update(line.as_bytes());
-                let current_hash = format!("{:x}", hasher.finalize());
+                hasher.update(canonical.as_bytes());
+                let computed_hash = format!("{:x}", hasher.finalize());
+
+                // Verify the stored rolling_hash matches what we computed
+                if let Some(stored_hash) = entry.get("rolling_hash").and_then(|v| v.as_str()) {
+                    if stored_hash != computed_hash {
+                        report.valid = false;
+                        report.errors.push(format!(
+                            "Rolling hash mismatch at line {}: stored='{}', computed='{}'",
+                            i + 1,
+                            stored_hash,
+                            computed_hash
+                        ));
+                    }
+                }
+
                 report.count += 1;
-                current_hash
+                computed_hash
             }
             Err(e) => {
                 report.valid = false;
                 report
                     .errors
-                    .push(format!("Error at line {}: {}", i + 1, e));
+                    .push(format!("Parse error at line {}: {}", i + 1, e));
                 last_hash
             }
         }
@@ -122,12 +202,18 @@ impl IncidentLedger {
         }
     }
 
+    /// Record an artifact entry and return the rolling hash.
+    ///
+    /// # Errors
+    /// Returns `LedgerError::WriteError` if the file cannot be created or
+    /// written to. The caller MUST NOT use the returned hash on error, as
+    /// the entry was not persisted and the chain would be corrupted.
     pub fn record_artifact(
         &mut self,
         run_id: &str,
         action: &str,
         payload: &HashMap<String, serde_json::Value>,
-    ) -> String {
+    ) -> Result<String, LedgerError> {
         let prev_hash = self.last_hash.clone();
 
         let entry = serde_json::json!({
@@ -137,13 +223,16 @@ impl IncidentLedger {
             "prev_hash": prev_hash,
         });
 
-        let content = serde_json::to_string(&entry).unwrap_or_default();
+        let content = serde_json::to_string(&entry)
+            .map_err(|e| LedgerError::WriteError(format!("Serialization failed: {e}")))?;
+
+        // Hash the canonical form (without rolling_hash) — this is what
+        // LedgerVerifier::process_ledger_line also hashes.
         let mut hasher = Sha256::new();
         hasher.update(content.as_bytes());
         let current_hash = format!("{:x}", hasher.finalize());
-        self.last_hash = current_hash.clone();
 
-        // Write rolling_hash last
+        // Append rolling_hash as a separate field in the JSON line
         let line = format!(
             "{},\"rolling_hash\":\"{}\"}}\n",
             content.trim_end_matches('}'),
@@ -151,16 +240,21 @@ impl IncidentLedger {
         );
 
         if let Some(parent) = self.ledger_path.parent() {
-            let _ = std::fs::create_dir_all(parent);
+            std::fs::create_dir_all(parent)
+                .map_err(|e| LedgerError::WriteError(format!("Failed to create directory: {e}")))?;
         }
 
-        let _ = std::fs::OpenOptions::new()
+        std::fs::OpenOptions::new()
             .create(true)
             .append(true)
             .open(&self.ledger_path)
-            .and_then(|mut f| std::io::Write::write_all(&mut f, line.as_bytes()));
+            .and_then(|mut f| std::io::Write::write_all(&mut f, line.as_bytes()))
+            .map_err(|e| LedgerError::WriteError(format!("Failed to append to ledger: {e}"))?;
 
-        current_hash
+        // Only update the chain hash AFTER successful write
+        self.last_hash = current_hash.clone();
+
+        Ok(current_hash)
     }
 
     pub fn get_run_artifacts(&self, run_id: &str) -> Vec<serde_json::Value> {
