@@ -42,44 +42,45 @@ jobs:
           cargo build --release --bin aggregator
 
       - name: Generate audit snapshot
-        env:
-          AUDIT_DATE: ${{ github.event.schedule || 'manual' }}
         run: |
-          SNAPSHOT_DIR="audits/$(date +%Y-%m-%d)"
-          mkdir -p "$SNAPSHOT_DIR"
-
-          # Run aggregator against all phenotype repos
-          ./phenotype-tooling/target/release/aggregator \
-            --repos-manifest ../repos-manifest.txt \
-            --output-dir "$SNAPSHOT_DIR" \
-            --schema audit-schema.toml \
+          cd audits/org-audits
+          # The aggregator scans the current directory for .md audit reports
+          # and generates INDEX.md + SYSTEMIC_ISSUES.md
+          "$GITHUB_WORKSPACE/phenotype-tooling/target/release/aggregator" \
             || echo "Aggregator run completed with warnings"
 
           # Validate outputs
-          if [ ! -f "$SNAPSHOT_DIR/INDEX.md" ]; then
+          if [ ! -f "INDEX.md" ]; then
             echo "ERROR: INDEX.md not generated" >&2
             exit 1
           fi
+
+      - name: Set audit date and branch name
+        id: audit-meta
+        run: |
+          AUDIT_DATE="$(date +%Y-%m-%d)"
+          echo "date=${AUDIT_DATE}" >> "$GITHUB_OUTPUT"
+          echo "branch=audit/quarterly-${AUDIT_DATE}" >> "$GITHUB_OUTPUT"
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@5f6978faf089d4d20b00c7766989d076bb2fc7f1
         with:
           commit-message: |
-            audit(quarterly): snapshot as of $(date +%Y-%m-%d)
+            audit(quarterly): snapshot as of ${{ steps.audit-meta.outputs.date }}
 
             Automated quarterly organization audit capturing:
             - LOC trends across all active repos
             - Systemic issues and governance gaps
             - Test traceability and FR scaffolding
             - Dependency alignment status
-          branch: audit/quarterly-$(date +%Y-%m-%d)
-          title: 'audit(quarterly): snapshot as of $(date +%Y-%m-%d)'
+          branch: ${{ steps.audit-meta.outputs.branch }}
+          title: 'audit(quarterly): snapshot as of ${{ steps.audit-meta.outputs.date }}'
           body: |
-            # Quarterly Org Audit - $(date +%Y-%m-%d)
+            # Quarterly Org Audit - ${{ steps.audit-meta.outputs.date }}
 
             Automated snapshot of organization-wide metrics.
 
-            See `audits/$(date +%Y-%m-%d)/INDEX.md` for full details.
+            See `audits/org-audits/INDEX.md` for full details.
 
             - [ ] Review SYSTEMIC_ISSUES.md for blocking items
             - [ ] Update AgilePlus with governance gaps

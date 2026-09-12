@@ -61,7 +61,7 @@ CODE_EXTS = {
     ".ex", ".exs", ".clj", ".cljs", ".lua",
 }
 DEFAULT_THRESHOLD = 0.55
-TOKEN_RE = re.compile(r"[A-Za-z_][A-Za-z0-9_]{1,}|\d+")
+TOKEN_RE = re.compile(r"[A-Za-z_][A-Za-z0-9_]*|\d+")
 
 
 # ---------------------------------------------------------------------------
