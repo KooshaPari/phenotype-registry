@@ -132,6 +132,12 @@ release-ready cockpit.
 | Cockpit publication | **UNASSIGNED** | The former loose HTML output was volatile; its no-delete producer is retained separately | There is no current production dashboard or publication endpoint | Declare a versioned output target, retained artifact policy, reader contract, and deployment/recovery evidence |
 | Legacy loose paths | **PRESERVE / DO NOT OPERATE** | Historical paths remain evidence only when present | Their absence is not authorization to delete, prune, or synthesize replacement content | Complete the four owner gates above, then make a separate retirement decision under the preserve-first policy |
 
+**Source custodian (local operational cockpit):** `cockpit-source` is the provisional
+SOURCE custodian for the **local operational cockpit generators** (LaunchAgent dashboard
+wrapper + Leapfrog static multi-view cockpit). This is distinct from the Beads renderer
+(`pheno-harness`) above and from the UNASSIGNED publication/ledger boundaries. Registered
+in `projects/cockpit-source.json` (boundary `cockpit-source-custodian`).
+
 **Required handoff sequence:** (1) a reviewed source and ledger boundary, (2) a configured
 writer that never deletes prior outputs, (3) content-addressed publication plus retention
 alerts, (4) Git-hosted and second-cloud artifact preservation, and (5) an independently hosted

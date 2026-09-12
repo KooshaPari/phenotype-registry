@@ -2,11 +2,14 @@
 # .github/workflows/naming-conventions.sh
 # Called by .github/workflows/naming-conventions.yml on every PR touching
 # registry.yaml / disposition-index.json. Enforces the 3 approved naming
-# patterns from operating-contract §13:
+# patterns from operating-contract S13:
 #   pheno-<word>          (lowercase, kebab)
 #   Pheno<Word>           (PascalCase, single token)
 #   phenotype-<word>      (lowercase, kebab, full prefix)
-# Exempts repos under zz-archive-* and any already-archived repo.
+#
+# Only flags repos that contain "pheno" (case-insensitive) but do NOT match
+# any of the 3 approved patterns. Unrelated repos (e.g. Grapheon, OmniRoute)
+# are ignored entirely.
 set -euo pipefail
 
 ORG="${ORG:-KooshaPari}"
@@ -15,27 +18,32 @@ APPROVED_PATTERNS=(
   '^Pheno[A-Z][a-zA-Z0-9]*$'          # PhenoPascal:  PhenoCompose, PhenoContracts
   '^phenotype-[a-z][a-z0-9-]*$'       # phenotype-full: phenotype-router, phenotype-org-audits
 )
-EXEMPT_PREFIX='^zz-archive-'
 FAIL_FAST="${FAIL_FAST:-false}"
 
 fail_count=0
-warn_count=0
+checked=0
+skipped=0
 total=0
 
 while IFS=$'\t' read -r name archived; do
   total=$((total + 1))
 
-  # Skip exempt (archived repos under zz-archive-*)
-  if [[ "$name" =~ $EXEMPT_PREFIX ]]; then
-    continue
-  fi
-
-  # Skip archived-but-not-prefixed (already-archived, transitional)
+  # Skip archived repos
   if [ "$archived" = "true" ]; then
+    skipped=$((skipped + 1))
     continue
   fi
 
-  # Check pattern
+  # Only check repos that contain "pheno" (case-insensitive)
+  # This ignores unrelated repos like Grapheon, OmniRoute, etc.
+  if ! echo "$name" | grep -qi 'pheno'; then
+    skipped=$((skipped + 1))
+    continue
+  fi
+
+  checked=$((checked + 1))
+
+  # Check against approved patterns
   matched=0
   for p in "${APPROVED_PATTERNS[@]}"; do
     if [[ "$name" =~ $p ]]; then
@@ -45,7 +53,7 @@ while IFS=$'\t' read -r name archived; do
   done
 
   if [ "$matched" = "0" ]; then
-    echo "::error file=naming::Repo '$name' does not match any approved pattern"
+    echo "::error file=naming::Repo '$name' contains 'pheno' but does not match any approved pattern"
     echo "  Approved: pheno-<word>, Pheno<Word>, phenotype-<word>"
     fail_count=$((fail_count + 1))
     if [ "$FAIL_FAST" = "true" ]; then
@@ -55,5 +63,5 @@ while IFS=$'\t' read -r name archived; do
 done < <(gh repo list "$ORG" --limit 400 --json name,isArchived \
             --template '{{range .}}{{.name}}{{"\t"}}{{.isArchived}}{{"\n"}}{{end}}')
 
-echo "::notice::checked $total repos, $fail_count violations"
+echo "::notice::checked $checked phenotype-related repos ($skipped skipped), $fail_count violations"
 exit $fail_count
