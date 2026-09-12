@@ -14,7 +14,6 @@ permissions:
   contents: read
   packages: read
   security-events: write
-  id-token: write # required for SLSA provenance
 
 jobs:
   codeql:
@@ -68,17 +67,25 @@ jobs:
         uses: anchore/sbom-action@3ad7283483fc7af8ff2b4ea19663c2d5ca935e26 # v0.24.2
         with:
           format: cyclonedx-json
-          artifact-name: \${{ github.repository }}.sbom.json
+          artifact-name: ${{ github.repository }}.sbom.json
         continue-on-error: true
 
-  slsa-provenance:
-    name: SLSA Build Level 3 provenance
-    runs-on: ubuntu-latest
-    needs: [codeql, gitleaks]
-    steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v4
-      - name: Generate SLSA provenance attestation
-        uses: slsa-framework/slsa-github-generator/.github/workflows/generator_generic_slsa3.yml@f7dd8c54c2067bafc12ca7a55595d5ee9b75204a # v2.1.0
-        with:
-          base64-subjects: "${{ needs.gitleaks.outputs.digest || '' }}"
-        continue-on-error: true
+  # SLSA provenance disabled — requires a build artifact subject from a
+  # release workflow. Re-enable when phenotype-registry ships versioned
+  # releases with a build step. See ADR-042.
+  #
+  # slsa-provenance:
+  #   name: SLSA Build Level 3 provenance
+  #   runs-on: ubuntu-latest
+  #   needs: [codeql, gitleaks]
+  #   permissions:
+  #     id-token: write
+  #     actions: read
+  #     packages: write
+  #   steps:
+  #     - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v4
+  #     - name: Generate SLSA provenance attestation
+  #       uses: slsa-framework/slsa-github-generator/.github/workflows/generator_generic_slsa3.yml@f7dd8c54c2067bafc12ca7a55595d5ee9b75204a # v2.1.0
+  #       with:
+  #         base64-subjects: "${{ needs.gitleaks.outputs.digest || '' }}"
+  #       continue-on-error: true
