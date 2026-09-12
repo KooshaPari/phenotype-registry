@@ -1,6 +1,6 @@
 # Grapheon -> Tracera live reconciliation
 
-**Captured:** 2026-09-05T01:15Z
+**Captured:** 2026-09-05T05:28Z (custody and successor refresh)
 **Scope:** archived Grapheon source, Tracera current main, and registry boundary records.
 **Disposition:** NO-GO for absorption/retirement completion.
 
@@ -13,9 +13,26 @@
   SHA-256 `828023ca7f034b796a9e4867ae008fa0c1f5443162c78e256746402a082185f0`.
 - `git bundle verify` lists 47 refs. An isolated local restore has exact sorted
   ref/object parity and `git fsck --full --no-dangling` exits 0.
-- This is first-cloud/local evidence only. The registry manifest records
-  `r2_upload=NOT_EXECUTED_CREDENTIALS_AND_MULTIPART_CLIENT_ABSENT` and
-  `second_cloud_restore=NOT_EXECUTED`.
+- On 2026-09-05, the existing bundle hash and bundle verification passed
+  again; the existing restore passed `git fsck --full --no-dangling`.
+  Sorted named refs match exactly (46 refs; the bundle's 47th advertised
+  entry is `HEAD`), and restored `HEAD` matches the source commit. The
+  Grapheon checkout has zero porcelain status entries and one worktree.
+- This remains GitHub/local evidence, not immutable dual-cloud proof.
+  Live `wrangler r2 bucket list` succeeds and finds `phenotype-preservation`;
+  the earlier blanket credentials-absent description is superseded.
+  `wrangler r2 bucket lock list phenotype-preservation` reports **no lock
+  rules**. Installed Wrangler 4.120.1 enforces a 314,572,800-byte object-put
+  limit, below the 431,515,603-byte bundle. `aws`, `rclone`, `b2`, and
+  `restic` are absent from PATH; no AWS/R2/Cloudflare credential environment
+  variables were present (values were never printed). This does not exclude
+  credentials in another owner-managed store. No upload was attempted.
+- Next custody action requires the cloud owner to designate immutable
+  retention and a supported multipart upload route, with any storage spending
+  authorized. Then upload the hash-addressed bundle, independently download
+  it, verify SHA-256, restore, compare all named refs and HEAD, and run fsck.
+  GitHub archival alone does not establish first-cloud immutability or full
+  dirty/untracked/artifact coverage; those program gates remain open.
 
 ## Destination state
 
@@ -39,7 +56,7 @@
   and not production/dogfood proof.
 - A protected Tracera successor branch based on current remote `main` now has
   commits `ec47038ad181d2772e83e14419a96955f642612c` and
-  `79436a75e3cce1f0d9579f81ea95b18ad3da32d6`: Rust docs/dependencies were
+  `79436a75e25d7d4db9be95a8873f7a596a114070`: Rust docs/dependencies were
   repaired, the yanked `chacha20`/`spin` entries were updated, the four
   WorkOS compile blockers were resolved, and the contradictory raw-`&` URL
   test now asserts the intended rejection. `cargo check -p tracera-workos
@@ -47,6 +64,11 @@
   `cargo deny check advisories` pass. Workspace-wide formatting still reports
   unrelated pre-existing drift. The commits are unpushed and not hosted-CI
   proof.
+- Successor owner refreshed the same remote-main SHA and clean successor
+  worktree on 2026-09-05; `cargo test -p tracera-workos --locked` again
+  passed 47 tests. Repository Actions remains enabled and push/PR workflows
+  select `ubuntu-latest`; publication remains gated on zero-billable-runner
+  enforcement. The prior full successor SHA was corrected above.
 - Before any push, those two successor commits were preserved in
   `/tmp/tracera-workos-successor-20260905-0416.bundle`; `git bundle verify`
   passes and SHA-256 is
