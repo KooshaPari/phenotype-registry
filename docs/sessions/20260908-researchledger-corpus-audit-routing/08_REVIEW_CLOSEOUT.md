@@ -8,6 +8,6 @@ The alternative `PROGRAM-AUDIT-AND-WBS-2026-09-08.md` URL returned GitHub HTTP 4
 
 Main still contained an Infisical child environment dump and failure upload of `.env`. Both are removed. The previously validated Ubuntu 24.04 runner is restored. The newer explicit environment-resolution step and removal of the credentialed pull-request trigger are preserved. No historical secret-exposure conclusion is claimed.
 
-The [project specification](../../../../kitty-specs/researchledger-corpus-audit-routing/spec.md) records this packet and repair. AgilePlus accepted `specify` into its queue, but the later supported `get_feature` returned gRPC `NOT_FOUND`. Live registration remains PENDING; queue acceptance is not governance completion. No repeat write was submitted.
+The [project specification](../../../kitty-specs/researchledger-corpus-audit-routing/spec.md) records this packet and repair. AgilePlus accepted `specify` into its queue, but the later supported `get_feature` returned gRPC `NOT_FOUND`. Live registration remains PENDING; queue acceptance is not governance completion. No repeat write was submitted.
 
 Old worktree edits and its generated Cargo.lock are preserved separately. Kilo and Ghostty are excluded by user direction. Hosted verification and normal review/merge gates apply to this forward repair.
