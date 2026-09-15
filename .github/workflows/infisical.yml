@@ -14,7 +14,7 @@ on:
 
 jobs:
   sync-secrets:
-    name: Pull secrets from Infisical
+    name: Verify Infisical access
     runs-on: ubuntu-24.04
     timeout-minutes: 5
     steps:
@@ -37,7 +37,7 @@ jobs:
             echo "env=dev" >> "$GITHUB_OUTPUT"
           fi
 
-      - name: Verify secret access
+      - name: Verify secret access (no export)
         env:
           INFISICAL_TOKEN: ${{ secrets.INFISICAL_TOKEN }}
           INFISICAL_PROJECT_ID: ${{ vars.INFISICAL_PROJECT_ID || secrets.INFISICAL_PROJECT_ID }}

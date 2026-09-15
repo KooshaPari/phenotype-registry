@@ -14,7 +14,7 @@ This project-owned specification tracks the registry routing packet originally d
 
 ## Tracking status
 
-This file is a local specification, not proof of live AgilePlus registration. The supported `specify` call accepted the command into its queue, but the subsequent supported `get_feature` returned gRPC `NOT_FOUND`. Registration is PENDING, not verified. No repeat write was submitted. Queue acceptance does not establish governance completion.
+Live feature registration is verified via CLI on 2026-09-12. The supported `specify` call succeeded with state transition Created -> Specified on the verified live daemon DB (2026-09-12T09:02:25Z). A subsequent supported `list` call independently confirmed ID3 slug `researchledger-corpus-audit-routing` in `specified` state. No blind duplicate enqueue was submitted; the CLI actually persisted. The earlier `get_feature` `NOT_FOUND` responses are historical from the supported operation returning not-found before registration; they do not apply to the current CLI-verified registration. MCP read timed out and remains unverified. Governance completion and MCP transport remain unverified open gates.
 
 ## Acceptance
 
